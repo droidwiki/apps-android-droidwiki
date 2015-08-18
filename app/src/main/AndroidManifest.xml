@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.wikipedia"
+    package="de.droidwiki"
     android:installLocation="auto">
     <!--
     If the build is intended to be Google Play-updateable, the package name
@@ -31,9 +31,9 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true"
-        android:icon="@drawable/launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name=".WikipediaApp"
+        android:name="de.droidwiki.WikipediaApp"
         android:theme="@style/AppTheme">
 
         <!--
@@ -43,7 +43,7 @@
         <meta-data android:name="@string/preference_key_app_channel" android:value="@string/channel" />
         <!-- Don't delete the meta-data field above -->
 
-        <activity android:name=".page.PageActivity"
+        <activity android:name="de.droidwiki.page.PageActivity"
                   android:theme="@style/NoTitle"
                   android:windowSoftInputMode="stateHidden"
                   android:configChanges="orientation|screenSize"
@@ -51,13 +51,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="*.wikipedia.org" android:pathPrefix="/wiki/" android:scheme="http" />
-                <data android:host="*.wikipedia.org" android:pathPrefix="/wiki/" android:scheme="https" />
             </intent-filter>
             <intent-filter android:label="@string/intent_share_search_label">
                 <action android:name="android.intent.action.SEND" />
@@ -71,28 +64,28 @@
                   android:finishOnTaskLaunch="true"
                   android:exported="false"
                 />
-        <activity android:name=".settings.SettingsActivity"
+        <activity android:name="de.droidwiki.settings.SettingsActivity"
                   android:label="@string/more_activity_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
         <!-- Settings activity specifically for API 10 (remove when we drop support for API 10) -->
-        <activity android:name=".settings.SettingsActivityGB"
+        <activity android:name="de.droidwiki.settings.SettingsActivityGB"
                   android:label="@string/more_activity_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".settings.DeveloperSettingsActivity"
+        <activity android:name="de.droidwiki.settings.DeveloperSettingsActivity"
             android:label="@string/developer_settings_activity_title"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
             android:exported="false"
             />
-        <activity android:name=".settings.DeveloperSettingsActivityGB"
+        <activity android:name="de.droidwiki.settings.DeveloperSettingsActivityGB"
             android:label="@string/developer_settings_activity_title"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
             android:exported="false"
             />
-        <activity android:name=".settings.AboutActivity"
+        <activity android:name="de.droidwiki.settings.AboutActivity"
                   android:label="@string/about_activity_title"
                   android:exported="false">
             <intent-filter>
@@ -100,38 +93,38 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".interlanguage.LangLinksActivity"
+        <activity android:name="de.droidwiki.interlanguage.LangLinksActivity"
                   android:label="@string/langlinks_activity_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".editing.EditSectionActivity"
+        <activity android:name="de.droidwiki.editing.EditSectionActivity"
                   android:windowSoftInputMode="adjustResize|stateVisible"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".login.LoginActivity"
+        <activity android:name="de.droidwiki.login.LoginActivity"
                   android:label="@string/login_activity_title"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".createaccount.CreateAccountActivity"
+        <activity android:name="de.droidwiki.createaccount.CreateAccountActivity"
                   android:label="@string/create_account_activity_title"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".pagehistory.usercontributions.UserContribsActivity"
+        <activity android:name="de.droidwiki.pagehistory.usercontributions.UserContribsActivity"
                   android:label="@string/activity_my_contributions_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name=".page.gallery.GalleryActivity"
+        <activity android:name="de.droidwiki.page.gallery.GalleryActivity"
                   android:theme="@style/NoTitle"
                   android:exported="false"
                 />
-        <activity android:name=".settings.LicenseActivity"
+        <activity android:name="de.droidwiki.settings.LicenseActivity"
                   android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -142,38 +135,38 @@
 
         <provider
                 android:authorities="${applicationId}.history"
-                android:name=".history.HistoryEntryContentProvider"
+                android:name="de.droidwiki.history.HistoryEntryContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.editsummaries"
-                android:name=".editing.summaries.EditSummaryContentProvider"
+                android:name="de.droidwiki.editing.summaries.EditSummaryContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.pageimages"
-                android:name=".pageimages.PageImageContentProvider"
+                android:name="de.droidwiki.pageimages.PageImageContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.recentsearches"
-                android:name=".search.RecentSearchContentProvider"
+                android:name="de.droidwiki.search.RecentSearchContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.savedpages"
-                android:name=".savedpages.SavedPageContentProvider"
+                android:name="de.droidwiki.savedpages.SavedPageContentProvider"
                 android:exported="false"
                 />
 
         <receiver
             android:icon="@drawable/launcher"
             android:label="@string/widget_name_search"
-            android:name="org.wikipedia.widgets.WidgetProviderSearch" >
+            android:name="de.droidwiki.widgets.WidgetProviderSearch" >
             <intent-filter >
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -186,7 +179,7 @@
         <receiver
             android:icon="@drawable/launcher"
             android:label="@string/widget_name_featured_page"
-            android:name="org.wikipedia.widgets.WidgetProviderFeaturedPage" >
+            android:name="de.droidwiki.widgets.WidgetProviderFeaturedPage" >
             <intent-filter >
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -210,7 +203,7 @@
         to test this intent using adb (am broadcast).
         -->
         <receiver
-            android:name="org.wikipedia.analytics.InstallReferrerReceiver"
+            android:name="de.droidwiki.analytics.InstallReferrerReceiver"
             android:exported="true"
             tools:ignore="ExportedReceiver">
             <intent-filter>

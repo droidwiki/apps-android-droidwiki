@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Ja</string>
   <string name="no">Nein</string>
-  <string name="acra_report_dialog_title">Wikipedia ist abgestürzt :(</string>
+  <string name="acra_report_dialog_title">DroidWiki ist abgestürzt :(</string>
   <string name="acra_report_dialog_text">Einen Absturzbericht an uns senden</string>
   <string name="acra_report_dialog_comment">Was hast du gemacht, als der Absturz passiert ist?</string>
-  <string name="search_hint">Wikipedia durchsuchen</string>
+  <string name="search_hint">DroidWiki durchsuchen</string>
   <string name="nav_item_history">Verlauf</string>
   <string name="error_network_error">Die Netzwerkverbindung konnte nicht hergestellt werden.</string>
   <string name="search_network_error">Netzwerkfehler. Tippen zum erneuten Versuchen.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Der Inhalt ist verfügbar unter &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA 3.0&lt;/a&gt;, sofern nicht anders angegeben.</string>
   <string name="edit_save_action_license_logged_in">Mit dem Speichern stimmst du den &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/de\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA-3.0-Lizenz&lt;/a&gt; zu.</string>
   <string name="edit_save_action_license_anon">Mit dem Speichern stimmst du den &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/de\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA-3.0-Lizenz&lt;/a&gt; zu. Bearbeitungen werden der IP-Adresse deines Gerätes zugeordnet. Wenn du dich &lt;a href=\"https://#login\"&gt;anmeldest&lt;/a&gt;, verfügst du über mehr Datenschutz.</string>
-  <string name="preference_title_language">Wikipedia-Sprache</string>
+  <string name="preference_title_language">DroidWiki-Sprache</string>
   <string name="preference_languages_filter_hint">Suche</string>
   <string name="preference_system_language_toggle">Systemsprache verwenden</string>
   <string name="preference_system_language_summary">Systemsprache</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Passwort</string>
   <string name="login_password_show_check">Passwort anzeigen</string>
   <string name="menu_login">Anmelden</string>
-  <string name="login_activity_title">Bei Wikipedia anmelden</string>
+  <string name="login_activity_title">Bei DroidWiki anmelden</string>
   <string name="login_in_progress_dialog_message">Melde dich an …</string>
   <string name="login_error_wrong_password">Falsches Passwort</string>
   <string name="login_error_wrong_username">Falscher Benutzername</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Anmeldung fehlgeschlagen :(</string>
   <string name="login_error_no_network">Keine Netzwerkverbindung</string>
   <string name="preference_title_logout">Abmelden</string>
-  <string name="preference_summary_logout">Von deinem Wikipedia-Benutzerkonto abmelden</string>
+  <string name="preference_summary_logout">Von deinem DroidWiki-Benutzerkonto abmelden</string>
   <string name="preference_summary_notloggedin">Nicht angemeldet.</string>
   <string name="toast_logout_complete">Abgemeldet</string>
   <string name="saved_pages_empty_title">Hier gibt es keine gespeicherten Seiten!</string>
@@ -105,10 +105,10 @@
   <string name="history_empty_title">Hier gibt es keine letzten Seiten.</string>
   <string name="history_empty_message">Du hast vermutlich alle Elemente gelöscht. Das nächste Mal, wenn du eine Seite besuchst, kannst du von hier auf sie zurückgehen.</string>
   <string name="delete_selected_history">Löschen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Benutzername</string>
   <string name="create_account_password_hint">Passwort</string>
-  <string name="login_create_account_link">Noch kein Benutzerkonto? Tritt der Wikipedia bei</string>
+  <string name="login_create_account_link">Noch kein Benutzerkonto? Tritt der DroidWiki bei</string>
   <string name="create_account_login_link">Hast du bereits ein Benutzerkonto? Anmelden</string>
   <string name="create_account_activity_title">Ein Benutzerkonto erstellen</string>
   <string name="dialog_create_account_checking_progress">Verifiziere</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Nächste</string>
   <string name="create_account_button">Benutzerkonto erstellen</string>
   <string name="preferences_general_heading">Allgemein</string>
-  <string name="wikipedia_app_faq">FAQ zur Wikipedia-App</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero ist aus</string>
+  <string name="DroidWiki_app_faq">FAQ zur DroidWiki-App</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero ist aus</string>
   <string name="zero_charged_verbiage_extended">Das Laden anderer Artikel verursacht Datenübertragungsgebühren.</string>
-  <string name="zero_search_hint">Wikipedia Zero durchsuchen</string>
-  <string name="zero_warn_when_leaving">Beim Verlassen von Wikipedia Zero warnen</string>
-  <string name="zero_warn_when_leaving_summary">Falls dein Mobilfunkbetreiber auf Datenzugriffsgebühren für die Wikipedia-App aufgrund einer Wikipedia-Zero-Partnerschaft verzichtet, wirst du bei Aktivierung dieser Einstellung informiert, wenn du die Wikipedia-App verlässt und Gebühren anfallen können.</string>
-  <string name="zero_webpage_title">Häufig gestellte Fragen zu Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Wikipedia Zero verlassen</string>
+  <string name="zero_search_hint">DroidWiki Zero durchsuchen</string>
+  <string name="zero_warn_when_leaving">Beim Verlassen von DroidWiki Zero warnen</string>
+  <string name="zero_warn_when_leaving_summary">Falls dein Mobilfunkbetreiber auf Datenzugriffsgebühren für die DroidWiki-App aufgrund einer DroidWiki-Zero-Partnerschaft verzichtet, wirst du bei Aktivierung dieser Einstellung informiert, wenn du die DroidWiki-App verlässt und Gebühren anfallen können.</string>
+  <string name="zero_webpage_title">Häufig gestellte Fragen zu DroidWiki Zero</string>
+  <string name="zero_DroidWiki_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">DroidWiki Zero verlassen</string>
   <string name="zero_interstitial_leave_app">Datenübertragungsgebühren können anfallen. Mit der externen Website fortfahren?</string>
   <string name="zero_interstitial_continue">Verlassen</string>
   <string name="zero_interstitial_cancel">Hier bleiben</string>
-  <string name="zero_learn_more">Auf Datenübertragungsgebühren für diese Wikipedia-App wird verzichtet.</string>
+  <string name="zero_learn_more">Auf Datenübertragungsgebühren für diese DroidWiki-App wird verzichtet.</string>
   <string name="zero_learn_more_learn_more">Mehr lesen</string>
   <string name="zero_learn_more_dismiss">Ausblenden</string>
   <string name="edit_preview_fetching_dialog_message">Vorschau wird abgerufen …</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Diese Seite ist geschützt</string>
   <string name="more_item_preferences">Mehr</string>
   <string name="more_activity_title">Mehr</string>
-  <string name="about_description">Über die Wikipedia-App</string>
+  <string name="about_description">Über die DroidWiki-App</string>
   <string name="privacy_policy_description">Datenschutzrichtlinie</string>
   <string name="terms_of_use_description">Nutzungsbedingungen</string>
   <string name="privacy_policy_url">https://meta.wikimedia.org/wiki/Privacy_policy/de</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Dies könnte eine unkonstruktive Bearbeitung sein. Bist du sicher, dass du sie speichern möchtest?</string>
   <string name="abusefilter_title_disallow">Du kannst diese Bearbeitung nicht speichern. Bitte gehe zurück und ändere sie ab.</string>
   <string name="abusefilter_text_warn">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv identifiziert. Sie könnte eine oder mehrere der folgenden Dinge beinhalten:&lt;br /&gt;&lt;br /&gt;· Eingeben aller Kapitälchen&lt;br /&gt;· Artikel leeren oder Einbringen von Spam&lt;br /&gt;· Irrelevante externe Links oder Bilder&lt;br /&gt;· Wiederholte Zeichen</string>
-  <string name="abusefilter_text_disallow">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv oder als potenziellen Vandalismus identifiziert.&lt;br /&gt;&lt;br /&gt;Wikipedia ist eine Enzyklopädie und ausschließlich neutraler, relevanter Inhalt gehört hierher.</string>
+  <string name="abusefilter_text_disallow">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv oder als potenziellen Vandalismus identifiziert.&lt;br /&gt;&lt;br /&gt;DroidWiki ist eine Enzyklopädie und ausschließlich neutraler, relevanter Inhalt gehört hierher.</string>
   <string name="dialog_page_issues">Seitenprobleme</string>
   <string name="button_page_issues">Seitenprobleme</string>
   <string name="menu_themechooser">Schriftart und Farbschema ändern</string>
@@ -218,25 +218,25 @@
   <string name="table_infobox">Schnelle Fakten</string>
   <string name="table_other">Weitere Informationen</string>
   <string name="table_close">Schließen</string>
-  <string name="widget_name_featured_page">Lesenswerte Wikipedia-Seite</string>
+  <string name="widget_name_featured_page">Lesenswerte DroidWiki-Seite</string>
   <string name="widget_title_featured_page">Seite des Tages:</string>
-  <string name="widget_name_search">Wikipedia-Suche</string>
-  <string name="app_store_description">Offizielle Wikipedia-App für Android. Wikipedia ist die freie Enzyklopädie mit mehr als 32 Millionen Artikeln in 280 Sprachen und ist das umfangreichste und am meisten genutzte Nachschlagewerk, das von Menschen zusammengestellt wurde.
+  <string name="widget_name_search">DroidWiki-Suche</string>
+  <string name="app_store_description">Offizielle DroidWiki-App für Android. DroidWiki ist die freie Enzyklopädie mit mehr als 32 Millionen Artikeln in 280 Sprachen und ist das umfangreichste und am meisten genutzte Nachschlagewerk, das von Menschen zusammengestellt wurde.
 
 Funktionen:
-- Einleitungsbilder: Erlebe Wikipedia wie nie zuvor mit einem prominenten, kontextrelevanten Bild und einer Beschreibung am Artikelanfang
+- Einleitungsbilder: Erlebe DroidWiki wie nie zuvor mit einem prominenten, kontextrelevanten Bild und einer Beschreibung am Artikelanfang
 - Bildergalerie: Das Tippen auf ein Bild zeigt es dir in hoher Auflösung, mit Optionen zum Wischen nach links oder rechts für das Durchsuchen weiterer Bilder
 - Beschreibungen von Wikidata: Beim Suchen enthält jetzt jedes Suchergebnis eine schnelle Beschreibung, die hilft, das Ergebnis einzuordnen. Diese Beschreibungen werden auch in anderen Bereichen der App angezeigt, wie „In der Nähe“
 - Artikelvorschläge: Scrolle an das Artikelende, um Vorschläge zu erhalten, was du als nächstes lesen könntest
 - Gespeicherte Seiten: Speichere ausgewählte Seiten zum Offline-Lesen und durchsuche sie, auch wenn du keine Datenverbindung hast
 - In der Nähe: Erfahre mehr über deine Umgebung durch das Abrufen von Links auf Artikel über Dinge, die in der Nähe deines aktuellen Standorts sind
-- Sprachenunterstützung: Wechsle nahtlos zu anderssprachigen Wikipedias
+- Sprachenunterstützung: Wechsle nahtlos zu anderssprachigen DroidWikis
 - Inhaltsverzeichnis: Wische bei einem beliebigen Artikel nach links, um das Inhaltsverzeichnis zu zeigen, das dich leicht zu Artikelabschnitten springen lässt
-- Wikipedia Zero: Teilnehmende Mobilfunknetzbetreiber verzichten auf Datenübertragungsgebühren
+- DroidWiki Zero: Teilnehmende Mobilfunknetzbetreiber verzichten auf Datenübertragungsgebühren
 
-Sende uns deine Rückmeldungen über die App! Drücke im Menü auf „Mehr“, dann „Über die Wikipedia-App“ und „App-Rückmeldung senden“.
+Sende uns deine Rückmeldungen über die App! Drücke im Menü auf „Mehr“, dann „Über die DroidWiki-App“ und „App-Rückmeldung senden“.
 
-Der Code ist 100% quelloffen. Falls du Erfahrungen mit Java und dem Android SDK hast, freuen wir uns auf deine Beiträge! https://github.com/wikimedia/apps-android-wikipedia
+Der Code ist 100% quelloffen. Falls du Erfahrungen mit Java und dem Android SDK hast, freuen wir uns auf deine Beiträge! https://github.com/wikimedia/apps-android-DroidWiki
 
 Datenschutzrichtlinie: https://meta.m.wikimedia.org/wiki/Privacy_policy/de
 
@@ -259,7 +259,7 @@ Nutzungsbedingungen: https://m.wikimediafoundation.org/wiki/Terms_of_Use/de</str
   <string name="gallery_save_success">Bild erfolgreich gespeichert.</string>
   <string name="gallery_error_video_failed">Das Video konnte nicht abgespielt werden.</string>
   <string name="err_cannot_save_file">Datei konnte nicht gespeichert werden</string>
-  <string name="snippet_share_intro">Interessante Tatsache auf @Wikipedia %1$s: %2$s</string>
+  <string name="snippet_share_intro">Interessante Tatsache auf @DroidWiki %1$s: %2$s</string>
   <string name="expand_refs">Tippen zum Erweitern</string>
   <string name="share_snippet_button">Als Bild teilen</string>
   <string name="share_normal_button">Als Text teilen</string>

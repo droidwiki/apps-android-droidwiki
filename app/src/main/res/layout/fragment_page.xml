@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:background="?attr/page_background_color"
     tools:context=".page.PageActivity">
-    <org.wikipedia.views.WikiDrawerLayout
+    <de.droidwiki.views.WikiDrawerLayout
             android:id="@+id/page_toc_drawer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
 
-        <org.wikipedia.views.SwipeRefreshLayoutWithScroll
+        <de.droidwiki.views.SwipeRefreshLayoutWithScroll
             android:id="@+id/page_refresh_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <org.wikipedia.views.ObservableWebView
+            <de.droidwiki.views.ObservableWebView
                 android:id="@+id/page_web_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -43,7 +43,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        <org.wikipedia.page.leadimages.ImageViewWithFace
+                        <de.droidwiki.page.leadimages.ImageViewWithFace
                             android:id="@+id/page_image_1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -114,7 +114,7 @@
                         android:fontFamily="serif"
                         android:textSize="24sp"
                         android:text="@string/read_more_section"/>
-                    <org.wikipedia.views.WikiListView
+                    <de.droidwiki.views.WikiListView
                         android:id="@+id/read_more_list"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"/>
@@ -184,7 +184,7 @@
 
         </android.support.design.widget.CoordinatorLayout>
 
-        </org.wikipedia.views.SwipeRefreshLayoutWithScroll>
+        </de.droidwiki.views.SwipeRefreshLayoutWithScroll>
 
         <FrameLayout
                 android:layout_width="288dp"
@@ -231,9 +231,9 @@
             </LinearLayout>
 
         </FrameLayout>
-    </org.wikipedia.views.WikiDrawerLayout>
+    </de.droidwiki.views.WikiDrawerLayout>
 
-    <org.wikipedia.views.WikiErrorView
+    <de.droidwiki.views.WikiErrorView
         android:id="@+id/page_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

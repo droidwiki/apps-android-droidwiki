@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp">
-            <org.wikipedia.views.PlainPasteEditText
+            <de.droidwiki.views.PlainPasteEditText
                     android:id="@+id/captcha_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

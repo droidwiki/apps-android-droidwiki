@@ -26,11 +26,6 @@
         android:icon="@drawable/bookmark_white"
         android:checkable="true"
         />
-    <item android:id="@+id/nav_item_nearby"
-        android:title="@string/nav_item_nearby"
-        android:icon="@drawable/ic_place_dark"
-        android:checkable="true"
-        />
     <item android:id="@+id/nav_item_random"
         android:title="@string/nav_item_random"
         android:icon="@drawable/dice_white"

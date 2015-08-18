@@ -7,5 +7,5 @@
     android:paddingRight="12dp"
     android:paddingTop="42dp"
     android:paddingBottom="24dp"
-    android:src="@drawable/nav_drawer_wordmark"
+    android:src="@drawable/dw_wordmark"
     android:contentDescription="@null" />

@@ -65,7 +65,7 @@
             android:visibility="gone"
             tools:visibility="visible"
             >
-        <org.wikipedia.views.PlainPasteEditText
+        <de.droidwiki.views.PlainPasteEditText
                 android:id="@+id/langlinks_filter"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"

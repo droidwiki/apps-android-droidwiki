@@ -38,7 +38,7 @@
             android:visibility="gone"
             tools:visibility="visible"
             android:layout_width="match_parent" android:layout_height="match_parent">
-        <org.wikipedia.views.PlainPasteEditText
+        <de.droidwiki.views.PlainPasteEditText
                 android:id="@+id/edit_section_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         <fragment android:layout_width="match_parent"
                   android:layout_height="0dp"
                   android:layout_weight="1"
-                  class="org.wikipedia.editing.EditPreviewFragment"
+                  class="de.droidwiki.editing.EditPreviewFragment"
                   android:id="@+id/edit_section_preview_fragment"
                   tools:layout="@layout/fragment_preview_edit"/>
     </LinearLayout>
@@ -70,7 +70,7 @@
             >
         <fragment android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  class="org.wikipedia.editing.summaries.EditSummaryFragment"
+                  class="de.droidwiki.editing.summaries.EditSummaryFragment"
                   android:id="@+id/edit_section_summary_fragment"
                   tools:layout="@layout/fragment_preview_summary"/>
     </LinearLayout>

@@ -14,7 +14,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/preference_system_language_toggle" />
 
-    <org.wikipedia.views.PlainPasteEditText
+    <de.droidwiki.views.PlainPasteEditText
             android:id="@+id/preference_languages_filter"
             android:layout_width="match_parent"
             android:layout_height="48dp"

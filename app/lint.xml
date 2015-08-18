@@ -12,5 +12,6 @@
         <ignore path="res/drawable/lead_default.png" />
         <ignore path="res/drawable/lead_default_dark.png" />
         <ignore path="res/drawable/wp_wordmark.png" />
+        <ignore path="res/drawable/dw_wordmark.png" />
     </issue>
 </lint>

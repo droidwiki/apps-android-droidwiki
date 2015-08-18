@@ -8,7 +8,7 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
-    <org.wikipedia.views.CabSearchView
+    <de.droidwiki.views.CabSearchView
             android:id="@+id/find_in_page_input"
             android:inputType="text"
             android:layout_width="0dp"

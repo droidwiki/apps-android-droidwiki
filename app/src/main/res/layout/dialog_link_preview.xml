@@ -77,7 +77,7 @@
                 tools:text="Lorem ipsum"/>
         </FrameLayout>
 
-        <org.wikipedia.page.gallery.GalleryThumbnailScrollView
+        <de.droidwiki.page.gallery.GalleryThumbnailScrollView
             android:id="@+id/link_preview_thumbnail_gallery"
             android:layout_width="match_parent"
             android:layout_height="120dp"

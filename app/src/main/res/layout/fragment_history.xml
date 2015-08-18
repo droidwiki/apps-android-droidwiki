@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp">
-            <org.wikipedia.views.PlainPasteEditText
+            <de.droidwiki.views.PlainPasteEditText
                     android:id="@+id/history_search_list"
                     android:hint="@string/history_search_list_hint"
                     android:imeOptions="actionDone|flagNoExtractUi"

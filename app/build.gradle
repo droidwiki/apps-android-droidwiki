@@ -54,11 +54,11 @@ android {
         preDexLibraries = preDexEnabled
     }
     defaultConfig {
-        applicationId 'org.wikipedia'
+        applicationId 'de.droidwiki'
         minSdkVersion 10
         targetSdkVersion 22
         versionCode 108
-        testApplicationId 'org.wikipedia.test'
+        testApplicationId 'de.droidwiki.test'
     }
 
     signingConfigs {
@@ -80,7 +80,7 @@ android {
     productFlavors {
         dev {
             versionName computeVersionName("dev")
-            applicationId 'org.wikipedia.dev'
+            applicationId 'de.droidwiki.dev'
             signingConfig signingConfigs.debug
         }
         prod {
@@ -93,12 +93,12 @@ android {
         }
         alpha {
             versionName computeVersionName("alpha")
-            applicationId 'org.wikipedia.alpha'
+            applicationId 'de.droidwiki.alpha'
             signingConfig signingConfigs.debug
         }
         beta {
             versionName computeVersionName("beta")
-            applicationId 'org.wikipedia.beta'
+            applicationId 'de.droidwiki.beta'
             signingConfig signingConfigs.prod
         }
         amazon {

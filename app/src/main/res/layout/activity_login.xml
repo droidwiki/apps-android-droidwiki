@@ -15,7 +15,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <org.wikipedia.views.PlainPasteEditText
+            <de.droidwiki.views.PlainPasteEditText
                     android:id="@+id/login_username_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                     />
         </android.support.design.widget.TextInputLayout>
 
-        <org.wikipedia.views.PasswordTextInput
+        <de.droidwiki.views.PasswordTextInput
             android:id="@+id/login_password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

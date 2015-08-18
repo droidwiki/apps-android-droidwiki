@@ -1,6 +1,6 @@
 [gerrit]
-host=gerrit.wikimedia.org
+host=gerrit.go2tech.de
 port=29418
-project=apps/android/wikipedia.git
+project=apps/android/droidwiki.git
 defaultbranch=master
 defaultrebase=0
