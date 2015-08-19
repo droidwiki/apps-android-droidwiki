@@ -204,10 +204,10 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
     private void updateEditLicenseText() {
         TextView editLicenseText = (TextView) findViewById(de.droidwiki.R.id.edit_section_license_text);
-        if (app.getUserInfoStorage().isLoggedIn()) {
-            editLicenseText.setText(Html.fromHtml(getString(de.droidwiki.R.string.edit_save_action_license_logged_in)));
-        } else {
+        if (!app.getUserInfoStorage().isLoggedIn() && app.getAppLanguageCode() == "de") {
             editLicenseText.setText(Html.fromHtml(getString(de.droidwiki.R.string.edit_save_action_license_anon)));
+        } else {
+            editLicenseText.setText("");
         }
 
         editLicenseText.setMovementMethod(new LinkMovementMethodExt(new LinkMovementMethodExt.UrlHandler() {

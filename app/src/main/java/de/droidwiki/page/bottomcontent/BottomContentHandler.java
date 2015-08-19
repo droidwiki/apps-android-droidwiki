@@ -83,7 +83,6 @@ public class BottomContentHandler implements BottomContentInterface,
         webview.addOnContentHeightChangedListener(this);
 
         pageLastUpdatedText = (TextView)bottomContentContainer.findViewById(R.id.page_last_updated_text);
-        pageLicenseText = (TextView)bottomContentContainer.findViewById(R.id.page_license_text);
         readMoreContainer = bottomContentContainer.findViewById(R.id.read_more_container);
         readMoreList = (ListView)bottomContentContainer.findViewById(R.id.read_more_list);
 

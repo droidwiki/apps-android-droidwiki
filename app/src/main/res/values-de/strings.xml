@@ -53,7 +53,7 @@
   <string name="last_updated_text">Zuletzt aktualisiert %1$s</string>
   <string name="content_license_html">Der Inhalt ist verfügbar unter &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA 3.0&lt;/a&gt;, sofern nicht anders angegeben.</string>
   <string name="edit_save_action_license_logged_in">Mit dem Speichern stimmst du den &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/de\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA-3.0-Lizenz&lt;/a&gt; zu.</string>
-  <string name="edit_save_action_license_anon">Mit dem Speichern stimmst du den &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/de\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA-3.0-Lizenz&lt;/a&gt; zu. Bearbeitungen werden der IP-Adresse deines Gerätes zugeordnet. Wenn du dich &lt;a href=\"https://#login\"&gt;anmeldest&lt;/a&gt;, verfügst du über mehr Datenschutz.</string>
+  <string name="edit_save_action_license_anon">Bearbeitungen werden der IP-Adresse deines Gerätes zugeordnet. Wenn du dich &lt;a href=\"https://#login\"&gt;anmeldest&lt;/a&gt;, verfügst du über mehr Datenschutz.</string>
   <string name="preference_title_language">DroidWiki-Sprache</string>
   <string name="preference_languages_filter_hint">Suche</string>
   <string name="preference_system_language_toggle">Systemsprache verwenden</string>
