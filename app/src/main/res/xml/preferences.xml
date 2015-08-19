@@ -24,8 +24,8 @@
             android:key="about"
             android:title="@string/about_description">
             <intent android:action="android.intent.action.VIEW"
-                    android:targetClass="org.wikipedia.settings.AboutActivity"
-                    android:targetPackage="org.wikipedia"
+                    android:targetClass="de.droidwiki.settings.AboutActivity"
+                    android:targetPackage="de.droidwiki"
                     />
         </de.droidwiki.settings.PreferenceMultiLine>
         <de.droidwiki.settings.PreferenceMultiLine
