@@ -11,6 +11,9 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import de.droidwiki.Utils;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
@@ -42,6 +45,7 @@ public class LoginActivity extends ThemedActionBarActivity {
 
     private ProgressDialog progressDialog;
     private boolean wentStraightToCreateAccount;
+    private Tracker mTracker;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,11 @@ public class LoginActivity extends ThemedActionBarActivity {
         setContentView(de.droidwiki.R.layout.activity_login);
 
         usernameText = (EditText) findViewById(de.droidwiki.R.id.login_username_text);
+        mTracker = app.getDefaultTracker();
+
+        Log.i("PageFragment", "Setting screen name: Login");
+        mTracker.setScreenName("Activity~Login");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         passwordText = ((PasswordTextInput) findViewById(de.droidwiki.R.id.login_password_input)).getEditText();
         View createAccountLink = findViewById(de.droidwiki.R.id.login_create_account_link);
 
