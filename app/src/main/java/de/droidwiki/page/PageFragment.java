@@ -3,6 +3,7 @@ package de.droidwiki.page;
 import org.acra.ACRA;
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.NightModeHandler;
+import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
@@ -27,6 +28,7 @@ import de.droidwiki.search.SearchBarHideHandler;
 import de.droidwiki.settings.Prefs;
 import de.droidwiki.tooltip.ToolTipUtil;
 import de.droidwiki.util.FeedbackUtil;
+import de.droidwiki.util.ShareUtils;
 import de.droidwiki.util.ThrowableUtil;
 import de.droidwiki.views.ObservableWebView;
 import de.droidwiki.views.SwipeRefreshLayoutWithScroll;
@@ -739,8 +741,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                     savePage();
                 }
                 return true;
-            case de.droidwiki.R.id.menu_page_share:
-                shareHandler.shareWithoutSelection();
+            case R.id.menu_page_share:
+                ShareUtils.shareText(getActivity(), model.getTitle());
                 return true;
             case de.droidwiki.R.id.menu_page_other_languages:
                 Intent langIntent = new Intent();

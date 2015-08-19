@@ -1,7 +1,7 @@
 package de.droidwiki.page;
 
+import de.droidwiki.R;
 import de.droidwiki.history.HistoryEntry;
-import de.droidwiki.views.WikiListView;
 
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
@@ -19,19 +19,19 @@ import android.widget.ViewFlipper;
     private final ViewFlipper flipper;
     private final Button disambigHeading;
     private final Button issuesHeading;
-    private final WikiListView disambigList;
+    private final ListView disambigList;
 
     /*package*/ PageInfoDialog(final PageActivity activity, PageInfo pageInfo, int height) {
         super(activity, de.droidwiki.R.layout.dialog_page_info);
 
         View parentView = getDialogLayout();
-        flipper = (ViewFlipper) parentView.findViewById(de.droidwiki.R.id.page_info_flipper);
-        disambigList = (WikiListView) parentView.findViewById(de.droidwiki.R.id.disambig_list);
-        ListView issuesList = (ListView) parentView.findViewById(de.droidwiki.R.id.page_issues_list);
-        disambigHeading = (Button) parentView.findViewById(de.droidwiki.R.id.page_info_similar_titles_heading);
-        issuesHeading = (Button) parentView.findViewById(de.droidwiki.R.id.page_info_page_issues_heading);
-        View separatorHeading = parentView.findViewById(de.droidwiki.R.id.page_info_heading_separator);
-        View closeButton = parentView.findViewById(de.droidwiki.R.id.page_info_close);
+        flipper = (ViewFlipper) parentView.findViewById(R.id.page_info_flipper);
+        disambigList = (ListView) parentView.findViewById(R.id.disambig_list);
+        ListView issuesList = (ListView) parentView.findViewById(R.id.page_issues_list);
+        disambigHeading = (Button) parentView.findViewById(R.id.page_info_similar_titles_heading);
+        issuesHeading = (Button) parentView.findViewById(R.id.page_info_page_issues_heading);
+        View separatorHeading = parentView.findViewById(R.id.page_info_heading_separator);
+        View closeButton = parentView.findViewById(R.id.page_info_close);
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override

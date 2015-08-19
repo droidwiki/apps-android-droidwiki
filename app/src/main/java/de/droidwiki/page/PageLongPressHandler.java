@@ -42,8 +42,7 @@ public class PageLongPressHandler implements View.OnCreateContextMenuListener,
             WebView.HitTestResult result = ((WebView) view).getHitTestResult();
             if (result.getType() == WebView.HitTestResult.SRC_ANCHOR_TYPE) {
                 Uri uri = Uri.parse(result.getExtra());
-                final String authority = uri.getAuthority();
-                if ("droidwiki.de".equals(authority)) {
+                if (Utils.isValidPageLink(uri)) {
                     title = ((WebViewContextMenuListener) contextMenuListener).getSite()
                             .titleForInternalLink(uri.getPath());
                 }
@@ -54,7 +53,7 @@ public class PageLongPressHandler implements View.OnCreateContextMenuListener,
                     .getTitleForListPosition(info.position);
         }
 
-        if (title != null) {
+        if (title != null && !title.isSpecial()) {
             Utils.hideSoftKeyboard(view);
             entry = new HistoryEntry(title, historySource);
             new MenuInflater(context).inflate(de.droidwiki.R.menu.menu_page_long_press, menu);

@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -26,6 +27,7 @@ import org.json.JSONObject;
 import de.droidwiki.page.PageActivityLongPressHandler;
 import de.droidwiki.page.PageLongPressHandler;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.SuggestedPagesFunnel;
@@ -39,7 +41,6 @@ import de.droidwiki.page.PageFragment;
 import de.droidwiki.page.SuggestionsTask;
 import de.droidwiki.search.SearchResults;
 import de.droidwiki.views.ObservableWebView;
-import de.droidwiki.views.WikiListView;
 
 import java.util.List;
 
@@ -61,7 +62,7 @@ public class BottomContentHandler implements BottomContentInterface,
     private TextView pageLastUpdatedText;
     private TextView pageExternalLink;
     private View readMoreContainer;
-    private WikiListView readMoreList;
+    private ListView readMoreList;
 
     private SuggestedPagesFunnel funnel;
     private SearchResults readMoreItems;
@@ -81,9 +82,10 @@ public class BottomContentHandler implements BottomContentInterface,
         webview.addOnScrollChangeListener(this);
         webview.addOnContentHeightChangedListener(this);
 
-        pageLastUpdatedText = (TextView)bottomContentContainer.findViewById(de.droidwiki.R.id.page_last_updated_text);
-        readMoreContainer = bottomContentContainer.findViewById(de.droidwiki.R.id.read_more_container);
-        readMoreList = (WikiListView)bottomContentContainer.findViewById(de.droidwiki.R.id.read_more_list);
+        pageLastUpdatedText = (TextView)bottomContentContainer.findViewById(R.id.page_last_updated_text);
+        pageLicenseText = (TextView)bottomContentContainer.findViewById(R.id.page_license_text);
+        readMoreContainer = bottomContentContainer.findViewById(R.id.read_more_container);
+        readMoreList = (ListView)bottomContentContainer.findViewById(R.id.read_more_list);
 
         pageExternalLink = (TextView) bottomContentContainer.findViewById(de.droidwiki.R.id.page_external_link);
         pageExternalLink.setPaintFlags(pageExternalLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);

@@ -13,7 +13,9 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import de.droidwiki.R;
 import de.droidwiki.concurrency.SaneAsyncTask;
+import de.droidwiki.page.PageTitle;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -45,6 +47,10 @@ public final class ShareUtils {
         } else {
             context.startActivity(chooserIntent);
         }
+    }
+
+    public static void shareText(final Context context, final PageTitle title) {
+        shareText(context, title.getDisplayText(), title.getCanonicalUri());
     }
 
     /**

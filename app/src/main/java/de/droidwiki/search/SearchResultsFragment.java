@@ -5,11 +5,11 @@ import de.droidwiki.page.PageActivityLongPressHandler;
 import de.droidwiki.page.PageLongPressHandler;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.ParcelableLruCache;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.views.WikiErrorView;
-import de.droidwiki.views.WikiListView;
 
 import com.squareup.picasso.Picasso;
 import android.os.Bundle;
@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.Collator;
@@ -44,7 +45,7 @@ public class SearchResultsFragment extends Fragment {
     private SearchArticlesFragment searchFragment;
     private View searchResultsDisplay;
     private View searchResultsContainer;
-    private WikiListView searchResultsList;
+    private ListView searchResultsList;
     private WikiErrorView searchErrorView;
     private View searchNoResults;
     private TextView searchSuggestion;
@@ -80,8 +81,8 @@ public class SearchResultsFragment extends Fragment {
         searchResultsDisplay = rootView.findViewById(de.droidwiki.R.id.search_results_display);
         searchFragment = (SearchArticlesFragment) getActivity().getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.search_fragment);
 
-        searchResultsContainer = rootView.findViewById(de.droidwiki.R.id.search_results_container);
-        searchResultsList = (WikiListView) rootView.findViewById(de.droidwiki.R.id.search_results_list);
+        searchResultsContainer = rootView.findViewById(R.id.search_results_container);
+        searchResultsList = (ListView) rootView.findViewById(R.id.search_results_list);
 
         if (savedInstanceState != null) {
             ParcelableLruCache<List<PageTitle>> mySearchResultsCache = savedInstanceState.getParcelable(ARG_RESULTS_CACHE);

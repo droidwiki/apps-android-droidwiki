@@ -5,6 +5,7 @@ import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageActivityLongPressHandler;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.LinkPreviewFunnel;
 import de.droidwiki.page.gallery.GalleryActivity;
@@ -194,14 +195,14 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
-                case de.droidwiki.R.id.menu_save_page:
+                case R.id.menu_link_preview_save_page:
                     overflowMenuHandler.onSavePage(pageTitle);
                     dismiss();
                     return true;
-                case de.droidwiki.R.id.menu_share_page:
+                case R.id.menu_link_preview_share_page:
                     overflowMenuHandler.onShareLink(pageTitle);
                     return true;
-                case de.droidwiki.R.id.menu_copy_url:
+                case R.id.menu_link_preview_copy_link:
                     overflowMenuHandler.onCopyLink(pageTitle);
                     dismiss();
                     return true;
