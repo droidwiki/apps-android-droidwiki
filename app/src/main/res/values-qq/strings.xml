@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name_prod">Name of the application.
-{{Identical|Wikipedia}}</string>
+{{Identical|DroidWiki}}</string>
   <string name="app_name_beta">Name of the beta version of the application.
-{{Identical|Wikipedia Beta}}</string>
+{{Identical|DroidWiki Beta}}</string>
   <string name="app_name_alpha">Name of the alpha version of the application.</string>
   <string name="yes">Affirmative answer to a dialog box.
 {{Identical|Yes}}</string>
@@ -45,11 +45,11 @@ The Share list contains the following menu items (localized):
   <string name="toast_saved_page">Small toast (popup) message saying that a page has been saved for offline reading.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-toast saved page missing images}}</string>
+* {{msg-wm|DroidWiki-android-strings-toast saved page missing images}}</string>
   <string name="toast_saved_page_missing_images">Small toast (popup) message saying that not all images of a saved page could be saved.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-toast saved page}}</string>
+* {{msg-wm|DroidWiki-android-strings-toast saved page}}</string>
   <string name="toast_refresh_saved_page">Small toast (popup) message saying that a saved page is being refreshed</string>
   <string name="delete_selected_saved_pages">Menu item text for deleting the currently selected saved pages
 {{Identical|Delete}}</string>
@@ -120,20 +120,20 @@ See also:
   <string name="login_activity_title">Used as window title.</string>
   <string name="login_in_progress_dialog_message">A bubble that describes the in-progress action.</string>
   <string name="login_error_wrong_password">An error message.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="login_error_wrong_username">Used as error message if the specified user does not exist.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="login_error_illegal">Used as an error message if the user tries to log in using a username which is invalid.
 {{Identical|Invalid username}}</string>
   <string name="login_success_toast">A bubble that appears after logging in.</string>
   <string name="login_error_blocked">Used as alert message.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="login_error_throttled">An error message.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="login_error_unknown">Used as alert message.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="login_error_no_network">Used as alert message.
-{{Related|Wikipedia-android-strings-login error}}</string>
+{{Related|DroidWiki-android-strings-login error}}</string>
   <string name="preference_title_logout">{{Identical|Log out}}</string>
   <string name="preference_summary_logout">Summary of what logging out means.</string>
   <string name="preference_summary_notloggedin">{{Identical|Not logged in}}</string>
@@ -145,17 +145,17 @@ See also:
   <string name="history_empty_message">Brief explanation that there are currently no History entries to look at. Just to fill an empty screen. This usually happens when a user just deleted history entries.</string>
   <string name="delete_selected_history">Menu item text for deleting the currently selected history entries
 {{Identical|Delete}}</string>
-  <string name="wp_stylized">A stylized string saying \"Wikipedia\". Used before wp_tag_line if no image representation exists. Usually the first and last characters are within big tags, if this fits the Wikipedia logo in your language.</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">{{Identical|Username}}</string>
   <string name="create_account_password_hint">{{Identical|Password}}</string>
   <string name="login_create_account_link">Link text on Login screen to go to Create Account screen.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-create account login link}}</string>
+* {{msg-wm|DroidWiki-android-strings-create account login link}}</string>
   <string name="create_account_login_link">Link text on Create Account screen to go to Login screen.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-login create account link}}</string>
+* {{msg-wm|DroidWiki-android-strings-login create account link}}</string>
   <string name="create_account_activity_title">{{Identical|Create account}}</string>
   <string name="dialog_create_account_checking_progress">Message shown to the user while a request is sent to the server to create an account and the app is awaiting the server response</string>
   <string name="create_account_email_hint">Label shown inside the email text box in the account creation form, to inform the user what they have to enter into that box.</string>
@@ -171,11 +171,11 @@ See also:
   <string name="create_account_blocked_anon_error">Used as an error message during account creation when the account creation failed because their IP address is blocked.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-create account blocked error}}</string>
+* {{msg-wm|DroidWiki-android-strings-create account blocked error}}</string>
   <string name="create_account_blocked_error">Used as an error message during account creation when the the account creation failed because their account is blocked.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-create account blocked anon error}}</string>
+* {{msg-wm|DroidWiki-android-strings-create account blocked anon error}}</string>
   <string name="create_account_password_name_match_error">Used as an error message during account creation when the the account creation failed because the username and password provided are the same.</string>
   <string name="create_account_generic_error">Used as a generic error message during account creation when a more specific error message cannot be given to the user.</string>
   <string name="create_account_no_network">Message shown when the network is unavailable during account creation</string>
@@ -185,24 +185,24 @@ See also:
 {{Identical|Create account}}</string>
   <string name="preferences_general_heading">Preferences general heading.
 {{Identical|General}}</string>
-  <string name="wikipedia_app_faq">Label for a preferences menu link to the FAQ (frequently asked questions) wiki page for the Wikipedia apps for Android and iOS.</string>
-  <string name="zero_charged_verbiage">Text for toast connoting that Wikipedia Zero status went to OFF</string>
-  <string name="zero_charged_verbiage_extended">Extended text describing that further usage of the app may in fact incur data charges because Wikipedia Zero is off.</string>
-  <string name="zero_search_hint">Searchbar hint incorporting notion that user is searching via Wikipedia Zero so it is free</string>
-  <string name="zero_warn_when_leaving">Settings label for option for warning a Wikipedia Zero user if tapping on an external link</string>
-  <string name="zero_warn_when_leaving_summary">Lengthy explanation of Wikipedia Zero for settings screen</string>
-  <string name="zero_webpage_title">Link title for the Wikipedia Zero FAQ for the app</string>
-  <string name="zero_wikipedia_zero_heading">Settings heading for Wikipedia Zero.
-{{Identical|Wikipedia Zero}}</string>
-  <string name="zero_interstitial_title">Dialog title text to inform Wikipedia Zero user that the user is about to leave the app for an external link</string>
-  <string name="zero_interstitial_leave_app">Dialog text to ask Wikipedia Zero user whether the user wants to continue to an external site where standard data charges may apply</string>
-  <string name="zero_interstitial_continue">Dialog button text for Wikipedia Zero user to leave the app for an external site where standard data charges may apply.</string>
-  <string name="zero_interstitial_cancel">Dialog button text for Wikipedia Zero to stay in the app and thereby avoid leaving the app for an external site where standard data charges may apply.
+  <string name="wikipedia_app_faq">Label for a preferences menu link to the FAQ (frequently asked questions) wiki page for the DroidWiki apps for Android and iOS.</string>
+  <string name="zero_charged_verbiage">Text for toast connoting that DroidWiki Zero status went to OFF</string>
+  <string name="zero_charged_verbiage_extended">Extended text describing that further usage of the app may in fact incur data charges because DroidWiki Zero is off.</string>
+  <string name="zero_search_hint">Searchbar hint incorporting notion that user is searching via DroidWiki Zero so it is free</string>
+  <string name="zero_warn_when_leaving">Settings label for option for warning a DroidWiki Zero user if tapping on an external link</string>
+  <string name="zero_warn_when_leaving_summary">Lengthy explanation of DroidWiki Zero for settings screen</string>
+  <string name="zero_webpage_title">Link title for the DroidWiki Zero FAQ for the app</string>
+  <string name="zero_wikipedia_zero_heading">Settings heading for DroidWiki Zero.
+{{Identical|DroidWiki Zero}}</string>
+  <string name="zero_interstitial_title">Dialog title text to inform DroidWiki Zero user that the user is about to leave the app for an external link</string>
+  <string name="zero_interstitial_leave_app">Dialog text to ask DroidWiki Zero user whether the user wants to continue to an external site where standard data charges may apply</string>
+  <string name="zero_interstitial_continue">Dialog button text for DroidWiki Zero user to leave the app for an external site where standard data charges may apply.</string>
+  <string name="zero_interstitial_cancel">Dialog button text for DroidWiki Zero to stay in the app and thereby avoid leaving the app for an external site where standard data charges may apply.
 {{Identical|Stay here}}</string>
-  <string name="zero_learn_more">Message of a dialog shown the first time Wikipedia Zero mode is On.</string>
-  <string name="zero_learn_more_learn_more">Dialog button text for Wikipedia Zero user to learn more about Wikipedia Zero at the Wikipedia Zero FAQ for the app.
+  <string name="zero_learn_more">Message of a dialog shown the first time DroidWiki Zero mode is On.</string>
+  <string name="zero_learn_more_learn_more">Dialog button text for DroidWiki Zero user to learn more about DroidWiki Zero at the DroidWiki Zero FAQ for the app.
 {{Identical|Read more}}</string>
-  <string name="zero_learn_more_dismiss">Dialog button text for Wikipedia Zero user to dismiss the prompt about visiting the Wikipedia Zero FAQ for the app
+  <string name="zero_learn_more_dismiss">Dialog button text for DroidWiki Zero user to dismiss the prompt about visiting the DroidWiki Zero FAQ for the app
 {{Identical|Dismiss}}</string>
   <string name="edit_preview_fetching_dialog_message">Message shown to the user while the user is waiting for the preview of their edit to be shown</string>
   <string name="send_feedback">Text to show for link used for sending feedback about the app.</string>
@@ -228,14 +228,14 @@ Shown in left navigation. Tapping it produces a random page.</string>
   <string name="page_protected_can_not_edit_title">Title of dialog box telling the user that they can not edit this page because it is protected.</string>
   <string name="more_item_preferences">Used as menu item in the nav menu to go to the Settings screen.
 
-The title for the Settings screen is {{msg-wm|Wikipedia-android-strings-more activity title}}.
+The title for the Settings screen is {{msg-wm|DroidWiki-android-strings-more activity title}}.
 
-See screenshot [[commons:File:Wikipedia Android app menu open.png]]
+See screenshot [[commons:File:DroidWiki Android app menu open.png]]
 {{Identical|More}}</string>
   <string name="more_activity_title">Title at the top of the More (Settings) screen.
 
 See also:
-* {{msg-wm|Wikipedia-android-strings-more item preferences}} - menu item to come to this screen
+* {{msg-wm|DroidWiki-android-strings-more item preferences}} - menu item to come to this screen
 {{Identical|More}}</string>
   <string name="about_description">Summary of the preference item to show the About screen.</string>
   <string name="privacy_policy_description">Summary of the preference item to show the terms of use.
@@ -311,19 +311,19 @@ Please test the URL to make sure it works</string>
   <string name="table_close">{{Identical|Close}}</string>
   <string name="widget_name_featured_page">Name of the Widget (as seen in the Android widget picker) that displays today\'s featured page.</string>
   <string name="widget_title_featured_page">Text shown inside the widget that tells the user that the link below is today\'s featured page.</string>
-  <string name="widget_name_search">Name of the Widget (as seen in the Android widget picker) for searching Wikipedia
+  <string name="widget_name_search">Name of the Widget (as seen in the Android widget picker) for searching DroidWiki
 
-Followed by {{msg-wm|Wikipedia-android-strings-alpha update notification text}}.</string>
+Followed by {{msg-wm|DroidWiki-android-strings-alpha update notification text}}.</string>
   <string name="app_store_description">Description of the app as put up on the Google Play Store</string>
   <string name="alpha_update_notification_title">Title for notification when new alpha update is available.
   
   
   
 
-Followed by {{msg-wm|Wikipedia-android-strings-alpha update notification text}}.</string>
+Followed by {{msg-wm|DroidWiki-android-strings-alpha update notification text}}.</string>
   <string name="alpha_update_notification_text">Text for notification when new alpha update is available.
 
-Preceded by {{msg-wm|Wikipedia-android-strings-alpha update notification title}}.</string>
+Preceded by {{msg-wm|DroidWiki-android-strings-alpha update notification title}}.</string>
   <string name="dialog_close_description">Button description for the close image button. The text is mainly for screen readers.
 {{Identical|Close}}</string>
   <string name="preference_title_show_images">Preference title for selecting whether images are loaded in pages
@@ -344,7 +344,7 @@ Preceded by {{msg-wm|Wikipedia-android-strings-alpha update notification title}}
   <string name="gallery_save_success">Toast message shown when the current image was saved successfully to the local device.</string>
   <string name="gallery_error_video_failed">Error message displayed when a video fails to be played on the device.</string>
   <string name="err_cannot_save_file">Error message when we detect that a file cannot be written to storage.</string>
-  <string name="snippet_share_intro">Intro text included as part of the shared text snippet, aka Tweet-a-fact. Please do not translate the \"@Wikipedia\" in the message and preserve the spaces around it, as it refers specifically to Wikipedia\'s Twitter account. This message has two parameters. Please keep the parameters exactly as in the original English message.
+  <string name="snippet_share_intro">Intro text included as part of the shared text snippet, aka Tweet-a-fact. Please do not translate the \"@DroidWiki\" in the message and preserve the spaces around it, as it refers specifically to DroidWiki\'s Twitter account. This message has two parameters. Please keep the parameters exactly as in the original English message.
 * %1$s is the title of the page the text snippet is from.
 * %2$s is an HTML link to the page.</string>
   <string name="expand_refs">Title for a button that, when clicked, will expand the list of references or notes at the bottom of a page.</string>

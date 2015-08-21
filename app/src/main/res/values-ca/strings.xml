@@ -105,7 +105,7 @@
   <string name="history_empty_title">Aquí no hi ha pàgines recents!</string>
   <string name="history_empty_message">Probablement les heu eliminades totes. La propera vegada que aneu a una pàgina podeu tornar-hi des d\'aquí.</string>
   <string name="delete_selected_history">Esborrar</string>
-  <string name="wp_stylized">&lt;big&gt;V&lt;/big&gt;IQUIPÈDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nom d\'usuari</string>
   <string name="create_account_password_hint">Contrasenya</string>
   <string name="login_create_account_link">No teniu un compte? Uniu-vos a la Viquipèdia</string>
@@ -138,7 +138,7 @@
   <string name="zero_warn_when_leaving_summary">Si el vostre operador de telefonia mòbil ha renunciat a cobrar per l\'accés de dades des de l\'aplicació de la Viquipèdia gràcies a un acord amb Viquipèdia Zero, en deixar aquest paràmetre habilitat se us avisarà quan sortiu de l\'aplicació de la Viquipèdia, moment en què us poden tornar a cobrar.</string>
   <string name="zero_webpage_title">Preguntes i respostes sobre Viquipèdia Zero</string>
   <string name="zero_wikipedia_zero_heading">Viquipèdia Zero</string>
-  <string name="zero_interstitial_title">Sortint de Wikipedia Zero</string>
+  <string name="zero_interstitial_title">Sortint de DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Us poden cobrar per l\'ús de dades. Segur que voleu anar al lloc extern?</string>
   <string name="zero_interstitial_continue">Surt</string>
   <string name="zero_interstitial_cancel">Roman aquí</string>
@@ -255,7 +255,7 @@ Condicions d\'ús: http://wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">La imatge s\'ha desat correctament.</string>
   <string name="gallery_error_video_failed">No s\'ha pogut reproduir el vídeo.</string>
   <string name="err_cannot_save_file">No es pot desar el fitxer</string>
-  <string name="snippet_share_intro">«%1$s» a @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">«%1$s» a @DroidWiki: %2$s</string>
   <string name="expand_refs">Toqueu per ampliar</string>
   <string name="share_snippet_button">Compartir com a imatge</string>
   <string name="share_normal_button">Comparteix com a text</string>

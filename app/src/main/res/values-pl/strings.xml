@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia wersja beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki wersja beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
   <string name="yes">Tak</string>
   <string name="no">Nie</string>
-  <string name="acra_report_dialog_title">Wikipedia padła :(</string>
+  <string name="acra_report_dialog_title">DroidWiki padła :(</string>
   <string name="acra_report_dialog_text">Prześlij nam raport błędu</string>
   <string name="acra_report_dialog_comment">Co robiłeś, gdy zdarzyła się awaria?</string>
   <string name="search_hint">Szukaj w Wikipedii</string>
@@ -105,7 +105,7 @@
   <string name="history_empty_title">Brak ostatnich zmian stron.</string>
   <string name="history_empty_message">Prawdopodobnie usunąłeś je wszystkie. Następnym razem gdy wejdziesz na stronę możesz się tam dostać z tąd.</string>
   <string name="delete_selected_history">Usuń</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nazwa użytkownika</string>
   <string name="create_account_password_hint">Hasło</string>
   <string name="login_create_account_link">Nie masz jeszcze konta? Dołącz do Wikipedii</string>
@@ -131,13 +131,13 @@
   <string name="create_account_button">Utwórz konto</string>
   <string name="preferences_general_heading">Ogólne</string>
   <string name="wikipedia_app_faq">FAQ dotyczące aplikacji Wikipedii</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero jest wyłączona</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero jest wyłączona</string>
   <string name="zero_charged_verbiage_extended">Ładując pozostałe artykuły możesz narazić się na poniesienie opłat za transfer danych.</string>
   <string name="zero_search_hint">Szukaj w Wikipedii Zero</string>
   <string name="zero_warn_when_leaving">Ostrzegaj przed opuszczeniem Wikipedii Zero</string>
-  <string name="zero_warn_when_leaving_summary">Jeśli twój operator telefonii komórkowej nie pobiera opłat za transfer danych, gdy korzystasz z Wikipedii poprzez tę aplikację (w ramach partnerstwa Wikipedia Zero), ta opcja sprawi, że aplikacja pomoże ci się zorientować, kiedy opuszczasz Wikipedię i mogą zacząć obowiązywać opłaty za transfer danych.</string>
-  <string name="zero_webpage_title">Wikipedia Zero FAQ</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving_summary">Jeśli twój operator telefonii komórkowej nie pobiera opłat za transfer danych, gdy korzystasz z Wikipedii poprzez tę aplikację (w ramach partnerstwa DroidWiki Zero), ta opcja sprawi, że aplikacja pomoże ci się zorientować, kiedy opuszczasz Wikipedię i mogą zacząć obowiązywać opłaty za transfer danych.</string>
+  <string name="zero_webpage_title">DroidWiki Zero FAQ</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">Opuszczasz Wikipedię Zero</string>
   <string name="zero_interstitial_leave_app">Przejście do witryny zewnętrznej może się wiązać z opłatami za transmisję danych. Kontynuować?</string>
   <string name="zero_interstitial_continue">Wyjdź</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Ta strona jest zabezpieczona</string>
   <string name="more_item_preferences">Więcej</string>
   <string name="more_activity_title">Więcej</string>
-  <string name="about_description">O aplikacji Wikipedia</string>
+  <string name="about_description">O aplikacji DroidWiki</string>
   <string name="privacy_policy_description">Polityka prywatności</string>
   <string name="terms_of_use_description">Warunki użytkowania</string>
   <string name="privacy_policy_url">https://meta.wikimedia.org/wiki/Privacy_policy/pl</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">To chyba nie jest konstruktywna edycja. Czy na pewno chcesz ją zapisać?</string>
   <string name="abusefilter_title_disallow">Nie możesz zapisać tej edycji. Wróć do niej i popraw ją.</string>
   <string name="abusefilter_text_warn">Automatyczny filtr uważa tę edycję za potencjalnie niekonstruktywną. Może zawierać jeden lub więcej z następujących błedów:&lt;br /&gt;&lt;br /&gt;· Tekst wyłącznie dużymi literami&lt;br /&gt;· Kasowanie zawartości artykułu lub spam&lt;br /&gt;· Niezwiązane z artykułem linki zewnetrzne lub zdjęcia&lt;br /&gt;· Powtarzające się znaki</string>
-  <string name="abusefilter_text_disallow">Automatyczny filtr uważa tę edycję za potencjalnie niekonstruktywną lub wandalizm.&lt;br /&gt;&lt;br /&gt;Wikipedia to encyklopedia i mogą w niej się znaleźć wyłącznie neutralne encyklopedyczne treści.</string>
+  <string name="abusefilter_text_disallow">Automatyczny filtr uważa tę edycję za potencjalnie niekonstruktywną lub wandalizm.&lt;br /&gt;&lt;br /&gt;DroidWiki to encyklopedia i mogą w niej się znaleźć wyłącznie neutralne encyklopedyczne treści.</string>
   <string name="dialog_page_issues">Problemy ze stroną</string>
   <string name="button_page_issues">Problemy ze stroną</string>
   <string name="menu_themechooser">Zmień czcionkę i skórkę</string>
@@ -239,7 +239,7 @@
   <string name="gallery_save_success">Obraz pomyślnie zapisany.</string>
   <string name="gallery_error_video_failed">Nie można odtworzyć filmu wideo.</string>
   <string name="err_cannot_save_file">Nie można zapisać pliku</string>
-  <string name="snippet_share_intro">\"%1$s\" na @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" na @DroidWiki: %2$s</string>
   <string name="expand_refs">Kliknij, aby rozwinąć</string>
   <string name="share_snippet_button">Udostępnij jako obraz</string>
   <string name="share_normal_button">Udostępnij jako tekst</string>

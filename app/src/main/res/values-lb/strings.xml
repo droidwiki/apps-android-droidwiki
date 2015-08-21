@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Jo</string>
   <string name="no">Neen</string>
-  <string name="acra_report_dialog_title">Wikipedia ass ofgestierzt :(</string>
+  <string name="acra_report_dialog_title">DroidWiki ass ofgestierzt :(</string>
   <string name="acra_report_dialog_text">Schéckt eis e Rapport iwwer de Crash</string>
   <string name="acra_report_dialog_comment">Wat hutt Dir gemaach wéi de Crash geschitt ass?</string>
-  <string name="search_hint">Op Wikipedia sichen</string>
+  <string name="search_hint">Op DroidWiki sichen</string>
   <string name="nav_item_history">Versiounen</string>
   <string name="error_network_error">DVerbindung mam Reseau konnt net opgebaut ginn.</string>
   <string name="search_network_error">Feeler vum Reseau. Tippt fir nach eng Kéier ze probéieren.</string>
@@ -52,7 +52,7 @@
   <string name="last_updated_text">Lescht Aktualisatioun %1$s</string>
   <string name="content_license_html">Den Inhalt ass ënner &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; wann et net anescht uginn ass</string>
   <string name="edit_save_action_license_logged_in">Mam Späichere sidd Dir mat den &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Notzungsbedingungen&lt;/a&gt; d\'accord an iwwerloosst Är Kontributioun onwiderruflech ënner der &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.de\"&gt;CC-BY-SA-3.0-Lizenz&lt;/a&gt;.</string>
-  <string name="preference_title_language">Wikipedia-Sprooch</string>
+  <string name="preference_title_language">DroidWiki-Sprooch</string>
   <string name="preference_languages_filter_hint">Sichen</string>
   <string name="preference_system_language_toggle">Benotzt d\'Systemsprooch</string>
   <string name="preference_system_language_summary">Systemsprooch</string>
@@ -84,7 +84,7 @@
   <string name="login_password_hint">Passwuert</string>
   <string name="login_password_show_check">Passwuert weisen</string>
   <string name="menu_login">Aloggen</string>
-  <string name="login_activity_title">Op Wikipedia aloggen</string>
+  <string name="login_activity_title">Op DroidWiki aloggen</string>
   <string name="login_in_progress_dialog_message">Dir gitt ageloggt…</string>
   <string name="login_error_wrong_password">Falscht Passwuert</string>
   <string name="login_error_wrong_username">Falsche Benotzernumm</string>
@@ -95,7 +95,7 @@
   <string name="login_error_unknown">Aloggen huet net funktionéiert :(</string>
   <string name="login_error_no_network">Keng Verbindung mam Reseau</string>
   <string name="preference_title_logout">Ausloggen</string>
-  <string name="preference_summary_logout">Aus Ärem Wikipedia-Benotzerkont ausloggen</string>
+  <string name="preference_summary_logout">Aus Ärem DroidWiki-Benotzerkont ausloggen</string>
   <string name="preference_summary_notloggedin">Net ageloggt.</string>
   <string name="toast_logout_complete">Ausgeloggt</string>
   <string name="saved_pages_empty_title">Keng gespäichert Säiten hei.</string>
@@ -103,10 +103,10 @@
   <string name="history_empty_title">Keng rezent Säiten hei.</string>
   <string name="history_empty_message">Dir hutt se wahrscheinlech all geläscht. Wann Dir déi nächste Kéier op eng Säit gitt da kënnt Dir vun hei aus op déi Säit zréckgoen.</string>
   <string name="delete_selected_history">Läschen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Benotzernumm</string>
   <string name="create_account_password_hint">Passwuert</string>
-  <string name="login_create_account_link">Hutt Dir kee Benotzerkont? Da maacht mat bei Wikipedia</string>
+  <string name="login_create_account_link">Hutt Dir kee Benotzerkont? Da maacht mat bei DroidWiki</string>
   <string name="create_account_login_link">Hutt Dir schonn e Benotzerkont? Loggt Iech an</string>
   <string name="create_account_activity_title">E Benotzerkont opmaachen</string>
   <string name="dialog_create_account_checking_progress">Nokucken</string>
@@ -128,18 +128,18 @@
   <string name="create_account_next">Weider</string>
   <string name="create_account_button">Benotzerkont uleeën</string>
   <string name="preferences_general_heading">Allgemeng</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero ass aus</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero ass aus</string>
   <string name="zero_charged_verbiage_extended">D\'Luede vun aneren Artikelen kann zu Fraisen fir d\'Iwwermëttlung vun Date féieren.</string>
-  <string name="zero_search_hint">Op Wikipedia Zero sichen</string>
-  <string name="zero_warn_when_leaving">Beim Verloosse vu Wikipedia Zero warnen</string>
-  <string name="zero_webpage_title">Wikipedia Zero FAQ</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Wikipedia Zero verloossen</string>
+  <string name="zero_search_hint">Op DroidWiki Zero sichen</string>
+  <string name="zero_warn_when_leaving">Beim Verloosse vu DroidWiki Zero warnen</string>
+  <string name="zero_webpage_title">DroidWiki Zero FAQ</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">DroidWiki Zero verloossen</string>
   <string name="zero_interstitial_leave_app">Déi normal Käschte fir Datentransfer sinn eventuell applicabel. Virufueren op den externen Internetsite?</string>
   <string name="zero_interstitial_continue">Fortgoen</string>
   <string name="zero_interstitial_cancel">Hei bleiwen</string>
-  <string name="zero_learn_more">D\'Taxe fir d\'Iwwerdroe vun Donnéeë gi fir dës Wikipedia App net verrechent.</string>
+  <string name="zero_learn_more">D\'Taxe fir d\'Iwwerdroe vun Donnéeë gi fir dës DroidWiki App net verrechent.</string>
   <string name="zero_learn_more_learn_more">Liest méi</string>
   <string name="zero_learn_more_dismiss">Verwerfen</string>
   <string name="edit_preview_fetching_dialog_message">Kucken ouni ze späicheren…</string>
@@ -161,7 +161,7 @@
   <string name="page_protected_can_not_edit_title">Dës Säit ass gespaart</string>
   <string name="more_item_preferences">Méi</string>
   <string name="more_activity_title">Méi</string>
-  <string name="about_description">Iwwer d\'Wikipedia App</string>
+  <string name="about_description">Iwwer d\'DroidWiki App</string>
   <string name="privacy_policy_description">Dateschutz</string>
   <string name="terms_of_use_description">Benotzungs-Bedingungen</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
@@ -198,7 +198,7 @@
   <string name="abusefilter_title_warn">Dëst gesäit no enger wéineg konstruktiver Ännerung aus. Sidd Dir sécher datt Dir se späichere wëllt?</string>
   <string name="abusefilter_title_disallow">Dir däerft dës Ännerung net späicheren. Gitt w.e.g. zréck an ännert se.</string>
   <string name="abusefilter_text_warn">En automatesche Filter huet dës Ännerung als méiglecherweis net konstruktiv identifizéiert. Et ka sinn dat eent oder méi vun dësen Elementer dra virkommen:&lt;br /&gt;&lt;br /&gt;· Alles ass a grousse Buschtawe geschriwwen&lt;br /&gt; Artikelen eidelmaachen oder Spam drasetzen &lt;br /&gt; Irrelevant extern Linken oder Biller&lt;br /&gt; Zeeche widderhuelen</string>
-  <string name="abusefilter_text_disallow">En automatesche Filter huet dës Ännerung als potenziell net konstruktiv oder als potenzielle Vandalismus identifizéiert.&lt;br /&gt;&lt;br /&gt;Wikipedia ass eng Enzyklopedie a just neutralen, relevanten Inhalt gehéiert heihin.</string>
+  <string name="abusefilter_text_disallow">En automatesche Filter huet dës Ännerung als potenziell net konstruktiv oder als potenzielle Vandalismus identifizéiert.&lt;br /&gt;&lt;br /&gt;DroidWiki ass eng Enzyklopedie a just neutralen, relevanten Inhalt gehéiert heihin.</string>
   <string name="dialog_page_issues">Problemer mat der Säit</string>
   <string name="button_page_issues">Problemer mat der Säit</string>
   <string name="text_size_select">Schrëftgréisst</string>
@@ -213,9 +213,9 @@
   <string name="table_infobox">Séier Fakten</string>
   <string name="table_other">Méi Informatiounen</string>
   <string name="table_close">Zoumaachen</string>
-  <string name="widget_name_featured_page">Liesenswäert Säit op Wikipedia</string>
+  <string name="widget_name_featured_page">Liesenswäert Säit op DroidWiki</string>
   <string name="widget_title_featured_page">Säit vum Dag:</string>
-  <string name="widget_name_search">Op Wikipedia sichen</string>
+  <string name="widget_name_search">Op DroidWiki sichen</string>
   <string name="alpha_update_notification_title">Nei alpha-Versioun disponibel</string>
   <string name="alpha_update_notification_text">Tippe fir erofzelueden</string>
   <string name="dialog_close_description">Zoumaachen</string>
@@ -234,7 +234,7 @@
   <string name="gallery_save_success">Bild gespäichert.</string>
   <string name="gallery_error_video_failed">De Video konnt net gespillt ginn.</string>
   <string name="err_cannot_save_file">Fichier kann net gespäichert ginn</string>
-  <string name="snippet_share_intro">\"%1$s\" op @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" op @DroidWiki: %2$s</string>
   <string name="share_snippet_button">Als Bild deelen</string>
   <string name="share_normal_button">Als Text deelen</string>
   <string name="snippet_share_preview_image_desc">Bild kucken ouni ze späicheren</string>

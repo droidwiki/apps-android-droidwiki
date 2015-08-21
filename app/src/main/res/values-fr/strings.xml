@@ -105,7 +105,7 @@
   <string name="history_empty_title">Aucune page récente ici.</string>
   <string name="history_empty_message">Vous les avez probablement toutes détruites. La prochaine fois que vous irez sur une page, vous pourrez y revenir en démarrant d’ici.</string>
   <string name="delete_selected_history">Supprimer</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nom d’utilisateur</string>
   <string name="create_account_password_hint">Mot de passe</string>
   <string name="login_create_account_link">Vous n’avez pas de compte ? Rejoignez Wikipédia</string>
@@ -130,7 +130,7 @@
   <string name="create_account_next">Suivant</string>
   <string name="create_account_button">Créer un compte</string>
   <string name="preferences_general_heading">Général</string>
-  <string name="wikipedia_app_faq">FAQ des applis Wikipedia</string>
+  <string name="wikipedia_app_faq">FAQ des applis DroidWiki</string>
   <string name="zero_charged_verbiage">Wikipédia Zéro est désactivé</string>
   <string name="zero_charged_verbiage_extended">Charger d’autres articles peut entraîner des frais de données.</string>
   <string name="zero_search_hint">Rechercher dans Wikipédia Zéro</string>
@@ -259,7 +259,7 @@ Conditions d’utilisation : https://m.wikimediafoundation.org/wiki/Terms_of_Use
   <string name="gallery_save_success">Image bien enregistrée.</string>
   <string name="gallery_error_video_failed">Impossible de jouer la vidéo.</string>
   <string name="err_cannot_save_file">Impossible d’enregistrer le fichier</string>
-  <string name="snippet_share_intro">Fait intéressant sur @Wikipedia %1$s : %2$s</string>
+  <string name="snippet_share_intro">Fait intéressant sur @DroidWiki %1$s : %2$s</string>
   <string name="expand_refs">Taper pour développer</string>
   <string name="share_snippet_button">Partager comme image</string>
   <string name="share_normal_button">Partager comme texte</string>

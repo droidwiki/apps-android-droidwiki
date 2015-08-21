@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia ya Beta</string>
-  <string name="app_name_alpha">Wikipedia ya Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki ya Beta</string>
+  <string name="app_name_alpha">DroidWiki ya Alpha</string>
   <string name="yes">Ndiyo</string>
   <string name="no">Hapana</string>
-  <string name="acra_report_dialog_title">Wikipedia imeanguka :(</string>
-  <string name="search_hint">Tafuta Wikipedia</string>
+  <string name="acra_report_dialog_title">DroidWiki imeanguka :(</string>
+  <string name="search_hint">Tafuta DroidWiki</string>
   <string name="nav_item_history">Historia</string>
   <string name="error_network_error" fuzzy="true">Hakuna muunganisho kwa mtandao :(</string>
   <string name="search_network_error">Hitilafu ya mtandao. Guza kujaribu tena.</string>
@@ -45,7 +45,7 @@
   <string name="nearby_view_on_map">Tazama mahali katika ramani</string>
   <string name="last_updated_text">Ilisasishwa mwisho %s</string>
   <string name="content_license_html">Inapatikana katika &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;  isipokuwa pale imetajwa</string>
-  <string name="preference_title_language">Lugha ya Wikipedia</string>
+  <string name="preference_title_language">Lugha ya DroidWiki</string>
   <string name="preference_languages_filter_hint">Tafuta</string>
   <string name="langlinks_filter_hint">Tafuta</string>
   <string name="menu_other_languages">Soma katika lugha zingine</string>
@@ -69,7 +69,7 @@
   <string name="login_password_hint">Neno la siri</string>
   <string name="login_password_show_check">Onyesha neno la siri</string>
   <string name="menu_login">Ingia</string>
-  <string name="login_activity_title">Ingia katika Wikipedia</string>
+  <string name="login_activity_title">Ingia katika DroidWiki</string>
   <string name="login_in_progress_dialog_message">Inakuingiza...</string>
   <string name="login_error_wrong_password">Neno la siri batili</string>
   <string name="login_error_wrong_username">Jina la mtumiaji batili</string>
@@ -78,13 +78,13 @@
   <string name="login_error_blocked">Mtumiaji amefungiwa</string>
   <string name="login_error_no_network">Hakuna muunganisho katika mtandao</string>
   <string name="preference_title_logout">Toka</string>
-  <string name="preference_summary_logout">Toka kutoka akaunti yako ya Wikipedia</string>
+  <string name="preference_summary_logout">Toka kutoka akaunti yako ya DroidWiki</string>
   <string name="saved_pages_empty_title">Hakuna kurasa zilizohifadhiwa hapa!</string>
   <string name="delete_selected_history">Futa</string>
-  <string name="wp_stylized">big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Jina la mtumiaji</string>
   <string name="create_account_password_hint">Neno la siri</string>
-  <string name="login_create_account_link">Uko na akaunti? Jiunge na Wikipedia</string>
+  <string name="login_create_account_link">Uko na akaunti? Jiunge na DroidWiki</string>
   <string name="create_account_login_link">Uko na akaunti tayari? Ingia</string>
   <string name="create_account_activity_title">Unda akaunti</string>
   <string name="dialog_create_account_checking_progress">Inadhibitisha</string>
@@ -98,11 +98,11 @@
   <string name="create_account_next">Inayofuata</string>
   <string name="create_account_button">Unda akaunti</string>
   <string name="preferences_general_heading">Kijumla</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero imezimwa</string>
-  <string name="zero_search_hint">Tafuta Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Toa ilana kama natoka Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Unatoka Wikipedia Zero</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero imezimwa</string>
+  <string name="zero_search_hint">Tafuta DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Toa ilana kama natoka DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Unatoka DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Toka</string>
   <string name="zero_interstitial_cancel">Kaa Hapa</string>
   <string name="zero_learn_more_learn_more">Soma zaidi</string>
@@ -157,7 +157,7 @@
   <string name="gallery_share_error">Haingeshiriki picha: %s</string>
   <string name="gallery_menu_save">Hifadhi kwa kifaa</string>
   <string name="err_cannot_save_file">Haiwezi kuhifadhi faili</string>
-  <string name="snippet_share_intro">\"%1$s\" katika @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" katika @DroidWiki: %2$s</string>
   <string name="share_snippet_button">Shiriki kama picha</string>
   <string name="share_normal_button">Shiriki kama maandiko</string>
   <string name="snippet_share_preview_image_desc">Tazama hakikisho la picha</string>

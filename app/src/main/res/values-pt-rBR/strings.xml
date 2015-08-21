@@ -105,7 +105,7 @@
   <string name="history_empty_title">Não existem páginas recentes aqui.</string>
   <string name="history_empty_message">Seu histórico está vazio. Na próxima vez que você buscar uma página, você pode acessar a mesma por aqui.</string>
   <string name="delete_selected_history">Apagar</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nome de Usuário</string>
   <string name="create_account_password_hint">Senha</string>
   <string name="login_create_account_link">Ainda não tem uma conta? Cria sua conta Wikipédia</string>
@@ -137,7 +137,7 @@
   <string name="zero_warn_when_leaving">Avise-me se eu deixar a Wikipédia Zero</string>
   <string name="zero_warn_when_leaving_summary">Se a sua operadora isenta o aplicativo da Wikipédia de cobrança de dados, devido ao programa Wikipédia Zero, deixando esta opção selecionada você sera informado quando sair desse aplicativo e se haverá cobrança de dados.</string>
   <string name="zero_webpage_title">Wikipédia Zero Perguntas Frequentes</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">Deixando a Wikipédia Zero</string>
   <string name="zero_interstitial_leave_app">Cobrança de dados podem ser aplicadas. Deseja continuar para um site externo?</string>
   <string name="zero_interstitial_continue">Sair</string>
@@ -259,7 +259,7 @@ Termos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">Imagem salva com sucesso.</string>
   <string name="gallery_error_video_failed">Não se pôde reproduzir o vídeo.</string>
   <string name="err_cannot_save_file">Não é possível salvar o arquivo</string>
-  <string name="snippet_share_intro">\"%1$s\" em @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" em @DroidWiki: %2$s</string>
   <string name="expand_refs">Toque para expandir</string>
   <string name="share_snippet_button">Compartilhar como imagem</string>
   <string name="share_normal_button">Compartilhar como texto</string>

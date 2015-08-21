@@ -91,7 +91,7 @@
   <string name="saved_pages_empty_title">קיין אויפגעהיטענע בלעטער נישט דא!</string>
   <string name="history_empty_title">קיין לעצטיקע בלעטער נישט דא.</string>
   <string name="delete_selected_history">אויסמעקן</string>
-  <string name="wp_stylized">&lt;big&gt;וו&lt;/big&gt;יקיפעדי&lt;big&gt;ע&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">באַניצער נאָמען</string>
   <string name="create_account_password_hint">פאַסווארט</string>
   <string name="login_create_account_link">איר האט נישט קיין קאנטע?טרעט ארײַן מיט וויקיפעדיע</string>
@@ -188,7 +188,7 @@
   <string name="gallery_save_success">בילד דערפאלגרייך געשפייכלערט.</string>
   <string name="gallery_error_video_failed">קען נישט שפילן ווידעא.</string>
   <string name="err_cannot_save_file">קען נישט אויפהיטן טעקע</string>
-  <string name="snippet_share_intro">\"%1$s\" ביי @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" ביי @DroidWiki: %2$s</string>
   <string name="expand_refs">דריקט צו פארברייטערן</string>
   <string name="share_snippet_button">טיילן אלס בילד</string>
   <string name="share_normal_button">טיילן אלס טעקסט</string>

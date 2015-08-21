@@ -105,7 +105,7 @@
   <string name="history_empty_title">Neniuj lastaj paĝoj ĉi tie!</string>
   <string name="history_empty_message">Tre eble vi forigis ĉiujn. Venontfoje kiam vi vizitu paĝon, vi povas rehavigi ĝin el ĉi tie.</string>
   <string name="delete_selected_history">Forigi</string>
-  <string name="wp_stylized">&lt;big&gt;V&lt;/big&gt;IKIPEDI&lt;big&gt;O&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Uzantnomo</string>
   <string name="create_account_password_hint">Pasvorto</string>
   <string name="login_create_account_link">Ĉu vi ne havas konton? Aliĝu al Vikipedio</string>
@@ -253,7 +253,7 @@ Uzkondiĉoj: http://wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">Bildo sukcese konservita</string>
   <string name="gallery_error_video_failed">Ne eblis ludi la videon</string>
   <string name="err_cannot_save_file">Ne eblis konservi la dosieron</string>
-  <string name="snippet_share_intro">\"%1$s\" ĉe @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" ĉe @DroidWiki: %2$s</string>
   <string name="expand_refs">klaku por pligrandigi</string>
   <string name="share_snippet_button">Kundividi kiel bildo</string>
   <string name="share_normal_button">Kundividi kiel teksto</string>

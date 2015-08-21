@@ -105,7 +105,7 @@
   <string name="history_empty_title">Немає нещодавніх сторінок.</string>
   <string name="history_empty_message">Вірогідно, Ви їх усі видалили. Наступного разу, коли відвідаєте сторінку, Ви зможете повернутися до неї звідси.</string>
   <string name="delete_selected_history">Видалити</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ІКІПЕДІ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Ім\'я користувача</string>
   <string name="create_account_password_hint">Пароль</string>
   <string name="login_create_account_link">Немає облікового запису? Приєднайтесь до Вікіпедії</string>
@@ -269,7 +269,7 @@ https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">Зображення успішно збережено!</string>
   <string name="gallery_error_video_failed">Не вдалось відтворити відео.</string>
   <string name="err_cannot_save_file">Не вдається зберегти файл</string>
-  <string name="snippet_share_intro">\"%1$s\" на сайті @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" на сайті @DroidWiki: %2$s</string>
   <string name="expand_refs">Торкніться, щоб розкрити</string>
   <string name="share_snippet_button">Поділитися як зображенням</string>
   <string name="share_normal_button">Поділитися як текстом</string>

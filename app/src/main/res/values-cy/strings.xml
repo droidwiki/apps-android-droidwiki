@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name_prod">Wicipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
   <string name="app_name_alpha">Wicipedia Alffa</string>
   <string name="yes">Ydw/Ie/Iawn</string>
   <string name="no">Nac ydw / Na</string>
@@ -93,7 +93,7 @@
   <string name="saved_pages_empty_message" fuzzy="true">Dim tudalennau wedi\'u cadw.</string>
   <string name="history_empty_message" fuzzy="true">Mae eich hanes yn wag.</string>
   <string name="delete_selected_history">Dileu</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;ICIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Enw defnyddiwr</string>
   <string name="create_account_password_hint">Cyfrinair</string>
   <string name="login_create_account_link">Heb gyfrif? Ymunwch â Wicipedia</string>

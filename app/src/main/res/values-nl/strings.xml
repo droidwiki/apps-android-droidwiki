@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
-  <string name="acra_report_dialog_title">Wikipedia is gecrasht :(</string>
+  <string name="acra_report_dialog_title">DroidWiki is gecrasht :(</string>
   <string name="acra_report_dialog_text">Stuur ons een crashrapport</string>
   <string name="acra_report_dialog_comment">Wat was u aan het doen toen de crash optrad?</string>
-  <string name="search_hint">In Wikipedia zoeken</string>
+  <string name="search_hint">In DroidWiki zoeken</string>
   <string name="nav_item_history">Geschiedenis</string>
   <string name="error_network_error">Er is geen netwerkverbinding.</string>
   <string name="search_network_error">Netwerkfout. Klik om het opnieuw te proberen.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Inhoud is beschikbaar onder de licentie &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; tenzij anders aangegeven</string>
   <string name="edit_save_action_license_logged_in">Door op te slaan, gaat u akkoord met de &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Gebruiksvoorwaarden&lt;/a&gt;, en het onherroepelijk vrijgeven van uw bijdragen onder de &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA-3.0&lt;/a&gt; licentie.</string>
   <string name="edit_save_action_license_anon">Door op te slaan, gaat u akkoord met de &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Gebruiksvoorwaarden&lt;/a&gt;, en het onherroepelijk vrijgeven van uw bijdragen onder de &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA-3.0&lt;/a&gt; licentie. Bewerkingen worden toegeschreven aan het IP-adres van uw apparaat. Als u zich &lt;a href=\"https://#login\"&gt;aanmeldt&lt;/a&gt;, heeft u meer privacy.</string>
-  <string name="preference_title_language">Wikipediataal</string>
+  <string name="preference_title_language">DroidWikitaal</string>
   <string name="preference_languages_filter_hint">Zoeken</string>
   <string name="preference_system_language_toggle">Systeemtaal gebruiken</string>
   <string name="preference_system_language_summary">Systeemtaal</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Wachtwoord</string>
   <string name="login_password_show_check">Wachtwoord weergeven</string>
   <string name="menu_login">Aanmelden</string>
-  <string name="login_activity_title">Aanmelden bij Wikipedia</string>
+  <string name="login_activity_title">Aanmelden bij DroidWiki</string>
   <string name="login_in_progress_dialog_message">Bezig met aanmelden…</string>
   <string name="login_error_wrong_password">Het wachtwoord is onjuist</string>
   <string name="login_error_wrong_username">Onjuiste gebruikersnaam</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Aanmelden mislukt :(</string>
   <string name="login_error_no_network">Geen netwerkverbinding</string>
   <string name="preference_title_logout">Afmelden</string>
-  <string name="preference_summary_logout">Afmelden bij Wikipedia</string>
+  <string name="preference_summary_logout">Afmelden bij DroidWiki</string>
   <string name="preference_summary_notloggedin">Niet aangemeld.</string>
   <string name="toast_logout_complete">Afgemeld</string>
   <string name="saved_pages_empty_title">Nog geen opgeslagen pagina\'s</string>
@@ -105,10 +105,10 @@
   <string name="history_empty_title">Geen recente pagina\'s</string>
   <string name="history_empty_message">U heeft ze vast allemaal verwijderd. De volgende keer als u een pagina bezoekt, kunt u hem hier terugvinden.</string>
   <string name="delete_selected_history">Verwijderen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Gebruikersnaam</string>
   <string name="create_account_password_hint">Wachtwoord</string>
-  <string name="login_create_account_link">Nog niet geregistreerd? Word lid van Wikipedia</string>
+  <string name="login_create_account_link">Nog niet geregistreerd? Word lid van DroidWiki</string>
   <string name="create_account_login_link">Hebt u al een account? Meld u aan</string>
   <string name="create_account_activity_title">Gebruiker aanmaken</string>
   <string name="dialog_create_account_checking_progress">Aan het controleren</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Volgende</string>
   <string name="create_account_button">Registreren</string>
   <string name="preferences_general_heading">Algemeen</string>
-  <string name="wikipedia_app_faq">Veelgestelde vragen over de Wikipedia-app</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero is uitgeschakeld</string>
+  <string name="wikipedia_app_faq">Veelgestelde vragen over de DroidWiki-app</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero is uitgeschakeld</string>
   <string name="zero_charged_verbiage_extended">Het laden van andere pagina\'s kan datakosten met zich meebrengen.</string>
-  <string name="zero_search_hint">In Wikipedia Zero zoeken</string>
-  <string name="zero_warn_when_leaving">Waarschuwen bij het verlaten van Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Als uw mobiele provider geen kosten in rekening brengt voor het gegevensgebruik via de Wikipedia-app vanwege een Wikipedia Zero-partnerschap, dan zorgt het inschakelen van deze instelling ervoor dat u wordt gewaarschuwd als u Wikipedia verlaat en mogelijk kosten voor data moet betalen.</string>
-  <string name="zero_webpage_title">Veelgestelde vragen over Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">U verlaat Wikipedia Zero</string>
+  <string name="zero_search_hint">In DroidWiki Zero zoeken</string>
+  <string name="zero_warn_when_leaving">Waarschuwen bij het verlaten van DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Als uw mobiele provider geen kosten in rekening brengt voor het gegevensgebruik via de DroidWiki-app vanwege een DroidWiki Zero-partnerschap, dan zorgt het inschakelen van deze instelling ervoor dat u wordt gewaarschuwd als u DroidWiki verlaat en mogelijk kosten voor data moet betalen.</string>
+  <string name="zero_webpage_title">Veelgestelde vragen over DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">U verlaat DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Er kunnen kosten gerekend worden voor mobiele data. Doorgaan naar de externe website?</string>
   <string name="zero_interstitial_continue">Afsluiten</string>
   <string name="zero_interstitial_cancel">Hier blijven</string>
-  <string name="zero_learn_more">Er worden geen kosten in rekening gebracht voor het gegevensgebruik via deze Wikipedia-app.</string>
+  <string name="zero_learn_more">Er worden geen kosten in rekening gebracht voor het gegevensgebruik via deze DroidWiki-app.</string>
   <string name="zero_learn_more_learn_more">Meer lezen</string>
   <string name="zero_learn_more_dismiss">Sluiten</string>
   <string name="edit_preview_fetching_dialog_message">Voorbeeld aan het ophalen…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Deze pagina is beveiligd</string>
   <string name="more_item_preferences">Meer</string>
   <string name="more_activity_title">Meer</string>
-  <string name="about_description">Over de Wikipedia-app</string>
+  <string name="about_description">Over de DroidWiki-app</string>
   <string name="privacy_policy_description">Privacybeleid</string>
   <string name="terms_of_use_description">Gebruiksvoorwaarden</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Dit kan een niet-constructieve bewerking zijn. Weet u zeker dat u die wilt opslaan?</string>
   <string name="abusefilter_title_disallow">U kunt deze bewerking niet opslaan. Ga terug en wijzig de inhoud.</string>
   <string name="abusefilter_text_warn">Een geautomatiseerde filter heeft deze bewerking als potentieel onconstructief geïdentificeerd. Het kan een of meer van de volgende bevatten:&lt;br /&gt;&lt;br /&gt;· Getypt in hoofdletters&lt;br /&gt;· Leeghalen van artikelen of spammen&lt;br /&gt;· Irrelevant externe koppelingen of afbeeldingen&lt;br /&gt;· Tekens herhalen</string>
-  <string name="abusefilter_text_disallow">Een geautomatiseerde filter heeft deze bewerking als niet-constructief of potentieel vandalisme geïdentificeerd.&lt;br /&gt;&lt;br /&gt;Wikipedia is een encyclopedie en alleen neutrale, relevante inhoud hoort hier thuis.</string>
+  <string name="abusefilter_text_disallow">Een geautomatiseerde filter heeft deze bewerking als niet-constructief of potentieel vandalisme geïdentificeerd.&lt;br /&gt;&lt;br /&gt;DroidWiki is een encyclopedie en alleen neutrale, relevante inhoud hoort hier thuis.</string>
   <string name="dialog_page_issues">Paginaproblemen</string>
   <string name="button_page_issues">Paginaproblemen</string>
   <string name="menu_themechooser">Lettertype en thema</string>
@@ -218,23 +218,23 @@
   <string name="table_infobox">Snelle feiten</string>
   <string name="table_other">Meer informatie</string>
   <string name="table_close">Sluiten</string>
-  <string name="widget_name_featured_page">Uitgelichte pagina op Wikipedia</string>
+  <string name="widget_name_featured_page">Uitgelichte pagina op DroidWiki</string>
   <string name="widget_title_featured_page">Vandaag uitgelicht:</string>
-  <string name="widget_name_search">Zoeken op Wikipedia</string>
-  <string name="app_store_description">De officiële app voor Wikipedia voor Android. Wikipedia is de vrij encyclopedie die meer dan 32 miljoen pagina\'s in 280 talen bevat, en het is de meest uitgebreide en het meest gebruikte referentiewerk dat mensen ooit gemaakt hebben.
+  <string name="widget_name_search">Zoeken op DroidWiki</string>
+  <string name="app_store_description">De officiële app voor DroidWiki voor Android. DroidWiki is de vrij encyclopedie die meer dan 32 miljoen pagina\'s in 280 talen bevat, en het is de meest uitgebreide en het meest gebruikte referentiewerk dat mensen ooit gemaakt hebben.
 
 Mogelijkheden:
-- Beginafbeeldingen: ervaar Wikipedia als nooit tevoren met een prominente, contextrelevante afbeelding en beschrijving bovenaan pagina\'s
+- Beginafbeeldingen: ervaar DroidWiki als nooit tevoren met een prominente, contextrelevante afbeelding en beschrijving bovenaan pagina\'s
 - Afbeeldingengalerij: door te klikken op een afbeelding wordt deze in hoge resolutie op het volledige scherm weergegeven, met de mogelijkheid om naar links en rechts te vegen voor extra afbeeldingen
 - Beschrijvingen van Wikidata: tijdens het zoeken, bevat ieder resultaat nu een snelle beschrijving die help bij het begrijpen van het resultaat. Deze beschrijvingen worden ook weergegeven in andere delen van de app, zoals bij In de buurt
 - Paginasuggesties: ga naar het einde van een pagina om suggesties te zien over wat u daarna kunt lezen
 - Opgeslagen pagina\'s: sla geselecteerde pagina\'s op om deze later offline te lezen en bekijk ze zelfs als u geen dataverbinding hebt
 - In de buurt: leer meer over wat er bij u in de buurt is door tips te krijgen over pagina\'s over dingen die dichtbij uw huidige locatie zijn
-- Taalondersteuning: naadloos overschakelen naar een Wikipedia in een andere taal
+- Taalondersteuning: naadloos overschakelen naar een DroidWiki in een andere taal
 - Inhoudsopgave: veeg in een pagina naar links om de inhoudsopgave weer te geven, van waar u eenvoudig naar alle delen van een pagina kunt springen
-- Wikipedia Zero: geen kosten voor data voor providers die aan dit programma deelnemen
+- DroidWiki Zero: geen kosten voor data voor providers die aan dit programma deelnemen
 
-Stuur ons uw terugkoppeling over de app! Klik in het menu op \"Meer\" en daarna op \"Over de Wikipedia app\", daarna op \"Terugkoppeling over app geven\".
+Stuur ons uw terugkoppeling over de app! Klik in het menu op \"Meer\" en daarna op \"Over de DroidWiki app\", daarna op \"Terugkoppeling over app geven\".
 
 De programmacode is 100% open source. Als u ervaring hebt met Java en de Android SDK, dan zien we graag uw bijdragen tegemoet! https://github.com/wikimedia/apps-android-wikipedia
 
@@ -259,7 +259,7 @@ Gebruiksvoorwaarden: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string
   <string name="gallery_save_success">Afbeelding opgeslagen.</string>
   <string name="gallery_error_video_failed">De video kan niet afgespeeld worden.</string>
   <string name="err_cannot_save_file">Het bestand kan niet opgeslagen worden</string>
-  <string name="snippet_share_intro">\"%1$s\" op @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" op @DroidWiki: %2$s</string>
   <string name="expand_refs">Aantikken om te vergroten</string>
   <string name="share_snippet_button">Als afbeelding delen</string>
   <string name="share_normal_button">Als tekst delen</string>

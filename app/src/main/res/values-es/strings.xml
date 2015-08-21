@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia alfa</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki alfa</string>
   <string name="yes">Sí</string>
   <string name="no">No</string>
-  <string name="acra_report_dialog_title">Wikipedia falló :(</string>
+  <string name="acra_report_dialog_title">DroidWiki falló :(</string>
   <string name="acra_report_dialog_text">Envíanos un informe de error</string>
   <string name="acra_report_dialog_comment">¿Qué hacías cuando ocurrió el fallo?</string>
-  <string name="search_hint">Buscar en Wikipedia</string>
+  <string name="search_hint">Buscar en DroidWiki</string>
   <string name="nav_item_history">Historial</string>
   <string name="error_network_error">No se pudo establecer la conexión con la red.</string>
   <string name="search_network_error">Error en la red. Toca para volver a intentarlo.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">El contenido está disponible bajo la licencia &lt;a class=\"external\" rel=\"nofollow\" href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; a menos que se indique lo contrario</string>
   <string name="edit_save_action_license_logged_in">Al guardar, aceptas los &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Términos de uso&lt;/a&gt; y a liberar irrevocablemente tus contribuciones bajo los términos de la licencia &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Al guardar, aceptas los &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Términos de uso&lt;/a&gt; y a liberar irrevocablemente tus contribuciones bajo los términos de la licencia &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;. Las ediciones se atribuirán a la dirección IP de tu dispositivo. Si &lt;a href=\"https://#login\"&gt;inicias sesión&lt;/a&gt;, tendrás más privacidad.</string>
-  <string name="preference_title_language">Idioma de Wikipedia</string>
+  <string name="preference_title_language">Idioma de DroidWiki</string>
   <string name="preference_languages_filter_hint">Buscar</string>
   <string name="preference_system_language_toggle">Usar el idioma del sistema</string>
   <string name="preference_system_language_summary">Idioma del sistema</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Contraseña</string>
   <string name="login_password_show_check">Mostrar la contraseña</string>
   <string name="menu_login">Acceder</string>
-  <string name="login_activity_title">Acceder a Wikipedia</string>
+  <string name="login_activity_title">Acceder a DroidWiki</string>
   <string name="login_in_progress_dialog_message">Iniciando sesión…</string>
   <string name="login_error_wrong_password">Contraseña incorrecta</string>
   <string name="login_error_wrong_username">Nombre de usuario incorrecto</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Falló el acceso :(</string>
   <string name="login_error_no_network">No hay conexión de red</string>
   <string name="preference_title_logout">Salir</string>
-  <string name="preference_summary_logout">Cerrar sesión de tu cuenta de Wikipedia</string>
+  <string name="preference_summary_logout">Cerrar sesión de tu cuenta de DroidWiki</string>
   <string name="preference_summary_notloggedin">Sesión no iniciada.</string>
   <string name="toast_logout_complete">Sesión cerrada</string>
   <string name="saved_pages_empty_title">No hay páginas guardadas aún.</string>
@@ -105,10 +105,10 @@
   <string name="history_empty_title">No hay páginas recientes aquí.</string>
   <string name="history_empty_message">Probablemente borraste el historial. La próxima vez que vayas a una página puedes recuperarla desde aquí.</string>
   <string name="delete_selected_history">Borrar</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nombre de usuario</string>
   <string name="create_account_password_hint">Contraseña</string>
-  <string name="login_create_account_link">¿No tienes una cuenta? Únete a Wikipedia</string>
+  <string name="login_create_account_link">¿No tienes una cuenta? Únete a DroidWiki</string>
   <string name="create_account_login_link">¿Ya tienes una cuenta? Accede</string>
   <string name="create_account_activity_title">Crear una cuenta</string>
   <string name="dialog_create_account_checking_progress">Verificando</string>
@@ -131,18 +131,18 @@
   <string name="create_account_button">Crear cuenta</string>
   <string name="preferences_general_heading">General</string>
   <string name="wikipedia_app_faq">Preguntas frecuentes</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero está desactivado</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero está desactivado</string>
   <string name="zero_charged_verbiage_extended">Cargar otros artículos puede incurrir en cargos por datos.</string>
-  <string name="zero_search_hint">Buscar en Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Avisar al salir de Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Si tu operadora de telefonía móvil ha decidido no cobrar el acceso de datos desde la aplicación de Wikipedia mediante un acuerdo con Wikipedia Zero, deja esta opción activada para que te notifiquemos al salir de la aplicación de Wikipedia y evitar cobros no deseados.</string>
-  <string name="zero_webpage_title">Preguntas frecuentes de Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">A punto de salir de Wikipedia Zero</string>
+  <string name="zero_search_hint">Buscar en DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Avisar al salir de DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Si tu operadora de telefonía móvil ha decidido no cobrar el acceso de datos desde la aplicación de DroidWiki mediante un acuerdo con DroidWiki Zero, deja esta opción activada para que te notifiquemos al salir de la aplicación de DroidWiki y evitar cobros no deseados.</string>
+  <string name="zero_webpage_title">Preguntas frecuentes de DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">A punto de salir de DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Pueden aplicarse cargos por datos. ¿Continuar a sitio externo?</string>
   <string name="zero_interstitial_continue">Salir</string>
   <string name="zero_interstitial_cancel">Permanecer aquí</string>
-  <string name="zero_learn_more">Esta aplicación de Wikipedia está exenta de cargos por uso de datos.</string>
+  <string name="zero_learn_more">Esta aplicación de DroidWiki está exenta de cargos por uso de datos.</string>
   <string name="zero_learn_more_learn_more">Más información</string>
   <string name="zero_learn_more_dismiss">Descartar</string>
   <string name="edit_preview_fetching_dialog_message">Procesando la previsualización…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Esta página está protegida</string>
   <string name="more_item_preferences">Más</string>
   <string name="more_activity_title">Más</string>
-  <string name="about_description">Acerca de la aplicación de Wikipedia</string>
+  <string name="about_description">Acerca de la aplicación de DroidWiki</string>
   <string name="privacy_policy_description">Política de privacidad</string>
   <string name="terms_of_use_description">Términos de uso</string>
   <string name="privacy_policy_url">https://meta.wikimedia.org/wiki/Privacy_policy/es</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Esta parece una edición no constructiva. ¿Estás seguro de que quieres guardarla?</string>
   <string name="abusefilter_title_disallow">No puedes guardar esta edición. Por favor vuelve atrás y cámbiala.</string>
   <string name="abusefilter_text_warn">Un filtro automático ha identificado esta edición como potencialmente no constructiva. Puede contener uno o más de los siguientes:&lt;br&gt;&lt;br&gt;· Escrito en mayúsculas&lt;br&gt;· Borrado de artículos o spam&lt;br&gt;· Enlaces externos o imágenes irrelevantes&lt;br&gt;· Caracteres repetidos</string>
-  <string name="abusefilter_text_disallow">Un filtro automático ha identificado esta edición como potencialmente no constructiva, o probable vandalismo.&lt;br /&gt;&lt;br /&gt;Wikipedia es una enciclopedía y sólo contenido neutral y notable pertenece aquí.</string>
+  <string name="abusefilter_text_disallow">Un filtro automático ha identificado esta edición como potencialmente no constructiva, o probable vandalismo.&lt;br /&gt;&lt;br /&gt;DroidWiki es una enciclopedía y sólo contenido neutral y notable pertenece aquí.</string>
   <string name="dialog_page_issues">Problemas de la página</string>
   <string name="button_page_issues">Problemas de la página</string>
   <string name="menu_themechooser">Tipo de letra y tema</string>
@@ -218,23 +218,23 @@
   <string name="table_infobox">Datos rápidos</string>
   <string name="table_other">Más información</string>
   <string name="table_close">Cerrar</string>
-  <string name="widget_name_featured_page">Página destacada de Wikipedia</string>
+  <string name="widget_name_featured_page">Página destacada de DroidWiki</string>
   <string name="widget_title_featured_page">Página destacada del día:</string>
-  <string name="widget_name_search">Búsqueda en Wikipedia</string>
-  <string name="app_store_description">Aplicación oficial de Wikipedia para Android. Wikipedia es la enciclopedia libre que contiene más de 32 millones de artículos en 280 idiomas y es el trabajo de referencia más completo y ampliamente usado que los humanos hayan recopilado. 
+  <string name="widget_name_search">Búsqueda en DroidWiki</string>
+  <string name="app_store_description">Aplicación oficial de DroidWiki para Android. DroidWiki es la enciclopedia libre que contiene más de 32 millones de artículos en 280 idiomas y es el trabajo de referencia más completo y ampliamente usado que los humanos hayan recopilado. 
 
 Características:
-- Imagen principal: experimenta Wikipedia como nunca antes con una imagen destacada y contextualmente relevante y su descripción en la parte superior de los artículos
+- Imagen principal: experimenta DroidWiki como nunca antes con una imagen destacada y contextualmente relevante y su descripción en la parte superior de los artículos
 - Galería de imágenes: al tocar una imagen se muestra en pantalla completa y alta resolución, también se puede deslizar la pantalla a izquiera o derecha y explorar otras imágenes
 - Descripciones de Wikidata: al buscar, cada resultado contiene una descripción breve que ayuda a contextualizar el resulto. Estas descripciones también se muestran en otras áreas de la aplicación, como Cercanos
 - Sugerencias de artículos: dirígete hacia el final de un artículo para ver sugerencias sobre qué leer a continuación
 - Páginas guardadas: guarda páginas seleccionadas para leerlas sin conexión y navegarlas incluso cuando no tienes una conexión de datos
 - Cercanos: aprende más sobre las cosas que te rodean obteniendo enlaces a artículos sobre cosas que están cercanas a tu ubicación actual
-- Soporte de idiomas: cambia inmediatamente a la Wikipedia escrita en cualquier idioma
+- Soporte de idiomas: cambia inmediatamente a la DroidWiki escrita en cualquier idioma
 - Tabla de contenidos: desliza a la izquierda en cualquier artículo para mostrar la tabla de contenidos, que te permite ir directo a secciones del artículo
-- Wikipedia Zero: cargos de datos omitidos para operadores móviles participantes
+- DroidWiki Zero: cargos de datos omitidos para operadores móviles participantes
 
-¡Envíanos comentarios sobre la aplicación! En el menú, pulsa \"Más\", luego \"Acerca de la aplicación de Wikipedia\", luego \"Enviar comentarios sobre la aplicación\".
+¡Envíanos comentarios sobre la aplicación! En el menú, pulsa \"Más\", luego \"Acerca de la aplicación de DroidWiki\", luego \"Enviar comentarios sobre la aplicación\".
 
 El código es completamente abierto. Si tienes experiencia con Java y el SDK de Android, esperamos tus contribuciones! https://github.com/wikimedia/apps-android-wikipedia
 
@@ -259,7 +259,7 @@ Términos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use/es</string
   <string name="gallery_save_success">Imagen guardada correctamente.</string>
   <string name="gallery_error_video_failed">No se pudo reproducir el vídeo.</string>
   <string name="err_cannot_save_file">No se puede guardar el archivo</string>
-  <string name="snippet_share_intro">«%1$s» en @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">«%1$s» en @DroidWiki: %2$s</string>
   <string name="expand_refs">Pulsa para ampliar</string>
   <string name="share_snippet_button">Compartir como imagen</string>
   <string name="share_normal_button">Compartir como texto</string>

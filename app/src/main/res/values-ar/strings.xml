@@ -248,7 +248,7 @@ https://github.com/wikimedia/apps-android-wikipedia</string>
   <string name="gallery_save_success">حُفظت الصورة بنجاح.</string>
   <string name="gallery_error_video_failed">لا يمكن تشغيل الفيديو.</string>
   <string name="err_cannot_save_file">تعذّر حفظ الملف</string>
-  <string name="snippet_share_intro">\"%1$s\" في @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" في @DroidWiki: %2$s</string>
   <string name="expand_refs">اضغط للتوسيع</string>
   <string name="share_snippet_button">شارك كصورة</string>
   <string name="share_normal_button">شارك كنص</string>
