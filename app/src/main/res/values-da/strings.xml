@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
-  <string name="acra_report_dialog_title">Wikipedia gik ned :(</string>
+  <string name="acra_report_dialog_title">DroidWiki gik ned :(</string>
   <string name="acra_report_dialog_text">Send os en nedbrudsrapport</string>
   <string name="acra_report_dialog_comment">Hvad lavede du, da appen gik ned?</string>
-  <string name="search_hint">Søg i Wikipedia</string>
+  <string name="search_hint">Søg i DroidWiki</string>
   <string name="nav_item_history">Historik</string>
   <string name="error_network_error">Netværksforbindelsen kunne ikke etableres.</string>
   <string name="search_network_error">Netværksfejl. Tryk for at prøve igen.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Indholdet er udgivet under &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.da\"&gt;CC BY-SA 3.0&lt;/a&gt; medmindre andet er angivet</string>
   <string name="edit_save_action_license_logged_in">Ved at gemme, accepterer du &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;brugsbetingelserne&lt;/a&gt;, og du accepterer uigenkaldeligt at udgive dit bidrag under &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.da\"&gt;CC BY-SA 3.0&lt;/a&gt; licensen.</string>
   <string name="edit_save_action_license_anon">Ved at gemme, accepterer du &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;brugsbetingelserne&lt;/a&gt;, og du accepterer uigenkaldeligt at udgive dit bidrag under &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.da\"&gt;CC BY-SA 3.0&lt;/a&gt; licensen. Ændringer vil blive tilskrevet IP-adressen for din enhed. Hvis du &lt;a href=\"https://#login\"&gt;logger på&lt;/a&gt;, vil du have mere privatliv.</string>
-  <string name="preference_title_language">Wikipediasprog</string>
+  <string name="preference_title_language">DroidWikisprog</string>
   <string name="preference_languages_filter_hint">Søg</string>
   <string name="preference_system_language_toggle">Anvend systemsproget</string>
   <string name="preference_system_language_summary">Systemsprog</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Adgangskode</string>
   <string name="login_password_show_check">Vis adgangskode</string>
   <string name="menu_login">Log på</string>
-  <string name="login_activity_title">Log på Wikipedia</string>
+  <string name="login_activity_title">Log på DroidWiki</string>
   <string name="login_in_progress_dialog_message">Logger dig på…</string>
   <string name="login_error_wrong_password">Forkert adgangskode</string>
   <string name="login_error_wrong_username">Forkert brugernavn</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Login mislykkedes :(</string>
   <string name="login_error_no_network">Ingen netværksforbindelse</string>
   <string name="preference_title_logout">Log af</string>
-  <string name="preference_summary_logout">Log ud af din Wikipedia-konto</string>
+  <string name="preference_summary_logout">Log ud af din DroidWiki-konto</string>
   <string name="preference_summary_notloggedin">Ikke logget på.</string>
   <string name="toast_logout_complete">Logget af</string>
   <string name="saved_pages_empty_title">Ingen gemte sider her!</string>
@@ -105,7 +105,7 @@
   <string name="history_empty_title">Ingen nye sider her.</string>
   <string name="history_empty_message">Du har sikkert slettet dem alle. Næste gang du går til en side, kan du komme tilbage til den her.</string>
   <string name="delete_selected_history">Slet</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Brugernavn</string>
   <string name="create_account_password_hint">Adgangskode</string>
   <string name="login_create_account_link">Har du ikke en konto? Opret en</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Næste</string>
   <string name="create_account_button">Opret konto</string>
   <string name="preferences_general_heading">Generelt</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero er slukket</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero er slukket</string>
   <string name="zero_charged_verbiage_extended">Nedhentning af andre artikler kan medføre datagebyrer.</string>
-  <string name="zero_search_hint">Søg i Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Advar mig når jeg forlader Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Hvis din mobiloperatør frafalder dataadgangsgebyrer for Wikipedia app via et Wikipedia Zero partnerskab, lader denne indstilling dig vide, når du forlader Wikipedia app og kunne blive opkrævet gebyrer.</string>
-  <string name="zero_webpage_title">Ofte stillede spørgsmål om Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Forlader Wikipedia Zero</string>
+  <string name="zero_search_hint">Søg i DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Advar mig når jeg forlader DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Hvis din mobiloperatør frafalder dataadgangsgebyrer for DroidWiki app via et DroidWiki Zero partnerskab, lader denne indstilling dig vide, når du forlader DroidWiki app og kunne blive opkrævet gebyrer.</string>
+  <string name="zero_webpage_title">Ofte stillede spørgsmål om DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Forlader DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Datagebyrer opkræves muligvis. Fortsæt til den eksterne side?</string>
   <string name="zero_interstitial_continue">Forlad</string>
   <string name="zero_interstitial_cancel">Bliv her</string>
-  <string name="zero_learn_more">Datagebyrer er frafaldet for denne Wikipedia app.</string>
+  <string name="zero_learn_more">Datagebyrer er frafaldet for denne DroidWiki app.</string>
   <string name="zero_learn_more_learn_more">Læs mere</string>
   <string name="zero_learn_more_dismiss">Skjul</string>
   <string name="edit_preview_fetching_dialog_message">Henter forhåndsvisning…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Denne side er beskyttet</string>
   <string name="more_item_preferences">Mere</string>
   <string name="more_activity_title">Mere</string>
-  <string name="about_description">Om Wikipedia-appen</string>
+  <string name="about_description">Om DroidWiki-appen</string>
   <string name="privacy_policy_description">Behandling af personlige oplysninger</string>
   <string name="terms_of_use_description">Vilkår for anvendelse</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Dette er muligvis ikke en konstruktiv redigering. Er du sikker på du ønsker at gemme den?</string>
   <string name="abusefilter_title_disallow">Du kan ikke gemme denne redigering. Gå venligst tilbage og ændre den.</string>
   <string name="abusefilter_text_warn">Et automatisk filter har identificeret denne redigering som potentielt er ukonstruktiv. Den kan indeholde en eller flere af følgende:&lt;br /&gt;&lt;br /&gt;· Skrive udelukkende med store bogstaver&lt;br /&gt;· Slette alt i artikler eller spamming&lt;br /&gt;· Irrelevante eksterne links eller billeder&lt;br /&gt;· Gentagelser af tegn</string>
-  <string name="abusefilter_text_disallow">Et automatisk filter har identificeret denne redigering som potentielt ukonstruktiv, eller potentielt hærværk.&lt;br /&gt;&lt;br /&gt;Wikipedia er en encyklopædi, og kun neutralt og relevant indhold hører til her.</string>
+  <string name="abusefilter_text_disallow">Et automatisk filter har identificeret denne redigering som potentielt ukonstruktiv, eller potentielt hærværk.&lt;br /&gt;&lt;br /&gt;DroidWiki er en encyklopædi, og kun neutralt og relevant indhold hører til her.</string>
   <string name="dialog_page_issues">Problemer med siden</string>
   <string name="button_page_issues">Problemer med siden</string>
   <string name="menu_themechooser">Skrifttype og tema</string>
@@ -218,23 +218,23 @@
   <string name="table_infobox">Hurtige fakta</string>
   <string name="table_other">Flere oplysninger</string>
   <string name="table_close">Luk</string>
-  <string name="widget_name_featured_page">Udvalgt Wikipedia-side</string>
+  <string name="widget_name_featured_page">Udvalgt DroidWiki-side</string>
   <string name="widget_title_featured_page">Dagens udvalgte side:</string>
-  <string name="widget_name_search">Wikipedia-søgning</string>
-  <string name="app_store_description">Officiel Wikipedia App til Android. Wikipedia er en fri encyklopædi der indeholder mere end 32 millioner artikler på 280 sprog, og er den mest omfattende og udbredte referenceværk mennesker nogensinde har samlet.
+  <string name="widget_name_search">DroidWiki-søgning</string>
+  <string name="app_store_description">Officiel DroidWiki App til Android. DroidWiki er en fri encyklopædi der indeholder mere end 32 millioner artikler på 280 sprog, og er den mest omfattende og udbredte referenceværk mennesker nogensinde har samlet.
 
 Funktioner:
-- Indledningsbilleder: oplev Wikipedia som aldrig før, med et fremtrædende indholdsrelevant billede øverst i artiklerne
+- Indledningsbilleder: oplev DroidWiki som aldrig før, med et fremtrædende indholdsrelevant billede øverst i artiklerne
 - Billedegalleri: tryk på et billede for fuldskærmsvisning i høj opløsning, med muligheder for at swipe til højre/venstre for at gennemse flere billeder
 - Beskrivelser fra Wikidata: når du søger, viser hvert søgeresultat nu en kort beskrivelse som hjælper med at kontekstualisere resultatet. Disse beskrivelser vises også i andre dele af appen, såsom i \"I nærheden\"-funktionen
 - Artikelforslag: rul ned til bunden af en artikel for at se forslag til hvad du kan læse efterfølgende
 - Gemte sider: gem udvalgte sider til offlinelæsning og gennemse dem, selvom du ikke har en dataforbindelse
 - I nærheden: lær mere om hvad der findes omkring dig ved at få vist links til artikler om ting nær din aktuelle placering
-- Sprogunderstøttelse: skift problemfrit mellem Wikipedia-artikler skrevet på ethvert sprog
+- Sprogunderstøttelse: skift problemfrit mellem DroidWiki-artikler skrevet på ethvert sprog
 - Indholdsfortegnelse: swipe til venstre for at se indholdsfortegnelsen
-- Wikipedia Zero: data gebyrer frafaldes for deltagende mobiloperatører
+- DroidWiki Zero: data gebyrer frafaldes for deltagende mobiloperatører
 
-Send os dit feedback om appen! I menuen, tryk \"Mere\", derefter \"Om Wikipedia-appen\", derefter \"Send tilbagemelding om app\".
+Send os dit feedback om appen! I menuen, tryk \"Mere\", derefter \"Om DroidWiki-appen\", derefter \"Send tilbagemelding om app\".
 
 Kildekoden er 100% open source. Hvis du har erfaring med Java og Android SDK ser vi frem til dine bidrag! https://github.com/wikimedia/apps-android-wikipedia
 
@@ -259,7 +259,7 @@ Vilkår for anvendelse: http://wikimediafoundation.org/wiki/Terms_of_Use</string
   <string name="gallery_save_success">Billedet er gemt med succes.</string>
   <string name="gallery_error_video_failed">Kan ikke afspille video.</string>
   <string name="err_cannot_save_file">Kan ikke gemme filen</string>
-  <string name="snippet_share_intro">«%1$s» på @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">«%1$s» på @DroidWiki: %2$s</string>
   <string name="expand_refs">Tryk for at udvide</string>
   <string name="share_snippet_button">Del som billede</string>
   <string name="share_normal_button">Del som tekst</string>

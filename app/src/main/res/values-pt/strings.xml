@@ -105,7 +105,7 @@
   <string name="history_empty_title">Sem páginas recentes aqui.</string>
   <string name="history_empty_message">Provavelmente, deverá ter eliminado todos eles. Da próxima vez que aceder a uma página, pode obter a partir de aqui.</string>
   <string name="delete_selected_history">Eliminar</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nome de utilizador(a)</string>
   <string name="create_account_password_hint">Palavra-passe</string>
   <string name="login_create_account_link">Não tem ainda uma conta? Junte-se à Wikipédia</string>
@@ -259,7 +259,7 @@ Condições de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">Imagem guardada com êxito</string>
   <string name="gallery_error_video_failed">Não é possível reproduzir o vídeo.</string>
   <string name="err_cannot_save_file">Não é possível gravar o ficheiro</string>
-  <string name="snippet_share_intro">\"%1$s\" em @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" em @DroidWiki: %2$s</string>
   <string name="expand_refs">Toque para expandir</string>
   <string name="share_snippet_button">Partilhar como imagem</string>
   <string name="share_normal_button">Partilhar como texto</string>

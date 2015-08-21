@@ -89,7 +89,7 @@
   <string name="history_empty_title">Pas cap de pagina recenta aicí !</string>
   <string name="history_empty_message">Los avètz probablament destrusidas totas. Lo còp que ven qu\'aniretz sus una pagina, i poiretz tornar en començant d’aicí.</string>
   <string name="delete_selected_history">Escafar</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÈDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nom d\'utilizaire</string>
   <string name="create_account_password_hint">Senhal</string>
   <string name="login_create_account_link">Avètz pas de compte ? Rejonhètz Wikipèdia</string>
@@ -185,7 +185,7 @@
   <string name="gallery_save_error">Impossible d’enregistrar l’imatge : %s</string>
   <string name="gallery_save_success">Imatge enregistrat corrèctament.</string>
   <string name="err_cannot_save_file">Impossible d’enregistrar lo fichièr</string>
-  <string name="snippet_share_intro">Fach interessant sus @Wikipedia %1$s : %2$s</string>
+  <string name="snippet_share_intro">Fach interessant sus @DroidWiki %1$s : %2$s</string>
   <string name="expand_refs">Tustar per desvolopar</string>
   <string name="share_snippet_button">Partejar coma imatge</string>
   <string name="share_normal_button">Partejar coma tèxte</string>

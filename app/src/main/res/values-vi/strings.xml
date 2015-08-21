@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Có</string>
   <string name="no">Không</string>
-  <string name="acra_report_dialog_title">Wikipedia đã gặp sự cố :(</string>
+  <string name="acra_report_dialog_title">DroidWiki đã gặp sự cố :(</string>
   <string name="acra_report_dialog_text">Báo cáo sự cố cho chúng tôi</string>
   <string name="acra_report_dialog_comment">Bạn đang làm gì khi xảy ra sự cố?</string>
-  <string name="search_hint">Tìm trong Wikipedia</string>
+  <string name="search_hint">Tìm trong DroidWiki</string>
   <string name="nav_item_history">Lịch sử</string>
   <string name="error_network_error">Không thể kết nối với mạng.</string>
   <string name="search_network_error">Lỗi mạng. Chạm để thử lại.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Nội dung được phát hành theo &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.vi\"&gt;CC BY-SA 3.0&lt;/a&gt; nếu không ghi giấy phép khác</string>
   <string name="edit_save_action_license_logged_in">Với việc lưu trang, bạn chấp nhận &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/vi?uselang=vi\"&gt;các Điều khoản Sử dụng&lt;/a&gt; và phát hành, một cách không thể hủy bỏ, các đóng góp của bạn theo giấy phép &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.vi\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Với việc lưu trang, bạn chấp nhận &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use/vi?uselang=vi\"&gt;các Điều khoản Sử dụng&lt;/a&gt; và phát hành, một cách không thể hủy bỏ, các đóng góp của bạn theo giấy phép &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.vi\"&gt;CC BY-SA 3.0&lt;/a&gt;. Các sửa đổi của  bạn sẽ ghi rõ địa chỉ IP của thiết bị của bạn. Bạn có thể &lt;a href=\"https://#login\"&gt;đăng nhập&lt;/a&gt; để bảo vệ quyền riêng tư của bạn một chút hơn.</string>
-  <string name="preference_title_language">Ngôn ngữ Wikipedia</string>
+  <string name="preference_title_language">Ngôn ngữ DroidWiki</string>
   <string name="preference_languages_filter_hint">Tìm kiếm</string>
   <string name="preference_system_language_toggle">Sử dụng ngôn ngữ hệ thống</string>
   <string name="preference_system_language_summary">Ngôn ngữ hệ thống</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Mật khẩu</string>
   <string name="login_password_show_check">Hiển thị mật khẩu</string>
   <string name="menu_login">Đăng nhập</string>
-  <string name="login_activity_title">Đăng nhập vào Wikipedia</string>
+  <string name="login_activity_title">Đăng nhập vào DroidWiki</string>
   <string name="login_in_progress_dialog_message">Đang đăng nhập bạn vào…</string>
   <string name="login_error_wrong_password">Sai mật khẩu</string>
   <string name="login_error_wrong_username">Sai tên người dùng</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Thất bại khi đăng nhập :(</string>
   <string name="login_error_no_network">Không có kết nối mạng</string>
   <string name="preference_title_logout">Đăng xuất</string>
-  <string name="preference_summary_logout">Đăng xuất khỏi tài khoản Wikipedia của bạn</string>
+  <string name="preference_summary_logout">Đăng xuất khỏi tài khoản DroidWiki của bạn</string>
   <string name="preference_summary_notloggedin">Chưa đăng nhập.</string>
   <string name="toast_logout_complete">Đã đăng xuất</string>
   <string name="saved_pages_empty_title">Không có trang lưu tại đây!</string>
@@ -105,10 +105,10 @@
   <string name="history_empty_title">Đây không có trang gần đây.</string>
   <string name="history_empty_message">Có lẽ bạn đã xóa toàn bộ. Lần sau xem một trang, trang sẽ xuất hiện tại đây để truy cập sau.</string>
   <string name="delete_selected_history">Xóa</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Tên người dùng</string>
   <string name="create_account_password_hint">Mật khẩu</string>
-  <string name="login_create_account_link">Chưa có tài khoản? Hãy tham gia Wikipedia</string>
+  <string name="login_create_account_link">Chưa có tài khoản? Hãy tham gia DroidWiki</string>
   <string name="create_account_login_link">Đã có tài khoản? Đăng nhập</string>
   <string name="create_account_activity_title">Mở tài khoản</string>
   <string name="dialog_create_account_checking_progress">Đang xác minh</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Tiếp</string>
   <string name="create_account_button">Mở Tài khoản</string>
   <string name="preferences_general_heading">Tổng quát</string>
-  <string name="wikipedia_app_faq">Câu hỏi thường hỏi về ứng dụng Wikipedia</string>
-  <string name="zero_charged_verbiage">Wikipedia Miễn phí đang tắt</string>
+  <string name="wikipedia_app_faq">Câu hỏi thường hỏi về ứng dụng DroidWiki</string>
+  <string name="zero_charged_verbiage">DroidWiki Miễn phí đang tắt</string>
   <string name="zero_charged_verbiage_extended">Có thể phải trả chi phí dữ liệu nếu tải thêm bài.</string>
-  <string name="zero_search_hint">Tìm trong Wikipedia Miễn phí</string>
-  <string name="zero_warn_when_leaving">Cảnh báo khi ra khỏi Wikipedia Miễn phí</string>
-  <string name="zero_warn_when_leaving_summary">Nếu nhà điều hành điện thoại di động của bạn miễn phí truy cập dữ liệu cho ứng dụng Wikipedia do có quan hệ đối tác với Wikipedia Miễn phí, chọn hộp này để giúp bạn biết khi bạn sắp thoát ứng dụng Wikipedia và sẽ bị tính phí.</string>
-  <string name="zero_webpage_title">Câu thường hỏi về Wikipedia Miễn phí</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Miễn phí</string>
-  <string name="zero_interstitial_title">Sắp ra khỏi Wikipedia Miễn phí</string>
+  <string name="zero_search_hint">Tìm trong DroidWiki Miễn phí</string>
+  <string name="zero_warn_when_leaving">Cảnh báo khi ra khỏi DroidWiki Miễn phí</string>
+  <string name="zero_warn_when_leaving_summary">Nếu nhà điều hành điện thoại di động của bạn miễn phí truy cập dữ liệu cho ứng dụng DroidWiki do có quan hệ đối tác với DroidWiki Miễn phí, chọn hộp này để giúp bạn biết khi bạn sắp thoát ứng dụng DroidWiki và sẽ bị tính phí.</string>
+  <string name="zero_webpage_title">Câu thường hỏi về DroidWiki Miễn phí</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Miễn phí</string>
+  <string name="zero_interstitial_title">Sắp ra khỏi DroidWiki Miễn phí</string>
   <string name="zero_interstitial_leave_app">Có thể phải trả phí dữ liệu. Tiếp tục đi vào trang ngoài?</string>
   <string name="zero_interstitial_continue">Rời đi</string>
   <string name="zero_interstitial_cancel">Ở lại</string>
-  <string name="zero_learn_more">Không phải trả các chi phí dữ liệu khi sử dụng ứng dụng Wikipedia này.</string>
+  <string name="zero_learn_more">Không phải trả các chi phí dữ liệu khi sử dụng ứng dụng DroidWiki này.</string>
   <string name="zero_learn_more_learn_more">Đọc thêm</string>
   <string name="zero_learn_more_dismiss">Bỏ qua</string>
   <string name="edit_preview_fetching_dialog_message">Đang lấy bản xem thử…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Trang này bị khóa</string>
   <string name="more_item_preferences">Thêm</string>
   <string name="more_activity_title">Thêm</string>
-  <string name="about_description">Giới thiệu về ứng dụng Wikipedia</string>
+  <string name="about_description">Giới thiệu về ứng dụng DroidWiki</string>
   <string name="privacy_policy_description">Quy định về quyền riêng tư</string>
   <string name="terms_of_use_description">Điều khoản sử dụng</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Quy_định_quyền_riêng_tư?uselang=vi</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Sửa đổi này có vẻ không có tính xây dựng. Bạn có chắc chắn muốn lưu nó?</string>
   <string name="abusefilter_title_disallow">Bạn không thể lưu sửa đổi này. Vui lòng quay lại và thay đổi nó.</string>
   <string name="abusefilter_text_warn">Một bộ lọc đã tự động nhận ra sửa đổi này là có thể không mang tính xây dựng. Nó có thể có một trong những vấn đề sau:&lt;br /&gt;&lt;br /&gt;· Viết tất cả bằng chữ hoa&lt;br /&gt;· Xóa trống hoặc đưa spam vào bài&lt;br /&gt;· Liên kết ngoài hoặc hình ảnh không có liên quan đến đề tài&lt;br /&gt;· Ký tự lặp lại</string>
-  <string name="abusefilter_text_disallow">Một bộ lọc đã tự động nhận ra sửa đổi này là có thể không mang tính xây dựng hoặc là sự phá hoại.&lt;br /&gt;&lt;br /&gt;Là một bách khoa toàn thư, Wikipedia chỉ chấp nhận các nội dung trung lập và nổi bật.</string>
+  <string name="abusefilter_text_disallow">Một bộ lọc đã tự động nhận ra sửa đổi này là có thể không mang tính xây dựng hoặc là sự phá hoại.&lt;br /&gt;&lt;br /&gt;Là một bách khoa toàn thư, DroidWiki chỉ chấp nhận các nội dung trung lập và nổi bật.</string>
   <string name="dialog_page_issues">Vấn đề trang</string>
   <string name="button_page_issues">Vấn đề trang</string>
   <string name="menu_themechooser">Phông chữ và thiết kế</string>
@@ -218,23 +218,23 @@
   <string name="table_infobox">Thông tin nhanh</string>
   <string name="table_other">Thêm thông tin</string>
   <string name="table_close">Đóng</string>
-  <string name="widget_name_featured_page">Bài viết chọn lọc Wikipedia</string>
+  <string name="widget_name_featured_page">Bài viết chọn lọc DroidWiki</string>
   <string name="widget_title_featured_page">Bài viết chọn lọc hôm nay:</string>
-  <string name="widget_name_search">Tìm kiếm Wikipedia</string>
-  <string name="app_store_description">Ứng dụng Wikipedia chính thức dành cho Android. Wikipedia là bách khoa toàn thư mở có hơn 32 triệu bài viết trong 280 ngôn ngữ. Nó là nguồn tài liệu tham khảo toàn diện nhất, được sử dụng rộng rãi nhất mà nhân loại từng tạo nên.
+  <string name="widget_name_search">Tìm kiếm DroidWiki</string>
+  <string name="app_store_description">Ứng dụng DroidWiki chính thức dành cho Android. DroidWiki là bách khoa toàn thư mở có hơn 32 triệu bài viết trong 280 ngôn ngữ. Nó là nguồn tài liệu tham khảo toàn diện nhất, được sử dụng rộng rãi nhất mà nhân loại từng tạo nên.
 
 Tính năng:
-- Hình đầu: Trải nghiệm Wikipedia một cách hoàn toàn mới với bức hình nổi bật, phù hợp được trình bày và miêu tả ngay vào đầu trang.
+- Hình đầu: Trải nghiệm DroidWiki một cách hoàn toàn mới với bức hình nổi bật, phù hợp được trình bày và miêu tả ngay vào đầu trang.
 - Thư viện ảnh: Chạm vào bất cứ hình nào để xem bản độ phân giải cao toàn màn hình. Vuốt trái/phải để xem các hình ảnh khác.
 - Miêu tả từ Wikidata: Mỗi kết quả tìm kiếm hiện có lời miêu tả ngắn gọn cho biết ngữ cảnh. Các miêu tả này cũng xuất hiện ở khắp ứng dụng, chẳng hạn ở phần Lân cận.
 - Gợi ý bài: Cuộn đến cuối bài để nhận gợi ý về những bài nên đọc tiếp theo.
 - Lưu trang: Bạn có thể lưu các trang mong muốn để duyệt và đọc khi thậm chí không có kết nối dữ liệu.
 - Lân cận: Tìm hiểu về vùng chung quanh bạn. Dễ dàng duyệt các bài về đề tài gần vị trí hiện tại của bạn.
-- Hỗ trợ ngôn ngữ: Ứng dụng cho phép bạn dễ dàng chuyển đổi để đọc Wikipedia được viết bằng bất kỳ ngôn ngữ nào.
+- Hỗ trợ ngôn ngữ: Ứng dụng cho phép bạn dễ dàng chuyển đổi để đọc DroidWiki được viết bằng bất kỳ ngôn ngữ nào.
 - Bảng mục lục: Vuốt trái trên bất cứ bài nào để xem bảng mục lục và nhảy giữa các phần bài.
-- Wikipedia Miễn phí: Không bị tính phí dữ liệu đối với một số nhà mạng có tham gia chương trình.
+- DroidWiki Miễn phí: Không bị tính phí dữ liệu đối với một số nhà mạng có tham gia chương trình.
 
-Hãy gửi phản hồi về ứng dụng này! Bấm “Thêm” trong trình đơn, rồi “Giới thiệu về ứng dụng Wikipedia”, rồi “Gửi phản hồi về ứng dụng”.
+Hãy gửi phản hồi về ứng dụng này! Bấm “Thêm” trong trình đơn, rồi “Giới thiệu về ứng dụng DroidWiki”, rồi “Gửi phản hồi về ứng dụng”.
 
 Mã nguồn là 100% mở. Nếu bạn có kinh nghiệm với Java và Android SDK, mời bạn đóng góp vào dự án! https://github.com/wikimedia/apps-android-wikipedia
 
@@ -259,7 +259,7 @@ Các Điều khoản Sử dụng: http://wikimediafoundation.org/wiki/Terms_of_U
   <string name="gallery_save_success">Đã lưu hình thành công.</string>
   <string name="gallery_error_video_failed">Không thể phát video.</string>
   <string name="err_cannot_save_file">Không thể lưu tập tin</string>
-  <string name="snippet_share_intro">“%1$s” trên @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">“%1$s” trên @DroidWiki: %2$s</string>
   <string name="expand_refs">Chạm để mở rộng</string>
   <string name="share_snippet_button">Chia sẻ hình ảnh</string>
   <string name="share_normal_button">Chia sẻ văn bản</string>

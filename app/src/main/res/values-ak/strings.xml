@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_beta">Wikipedia Beta</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
   <string name="yes">Aane</string>
   <string name="no">Daabi</string>
-  <string name="acra_report_dialog_title">Wikipedia adum</string>
+  <string name="acra_report_dialog_title">DroidWiki adum</string>
   <string name="acra_report_dialog_text">Ka nea asi kyerɛ yɛn</string>
   <string name="acra_report_dialog_comment">Dɛn na na woreyɛ ansa na ɛredum?</string>
-  <string name="search_hint">Hwehwɛ Wikipedia mu</string>
+  <string name="search_hint">Hwehwɛ DroidWiki mu</string>
   <string name="nav_item_history">Nea atwam</string>
   <string name="error_network_error" fuzzy="true">Hwɛ sɛ wo network no yɛ adwuma a :(</string>
   <string name="search_network_error">Network no ate kɔ. Fa wo nsa ka so bio.</string>
@@ -31,7 +31,7 @@
   <string name="toast_saved_page_deleted">Nkrataa a wode asie no apopa</string>
   <string name="last_updated_text">Wo nkyerɛase %s</string>
   <string name="content_license_html">Saa nkrataa yi nyinaa hyɛ &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; ase, ɛte saa a, wɔbɛka ade foforo</string>
-  <string name="preference_title_language">Wikipedia kasa</string>
+  <string name="preference_title_language">DroidWiki kasa</string>
   <string name="preference_languages_filter_hint">Hwehwɛ</string>
   <string name="langlinks_filter_hint">Hwehwɛ</string>
   <string name="menu_other_languages">Kan wɔ kasa ahorow mu</string>
@@ -57,7 +57,7 @@
   <string name="login_password_hint">Password</string>
   <string name="login_password_show_check">Fa password no kyerɛ</string>
   <string name="menu_login">Kɔ mu</string>
-  <string name="login_activity_title">Kɔ Wikipedia mu</string>
+  <string name="login_activity_title">Kɔ DroidWiki mu</string>
   <string name="login_in_progress_dialog_message">Rekɔ mu</string>
   <string name="login_error_wrong_password">Woati password no</string>
   <string name="login_error_wrong_username">Woati username no</string>
@@ -67,14 +67,14 @@
   <string name="login_error_unknown">Dabi! Anyɛ yiye</string>
   <string name="login_error_no_network">Wonni internet</string>
   <string name="preference_title_logout">Pue</string>
-  <string name="preference_summary_logout">Pue fi wo Wikipedia account mu</string>
+  <string name="preference_summary_logout">Pue fi wo DroidWiki account mu</string>
   <string name="preference_summary_notloggedin">Wo mmaa mu yɛ</string>
   <string name="toast_logout_complete">W\'apue</string>
   <string name="saved_pages_empty_message" fuzzy="true">Wonfaa krataa biara nsie</string>
   <string name="history_empty_message" fuzzy="true">Wonni hwɛɛ wɔ wo nneɛma a atwam</string>
   <string name="create_account_username_hint">Username</string>
   <string name="create_account_password_hint">Password</string>
-  <string name="login_create_account_link">Wonni account? Bɛka Wikipedia ho</string>
+  <string name="login_create_account_link">Wonni account? Bɛka DroidWiki ho</string>
   <string name="create_account_login_link">Wowɔ account deda? Kɔ mu</string>
   <string name="create_account_activity_title">Bue account</string>
   <string name="dialog_create_account_checking_progress">Rekɔ mu bio</string>
@@ -90,18 +90,18 @@
   <string name="create_account_next">Nea edi hɔ</string>
   <string name="create_account_button">Bue account</string>
   <string name="preferences_general_heading">Nneɛma pii</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero adum</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero adum</string>
   <string name="zero_charged_verbiage_extended">Wobue nkrataa foforo a, wobetua ka.</string>
-  <string name="zero_search_hint">Hwehwɛ Wikipedia Zero mu</string>
-  <string name="zero_warn_when_leaving">B) kɔkɔ sɛ merefi Wikipedia Zero mu a</string>
-  <string name="zero_warn_when_leaving_summary">Sɛ wo fon network no pene so sɛ wobue nkrataa wɔ Wikipedia so denam Wikipedia Zero a, sɛ wogyae saa ɔfa yi a, ɛbɛboa wo bere a worefi Wikipedia adwinade yi so, a ebetumi ama woabɔka no.</string>
-  <string name="zero_webpage_title">Wikipedia Zero Nsɛmmisa ahorow</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Worefi Wikipedia Zero</string>
+  <string name="zero_search_hint">Hwehwɛ DroidWiki Zero mu</string>
+  <string name="zero_warn_when_leaving">B) kɔkɔ sɛ merefi DroidWiki Zero mu a</string>
+  <string name="zero_warn_when_leaving_summary">Sɛ wo fon network no pene so sɛ wobue nkrataa wɔ DroidWiki so denam DroidWiki Zero a, sɛ wogyae saa ɔfa yi a, ɛbɛboa wo bere a worefi DroidWiki adwinade yi so, a ebetumi ama woabɔka no.</string>
+  <string name="zero_webpage_title">DroidWiki Zero Nsɛmmisa ahorow</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Worefi DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Wobetua ho ka. Wobɛtoa so anaa?</string>
   <string name="zero_interstitial_continue">Gyae</string>
   <string name="zero_interstitial_cancel">Nkɔ baabiara</string>
-  <string name="zero_learn_more">Wontua hwee denam Wikipedia adwinade yi so</string>
+  <string name="zero_learn_more">Wontua hwee denam DroidWiki adwinade yi so</string>
   <string name="zero_learn_more_learn_more">Kan pii ka ho</string>
   <string name="zero_learn_more_dismiss">Gyae</string>
   <string name="edit_preview_fetching_dialog_message">Hwɛ sɛnea ɛte…</string>
@@ -122,7 +122,7 @@
   <string name="page_protected_can_not_edit_title">Woabɔ krataa yi ho ban</string>
   <string name="more_item_preferences">Pii</string>
   <string name="more_activity_title">Pii</string>
-  <string name="about_description">Efa Wikipedia adwinade yi</string>
+  <string name="about_description">Efa DroidWiki adwinade yi</string>
   <string name="about_libraries_heading">Libraries used</string>
   <string name="about_contributors_heading">aboafo</string>
   <string name="about_wmf">&lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt; adwinade</string>
@@ -148,11 +148,11 @@
   <string name="saved_pages_update_all_error_message">Antumi anfo nsakrae no ansie</string>
   <string name="saved_pages_progress_title">Mereyɛ krataa no foforo</string>
   <string name="saved_pages_refresh_pages_complete">Awie</string>
-  <string name="app_store_description" fuzzy="true">Wikipedia Android App. Wikipedia y3 beae a wɔde y3 nhwehw3mu a nkrataa b3boro ɔpepem 32 a 3wɔ kasa 280 mu na emu ns3m dɔɔso sen biara a aboafo na atu wɔn ho ama rey3 ho adwuma wɔ wiase nyinaa. Woasiesie app yi yiye, na edi mu paa.
+  <string name="app_store_description" fuzzy="true">DroidWiki Android App. DroidWiki y3 beae a wɔde y3 nhwehw3mu a nkrataa b3boro ɔpepem 32 a 3wɔ kasa 280 mu na emu ns3m dɔɔso sen biara a aboafo na atu wɔn ho ama rey3 ho adwuma wɔ wiase nyinaa. Woasiesie app yi yiye, na edi mu paa.
 
 Nne3ma a etumi y3:
-  - Etu mmiraka: Woay3 adwinade yi ma wode rehwehw3 ns3m wɔ Wikipedia so a, 3kɔ nt3m paa.
-  - Kyer3w: Afei de, wobetumi akɔ wo account mu na woay3 nsakrae a wop3 nyinaa wɔ Wikipedia app yi so.
+  - Etu mmiraka: Woay3 adwinade yi ma wode rehwehw3 ns3m wɔ DroidWiki so a, 3kɔ nt3m paa.
+  - Kyer3w: Afei de, wobetumi akɔ wo account mu na woay3 nsakrae a wop3 nyinaa wɔ DroidWiki app yi so.
   - Nsakrae a atwam: Nkrataa a woakan a atwam no, wobetumi ahu ne nyinaa wɔ wo ns3m a atam afa hɔ
   - Fa sie: Wobetumi de ns3m a wobue no asie, na akyiri woakan.</string>
 </resources>

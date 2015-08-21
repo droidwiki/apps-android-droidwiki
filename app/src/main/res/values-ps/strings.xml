@@ -66,7 +66,7 @@
   <string name="preference_summary_notloggedin">نه ياست ننوتي.</string>
   <string name="toast_logout_complete">ووتلۍ</string>
   <string name="delete_selected_history">ړنگول</string>
-  <string name="wp_stylized">&lt;big&gt;و&lt;/big&gt;يکيپېډي&lt;big&gt;ا&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">کارن-نوم</string>
   <string name="create_account_password_hint">پټنوم</string>
   <string name="login_create_account_link">گڼون نه لرې؟ ويکيپېډيا سره يوځای شه</string>
@@ -139,7 +139,7 @@
   <string name="gallery_save_success">انځور برياليتوب سره خوندي شو.</string>
   <string name="gallery_error_video_failed">ويډيو و نه غږول شوه.</string>
   <string name="err_cannot_save_file">دوتنه د خوندي کولو وړ نه ده</string>
-  <string name="snippet_share_intro">\"%1$s\" په @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" په @DroidWiki: %2$s</string>
   <string name="share_snippet_button">د انځور په توگه شريکول</string>
   <string name="share_normal_button">د متن په توگه شريکول</string>
   <string name="snippet_share_preview_image_desc">انځور مخليدنه</string>

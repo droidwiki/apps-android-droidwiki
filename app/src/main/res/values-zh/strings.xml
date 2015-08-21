@@ -105,7 +105,7 @@
   <string name="history_empty_title">没有最近的页面！</string>
   <string name="history_empty_message">您可能清空了它们。下次您前往一个页面时，可从这里返回它。</string>
   <string name="delete_selected_history">删除</string>
-  <string name="wp_stylized">&lt;big&gt;维&lt;/big&gt;基百&lt;big&gt;科&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">用户名</string>
   <string name="create_account_password_hint">密码</string>
   <string name="login_create_account_link">没有账户？加入维基百科</string>
@@ -137,7 +137,7 @@
   <string name="zero_warn_when_leaving">离开维基百科免费计划时警告</string>
   <string name="zero_warn_when_leaving_summary">如果您的移动运营商是维基百科免费计划的合作伙伴，并免除维基百科应用的数据费用，请选择该设置以帮助您知晓您正在离开维基百科应用并可能被收费。</string>
   <string name="zero_webpage_title">维基百科免费计划常见问题</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">离开维基百科免费计划</string>
   <string name="zero_interstitial_leave_app">可能会收取数据费用。继续前往外部网站？</string>
   <string name="zero_interstitial_continue">离开</string>
@@ -232,7 +232,7 @@
 - 附近条目：通过获取关于您当前位置附近事物的条目的链接来了解它们
 - 多语支持：无缝切换阅读各种语言撰写的维基百科
 - 目录选单：在任何条目上向左滑动可以打开目录，使您轻松跳转至条目各节
-- 维基百科零（Wikipedia Zero）：部分移动运营商减免浏览维基百科的数据费用
+- 维基百科零（DroidWiki Zero）：部分移动运营商减免浏览维基百科的数据费用
 
 请向我们发送您有关应用程序的反馈！在菜单上，点击“更多”，然后点击“关于维基百科应用程序”，之后点击“发送应用程序反馈”。
 
@@ -259,7 +259,7 @@
   <string name="gallery_save_success">图像保存成功。</string>
   <string name="gallery_error_video_failed">无法播放视频。</string>
   <string name="err_cannot_save_file">无法保存文件</string>
-  <string name="snippet_share_intro">维基百科 @Wikipedia 上的“%1$s”：%2$s</string>
+  <string name="snippet_share_intro">维基百科 @DroidWiki 上的“%1$s”：%2$s</string>
   <string name="expand_refs">点按展开</string>
   <string name="share_snippet_button">以图像分享</string>
   <string name="share_normal_button">以文本分享</string>

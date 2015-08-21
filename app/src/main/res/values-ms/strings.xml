@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
   <string name="yes">Ya</string>
   <string name="no">Tidak</string>
-  <string name="acra_report_dialog_title">Wikipedia dah runtuh :(</string>
+  <string name="acra_report_dialog_title">DroidWiki dah runtuh :(</string>
   <string name="acra_report_dialog_text">Laporkan crash</string>
-  <string name="acra_report_dialog_comment">Apakah yang anda lakukan ketika Wikipedia runtuh?</string>
-  <string name="search_hint">Cari dalam Wikipedia</string>
+  <string name="acra_report_dialog_comment">Apakah yang anda lakukan ketika DroidWiki runtuh?</string>
+  <string name="search_hint">Cari dalam DroidWiki</string>
   <string name="nav_item_history">Sejarah</string>
   <string name="error_network_error" fuzzy="true">Tiada sambungan rangkaian :(</string>
   <string name="search_network_error">Ralat rangkaian. Ketik untuk cuba lagi.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Kandungan ini tersedia dengan lesen &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; melainkan dinyatakan sebaliknya</string>
   <string name="edit_save_action_license_logged_in">Dengan menyimpan, anda menyetujui &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Syarat-Syarat Penggunaan&lt;/a&gt; serta melepaskan kesemua sumbangan anda tanpa tertarik balik dengan lesen &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Dengan menyimpan, anda menyetujui &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Syarat-Syarat Penggunaan&lt;/a&gt; serta melepaskan kesemua sumbangan anda tanpa tertarik balik dengan lesen &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;. Suntingan akan diatribusikan kepada alamat IP peranti anda. Jika anda &lt;a href=\"https://#login\"&gt;log masuk&lt;/a&gt;, maka privasi anda bertambah baik.</string>
-  <string name="preference_title_language">Bahasa Wikipedia</string>
+  <string name="preference_title_language">Bahasa DroidWiki</string>
   <string name="preference_languages_filter_hint">Cari</string>
   <string name="preference_system_language_toggle">Gunakan bahasa sistem</string>
   <string name="preference_system_language_summary">Bahasa sistem</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Kata laluan</string>
   <string name="login_password_show_check">Paparkan kata laluan</string>
   <string name="menu_login">Log masuk</string>
-  <string name="login_activity_title">Log masuk ke dalam Wikipedia</string>
+  <string name="login_activity_title">Log masuk ke dalam DroidWiki</string>
   <string name="login_in_progress_dialog_message">Sedang log masuk…</string>
   <string name="login_error_wrong_password">Kata laluan tidak betul</string>
   <string name="login_error_wrong_username">Nama pengguna tidak betul</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Log masuk gagal :(</string>
   <string name="login_error_no_network">Tiada sambungan rangkaian</string>
   <string name="preference_title_logout">Log keluar</string>
-  <string name="preference_summary_logout">Log keluar dari akaun Wikipedia</string>
+  <string name="preference_summary_logout">Log keluar dari akaun DroidWiki</string>
   <string name="preference_summary_notloggedin">Tidak log masuk.</string>
   <string name="toast_logout_complete">Log keluar</string>
   <string name="saved_pages_empty_title">Tiada laman tersimpan di sini!</string>
@@ -105,10 +105,10 @@
   <string name="history_empty_title">Tiada laman terbaru di sini.</string>
   <string name="history_empty_message">Mungkin anda telah memadamkan kesemuanya. Lain kali anda ke sesuatu laman, anda boleh kembali kepadanya dari sini.</string>
   <string name="delete_selected_history">Hapuskan</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nama pengguna</string>
   <string name="create_account_password_hint">Kata laluan</string>
-  <string name="login_create_account_link">Tiada akaun? Sertai Wikipedia</string>
+  <string name="login_create_account_link">Tiada akaun? Sertai DroidWiki</string>
   <string name="create_account_login_link">Sudah ada akaun? Log masuk</string>
   <string name="create_account_activity_title">Buka akaun</string>
   <string name="dialog_create_account_checking_progress">Pengesahan sedang dilakukan</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Seterusnya</string>
   <string name="create_account_button">Buka akaun</string>
   <string name="preferences_general_heading">Umum</string>
-  <string name="wikipedia_app_faq">Soalan Lazim Aplikasi Wikipedia</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero dimatikan</string>
+  <string name="wikipedia_app_faq">Soalan Lazim Aplikasi DroidWiki</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero dimatikan</string>
   <string name="zero_charged_verbiage_extended">Memuatkan artikel-artikel lain mungkin dikenakan caj data.</string>
-  <string name="zero_search_hint">Cari dalam Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Pesan apabila keluar dari Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Jika operator mudah alih anda mengecualikan caj akses data untuk aplikasi Wikipedia menerusi persepakatan Wikipedia Zero, jika tetapan ini dibiarkan pasang, anda akan dipesan bahawa caj mungkin dikenakan ketika anda keluar dari aplikasi Wikipedia.</string>
-  <string name="zero_webpage_title">Soalan Lazim Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Keluar dari Wikipedia Zero</string>
+  <string name="zero_search_hint">Cari dalam DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Pesan apabila keluar dari DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Jika operator mudah alih anda mengecualikan caj akses data untuk aplikasi DroidWiki menerusi persepakatan DroidWiki Zero, jika tetapan ini dibiarkan pasang, anda akan dipesan bahawa caj mungkin dikenakan ketika anda keluar dari aplikasi DroidWiki.</string>
+  <string name="zero_webpage_title">Soalan Lazim DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Keluar dari DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Caj data mungkin dikenakan. Terus ke laman web luaran?</string>
   <string name="zero_interstitial_continue">Ya</string>
   <string name="zero_interstitial_cancel">Tidak</string>
-  <string name="zero_learn_more">Caj data akan dikecualikan bagi aplikasi Wikipedia ini.</string>
+  <string name="zero_learn_more">Caj data akan dikecualikan bagi aplikasi DroidWiki ini.</string>
   <string name="zero_learn_more_learn_more">Baca lagi</string>
   <string name="zero_learn_more_dismiss">Singkir</string>
   <string name="edit_preview_fetching_dialog_message">Mengolah pralihat…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Halaman ini dilindungi</string>
   <string name="more_item_preferences">Lagi</string>
   <string name="more_activity_title">Lagi</string>
-  <string name="about_description">Tentang aplikasi Wikipedia</string>
+  <string name="about_description">Tentang aplikasi DroidWiki</string>
   <string name="privacy_policy_description">Dasar privasi</string>
   <string name="terms_of_use_description">Syarat-syarat penggunaan</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Suntingan ini mungkin tidak membina. Adakah anda betul-betul mahu menyimpannya?</string>
   <string name="abusefilter_title_disallow">Suntingan ini tidak boleh disimpan. Sila kembali dan suntingnya semula.</string>
   <string name="abusefilter_text_warn">Penapis automatik mendapati suntingan ini berkemungkinan adalah tidak membina. Mungkin ia ada antara yang berikut:&lt;br /&gt;&lt;br /&gt;. Menaip dalam huruf besar&lt;br /&gt;. Mengosongkan rencana atau menspam&lt;br /&gt;. Pautan luar atau imej-imej tidak berkaitan&lt;br /&gt;. Aksara berulang</string>
-  <string name="abusefilter_text_disallow">Penapis automatik mendapati suntingan ini berkemungkinan tidak membina, atau laku musnah.&lt;br /&gt;&lt;br /&gt;Wikipedia ialah ensiklopedia dan hanya kandungan neutral, penting yang perlu di sini.</string>
+  <string name="abusefilter_text_disallow">Penapis automatik mendapati suntingan ini berkemungkinan tidak membina, atau laku musnah.&lt;br /&gt;&lt;br /&gt;DroidWiki ialah ensiklopedia dan hanya kandungan neutral, penting yang perlu di sini.</string>
   <string name="dialog_page_issues">Isu-isu laman</string>
   <string name="button_page_issues">Isu-isu laman</string>
   <string name="menu_themechooser">Tukar fon dan tema</string>
@@ -218,21 +218,21 @@
   <string name="table_infobox">Fakta segera</string>
   <string name="table_other">Maklumat lanjut</string>
   <string name="table_close">Tutup</string>
-  <string name="widget_name_featured_page">Laman pilihan Wikipedia</string>
+  <string name="widget_name_featured_page">Laman pilihan DroidWiki</string>
   <string name="widget_title_featured_page">Laman pilihan hari ini:</string>
-  <string name="widget_name_search">Pencarian Wikipedia</string>
-  <string name="app_store_description">Aplikasi rasmi Wikipedia untuk Android. Wikipedia merupakan ensiklopedia bebas yang mengandungi lebih daripada 32 juta rencana dalam 280 bahasa, bahkan merupakan bahan rujukan paling menyeluruh dan meluas digunakan yang pernah dihimpunkan oleh manusia. Aplikasi ini telah ditulis ganti dari pangkal dan oleh itu lebih baik daripada dahulu. Aplikasi ini telah dibina semula dari kosong dan kini lebih baik daripada dahulu.
+  <string name="widget_name_search">Pencarian DroidWiki</string>
+  <string name="app_store_description">Aplikasi rasmi DroidWiki untuk Android. DroidWiki merupakan ensiklopedia bebas yang mengandungi lebih daripada 32 juta rencana dalam 280 bahasa, bahkan merupakan bahan rujukan paling menyeluruh dan meluas digunakan yang pernah dihimpunkan oleh manusia. Aplikasi ini telah ditulis ganti dari pangkal dan oleh itu lebih baik daripada dahulu. Aplikasi ini telah dibina semula dari kosong dan kini lebih baik daripada dahulu.
 
 Ciri-ciri:
-- Gambar utama: alami Wikipedia serba baharu dengan gambar yang menonjol dan tepat dengan konteks di atas-atas rencana
+- Gambar utama: alami DroidWiki serba baharu dengan gambar yang menonjol dan tepat dengan konteks di atas-atas rencana
 - Galeri imej: sentuh gambar untuk dapatkan paparan resolusi tinggi dengan kebolehan geser ke kiri/kanan untuk menelusuri gambar lain
 - Keterangan dari Wikidata: setiap hasil carian kini ada huraian ringkas untuk memperhalusi hasil menerusi konteks. Keterangan ini juga dipaparkan di ciri-ciri lain aplikasi ini seperti Berdekatan
 - Cadangan rencana: skrol ke bawah rencana untuk melihat cadangan rencana bacaan seterusnya
 - Simpan laman: simpan laman-laman terpilih untuk dibaca di luar talian dan ditelusuri walaupun tiada sambungan data
 - Berdekatan: ketahui lebih lanjut mengenai sekitar anda dengan mendapatkan pautan ke rencana mengenai perihal yang berdekatan dengan lokasi semasa anda
-- Sokongan bahasa: menukar paparan Wikipedia dengan lancar ke pelbagai bahasa
+- Sokongan bahasa: menukar paparan DroidWiki dengan lancar ke pelbagai bahasa
 - Jadual isi kandungan: geser ke kiri pada sebarang rencana untuk dapatkan jadual kandungan untuk cepat beralih sesama bahagian rencana
-- Wikipedia Zero: caj data dikecualikan untuk pengendali talian selular terpilih
+- DroidWiki Zero: caj data dikecualikan untuk pengendali talian selular terpilih
 
 Kod ini adalah 100% sumber terbuka. Jika anda mempunyai pengalaman dengan Java dan Android SDK, bantuan anda kami alu-alukan! https://github.com/wikimedia/apps-android-wikipedia
 
@@ -257,7 +257,7 @@ Syarat penggunaan: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="gallery_save_success">Imej berjaya disimpan.</string>
   <string name="gallery_error_video_failed">Video tidak dapat ditayangkan.</string>
   <string name="err_cannot_save_file">Fail tidak dapat disimpan</string>
-  <string name="snippet_share_intro">Fakta menarik di @Wikipedia %1$s: %2$s</string>
+  <string name="snippet_share_intro">Fakta menarik di @DroidWiki %1$s: %2$s</string>
   <string name="expand_refs">Ketik untuk kembangkan</string>
   <string name="share_snippet_button">Sebarkan dalam bentuk imej</string>
   <string name="share_normal_button">Sebarkan dalam bentuk teks</string>

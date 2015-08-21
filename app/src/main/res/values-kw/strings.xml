@@ -8,7 +8,7 @@
   <string name="acra_report_dialog_title">Wikipedya a dhroglammas :(</string>
   <string name="acra_report_dialog_text">Derivas dhyn derivas droglamm</string>
   <string name="acra_report_dialog_comment">Pandr\'esewgh ow kul pan dhroglammas Wikipedya?</string>
-  <string name="search_hint">Hwilas yn Wikipedia</string>
+  <string name="search_hint">Hwilas yn DroidWiki</string>
   <string name="nav_item_history">Istori</string>
   <string name="error_network_error" fuzzy="true">Nyns eus junyans rosweyth :(</string>
   <string name="search_network_error">Gwall rosweyth. Assayewgh arta.</string>
@@ -99,7 +99,7 @@
   <string name="history_empty_title">Nyns eus folennow a-dhiwedhes omma!</string>
   <string name="history_empty_message">Hwi a dhileas oll anedha martesen. An nessa termyn mayth ewgh dhe folen y hyllowgh dehweles dhedhi alemma.</string>
   <string name="delete_selected_history">Dilea</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDY&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Hanow devnydhyer</string>
   <string name="create_account_password_hint">Ger tremena</string>
   <string name="login_create_account_link">A nyns eus akont dhywgh? Junya Wikipedya</string>
@@ -156,7 +156,7 @@
   <string name="page_protected_can_not_edit_title">Difresys yw an folen ma</string>
   <string name="more_item_preferences">Moy</string>
   <string name="more_activity_title">Moy</string>
-  <string name="about_description">A-dro dhe\'n app Wikipedia</string>
+  <string name="about_description">A-dro dhe\'n app DroidWiki</string>
   <string name="privacy_policy_description">Polici privetter</string>
   <string name="terms_of_use_description">Termynyow devnydh</string>
   <string name="about_libraries_heading">lyverjiow devnydhys</string>

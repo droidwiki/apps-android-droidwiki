@@ -93,7 +93,7 @@
   <string name="saved_pages_empty_title">Нема сачуваних страница!</string>
   <string name="history_empty_message">Највероватније сте их све обрисали. Кад идући пут будете посетили страницу, можете јој се поново вратити овде.</string>
   <string name="delete_selected_history">Брисање</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ИКИПЕДИЈ&lt;big&gt;А&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Корисничко име</string>
   <string name="create_account_password_hint">Лозинка</string>
   <string name="login_create_account_link">Немате налог? Придружите се Википедији</string>
@@ -118,9 +118,9 @@
   <string name="create_account_next">Следеће</string>
   <string name="create_account_button">Отвори налог</string>
   <string name="preferences_general_heading">Опште</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero искључена</string>
-  <string name="zero_search_hint">Претражи Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Упозори ме ако напуштам Wikipedia Zero</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero искључена</string>
+  <string name="zero_search_hint">Претражи DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Упозори ме ако напуштам DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Напусти</string>
   <string name="zero_interstitial_cancel">Остани овде</string>
   <string name="zero_learn_more_learn_more">Прочитај више</string>

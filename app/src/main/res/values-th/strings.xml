@@ -103,7 +103,7 @@
   <string name="toast_logout_complete">ล็อกเอาต์แล้ว</string>
   <string name="saved_pages_empty_title">ไม่มีหน้าที่บันทึกไว้ที่นี่!</string>
   <string name="delete_selected_history">ลบ</string>
-  <string name="wp_stylized">&lt;big&gt;วิ&lt;/big&gt;กิพีเดี&lt;big&gt;ย&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">ชื่อผู้ใช้</string>
   <string name="create_account_password_hint">รหัสผ่าน</string>
   <string name="login_create_account_link">ยังไม่มีบัญชีหรือ? มาร่วมเป็นส่วนหนึ่งกับเรา</string>
@@ -143,7 +143,7 @@
   <string name="gallery_menu_save">บันทึกไปยังอุปกรณ์</string>
   <string name="gallery_save_error">ไม่สามารถบันทึกรูปภาพ: %s</string>
   <string name="err_cannot_save_file">ไม่สามารถบันทึกไฟล์</string>
-  <string name="snippet_share_intro">\"%1$s\" บน @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" บน @DroidWiki: %2$s</string>
   <string name="expand_refs">แตะเพื่อขยาย</string>
   <string name="share_snippet_button">แบ่งปันเป็นรูปภาพ</string>
   <string name="share_normal_button">แบ่งปันเป็นข้อความ</string>

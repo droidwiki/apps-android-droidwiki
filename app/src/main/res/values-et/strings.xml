@@ -91,14 +91,14 @@
   <string name="create_account_next">Edasi</string>
   <string name="create_account_button">Loo konto</string>
   <string name="preferences_general_heading">Üldine</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero välja lülitatud</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero välja lülitatud</string>
   <string name="zero_charged_verbiage_extended">Teiste artiklite laadimine võib kaasa tuua andmesidetasud!</string>
-  <string name="zero_search_hint">Otsi Wikipedia Zerost</string>
-  <string name="zero_warn_when_leaving">Hoiata, kui lahkun Wikipedia Zerost</string>
-  <string name="zero_warn_when_leaving_summary">Kui su mobiilioperaator loobub Vikipeedia rakenduse andmesidetasudest Wikipedia Zero partnerluse kaudu, siis selle seade sisselülitamine annab sulle teada, kui lahkud Vikipeedia rakendusest ja sinu edasine tegevus võib olla tasuline.</string>
-  <string name="zero_webpage_title">Wikipedia Zero KKK</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Lahkumine Wikipedia Zerost</string>
+  <string name="zero_search_hint">Otsi DroidWiki Zerost</string>
+  <string name="zero_warn_when_leaving">Hoiata, kui lahkun DroidWiki Zerost</string>
+  <string name="zero_warn_when_leaving_summary">Kui su mobiilioperaator loobub Vikipeedia rakenduse andmesidetasudest DroidWiki Zero partnerluse kaudu, siis selle seade sisselülitamine annab sulle teada, kui lahkud Vikipeedia rakendusest ja sinu edasine tegevus võib olla tasuline.</string>
+  <string name="zero_webpage_title">DroidWiki Zero KKK</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Lahkumine DroidWiki Zerost</string>
   <string name="zero_interstitial_leave_app">Andmesidetasud võivad rakenduda. Kas soovid jätkuvalt siirduda välisele leheküljele?</string>
   <string name="zero_interstitial_continue">Lahku</string>
   <string name="zero_interstitial_cancel">Jää siia!</string>
@@ -160,7 +160,7 @@ Omadused:
    - Salvestatud leheküljed: Võid salvestada valitud leheküljed võrguväliseks lugemiseks ja sirvida neid isegi siis, kui andmeside puudub.
    - Jagamine: Kasuta olemasolevaid sotsiaalvõrgustiku rakendusi, et jagada inimkonna kõiki teadmisi.
    - Keeletugi: Rakendus võimaldab sul sujuvalt ümber lülituda ükskõik millises keeles Vikipeedia lugemisele.
-   - Wikipedia Zero: Projektis osalevate mobiilioperaatoritega puuduvad andmesidetasud.
+   - DroidWiki Zero: Projektis osalevate mobiilioperaatoritega puuduvad andmesidetasud.
 
 Kood on täielikult avatud lähtekoodiga. Kui sul on kogemusi Java ja Android SDK-ga, siis arenda seda! https://github.com/wikimedia/apps-android-wikipedia</string>
 </resources>

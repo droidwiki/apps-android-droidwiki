@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
-  <string name="acra_report_dialog_title">Wikipedia kraschade :(</string>
+  <string name="acra_report_dialog_title">DroidWiki kraschade :(</string>
   <string name="acra_report_dialog_text">Skicka en kraschrapport till oss</string>
   <string name="acra_report_dialog_comment">Vad gjorde du när kraschen inträffade?</string>
-  <string name="search_hint">Sök på Wikipedia</string>
+  <string name="search_hint">Sök på DroidWiki</string>
   <string name="nav_item_history">Historik</string>
   <string name="error_network_error">Nätverksanslutningen kunde inte upprättas.</string>
   <string name="search_network_error">Nätverksfel. Tryck för att försöka igen.</string>
@@ -54,7 +54,7 @@
   <string name="content_license_html">Innehållet är tillgängligt under &lt;a class=\"external\" rel=\"nofollow\" href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; om inget annat anges</string>
   <string name="edit_save_action_license_logged_in">Genom att spara godkänner du &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Användarvillkoren&lt;/a&gt;, och att oåterkalleligen släppa ditt bidrag med licensen &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Genom att spara samtycker till &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;användarvillkoren&lt;/a&gt; och att oåterkalleligt släppa dina bidrag under licensen &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;. Redigeringar kommer att tillskrivas till din enhets IP-adress. Om du &lt;a href=\"https://#login\"&gt;loggar in&lt;/a&gt; kommer du få mer integritet.</string>
-  <string name="preference_title_language">Wikipediaspråk</string>
+  <string name="preference_title_language">DroidWikispråk</string>
   <string name="preference_languages_filter_hint">Sök</string>
   <string name="preference_system_language_toggle">Använd systemspråket</string>
   <string name="preference_system_language_summary">Systemspråk</string>
@@ -86,7 +86,7 @@
   <string name="login_password_hint">Lösenord</string>
   <string name="login_password_show_check">Visa lösenord</string>
   <string name="menu_login">Logga in</string>
-  <string name="login_activity_title">Logga in på Wikipedia</string>
+  <string name="login_activity_title">Logga in på DroidWiki</string>
   <string name="login_in_progress_dialog_message">Loggar in dig…</string>
   <string name="login_error_wrong_password">Felaktigt lösenord</string>
   <string name="login_error_wrong_username">Felaktigt användarnamn</string>
@@ -97,7 +97,7 @@
   <string name="login_error_unknown">Inloggningen misslyckades :(</string>
   <string name="login_error_no_network">Ingen nätverksanslutning</string>
   <string name="preference_title_logout">Logga ut</string>
-  <string name="preference_summary_logout">Logga ut från ditt Wikipedia-konto</string>
+  <string name="preference_summary_logout">Logga ut från ditt DroidWiki-konto</string>
   <string name="preference_summary_notloggedin">Inte inloggad.</string>
   <string name="toast_logout_complete">Utloggad</string>
   <string name="saved_pages_empty_title">Inga sparade sidor här!</string>
@@ -105,7 +105,7 @@
   <string name="history_empty_title">Inga nya sidor här.</string>
   <string name="history_empty_message">Du raderade förmodligen samtliga. Nästa gång du går till en sida kan du komma tillbaka till den härifrån.</string>
   <string name="delete_selected_history">Radera</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Användarnamn</string>
   <string name="create_account_password_hint">Lösenord</string>
   <string name="login_create_account_link">Har du inget konto? Skapa ett</string>
@@ -130,19 +130,19 @@
   <string name="create_account_next">Nästa</string>
   <string name="create_account_button">Skapa konto</string>
   <string name="preferences_general_heading">Allmänt</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero är avstängt</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero är avstängt</string>
   <string name="zero_charged_verbiage_extended">Laddning av andra artiklar kan medföra kostnader för datatrafik.</string>
-  <string name="zero_search_hint">Sök på Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving">Varna om jag lämnar Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Om din mobiloperatör ingått ett partnerskap med Wikipedia Zero, som ger dig tillgång till Wikipedia utan datatrafiksavgifter, varnas du om du lämnar appen och riskerar att betala för datatrafik om du har aktiverat denna inställning.</string>
-  <string name="zero_webpage_title">Vanliga frågor om Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Du lämnar nu Wikipedia Zero</string>
+  <string name="zero_search_hint">Sök på DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving">Varna om jag lämnar DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Om din mobiloperatör ingått ett partnerskap med DroidWiki Zero, som ger dig tillgång till DroidWiki utan datatrafiksavgifter, varnas du om du lämnar appen och riskerar att betala för datatrafik om du har aktiverat denna inställning.</string>
+  <string name="zero_webpage_title">Vanliga frågor om DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Du lämnar nu DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Avgifter för datatrafik kan tillkomma. Vill du fortsätta till den externa webbplatsen?</string>
   <string name="zero_interstitial_continue">Lämna appen</string>
   <string name="zero_interstitial_cancel">Avbryt</string>
-  <string name="zero_learn_more">Vill du veta mer om Wikipedia Zero?</string>
+  <string name="zero_learn_more">Vill du veta mer om DroidWiki Zero?</string>
   <string name="zero_learn_more_learn_more">Läs mer</string>
   <string name="zero_learn_more_dismiss">Stäng</string>
   <string name="edit_preview_fetching_dialog_message">Hämtar förhandsgranskning…</string>
@@ -164,7 +164,7 @@
   <string name="page_protected_can_not_edit_title">Denna sida är skrivskyddad</string>
   <string name="more_item_preferences">Mer</string>
   <string name="more_activity_title">Mer</string>
-  <string name="about_description">Om Wikipedia-appen</string>
+  <string name="about_description">Om DroidWiki-appen</string>
   <string name="privacy_policy_description">Integritetspolicy</string>
   <string name="terms_of_use_description">Användarvillkor</string>
   <string name="privacy_policy_url">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Detta kan vara en icke-konstruktiv redigering. Är du säker på att du vill spara den?</string>
   <string name="abusefilter_title_disallow">Du kan inte spara denna redigering. Gå tillbaka och ändra den.</string>
   <string name="abusefilter_text_warn">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv. Den kan innehålla en eller flera av följande:&lt;br /&gt;&lt;br /&gt;· Text skriven helt med versaler&lt;br /&gt;· Tömande av artiklar eller spam&lt;br /&gt;· Irrelevanta externa länkar eller bilder&lt;br /&gt;· Upprepade tecken</string>
-  <string name="abusefilter_text_disallow">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv eller potentiell vandalism.&lt;br /&gt;&lt;br /&gt;Wikipedia är en encyklopedi och endast neutralt, nämnvärt innehåll hör hemma här.</string>
+  <string name="abusefilter_text_disallow">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv eller potentiell vandalism.&lt;br /&gt;&lt;br /&gt;DroidWiki är en encyklopedi och endast neutralt, nämnvärt innehåll hör hemma här.</string>
   <string name="dialog_page_issues">Sidproblem</string>
   <string name="button_page_issues">Sidproblem</string>
   <string name="menu_themechooser">Ändra teckensnitt och tema</string>
@@ -218,23 +218,23 @@
   <string name="table_infobox">Snabbfakta</string>
   <string name="table_other">Mer information</string>
   <string name="table_close">Stäng</string>
-  <string name="widget_name_featured_page">Utmärkt Wikipedia-artikel</string>
+  <string name="widget_name_featured_page">Utmärkt DroidWiki-artikel</string>
   <string name="widget_title_featured_page">Dagens utmärkta artikel:</string>
-  <string name="widget_name_search">Wikipedia-sök</string>
-  <string name="app_store_description">Officiell Wikipedia-app för Android. Wikipedia är det fria uppslagsverket som innehåller mer än 32 miljoner artiklar på 280 språk och är den mest omfattande och använda referensarbetet människan någonsin har sammanställt.
+  <string name="widget_name_search">DroidWiki-sök</string>
+  <string name="app_store_description">Officiell DroidWiki-app för Android. DroidWiki är det fria uppslagsverket som innehåller mer än 32 miljoner artiklar på 280 språk och är den mest omfattande och använda referensarbetet människan någonsin har sammanställt.
 
 Funktioner:
-- Inledande bilder: Upplev Wikipedia som aldrig tidigare med en framträdande innehållsrelevant bild och beskrivning längst upp på artiklar
+- Inledande bilder: Upplev DroidWiki som aldrig tidigare med en framträdande innehållsrelevant bild och beskrivning längst upp på artiklar
 - Bildgallerier: Tryck på en bild för att se den i helskärm och svep till vänster/höger för att bläddra mellan flera bilder
 - Beskrivningar från Wikidata: När du söker kommer varje sökresultat nu innehålla en kort beskrivning som knyter resultatet till ett sammanhang. Dessa beskrivningar visas även på andra ställen i appen, som I närheten
 - Artikelförslag: Rulla längst ned till en artikel för att se förslag på vad du kan läsa sedan
 - Sparade sidor: Spara valda sidor för att läsa offline och bläddra bland dem även när du inte har en dataanslutning.
 - I närheten: Läs mer om vad som finns runtomkring dig genom att få länkar till artiklar om saker som finns nära din aktuella plats
-- Språkstöd: Växla enkelt mellan olika språk att läsa Wikipedia på
+- Språkstöd: Växla enkelt mellan olika språk att läsa DroidWiki på
 - Innehållsförteckning: Svep till vänster på en artikel för att få en innehållsförteckning, som låter dig enkelt hoppa till artikelns olika avsnitt
-- Wikipedia Zero: Inga dataavgifter från deltagande mobiloperatörer för att använda appen
+- DroidWiki Zero: Inga dataavgifter från deltagande mobiloperatörer för att använda appen
 
-Skicka din återkoppling om appen! Gå till menyn, tryck på \"Mer\", sedan \"Om Wikipedia-appen\" och \"Skicka återkoppling om appen\".
+Skicka din återkoppling om appen! Gå till menyn, tryck på \"Mer\", sedan \"Om DroidWiki-appen\" och \"Skicka återkoppling om appen\".
 
 Koden består till 100 % av öppen källkod. Om du har erfarenhet av Java och Android SDK ser vi fram emot din hjälp! https://github.com/Wikimedia/apps-Android-wikipedia
 
@@ -259,7 +259,7 @@ Villkor för användning: https://m.wikimediafoundation.org/wiki/Terms_of_Use</s
   <string name="gallery_save_success">Bilden har sparats.</string>
   <string name="gallery_error_video_failed">Kan inte spela upp video.</string>
   <string name="err_cannot_save_file">Kan inte spara filen</string>
-  <string name="snippet_share_intro">\"%1$s\" på @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" på @DroidWiki: %2$s</string>
   <string name="expand_refs">Tryck för att expandera</string>
   <string name="share_snippet_button">Dela som bild</string>
   <string name="share_normal_button">Dela som text</string>

@@ -96,7 +96,7 @@
   <string name="saved_pages_empty_title">Nincsenek mentett lapok!</string>
   <string name="saved_pages_empty_message">A mentett lapok csodásak. Gondolj úgy rájuk, mint a könyvjelzőkre, amelyeket akkor is tudod olvasni, ha offline vagy.</string>
   <string name="delete_selected_history">Töröl</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Felhasználónév</string>
   <string name="create_account_password_hint">Jelszó</string>
   <string name="login_create_account_link">Nincs még fiókod? Csatlakozz a Wikipédiához!</string>
@@ -121,12 +121,12 @@
   <string name="create_account_next">Következő</string>
   <string name="create_account_button">Fiók létrehozása</string>
   <string name="preferences_general_heading">Általános</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero kikapcsolva</string>
-  <string name="zero_search_hint">Wikipedia Zero keresés</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero kikapcsolva</string>
+  <string name="zero_search_hint">DroidWiki Zero keresés</string>
   <string name="zero_warn_when_leaving">Figyelmeztet, ha elhagyom a Wikipédia Zérót</string>
-  <string name="zero_webpage_title">Wikipedia Zero GyIK</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Wikipedia Zero elhagyása</string>
+  <string name="zero_webpage_title">DroidWiki Zero GyIK</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">DroidWiki Zero elhagyása</string>
   <string name="zero_interstitial_leave_app">Adatforgalmi díj lehet. Folytatod a külső oldalon?</string>
   <string name="zero_interstitial_continue">Elhagy</string>
   <string name="zero_interstitial_cancel">Itt marad</string>

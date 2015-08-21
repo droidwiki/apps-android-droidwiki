@@ -95,7 +95,7 @@
   <string name="history_empty_title">Жакында каралган барактар жок!</string>
   <string name="history_empty_message">Кыязы, сиз алардын баарын өчүргөн окшойсуз. Кийинки жолу баракка киргенде, бул жактан кайрылсаңыз болот</string>
   <string name="delete_selected_history">Өчүрүү</string>
-  <string name="wp_stylized">&lt;big&gt;У&lt;/big&gt;ИКИПЕДИ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
   <string name="create_account_username_hint">Колдонуучу аты</string>
   <string name="create_account_password_hint">Сырсөз</string>
   <string name="login_create_account_link">Катталган эмессизби? Уикипедияга кошулуңуз</string>
@@ -209,7 +209,7 @@
 — Сакталган барактар: Сиз окуу үчүн тандалган барактарды автономдук режимде сактап, аларды интернетке туташуу болбосо да карасаңыз болот.
 — Бөлүшүңүз: Адамзаттын көптөгөн билимдери менен бөлүшкүңүз келсе, сизде бар социалдык желелердин тиркемелерин колдонуңуз.
 — Тилдер: Тиркеме Уикипедиянын кайсы тилинде болбосун жазылган макалаларына эч кыйынчылыксыз өтүүгө мүмкүндүк берет.
-— Wikipedia Zero (Уикипедия Нөл): Катышуучу уюлдук байланыш операторлору колдонуу үчүн акы алышпайт.
+— DroidWiki Zero (Уикипедия Нөл): Катышуучу уюлдук байланыш операторлору колдонуу үчүн акы алышпайт.
 
 Баштапкы коду толугу менен ачык. Эгерде сиздин Java жана Android SDK менен иштөө тажрыйбаңыз болсо бизге кошулуңуз! https://github.com/wikimedia/apps-android-wikipedia</string>
   <string name="alpha_update_notification_title">Альфа-нусканын жаңы жаңылануусу жеткиликтүү</string>
