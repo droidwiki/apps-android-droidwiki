@@ -58,7 +58,7 @@ android {
         applicationId 'de.droidwiki'
         minSdkVersion 10
         targetSdkVersion 22
-        versionCode 108
+        versionCode 109
         testApplicationId 'de.droidwiki.test'
     }
 
