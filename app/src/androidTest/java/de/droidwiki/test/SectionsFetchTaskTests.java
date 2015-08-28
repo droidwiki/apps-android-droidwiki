@@ -1,22 +1,22 @@
-package de.droidwiki.test;
+package org.wikipedia.test;
 
 import android.content.Intent;
 import android.test.ActivityUnitTestCase;
 
-import de.droidwiki.WikipediaApp;
-import de.droidwiki.page.PageTitle;
-import de.droidwiki.Site;
-import de.droidwiki.page.Section;
-import de.droidwiki.page.fetch.OldSectionsFetchTask;
+import org.wikipedia.WikipediaApp;
+import org.wikipedia.page.PageTitle;
+import org.wikipedia.Site;
+import org.wikipedia.page.Section;
+import org.wikipedia.page.SectionsFetchTask;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-public class PageFetchTaskTests extends ActivityUnitTestCase<TestDummyActivity> {
+public class SectionsFetchTaskTests extends ActivityUnitTestCase<TestDummyActivity> {
     private static final int TASK_COMPLETION_TIMEOUT = 20000;
 
-    public PageFetchTaskTests() {
+    public SectionsFetchTaskTests() {
         super(TestDummyActivity.class);
     }
 
@@ -40,7 +40,7 @@ public class PageFetchTaskTests extends ActivityUnitTestCase<TestDummyActivity> 
             @Override
             public void run() {
                 final WikipediaApp app = WikipediaApp.getInstance();
-                new OldSectionsFetchTask(app, new PageTitle(null, title, new Site("test.wikipedia.org")), "all") {
+                new SectionsFetchTask(app, new PageTitle(null, title, new Site("test.wikipedia.org")), "all") {
                     @Override
                     public void onFinish(List<Section> result) {
                         assertNotNull(result);

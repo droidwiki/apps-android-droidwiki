@@ -26,7 +26,9 @@ import com.squareup.picasso.Target;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import de.droidwiki.analytics.GalleryFunnel;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.ViewAnimations;
 import de.droidwiki.WikipediaApp;
@@ -148,7 +150,8 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
                                                              parentFragment.getTitle()
                                                                            .getSite());
                         GalleryActivity.showGallery(parentFragment.getActivity(),
-                                parentFragment.getTitleOriginal(), imageTitle, false);
+                                parentFragment.getTitleOriginal(), imageTitle,
+                                GalleryFunnel.SOURCE_LEAD_IMAGE);
                     }
                     return true;
                 }

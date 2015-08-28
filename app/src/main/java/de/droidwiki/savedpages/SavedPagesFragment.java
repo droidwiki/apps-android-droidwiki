@@ -32,6 +32,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import de.droidwiki.BackPressedHandler;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
@@ -39,6 +40,7 @@ import de.droidwiki.pageimages.PageImage;
 import de.droidwiki.util.FeedbackUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SavedPagesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, BackPressedHandler {
     // make sure this number is unique among other fragments that use a loader
@@ -276,7 +278,9 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-            return getActivity().getLayoutInflater().inflate(de.droidwiki.R.layout.item_page_list_entry, viewGroup, false);
+            View view = getActivity().getLayoutInflater().inflate(R.layout.item_page_list_entry, viewGroup, false);
+            view.setBackgroundResource(R.drawable.selectable_item_background);
+            return view;
         }
 
         @Override
@@ -315,8 +319,10 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        menu.findItem(de.droidwiki.R.id.menu_clear_all_saved_pages).setEnabled(savedPagesList.getCount() > 0);
-        menu.findItem(de.droidwiki.R.id.menu_refresh_all_saved_pages).setEnabled(savedPagesList.getCount() > 0);
+        for (int id : Arrays.asList(R.id.menu_clear_all_saved_pages, R.id.menu_refresh_all_saved_pages)) {
+            boolean enabled = savedPagesList.getCount() > 0;
+            menu.findItem(id).setEnabled(enabled).setVisible(enabled);
+        }
     }
 
     @Override

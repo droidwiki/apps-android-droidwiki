@@ -99,6 +99,7 @@ public class PageActivity extends ThemedActionBarActivity {
     private static final String PLAIN_TEXT_MIME_TYPE = "text/plain";
     private static final String KEY_LAST_FRAGMENT = "lastFragment";
     private static final String KEY_LAST_FRAGMENT_ARGS = "lastFragmentArgs";
+    private static final String LINK_PREVIEW_FRAGMENT_TAG = "link_preview_dialog";
 
     private Bus bus;
     private EventBusMethods busMethods;
@@ -625,6 +626,13 @@ public class PageActivity extends ThemedActionBarActivity {
                                final TabPosition position,
                                boolean allowStateLoss,
                                final boolean mustBeEmpty) {
+        if (isDestroyed()) {
+            return;
+        }
+
+        // Close the link preview, if one is open.
+        hideLinkPreview();
+
         ACRA.getErrorReporter().putCustomData("api", title.getSite().getApiDomain());
         ACRA.getErrorReporter().putCustomData("title", title.toString());
 
@@ -698,10 +706,19 @@ public class PageActivity extends ThemedActionBarActivity {
     }
 
     public void showLinkPreview(PageTitle title, int entrySource) {
-        final String linkPreviewFragmentTag = "link_preview_dialog";
-        if (getSupportFragmentManager().findFragmentByTag(linkPreviewFragmentTag) == null) {
-            LinkPreviewDialog dialog = LinkPreviewDialog.newInstance(title, entrySource);
-            dialog.show(getSupportFragmentManager(), linkPreviewFragmentTag);
+        if (getSupportFragmentManager().findFragmentByTag(LINK_PREVIEW_FRAGMENT_TAG) == null) {
+            LinkPreviewDialog linkPreview = LinkPreviewDialog.newInstance(title, entrySource);
+            linkPreview.show(getSupportFragmentManager(), LINK_PREVIEW_FRAGMENT_TAG);
+        }
+    }
+
+    /**
+     * Dismiss the current link preview, if one is open.
+     */
+    private void hideLinkPreview() {
+        LinkPreviewDialog linkPreview = (LinkPreviewDialog) getSupportFragmentManager().findFragmentByTag(LINK_PREVIEW_FRAGMENT_TAG);
+        if (linkPreview != null) {
+            linkPreview.dismiss();
         }
     }
 

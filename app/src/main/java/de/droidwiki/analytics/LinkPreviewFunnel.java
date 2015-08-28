@@ -9,17 +9,15 @@ import de.droidwiki.WikipediaApp;
 public class LinkPreviewFunnel extends TimedFunnel {
     private static final String SCHEMA_NAME = "MobileWikiAppLinkPreview";
     private static final int REV_ID = 12143205;
-
-    private final PageTitle title;
+    private static final int PROD_LINK_PREVIEW_VERSION = 3;
     private final int version;
 
+    private final PageTitle title;
+
     public LinkPreviewFunnel(WikipediaApp app, PageTitle title) {
-        // TODO: increase this sample rate when ready for production
-        // (we're keeping it low for now, while we gather as much engagement data as possible
-        // from the beta channel)
-        super(app, SCHEMA_NAME, REV_ID, SAMPLE_LOG_10);
+        super(app, SCHEMA_NAME, REV_ID, app.isProdRelease() ? Funnel.SAMPLE_LOG_100 : Funnel.SAMPLE_LOG_ALL);
         this.title = title;
-        version = app.getLinkPreviewVersion();
+        version = app.isProdRelease() ? PROD_LINK_PREVIEW_VERSION : app.getLinkPreviewVersion();
     }
 
     @Override

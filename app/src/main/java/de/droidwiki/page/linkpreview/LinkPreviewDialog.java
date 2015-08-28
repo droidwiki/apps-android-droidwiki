@@ -1,6 +1,7 @@
 package de.droidwiki.page.linkpreview;
 
 import org.mediawiki.api.json.Api;
+import de.droidwiki.analytics.GalleryFunnel;
 import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageActivityLongPressHandler;
@@ -14,24 +15,18 @@ import de.droidwiki.page.gallery.GalleryCollectionFetchTask;
 import de.droidwiki.page.gallery.GalleryThumbnailScrollView;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.FeedbackUtil;
+import de.droidwiki.views.ViewUtil;
 
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -39,17 +34,13 @@ import java.util.Map;
 
 public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogInterface.OnDismissListener {
     private static final String TAG = "LinkPreviewDialog";
-    private static final int THUMBNAIL_SIZE = 320;
 
     private boolean navigateSuccess = false;
 
-    private View previewContainer;
     private ProgressBar progressBar;
     private TextView extractText;
-    private ImageView previewImage;
     private GalleryThumbnailScrollView thumbnailGallery;
 
-    private WikipediaApp app;
     private PageTitle pageTitle;
     private int entrySource;
 
@@ -63,7 +54,8 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         @Override
         public void onGalleryItemClicked(String imageName) {
             PageTitle imageTitle = new PageTitle(imageName, pageTitle.getSite());
-            GalleryActivity.showGallery(getActivity(), pageTitle, imageTitle, false);
+            GalleryActivity.showGallery(getActivity(), pageTitle, imageTitle,
+                    GalleryFunnel.SOURCE_LINK_PREVIEW);
         }
     };
 
@@ -86,30 +78,38 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(STYLE_NO_TITLE, de.droidwiki.R.style.LinkPreviewDialog);
-        setDialogPeekHeight((int) getResources().getDimension(de.droidwiki.R.dimen.linkPreviewPeekHeight));
+        setStyle(STYLE_NO_TITLE, R.style.LinkPreviewDialog);
+        int dimenId = R.dimen.linkPreviewPeekHeight;
+        if (!WikipediaApp.getInstance().isProdRelease()) {
+            dimenId = WikipediaApp.getInstance().getLinkPreviewVersion() == 1
+                    ? R.dimen.linkPreviewPeekHeight : R.dimen.linkPreviewPeekHeightB;
+        }
+        setDialogPeekHeight((int) getResources().getDimension(dimenId));
     }
 
     @Override
     protected View inflateDialogView(LayoutInflater inflater, ViewGroup container) {
-        app = WikipediaApp.getInstance();
+        WikipediaApp app = WikipediaApp.getInstance();
         pageTitle = getArguments().getParcelable("title");
         entrySource = getArguments().getInt("entrySource");
 
-        View rootView = inflater.inflate(de.droidwiki.R.layout.dialog_link_preview, container);
-        previewContainer = rootView.findViewById(de.droidwiki.R.id.link_preview_container);
-        progressBar = (ProgressBar) rootView.findViewById(de.droidwiki.R.id.link_preview_progress);
-        TextView titleText = (TextView) rootView.findViewById(de.droidwiki.R.id.link_preview_title);
+        View rootView = inflater.inflate(R.layout.dialog_link_preview, container);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.link_preview_progress);
+        rootView.findViewById(R.id.link_preview_toolbar).setOnClickListener(goToPageListener);
+        TextView titleText = (TextView) rootView.findViewById(R.id.link_preview_title);
         titleText.setText(pageTitle.getDisplayText());
-        if (!ApiUtil.hasLollipop()) {
-            final int bottomPadding = (int)(8 * app.getScreenDensity());
-            titleText.setPadding(titleText.getPaddingLeft(), titleText.getPaddingTop(),
-                    titleText.getPaddingRight(), titleText.getPaddingBottom() + bottomPadding);
+        if (!ApiUtil.hasKitKat()) {
+            // for oldish devices, reset line spacing to 1, since it truncates the descenders.
+            titleText.setLineSpacing(0, 1.0f);
+        } else if (!ApiUtil.hasLollipop()) {
+            // for <5.0, give the title a bit more bottom padding, since these versions
+            // incorrectly cut off the bottom of the text when line spacing is <1.
+            final int bottomPadding = 8;
+            ViewUtil.setBottomPaddingDp(titleText, bottomPadding);
         }
 
         onNavigateListener = new DefaultOnNavigateListener();
-        previewImage = (ImageView) rootView.findViewById(de.droidwiki.R.id.link_preview_image);
-        extractText = (TextView) rootView.findViewById(de.droidwiki.R.id.link_preview_extract);
+        extractText = (TextView) rootView.findViewById(R.id.link_preview_extract);
 
         thumbnailGallery = (GalleryThumbnailScrollView) rootView.findViewById(de.droidwiki.R.id.link_preview_thumbnail_gallery);
         if (app.isImageDownloadEnabled()) {
@@ -117,11 +117,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
             thumbnailGallery.setGalleryViewListener(galleryViewListener);
         }
 
-        previewImage.setOnClickListener(goToPageListener);
-
-        View overlayView = setOverlayLayout(de.droidwiki.R.layout.dialog_link_preview_overlay);
-        View goButton = overlayView.findViewById(de.droidwiki.R.id.link_preview_go_button);
-        goButton.setOnClickListener(goToPageListener);
+        rootView.findViewById(R.id.link_preview_go_button).setOnClickListener(goToPageListener);
 
         final View overflowButton = rootView.findViewById(de.droidwiki.R.id.link_preview_overflow_button);
         overflowButton.setOnClickListener(new View.OnClickListener() {
@@ -168,9 +164,6 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
     @Override
     public void onStart() {
         super.onStart();
-        Animation anim = AnimationUtils.loadAnimation(getActivity(),
-                de.droidwiki.R.anim.link_preview_background_activity_enter);
-        getPageActivity().getContentView().startAnimation(anim);
         overflowMenuHandler = new LongPressHandler(getPageActivity());
     }
 
@@ -179,11 +172,6 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         super.onDismiss(dialogInterface);
         if (!navigateSuccess) {
             funnel.logCancel();
-        }
-        if (getActivity() != null) {
-            Animation anim = AnimationUtils.loadAnimation(getActivity(),
-                    de.droidwiki.R.anim.link_preview_background_activity_exit);
-            getPageActivity().getContentView().startAnimation(anim);
         }
     }
 
@@ -253,31 +241,13 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
     }
 
     private void layoutPreview() {
-        previewContainer.setVisibility(View.VISIBLE);
         if (contents.getExtract().length() > 0) {
             extractText.setText(contents.getExtract());
         }
 
-        FrameLayout.LayoutParams extractLayoutParams = (FrameLayout.LayoutParams) extractText.getLayoutParams();
+        LinearLayout.LayoutParams extractLayoutParams = (LinearLayout.LayoutParams) extractText.getLayoutParams();
         extractLayoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
         extractText.setLayoutParams(extractLayoutParams);
-
-        if (!TextUtils.isEmpty(contents.getTitle().getThumbUrl()) && app.isImageDownloadEnabled()) {
-            Picasso.with(getActivity())
-                    .load(contents.getTitle().getThumbUrl())
-                    .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                    .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                    .into(previewImage, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            previewImage.setBackgroundColor(Color.WHITE);
-                        }
-
-                        @Override
-                        public void onError() {
-                        }
-                    });
-        }
     }
 
     private class GalleryThumbnailFetchTask extends GalleryCollectionFetchTask {

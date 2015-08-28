@@ -1,8 +1,7 @@
 package de.droidwiki.page;
 
 import org.acra.ACRA;
-import de.droidwiki.ApiTask;
-import de.droidwiki.Site;
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.bridge.CommunicationBridge;
@@ -12,10 +11,6 @@ import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.history.SaveHistoryTask;
 import de.droidwiki.page.bottomcontent.BottomContentHandler;
 import de.droidwiki.page.bottomcontent.BottomContentInterface;
-import de.droidwiki.page.fetch.LeadSectionFetcher;
-import de.droidwiki.page.fetch.LeadSectionFetcherFactory;
-import de.droidwiki.page.fetch.RestSectionFetcher;
-import de.droidwiki.page.fetch.RestSectionFetcherFactory;
 import de.droidwiki.page.leadimages.LeadImagesHandler;
 import de.droidwiki.pageimages.PageImage;
 import de.droidwiki.pageimages.PageImagesTask;
@@ -57,6 +52,7 @@ import java.util.Map;
  */
 public class JsonPageLoadStrategy implements PageLoadStrategy {
     private static final String TAG = "JsonPageLoad";
+    private static final String BRIDGE_PAYLOAD_SAVED_PAGE = "savedPage";
 
     public static final int STATE_NO_FETCH = 1;
     public static final int STATE_INITIAL_FETCH = 2;
@@ -172,7 +168,8 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                     if (messagePayload.getInt("sequence") != currentSequenceNum) {
                         return;
                     }
-                    displayNonLeadSection(messagePayload.getInt("index"));
+                    displayNonLeadSection(messagePayload.getInt("index"),
+                            messagePayload.optBoolean(BRIDGE_PAYLOAD_SAVED_PAGE, false));
                 } catch (JSONException e) {
                     ACRA.getErrorReporter().handleException(e);
                 }
@@ -279,7 +276,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         // when the lead image layout is complete, load the lead section and
                         // the other sections into the webview.
                         displayLeadSection();
-                        displayNonLeadSection(1);
+                        displayNonLeadSectionForUnsavedPage(1);
                     }
                 });
                 break;
@@ -441,11 +438,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         // when the lead image is laid out, load the lead section and the rest
                         // of the sections into the webview.
                         displayLeadSection();
-                        displayNonLeadSection(1);
-
-                        // rewrite the image URLs in the webview, so that they're loaded from
-                        // local storage.
-                        fragment.readUrlMappings();
+                        displayNonLeadSectionForSavedPage(1);
 
                         setState(STATE_COMPLETE_FETCH, PageFragment.SUBSTATE_SAVED_PAGE_LOADED);
                     }
@@ -575,7 +568,15 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         activity.updateProgressBar(true, true, 0);
     }
 
-    private void displayNonLeadSection(int index) {
+    private void displayNonLeadSectionForUnsavedPage(int index) {
+        displayNonLeadSection(index, false);
+    }
+
+    private void displayNonLeadSectionForSavedPage(int index) {
+        displayNonLeadSection(index, true);
+    }
+
+    private void displayNonLeadSection(int index, boolean savedPage) {
         activity.updateProgressBar(true, false,
                 PageActivity.PROGRESS_BAR_MAX_VALUE / model.getPage()
                         .getSections().size() * index);
@@ -584,7 +585,9 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             final Page page = model.getPage();
             JSONObject wrapper = new JSONObject();
             wrapper.put("sequence", currentSequenceNum);
-            if (index < page.getSections().size()) {
+            wrapper.put(BRIDGE_PAYLOAD_SAVED_PAGE, savedPage);
+            boolean lastSection = index == page.getSections().size();
+            if (!lastSection) {
                 JSONObject section = page.getSections().get(index).toJSON();
                 wrapper.put("section", section);
                 wrapper.put("index", index);
@@ -607,43 +610,49 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             wrapper.put("scrollY",
                     (int) (stagedScrollY / activity.getResources().getDisplayMetrics().density));
             bridge.sendMessage("displaySection", wrapper);
+
+            if (savedPage && lastSection) {
+                // rewrite the image URLs in the webview, so that they're loaded from
+                // local storage after all the sections have been loaded.
+                fragment.readUrlMappings();
+            }
         } catch (JSONException e) {
             ACRA.getErrorReporter().handleException(e);
         }
     }
 
-    private Api getAPIForSite(Site site) {
-        return WikipediaApp.getInstance().getAPIForSite(site);
-    }
 
-    private class LeadSectionFetchTask extends ApiTask<List<Section>> {
+    private class LeadSectionFetchTask extends SectionsFetchTask {
         private final int startSequenceNum;
         private PageProperties pageProperties;
-        private LeadSectionFetcher sectionsFetcher;
+        private String pagePropsResponseName = "mobileview";
 
         public LeadSectionFetchTask(int startSequenceNum) {
-            super(SINGLE_THREAD, getAPIForSite(model.getTitle().getSite()));
-            this.sectionsFetcher = LeadSectionFetcherFactory.create(app, model.getTitle());
+            super(app, model.getTitle(), "0");
             this.startSequenceNum = startSequenceNum;
         }
 
         @Override
         public RequestBuilder buildRequest(Api api) {
-            return sectionsFetcher.buildRequest(api, calculateLeadImageWidth());
+            RequestBuilder builder = super.buildRequest(api);
+            builder.param("prop", builder.getParams().get("prop")
+                    + "|thumb|image|id|revision|description|"
+                    + Page.API_REQUEST_PROPS);
+            builder.param("thumbsize", Integer.toString(calculateLeadImageWidth()));
+            return builder;
         }
 
         @Override
         public List<Section> processResult(ApiResult result) throws Throwable {
             if (startSequenceNum != currentSequenceNum) {
-                return sectionsFetcher.processResult(result);
+                return super.processResult(result);
             }
-            JSONObject metadata
-                    = result.asObject().optJSONObject(sectionsFetcher.getPagePropsResponseName());
+            JSONObject metadata = result.asObject().optJSONObject(pagePropsResponseName);
             if (metadata != null) {
                 pageProperties = new PageProperties(metadata);
                 model.setTitle(fragment.adjustPageTitleFromMobileview(model.getTitle(), metadata));
             }
-            return sectionsFetcher.processResult(result);
+            return super.processResult(result);
         }
 
         @Override
@@ -709,24 +718,12 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         return (int) (res.getDimension(de.droidwiki.R.dimen.leadImageWidth) / res.getDisplayMetrics().density);
     }
 
-    private class RestSectionsFetchTask extends ApiTask<List<Section>> {
+    private class RestSectionsFetchTask extends SectionsFetchTask {
         private final int startSequenceNum;
-        private RestSectionFetcher sectionsFetcher;
 
         public RestSectionsFetchTask(int startSequenceNum) {
-            super(SINGLE_THREAD, getAPIForSite(model.getTitle().getSite()));
-            this.sectionsFetcher = RestSectionFetcherFactory.create(app, model.getTitle());
+            super(app, model.getTitle(), "1-");
             this.startSequenceNum = startSequenceNum;
-        }
-
-        @Override
-        public RequestBuilder buildRequest(Api api) {
-            return sectionsFetcher.buildRequest(api);
-        }
-
-        @Override
-        public List<Section> processResult(ApiResult result) throws Throwable {
-            return sectionsFetcher.processResult(result);
         }
 
         @Override
@@ -738,7 +735,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             ArrayList<Section> newSections = (ArrayList<Section>) model.getPage().getSections().clone();
             newSections.addAll(result);
             model.setPage(new Page(model.getTitle(), newSections, model.getPage().getPageProperties()));
-            displayNonLeadSection(1);
+            displayNonLeadSectionForUnsavedPage(1);
             setState(STATE_COMPLETE_FETCH);
 
             fragment.onPageLoadComplete();

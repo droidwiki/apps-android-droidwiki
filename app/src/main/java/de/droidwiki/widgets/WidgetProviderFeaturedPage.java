@@ -16,13 +16,14 @@ import android.widget.RemoteViews;
 import org.mediawiki.api.json.Api;
 import org.mediawiki.api.json.RequestBuilder;
 
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.page.Page;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.page.Section;
-import de.droidwiki.page.fetch.OldSectionsFetchTask;
+import de.droidwiki.page.SectionsFetchTask;
 import de.droidwiki.staticdata.MainPageNameData;
 
 import java.util.List;
@@ -92,7 +93,7 @@ public class WidgetProviderFeaturedPage extends AppWidgetProvider {
         }
     }
 
-    private class FetchMainPageTask extends OldSectionsFetchTask {
+    private class FetchMainPageTask extends SectionsFetchTask {
         public FetchMainPageTask(WikipediaApp app) {
             super(app,
                     new PageTitle(MainPageNameData.valueFor(app.getAppOrSystemLanguageCode()),

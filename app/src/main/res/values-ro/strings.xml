@@ -24,18 +24,25 @@
   <string name="menu_update_all_saved_pages">Actualizează paginile salvate</string>
   <string name="menu_update_selected_saved_pages">Actualizează paginile salvate</string>
   <string name="dialog_prompt_refresh_all_saved_pages">Actualizați toate paginile salvate?</string>
-  <string name="menu_save_page">Salvează pagina</string>
-  <string name="menu_share_page">Distribuie</string>
   <string name="share_via">Distribuire prin</string>
   <string name="dialog_title_clear_saved_pages">Ștergeți toate paginile salvate?</string>
   <string name="toast_saving_page">Se salvează pagina…</string>
-  <string name="toast_saved_page">Pagină salvată cu succes</string>
+  <string name="toast_saved_page">„%s” salvată pentru lectură off-line</string>
   <string name="toast_saved_page_missing_images">Nu s-au putut salva toate imaginile</string>
   <string name="toast_refresh_saved_page">Se reîncarcă pagina salvată…</string>
   <string name="delete_selected_saved_pages">Șterge</string>
   <string name="toast_saved_page_deleted">Pagină(i) salvată(e) eliminată(e)</string>
   <string name="saved_pages_search_list_hint">Căutare în paginile salvate</string>
   <string name="saved_pages_search_empty_message">Nicio pagină nu corespunde interogării dumneavoastră.</string>
+  <string name="menu_show_tabs">Arată filele</string>
+  <string name="menu_other_languages">Lecturează în alte limbi</string>
+  <string name="menu_save_page">Salvează pagina</string>
+  <string name="menu_share_page">Distribuie legătura</string>
+  <string name="find_in_page">Găsește în pagină</string>
+  <string name="menu_themechooser">Schimbă fontul și tema</string>
+  <string name="menu_open_link">Deschide</string>
+  <string name="menu_open_in_new_tab">Deschide în filă nouă</string>
+  <string name="menu_long_press_copy_page">Copiază adresa legăturii</string>
   <string name="nav_item_nearby">În apropiere</string>
   <string name="menu_update_nearby">Actualizează „În apropiere”</string>
   <string name="nearby_empty_title">Nicio pagină în apropiere aici!</string>
@@ -59,7 +66,6 @@
   <string name="preference_system_language_toggle">Utilizează limba sistemului</string>
   <string name="preference_system_language_summary">Limba sistemului</string>
   <string name="langlinks_filter_hint">Căutare</string>
-  <string name="menu_other_languages">Lecturează în alte limbi</string>
   <string name="langlinks_error_retry">Reîncercare</string>
   <string name="langlinks_empty">Această pagină nu este disponibilă în alte limbi</string>
   <string name="langlinks_no_match">Nicio limbă nu corespunde interogării dumneavoastră.</string>
@@ -130,14 +136,14 @@
   <string name="create_account_next">Înainte</string>
   <string name="create_account_button">Creare cont</string>
   <string name="preferences_general_heading">General</string>
-  <string name="wikipedia_app_faq">Într. frecv. aplicația DroidWiki</string>
+  <string name="DroidWiki_app_faq">Într. frecv. aplicația DroidWiki</string>
   <string name="zero_charged_verbiage">DroidWiki Zero este dezactivată</string>
   <string name="zero_charged_verbiage_extended">Încărcarea altor articole poate declanșa costuri pentru trafic de date.</string>
   <string name="zero_search_hint">Căutare în DroidWiki Zero</string>
   <string name="zero_warn_when_leaving">Avertizează-mă dacă părăsesc DroidWiki Zero</string>
   <string name="zero_warn_when_leaving_summary">În cazul în care, printr-un parteneriat DroidWiki Zero, operatorul dumneavoastră de telefonie mobilă nu percepe tarife pentru traficul de date din aplicația DroidWiki, bifarea acestei opțiuni vă înștiințează atunci când părăsiți aplicația DroidWiki și ați putea fi taxat.</string>
   <string name="zero_webpage_title">Într. frecv. DroidWiki Zero</string>
-  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_DroidWiki_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">Părăsire DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Se pot aplica tarife de date. Continuați către site-ul extern?</string>
   <string name="zero_interstitial_continue">Abandonează</string>
@@ -188,7 +194,6 @@
   <string name="edit_summary_tag_links">Adăugat legături</string>
   <string name="edit_summary_tag_other">Altele</string>
   <string name="edit_summary_tag_other_hint">Alte modalități prin care ați îmbunătățit pagina</string>
-  <string name="find_in_page">Găsește în pagină</string>
   <string name="find_next">Găsește următorul</string>
   <string name="find_previous">Găsește precedentul</string>
   <string name="error_network_error_try_again">Imposibil de conectat la rețea; încercați din nou.</string>
@@ -204,7 +209,6 @@
   <string name="abusefilter_text_disallow">Un filtru automat a identificat această modificare ca potențial neconstructivă sau o potențială acțiune de vandalism.&lt;br /&gt;&lt;br /&gt;DroidWiki este o enciclopedie și acceptă doar conținut neutru și notabil.</string>
   <string name="dialog_page_issues">Probleme pagină</string>
   <string name="button_page_issues">Probleme pagină</string>
-  <string name="menu_themechooser">Schimbă fontul și tema</string>
   <string name="text_size_select">Dimensiunea fontului</string>
   <string name="color_theme_select">Temă</string>
   <string name="color_theme_light">Deschisă</string>
@@ -221,18 +225,26 @@
   <string name="widget_name_featured_page">Articol de calitate la DroidWiki</string>
   <string name="widget_title_featured_page">Articolul de calitate al zilei:</string>
   <string name="widget_name_search">Căutare DroidWiki</string>
-  <string name="app_store_description" fuzzy="true">Aplicația oficială a Wikipediei pentru Android. DroidWiki este enciclopedia liberă, care conține peste 32 de milioane de articole în 280 de limbi, fiind cea mai cuprinzătoare și larg utilizată lucrare de referință elaborată vreodată de omenire. Aplicația a fost rescrisă din temelii și este mai bună ca oricând.
+  <string name="app_store_description">Aplicația oficială a Wikipediei pentru Android. DroidWiki este enciclopedia liberă, care conține peste 32 de milioane de articole în 280 de limbi, fiind cea mai cuprinzătoare și larg utilizată lucrare de referință elaborată vreodată de omenire.
 
 Caracteristici:
-   - Viteză: Noua noastră aplicație nativă vă permite să răsfoiți și să modificați DroidWiki mai rapid ca oricând.
-   - Editare: Puteți modifica DroidWiki! Autentificat(ă) sau nu, vă mulțumim pentru toate contribuțiile dumneavoastră.
-   - Pagini recente: Vă oferim un istoric al lecturărilor, în așa fel încât să accesați oricât de multe legături fără să vă rătăciți vreodată.
-   - Pagini salvate: Puteți salva anumite pagini pentru lecturare off-line și să le răsfoiți chiar și atunci când nu aveți o conexiune de date.
-   - Partajare: Folosiți-vă aplicațiile pentru rețele sociale pentru a împărtăși suma tuturor cunoștințelor omenirii.
-   - Suport lingvistic: Aplicația vă permite să schimbați cu ușurință limba în care citiți DroidWiki.
+   - Imagini de deschidere: experimentați DroidWiki mai bine ca niciodată cu o imagine și o descriere relevante, afișate proeminent, la începutul articolelor
+   - Galerie de imagini: apăsând pe o imagine vă este afișată imaginea pe tot ecranul, la rezoluție maximă. Trăgând stânga-dreapta, veți putea naviga prin alte imagini
+   - Descrieri de la Wikidata: când căutați, fiecare rezultat conține acum o scurtă descriere care vă ajută să puneți rezultatul în context. Aceste descrieri sunt prezentate și în alte locuri ale aplicației, ca de exemplu În apropiere
+   - Sugestii de articole: derulați până la sfârșitul unui articol pentru a vedea sugestii despre ce ați putea citi în continuare
+   - Pagini salvate: Salvați anumite pagini pentru lecturare off-line și să le răsfoiți chiar și atunci când nu aveți o conexiune de date.
+   - În apropiere: aflați mai multe despre ceea ce se află în jurul dvs. obținând legături către articole despre locuri aflate în apropierea locației curente
+   - Suport lingvistic: schimbați cu ușurință limba în care citiți DroidWiki.
+   - Cuprins: trageți la stânga pe orice articole pentru a afișa cuprinsul, ceea ce vă permite să săriți printre secțiuni
    - DroidWiki Zero: Taxarea traficului de date este suspendată pentru operatorii de telefonie mobilă participanți.
 
-Codul este în întregime cu sursă deschisă. Dacă sunteți familiarizat(ă) cu Java și kitul de dezvoltare al Androidului, creați-vă propria versiune! https://github.com/wikimedia/apps-android-wikipedia</string>
+Trimiteți-ne părerea dvs. despre aplicație! În meniu, apăsați pe \"Mai mult\", apoi \"Despre aplicația DroidWiki\", apoi \"Trimiteți feedback\".
+
+Codul este 100% cu sursă deschisă. Dacă sunteți familiarizat(ă) cu Java și kitul de dezvoltare al Androidului, de-abia așteptăm contribuțiile dumneavoastră! https://github.com/wikimedia/apps-android-DroidWiki
+
+Politica datelor private: https://m.wikimediafoundation.org/wiki/Privacy_policy
+
+Termeni de utilizare: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="alpha_update_notification_title">O nouă actualizare alfa disponibilă</string>
   <string name="alpha_update_notification_text">Atingeți pentru a descărca</string>
   <string name="dialog_close_description">Închide</string>
@@ -261,7 +273,6 @@ Codul este în întregime cu sursă deschisă. Dacă sunteți familiarizat(ă) c
   <string name="gallery_fair_use_license">Utilizare cinstită</string>
   <string name="gallery_uploader_unknown">Încărcată de o persoană necunoscută</string>
   <string name="edit_save_unknown_error">Modificarea dumnevoastră nu poate fi salvată: %s</string>
-  <string name="menu_show_tabs">Arată filele</string>
   <string name="menu_new_tab">Filă nouă</string>
   <string name="button_close_tab">Închide fila</string>
   <string name="tool_tip_select_text">Apăsați și țineți apăsat oriunde pe text pentru a-l selecta și pentru a-l copia și distribui.</string>
@@ -273,4 +284,6 @@ Codul este în întregime cu sursă deschisă. Dacă sunteți familiarizat(ă) c
   <string name="error_unknown">A apărut o eroare necunoscută.</string>
   <string name="format_error_server_message">Mesaj: „%s”</string>
   <string name="format_error_server_code">Cod: „%s”</string>
+  <string name="address_copied">Adresă copiată în clipboard.</string>
+  <string name="button_continue_to_article">Continuă către articol</string>
 </resources>

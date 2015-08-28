@@ -8,6 +8,7 @@ import de.droidwiki.Site;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.ConnectionIssueFunnel;
+import de.droidwiki.analytics.GalleryFunnel;
 import de.droidwiki.analytics.LinkPreviewFunnel;
 import de.droidwiki.analytics.SavedPagesFunnel;
 import de.droidwiki.analytics.TabFunnel;
@@ -47,6 +48,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.VisibleForTesting;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -170,6 +172,9 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             toggleToC(TOC_ACTION_TOGGLE);
         }
     };
+
+    @Nullable
+    private PageLoadCallbacks pageLoadCallbacks;
 
     public ObservableWebView getWebView() {
         return webView;
@@ -401,7 +406,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (referenceDialog != null && referenceDialog.isShowing()) {
             referenceDialog.dismiss();
         }
-        if (app.isProdRelease() || app.getLinkPreviewVersion() == 0) {
+        if (!app.isProdRelease() && app.getLinkPreviewVersion() == 0) {
             HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_INTERNAL_LINK);
             getPageActivity().displayNewPage(title, historyEntry);
             new LinkPreviewFunnel(app, title).logNavigate();
@@ -447,6 +452,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
         @Override
         public void onCloseTabRequested(int position) {
+            if (!app.isDevRelease() && (position < 0 || position >= tabList.size())) {
+                // According to T109998, the position may possibly be out-of-bounds, but we can't
+                // reproduce it. We'll handle this case, but only for non-dev builds, so that we
+                // can investigate the issue further if we happen upon it ourselves.
+                return;
+            }
             tabList.remove(position);
             tabFunnel.logClose(tabList.size(), position);
             if (position < tabList.size()) {
@@ -480,14 +491,17 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // if the screen orientation changes, then re-layout the lead image container
-        leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
-            @Override
-            public void onLayoutComplete() {
-                // when it's finished laying out, make sure the toolbar is shown appropriately.
-                searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
-            }
-        });
+        // if the screen orientation changes, then re-layout the lead image container,
+        // but only if we've finished fetching the page.
+        if (!pageLoadStrategy.isLoading()) {
+            leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
+                @Override
+                public void onLayoutComplete() {
+                    // when it's finished laying out, make sure the toolbar is shown appropriately.
+                    searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
+                }
+            });
+        }
     }
 
     public Tab getCurrentTab() {
@@ -633,7 +647,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                     if (href.startsWith("/")) {
                         PageTitle imageTitle = model.getTitle().getSite().titleForInternalLink(href);
                         GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
-                                imageTitle, false);
+                                imageTitle, GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
                     } else {
                         linkHandler.onUrlClick(href);
                     }
@@ -648,7 +662,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                 try {
                     String href = Utils.decodeURL(messagePayload.getString("href"));
                     GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
-                            new PageTitle(href, model.getTitle().getSite()), false);
+                            new PageTitle(href, model.getTitle().getSite()),
+                            GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
                 } catch (JSONException e) {
                     ACRA.getErrorReporter().handleException(e);
                 }
@@ -833,6 +848,10 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         checkAndShowSelectTextOnboarding();
 
         updateNavDrawerSelection();
+
+        if (pageLoadCallbacks != null) {
+            pageLoadCallbacks.onLoadComplete();
+        }
     }
 
     public PageTitle adjustPageTitleFromMobileview(PageTitle title, JSONObject mobileView)
@@ -1069,6 +1088,11 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     // TODO: don't assume host is PageActivity. Use Fragment callbacks pattern.
     private PageActivity getPageActivity() {
         return (PageActivity) getActivity();
+    }
+
+    @VisibleForTesting
+    public void setPageLoadCallbacks(@Nullable PageLoadCallbacks pageLoadCallbacks) {
+        this.pageLoadCallbacks = pageLoadCallbacks;
     }
 
     private class LongPressHandler extends PageActivityLongPressHandler

@@ -24,18 +24,25 @@
   <string name="menu_update_all_saved_pages">Actualizar páginas guardadas</string>
   <string name="menu_update_selected_saved_pages">Actualizar páginas guardadas</string>
   <string name="dialog_prompt_refresh_all_saved_pages">¿Actualizar todas las páginas guardadas?</string>
-  <string name="menu_save_page">Guardar página</string>
-  <string name="menu_share_page">Compartir</string>
   <string name="share_via">Compartir mediante</string>
   <string name="dialog_title_clear_saved_pages">¿Borrar todas las páginas guardadas?</string>
   <string name="toast_saving_page">Guardando página…</string>
-  <string name="toast_saved_page">Página guardada correctamente</string>
+  <string name="toast_saved_page">\"%s\" guardada para leer sin conexión</string>
   <string name="toast_saved_page_missing_images">No se pueden guardar todas las imágenes</string>
   <string name="toast_refresh_saved_page">Actualizando la página guardada…</string>
   <string name="delete_selected_saved_pages">Borrar</string>
   <string name="toast_saved_page_deleted">Página(s) guardada(s) eliminada(s)</string>
   <string name="saved_pages_search_list_hint">Buscar en páginas guardadas</string>
   <string name="saved_pages_search_empty_message">No se encontraron páginas que coincidan con tu consulta.</string>
+  <string name="menu_show_tabs">Mostrar pestañas</string>
+  <string name="menu_other_languages">Leer en otros idiomas</string>
+  <string name="menu_save_page">Guardar página</string>
+  <string name="menu_share_page">Compartir enlace</string>
+  <string name="find_in_page">Buscar en la página</string>
+  <string name="menu_themechooser">Tipo de letra y tema</string>
+  <string name="menu_open_link">Abrir</string>
+  <string name="menu_open_in_new_tab">Abrir en una pestaña nueva</string>
+  <string name="menu_long_press_copy_page">Copiar dirección del enlace</string>
   <string name="nav_item_nearby">Cercanos</string>
   <string name="menu_update_nearby">Actualizar cercanos</string>
   <string name="nearby_empty_title">¡No hay páginas cercanas aquí!</string>
@@ -51,7 +58,7 @@
   <string name="nearby_set_imperial">Mostrar pies/millas</string>
   <string name="nearby_view_on_map">Ver lugar en mapa</string>
   <string name="last_updated_text">Última actualización: %s</string>
-  <string name="content_license_html">El contenido está disponible bajo la licencia &lt;a class=\"external\" rel=\"nofollow\" href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; a menos que se indique lo contrario</string>
+  <string name="content_license_html">El contenido está disponible bajo la licencia &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; a menos que se indique lo contrario</string>
   <string name="edit_save_action_license_logged_in">Al guardar, aceptas los &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Términos de uso&lt;/a&gt; y a liberar irrevocablemente tus contribuciones bajo los términos de la licencia &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Al guardar, aceptas los &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Términos de uso&lt;/a&gt; y a liberar irrevocablemente tus contribuciones bajo los términos de la licencia &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;. Las ediciones se atribuirán a la dirección IP de tu dispositivo. Si &lt;a href=\"https://#login\"&gt;inicias sesión&lt;/a&gt;, tendrás más privacidad.</string>
   <string name="preference_title_language">Idioma de DroidWiki</string>
@@ -59,7 +66,6 @@
   <string name="preference_system_language_toggle">Usar el idioma del sistema</string>
   <string name="preference_system_language_summary">Idioma del sistema</string>
   <string name="langlinks_filter_hint">Buscar</string>
-  <string name="menu_other_languages">Leer en otros idiomas</string>
   <string name="langlinks_error_retry">Reintentar</string>
   <string name="langlinks_empty">Esta página no está disponible en otros idiomas</string>
   <string name="langlinks_no_match">No se encontraron idiomas que coincidan con tu consulta.</string>
@@ -188,7 +194,6 @@
   <string name="edit_summary_tag_links">Enlaces añadidos</string>
   <string name="edit_summary_tag_other">Otro</string>
   <string name="edit_summary_tag_other_hint">Otras formas en las que has mejorado la página</string>
-  <string name="find_in_page">Buscar en la página</string>
   <string name="find_next">Buscar siguiente</string>
   <string name="find_previous">Buscar anterior</string>
   <string name="error_network_error_try_again">Falló la conexión con la red. Inténtalo de nuevo.</string>
@@ -204,7 +209,6 @@
   <string name="abusefilter_text_disallow">Un filtro automático ha identificado esta edición como potencialmente no constructiva, o probable vandalismo.&lt;br /&gt;&lt;br /&gt;DroidWiki es una enciclopedía y sólo contenido neutral y notable pertenece aquí.</string>
   <string name="dialog_page_issues">Problemas de la página</string>
   <string name="button_page_issues">Problemas de la página</string>
-  <string name="menu_themechooser">Tipo de letra y tema</string>
   <string name="text_size_select">Tamaño de letra</string>
   <string name="color_theme_select">Tema</string>
   <string name="color_theme_light">Claro</string>
@@ -245,7 +249,7 @@ Términos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use/es</string
   <string name="alpha_update_notification_text">Pulsa para descargar</string>
   <string name="dialog_close_description">Cerrar</string>
   <string name="preference_title_show_images">Mostrar imágenes</string>
-  <string name="preference_summary_show_images">Activar o desactivar la carga de imágenes en las páginas. Desmarca esta opción si tu conexión de internet es lenta, o si tu plan de datos es limitado.</string>
+  <string name="preference_summary_show_images">Activar o desactivar la carga de imágenes en las páginas. Desmarca esta opción si tu conexión de Internet es lenta, o si tu plan de datos es limitado.</string>
   <string name="read_more_section">Leer más</string>
   <string name="read_next_section">Leer el siguiente</string>
   <string name="menu_gallery_visit_page">Ir a la página del archivo</string>
@@ -269,7 +273,6 @@ Términos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use/es</string
   <string name="gallery_fair_use_license">Uso legítimo</string>
   <string name="gallery_uploader_unknown">Cargador desconocido</string>
   <string name="edit_save_unknown_error">No se pudo guardar tu edición: %s</string>
-  <string name="menu_show_tabs">Mostrar pestañas</string>
   <string name="menu_new_tab">Pestaña nueva</string>
   <string name="button_close_tab">Cerrar pestaña</string>
   <string name="tool_tip_select_text">Pulsa y mantén pulsado en cualquier parte del texto para resaltarlo, para poder copiar y compartir.</string>
@@ -281,4 +284,6 @@ Términos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use/es</string
   <string name="error_unknown">Ocurrió un error desconocido.</string>
   <string name="format_error_server_message">Mensaje: \"%s\"</string>
   <string name="format_error_server_code">Código: \"%s\"</string>
+  <string name="address_copied">Dirección copiada al portapapeles.</string>
+  <string name="button_continue_to_article">Continuar al artículo</string>
 </resources>

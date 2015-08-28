@@ -27,6 +27,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import de.droidwiki.BackPressedHandler;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.pageimages.PageImage;
@@ -246,7 +247,9 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-            return getActivity().getLayoutInflater().inflate(de.droidwiki.R.layout.item_page_list_entry, viewGroup, false);
+            View view = getActivity().getLayoutInflater().inflate(R.layout.item_page_list_entry, viewGroup, false);
+            view.setBackgroundResource(R.drawable.selectable_item_background);
+            return view;
         }
 
         private String getDateString(Date date) {

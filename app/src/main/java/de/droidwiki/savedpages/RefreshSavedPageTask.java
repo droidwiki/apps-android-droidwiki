@@ -11,13 +11,13 @@ import de.droidwiki.page.Page;
 import de.droidwiki.page.PageProperties;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.page.Section;
-import de.droidwiki.page.fetch.OldSectionsFetchTask;
+import de.droidwiki.page.SectionsFetchTask;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
-public class RefreshSavedPageTask extends OldSectionsFetchTask {
+public class RefreshSavedPageTask extends SectionsFetchTask {
     private final PageTitle title;
     private final WikipediaApp app;
 
