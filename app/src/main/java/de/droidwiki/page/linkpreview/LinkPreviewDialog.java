@@ -79,12 +79,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(STYLE_NO_TITLE, R.style.LinkPreviewDialog);
-        int dimenId = R.dimen.linkPreviewPeekHeight;
-        if (!WikipediaApp.getInstance().isProdRelease()) {
-            dimenId = WikipediaApp.getInstance().getLinkPreviewVersion() == 1
-                    ? R.dimen.linkPreviewPeekHeight : R.dimen.linkPreviewPeekHeightB;
-        }
-        setDialogPeekHeight((int) getResources().getDimension(dimenId));
+        setDialogPeekHeight((int) getResources().getDimension(R.dimen.linkPreviewPeekHeight));
     }
 
     @Override
@@ -136,7 +131,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         // and kick off the task to load all the things...
         new LinkPreviewFetchTask(app.getAPIForSite(pageTitle.getSite()), pageTitle).execute();
 
-        funnel = new LinkPreviewFunnel(app, pageTitle);
+        funnel = new LinkPreviewFunnel(app);
         funnel.logLinkClick();
 
         return rootView;

@@ -85,8 +85,7 @@ public class BottomContentHandler implements BottomContentInterface,
         pageLastUpdatedText = (TextView)bottomContentContainer.findViewById(R.id.page_last_updated_text);
         readMoreContainer = bottomContentContainer.findViewById(R.id.read_more_container);
         readMoreList = (ListView)bottomContentContainer.findViewById(R.id.read_more_list);
-
-        pageExternalLink = (TextView) bottomContentContainer.findViewById(de.droidwiki.R.id.page_external_link);
+        TextView pageExternalLink = (TextView) bottomContentContainer.findViewById(R.id.page_external_link);
         pageExternalLink.setPaintFlags(pageExternalLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         pageExternalLink.setOnClickListener(new View.OnClickListener() {
             @Override

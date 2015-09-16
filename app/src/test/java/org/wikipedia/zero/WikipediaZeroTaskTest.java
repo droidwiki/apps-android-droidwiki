@@ -11,9 +11,9 @@ import org.robolectric.shadows.ShadowApplication;
 import org.wikipedia.test.ImmediateExecutor;
 import org.wikipedia.test.TestApi;
 import org.wikipedia.test.TestFileUtil;
-import org.wikipedia.test.TestLatch;
 import org.wikipedia.test.TestRunner;
 import org.wikipedia.test.TestWebServer;
+import org.wikipedia.testlib.TestLatch;
 
 import de.droidwiki.zero.WikipediaZeroTask;
 import de.droidwiki.zero.ZeroMessage;

@@ -25,6 +25,7 @@ import de.droidwiki.page.tabs.TabsProvider;
 import de.droidwiki.savedpages.ImageUrlMap;
 import de.droidwiki.savedpages.LoadSavedPageUrlMapTask;
 import de.droidwiki.savedpages.SavePageTask;
+import de.droidwiki.savedpages.SavedPageCheckCallbacks;
 import de.droidwiki.search.SearchBarHideHandler;
 import de.droidwiki.settings.Prefs;
 import de.droidwiki.tooltip.ToolTipUtil;
@@ -57,6 +58,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -81,13 +83,16 @@ import javax.net.ssl.SSLException;
 // TODO: USE ACRA.getErrorReporter().handleSilentException() if we move to automated crash reporting?
 
 public class PageFragment extends Fragment implements BackPressedHandler {
-    public static final int SUBSTATE_NONE = 0;
-    public static final int SUBSTATE_PAGE_SAVED = 1;
-    public static final int SUBSTATE_SAVED_PAGE_LOADED = 2;
+    // make sure this number is unique among other fragments that use a loader
+    private static final int LOADER_ID = 103;
 
     public static final int TOC_ACTION_SHOW = 0;
     public static final int TOC_ACTION_HIDE = 1;
     public static final int TOC_ACTION_TOGGLE = 2;
+
+    private boolean pageSaved;
+    private boolean pageRefreshed;
+    private boolean savedPageCheckComplete;
 
     private static final int TOC_BUTTON_HIDE_DELAY = 2000;
     private static final int REFRESH_SPINNER_ADDITIONAL_OFFSET = (int) (16 * WikipediaApp.getInstance().getScreenDensity());
@@ -133,15 +138,15 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     private ReferenceDialog referenceDialog;
     private EditHandler editHandler;
     private ActionMode findInPageActionMode;
+    private ShareHandler shareHandler;
+    private TabsProvider tabsProvider;
+    private SavedPageCheckCallbacks savedPageCheckCallbacks;
 
     private WikipediaApp app;
 
     private SavedPagesFunnel savedPagesFunnel;
     private ConnectionIssueFunnel connectionIssueFunnel;
 
-    private ShareHandler shareHandler;
-
-    private TabsProvider tabsProvider;
     private Tracker mTracker;
 
     @NonNull
@@ -194,6 +199,15 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     public HistoryEntry getHistoryEntry() {
         return model.getCurEntry();
+    }
+
+    public void setSavedPageCheckComplete(boolean complete) {
+        savedPageCheckComplete = complete;
+
+        if (!isAdded()) {
+            return;
+        }
+        getActivity().supportInvalidateOptionsMenu();
     }
 
     @Override
@@ -253,6 +267,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         connectionIssueFunnel = new ConnectionIssueFunnel(app);
 
         updateFontSize();
+
+        savedPageCheckCallbacks = new SavedPageCheckCallbacks(this, app);
 
         // Explicitly set background color of the WebView (independently of CSS, because
         // the background may be shown momentarily while the WebView loads content,
@@ -406,10 +422,10 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (referenceDialog != null && referenceDialog.isShowing()) {
             referenceDialog.dismiss();
         }
-        if (!app.isProdRelease() && app.getLinkPreviewVersion() == 0) {
+        if (!TextUtils.isEmpty(title.getNamespace())) {
             HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_INTERNAL_LINK);
             getPageActivity().displayNewPage(title, historyEntry);
-            new LinkPreviewFunnel(app, title).logNavigate();
+            new LinkPreviewFunnel(app).logNavigate();
         } else {
             getPageActivity().showLinkPreview(title, HistoryEntry.SOURCE_INTERNAL_LINK);
         }
@@ -496,11 +512,13 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (!pageLoadStrategy.isLoading()) {
             leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
                 @Override
-                public void onLayoutComplete() {
-                    // when it's finished laying out, make sure the toolbar is shown appropriately.
+                public void onLayoutComplete(int sequence) {
+                    // (We don't care about the sequence number here, since it doesn't affect
+                    // page loading)
+                    // When it's finished laying out, make sure the toolbar is shown appropriately.
                     searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
                 }
-            });
+            }, 0);
         }
     }
 
@@ -528,20 +546,19 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         tabFunnel.logOpenInNew(tabList.size());
     }
 
-    /**
-     * Load a new page into the WebView in this fragment.
-     * This shall be the single point of entry for loading content into the WebView, whether it's
-     * loading an entirely new page, refreshing the current page, retrying a failed network
-     * request, etc.
-     * @param title Title of the new page to load.
-     * @param entry HistoryEntry associated with the new page.
-     * @param tryFromCache Whether to try loading the page from cache (otherwise load directly
-     *                     from network).
-     * @param pushBackStack Whether to push the new page onto the backstack.
-     */
     public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
                                boolean pushBackStack) {
         displayNewPage(title, entry, tryFromCache, pushBackStack, 0);
+    }
+
+    public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
+                               boolean pushBackStack, int stagedScrollY) {
+        displayNewPage(title, entry, tryFromCache, pushBackStack, stagedScrollY, false);
+    }
+
+    public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
+                               boolean pushBackStack, boolean savedPageRefreshed) {
+        displayNewPage(title, entry, tryFromCache, pushBackStack, 0, savedPageRefreshed);
     }
 
     /**
@@ -556,7 +573,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
      * @param pushBackStack Whether to push the new page onto the backstack.
      */
     public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
-                               boolean pushBackStack, int stagedScrollY) {
+                               boolean pushBackStack, int stagedScrollY, boolean savedPageRefreshed) {
         // disable sliding of the ToC while sections are loading
         tocHandler.setEnabled(false);
         setToCButtonFadedIn(true);
@@ -572,6 +589,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         savedPagesFunnel = app.getFunnelManager().getSavedPagesFunnel(title.getSite());
 
         getPageActivity().updateProgressBar(true, true, 0);
+
+        pageRefreshed = savedPageRefreshed;
+        if (!pageRefreshed) {
+            savedPageCheckComplete = false;
+            checkIfPageIsSaved();
+        }
 
         pageLoadStrategy.onDisplayNewPage(pushBackStack, tryFromCache, stagedScrollY);
     }
@@ -595,6 +618,327 @@ public class PageFragment extends Fragment implements BackPressedHandler {
      */
     public void updateFontSize() {
         webView.getSettings().setDefaultFontSize((int) app.getFontSize(getActivity().getWindow()));
+    }
+
+    public boolean isPageSaved() {
+        return pageSaved;
+    }
+
+    public void setPageSaved(boolean saved) {
+        pageSaved = saved;
+    }
+
+    public void onActionModeShown(ActionMode mode) {
+        // make sure we have a page loaded, since shareHandler makes references to it.
+        if (model.getPage() != null) {
+            shareHandler.onTextSelected(mode);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PageActivity.ACTIVITY_REQUEST_EDIT_SECTION
+            && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
+            pageLoadStrategy.backFromEditing(data);
+            FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.edit_saved_successfully);
+            // and reload the page...
+            displayNewPage(model.getTitleOriginal(), model.getCurEntry(), false, false);
+        }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        if (!isAdded() || getPageActivity().isSearching()) {
+            return;
+        }
+        inflater.inflate(de.droidwiki.R.menu.menu_page_actions, menu);
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        if (!isAdded() || getPageActivity().isSearching()) {
+            return;
+        }
+        MenuItem savePageItem = menu.findItem(de.droidwiki.R.id.menu_page_save);
+        if (savePageItem == null) {
+            return;
+        }
+        if (getTitle() != null) {
+            updateSavePageMenuItem(savePageItem);
+        }
+
+        MenuItem shareItem = menu.findItem(de.droidwiki.R.id.menu_page_share);
+        MenuItem otherLangItem = menu.findItem(de.droidwiki.R.id.menu_page_other_languages);
+        MenuItem findInPageItem = menu.findItem(de.droidwiki.R.id.menu_page_find_in_page);
+        MenuItem themeChooserItem = menu.findItem(de.droidwiki.R.id.menu_page_font_and_theme);
+
+        if (pageLoadStrategy.isLoading()) {
+            savePageItem.setEnabled(false);
+            shareItem.setEnabled(false);
+            otherLangItem.setEnabled(false);
+            findInPageItem.setEnabled(false);
+            themeChooserItem.setEnabled(false);
+        } else {
+            shareItem.setEnabled(true);
+            // Only display "Read in other languages" if the article is in other languages
+            otherLangItem.setVisible(model.getPage() != null && model.getPage().getPageProperties().getLanguageCount() != 0);
+            otherLangItem.setEnabled(true);
+            findInPageItem.setEnabled(true);
+            themeChooserItem.setEnabled(true);
+        }
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case de.droidwiki.R.id.homeAsUp:
+                // TODO SEARCH: add up navigation, see also http://developer.android.com/training/implementing-navigation/ancestral.html
+                return true;
+            case R.id.menu_page_save:
+                if (item.getTitle().equals(getString(R.string.menu_refresh_saved_page))) {
+                    refreshPage(true);
+                } else {
+                    savePage();
+                    app.getFunnelManager().getSavedPagesFunnel(model.getTitle().getSite()).logSaveNew();
+                }
+                return true;
+            case R.id.menu_page_share:
+                ShareUtils.shareText(getActivity(), model.getTitle());
+                return true;
+            case de.droidwiki.R.id.menu_page_other_languages:
+                Intent langIntent = new Intent();
+                langIntent.setClass(getActivity(), LangLinksActivity.class);
+                langIntent.setAction(LangLinksActivity.ACTION_LANGLINKS_FOR_TITLE);
+                langIntent.putExtra(LangLinksActivity.EXTRA_PAGETITLE, model.getTitle());
+                getActivity().startActivityForResult(langIntent,
+                                                     PageActivity.ACTIVITY_REQUEST_LANGLINKS);
+                return true;
+            case de.droidwiki.R.id.menu_page_find_in_page:
+                showFindInPage();
+                return true;
+            case de.droidwiki.R.id.menu_page_font_and_theme:
+                getPageActivity().showThemeChooser();
+                return true;
+            case de.droidwiki.R.id.menu_page_show_tabs:
+                tabsProvider.enterTabMode();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onDestroyOptionsMenu() {
+        super.onDestroyOptionsMenu();
+    }
+
+    public void showFindInPage() {
+        final PageActivity pageActivity = getPageActivity();
+        final FindInPageActionProvider findInPageActionProvider = new FindInPageActionProvider(pageActivity);
+
+        pageActivity.startSupportActionMode(new ActionMode.Callback() {
+            private final String actionModeTag = "actionModeFindInPage";
+
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                findInPageActionMode = mode;
+                MenuItem menuItem = menu.add(R.string.menu_page_find_in_page);
+                MenuItemCompat.setActionProvider(menuItem, findInPageActionProvider);
+                setToCButtonFadedIn(false);
+                return true;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                mode.setTag(actionModeTag);
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+                findInPageActionMode = null;
+                webView.clearMatches();
+                pageActivity.showToolbar();
+                setToCButtonFadedIn(true);
+                Utils.hideSoftKeyboard(pageActivity);
+            }
+        });
+    }
+
+    public boolean closeFindInPage() {
+        if (findInPageActionMode != null) {
+            findInPageActionMode.finish();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Scroll to a specific section in the WebView.
+     * @param sectionAnchor Anchor link of the section to scroll to.
+     */
+    public void scrollToSection(String sectionAnchor) {
+        if (!isAdded() || tocHandler == null) {
+            return;
+        }
+        tocHandler.scrollToSection(sectionAnchor);
+    }
+
+    public void onPageLoadComplete() {
+        editHandler.setPage(model.getPage());
+
+        if (saveOnComplete) {
+            saveOnComplete = false;
+            savedPagesFunnel.logUpdate();
+            savePage();
+        }
+
+        checkAndShowSelectTextOnboarding();
+
+        updateNavDrawerSelection();
+
+        if (pageLoadCallbacks != null) {
+            pageLoadCallbacks.onLoadComplete();
+        }
+    }
+
+    public void commonSectionFetchOnCatch(Throwable caught) {
+        if (!isAdded()) {
+            return;
+        }
+        // in any case, make sure the TOC drawer is closed
+        tocDrawer.closeDrawers();
+        getPageActivity().updateProgressBar(false, true, 0);
+        refreshView.setRefreshing(false);
+
+        hidePageContent();
+        errorView.setError(caught);
+        errorView.setVisibility(View.VISIBLE);
+
+        if (ThrowableUtil.throwableContainsException(caught, SSLException.class)) {
+            try {
+                if (WikipediaApp.getInstance().incSslFailCount() < 2) {
+                    WikipediaApp.getInstance().setSslFallback(true);
+                    connectionIssueFunnel.logConnectionIssue("mdot", "commonSectionFetchOnCatch");
+                } else {
+                    connectionIssueFunnel.logConnectionIssue("desktop", "commonSectionFetchOnCatch");
+                }
+            } catch (Exception e) {
+                // meh
+            }
+        }
+    }
+
+    public void savePage() {
+        if (model.getPage() == null) {
+            return;
+        }
+
+        FeedbackUtil.showMessage(getActivity(), R.string.snackbar_saving_page);
+        new SavePageTask(app, model.getTitle(), model.getPage()) {
+            @Override
+            public void onFinish(Boolean success) {
+                if (!isAdded()) {
+                    Log.d("PageFragment", "Detached from activity, no snackbar.");
+                    return;
+                }
+                getPageActivity().showPageSavedMessage(model.getTitle().getDisplayText(), success);
+            }
+        }.execute();
+        // Not technically a refresh but this will prevent needless immediate refreshing
+        pageRefreshed = true;
+    }
+
+    /**
+     * Read URL mappings from the saved page specific file
+     */
+    public void readUrlMappings() {
+        new LoadSavedPageUrlMapTask(model.getTitle()) {
+            @Override
+            public void onFinish(JSONObject result) {
+                // have we been unwittingly detached from our Activity?
+                if (!isAdded()) {
+                    Log.d("PageFragment", "Detached from activity, so stopping update.");
+                    return;
+                }
+
+                ImageUrlMap.replaceImageSources(bridge, result);
+            }
+
+            @Override
+            public void onCatch(Throwable caught) {
+
+                /*
+                If anything bad happens during loading of a saved page, then simply bounce it
+                back to the online version of the page, and re-save the page contents locally when it's done.
+                 */
+
+                Log.d("LoadSavedPageTask", "Error loading saved page: " + caught.getMessage());
+                caught.printStackTrace();
+
+                refreshPage(true);
+            }
+        }.execute();
+    }
+
+    public void refreshPage(boolean saveOnComplete) {
+        this.saveOnComplete = saveOnComplete;
+        if (saveOnComplete) {
+            FeedbackUtil.showMessage(getActivity(), R.string.snackbar_refresh_saved_page);
+        }
+        model.setCurEntry(new HistoryEntry(model.getTitle(), HistoryEntry.SOURCE_HISTORY));
+        displayNewPage(model.getTitle(), model.getCurEntry(), false, false, true);
+    }
+
+    public void updateSavePageMenuItem(MenuItem menuItemSavePage) {
+        if (!savedPageCheckComplete) {
+            menuItemSavePage.setEnabled(false);
+        } else if (pageRefreshed) {
+            menuItemSavePage.setEnabled(false);
+            menuItemSavePage.setTitle(getString(R.string.menu_page_saved));
+        } else if (pageSaved) {
+            menuItemSavePage.setEnabled(true);
+            menuItemSavePage.setTitle(getString(R.string.menu_refresh_saved_page));
+        } else {
+            menuItemSavePage.setEnabled(true);
+            menuItemSavePage.setTitle(getString(R.string.menu_page_save));
+        }
+    }
+
+    private ToCHandler tocHandler;
+    public void toggleToC(int action) {
+        // tocHandler could still be null while the page is loading
+        if (tocHandler == null) {
+            return;
+        }
+        switch (action) {
+            case TOC_ACTION_SHOW:
+                tocHandler.show();
+                break;
+            case TOC_ACTION_HIDE:
+                tocHandler.hide();
+                break;
+            case TOC_ACTION_TOGGLE:
+                if (tocHandler.isVisible()) {
+                    tocHandler.hide();
+                } else {
+                    tocHandler.show();
+                }
+                break;
+            default:
+                throw new RuntimeException("Unknown action!");
+        }
+    }
+
+    public void setupToC(PageViewModel model, boolean isFirstPage) {
+        tocHandler.setupToC(model.getPage(), model.getTitle().getSite(), isFirstPage);
+        tocHandler.setEnabled(true);
     }
 
     private void openInNewTab(PageTitle title, HistoryEntry entry, int position) {
@@ -644,7 +988,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             public void onMessage(String messageType, JSONObject messagePayload) {
                 try {
                     String href = Utils.decodeURL(messagePayload.getString("href"));
-                    if (href.startsWith("/")) {
+                    if (href.startsWith("/wiki/")) {
                         PageTitle imageTitle = model.getTitle().getSite().titleForInternalLink(href);
                         GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
                                 imageTitle, GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
@@ -662,344 +1006,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                 try {
                     String href = Utils.decodeURL(messagePayload.getString("href"));
                     GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
-                            new PageTitle(href, model.getTitle().getSite()),
-                            GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
+                            new PageTitle(href, model.getTitle().getSite()), GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
                 } catch (JSONException e) {
                     ACRA.getErrorReporter().handleException(e);
                 }
             }
         });
-    }
-
-    public void onActionModeShown(ActionMode mode) {
-        // make sure we have a page loaded, since shareHandler makes references to it.
-        if (model.getPage() != null) {
-            shareHandler.onTextSelected(mode);
-        }
-    }
-
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PageActivity.ACTIVITY_REQUEST_EDIT_SECTION
-            && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
-            pageLoadStrategy.backFromEditing(data);
-            FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.edit_saved_successfully);
-            // and reload the page...
-            displayNewPage(model.getTitleOriginal(), model.getCurEntry(), false, false);
-        }
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (!isAdded() || getPageActivity().isSearching()) {
-            return;
-        }
-        inflater.inflate(de.droidwiki.R.menu.menu_page_actions, menu);
-    }
-
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        if (!isAdded() || getPageActivity().isSearching()) {
-            return;
-        }
-        MenuItem savePageItem = menu.findItem(de.droidwiki.R.id.menu_page_save);
-        if (savePageItem == null) {
-            return;
-        }
-
-        MenuItem shareItem = menu.findItem(de.droidwiki.R.id.menu_page_share);
-        MenuItem otherLangItem = menu.findItem(de.droidwiki.R.id.menu_page_other_languages);
-        MenuItem findInPageItem = menu.findItem(de.droidwiki.R.id.menu_page_find_in_page);
-        MenuItem themeChooserItem = menu.findItem(de.droidwiki.R.id.menu_page_font_and_theme);
-
-        if (pageLoadStrategy.isLoading()) {
-            savePageItem.setEnabled(false);
-            shareItem.setEnabled(false);
-            otherLangItem.setEnabled(false);
-            findInPageItem.setEnabled(false);
-            themeChooserItem.setEnabled(false);
-        } else {
-            savePageItem.setEnabled(true);
-            shareItem.setEnabled(true);
-            // Only display "Read in other languages" if the article is in other languages
-            otherLangItem.setVisible(model.getPage() != null && model.getPage().getPageProperties().getLanguageCount() != 0);
-            otherLangItem.setEnabled(true);
-            findInPageItem.setEnabled(true);
-            themeChooserItem.setEnabled(true);
-            int subState = pageLoadStrategy.getSubState();
-            if (subState == SUBSTATE_PAGE_SAVED) {
-                savePageItem.setEnabled(false);
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_page_saved));
-            } else if (subState == SUBSTATE_SAVED_PAGE_LOADED) {
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_refresh_saved_page));
-            } else {
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_save_page));
-            }
-        }
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case de.droidwiki.R.id.homeAsUp:
-                // TODO SEARCH: add up navigation, see also http://developer.android.com/training/implementing-navigation/ancestral.html
-                return true;
-            case de.droidwiki.R.id.menu_page_save:
-                // This means the user explicitly chose to save a new saved page
-                app.getFunnelManager().getSavedPagesFunnel(model.getTitle().getSite()).logSaveNew();
-                if (model.getCurEntry().getSource() == HistoryEntry.SOURCE_SAVED_PAGE) {
-                    // refreshing a saved page...
-                    refreshPage(true);
-                } else {
-                    savePage();
-                }
-                return true;
-            case R.id.menu_page_share:
-                ShareUtils.shareText(getActivity(), model.getTitle());
-                return true;
-            case de.droidwiki.R.id.menu_page_other_languages:
-                Intent langIntent = new Intent();
-                langIntent.setClass(getActivity(), LangLinksActivity.class);
-                langIntent.setAction(LangLinksActivity.ACTION_LANGLINKS_FOR_TITLE);
-                langIntent.putExtra(LangLinksActivity.EXTRA_PAGETITLE, model.getTitle());
-                getActivity().startActivityForResult(langIntent,
-                                                     PageActivity.ACTIVITY_REQUEST_LANGLINKS);
-                return true;
-            case de.droidwiki.R.id.menu_page_find_in_page:
-                showFindInPage();
-                return true;
-            case de.droidwiki.R.id.menu_page_font_and_theme:
-                getPageActivity().showThemeChooser();
-                return true;
-            case de.droidwiki.R.id.menu_page_show_tabs:
-                tabsProvider.enterTabMode();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public void showFindInPage() {
-        final PageActivity pageActivity = getPageActivity();
-        final FindInPageActionProvider findInPageActionProvider = new FindInPageActionProvider(pageActivity);
-
-        pageActivity.startSupportActionMode(new ActionMode.Callback() {
-            private final String actionModeTag = "actionModeFindInPage";
-
-            @Override
-            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                findInPageActionMode = mode;
-                MenuItem menuItem = menu.add(de.droidwiki.R.string.find_in_page);
-                MenuItemCompat.setActionProvider(menuItem, findInPageActionProvider);
-                return true;
-            }
-
-            @Override
-            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-                mode.setTag(actionModeTag);
-                return false;
-            }
-
-            @Override
-            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                return false;
-            }
-
-            @Override
-            public void onDestroyActionMode(ActionMode mode) {
-                findInPageActionMode = null;
-                webView.clearMatches();
-                pageActivity.showToolbar();
-                Utils.hideSoftKeyboard(pageActivity);
-            }
-        });
-    }
-
-    public boolean closeFindInPage() {
-        if (findInPageActionMode != null) {
-            findInPageActionMode.finish();
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Scroll to a specific section in the WebView.
-     * @param sectionAnchor Anchor link of the section to scroll to.
-     */
-    public void scrollToSection(String sectionAnchor) {
-        if (!isAdded() || tocHandler == null) {
-            return;
-        }
-        tocHandler.scrollToSection(sectionAnchor);
-    }
-
-    public void onPageLoadComplete() {
-        editHandler.setPage(model.getPage());
-
-        if (saveOnComplete) {
-            saveOnComplete = false;
-            savedPagesFunnel.logUpdate();
-            savePage();
-        }
-
-        checkAndShowSelectTextOnboarding();
-
-        updateNavDrawerSelection();
-
-        if (pageLoadCallbacks != null) {
-            pageLoadCallbacks.onLoadComplete();
-        }
-    }
-
-    public PageTitle adjustPageTitleFromMobileview(PageTitle title, JSONObject mobileView)
-            throws JSONException {
-        if (mobileView.has("redirected")) {
-            // Handle redirects properly.
-            title = new PageTitle(mobileView.optString("redirected"), title.getSite(),
-                    title.getThumbUrl());
-        } else if (mobileView.has("normalizedtitle")) {
-            // We care about the normalized title only if we were not redirected
-            title = new PageTitle(mobileView.optString("normalizedtitle"), title.getSite(),
-                    title.getThumbUrl());
-        }
-        if (mobileView.has("description")) {
-            title.setDescription(Utils.capitalizeFirstChar(mobileView.getString("description")));
-        }
-        return title;
-    }
-
-    public void commonSectionFetchOnCatch(Throwable caught) {
-        if (!isAdded()) {
-            return;
-        }
-        // in any case, make sure the TOC drawer is closed
-        tocDrawer.closeDrawers();
-        getPageActivity().updateProgressBar(false, true, 0);
-        refreshView.setRefreshing(false);
-
-        hidePageContent();
-        errorView.setError(caught);
-        errorView.setVisibility(View.VISIBLE);
-
-        if (ThrowableUtil.throwableContainsException(caught, SSLException.class)) {
-            try {
-                if (WikipediaApp.getInstance().incSslFailCount() < 2) {
-                    WikipediaApp.getInstance().setSslFallback(true);
-                    connectionIssueFunnel.logConnectionIssue("mdot", "commonSectionFetchOnCatch");
-                } else {
-                    connectionIssueFunnel.logConnectionIssue("desktop", "commonSectionFetchOnCatch");
-                }
-            } catch (Exception e) {
-                // meh
-            }
-        }
-    }
-
-    /**
-     * Convenience method for hiding all the content of a page.
-     */
-    private void hidePageContent() {
-        leadImagesHandler.hide();
-        searchBarHideHandler.setFadeEnabled(false);
-        pageLoadStrategy.onHidePageContent();
-        webView.setVisibility(View.INVISIBLE);
-    }
-
-    public void savePage() {
-        if (model.getPage() == null) {
-            return;
-        }
-
-        FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.toast_saving_page);
-        new SavePageTask(app, model.getTitle(), model.getPage()) {
-            @Override
-            public void onFinish(Boolean success) {
-                if (!isAdded()) {
-                    Log.d("PageFragment", "Detached from activity, no snackbar.");
-                    return;
-                }
-
-                if (success) {
-                    pageLoadStrategy.setSubState(SUBSTATE_PAGE_SAVED);
-                }
-
-                getPageActivity().showPageSavedMessage(model.getTitle().getDisplayText(), success);
-            }
-        }.execute();
-    }
-
-    /**
-     * Read URL mappings from the saved page specific file
-     */
-    public void readUrlMappings() {
-        new LoadSavedPageUrlMapTask(model.getTitle()) {
-            @Override
-            public void onFinish(JSONObject result) {
-                // have we been unwittingly detached from our Activity?
-                if (!isAdded()) {
-                    Log.d("PageFragment", "Detached from activity, so stopping update.");
-                    return;
-                }
-
-                ImageUrlMap.replaceImageSources(bridge, result);
-            }
-
-            @Override
-            public void onCatch(Throwable caught) {
-
-                /*
-                If anything bad happens during loading of a saved page, then simply bounce it
-                back to the online version of the page, and re-save the page contents locally when it's done.
-                 */
-
-                Log.d("LoadSavedPageTask", "Error loading saved page: " + caught.getMessage());
-                caught.printStackTrace();
-
-                refreshPage(true);
-            }
-        }.execute();
-    }
-
-    public void refreshPage(boolean saveOnComplete) {
-        this.saveOnComplete = saveOnComplete;
-        if (saveOnComplete) {
-            FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.toast_refresh_saved_page);
-        }
-        model.setCurEntry(new HistoryEntry(model.getTitle(), HistoryEntry.SOURCE_HISTORY));
-        displayNewPage(model.getTitle(), model.getCurEntry(), false, false);
-    }
-
-    private ToCHandler tocHandler;
-    public void toggleToC(int action) {
-        // tocHandler could still be null while the page is loading
-        if (tocHandler == null) {
-            return;
-        }
-        switch (action) {
-            case TOC_ACTION_SHOW:
-                tocHandler.show();
-                break;
-            case TOC_ACTION_HIDE:
-                tocHandler.hide();
-                break;
-            case TOC_ACTION_TOGGLE:
-                if (tocHandler.isVisible()) {
-                    tocHandler.hide();
-                } else {
-                    tocHandler.show();
-                }
-                break;
-            default:
-                throw new RuntimeException("Unknown action!");
-        }
-    }
-
-    public void setupToC(PageViewModel model, boolean isFirstPage) {
-        tocHandler.setupToC(model.getPage(), model.getTitle().getSite(), isFirstPage);
-        tocHandler.setEnabled(true);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -1018,6 +1030,16 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             tocButton.hide();
         }
     };
+
+    /**
+     * Convenience method for hiding all the content of a page.
+     */
+    private void hidePageContent() {
+        leadImagesHandler.hide();
+        searchBarHideHandler.setFadeEnabled(false);
+        pageLoadStrategy.onHidePageContent();
+        webView.setVisibility(View.INVISIBLE);
+    }
 
     @Override
     public boolean onBackPressed() {
@@ -1043,6 +1065,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     public LinkHandler getLinkHandler() {
         return linkHandler;
+    }
+
+    private void checkIfPageIsSaved() {
+        if (getActivity() != null && getTitle() != null) {
+            getActivity().getSupportLoaderManager().restartLoader(LOADER_ID, null, savedPageCheckCallbacks);
+        }
     }
 
     private void checkAndShowSelectTextOnboarding() {

@@ -1,5 +1,6 @@
 package de.droidwiki.page;
 
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.util.ApiUtil;
 
@@ -58,8 +59,8 @@ public class FindInPageActionProvider extends ActionProvider {
 
         findInPageMatch = (TextView) view.findViewById(de.droidwiki.R.id.find_in_page_match);
 
-        SearchView searchView = (SearchView) view.findViewById(de.droidwiki.R.id.find_in_page_input);
-        searchView.setQueryHint(parentActivity.getString(de.droidwiki.R.string.find_in_page));
+        SearchView searchView = (SearchView) view.findViewById(R.id.find_in_page_input);
+        searchView.setQueryHint(parentActivity.getString(R.string.menu_page_find_in_page));
         searchView.setFocusable(true);
         searchView.requestFocusFromTouch();
         searchView.setOnQueryTextListener(searchQueryListener);
@@ -67,7 +68,6 @@ public class FindInPageActionProvider extends ActionProvider {
         searchView.setIconified(false);
         searchView.setMaxWidth(Integer.MAX_VALUE);
         searchView.setInputType(EditorInfo.TYPE_CLASS_TEXT);
-        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         searchView.setSubmitButtonEnabled(false);
         // remove focus line from search plate
         View searchEditPlate = searchView
@@ -79,7 +79,6 @@ public class FindInPageActionProvider extends ActionProvider {
     private final SearchView.OnQueryTextListener searchQueryListener = new SearchView.OnQueryTextListener() {
         @Override
         public boolean onQueryTextSubmit(String s) {
-            parentActivity.getCurPageFragment().closeFindInPage();
             return false;
         }
 

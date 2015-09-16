@@ -2,6 +2,7 @@ package de.droidwiki.search;
 
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.SearchFunnel;
@@ -280,8 +281,8 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
     }
 
     private void setSearchViewEnabled(boolean enabled) {
-        LinearLayout enabledSearchBar = (LinearLayout) getActivity().findViewById(de.droidwiki.R.id.search_bar_enabled);
-        TextView searchButton = (TextView) getActivity().findViewById(de.droidwiki.R.id.main_search_bar_text);
+        LinearLayout enabledSearchBar = (LinearLayout) getActivity().findViewById(R.id.search_bar_enabled);
+        TextView searchButton = (TextView) getActivity().findViewById(R.id.main_search_bar_text);
 
         if (enabled) {
             // set up the SearchView

@@ -10,7 +10,7 @@
   <string name="acra_report_dialog_comment">クラッシュした際に何をしていましたか?</string>
   <string name="search_hint">ウィキペディアを検索</string>
   <string name="nav_item_history">履歴</string>
-  <string name="error_network_error">ネットワーク接続が確立できませんでした。</string>
+  <string name="error_network_error" fuzzy="true">ネットワーク接続が確立できませんでした。</string>
   <string name="search_network_error">ネットワークエラーです。タップしてやり直してください。</string>
   <string name="generic_page_error">リクエストの処理中に問題が発生しました。</string>
   <string name="status_code_unavailable">サーバーステータスコードが使用できません。</string>
@@ -26,22 +26,23 @@
   <string name="dialog_prompt_refresh_all_saved_pages">保存したページをすべて更新しますか?</string>
   <string name="share_via">シェアする</string>
   <string name="dialog_title_clear_saved_pages">保存したページをすべて消去しますか?</string>
-  <string name="toast_saving_page">ページを保存中…</string>
-  <string name="toast_saved_page" fuzzy="true">ページを保存しました</string>
-  <string name="toast_saved_page_missing_images">一部の画像を保存できませんでした</string>
-  <string name="toast_refresh_saved_page">保存したページを更新しています…</string>
+  <string name="snackbar_saving_page">ページを保存中…</string>
+  <string name="snackbar_saved_page_format">オフラインでの読みのため、\"%s\" ページを保存しました</string>
+  <string name="snackbar_saved_page_missing_images">一部の画像を保存できませんでした</string>
+  <string name="snackbar_refresh_saved_page">保存したページを更新しています…</string>
   <string name="delete_selected_saved_pages">削除</string>
-  <string name="toast_saved_page_deleted">保存したページを削除しました</string>
+  <string name="snackbar_saved_page_deleted">保存したページを削除しました</string>
   <string name="saved_pages_search_list_hint">保存したページを検索</string>
   <string name="saved_pages_search_empty_message">キーワードに一致するページが見つかりません。</string>
-  <string name="menu_show_tabs">タブを表示</string>
-  <string name="menu_other_languages">他の言語で読む</string>
-  <string name="menu_save_page">ページを保存</string>
-  <string name="menu_share_page" fuzzy="true">シェア</string>
-  <string name="find_in_page">ページ内検索</string>
-  <string name="menu_themechooser">フォントとテーマ</string>
-  <string name="menu_open_link" fuzzy="true">リンクを開く</string>
-  <string name="menu_open_in_new_tab">新しいタブで開く</string>
+  <string name="menu_page_show_tabs">タブを表示</string>
+  <string name="menu_page_other_languages">他の言語で読む</string>
+  <string name="menu_page_save">ページを保存</string>
+  <string name="menu_page_share">リンクをシェア</string>
+  <string name="menu_page_find_in_page">ページ内検索</string>
+  <string name="menu_page_font_and_theme">フォントとテーマ</string>
+  <string name="menu_long_press_open_page">開く</string>
+  <string name="menu_long_press_open_in_new_tab">新しいタブで開く</string>
+  <string name="menu_long_press_copy_page">リンクのアドレスをコピー</string>
   <string name="nav_item_nearby">付近のスポット</string>
   <string name="menu_update_nearby">付近のスポットを更新</string>
   <string name="nearby_empty_title">付近のスポットについてのページがありません!</string>
@@ -285,4 +286,6 @@ https://github.com/wikimedia/apps-android-wikipedia
   <string name="error_unknown">不明なエラーが発生しました。</string>
   <string name="format_error_server_message">メッセージ: \"%s\"</string>
   <string name="format_error_server_code">コード: \"%s\"</string>
+  <string name="address_copied">アドレスがクリップボードにコピーされました。</string>
+  <string name="button_continue_to_article">続きを表示する</string>
 </resources>

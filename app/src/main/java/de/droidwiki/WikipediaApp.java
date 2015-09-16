@@ -32,12 +32,10 @@ import de.droidwiki.history.HistoryEntryPersister;
 import de.droidwiki.interlanguage.AcceptLanguageUtil;
 import de.droidwiki.interlanguage.AppLanguageState;
 import de.droidwiki.login.UserInfoStorage;
-import de.droidwiki.migration.PerformMigrationsTask;
 import de.droidwiki.networking.MccMncStateHandler;
 import de.droidwiki.onboarding.OnboardingStateMachine;
 import de.droidwiki.onboarding.PrefsOnboardingStateMachine;
 import de.droidwiki.page.PageCache;
-import de.droidwiki.page.linkpreview.LinkPreviewVersion;
 import de.droidwiki.pageimages.PageImage;
 import de.droidwiki.pageimages.PageImagePersister;
 import de.droidwiki.savedpages.SavedPage;
@@ -49,6 +47,8 @@ import de.droidwiki.theme.Theme;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.log.L;
 import de.droidwiki.zero.WikipediaZeroHandler;
+
+import retrofit.RequestInterceptor;
 
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -214,8 +214,6 @@ public class WikipediaApp extends Application {
 
         zeroHandler = new WikipediaZeroHandler(this);
         pageCache = new PageCache(this);
-
-        new PerformMigrationsTask().execute();
     }
 
     public Bus getBus() {
@@ -249,6 +247,9 @@ public class WikipediaApp extends Application {
 
     private HashMap<String, Api> apis = new HashMap<>();
     private MccMncStateHandler mccMncStateHandler = new MccMncStateHandler();
+    public MccMncStateHandler getMccMncStateHandler() {
+        return mccMncStateHandler;
+    }
     public Api getAPIForSite(Site site) {
         String acceptLanguage = getAcceptLanguage(site);
         HashMap<String, String> customHeaders = buildCustomHeaders(acceptLanguage);
@@ -444,15 +445,6 @@ public class WikipediaApp extends Application {
         return EVENT_LOG_TESTING_ID;
     }
 
-    public int getLinkPreviewVersion() {
-        if (Prefs.hasLinkPreviewVersion()) {
-            return Prefs.getLinkPreviewVersion();
-        }
-        int version = LinkPreviewVersion.generateVersion();
-        Prefs.setLinkPreviewVersion(version);
-        return version;
-    }
-
     public boolean isFeatureSelectTextAndShareTutorialEnabled() {
         boolean enabled = false;
         // Select text does not work on Gingerbread.
@@ -580,6 +572,19 @@ public class WikipediaApp extends Application {
         return simpleDateFormat;
     }
 
+    /** For Retrofit requests. Keep in sync with #buildCustomHeaders */
+    public void injectCustomHeaders(RequestInterceptor.RequestFacade request, Site site) {
+        request.addHeader("User-Agent", getUserAgent());
+
+        // Add the app install ID to the header, but only if the user has not opted out of logging
+        if (isEventLoggingEnabled()) {
+            request.addHeader("X-WMF-UUID", getAppInstallID());
+        }
+
+        request.addHeader("Accept-Language", getAcceptLanguage(site));
+    }
+
+    /** For java-mwapi API requests. */
     private HashMap<String, String> buildCustomHeaders(String acceptLanguage) {
         // https://lists.wikimedia.org/pipermail/wikimedia-l/2014-April/071131.html
         HashMap<String, String> headers = new HashMap<>();

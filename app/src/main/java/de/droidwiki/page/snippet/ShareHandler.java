@@ -24,6 +24,7 @@ import de.droidwiki.page.ImageLicense;
 import de.droidwiki.page.ImageLicenseFetchTask;
 import de.droidwiki.bridge.CommunicationBridge;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.ShareAFactFunnel;
 import de.droidwiki.page.BottomDialog;
@@ -76,7 +77,9 @@ public class ShareHandler {
                 String purpose = messagePayload.optString("purpose", "");
                 String text = messagePayload.optString("text", "");
                 if (purpose.equals("share")) {
-                    createFunnel();
+                    if (funnel == null) {
+                        createFunnel();
+                    }
                     shareSnippet(text);
                     funnel.logShareTap(text);
                 }
@@ -171,8 +174,8 @@ public class ShareHandler {
         // if we were unable to find the Share button, then inject our own!
         if (shareItem == null) {
             shareItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE,
-                    activity.getString(de.droidwiki.R.string.menu_share_page));
-            shareItem.setIcon(de.droidwiki.R.drawable.ic_share_dark);
+                    activity.getString(R.string.menu_page_share));
+            shareItem.setIcon(R.drawable.ic_share_dark);
             MenuItemCompat.setShowAsAction(shareItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS
                                                       | MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
         }
