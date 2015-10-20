@@ -3,14 +3,11 @@ package de.droidwiki.settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.data.GsonMarshaller;
 import de.droidwiki.data.TabUnmarshaller;
 import de.droidwiki.page.tabs.Tab;
 import de.droidwiki.theme.Theme;
-
-import retrofit.RestAdapter;
 
 import java.util.Collections;
 import java.util.List;
@@ -123,6 +120,18 @@ public final class Prefs {
         remove(getEditTokenForWikiKey(wiki));
     }
 
+    public static int getLinkPreviewVersion() {
+        return getInt(de.droidwiki.R.string.preference_key_link_preview_version, 0);
+    }
+
+    public static void setLinkPreviewVersion(int version) {
+        setInt(de.droidwiki.R.string.preference_key_link_preview_version, version);
+    }
+
+    public static boolean hasLinkPreviewVersion() {
+        return contains(de.droidwiki.R.string.preference_key_link_preview_version);
+    }
+
     public static void removeLoginUsername() {
         remove(de.droidwiki.R.string.preference_key_login_username);
     }
@@ -222,32 +231,12 @@ public final class Prefs {
         setBoolean(de.droidwiki.R.string.preference_key_exp_html_page_load, enabled);
     }
 
-    public static boolean forceRestbaseUsage() {
-        return getBoolean(R.string.preference_key_use_restbase, false);
+    public static boolean isRESTBaseJsonPageLoadEnabled() {
+        return getBoolean(de.droidwiki.R.string.preference_key_exp_json_page_load, false);
     }
 
-    public static RestAdapter.LogLevel getRetrofitLogLevel() {
-        String prefValue = getString(R.string.preference_key_retrofit_log_level, null);
-        if (prefValue == null) {
-            return RestAdapter.LogLevel.NONE;
-        }
-        switch (prefValue) {
-            case "BASIC":
-                return RestAdapter.LogLevel.BASIC;
-            case "HEADERS":
-                return RestAdapter.LogLevel.HEADERS;
-            case "HEADERS_AND_ARGS":
-                return RestAdapter.LogLevel.HEADERS_AND_ARGS;
-            case "FULL":
-                return RestAdapter.LogLevel.FULL;
-            case "NONE":
-            default:
-                return RestAdapter.LogLevel.NONE;
-        }
-    }
-
-    public static String getRestbaseUriFormat() {
-        return getString(R.string.preference_key_restbase_uri_format, "%1$s://%2$s/api/rest_v1");
+    public static void setExperimentalJsonPageLoadEnabled(boolean enabled) {
+        setBoolean(de.droidwiki.R.string.preference_key_exp_json_page_load, enabled);
     }
 
     public static long getLastRunTime(@NonNull String task) {

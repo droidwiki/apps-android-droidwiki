@@ -1,57 +1,34 @@
 package de.droidwiki.page;
 
 import de.droidwiki.Utils;
-import de.droidwiki.data.GsonUtil;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.google.gson.annotations.Expose;
-
 /**
- * Gson POJO for one section of a page.
+ * Represents a particular section of an article.
  */
 public class Section {
 
-    @Expose private int id;
-    @Expose private int toclevel = 1;
-    @Expose private String line;
-    @Expose private String anchor;
-    @Expose private String text;
+    private final JSONObject data;
 
-    // TODO: can we get rid of this? It's not efficient to
-    public static Section fromJson(JSONObject json) {
-        return GsonUtil.getDefaultGson().fromJson(json.toString(), Section.class);
+    public Section(JSONObject json) {
+        this.data = json;
     }
 
-    // TODO: get rid of this; problem is how to interop Gson and org.json.JSONObject
-    // We're using this to send the section over the JS bridge
-    public JSONObject toJSON() {
+    // Use this only for tests and such.
+    public Section(int id, int level, String heading, String anchor, String content) {
         try {
-            JSONObject data = new JSONObject();
-            data.put("id", id);
-            data.put("toclevel", toclevel);
-            data.put("line", line);
-            data.put("anchor", anchor);
-            data.put("text", text);
-            return data;
+            JSONObject obj = new JSONObject();
+            obj.put("id", id);
+            obj.put("toclevel", level);
+            obj.put("line", heading);
+            obj.put("anchor", anchor);
+            obj.put("text", content);
+            data = obj;
         } catch (JSONException e) {
-            // This should never happen
+            // This, also, will never happen. Very similar to Java being sane, some say.
             throw new RuntimeException(e);
         }
-    }
-
-    /** Default constructor used by Gson deserialization. Good for setting default values. */
-    public Section() {
-        toclevel = 1;
-    }
-
-    public Section(int id, int level, String heading, String anchor, String content) {
-        this.id = id;
-        this.toclevel = level;
-        this.line = heading;
-        this.anchor = anchor;
-        this.text = content;
     }
 
     @Override
@@ -80,39 +57,36 @@ public class Section {
     @Override
     public String toString() {
         return "Section{"
-                + "id=" + id
-                + ", toclevel=" + toclevel
-                + ", line='" + line + '\''
-                + ", anchor='" + anchor + '\''
-                + ", text='" + text + '\''
+                + "data=" + data
                 + '}';
     }
 
     public boolean isLead() {
-        return id == 0;
+        return getId() == 0;
     }
 
     public int getId() {
-        return id;
+        return data.optInt("id");
     }
 
     public int getLevel() {
-        return toclevel;
+        return data.optInt("toclevel", 1);
     }
 
     public String getHeading() {
-        return line;
+        return data.optString("line");
     }
 
     public String getAnchor() {
-        return anchor;
+        return data.optString("anchor");
     }
 
     public String getContent() {
-        return text;
+        return data.optString("text");
     }
 
-    public void setContent(String content) {
-        this.text = content;
+    public JSONObject toJSON() {
+        return data;
     }
+
 }

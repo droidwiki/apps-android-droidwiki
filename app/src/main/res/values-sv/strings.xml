@@ -10,7 +10,7 @@
   <string name="acra_report_dialog_comment">Vad gjorde du när kraschen inträffade?</string>
   <string name="search_hint">Sök på DroidWiki</string>
   <string name="nav_item_history">Historik</string>
-  <string name="error_network_error" fuzzy="true">Nätverksanslutningen kunde inte upprättas.</string>
+  <string name="error_network_error">Nätverksanslutningen kunde inte upprättas.</string>
   <string name="search_network_error">Nätverksfel. Tryck för att försöka igen.</string>
   <string name="generic_page_error">Ett problem uppstod när din begäran skulle behandlas.</string>
   <string name="status_code_unavailable">Serverns statuskod är otillgänglig.</string>
@@ -26,23 +26,22 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Uppdatera alla sparade sidor?</string>
   <string name="share_via">Dela via</string>
   <string name="dialog_title_clear_saved_pages">Rensa alla sparade sidor?</string>
-  <string name="snackbar_saving_page">Sparar sida…</string>
-  <string name="snackbar_saved_page_format">\"%s\" sparades för läsning offline</string>
-  <string name="snackbar_saved_page_missing_images">Kunde inte spara alla bilder</string>
-  <string name="snackbar_refresh_saved_page">Uppdaterar sparad sida…</string>
+  <string name="toast_saving_page">Sparar sida…</string>
+  <string name="toast_saved_page" fuzzy="true">Sidan har sparats</string>
+  <string name="toast_saved_page_missing_images">Kunde inte spara alla bilder</string>
+  <string name="toast_refresh_saved_page">Uppdaterar sparad sida…</string>
   <string name="delete_selected_saved_pages">Radera</string>
-  <string name="snackbar_saved_page_deleted">Sparad(e) sida/sidor raderas</string>
+  <string name="toast_saved_page_deleted">Sparad(e) sida/sidor raderas</string>
   <string name="saved_pages_search_list_hint">Sök sparade sidor</string>
   <string name="saved_pages_search_empty_message">Inga sidor som matchade din sökning hittades.</string>
-  <string name="menu_page_show_tabs">Visa flikar</string>
-  <string name="menu_page_other_languages">Läs på andra språk</string>
-  <string name="menu_page_save">Spara sidan</string>
-  <string name="menu_page_share">Dela länk</string>
-  <string name="menu_page_find_in_page">Sök på sidan</string>
-  <string name="menu_page_font_and_theme">Ändra teckensnitt och tema</string>
-  <string name="menu_long_press_open_page">Öppna</string>
-  <string name="menu_long_press_open_in_new_tab">Öppna i ny flik</string>
-  <string name="menu_long_press_copy_page">Kopiera länkadress</string>
+  <string name="menu_show_tabs">Visa flikar</string>
+  <string name="menu_other_languages">Läs på andra språk</string>
+  <string name="menu_save_page">Spara sidan</string>
+  <string name="menu_share_page" fuzzy="true">Dela</string>
+  <string name="find_in_page">Sök på sidan</string>
+  <string name="menu_themechooser">Ändra teckensnitt och tema</string>
+  <string name="menu_open_link" fuzzy="true">Öppna länk</string>
+  <string name="menu_open_in_new_tab">Öppna i ny flik</string>
   <string name="nav_item_nearby">I närheten</string>
   <string name="menu_update_nearby">Uppdatera sidor i närheten</string>
   <string name="nearby_empty_title">Inga närliggande sidor här!</string>
@@ -284,6 +283,4 @@ Villkor för användning: https://m.wikimediafoundation.org/wiki/Terms_of_Use</s
   <string name="error_unknown">Ett okänt fel uppstod.</string>
   <string name="format_error_server_message">Meddelande: \"%s\"</string>
   <string name="format_error_server_code">Kod: \"%s\"</string>
-  <string name="address_copied">Adressen kopierades till urklipp.</string>
-  <string name="button_continue_to_article">Fortsätt till artikeln</string>
 </resources>

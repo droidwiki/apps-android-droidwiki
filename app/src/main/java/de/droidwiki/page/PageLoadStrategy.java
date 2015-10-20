@@ -30,6 +30,10 @@ public interface PageLoadStrategy {
 
     boolean isLoading();
 
+    void setSubState(int subState);
+
+    int getSubState();
+
     void onHidePageContent();
 
     boolean onBackPressed();

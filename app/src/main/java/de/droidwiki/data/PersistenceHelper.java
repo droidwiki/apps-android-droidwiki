@@ -4,14 +4,13 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static de.droidwiki.util.StringUtil.removeNulls;
+import de.droidwiki.util.StringUtil;
 
 public abstract class PersistenceHelper<T> {
 
@@ -52,7 +51,7 @@ public abstract class PersistenceHelper<T> {
      * @param obj The object on which the formatting of the string depends.
      * @return A SQL WHERE clause formatted for the content provider.
      */
-    protected String getPrimaryKeySelection(@NonNull T obj, @NonNull String[] selectionKeys) {
+    protected String getPrimaryKeySelection(T obj, String[] selectionKeys) {
         String primaryKeySelection = "";
         String[] args = getUnfilteredPrimaryKeySelectionArgs(obj);
         for (int i = 0; i < args.length; i++) {
@@ -70,8 +69,8 @@ public abstract class PersistenceHelper<T> {
      * @return The array of selection arguments with null values removed.  (Null arguments are
      * replaced with "IS NULL" in getPrimaryKeySelection(T obj, String[] selectionKeys).)
      */
-    public String[] getPrimaryKeySelectionArgs(@NonNull T obj) {
-        return removeNulls(getUnfilteredPrimaryKeySelectionArgs(obj));
+    protected String[] getPrimaryKeySelectionArgs(T obj) {
+        return StringUtil.removeNulls(getUnfilteredPrimaryKeySelectionArgs(obj));
     }
 
     /**
@@ -80,7 +79,7 @@ public abstract class PersistenceHelper<T> {
      * @param obj Object from which selection args are to be derived.
      * @return Array of selection arguments (including null values).
      */
-    protected abstract String[] getUnfilteredPrimaryKeySelectionArgs(@NonNull T obj);
+    protected abstract String[] getUnfilteredPrimaryKeySelectionArgs(T obj);
 
     protected int getDBVersionIntroducedAt() {
         return 1;

@@ -112,7 +112,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
     private float displayDensity;
 
     public interface OnLeadImageLayoutListener {
-        void onLayoutComplete(int sequence);
+        void onLayoutComplete();
     }
 
     public LeadImagesHandler(final Context context, final PageFragment parentFragment,
@@ -332,7 +332,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      *
      * @param listener Listener that will receive an event when the layout is completed.
      */
-    public void beginLayout(OnLeadImageLayoutListener listener, int sequence) {
+    public void beginLayout(OnLeadImageLayoutListener listener) {
         String thumbUrl = parentFragment.getPage().getPageProperties().getLeadImageUrl();
         initDisplayDimensions();
 
@@ -362,8 +362,8 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
         pageDescriptionText.setVisibility(View.INVISIBLE);
 
         // kick off the (asynchronous) laying out of the page title text
-        layoutPageTitle((int) (context.getResources().getDimension(R.dimen.titleTextSize)
-                               / displayDensity), listener, sequence);
+        layoutPageTitle((int) (context.getResources().getDimension(de.droidwiki.R.dimen.titleTextSize)
+                               / displayDensity), listener);
     }
 
     /**
@@ -375,7 +375,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * @param fontSizeSp Font size to be tested.
      * @param listener Listener that will receive an event when the layout is completed.
      */
-    private void layoutPageTitle(final int fontSizeSp, final OnLeadImageLayoutListener listener, final int sequence) {
+    private void layoutPageTitle(final int fontSizeSp, final OnLeadImageLayoutListener listener) {
         if (!parentFragment.isAdded()) {
             return;
         }
@@ -390,7 +390,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
             pageTitleText.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    layoutPageTitle(fontSizeSp, listener, sequence);
+                    layoutPageTitle(fontSizeSp, listener);
                 }
             }, postDelay);
         } else {
@@ -407,10 +407,10 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
                         if (newSize < TITLE_MIN_TEXT_SIZE_SP) {
                             newSize = TITLE_MIN_TEXT_SIZE_SP;
                         }
-                        layoutPageTitle(newSize, listener, sequence);
+                        layoutPageTitle(newSize, listener);
                     } else {
                         // we're done!
-                        layoutViews(listener, sequence);
+                        layoutViews(listener);
                     }
                 }
             });
@@ -423,7 +423,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * page title ended up, and whether we should display the lead image.
      * @param listener Listener that will receive an event when the layout is completed.
      */
-    private void layoutViews(OnLeadImageLayoutListener listener, int sequence) {
+    private void layoutViews(OnLeadImageLayoutListener listener) {
         if (!parentFragment.isAdded()) {
             return;
         }
@@ -527,7 +527,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
         }
 
         // tell our listener that it's ok to start loading the rest of the WebView content
-        listener.onLayoutComplete(sequence);
+        listener.onLayoutComplete();
 
         // trigger a scroll event so that the visibility of the lead image component is updated.
         onScrollChanged(webView.getScrollY(), webView.getScrollY());

@@ -2,7 +2,6 @@ package de.droidwiki.page;
 
 import org.acra.ACRA;
 import de.droidwiki.BackPressedHandler;
-import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
@@ -764,8 +763,8 @@ public class PageActivity extends ThemedActionBarActivity {
 
     /*package*/ void showPageSavedMessage(@NonNull String title, boolean success) {
         FeedbackUtil.showMessage(this, getString(success
-                ? R.string.snackbar_saved_page_format
-                : R.string.snackbar_saved_page_missing_images, title));
+                ? de.droidwiki.R.string.toast_saved_page
+                : de.droidwiki.R.string.toast_saved_page_missing_images, title));
     }
 
     private void displayMainPageIfNoTabs() {

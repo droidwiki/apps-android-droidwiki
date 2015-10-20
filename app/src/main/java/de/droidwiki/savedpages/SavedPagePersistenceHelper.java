@@ -2,7 +2,6 @@ package de.droidwiki.savedpages;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.support.annotation.NonNull;
 
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.Site;
@@ -75,12 +74,12 @@ public class SavedPagePersistenceHelper extends PersistenceHelper<SavedPage> {
     }
 
     @Override
-    public String getPrimaryKeySelection(@NonNull SavedPage obj, @NonNull String[] selectionArgs) {
+    protected String getPrimaryKeySelection(SavedPage obj, String[] selectionArgs) {
         return super.getPrimaryKeySelection(obj, SELECTION_KEYS);
     }
 
     @Override
-    protected String[] getUnfilteredPrimaryKeySelectionArgs(@NonNull SavedPage obj) {
+    protected String[] getUnfilteredPrimaryKeySelectionArgs(SavedPage obj) {
         return new String[] {
                 obj.getTitle().getSite().getDomain(),
                 obj.getTitle().getNamespace(),

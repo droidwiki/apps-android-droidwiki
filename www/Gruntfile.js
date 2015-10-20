@@ -1,19 +1,17 @@
 module.exports = function ( grunt ) {
     var allScriptFiles = [
-        "js/bridge.js",
         "js/main.js",
-        "js/utilities.js",
-        "js/transformer.js",
-        "js/transforms/*.js",
+        "js/tranformer.js",
+        "js/transforms.js",
+        "js/bridge.js",
         "js/actions.js",
-        "js/disambig.js",
         "js/editaction.js",
         "js/issues.js",
-        "js/loader.js",
-        "js/night.js",
-        "js/preview.js",
-        "js/rtlsupport.js",
+        "js/disambig.js",
         "js/sections.js",
+        "js/rtlsupport.js",
+        "js/util.js",
+        "js/widenImages.js",
         "lib/js/classList.js",
         "tests/*.js"
     ];
@@ -25,12 +23,6 @@ module.exports = function ( grunt ) {
     var oldDroidPolyfills = [
         "lib/js/classList.js"
     ];
-    var distFolder = "../app/src/main/assets/";
-
-    grunt.loadNpmTasks( 'grunt-browserify' );
-    grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-    grunt.loadNpmTasks( 'grunt-contrib-copy' );
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
     grunt.initConfig( {
         pkg: grunt.file.readJSON( "package.json" ),
@@ -38,22 +30,21 @@ module.exports = function ( grunt ) {
             dist: {
                 files: {
                     "bundle.js": [
-                        "js/bridge.js",
+                        "js/loader.js",
+                        "lib/js/css-color-parser.js",
                         "js/main.js",
-                        "js/utilities.js",
+                        "js/night.js",
                         "js/transformer.js",
-                        "js/transforms/*.js",
+                        "js/transforms.js",
+                        "js/bridge.js",
                         "js/actions.js",
-                        "js/disambig.js",
                         "js/editaction.js",
                         "js/issues.js",
-                        "js/loader.js",
-                        "js/night.js",
-                        "js/preview.js",
-                        "js/rtlsupport.js",
+                        "js/disambig.js",
                         "js/sections.js",
-                        "lib/js/classList.js",
-                        "tests/*.js"
+                        "js/rtlsupport.js",
+                        "js/util.js",
+                        "js/widenImages.js"
                     ].concat( oldDroidPolyfills ),
                     "bundle-test.js": [
                         "js/loader.js",
@@ -83,23 +74,28 @@ module.exports = function ( grunt ) {
             main: {
                 files: [
                     // App files
-                    { src: [ "bundle.js", "index.html" ], dest: distFolder },
+                    {src: ["bundle.js", "index.html"], dest: "../app/src/main/assets/"},
 
                     // Test files
-                    { src: [ "bundle-test.js", "tests/index.html" ], dest: distFolder },
+                    {src: ["bundle-test.js", "tests/index.html"], dest: "../app/src/main/assets/"},
 
                     // Preview files
-                    { src: [ "preview.js", "preview.html" ], dest: distFolder },
+                    { src: ["preview.js", "preview.html"], dest: "../app/src/main/assets/" },
                 ]
             }
         },
         watch: {
             scripts: {
                 files: allScriptFiles.concat( allHTMLFiles ),
-                tasks: [ "default" ]
+                tasks: ["default"]
             }
         }
     } );
+
+    grunt.loadNpmTasks( 'grunt-browserify' );
+    grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+    grunt.loadNpmTasks( 'grunt-contrib-copy' );
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
     grunt.registerTask( 'default', [ 'browserify', 'copy' ] );
 };

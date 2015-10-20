@@ -29,7 +29,6 @@ import org.mediawiki.api.json.ApiException;
 import org.mediawiki.api.json.RequestBuilder;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.page.PageTitle;
-import de.droidwiki.R;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.Utils;
 import de.droidwiki.ViewAnimations;
@@ -597,16 +596,12 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
         if (pageProps != null && pageProps.getEditProtectionStatus() != null) {
             String message;
-            switch (pageProps.getEditProtectionStatus()) {
-                case "sysop":
-                    message = getString(R.string.page_protected_sysop);
-                    break;
-                case "autoconfirmed":
-                    message = getString(R.string.page_protected_autoconfirmed);
-                    break;
-                default:
-                    message = getString(R.string.page_protected_other, pageProps.getEditProtectionStatus());
-                    break;
+            if (pageProps.getEditProtectionStatus().equals("sysop")) {
+                message = getString(de.droidwiki.R.string.page_protected_sysop);
+            } else if (pageProps.getEditProtectionStatus().equals("autoconfirmed")) {
+                message = getString(de.droidwiki.R.string.page_protected_autoconfirmed);
+            } else {
+                message = getString(de.droidwiki.R.string.page_protected_other, pageProps.getEditProtectionStatus());
             }
             FeedbackUtil.showMessage(this, message);
         }

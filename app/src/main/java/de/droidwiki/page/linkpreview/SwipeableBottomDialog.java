@@ -1,7 +1,5 @@
 package de.droidwiki.page.linkpreview;
 
-import de.droidwiki.R;
-
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -50,6 +48,7 @@ import java.util.List;
  */
 public abstract class SwipeableBottomDialog extends DialogFragment {
     private final List<View> dialogViews = new ArrayList<>();
+    private ViewGroup rootView;
     private ListView dialogListView;
     private int dialogPeekHeight;
 
@@ -75,7 +74,7 @@ public abstract class SwipeableBottomDialog extends DialogFragment {
         int displayWidth = getDialogWidth();
         int displayHeight = inflater.getContext().getResources().getDisplayMetrics().heightPixels;
 
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.dialog_bottom_swipe, container);
+        rootView = (ViewGroup) inflater.inflate(de.droidwiki.R.layout.dialog_bottom_swipe, container);
 
         dialogViews.add(makeSpaceView(displayWidth, 1));
         dialogViews.add(makeSpaceView(displayWidth, dialogPeekHeight));
@@ -123,16 +122,6 @@ public abstract class SwipeableBottomDialog extends DialogFragment {
         Dialog dialog = getDialog();
         if (dialog != null) {
             dialog.getWindow().setLayout(getDialogWidth(), ViewGroup.LayoutParams.MATCH_PARENT);
-        }
-    }
-
-    @Override
-    public void dismiss() {
-        // Since we call dismiss() from some AsyncTasks, make sure that this fragment
-        // is actually active, since calling dismiss() after onSaveInstanceState() produces
-        // an exception.
-        if (isResumed()) {
-            super.dismiss();
         }
     }
 

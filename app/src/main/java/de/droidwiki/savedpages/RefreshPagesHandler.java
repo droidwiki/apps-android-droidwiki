@@ -1,17 +1,13 @@
 package de.droidwiki.savedpages;
 
-import de.droidwiki.R;
-import de.droidwiki.WikipediaApp;
-import de.droidwiki.page.PageTitle;
-import de.droidwiki.server.PageService;
-import de.droidwiki.server.PageServiceFactory;
-import de.droidwiki.util.log.L;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
+
+import de.droidwiki.WikipediaApp;
+import de.droidwiki.page.Section;
 
 import java.util.List;
 
@@ -66,19 +62,20 @@ public class RefreshPagesHandler {
         isRefreshCancelled = false;
         savedPagesCompleted = 0;
         progressDialog.show();
-        for (int i = 0; i < savedPages.size() && !isRefreshCancelled; i++) {
+        for (int i = 0; i < savedPages.size(); i++) {
             final SavedPage savedPage = savedPages.get(i);
-            L.d("refreshing start: " + savedPage.getTitle().getDisplayText());
-            refreshOneSavedPage(savedPage.getTitle());
-        }
-    }
-
-    private void refreshOneSavedPage(@NonNull final PageTitle title) {
-        getApiService(title).pageCombo(title.getPrefixedText(),
-                !WikipediaApp.getInstance().isImageDownloadEnabled(),
-                new SaveOtherPageCallback(title) {
+                new RefreshSavedPageTask(WikipediaApp.getInstance(), savedPage.getTitle()) {
                     @Override
-                    protected void onComplete() {
+                    public void onBeforeExecute() {
+                        if (isRefreshCancelled) {
+                            cancel();
+                            return;
+                        }
+                        Log.d("Wikipedia", "refreshing start: " + savedPage.getTitle().getDisplayText());
+                    }
+
+                    @Override
+                    public void onFinish(List<Section> result) {
                         if (!progressDialog.isShowing()) {
                             isRefreshCancelled = true;
                             // no longer attached to activity!
@@ -86,14 +83,15 @@ public class RefreshPagesHandler {
                         }
                         savedPagesCompleted++;
                         progressDialog.setProgress(savedPagesCompleted);
-                        L.d("Count is " + savedPagesCompleted + " of " + savedPages.size());
+                        Log.d("Wikipedia", "Count is " + savedPagesCompleted + " of " + savedPages.size());
                         if (savedPagesCompleted == savedPages.size()) {
                             progressDialog.dismiss();
                         }
+                        Log.d("Wikipedia", "refreshing end: " + savedPage.getTitle().getDisplayText());
                     }
 
                     @Override
-                    protected void onError() {
+                    public void onCatch(Throwable caught) {
                         isRefreshCancelled = true;
                         if (!progressDialog.isShowing()) {
                             // no longer attached to activity!
@@ -102,17 +100,14 @@ public class RefreshPagesHandler {
                         progressDialog.dismiss();
                         getErrorDialog().show();
                     }
-                });
-    }
-
-    private PageService getApiService(PageTitle title) {
-        return PageServiceFactory.create(title.getSite());
+                }.execute();
+        }
     }
 
     private AlertDialog errorDialog;
 
     /**
-     * Returns a persistent dialog we can use to show errors.
+     * Returns a persistant dialog we can use to show errors.
      * @return A properly setup AlertDialog with handlers for retry and cancel.
      */
     private AlertDialog getErrorDialog() {

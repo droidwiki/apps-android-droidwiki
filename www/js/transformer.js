@@ -16,6 +16,7 @@ Transformer.prototype.transform = function( transform, element ) {
     for ( var i = 0; i < functions.length; i++ ) {
         element = functions[i](element);
     }
+    return element;
 };
 
 module.exports = new Transformer();

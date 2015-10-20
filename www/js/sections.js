@@ -89,25 +89,20 @@ bridge.registerListener( "displayLeadSection", function( payload ) {
     // dimension measurements for items.
     document.getElementById( "content" ).appendChild( content );
 
-    transformer.transform( "moveFirstGoodParagraphUp" );
-    transformer.transform( "addDarkModeStyles", content );
-    transformer.transform( "hideRedLinks", content );
-    transformer.transform( "setNonGbDivWidth", content );
-    transformer.transform( "setMathFormulaImageMaxWidth", content );
-    transformer.transform( "anchorPopUpMediaTransforms", content );
-    transformer.transform( "hideIPA", content );
-
+    content = transformer.transform( "leadSection", content );
+    content = transformer.transform( "section", content );
+    content = transformer.transform( "hideIPA", content );
     if (!window.isMainPage) {
-        transformer.transform( "hideTables", content );
-        transformer.transform( "addImageOverflowXContainers", content );
-        transformer.transform( "widenImages", content );
+        content = transformer.transform( "hideTables", content );
+        content = transformer.transform( "addImageOverflowXContainers", content );
+        content = transformer.transform( "widenImages", content );
     }
 
     // insert the edit pencil
     content.insertBefore( editButton, content.firstChild );
 
-    transformer.transform("displayDisambigLink", content);
-    transformer.transform("displayIssuesLink", content);
+    content = transformer.transform("displayDisambigLink", content);
+    content = transformer.transform("displayIssuesLink", content);
 
     //if there were no page issues, then hide the container
     if (!issuesContainer.hasChildNodes()) {
@@ -165,17 +160,13 @@ function elementsForSection( section ) {
     content.setAttribute( "dir", window.directionality );
     content.innerHTML = section.text;
     content.id = "content_block_" + section.id;
-    transformer.transform( "addDarkModeStyles", content );
-    transformer.transform( "hideRedLinks", content );
-    transformer.transform( "setNonGbDivWidth", content );
-    transformer.transform( "setMathFormulaImageMaxWidth", content );
-    transformer.transform( "anchorPopUpMediaTransforms", content );
-    transformer.transform( "hideIPA", content );
-    transformer.transform( "hideRefs", content );
+    content = transformer.transform( "section", content );
+    content = transformer.transform( "hideTables", content );
+    content = transformer.transform( "hideIPA", content );
+    content = transformer.transform( "hideRefs", content );
     if (!window.isMainPage) {
-        transformer.transform( "hideTables", content );
-        transformer.transform( "addImageOverflowXContainers", content );
-        transformer.transform( "widenImages", content );
+        content = transformer.transform( "addImageOverflowXContainers", content );
+        content = transformer.transform( "widenImages", content );
     }
 
     return [ heading, content ];

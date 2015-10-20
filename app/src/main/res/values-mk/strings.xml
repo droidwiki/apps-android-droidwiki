@@ -10,7 +10,7 @@
   <string name="acra_report_dialog_comment">Што правевте кога се случи урнувањето?</string>
   <string name="search_hint">Пребарај ја Википедија</string>
   <string name="nav_item_history">Историја</string>
-  <string name="error_network_error" fuzzy="true">Не можам да се поврзам со мрежата.</string>
+  <string name="error_network_error">Не можам да се поврзам со мрежата.</string>
   <string name="search_network_error">Мрежна грешка. Допрете за да се обиде повторно.</string>
   <string name="generic_page_error">Се јави проблем при работа со вашето барање.</string>
   <string name="status_code_unavailable">Кодот за статусот на опслужувачот е недостапен.</string>
@@ -26,22 +26,22 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Да ги подновам сите зачувани страници?</string>
   <string name="share_via">Сподели преку</string>
   <string name="dialog_title_clear_saved_pages">Да ги исчистам сите зачувани страници?</string>
-  <string name="snackbar_saving_page">Ја зачувувам страницата…</string>
-  <string name="snackbar_saved_page_format">Страницата „%s“ е зачувана за вонмрежно читање</string>
-  <string name="snackbar_saved_page_missing_images">Не можев да ги зачувам сите слики</string>
-  <string name="snackbar_refresh_saved_page">Ја превчитувам зачуваната страница…</string>
+  <string name="toast_saving_page">Ја зачувувам страницата…</string>
+  <string name="toast_saved_page">Страницата „%s“ е зачувана за вонмрежно читање</string>
+  <string name="toast_saved_page_missing_images">Не можев да ги зачувам сите слики</string>
+  <string name="toast_refresh_saved_page">Ја превчитувам зачуваната страница…</string>
   <string name="delete_selected_saved_pages">Избриши</string>
-  <string name="snackbar_saved_page_deleted">Зачуваните страници се избришани</string>
+  <string name="toast_saved_page_deleted">Зачуваните страници се избришани</string>
   <string name="saved_pages_search_list_hint">Пребарај по зачуваните страници</string>
   <string name="saved_pages_search_empty_message">Не пронајдов страници што одговараат на бараното.</string>
-  <string name="menu_page_show_tabs">Прикажи јазичиња</string>
-  <string name="menu_page_other_languages">Прочитајте на други јазици</string>
-  <string name="menu_page_save">Зачувај страница</string>
-  <string name="menu_page_share">Сподели врска</string>
-  <string name="menu_page_find_in_page">Најди на страницата</string>
-  <string name="menu_page_font_and_theme">Смени фонт и изглед</string>
-  <string name="menu_long_press_open_page">Отвори</string>
-  <string name="menu_long_press_open_in_new_tab">Отвори ново јазиче</string>
+  <string name="menu_show_tabs">Прикажи јазичиња</string>
+  <string name="menu_other_languages">Прочитајте на други јазици</string>
+  <string name="menu_save_page">Зачувај страница</string>
+  <string name="menu_share_page">Сподели врска</string>
+  <string name="find_in_page">Најди на страницата</string>
+  <string name="menu_themechooser">Смени фонт и изглед</string>
+  <string name="menu_open_link">Отвори</string>
+  <string name="menu_open_in_new_tab">Отвори ново јазиче</string>
   <string name="menu_long_press_copy_page">Копирај ја адресата на врската</string>
   <string name="nav_item_nearby">Во близина</string>
   <string name="menu_update_nearby">Поднови „во близина“</string>
@@ -285,5 +285,5 @@
   <string name="format_error_server_message">Порака: „%s“</string>
   <string name="format_error_server_code">Код: „%s“</string>
   <string name="address_copied">Адресата е ставена во меѓускладот</string>
-  <string name="button_continue_to_article">Продолжи кон статијата</string>
+  <string name="button_continue_to_article" fuzzy="true">Продолжи кон страницата</string>
 </resources>
