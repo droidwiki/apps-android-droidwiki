@@ -3,12 +3,12 @@ package de.droidwiki.analytics;
 import android.support.annotation.NonNull;
 
 import org.json.JSONObject;
-import de.droidwiki.page.PageTitle;
 import de.droidwiki.WikipediaApp;
+import de.droidwiki.settings.Prefs;
 
 public class LinkPreviewFunnel extends TimedFunnel {
     private static final String SCHEMA_NAME = "MobileWikiAppLinkPreview";
-    private static final int REV_ID = 12143205;
+    private static final int REV_ID = 14095177;
     private static final int PROD_LINK_PREVIEW_VERSION = 3;
     private final int version;
 
@@ -40,7 +40,7 @@ public class LinkPreviewFunnel extends TimedFunnel {
 
     public void logNavigate() {
         log(
-                "action", "navigate"
+                "action", Prefs.isLinkPreviewEnabled() ? "navigate" : "disabled"
         );
     }
 

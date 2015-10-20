@@ -12,6 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 
+import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
+
 /**
  * A dialog to host page issues and disambig information.
  */
@@ -33,6 +35,9 @@ import android.widget.ViewFlipper;
         View separatorHeading = parentView.findViewById(R.id.page_info_heading_separator);
         View closeButton = parentView.findViewById(R.id.page_info_close);
 
+        disambigHeading.setText(getStringForArticleLanguage(pageInfo.getTitle(), R.string.page_similar_titles));
+        issuesHeading.setText(getStringForArticleLanguage(pageInfo.getTitle(), R.string.dialog_page_issues));
+
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,13 +53,13 @@ import android.widget.ViewFlipper;
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 PageTitle title = ((DisambigResult) disambigList.getAdapter().getItem(position)).getTitle();
-                HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_INTERNAL_LINK);
+                HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_DISAMBIG);
                 dismiss();
                 activity.displayNewPage(title, historyEntry);
             }
         });
         PageLongPressHandler.ListViewContextMenuListener contextMenuListener = new LongPressHandler(activity);
-        new PageLongPressHandler(getContext(), disambigList, HistoryEntry.SOURCE_INTERNAL_LINK,
+        new PageLongPressHandler(getContext(), disambigList, HistoryEntry.SOURCE_DISAMBIG,
                 contextMenuListener);
 
         if (pageInfo.getDisambigs().length > 0) {

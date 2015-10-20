@@ -1,28 +1,18 @@
 package de.droidwiki.views;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.SearchView;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import de.droidwiki.util.ApiUtil;
+import de.droidwiki.R;
 
 /** {@link SearchView} that exposes contextual action bar callbacks. */
 public class CabSearchView extends SearchView {
     private static final boolean DEFAULT_CAB_ENABLED = true;
-    private static final ActionMode.Callback DEFAULT_CALLBACK;
-    static {
-        DEFAULT_CALLBACK = ApiUtil.hasHoneyComb() ? new DefaultCallback() : null;
-    }
-
-    @NonNull
-    private ActionMode.Callback mCallback = DEFAULT_CALLBACK;
 
     private boolean mCabEnabled;
 
@@ -34,24 +24,13 @@ public class CabSearchView extends SearchView {
         this(context, attrs, android.support.v7.appcompat.R.attr.searchViewStyle);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public CabSearchView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        SearchView.SearchAutoComplete searchSrcTextView = (SearchAutoComplete) findViewById(de.droidwiki.R.id.search_src_text);
-        if (ApiUtil.hasHoneyComb()) {
-            searchSrcTextView.setCustomSelectionActionModeCallback(new CallbackWrapper());
-        }
+        SearchView.SearchAutoComplete searchSrcTextView = (SearchAutoComplete) findViewById(R.id.search_src_text);
+        searchSrcTextView.setCustomSelectionActionModeCallback(new Callback());
 
         initLayoutAttributes(attrs, defStyleAttr);
-    }
-
-    public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mCallback == DEFAULT_CALLBACK ? null : mCallback;
-    }
-
-    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        mCallback = callback == null ? DEFAULT_CALLBACK : callback;
     }
 
     public boolean isCabEnabled() {
@@ -66,42 +45,16 @@ public class CabSearchView extends SearchView {
         TypedArray attrsArray = getContext().obtainStyledAttributes(attrs,
                 de.droidwiki.R.styleable.CabSearchView, defStyleAttr, 0);
 
-        if (ApiUtil.hasHoneyComb()) {
-            setCabEnabled(attrsArray.getBoolean(de.droidwiki.R.styleable.CabSearchView_cabEnabled,
-                    DEFAULT_CAB_ENABLED));
-        }
+        setCabEnabled(attrsArray.getBoolean(R.styleable.CabSearchView_cabEnabled,
+                DEFAULT_CAB_ENABLED));
 
         attrsArray.recycle();
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private class CallbackWrapper implements ActionMode.Callback {
+    private class Callback implements ActionMode.Callback {
         @Override
         public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            return isCabEnabled() && mCallback.onCreateActionMode(mode, menu);
-        }
-
-        @Override
-        public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-            return mCallback.onPrepareActionMode(mode, menu);
-        }
-
-        @Override
-        public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            return mCallback.onActionItemClicked(mode, item);
-        }
-
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-            mCallback.onDestroyActionMode(mode);
-        }
-    }
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private static class DefaultCallback implements ActionMode.Callback {
-        @Override
-        public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-            return true; // Show action bar.
+            return isCabEnabled();
         }
 
         @Override
@@ -114,8 +67,6 @@ public class CabSearchView extends SearchView {
             return false;
         }
 
-        @Override
-        public void onDestroyActionMode(ActionMode mode) {
-        }
+        @Override public void onDestroyActionMode(ActionMode mode) { }
     }
 }

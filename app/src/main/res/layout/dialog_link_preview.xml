@@ -18,8 +18,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:minHeight="@dimen/linkPreviewPeekHeight"
             android:orientation="vertical"
-            android:background="?attr/link_preview_background_color">
+            android:background="?attr/link_preview_background_color"
+            android:animateLayoutChanges="true">
 
             <LinearLayout
                 android:id="@+id/link_preview_toolbar"
@@ -38,7 +40,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     style="@style/RtlAwareTextView"
-                    android:textColor="?attr/link_preview_text_color"
+                    android:textColor="?attr/link_color"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingBottom="4dp"
@@ -64,7 +66,7 @@
             <TextView
                 android:id="@+id/link_preview_extract"
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="wrap_content"
                 style="@style/RtlAwareTextView"
                 android:paddingTop="4dp"
                 android:paddingLeft="16dp"
@@ -78,23 +80,21 @@
             <de.droidwiki.page.gallery.GalleryThumbnailScrollView
                 android:id="@+id/link_preview_thumbnail_gallery"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="@dimen/linkPreviewImageSize"
                 android:layout_marginTop="12dp"
-                android:background="?attr/link_preview_background_color"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/link_preview_go_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="4dp"
+                android:layout_margin="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 android:textColor="?attr/link_color"
                 style="@style/Widget.AppCompat.Button.Borderless"
-                android:text="@string/button_continue_to_article"/>
+                android:textSize="@dimen/abc_text_size_menu_material"
+                android:text="@string/button_continue_to_article" />
 
         </LinearLayout>
 

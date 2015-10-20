@@ -19,9 +19,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.mediawiki.api.json.ApiException;
 
+import de.droidwiki.*
 import de.droidwiki.analytics.EditFunnel;
 import de.droidwiki.bridge.StyleBundle;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.util.L10nUtils;
 import de.droidwiki.views.ObservableWebView;
 import de.droidwiki.bridge.CommunicationBridge;
 import de.droidwiki.editing.summaries.EditSummaryTag;
@@ -178,7 +180,7 @@ public class EditPreviewFragment extends Fragment {
         if (!isWebViewSetup) {
             isWebViewSetup = true;
             bridge.injectStyleBundle(StyleBundle.getAvailableBundle(StyleBundle.BUNDLE_PREVIEW));
-            Utils.setupDirectionality(parentActivity.getPageTitle().getSite().getLanguageCode(), Locale.getDefault().getLanguage(), bridge);
+            L10nUtils.setupDirectionality(parentActivity.getPageTitle().getSite().getLanguageCode(), Locale.getDefault().getLanguage(), bridge);
             if (WikipediaApp.getInstance().isCurrentThemeDark()) {
                 new NightModeHandler(bridge).turnOn(false);
             }

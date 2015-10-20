@@ -1,5 +1,7 @@
 package de.droidwiki.concurrency;
 
+import android.os.AsyncTask;
+
 import de.droidwiki.util.log.L;
 
 import java.util.concurrent.Executor;

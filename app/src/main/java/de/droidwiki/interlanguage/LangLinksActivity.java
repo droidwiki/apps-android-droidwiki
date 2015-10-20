@@ -10,18 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import de.droidwiki.Utils;
-import de.droidwiki.ViewAnimations;
+import de.droidwiki.*;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.views.WikiErrorView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,7 +54,7 @@ public class LangLinksActivity extends ThemedActionBarActivity {
     private View langLinksContainer;
     private View langLinksEmpty;
     private View langLinksNoMatch;
-    private View langLinksError;
+    private WikiErrorView langLinksError;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,14 +66,13 @@ public class LangLinksActivity extends ThemedActionBarActivity {
             throw new RuntimeException("Only ACTION_LANGLINKS_FOR_TITLE is supported");
         }
 
-        langLinksList = (ListView) findViewById(de.droidwiki.R.id.langlinks_list);
-        langLinksProgress = findViewById(de.droidwiki.R.id.langlinks_load_progress);
-        langLinksContainer = findViewById(de.droidwiki.R.id.langlinks_list_container);
-        langLinksEmpty = findViewById(de.droidwiki.R.id.langlinks_empty);
-        langLinksNoMatch = findViewById(de.droidwiki.R.id.langlinks_no_match);
-        langLinksError = findViewById(de.droidwiki.R.id.langlinks_error);
-        EditText langLinksFilter = (EditText) findViewById(de.droidwiki.R.id.langlinks_filter);
-        Button langLinksErrorRetry = (Button) findViewById(de.droidwiki.R.id.langlinks_error_retry);
+        langLinksList = (ListView) findViewById(R.id.langlinks_list);
+        langLinksProgress = findViewById(R.id.langlinks_load_progress);
+        langLinksContainer = findViewById(R.id.langlinks_list_container);
+        langLinksEmpty = findViewById(R.id.langlinks_empty);
+        langLinksNoMatch = findViewById(R.id.langlinks_no_match);
+        langLinksError = (WikiErrorView) findViewById(R.id.langlinks_error);
+        EditText langLinksFilter = (EditText) findViewById(R.id.langlinks_filter);
 
         title = getIntent().getParcelableExtra(EXTRA_PAGETITLE);
 
@@ -84,7 +82,7 @@ public class LangLinksActivity extends ThemedActionBarActivity {
 
         fetchLangLinks();
 
-        langLinksErrorRetry.setOnClickListener(new View.OnClickListener() {
+        langLinksError.setRetryClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ViewAnimations.crossFade(langLinksError, langLinksProgress);
@@ -182,10 +180,7 @@ public class LangLinksActivity extends ThemedActionBarActivity {
                 @Override
                 public void onCatch(Throwable caught) {
                     ViewAnimations.crossFade(langLinksProgress, langLinksError);
-                    // Not sure why this is required, but without it tapping retry hides langLinksError
-                    // FIXME: INVESTIGATE WHY THIS HAPPENS!
-                    // Also happens in {@link PageFragment}
-                    langLinksError.setVisibility(View.VISIBLE);
+                    langLinksError.setError(caught);
                 }
 
                 private void updateLanguageEntriesSupported(List<PageTitle> languageEntries) {
@@ -279,8 +274,9 @@ public class LangLinksActivity extends ThemedActionBarActivity {
                 localizedLanguageName = Locale.CHINA.getDisplayName(Locale.CHINA);
             }
 
-            TextView localizedLanguageNameTextView = (TextView) convertView.findViewById(de.droidwiki.R.id.localized_language_name);
-            TextView articleTitleTextView = (TextView) convertView.findViewById(de.droidwiki.R.id.article_title);
+            TextView localizedLanguageNameTextView = (TextView) convertView.findViewById(R.id.localized_language_name);
+            TextView articleTitleTextView = (TextView) convertView.findViewById(R.id.language_subtitle);
+
 
             localizedLanguageNameTextView.setText(localizedLanguageName);
             articleTitleTextView.setText(item.getText());

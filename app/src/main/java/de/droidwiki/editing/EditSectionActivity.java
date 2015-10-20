@@ -29,6 +29,7 @@ import org.mediawiki.api.json.ApiException;
 import org.mediawiki.api.json.RequestBuilder;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.Utils;
 import de.droidwiki.ViewAnimations;
@@ -45,6 +46,8 @@ import de.droidwiki.page.LinkMovementMethodExt;
 import de.droidwiki.page.PageProperties;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.FeedbackUtil;
+
+import static de.droidwiki.util.L10nUtils.setConditionalTextDirection;
 
 public class EditSectionActivity extends ThemedActionBarActivity {
     public static final String ACTION_EDIT_SECTION = "de.droidwiki.edit_section";
@@ -166,7 +169,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
         });
 
 
-        Utils.setTextDirection(sectionText, title.getSite().getLanguageCode());
+        setConditionalTextDirection(sectionText, title.getSite().getLanguageCode());
 
         fetchSectionText();
 
@@ -526,32 +529,30 @@ public class EditSectionActivity extends ThemedActionBarActivity {
             item.setEnabled(sectionTextModified);
         }
 
-        if (ApiUtil.hasHoneyComb()) {
-            View v = getLayoutInflater().inflate(de.droidwiki.R.layout.item_edit_actionbar_button, null);
-            item.setActionView(v);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT);
-            v.setLayoutParams(params);
-            TextView txtView = (TextView) v.findViewById(de.droidwiki.R.id.edit_actionbar_button_text);
-            txtView.setText(item.getTitle());
-            txtView.setTypeface(null, item.isEnabled() ? Typeface.BOLD : Typeface.NORMAL);
-            v.setTag(item);
-            v.setClickable(true);
-            v.setEnabled(item.isEnabled());
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onOptionsItemSelected((MenuItem) view.getTag());
-                }
-            });
-
-            if (editSummaryFragment.isActive()) {
-                v.setBackgroundResource(de.droidwiki.R.drawable.button_selector_progressive);
-            } else if (editPreviewFragment.isActive()) {
-                v.setBackgroundResource(de.droidwiki.R.drawable.button_selector_complete);
-            } else {
-                v.setBackgroundResource(de.droidwiki.R.drawable.button_selector_progressive);
+        View v = getLayoutInflater().inflate(R.layout.item_edit_actionbar_button, null);
+        item.setActionView(v);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        v.setLayoutParams(params);
+        TextView txtView = (TextView) v.findViewById(R.id.edit_actionbar_button_text);
+        txtView.setText(item.getTitle());
+        txtView.setTypeface(null, item.isEnabled() ? Typeface.BOLD : Typeface.NORMAL);
+        v.setTag(item);
+        v.setClickable(true);
+        v.setEnabled(item.isEnabled());
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onOptionsItemSelected((MenuItem) view.getTag());
             }
+        });
+
+        if (editSummaryFragment.isActive()) {
+            v.setBackgroundResource(R.drawable.button_selector_progressive);
+        } else if (editPreviewFragment.isActive()) {
+            v.setBackgroundResource(R.drawable.button_selector_complete);
+        } else {
+            v.setBackgroundResource(R.drawable.button_selector_progressive);
         }
 
         return true;

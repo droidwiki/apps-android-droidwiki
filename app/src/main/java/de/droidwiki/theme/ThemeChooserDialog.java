@@ -6,12 +6,12 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import com.squareup.otto.Subscribe;
 
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.AppearanceChangeFunnel;
 import de.droidwiki.events.WebViewInvalidateEvent;
 import de.droidwiki.page.BottomDialog;
 import de.droidwiki.settings.Prefs;
-import de.droidwiki.util.ApiUtil;
 
 public class ThemeChooserDialog extends BottomDialog {
     private WikipediaApp app;
@@ -115,10 +115,8 @@ public class ThemeChooserDialog extends BottomDialog {
             }
         }
 
-        if (ApiUtil.hasHoneyComb()) {
-            buttonThemeLight.setActivated(app.isCurrentThemeLight());
-            buttonThemeDark.setActivated(app.isCurrentThemeDark());
-        }
+        buttonThemeLight.setActivated(app.isCurrentThemeLight());
+        buttonThemeDark.setActivated(app.isCurrentThemeDark());
     }
 
     private class ThemeOnClickListener implements View.OnClickListener {

@@ -13,15 +13,11 @@ import java.util.List;
 import java.util.Locale;
 
 import static de.droidwiki.util.StringUtil.defaultIfNull;
-import static de.droidwiki.util.StringUtil.emptyIfNull;
 
 /** Language lookup and state management for the application language and most recently used article
  * and application languages. */
 public class AppLanguageState {
     public static final String SYSTEM_LANGUAGE_CODE = null;
-
-    @NonNull
-    private final Context context;
 
     @NonNull
     private final AppLanguageLookUpTable appLanguageLookUpTable;
@@ -38,7 +34,6 @@ public class AppLanguageState {
     private final List<String> mruLanguageCodes;
 
     public AppLanguageState(@NonNull Context context) {
-        this.context = context;
         appLanguageLookUpTable = new AppLanguageLookUpTable(context);
         appLanguageCode = Prefs.getAppLanguageCode();
         mruLanguageCodes = unmarshalMruLanguageCodes();
@@ -60,11 +55,11 @@ public class AppLanguageState {
     }
 
     public boolean isSystemLanguageEnabled() {
-        return StringUtil.emptyIfNull(getAppLanguageCode()).equals(StringUtil.emptyIfNull(SYSTEM_LANGUAGE_CODE));
+        return isSystemLanguageCode(getAppLanguageCode());
     }
 
-    public void setSystemLanguageEnabled() {
-        setAppLanguageCode(SYSTEM_LANGUAGE_CODE);
+    public boolean isSystemLanguageCode(@Nullable String code) {
+        return StringUtil.equals(code, SYSTEM_LANGUAGE_CODE);
     }
 
     @NonNull
@@ -102,29 +97,20 @@ public class AppLanguageState {
         return codes;
     }
 
-    @Nullable
-    public String getAppLanguageCanonicalName() {
-        return isSystemLanguageEnabled()
-                ? getString(de.droidwiki.R.string.preference_system_language_summary)
-                : getAppLanguageCanonicalName(getAppLanguageCode());
-    }
-
     /** @return English name if app language is supported. */
     @Nullable
-    public String getAppLanguageCanonicalName(String code) {
+    public String getAppLanguageCanonicalName(@Nullable String code) {
         return appLanguageLookUpTable.getCanonicalName(code);
     }
 
     @Nullable
-    public String getAppLanguageLocalizedName() {
-        return isSystemLanguageEnabled()
-                ? getString(de.droidwiki.R.string.preference_system_language_summary)
-                : getAppLanguageLocalizedName(getAppLanguageCode());
+    public String getAppOrSystemLanguageLocalizedName() {
+        return getAppLanguageLocalizedName(getAppOrSystemLanguageCode());
     }
 
     /** @return Native name if app language is supported. */
     @Nullable
-    public String getAppLanguageLocalizedName(String code) {
+    public String getAppLanguageLocalizedName(@Nullable String code) {
         return appLanguageLookUpTable.getLocalizedName(code);
     }
 
@@ -140,10 +126,5 @@ public class AppLanguageState {
         Collections.replaceAll(list, systemLanguageCodeString, SYSTEM_LANGUAGE_CODE);
 
         return list;
-    }
-
-    @Nullable
-    private String getString(int id, @Nullable Object... formatArgs) {
-        return context.getString(id, formatArgs);
     }
 }

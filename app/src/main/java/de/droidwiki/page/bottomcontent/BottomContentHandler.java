@@ -17,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -40,9 +39,14 @@ import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageFragment;
 import de.droidwiki.page.SuggestionsTask;
 import de.droidwiki.search.SearchResults;
+import de.droidwiki.views.ConfigurableListView;
+import de.droidwiki.views.GoneIfEmptyTextView;
 import de.droidwiki.views.ObservableWebView;
+import de.droidwiki.views.ConfigurableTextView;
 
 import java.util.List;
+
+import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
 
 public class BottomContentHandler implements BottomContentInterface,
         ObservableWebView.OnScrollChangeListener,
@@ -62,7 +66,7 @@ public class BottomContentHandler implements BottomContentInterface,
     private TextView pageLastUpdatedText;
     private TextView pageExternalLink;
     private View readMoreContainer;
-    private ListView readMoreList;
+    private ConfigurableListView readMoreList;
 
     private SuggestedPagesFunnel funnel;
     private SearchResults readMoreItems;
@@ -82,9 +86,10 @@ public class BottomContentHandler implements BottomContentInterface,
         webview.addOnScrollChangeListener(this);
         webview.addOnContentHeightChangedListener(this);
 
-        pageLastUpdatedText = (TextView)bottomContentContainer.findViewById(R.id.page_last_updated_text);
+        pageLastUpdatedText = (TextView) bottomContentContainer.findViewById(R.id.page_last_updated_text);
+        pageLicenseText = (TextView) bottomContentContainer.findViewById(R.id.page_license_text);
         readMoreContainer = bottomContentContainer.findViewById(R.id.read_more_container);
-        readMoreList = (ListView)bottomContentContainer.findViewById(R.id.read_more_list);
+        readMoreList = (ConfigurableListView) bottomContentContainer.findViewById(R.id.read_more_list);
 
         pageExternalLink = (TextView) bottomContentContainer.findViewById(de.droidwiki.R.id.page_external_link);
         pageExternalLink.setPaintFlags(pageExternalLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -234,10 +239,10 @@ public class BottomContentHandler implements BottomContentInterface,
         // calculate the height of the listview, based on the number of items inside it.
         ListAdapter adapter = readMoreList.getAdapter();
         if (adapter != null && adapter.getCount() > 0) {
+            View item = View.inflate(readMoreList.getContext(), R.layout.item_page_list_entry, null);
+            item.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
             ViewGroup.LayoutParams params = readMoreList.getLayoutParams();
-            final int itemHeight = (int)activity.getResources().getDimension(de.droidwiki.R.dimen.defaultListItemSize);
-            params.height = adapter.getCount() * itemHeight
-                            + (readMoreList.getDividerHeight() * (adapter.getCount() - 1));
+            params.height = adapter.getCount() * item.getMeasuredHeight();
             readMoreList.setLayoutParams(params);
         }
 
@@ -336,6 +341,11 @@ public class BottomContentHandler implements BottomContentInterface,
     }
 
     private void showReadMore() {
+        if (parentFragment.isAdded()) {
+            ((ConfigurableTextView) readMoreContainer.findViewById(R.id.read_more_header))
+                    .setText(getStringForArticleLanguage(parentFragment.getTitle(), R.string.read_more_section),
+                                     pageTitle.getSite().getLanguageCode());
+        }
         readMoreContainer.setVisibility(View.VISIBLE);
     }
 
@@ -350,7 +360,7 @@ public class BottomContentHandler implements BottomContentInterface,
 
     private void setUpReadMoreSection(LayoutInflater layoutInflater, final SearchResults results) {
         final ReadMoreAdapter adapter = new ReadMoreAdapter(layoutInflater, results.getPageTitles());
-        readMoreList.setAdapter(adapter);
+        readMoreList.setAdapter(adapter, pageTitle.getSite().getLanguageCode());
         readMoreList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -422,7 +432,7 @@ public class BottomContentHandler implements BottomContentInterface,
             PageTitle result = (PageTitle) getItem(position);
             pageTitleText.setText(result.getDisplayText());
 
-            TextView descriptionText = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_description);
+            GoneIfEmptyTextView descriptionText = (GoneIfEmptyTextView) convertView.findViewById(R.id.page_list_item_description);
             descriptionText.setText(result.getDescription());
 
             ImageView imageView = (ImageView) convertView.findViewById(de.droidwiki.R.id.page_list_item_image);

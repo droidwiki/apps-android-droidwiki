@@ -7,7 +7,6 @@ import org.mediawiki.api.json.RequestBuilder;
 import de.droidwiki.page.PageQueryTask;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.Site;
-import de.droidwiki.Utils;
 
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class GetDescriptionsTask extends PageQueryTask<Void> {
                 for (PageTitle title : titles) {
                     if (title.getPrefixedText().equals(pageTitle.getPrefixedText())
                             || title.getDisplayText().equals(pageTitle.getDisplayText())) {
-                        title.setDescription(Utils.capitalizeFirstChar(array.getString(0)));
+                        title.setDescription(array.getString(0));
                         break;
                     }
                 }

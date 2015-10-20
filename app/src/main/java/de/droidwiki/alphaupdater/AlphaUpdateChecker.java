@@ -63,9 +63,9 @@ public class AlphaUpdateChecker extends RecurringTask {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://android-builds.wmflabs.org/runs/latest/wikipedia.apk"));
         PendingIntent pintent = PendingIntent.getActivity(context, 0, intent, 0);
 
-        Notification notification = new NotificationCompat.Builder(context).setSmallIcon(de.droidwiki.R.drawable.launcher)
-                .setContentTitle(context.getString(de.droidwiki.R.string.alpha_update_notification_title))
-                .setContentText(context.getString(de.droidwiki.R.string.alpha_update_notification_text))
+        Notification notification = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.ic_notification)
+                .setContentTitle(context.getString(R.string.alpha_update_notification_title))
+                .setContentText(context.getString(R.string.alpha_update_notification_text))
                 .setContentIntent(pintent)
                 .setAutoCancel(true)
                 .build();

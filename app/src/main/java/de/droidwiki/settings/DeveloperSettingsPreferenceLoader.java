@@ -1,56 +1,111 @@
 package de.droidwiki.settings;
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 
-/*package*/ class DeveloperSettingsPreferenceLoader extends BasePreferenceLoader {
-    @NonNull private Context context;
+import de.droidwiki.R;
+import de.droidwiki.WikipediaApp;
+import de.droidwiki.crash.RemoteLogException;
+import de.droidwiki.util.log.L;
 
-    /*package*/ DeveloperSettingsPreferenceLoader(@NonNull PreferenceActivity activity) {
-        super(activity);
-        init(activity);
-    }
+/*package*/ class DeveloperSettingsPreferenceLoader extends BasePreferenceLoader {
+    @NonNull private final Context context;
+
+    @NonNull private final Preference.OnPreferenceChangeListener setRestBaseManuallyChangeListener
+            = new Preference.OnPreferenceChangeListener() {
+        /**
+         * Called when the useRestBaseSetManually preference has been changed by the user. This is
+         * called before the state of the Preference is about to be updated and
+         * before the state is persisted.
+         *
+         * @param preference The changed Preference.
+         * @param newValue   The new value of the Preference.
+         * @return True to update the state of the Preference with the new value.
+         */
+        @Override
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+            setUseRestBasePreference((Boolean) newValue);
+            return true;
+        }
+    };
 
     /*package*/
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     DeveloperSettingsPreferenceLoader(@NonNull PreferenceFragment fragment) {
         super(fragment);
-        init(fragment.getActivity());
+        this.context = fragment.getActivity().getApplicationContext();
     }
 
     @Override
     public void loadPreferences() {
-        loadPreferences(de.droidwiki.R.xml.developer_preferences);
+        loadPreferences(R.xml.developer_preferences);
+        setupRestBaseCheckboxes();
         setupCrashButton(findPreference(getCrashButtonKey()));
+        setupRemoteLogButton(findPreference(R.string.preference_key_remote_log));
     }
 
-    private void setupCrashButton(Preference crashButton) {
-        crashButton.setOnPreferenceClickListener(buildCrashButtonClickListener());
+    private void setupRestBaseCheckboxes() {
+        CheckBoxPreference manualPreference = (CheckBoxPreference) findPreference(getManualKey());
+        manualPreference.setOnPreferenceChangeListener(setRestBaseManuallyChangeListener);
+        setUseRestBasePreference(manualPreference.isChecked());
+    }
+
+    private String getManualKey() {
+        return context.getString(R.string.preference_key_use_restbase_manual);
+    }
+
+    private void setUseRestBasePreference(boolean manualMode) {
+        RbSwitch.INSTANCE.update();
+        CheckBoxPreference useRestBasePref = getUseRestBasePreference();
+        useRestBasePref.setEnabled(manualMode);
+        useRestBasePref.setChecked(RbSwitch.INSTANCE.isRestBaseEnabled());
+    }
+
+    private CheckBoxPreference getUseRestBasePreference() {
+        return (CheckBoxPreference) findPreference(getUseRestBaseKey());
+    }
+
+    private String getUseRestBaseKey() {
+        return context.getString(R.string.preference_key_use_restbase);
+    }
+
+    private String getCrashButtonKey() {
+        return context.getString(R.string.preferences_developer_crash_key);
+    }
+
+    private void setupCrashButton(Preference button) {
+        button.setOnPreferenceClickListener(buildCrashButtonClickListener());
     }
 
     private Preference.OnPreferenceClickListener buildCrashButtonClickListener() {
         return new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                throw new NullPointerException(buildCrashMessage());
+                throw new TestException("User tested crash functionality.");
             }
         };
     }
 
-    private String buildCrashMessage() {
-        return "Crash test from " + getClass().getName();
+    private void setupRemoteLogButton(Preference button) {
+        button.setOnPreferenceChangeListener(buildRemoteLogPreferenceChangeListener());
     }
 
-    private String getCrashButtonKey() {
-        return context.getString(de.droidwiki.R.string.preferences_developer_crash_key);
+    private Preference.OnPreferenceChangeListener buildRemoteLogPreferenceChangeListener() {
+        return new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                L.logRemoteError(new RemoteLogException(newValue.toString()));
+                WikipediaApp.getInstance().checkCrashes(getActivity());
+                return true;
+            }
+        };
     }
 
-    private void init(@NonNull Context context) {
-        this.context = context.getApplicationContext();
+    private static class TestException extends RuntimeException {
+        public TestException(String message) {
+            super(message);
+        }
     }
 }

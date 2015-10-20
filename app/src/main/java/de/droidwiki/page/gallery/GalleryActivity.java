@@ -2,6 +2,7 @@ package de.droidwiki.page.gallery;
 
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.Utils;
@@ -14,7 +15,6 @@ import de.droidwiki.page.Page;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageCache;
 import de.droidwiki.theme.Theme;
-import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.util.GradientUtil;
 import de.droidwiki.views.ViewUtil;
@@ -40,9 +40,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import java.util.HashMap;
 import java.util.Map;
+
+import static de.droidwiki.util.NetworkUtils.resolveProtocolRelativeUrl;
 
 public class GalleryActivity extends ThemedActionBarActivity {
     private static final String TAG = "GalleryActivity";
@@ -93,6 +94,27 @@ public class GalleryActivity extends ThemedActionBarActivity {
     private TextView creditText;
     private boolean controlsShowing = true;
 
+    private View.OnClickListener licenseShortClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v.getContentDescription() == null) {
+                return;
+            }
+            FeedbackUtil.showMessageAsPlainText((Activity) v.getContext(), v.getContentDescription());
+        }
+    };
+
+    private View.OnLongClickListener licenseLongClickListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            String licenseUrl = (String) v.getTag();
+            if (!TextUtils.isEmpty(licenseUrl)) {
+                Utils.handleExternalLink(GalleryActivity.this, Uri.parse(resolveProtocolRelativeUrl(licenseUrl)));
+            }
+            return true;
+        }
+    };
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // force the theme to dark...
@@ -124,30 +146,9 @@ public class GalleryActivity extends ThemedActionBarActivity {
         descriptionText.setShadowLayer(2, 1, 1, getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
         descriptionText.setMovementMethod(linkMovementMethod);
 
-        licenseIcon = (ImageView) findViewById(de.droidwiki.R.id.gallery_license_icon);
-        licenseIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String licenseUrl = (String) v.getTag();
-                if (!TextUtils.isEmpty(licenseUrl)) {
-                    Utils.handleExternalLink(GalleryActivity.this, Uri.parse(licenseUrl));
-                }
-            }
-        });
-        licenseIcon.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (v.getContentDescription() == null) {
-                    return false;
-                }
-                int[] pos = new int[2];
-                v.getLocationInWindow(pos);
-                Toast t = Toast.makeText(GalleryActivity.this, v.getContentDescription(), Toast.LENGTH_SHORT);
-                t.setGravity(Gravity.TOP | Gravity.START, pos[0], pos[1]);
-                t.show();
-                return true;
-            }
-        });
+        licenseIcon = (ImageView) findViewById(R.id.gallery_license_icon);
+        licenseIcon.setOnClickListener(licenseShortClickListener);
+        licenseIcon.setOnLongClickListener(licenseLongClickListener);
 
         creditText = (TextView) findViewById(de.droidwiki.R.id.gallery_credit_text);
         creditText.setShadowLayer(2, 1, 1, getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
@@ -321,11 +322,8 @@ public class GalleryActivity extends ThemedActionBarActivity {
             new LinkMovementMethodExt(new LinkMovementMethodExt.UrlHandler() {
         @Override
         public void onUrlClick(String url) {
-            if (url.startsWith("//")) {
-                // That's a protocol specific link! Make it https!
-                url = "https:" + url;
-            }
-            Log.d(TAG, "Link clicked was " + url);
+            Log.v(TAG, "Link clicked was " + url);
+            url = resolveProtocolRelativeUrl(url);
             Site site = app.getPrimarySite();
             if (url.startsWith("/wiki/")) {
                 PageTitle title = site.titleForInternalLink(url);
@@ -440,10 +438,7 @@ public class GalleryActivity extends ThemedActionBarActivity {
             // if we have a target image index to jump to, then do it!
             galleryPager.setCurrentItem(initialImageIndex, false);
         }
-        if (ApiUtil.hasHoneyComb()) {
-            // Sorry 2.3, you won't get custom transforms between pages.
-            galleryPager.setPageTransformer(false, new GalleryPagerTransformer());
-        }
+        galleryPager.setPageTransformer(false, new GalleryPagerTransformer());
     }
 
     private GalleryItem getCurrentItem() {

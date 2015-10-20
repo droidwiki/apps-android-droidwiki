@@ -28,6 +28,7 @@ import com.squareup.picasso.Picasso;
 
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.R;
+import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.pageimages.PageImage;
@@ -61,7 +62,8 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_history, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_history, container, false);
+        rootView.setPadding(0, Utils.getContentTopOffsetPx(getActivity()), 0, 0);
 
         historyEntryList = (ListView) rootView.findViewById(de.droidwiki.R.id.history_entry_list);
         historyEmptyContainer = rootView.findViewById(de.droidwiki.R.id.history_empty_container);

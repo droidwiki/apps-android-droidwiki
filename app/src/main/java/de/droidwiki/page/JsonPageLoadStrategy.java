@@ -1,8 +1,6 @@
 package de.droidwiki.page;
 
-import org.acra.ACRA;
 import de.droidwiki.R;
-import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.bridge.CommunicationBridge;
 import de.droidwiki.editing.EditHandler;
@@ -12,13 +10,22 @@ import de.droidwiki.history.SaveHistoryTask;
 import de.droidwiki.page.bottomcontent.BottomContentHandler;
 import de.droidwiki.page.bottomcontent.BottomContentInterface;
 import de.droidwiki.page.leadimages.LeadImagesHandler;
+import de.droidwiki.server.PageLead;
+import de.droidwiki.server.PageRemaining;
+import de.droidwiki.server.ServiceError;
 import de.droidwiki.pageimages.PageImage;
 import de.droidwiki.pageimages.PageImagesTask;
 import de.droidwiki.savedpages.LoadSavedPageTask;
 import de.droidwiki.search.SearchBarHideHandler;
 import de.droidwiki.util.DimenUtil;
+import de.droidwiki.util.L10nUtils;
+import de.droidwiki.util.PageLoadUtil;
+import de.droidwiki.util.ResourceUtil;
+import de.droidwiki.util.log.L;
 import de.droidwiki.views.ObservableWebView;
 import de.droidwiki.views.SwipeRefreshLayoutWithScroll;
+
+import org.mediawiki.api.json.ApiException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,8 +36,10 @@ import org.mediawiki.api.json.RequestBuilder;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
+import android.support.annotation.DimenRes;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -39,6 +48,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
+import static de.droidwiki.util.L10nUtils.getStringsForArticleLanguage;
 
 /**
  * Our old page load strategy, which uses the JSON MW API directly and loads a page in multiple steps:
@@ -154,7 +165,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                     stagedScrollY = messagePayload.getInt("stagedScrollY");
                     loadPageOnWebViewReady(messagePayload.getBoolean("tryFromCache"));
                 } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
+                    L.logRemoteErrorIfProd(e);
                 }
             }
         });
@@ -171,7 +182,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                     displayNonLeadSection(messagePayload.getInt("index"),
                             messagePayload.optBoolean(BRIDGE_PAYLOAD_SAVED_PAGE, false));
                 } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
+                    L.logRemoteErrorIfProd(e);
                 }
             }
         });
@@ -186,7 +197,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         return;
                     }
                 } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
+                    L.logRemoteErrorIfProd(e);
                 }
                 // Do any other stuff that should happen upon page load completion...
                 activity.updateProgressBar(false, true, 0);
@@ -243,7 +254,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             wrapper.put("stagedScrollY", stagedScrollY);
             bridge.sendMessage("beginNewPage", wrapper);
         } catch (JSONException e) {
-            ACRA.getErrorReporter().handleException(e);
+            L.logRemoteErrorIfProd(e);
         }
     }
 
@@ -339,7 +350,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         // replaced (normalized)
         sectionTargetFromTitle = model.getTitle().getFragment();
 
-        Utils.setupDirectionality(model.getTitle().getSite().getLanguageCode(), Locale.getDefault().getLanguage(),
+        L10nUtils.setupDirectionality(model.getTitle().getSite().getLanguageCode(), Locale.getDefault().getLanguage(),
                 bridge);
 
         // hide the native top and bottom components...
@@ -518,47 +529,13 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     }
 
     private void displayLeadSection() {
-        try {
-            final Page page = model.getPage();
-            final PageProperties pageProperties = page.getPageProperties();
+        Page page = model.getPage();
 
-            JSONObject marginPayload = new JSONObject();
-            int margin = DimenUtil.roundedPxToDp(activity.getResources().getDimension(de.droidwiki.R.dimen.content_margin));
-            marginPayload.put("marginLeft", margin);
-            marginPayload.put("marginRight", margin);
-            bridge.sendMessage("setMargins", marginPayload);
+        sendMarginPayload();
 
-            JSONObject leadSectionPayload = new JSONObject();
-            leadSectionPayload.put("sequence", currentSequenceNum);
-            leadSectionPayload.put("title", page.getDisplayTitle());
-            leadSectionPayload.put("section", page.getSections().get(0).toJSON());
-            leadSectionPayload.put("string_page_similar_titles", activity.getString(de.droidwiki.R.string.page_similar_titles));
-            leadSectionPayload.put("string_page_issues", activity.getString(de.droidwiki.R.string.button_page_issues));
-            leadSectionPayload.put("string_table_infobox", activity.getString(de.droidwiki.R.string.table_infobox));
-            leadSectionPayload.put("string_table_other", activity.getString(de.droidwiki.R.string.table_other));
-            leadSectionPayload.put("string_table_close", activity.getString(de.droidwiki.R.string.table_close));
-            leadSectionPayload.put("string_expand_refs", activity.getString(de.droidwiki.R.string.expand_refs));
-            leadSectionPayload.put("isBeta", app.getReleaseType() != WikipediaApp.RELEASE_PROD);
-            leadSectionPayload.put("siteLanguage", model.getTitle().getSite().getLanguageCode());
-            leadSectionPayload.put("isMainPage", page.isMainPage());
-            leadSectionPayload.put("apiLevel", Build.VERSION.SDK_INT);
-            bridge.sendMessage("displayLeadSection", leadSectionPayload);
-            Log.d(TAG, "Sent message 'displayLeadSection' for page: " + page.getDisplayTitle());
+        sendLeadSectionPayload(page);
 
-            // Hide edit pencils if anon editing is disabled by remote killswitch or if this is a file page
-            JSONObject miscPayload = new JSONObject();
-            boolean isAnonEditingDisabled = app.getRemoteConfig().getConfig()
-                    .optBoolean("disableAnonEditing", false)
-                    && !app.getUserInfoStorage().isLoggedIn();
-            miscPayload.put("noedit", (isAnonEditingDisabled
-                    || page.isFilePage()
-                    || page.isMainPage()));
-            miscPayload.put("protect", !pageProperties.canEdit());
-            bridge.sendMessage("setPageProtected", miscPayload);
-        } catch (JSONException e) {
-            // This should never happen
-            throw new RuntimeException(e);
-        }
+        sendMiscPayload(page);
 
         if (webView.getVisibility() != View.VISIBLE) {
             webView.setVisibility(View.VISIBLE);
@@ -566,6 +543,86 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
 
         refreshView.setRefreshing(false);
         activity.updateProgressBar(true, true, 0);
+    }
+
+    private void sendMarginPayload() {
+        JSONObject marginPayload = marginPayload();
+        bridge.sendMessage("setMargins", marginPayload);
+    }
+
+    private JSONObject marginPayload() {
+        int margin = DimenUtil.roundedPxToDp(getDimension(R.dimen.content_margin));
+        try {
+            return new JSONObject()
+                    .put("marginLeft", margin)
+                    .put("marginRight", margin);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void sendLeadSectionPayload(Page page) {
+        JSONObject leadSectionPayload = leadSectionPayload(page);
+        bridge.sendMessage("displayLeadSection", leadSectionPayload);
+        Log.d(TAG, "Sent message 'displayLeadSection' for page: " + page.getDisplayTitle());
+    }
+
+    private JSONObject leadSectionPayload(Page page) {
+        SparseArray<String> localizedStrings = localizedStrings(page);
+
+        try {
+            return new JSONObject()
+                    .put("sequence", currentSequenceNum)
+                    .put("title", page.getDisplayTitle())
+                    .put("section", page.getSections().get(0).toJSON())
+                    .put("string_page_similar_titles", localizedStrings.get(R.string.page_similar_titles))
+                    .put("string_page_issues", localizedStrings.get(R.string.button_page_issues))
+                    .put("string_table_infobox", localizedStrings.get(R.string.table_infobox))
+                    .put("string_table_other", localizedStrings.get(R.string.table_other))
+                    .put("string_table_close", localizedStrings.get(R.string.table_close))
+                    .put("string_expand_refs", localizedStrings.get(R.string.expand_refs))
+                    .put("isBeta", app.getReleaseType() != WikipediaApp.RELEASE_PROD)
+                    .put("siteLanguage", model.getTitle().getSite().getLanguageCode())
+                    .put("isMainPage", page.isMainPage())
+                    .put("apiLevel", Build.VERSION.SDK_INT);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private SparseArray<String> localizedStrings(Page page) {
+        return getStringsForArticleLanguage(page.getTitle(),
+                ResourceUtil.getIdArray(activity, R.array.page_localized_string_ids));
+    }
+
+
+    private void sendMiscPayload(Page page) {
+        JSONObject miscPayload = miscPayload(page);
+        bridge.sendMessage("setPageProtected", miscPayload);
+    }
+
+    private JSONObject miscPayload(Page page) {
+        try {
+            return new JSONObject()
+                    .put("noedit", !isPageEditable(page)) // Controls whether edit pencils are visible.
+                    .put("protect", page.isProtected());
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private boolean isPageEditable(Page page) {
+        return (app.getUserInfoStorage().isLoggedIn() || !isAnonEditingDisabled())
+                && !page.isFilePage()
+                && !page.isMainPage();
+    }
+
+    private boolean isAnonEditingDisabled() {
+        return getRemoteConfig().optBoolean("disableAnonEditing", false);
+    }
+
+    private JSONObject getRemoteConfig() {
+        return app.getRemoteConfig().getConfig();
     }
 
     private void displayNonLeadSectionForUnsavedPage(int index) {
@@ -617,10 +674,24 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                 fragment.readUrlMappings();
             }
         } catch (JSONException e) {
-            ACRA.getErrorReporter().handleException(e);
+            L.logRemoteErrorIfProd(e);
         }
     }
 
+    @VisibleForTesting
+    protected void loadLeadSection(final int startSequenceNum) {
+        app.getSessionFunnel().leadSectionFetchStart();
+        PageLoadUtil.getApiService(model.getTitle().getSite()).pageLead(
+                model.getTitle().getPrefixedText(),
+                PageLoadUtil.calculateLeadImageWidth(),
+                !app.isImageDownloadEnabled(),
+                new PageLead.Callback() {
+                    @Override
+                    public void success(PageLead pageLead, Response response) {
+                        Log.v(TAG, response.getUrl());
+                        app.getSessionFunnel().leadSectionFetchEnd();
+                        onLeadSectionLoaded(pageLead, startSequenceNum);
+                    }
 
     private class LeadSectionFetchTask extends SectionsFetchTask {
         private final int startSequenceNum;
@@ -631,6 +702,22 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             super(app, model.getTitle(), "0");
             this.startSequenceNum = startSequenceNum;
         }
+        if (pageLead.hasError()) {
+            ServiceError error = pageLead.getError();
+            if (error != null) {
+                ApiException apiException = new ApiException(error.getTitle(), error.getDetails());
+                commonSectionFetchOnCatch(apiException, startSequenceNum);
+            } else {
+                ApiException apiException
+                        = new ApiException("unknown", "unexpected pageLead response");
+                commonSectionFetchOnCatch(apiException, startSequenceNum);
+            }
+            return;
+        }
+
+        Page page = pageLead.toPage(model.getTitle());
+        model.setPage(page);
+        model.setTitle(page.getTitle());
 
         @Override
         public RequestBuilder buildRequest(Api api) {
@@ -655,11 +742,10 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
             return super.processResult(result);
         }
 
-        @Override
-        public void onFinish(List<Section> result) {
-            if (!fragment.isAdded() || startSequenceNum != currentSequenceNum) {
-                return;
-            }
+        // Update our history entry, in case the Title was changed (i.e. normalized)
+        final HistoryEntry curEntry = model.getCurEntry();
+        model.setCurEntry(
+                new HistoryEntry(model.getTitle(), curEntry.getTimestamp(), curEntry.getSource()));
 
             final PageTitle title = model.getTitle();
             model.setPage(new Page(title, (ArrayList<Section>) result, pageProperties));
@@ -713,13 +799,18 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         }
     }
 
-    private int calculateLeadImageWidth() {
-        Resources res = app.getResources();
-        return (int) (res.getDimension(de.droidwiki.R.dimen.leadImageWidth) / res.getDisplayMetrics().density);
-    }
-
-    private class RestSectionsFetchTask extends SectionsFetchTask {
-        private final int startSequenceNum;
+    private void loadRemainingSections(final int startSequenceNum) {
+        app.getSessionFunnel().restSectionsFetchStart();
+        PageLoadUtil.getApiService(model.getTitle().getSite()).pageRemaining(
+                model.getTitle().getPrefixedText(),
+                !app.isImageDownloadEnabled(),
+                new PageRemaining.Callback() {
+                    @Override
+                    public void success(PageRemaining pageRemaining, Response response) {
+                        Log.v(TAG, response.getUrl());
+                        app.getSessionFunnel().restSectionsFetchEnd();
+                        onRemainingSectionsLoaded(pageRemaining, startSequenceNum);
+                    }
 
         public RestSectionsFetchTask(int startSequenceNum) {
             super(app, model.getTitle(), "1-");
@@ -775,5 +866,13 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     @Override
     public void setEditHandler(EditHandler editHandler) {
         this.editHandler = editHandler;
+    }
+
+    private float getDimension(@DimenRes int id) {
+        return getResources().getDimension(id);
+    }
+
+    private Resources getResources() {
+        return activity.getResources();
     }
 }

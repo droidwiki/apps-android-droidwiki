@@ -9,20 +9,18 @@ module.exports = function ( grunt ) {
         "js/issues.js",
         "js/disambig.js",
         "js/sections.js",
-        "js/rtlsupport.js",
-        "js/util.js",
-        "js/widenImages.js",
-        "lib/js/classList.js",
         "tests/*.js"
     ];
     var allHTMLFiles = [
         "index.html",
         "tests/index.html"
     ];
-    // FIXME: Unconditionally included polyfills. Should be included only for Android 2.3
-    var oldDroidPolyfills = [
-        "lib/js/classList.js"
-    ];
+    var distFolder = "../app/src/main/assets/";
+
+    grunt.loadNpmTasks( 'grunt-browserify' );
+    grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+    grunt.loadNpmTasks( 'grunt-contrib-copy' );
+    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
     grunt.initConfig( {
         pkg: grunt.file.readJSON( "package.json" ),
@@ -40,18 +38,18 @@ module.exports = function ( grunt ) {
                         "js/actions.js",
                         "js/editaction.js",
                         "js/issues.js",
-                        "js/disambig.js",
-                        "js/sections.js",
+                        "js/loader.js",
+                        "js/night.js",
+                        "js/preview.js",
                         "js/rtlsupport.js",
-                        "js/util.js",
-                        "js/widenImages.js"
-                    ].concat( oldDroidPolyfills ),
+                        "js/sections.js"
+                    ],
                     "bundle-test.js": [
                         "js/loader.js",
                         "js/main.js",
                         "js/bridge.js",
                         "tests/*.js"
-                    ].concat( oldDroidPolyfills ),
+                    ],
                     "preview.js": [
                         "js/loader.js",
                         "js/bridge.js",
@@ -60,7 +58,7 @@ module.exports = function ( grunt ) {
                         "js/preview.js",
                         "js/rtlsupport.js",
                         "js/util.js"
-                    ].concat( oldDroidPolyfills )
+                    ]
                 }
             }
         },

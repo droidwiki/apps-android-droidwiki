@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme" parent="Theme.Light">
         <item name="editTextAutoSummarizePreferenceStyle">@style/EditTextAutoSummarizePreference</item>
         <item name="longPreferenceStyle">@style/LongPreference</item>
         <item name="intPreferenceStyle">@style/IntPreference</item>
         <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="PageTheme" parent="NoTitle">
+        <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
     </style>
 
     <style name="NoTitle" parent="AppTheme">
@@ -68,6 +72,11 @@
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textColorHint">@color/search_text_hint</item>
+    </style>
+
+    <style name="ListView" parent="@style/Widget.AppCompat.ListView">
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
     </style>
 
     <style name="RtlAwareTextView" parent="@android:style/Widget.TextView">
@@ -134,8 +143,8 @@
         <item name="android:backgroundDimAmount">0.5</item>
         <item name="android:colorControlNormal">@android:color/white</item>
         <item name="colorControlNormal">@android:color/white</item>
-        <item name="colorControlActivated">@color/actionbar_highlight</item>
-        <item name="colorControlHighlight">@color/actionbar_highlight</item>
+        <item name="colorControlActivated">@color/link_preview_button_background_highlight</item>
+        <item name="colorControlHighlight">@color/link_preview_button_background_highlight</item>
     </style>
 
     <!-- Default style for floating action buttons -->

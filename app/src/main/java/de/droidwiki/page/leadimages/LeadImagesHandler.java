@@ -1,14 +1,24 @@
 package de.droidwiki.page.leadimages;
 
-import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DimenRes;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.FragmentActivity;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.Log;
+import android.text.style.AbsoluteSizeSpan;
 import android.util.TypedValue;
 import android.graphics.PointF;
 import android.view.Gravity;
@@ -16,37 +26,37 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import de.droidwiki.analytics.GalleryFunnel;
-import de.droidwiki.page.PageTitle;
 import de.droidwiki.R;
+import de.droidwiki.analytics.GalleryFunnel;
+import de.droidwiki.page.Page;
+import de.droidwiki.page.PageTitle;
 import de.droidwiki.Utils;
 import de.droidwiki.ViewAnimations;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.bridge.CommunicationBridge;
 import de.droidwiki.page.PageFragment;
 import de.droidwiki.page.gallery.GalleryActivity;
-import de.droidwiki.util.ApiUtil;
+import de.droidwiki.richtext.LeadingSpan;
+import de.droidwiki.richtext.ParagraphSpan;
+import de.droidwiki.richtext.RichTextUtil;
 import de.droidwiki.util.DimenUtil;
 import de.droidwiki.util.GradientUtil;
+import de.droidwiki.util.StringUtil;
 import de.droidwiki.views.ObservableWebView;
+import de.droidwiki.views.ConfigurableTextView;
 import de.droidwiki.views.ViewUtil;
 
-public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListener, ImageViewWithFace.OnImageLoadListener {
-    private final Context context;
-    private final PageFragment parentFragment;
-    private final CommunicationBridge bridge;
-    private final WebView webView;
+import static de.droidwiki.views.ViewUtil.findView;
 
+public class LeadImagesHandler {
     /**
      * Minimum screen height for enabling lead images. If the screen is smaller than
      * this height, lead images will not be displayed, and will be substituted with just
@@ -59,11 +69,6 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * total screen height.
      */
     private static final float IMAGES_CONTAINER_RATIO = 0.5f;
-
-    /**
-     * The height, in dp, that the gradient will extend above the page title.
-     */
-    private static final int TITLE_GRADIENT_HEIGHT_DP = 64;
 
     /**
      * Maximum height of the page title text. If the text overflows this size, then the
@@ -88,103 +93,60 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      */
     private static final int DISABLED_OFFSET_DP = 88;
 
+    public interface OnLeadImageLayoutListener {
+        void onLayoutComplete(int sequence);
+    }
+
+    @NonNull private final PageFragment parentFragment;
+    @NonNull private final ViewGroup imageContainer;
+    @NonNull private final CommunicationBridge bridge;
+    @NonNull private final ObservableWebView webView;
+
     /**
      * Whether lead images are enabled, overall.  They will be disabled automatically
      * if the screen height is less than a defined constant (above), or if the current article
      * doesn't have a lead image associated with it.
      */
-    private boolean leadImagesEnabled = false;
-    public boolean isLeadImageEnabled() {
-        return leadImagesEnabled;
-    }
+    private boolean leadImagesEnabled;
 
-    private final ViewGroup imageContainer;
     private ImageView imagePlaceholder;
-    private ImageViewWithFace image1;
-    private View pageTitleContainer;
-    private TextView pageTitleText;
-    private TextView pageDescriptionText;
+    private ImageViewWithFace image;
+    private ConfigurableTextView pageTitleText;
     private Drawable pageTitleGradient;
 
     private int displayHeightDp;
-    private int imageBaseYOffset = 0;
-    private float faceYOffsetNormalized = 0f;
+    private int imageBaseYOffset;
+    private float faceYOffsetNormalized;
     private float displayDensity;
+    @NonNull private final WebViewScrollListener webViewScrollListener = new WebViewScrollListener();
 
-    public interface OnLeadImageLayoutListener {
-        void onLayoutComplete();
-    }
-
-    public LeadImagesHandler(final Context context, final PageFragment parentFragment,
-                             CommunicationBridge bridge, ObservableWebView webview,
-                             ViewGroup hidingView) {
-        this.context = context;
+    public LeadImagesHandler(@NonNull final PageFragment parentFragment,
+                             @NonNull CommunicationBridge bridge,
+                             @NonNull ObservableWebView webView,
+                             @NonNull ViewGroup hidingView) {
         this.parentFragment = parentFragment;
         this.imageContainer = hidingView;
         this.bridge = bridge;
-        this.webView = webview;
+        this.webView = webView;
 
-        imagePlaceholder = (ImageView)imageContainer.findViewById(de.droidwiki.R.id.page_image_placeholder);
-        image1 = (ImageViewWithFace)imageContainer.findViewById(de.droidwiki.R.id.page_image_1);
-        pageTitleContainer = imageContainer.findViewById(de.droidwiki.R.id.page_title_container);
-        pageTitleText = (TextView)imageContainer.findViewById(de.droidwiki.R.id.page_title_text);
-        pageDescriptionText = (TextView)imageContainer.findViewById(de.droidwiki.R.id.page_description_text);
+        imagePlaceholder = findView(imageContainer, R.id.page_image_placeholder);
+        image = findView(imageContainer, R.id.page_image);
+        pageTitleText = findView(imageContainer, R.id.page_title_text);
 
-        pageTitleGradient = GradientUtil.getCubicGradient(
-                parentFragment.getResources().getColor(de.droidwiki.R.color.lead_gradient_start), Gravity.BOTTOM);
+        pageTitleGradient = GradientUtil.getCubicGradient(getColor(R.color.lead_gradient_start), Gravity.BOTTOM);
+        pageTitleText.setTypeface(Typeface.create(Typeface.SERIF, Typeface.NORMAL));
 
         initDisplayDimensions();
 
-        webview.addOnScrollChangeListener(this);
-
-        webview.addOnClickListener(new ObservableWebView.OnClickListener() {
-            @Override
-            public boolean onClick(float x, float y) {
-                // if the click event is within the area of the lead image, then the user
-                // must have wanted to click on the lead image!
-                if (leadImagesEnabled && y < imageContainer.getHeight() - webView.getScrollY()) {
-                    String imageName = parentFragment.getPage().getPageProperties()
-                                                     .getLeadImageName();
-                    if (imageName != null) {
-                        PageTitle imageTitle = new PageTitle("File:" + imageName,
-                                                             parentFragment.getTitle()
-                                                                           .getSite());
-                        GalleryActivity.showGallery(parentFragment.getActivity(),
-                                parentFragment.getTitleOriginal(), imageTitle,
-                                GalleryFunnel.SOURCE_LEAD_IMAGE);
-                    }
-                    return true;
-                }
-                return false;
-            }
-        });
+        initWebView();
 
         // hide ourselves by default
         hide();
 
-        imagePlaceholder.setImageResource(Utils.getThemedAttributeId(parentFragment.getActivity(),
-                de.droidwiki.R.attr.lead_image_drawable));
-        image1.setOnImageLoadListener(this);
-    }
+        imagePlaceholder.setImageResource(Utils.getThemedAttributeId(getActivity(),
+                R.attr.lead_image_drawable));
 
-    @Override
-    public void onScrollChanged(int oldScrollY, int scrollY) {
-        LinearLayout.LayoutParams contParams = (LinearLayout.LayoutParams) imageContainer
-                .getLayoutParams();
-        LinearLayout.LayoutParams imgParams = (LinearLayout.LayoutParams) image1.getLayoutParams();
-        if (scrollY > imageContainer.getHeight()) {
-            if (contParams.topMargin != -imageContainer.getHeight()) {
-                contParams.topMargin = -imageContainer.getHeight();
-                imgParams.topMargin = 0;
-                imageContainer.setLayoutParams(contParams);
-                image1.setLayoutParams(imgParams);
-            }
-        } else {
-            contParams.topMargin = -scrollY;
-            imgParams.topMargin = imageBaseYOffset + scrollY / 2; //parallax, baby
-            imageContainer.setLayoutParams(contParams);
-            image1.setLayoutParams(imgParams);
-        }
+        image.setOnImageLoadListener(new ImageLoadListener());
     }
 
     /**
@@ -195,29 +157,12 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
         imageContainer.setVisibility(View.INVISIBLE);
     }
 
-    public Bitmap getLeadImageBitmap() {
-        return leadImagesEnabled ? getBitmapFromView(image1) : null;
+    @Nullable public Bitmap getLeadImageBitmap() {
+        return leadImagesEnabled ? newBitmapFromView(image) : null;
     }
 
-    // ideas from:
-    // http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
-    // View has to be already displayed
-    private static Bitmap getBitmapFromView(ImageView view) {
-        // Define a bitmap with the same size as the view
-        Bitmap returnedBitmap
-                = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-        // Bind a canvas to it
-        Canvas canvas = new Canvas(returnedBitmap);
-//        // Get the view's background
-//        Drawable bgDrawable = view.getBackground();
-//        if (bgDrawable != null)
-//            // has background drawable, then draw it on the canvas
-//            bgDrawable.draw(canvas);
-//        else
-//            // does not have background drawable, then draw white background on the canvas
-//            canvas.drawColor(Color.WHITE);
-        view.draw(canvas);
-        return returnedBitmap;
+    public boolean isLeadImageEnabled() {
+        return leadImagesEnabled;
     }
 
     /**
@@ -225,89 +170,12 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * A value of 0.0 represents the top of the image, and 1.0 represents the bottom.
      * The "focus position" is currently defined by automatic face detection, but may be
      * defined by other factors in the future.
+     *
      * @return Normalized vertical focus position.
      */
     public float getLeadImageFocusY() {
         return faceYOffsetNormalized;
     }
-
-    @Override
-    public void onImageLoaded(Bitmap bitmap, final PointF faceLocation) {
-        final int bmpHeight = bitmap.getHeight();
-        final float aspect = (float)bitmap.getHeight() / (float)bitmap.getWidth();
-        imageContainer.post(new Runnable() {
-            @Override
-            public void run() {
-                if (!parentFragment.isAdded()) {
-                    return;
-                }
-                int newWidth = image1.getWidth();
-                int newHeight = (int)(newWidth * aspect);
-
-                // give our image an offset based on the location of the face,
-                // relative to the image container
-                float scale = (float)newHeight / (float)bmpHeight;
-                if (faceLocation.y > 0.0f) {
-                    int faceY = (int)(faceLocation.y * scale);
-                    // if we have a face, then offset to the face location
-                    imageBaseYOffset = -(faceY - (imagePlaceholder.getHeight() / 2));
-                    // Adjust the face position by a slight amount.
-                    // The face recognizer gives the location of the *eyes*, whereas we actually
-                    // want to center on the *nose*...
-                    final int faceBoost = 24;
-                    imageBaseYOffset -= (faceBoost * displayDensity);
-                    faceYOffsetNormalized = faceLocation.y / bmpHeight;
-                } else {
-                    // No face, so we'll just chop the top 25% off rather than centering
-                    final float oneQuarter = 0.25f;
-                    imageBaseYOffset = -(int)((newHeight - imagePlaceholder.getHeight()) * oneQuarter);
-                    faceYOffsetNormalized = oneQuarter;
-                }
-                // is the offset too far to the top?
-                if (imageBaseYOffset > 0) {
-                    imageBaseYOffset = 0;
-                }
-                // is the offset too far to the bottom?
-                if (imageBaseYOffset < imagePlaceholder.getHeight() - newHeight) {
-                    imageBaseYOffset = imagePlaceholder.getHeight() - newHeight;
-                }
-
-                // resize our image to have the same proportions as the acquired bitmap
-                if (newHeight < imagePlaceholder.getHeight()) {
-                    // if the height of the image is less than the container, then just
-                    // make it the same height as the placeholder.
-                    image1.setLayoutParams(
-                            new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                                          imagePlaceholder.getHeight()));
-                    imageBaseYOffset = 0;
-                } else {
-                    image1.setLayoutParams(
-                            new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                                                          newHeight));
-                }
-
-                // and force a refresh of its position within the container view.
-                onScrollChanged(webView.getScrollY(), webView.getScrollY());
-
-                // fade in the new image!
-                ViewAnimations.crossFade(imagePlaceholder, image1);
-
-                if (WikipediaApp.getInstance().getReleaseType() != WikipediaApp.RELEASE_PROD) {
-                    // and perform a subtle Ken Burns animation...
-                    Animation anim = AnimationUtils.loadAnimation(parentFragment.getActivity(),
-                                                                  de.droidwiki.R.anim.lead_image_zoom);
-                    anim.setFillAfter(true);
-                    image1.startAnimation(anim);
-                }
-            }
-        });
-    }
-
-    @Override
-    public void onImageFailed() {
-        // just keep showing the placeholder image...
-    }
-
 
     /**
      * Triggers a chain of events that will lay out the lead image, page title, and other
@@ -324,7 +192,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * - Fire a callback to the provided Listener indicating that the rest of the WebView content
      * can now be loaded.
      * - Fetch and display the WikiData description for this page, if available.
-     *
+     * <p/>
      * Realistically, the whole process will happen very quickly, and almost unnoticeably to the
      * user. But it still needs to be asynchronous because we're dynamically laying out views, and
      * because the padding "event" that we send to the WebView must come before any other content
@@ -332,8 +200,8 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      *
      * @param listener Listener that will receive an event when the layout is completed.
      */
-    public void beginLayout(OnLeadImageLayoutListener listener) {
-        String thumbUrl = parentFragment.getPage().getPageProperties().getLeadImageUrl();
+    public void beginLayout(OnLeadImageLayoutListener listener, int sequence) {
+        String thumbUrl = getLeadImageUrl();
         initDisplayDimensions();
 
         if (!WikipediaApp.getInstance().isImageDownloadEnabled() || displayHeightDp < MIN_SCREEN_HEIGHT_DP) {
@@ -348,22 +216,38 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
                 // mathematical diagrams or animations that won't look good as a lead image.
                 // TODO: retrieve the MIME type of the lead image, instead of relying on file name.
                 leadImagesEnabled = !thumbUrl.endsWith(".gif");
+
+                // TODO: what's the harm in always setting the background to white unconditionally.
                 // also, if the image is not a JPG (i.e. it's a PNG or SVG) and might have
                 // transparency, give it a white background.
                 if (!thumbUrl.endsWith(".jpg")) {
-                    image1.setBackgroundColor(Color.WHITE);
+                    image.setBackgroundColor(Color.WHITE);
                 }
             }
         }
 
         // set the page title text, and honor any HTML formatting in the title
-        pageTitleText.setText(Html.fromHtml(parentFragment.getPage().getDisplayTitle()));
-        // hide the description text...
-        pageDescriptionText.setVisibility(View.INVISIBLE);
+        pageTitleText.setText(Html.fromHtml(getPage().getDisplayTitle()), getPage().getTitle().getSite().getLanguageCode());
+        // Set the subtitle, too, so text measurements are accurate.
+        layoutWikiDataDescription(getTitle().getDescription());
 
         // kick off the (asynchronous) laying out of the page title text
-        layoutPageTitle((int) (context.getResources().getDimension(de.droidwiki.R.dimen.titleTextSize)
-                               / displayDensity), listener);
+        layoutPageTitle((int) (getDimension(R.dimen.titleTextSize)
+                / displayDensity), listener, sequence);
+    }
+
+    // ideas from:
+    // http://stackoverflow.com/questions/2801116/converting-a-view-to-bitmap-without-displaying-it-in-android
+    // View has to be already displayed. Note: a copy of the ImageView's Drawable must be made in
+    // some fashion as it may be recycled. See T114658.
+    private Bitmap newBitmapFromView(ImageView view) {
+        // Define a bitmap with the same size as the view
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),
+                Bitmap.Config.ARGB_8888);
+        // Bind a canvas to it
+        Canvas canvas = new Canvas(returnedBitmap);
+        view.draw(canvas);
+        return returnedBitmap;
     }
 
     /**
@@ -372,15 +256,14 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * is too long. Since it's assumed that the overall lead image view is hidden at this stage,
      * this process will be invisible to the user, and will not appear jarring. Once the optimal
      * font size is reached, the next step in the layout process is triggered.
+     *
      * @param fontSizeSp Font size to be tested.
-     * @param listener Listener that will receive an event when the layout is completed.
+     * @param listener   Listener that will receive an event when the layout is completed.
      */
-    private void layoutPageTitle(final int fontSizeSp, final OnLeadImageLayoutListener listener) {
-        if (!parentFragment.isAdded()) {
+    private void layoutPageTitle(final int fontSizeSp, final OnLeadImageLayoutListener listener, final int sequence) {
+        if (!isFragmentAdded()) {
             return;
         }
-        // remove padding from the title container while measuring
-        pageTitleContainer.setPadding(0, 0, 0, 0);
         // set the font size of the title
         pageTitleText.setTextSize(TypedValue.COMPLEX_UNIT_SP, fontSizeSp);
         // if we're still not being shown (if the fragment is still being created),
@@ -398,7 +281,7 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
             pageTitleText.post(new Runnable() {
                 @Override
                 public void run() {
-                    if (!parentFragment.isAdded()) {
+                    if (!isFragmentAdded()) {
                         return;
                     }
                     if (((int) (pageTitleText.getHeight() / displayDensity) > TITLE_MAX_HEIGHT_DP)
@@ -421,160 +304,117 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
      * The final step in the layout process:
      * Apply sizing and styling to our page title and lead image views, based on how large our
      * page title ended up, and whether we should display the lead image.
+     *
      * @param listener Listener that will receive an event when the layout is completed.
      */
-    private void layoutViews(OnLeadImageLayoutListener listener) {
-        if (!parentFragment.isAdded()) {
+    private void layoutViews(OnLeadImageLayoutListener listener, int sequence) {
+        if (!isFragmentAdded()) {
             return;
         }
-        boolean isMainPage = parentFragment.getPage().isMainPage();
+
         int titleContainerHeight;
 
-        if (isMainPage) {
-            titleContainerHeight = (int)(Utils.getActionBarSize(parentFragment.getActivity()) / displayDensity);
-            // hide everything
-            image1.setVisibility(View.GONE);
-            image1.setImageDrawable(null);
-            imagePlaceholder.setVisibility(View.GONE);
-            pageTitleText.setVisibility(View.GONE);
-            pageDescriptionText.setVisibility(View.GONE);
+        if (isMainPage()) {
+            titleContainerHeight = (int) (Utils.getContentTopOffsetPx(getActivity()) / displayDensity);
+            hideLeadSection();
         } else if (!leadImagesEnabled) {
             // ok, we're not going to show lead images, so we need to make some
             // adjustments to our layout:
             // make the WebView padding be just the height of the title text, plus a fixed offset
-            titleContainerHeight = (int) ((pageTitleContainer.getHeight() / displayDensity))
+            titleContainerHeight = (int) ((pageTitleText.getHeight() / displayDensity))
                     + DISABLED_OFFSET_DP;
-            imageContainer.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+            imageContainer.setLayoutParams(new CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT,
                     (int) ((titleContainerHeight) * displayDensity)));
             // reset the background on the lead image, in case we previously set it to white.
-            image1.setBackgroundColor(Color.TRANSPARENT);
+            image.setBackgroundColor(Color.TRANSPARENT);
             // hide the lead image
-            image1.setVisibility(View.GONE);
-            image1.setImageDrawable(null);
+            image.setVisibility(View.GONE);
+            image.setImageDrawable(null);
             imagePlaceholder.setVisibility(View.GONE);
             pageTitleText.setVisibility(View.INVISIBLE);
-            pageDescriptionText.setVisibility(View.INVISIBLE);
             // set the color of the title
-            pageTitleText.setTextColor(context.getResources()
-                    .getColor(Utils.getThemedAttributeId(parentFragment.getActivity(),
-                            de.droidwiki.R.attr.lead_disabled_text_color)));
-            // remove bottom padding from the description
-            ViewUtil.setBottomPaddingDp(pageDescriptionText, 0);
+            pageTitleText.setTextColor(getColor(Utils.getThemedAttributeId(getActivity(),
+                    R.attr.lead_disabled_text_color)));
             // and give it no drop shadow
             pageTitleText.setShadowLayer(0, 0, 0, 0);
-            // do the same for the description...
-            pageDescriptionText.setTextColor(context.getResources()
-                    .getColor(Utils.getThemedAttributeId(parentFragment.getActivity(),
-                                                         de.droidwiki.R.attr.lead_disabled_text_color)));
-            pageDescriptionText.setShadowLayer(0, 0, 0, 0);
-            // remove any background from the title container
-            pageTitleContainer.setBackgroundColor(Color.TRANSPARENT);
-            // set the correct to padding on the container
-            pageTitleContainer.setPadding(0, 0, 0, 0);
+            pageTitleText.setBackgroundColor(Color.TRANSPARENT);
         } else {
             // we're going to show the lead image, so make some adjustments to the
             // layout, in case we were previously not showing it:
             // make the WebView padding be a proportion of the total screen height
             titleContainerHeight = (int) (displayHeightDp * IMAGES_CONTAINER_RATIO);
-            imageContainer.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
+            imageContainer.setLayoutParams(new CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT,
                     (int) (titleContainerHeight * displayDensity)));
             // prepare the lead image to be populated
-            image1.setVisibility(View.INVISIBLE);
+            image.setVisibility(View.INVISIBLE);
             imagePlaceholder.setVisibility(View.VISIBLE);
             pageTitleText.setVisibility(View.INVISIBLE);
-            pageDescriptionText.setVisibility(View.INVISIBLE);
             // set the color of the title
-            pageTitleText.setTextColor(context.getResources().getColor(de.droidwiki.R.color.lead_text_color));
-            // give default padding to the description
-            final int bottomPadding = 16;
-            ViewUtil.setBottomPaddingDp(pageDescriptionText, bottomPadding);
+            pageTitleText.setTextColor(getColor(R.color.lead_text_color));
             // and give it a nice drop shadow!
-            pageTitleText.setShadowLayer(2, 1, 1, context.getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
-            // do the same for the description...
-            pageDescriptionText.setTextColor(context.getResources().getColor(de.droidwiki.R.color.lead_text_color));
-            pageDescriptionText.setShadowLayer(2, 1, 1, context.getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
+            pageTitleText.setShadowLayer(2, 1, 1, getColor(R.color.lead_text_shadow));
             // set the title container background to be a gradient
-            ViewUtil.setBackgroundDrawable(pageTitleContainer, pageTitleGradient);
-            // set the correct padding on the container
-            pageTitleContainer.setPadding(0, (int) (TITLE_GRADIENT_HEIGHT_DP * displayDensity), 0, 0);
+            ViewUtil.setBackgroundDrawable(pageTitleText, pageTitleGradient);
         }
-        if (ApiUtil.hasHoneyComb()) {
-            // for API >10, decrease line spacing and boost bottom padding to account for it.
-            // (in API 10, decreased line spacing cuts off the bottom of the text)
-            final float lineSpacing = 0.8f;
-            pageTitleText.setLineSpacing(0, lineSpacing);
 
-        }
-        // pad the webview contents, to account for the lead image view height that we've
-        // ended up with
-        JSONObject payload = new JSONObject();
-        try {
-            final int paddingExtra = 8;
-            payload.put("paddingTop", titleContainerHeight + paddingExtra);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-        bridge.sendMessage("setPaddingTop", payload);
+        final int paddingExtra = 8;
+        setWebViewPaddingTop(titleContainerHeight + paddingExtra);
 
         // and start fetching the lead image, if we have one
-        String thumbUrl = parentFragment.getPage().getPageProperties().getLeadImageUrl();
-        if (!isMainPage && thumbUrl != null && leadImagesEnabled) {
-            thumbUrl = WikipediaApp.getInstance().getNetworkProtocol() + "://www.droidwiki.de" + thumbUrl;
-            Picasso.with(parentFragment.getActivity())
-                    .load(thumbUrl)
-                    .noFade()
-                    .into((Target)image1);
-        }
+        loadLeadImage();
 
         // tell our listener that it's ok to start loading the rest of the WebView content
         listener.onLayoutComplete();
 
-        // trigger a scroll event so that the visibility of the lead image component is updated.
-        onScrollChanged(webView.getScrollY(), webView.getScrollY());
+        forceRefreshWebView();
 
-        if (!isMainPage) {
+        if (!isMainPage()) {
             // make everything visible!
             imageContainer.setVisibility(View.VISIBLE);
-            // kick off loading of the WikiData description
-            // layoutWikiDataDescription(parentFragment.getTitle().getDescription());
+            pageTitleText.setVisibility(View.VISIBLE);
         }
+    }
+
+    // TODO: try to get DRY with hide() or consider renaming.
+    private void hideLeadSection() {
+        image.setVisibility(View.GONE);
+        image.setImageDrawable(null);
+        imagePlaceholder.setVisibility(View.GONE);
+        pageTitleText.setVisibility(View.GONE);
+    }
+
+    private void setWebViewPaddingTop(int padding) {
+        JSONObject payload = new JSONObject();
+        try {
+            payload.put("paddingTop", padding);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        bridge.sendMessage("setPaddingTop", payload);
     }
 
     /**
      * Final step in the WikiData description process: lay out the description, and animate it
      * into place, along with the page title.
+     *
      * @param description WikiData description to be shown.
      */
     private void layoutWikiDataDescription(@Nullable final String description) {
-        // set the text of the description...
-        pageDescriptionText.setText(description);
-        // and wait for it to lay out, so that we know the height of the description text.
-        pageDescriptionText.post(new Runnable() {
-            @Override
-            public void run() {
-                if (!parentFragment.isAdded()) {
-                    return;
-                }
-                // only show the description if it's two lines or less, and nonempty,
-                // and adjust title padding based on whether the description is shown
-                int bottomPadding = 0;
-                if (TextUtils.isEmpty(description) || pageDescriptionText.getLineCount() > 2) {
-                    final int blankPadding = 16;
-                    bottomPadding += blankPadding;
-                    pageDescriptionText.setVisibility(View.GONE);
-                } else {
-                    pageDescriptionText.setVisibility(View.VISIBLE);
-                }
-                if (ApiUtil.hasHoneyComb() && !ApiUtil.hasLollipop()) {
-                    // boost the title padding a bit more, because these API versions don't
-                    // automatically apply correct padding when line spacing is decreased.
-                    final int extraPadding = 10;
-                    bottomPadding += extraPadding;
-                }
-                ViewUtil.setBottomPaddingDp(pageTitleText, bottomPadding);
-                pageTitleText.setVisibility(View.VISIBLE);
+        if (!TextUtils.isEmpty(description)) {
+            CharSequence title = pageTitleText.getText();
+            int titleLineCount = pageTitleText.getLineCount();
+
+            SpannableStringBuilder builder = new SpannableStringBuilder(title);
+            builder.append("\n");
+            builder.append(subtitleSpannable(description, getDimensionPixelSize(R.dimen.descriptionTextSize)));
+            pageTitleText.setText(builder);
+
+            // Only show the description if it's two lines or less.
+            if ((pageTitleText.getLineCount() - titleLineCount) > 2) {
+                // Restore title.
+                pageTitleText.setText(title);
             }
-        });
+        }
     }
 
     /**
@@ -584,9 +424,217 @@ public class LeadImagesHandler implements ObservableWebView.OnScrollChangeListen
         // preload the display density, since it will be used in a lot of places
         displayDensity = DimenUtil.getDensityScalar();
 
-        int displayHeightPx = DimenUtil.getDisplayHeight(
-                parentFragment.getActivity().getWindowManager().getDefaultDisplay());
+        int displayHeightPx = DimenUtil.getDisplayHeightPx();
 
         displayHeightDp = (int) (displayHeightPx / displayDensity);
+    }
+
+    private void detectFace(int bmpHeight, float aspect, @Nullable PointF faceLocation) {
+        int newWidth = image.getWidth();
+        int newHeight = (int) (newWidth * aspect);
+
+        // give our image an offset based on the location of the face,
+        // relative to the image container
+        float scale = (float) newHeight / (float) bmpHeight;
+        if (faceLocation != null) {
+            int faceY = (int) (faceLocation.y * scale);
+            // if we have a face, then offset to the face location
+            imageBaseYOffset = -(faceY - (imagePlaceholder.getHeight() / 2));
+            // Adjust the face position by a slight amount.
+            // The face recognizer gives the location of the *eyes*, whereas we actually
+            // want to center on the *nose*...
+            imageBaseYOffset += getDimension(R.dimen.face_detection_nose_y_offset);
+            faceYOffsetNormalized = faceLocation.y / bmpHeight;
+        } else {
+            // No face, so we'll just chop the top 25% off rather than centering
+            final float oneQuarter = 0.25f;
+            imageBaseYOffset = -(int) ((newHeight - imagePlaceholder.getHeight()) * oneQuarter);
+            faceYOffsetNormalized = oneQuarter;
+        }
+
+        // is the offset too far to the top?
+        imageBaseYOffset = Math.min(0, imageBaseYOffset);
+
+        // is the offset too far to the bottom?
+        imageBaseYOffset = Math.max(imageBaseYOffset, imagePlaceholder.getHeight() - newHeight);
+
+        // resize our image to have the same proportions as the acquired bitmap
+        if (newHeight < imagePlaceholder.getHeight()) {
+            // if the height of the image is less than the container, then just
+            // make it the same height as the placeholder.
+            setImageLayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, imagePlaceholder.getHeight());
+            imageBaseYOffset = 0;
+        } else {
+            setImageLayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, newHeight);
+        }
+
+        forceRefreshWebView();
+
+        // fade in the new image!
+        ViewAnimations.crossFade(imagePlaceholder, image);
+
+        startKenBurnsAnimation();
+    }
+
+    private void setImageLayoutParams(int width, int height) {
+        image.setLayoutParams(new FrameLayout.LayoutParams(width, height));
+    }
+
+    private SpannableString subtitleSpannable(@Nullable CharSequence str, int sizePx) {
+        final float leadingScalar = DimenUtil.getFloat(R.dimen.lead_subtitle_leading_scalar);
+        final float paragraphScalar = DimenUtil.getFloat(R.dimen.lead_subtitle_paragraph_scalar);
+        CharSequence nonnullStr = StringUtil.emptyIfNull(str);
+        return RichTextUtil.setSpans(new SpannableString(nonnullStr),
+                                     0,
+                                     nonnullStr.length(),
+                                     Spannable.SPAN_INCLUSIVE_INCLUSIVE,
+                                     new AbsoluteSizeSpan(sizePx, false),
+                                     new LeadingSpan(leadingScalar),
+                                     new ParagraphSpan(paragraphScalar));
+    }
+
+    private void loadLeadImage() {
+        loadLeadImage(getLeadImageUrl());
+    }
+
+    /**
+     * @param url Nullable URL with no scheme. For example, foo.bar.com/ instead of
+     *            http://foo.bar.com/.
+     */
+    private void loadLeadImage(@Nullable String url) {
+        if (!isMainPage() && !TextUtils.isEmpty(url) && leadImagesEnabled) {
+            String fullUrl = WikipediaApp.getInstance().getNetworkProtocol() + ":" + url;
+            Picasso.with(getActivity())
+                   .load(fullUrl)
+                   .noFade()
+                   .into((Target) image);
+        }
+    }
+
+    /**
+     * @return Nullable URL with no scheme. For example, foo.bar.com/ instead of
+     * http://foo.bar.com/.
+     */
+    @Nullable
+    private String getLeadImageUrl() {
+        return getPage().getPageProperties().getLeadImageUrl();
+    }
+
+    private void startKenBurnsAnimation() {
+        // TODO: will this ever see prod?
+        if (WikipediaApp.getInstance().getReleaseType() != WikipediaApp.RELEASE_PROD) {
+            Animation anim = AnimationUtils.loadAnimation(getActivity(),
+                    R.anim.lead_image_zoom);
+            anim.setFillAfter(true);
+            image.startAnimation(anim);
+        }
+    }
+
+    private void forceRefreshWebView() {
+        webViewScrollListener.onScrollChanged(webView.getScrollY(), webView.getScrollY());
+    }
+
+    private void initWebView() {
+        webView.addOnScrollChangeListener(webViewScrollListener);
+
+        webView.addOnClickListener(new ObservableWebView.OnClickListener() {
+            @Override
+            public boolean onClick(float x, float y) {
+                // if the click event is within the area of the lead image, then the user
+                // must have wanted to click on the lead image!
+                if (leadImagesEnabled && y < (imageContainer.getHeight() - webView.getScrollY())) {
+                    String imageName = getPage().getPageProperties().getLeadImageName();
+                    if (imageName != null) {
+                        PageTitle imageTitle = new PageTitle("File:" + imageName,
+                                getTitle().getSite());
+                        GalleryActivity.showGallery(getActivity(),
+                                parentFragment.getTitleOriginal(), imageTitle,
+                                GalleryFunnel.SOURCE_LEAD_IMAGE);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    private boolean isMainPage() {
+        return getPage().isMainPage();
+    }
+
+    private PageTitle getTitle() {
+        return parentFragment.getTitle();
+    }
+
+    private Page getPage() {
+        return parentFragment.getPage();
+    }
+
+    private boolean isFragmentAdded() {
+        return parentFragment.isAdded();
+    }
+
+    private float getDimension(@DimenRes int id) {
+        return getResources().getDimension(id);
+    }
+
+    private int getDimensionPixelSize(@DimenRes int id) {
+        return getResources().getDimensionPixelSize(id);
+    }
+
+    @ColorInt
+    private int getColor(@ColorRes int id) {
+        return getResources().getColor(id);
+    }
+
+    private Resources getResources() {
+        return getActivity().getResources();
+    }
+
+    private FragmentActivity getActivity() {
+        return parentFragment.getActivity();
+    }
+
+    private class WebViewScrollListener implements ObservableWebView.OnScrollChangeListener {
+        @Override
+        public void onScrollChanged(int oldScrollY, int scrollY) {
+            CoordinatorLayout.LayoutParams contParams = (CoordinatorLayout.LayoutParams) imageContainer
+                    .getLayoutParams();
+            FrameLayout.LayoutParams imgParams = (FrameLayout.LayoutParams) image.getLayoutParams();
+            if (scrollY > imageContainer.getHeight()) {
+                if (contParams.topMargin != -imageContainer.getHeight()) {
+                    contParams.topMargin = -imageContainer.getHeight();
+                    imgParams.topMargin = 0;
+                    imageContainer.setLayoutParams(contParams);
+                    image.setLayoutParams(imgParams);
+                }
+            } else {
+                contParams.topMargin = -scrollY;
+                imgParams.topMargin = imageBaseYOffset + scrollY / 2; //parallax, baby
+                imageContainer.setLayoutParams(contParams);
+                image.setLayoutParams(imgParams);
+            }
+        }
+    }
+
+    private class ImageLoadListener implements ImageViewWithFace.OnImageLoadListener {
+        @Override
+        public void onImageLoaded(Bitmap bitmap, @Nullable final PointF faceLocation) {
+            final int bmpHeight = bitmap.getHeight();
+            final float aspect = (float) bitmap.getHeight() / (float) bitmap.getWidth();
+            imageContainer.post(new Runnable() {
+                @Override
+                public void run() {
+                    if (isFragmentAdded()) {
+                        detectFace(bmpHeight, aspect, faceLocation);
+                    }
+                }
+            });
+        }
+
+        @Override
+        public void onImageFailed() {
+            // just keep showing the placeholder image...
+        }
     }
 }

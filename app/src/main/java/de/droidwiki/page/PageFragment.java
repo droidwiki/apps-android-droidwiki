@@ -1,6 +1,5 @@
 package de.droidwiki.page;
 
-import org.acra.ACRA;
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.NightModeHandler;
 import de.droidwiki.R;
@@ -25,12 +24,14 @@ import de.droidwiki.page.tabs.TabsProvider;
 import de.droidwiki.savedpages.ImageUrlMap;
 import de.droidwiki.savedpages.LoadSavedPageUrlMapTask;
 import de.droidwiki.savedpages.SavePageTask;
+import de.droidwiki.savedpages.SavedPageCheckTask;
 import de.droidwiki.search.SearchBarHideHandler;
 import de.droidwiki.settings.Prefs;
 import de.droidwiki.tooltip.ToolTipUtil;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.util.ShareUtils;
 import de.droidwiki.util.ThrowableUtil;
+import de.droidwiki.util.log.L;
 import de.droidwiki.views.ObservableWebView;
 import de.droidwiki.views.SwipeRefreshLayoutWithScroll;
 import de.droidwiki.views.WikiDrawerLayout;
@@ -39,12 +40,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import de.droidwiki.views.WikiErrorView;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -78,13 +77,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLException;
 
-// TODO: USE ACRA.getErrorReporter().handleSilentException() if we move to automated crash reporting?
 
 public class PageFragment extends Fragment implements BackPressedHandler {
-    public static final int SUBSTATE_NONE = 0;
-    public static final int SUBSTATE_PAGE_SAVED = 1;
-    public static final int SUBSTATE_SAVED_PAGE_LOADED = 2;
-
     public static final int TOC_ACTION_SHOW = 0;
     public static final int TOC_ACTION_HIDE = 1;
     public static final int TOC_ACTION_TOGGLE = 2;
@@ -118,7 +112,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
      */
     private boolean saveOnComplete = false;
 
-    private ViewGroup imagesContainer;
+    private ViewGroup leadSectionContainer;
     private LeadImagesHandler leadImagesHandler;
     private SearchBarHideHandler searchBarHideHandler;
     private ObservableWebView webView;
@@ -133,6 +127,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     private ReferenceDialog referenceDialog;
     private EditHandler editHandler;
     private ActionMode findInPageActionMode;
+    private ShareHandler shareHandler;
+    private TabsProvider tabsProvider;
 
     private WikipediaApp app;
 
@@ -196,6 +192,14 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         return model.getCurEntry();
     }
 
+    public void setSavedPageCheckComplete(boolean complete) {
+        savedPageCheckComplete = complete;
+        if (!isAdded()) {
+            return;
+        }
+        getActivity().supportInvalidateOptionsMenu();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -227,8 +231,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         tocButton.setOnClickListener(tocButtonOnClickListener);
 
         refreshView = (SwipeRefreshLayoutWithScroll) rootView
-                .findViewById(de.droidwiki.R.id.page_refresh_container);
-        int swipeOffset = Utils.getActionBarSize(getActivity()) + REFRESH_SPINNER_ADDITIONAL_OFFSET;
+                .findViewById(R.id.page_refresh_container);
+        int swipeOffset = Utils.getContentTopOffsetPx(getActivity()) + REFRESH_SPINNER_ADDITIONAL_OFFSET;
         refreshView.setProgressViewOffset(false, -swipeOffset, swipeOffset);
         // if we want to give it a custom color:
         //refreshView.setProgressBackgroundColor(R.color.swipe_refresh_circle);
@@ -262,6 +266,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
         bridge = new CommunicationBridge(webView, "file:///android_asset/index.html");
         setupMessageHandlers();
+        sendDecorOffsetMessage();
 
         linkHandler = new LinkHandler(getActivity(), bridge) {
             @Override
@@ -315,7 +320,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             @Override
             int getDialogHeight() {
                 // could have scrolled up a bit but the page info links must still be visible else they couldn't have been clicked
-                return webView.getHeight() + webView.getScrollY() - imagesContainer.getHeight();
+                return webView.getHeight() + webView.getScrollY() - leadSectionContainer.getHeight();
             }
         };
 
@@ -341,9 +346,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
         tocHandler = new ToCHandler(getPageActivity(), tocDrawer, bridge);
 
-        imagesContainer = (ViewGroup) getView().findViewById(de.droidwiki.R.id.page_images_container);
-        leadImagesHandler = new LeadImagesHandler(getActivity(), this, bridge, webView,
-                                                  imagesContainer);
+        leadSectionContainer = (ViewGroup) getView().findViewById(R.id.page_image_container);
+        leadImagesHandler = new LeadImagesHandler(this, bridge, webView, leadSectionContainer);
         searchBarHideHandler = getPageActivity().getSearchBarHideHandler();
         searchBarHideHandler.setScrollView(webView);
 
@@ -367,6 +371,9 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             public void onUpOrCancelMotionEvent() {
                 // queue the button to be hidden when the user stops scrolling.
                 setToCButtonFadedIn(false);
+                // update our session, since it's possible for the user to remain on the page for
+                // a long time, and we wouldn't want the session to time out.
+                app.getSessionFunnel().touchSession();
             }
         });
         webView.setOnFastScrollListener(new ObservableWebView.OnFastScrollListener() {
@@ -393,7 +400,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     }
 
     private void handleInternalLink(PageTitle title) {
-        if (!isAdded()) {
+        if (!isResumed()) {
             return;
         }
         // if it's a Special page, launch it in an external browser, since mobileview
@@ -406,7 +413,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (referenceDialog != null && referenceDialog.isShowing()) {
             referenceDialog.dismiss();
         }
-        if (!app.isProdRelease() && app.getLinkPreviewVersion() == 0) {
+        if (!TextUtils.isEmpty(title.getNamespace()) || !app.isLinkPreviewEnabled()) {
             HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_INTERNAL_LINK);
             getPageActivity().displayNewPage(title, historyEntry);
             new LinkPreviewFunnel(app, title).logNavigate();
@@ -491,6 +498,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        sendDecorOffsetMessage();
         // if the screen orientation changes, then re-layout the lead image container,
         // but only if we've finished fetching the page.
         if (!pageLoadStrategy.isLoading()) {
@@ -502,6 +510,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                 }
             });
         }
+        tabsProvider.onConfigurationChanged();
     }
 
     public Tab getCurrentTab() {
@@ -1002,7 +1011,79 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         tocHandler.setEnabled(true);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void openInNewTab(PageTitle title, HistoryEntry entry, int position) {
+        // create a new tab
+        Tab tab = new Tab();
+        // if the requested position is at the top, then make its backstack current
+        if (position == getForegroundTabPosition()) {
+            pageLoadStrategy.setBackStack(tab.getBackStack());
+        }
+        // put this tab in the requested position
+        tabList.add(position, tab);
+        // add the requested page to its backstack
+        tab.getBackStack().add(new PageBackStackItem(title, entry));
+        // and... that should be it.
+        tabsProvider.showAndHideTabs();
+    }
+
+    private int getBackgroundTabPosition() {
+        return Math.max(0, getForegroundTabPosition() - 1);
+    }
+
+    private int getForegroundTabPosition() {
+        return tabList.size();
+    }
+
+    private void setupMessageHandlers() {
+        bridge.addListener("ipaSpan", new CommunicationBridge.JSEventListener() {
+            @Override
+            public void onMessage(String messageType, JSONObject messagePayload) {
+                try {
+                    String text = messagePayload.getString("contents");
+                    final int textSize = 30;
+                    TextView textView = new TextView(getActivity());
+                    textView.setGravity(Gravity.CENTER);
+                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+                    textView.setText(Html.fromHtml(text));
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setView(textView);
+                    builder.show();
+                } catch (JSONException e) {
+                    L.logRemoteErrorIfProd(e);
+                }
+            }
+        });
+        bridge.addListener("imageClicked", new CommunicationBridge.JSEventListener() {
+            @Override
+            public void onMessage(String messageType, JSONObject messagePayload) {
+                try {
+                    String href = Utils.decodeURL(messagePayload.getString("href"));
+                    if (href.startsWith("/wiki/")) {
+                        PageTitle imageTitle = model.getTitle().getSite().titleForInternalLink(href);
+                        GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
+                                imageTitle, GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
+                    } else {
+                        linkHandler.onUrlClick(href);
+                    }
+                } catch (JSONException e) {
+                    L.logRemoteErrorIfProd(e);
+                }
+            }
+        });
+        bridge.addListener("mediaClicked", new CommunicationBridge.JSEventListener() {
+            @Override
+            public void onMessage(String messageType, JSONObject messagePayload) {
+                try {
+                    String href = Utils.decodeURL(messagePayload.getString("href"));
+                    GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
+                            new PageTitle(href, model.getTitle().getSite()), GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
+                } catch (JSONException e) {
+                    L.logRemoteErrorIfProd(e);
+                }
+            }
+        });
+    }
+
     private void setToCButtonFadedIn(boolean shouldFadeIn) {
         tocButton.removeCallbacks(hideToCButtonRunnable);
         if (shouldFadeIn) {
@@ -1045,6 +1126,18 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         return linkHandler;
     }
 
+    private void checkIfPageIsSaved() {
+        if (getActivity() != null && getTitle() != null) {
+            new SavedPageCheckTask(getTitle(), app) {
+                @Override
+                public void onFinish(Boolean exists) {
+                    setPageSaved(exists);
+                    setSavedPageCheckComplete(true);
+                }
+            }.execute();
+        }
+    }
+
     private void checkAndShowSelectTextOnboarding() {
         if (app.isFeatureSelectTextAndShareTutorialEnabled()
         &&  model.getPage().isArticle()
@@ -1083,6 +1176,16 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (tabList.isEmpty()) {
             tabList.add(new Tab());
         }
+    }
+
+    private void sendDecorOffsetMessage() {
+        JSONObject payload = new JSONObject();
+        try {
+            payload.put("offset", Utils.getContentTopOffset(getActivity()));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+        bridge.sendMessage("setDecorOffset", payload);
     }
 
     // TODO: don't assume host is PageActivity. Use Fragment callbacks pattern.

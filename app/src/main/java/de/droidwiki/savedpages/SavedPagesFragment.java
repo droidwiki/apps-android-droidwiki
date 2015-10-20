@@ -33,6 +33,7 @@ import com.squareup.picasso.Picasso;
 
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.R;
+import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
@@ -70,14 +71,15 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_saved_pages, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_saved_pages, container, false);
+        rootView.setPadding(0, Utils.getContentTopOffsetPx(getActivity()), 0, 0);
 
-        savedPagesList = (ListView) rootView.findViewById(de.droidwiki.R.id.saved_pages_list);
-        savedPagesEmptyContainer = rootView.findViewById(de.droidwiki.R.id.saved_pages_empty_container);
-        savedPagesEmptyTitle = (TextView) rootView.findViewById(de.droidwiki.R.id.saved_pages_empty_title);
-        savedPagesEmptyMessage = (TextView) rootView.findViewById(de.droidwiki.R.id.saved_pages_empty_message);
-        entryFilter = (EditText) rootView.findViewById(de.droidwiki.R.id.saved_pages_search_list);
-        savedPagesEmptyImage = (ImageView) rootView.findViewById(de.droidwiki.R.id.saved_pages_empty_image);
+        savedPagesList = (ListView) rootView.findViewById(R.id.saved_pages_list);
+        savedPagesEmptyContainer = rootView.findViewById(R.id.saved_pages_empty_container);
+        savedPagesEmptyTitle = (TextView) rootView.findViewById(R.id.saved_pages_empty_title);
+        savedPagesEmptyMessage = (TextView) rootView.findViewById(R.id.saved_pages_empty_message);
+        entryFilter = (EditText) rootView.findViewById(R.id.saved_pages_search_list);
+        savedPagesEmptyImage = (ImageView) rootView.findViewById(R.id.saved_pages_empty_image);
         return rootView;
     }
 

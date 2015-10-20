@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import de.droidwiki.util.ApiUtil;
+import de.droidwiki.R;
 
 public class PasswordTextInput extends FrameLayout {
     private EditText editText;
@@ -73,12 +73,9 @@ public class PasswordTextInput extends FrameLayout {
                 | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void updateButtonOpacity() {
-        if (ApiUtil.hasHoneyComb()) {
-            final float hiddenOpacity = 0.4f;
-            passwordShowButton.setAlpha(isPasswordVisible() ? 1.0f : hiddenOpacity);
-        }
+        final float hiddenOpacity = 0.4f;
+        passwordShowButton.setAlpha(isPasswordVisible() ? 1.0f : hiddenOpacity);
     }
 
     private class OnShowPasswordClickListener implements OnClickListener {

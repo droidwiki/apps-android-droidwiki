@@ -1,12 +1,9 @@
 package de.droidwiki.settings;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
@@ -16,37 +13,41 @@ import de.droidwiki.BuildConfig;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.util.StringUtil;
 
-/**
- * UI code for app settings, shared between PreferenceActivity (GB) and PreferenceFragment (HC+).
- */
+/** UI code for app settings used by PreferenceFragment. */
 public class SettingsPreferenceLoader extends BasePreferenceLoader {
     private final Activity activity;
 
-    /*package*/ SettingsPreferenceLoader(@NonNull PreferenceActivity activity) {
-        super(activity);
-        this.activity = activity;
-    }
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     /*package*/ SettingsPreferenceLoader(@NonNull PreferenceFragment fragment) {
         super(fragment);
-        this.activity = fragment.getActivity();
+        activity = fragment.getActivity();
     }
 
     @Override
     public void loadPreferences() {
         loadPreferences(de.droidwiki.R.xml.preferences);
 
-        Preference logoutPref = findPreference(de.droidwiki.R.string.preference_key_logout);
-        if (!WikipediaApp.getInstance().getUserInfoStorage().isLoggedIn()) {
-            logoutPref.setEnabled(false);
-            logoutPref.setSummary(getString(de.droidwiki.R.string.preference_summary_notloggedin));
-        }
-        logoutPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        updateLanguagePrefSummary();
+
+        Preference languagePref = findPreference(R.string.preference_key_language);
+        languagePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(Preference preference) {
-                activity.setResult(SettingsActivity.ACTIVITY_RESULT_LOGOUT);
-                activity.finish();
+                LanguagePreferenceDialog langPrefDialog = new LanguagePreferenceDialog(
+                        new ContextThemeWrapper(activity,
+                                (WikipediaApp.getInstance().isCurrentThemeLight()
+                                        ? R.style.NoTitle
+                                        : R.style.NoTitleDark)), false);
+                langPrefDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        String name = StringUtil.emptyIfNull(WikipediaApp.getInstance().getAppOrSystemLanguageLocalizedName());
+                        if (!findPreference(R.string.preference_key_language).getSummary().equals(name)) {
+                            findPreference(R.string.preference_key_language).setSummary(name);
+                            activity.setResult(SettingsActivity.ACTIVITY_RESULT_LANGUAGE_CHANGED);
+                        }
+                    }
+                });
+                langPrefDialog.show();
                 return true;
             }
         });
@@ -74,8 +75,9 @@ public class SettingsPreferenceLoader extends BasePreferenceLoader {
         });
     }
 
-    private Preference findPreference(@StringRes int id) {
-        return findPreference(getString(id));
+    private void updateLanguagePrefSummary() {
+        Preference languagePref = findPreference(R.string.preference_key_language);
+        languagePref.setSummary(WikipediaApp.getInstance().getAppOrSystemLanguageLocalizedName());
     }
 
     private String getString(@StringRes int id) {

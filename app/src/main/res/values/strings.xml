@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name_prod">DroidWiki</string>
-    <string name="app_name_beta">DroidWiki Beta</string>
-    <string name="app_name_alpha">DroidWiki Alpha</string>
+    <string name="app_name_beta" tools:ignore="UnusedResources">DroidWiki Beta</string>
+    <string name="app_name_alpha" tools:ignore="UnusedResources">DroidWiki Alpha</string>
 
     <string name="yes">Yes</string>
     <string name="no">No</string>
-
-    <string name="acra_report_dialog_title">DroidWiki crashed :(</string>
-    <string name="acra_report_dialog_text">Send us a crash report</string>
-    <string name="acra_report_dialog_comment">What were you doing when the crash happened?</string>
-
     <string name="search_hint">Search DroidWiki</string>
     <string name="nav_item_history">History</string>
-    <string name="error_network_error">The network connection could not be established.</string>
-    <string name="search_network_error">Network error. Tap to try again.</string>
-    <string name="generic_page_error">There was a problem handling your request.</string>
-    <string name="status_code_unavailable">Server status code unavailable.</string>
+    <string name="error_network_error">Cannot connect to the Internet.</string>
     <string name="page_error_retry">Retry</string>
     <string name="menu_clear_all_history">Clear history</string>
     <string name="menu_clear_all_saved_pages">Clear saved pages</string>
@@ -53,17 +45,18 @@
     <string name="menu_open_in_new_tab">Open in new tab</string>
     <string name="menu_long_press_copy_page">Copy link address</string>
 
+    <!-- Toolbar menu items -->
+    <string name="menu_text_select_copy">Copy</string>
+    <string name="menu_text_select_share">Share</string>
+
     <!-- Nearby -->
     <string name="nav_item_nearby">Nearby</string>
-    <string name="menu_update_nearby">Update nearby</string>
     <string name="nearby_empty_title">No nearby pages here!</string>
-    <string name="nearby_empty_message">When you move to a new location, try refreshing this page to learn more about what\'s around you.</string>
+    <string name="nearby_empty_message">Move to a new location to see pages around you.</string>
     <string name="nearby_distance_in_meters">%d m</string>
     <string name="nearby_distance_in_kilometers">%.2f km</string>
     <string name="nearby_distance_in_feet">%d ft</string>
     <string name="nearby_distance_in_miles">%.2f mi</string>
-    <string name="nearby_no_network">No network connection</string>
-    <string name="nearby_server_error">Could not get list of nearby places.</string>
     <string name="nearby_dialog_goto_settings">Location updates are not enabled on your device. Would you like to go to your device\'s settings to enable Location updates?</string>
     <string name="nearby_set_metric">Show meters/km</string>
     <string name="nearby_set_imperial">Show feet/miles</string>
@@ -75,10 +68,7 @@
     <string name="edit_save_action_license_anon"><![CDATA[By saving, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a>, and to irrevocably release your contributions under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> license. Edits will be attributed to the IP address of your device. If you <a href="https://#login">log in</a>, you will have more privacy.]]></string>
     <string name="preference_title_language">DroidWiki language</string>
     <string name="preference_languages_filter_hint">Search</string>
-    <string name="preference_system_language_toggle">Use system language</string>
-    <string name="preference_system_language_summary">System language</string>
     <string name="langlinks_filter_hint">Search</string>
-    <string name="langlinks_error_retry">Retry</string>
     <string name="langlinks_empty">This page is not available in other languages.</string>
     <string name="langlinks_no_match">No languages found matching your query.</string>
     <string name="langlinks_activity_title">Other languages</string>
@@ -99,7 +89,7 @@
     <string name="title_captcha">Enter CAPTCHA</string>
     <string name="edit_section_captcha_reload">Tap CAPTCHA to reload</string>
     <string name="edit_saved_page_refresh">This saved page may be out of date, and must be refreshed for editing to be enabled. Would you like to refresh the page?</string>
-    <string name="nav_item_login">Log in</string>
+    <string name="nav_item_login">Log in to DroidWiki</string>
     <string name="login_username_hint">Username</string>
     <string name="login_password_hint">Password</string>
     <string name="login_password_show_check">Display password</string>
@@ -113,10 +103,7 @@
     <string name="login_error_blocked">This user has been blocked</string>
     <string name="login_error_throttled"><![CDATA[Too many login attempts. Wait for a few minutes and try again.]]></string>
     <string name="login_error_unknown">Login failed :(</string>
-    <string name="login_error_no_network">No network connection</string>
     <string name="preference_title_logout">Log out</string>
-    <string name="preference_summary_logout">Log out of your DroidWiki account</string>
-    <string name="preference_summary_notloggedin">Not logged in.</string>
     <string name="toast_logout_complete">Logged out</string>
     <string name="saved_pages_empty_title">No saved pages here!</string>
     <string name="saved_pages_empty_message">Saved pages are pretty awesome. Think of them as bookmarks that you can read even when you are offline.</string>
@@ -125,7 +112,6 @@
     <string name="delete_selected_history">Delete</string>
     <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
     <string name="create_account_username_hint">Username</string>
-    <string name="create_account_password_hint">Password</string>
     <string name="login_create_account_link">Don\'t have an account? Join DroidWiki</string>
     <string name="create_account_login_link">Already have an account? Log in</string>
     <string name="create_account_activity_title">Create an account</string>
@@ -144,7 +130,6 @@
     <string name="create_account_blocked_error">You cannot create an account because your account is blocked.</string>
     <string name="create_account_password_name_match_error">Your username and your password must be different.</string>
     <string name="create_account_generic_error">Could not create account</string>
-    <string name="create_account_no_network">No network connection</string>
     <string name="create_account_next">Next</string>
     <string name="create_account_button">Create account</string>
     <string name="preferences_general_heading">General</string>
@@ -167,10 +152,10 @@
     <string name="send_feedback">Send app feedback</string>
     <string name="nav_item_random">Random</string>
     <string name="create_account_account_created_toast">Account created!</string>
-    <string name="user_contribs_more_action">Load more</string>
-    <string name="activity_my_contributions_title">My Contributions</string>
     <string name="preference_title_eventlogging_opt_in">Send usage reports</string>
     <string name="preference_summary_eventlogging_opt_in">Allow Wikimedia to collect information about how you use the app to make the app better</string>
+    <string name="preference_title_auto_upload_crash_reports">Send crash reports</string>
+    <string name="preference_summary_auto_upload_crash_reports">Allow the app to send crash reports to HockeyApp / a third-party service provider automatically so that we can review your crash and fix the bug faster and more easily.</string>
     <string name="editing_error_spamblacklist">Links to blocked domains (%s) detected. Please remove them and try again.</string>
     <string name="history_search_list_hint">Search history</string>
     <string name="history_search_empty_message">No pages found matching your query.</string>
@@ -180,8 +165,8 @@
     <string name="page_protected_other">This page has been protected to the following levels: %s</string>
     <string name="page_protected_can_not_edit">You do not have the rights to edit this page</string>
     <string name="page_protected_can_not_edit_title">This page is protected</string>
-    <string name="more_item_preferences">More</string>
-    <string name="more_activity_title">More</string>
+    <string name="settings_item_preferences">Settings</string>
+    <string name="settings_activity_title">Settings</string>
     <string name="about_description">About the DroidWiki app</string>
     <string name="privacy_policy_description">Privacy policy</string>
     <string name="terms_of_use_description">Terms of use</string>
@@ -212,7 +197,6 @@
     <string name="saved_pages_update_all_error_retry">Retry</string>
     <string name="saved_pages_update_all_error_message">Error updating saved pages</string>
     <string name="saved_pages_progress_title">Refreshing saved pages</string>
-    <string name="saved_pages_refresh_pages_complete">Update complete</string>
     <string name="menu_page_saved">Page saved</string>
     <string name="menu_refresh_saved_page">Refresh page</string>
     <string name="abusefilter_title_warn">This may be an unconstructive edit. Are you sure you want to save it?</string>
@@ -264,16 +248,16 @@ Terms of Use: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
     <string name="preference_title_show_images">Show images</string>
     <string name="preference_summary_show_images">Enable or disable loading of images in pages. Uncheck this setting if your internet connection is slow, or if your data plan is limited.</string>
     <string name="read_more_section">Read more</string>
-    <string name="read_next_section">Read next</string>
     <string name="menu_gallery_visit_page">Go to file page</string>
     <string name="gallery_error_draw_failed">Could not draw the image.</string>
     <string name="license_title">License text for %s library</string>
     <string name="gallery_menu_share">Share</string>
     <string name="gallery_share_error">Could not share image: %s</string>
     <string name="gallery_menu_save">Save to device</string>
-    <string name="gallery_save_error">Could not save image: %s</string>
     <string name="gallery_save_error_mediastore">Failed to import image to media collection</string>
     <string name="gallery_save_success">Image saved successfully.</string>
+    <string name="gallery_image_saved_notification_title">Image saved.</string>
+    <string name="gallery_image_saved_notification_text">Touch to view.</string>
     <string name="gallery_error_video_failed">Could not play the video.</string>
     <string name="err_cannot_save_file">Cannot save file</string>
     <string name="snippet_share_intro">\"%1$s\" on @DroidWiki: %2$s</string>
@@ -285,7 +269,6 @@ Terms of Use: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
     <string name="captcha_image">Captcha image</string>
     <string name="gallery_fair_use_license">Fair use</string>
     <string name="gallery_uploader_unknown">Uploader unknown</string>
-    <string name="edit_save_unknown_error">Could not save your edit: %s</string>
     <string name="menu_new_tab">New tab</string>
     <string name="button_close_tab">Close tab</string>
     <string name="tool_tip_select_text">Press and hold anywhere in the text to highlight it for copying and sharing.</string>
@@ -298,5 +281,20 @@ Terms of Use: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
     <string name="format_error_server_message">Message: \"%s\"</string>
     <string name="format_error_server_code">Code: \"%s\"</string>
     <string name="address_copied">Address copied to clipboard.</string>
+    <string name="text_copied">Text copied to clipboard.</string>
     <string name="button_continue_to_article">Continue to article</string>
+    <string name="preference_title_show_link_previews">Show link previews</string>
+    <string name="preference_summary_show_link_previews">Show a quick preview of articles when tapping on links.</string>
+
+    <!-- Crash reporter -->
+    <string name="crash_report_dialog_title">Sorry, app crashed last time</string>
+    <string name="crash_report_dialog_text">Would you like to send a crash report to HockeyApp / a third-party service provider so that Wikimedia can review your crash and fix the bug that caused it?</string>
+    <string name="crash_report_dialog_dont_send_button">Skip</string>
+    <string name="crash_report_dialog_always_send_button">Always send</string>
+    <string name="crash_report_dialog_send_button">Send</string>
+    <string name="crash_report_activity_title">Application error</string>
+    <string name="crash_report_relaunch_or_quit">We\'re sorry, the DroidWiki app has experienced an error and was terminated.\n\nWould you like to start over or quit?</string>
+    <string name="crash_report_relaunch">Start over</string>
+    <string name="crash_report_quit">Quit</string>
+    <!-- /Crash reporter -->
 </resources>

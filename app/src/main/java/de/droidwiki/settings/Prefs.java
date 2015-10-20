@@ -1,13 +1,19 @@
 package de.droidwiki.settings;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
+import de.droidwiki.analytics.SessionData;
+import de.droidwiki.analytics.SessionFunnel;
 import de.droidwiki.data.GsonMarshaller;
+import de.droidwiki.data.SessionUnmarshaller;
 import de.droidwiki.data.TabUnmarshaller;
 import de.droidwiki.page.tabs.Tab;
 import de.droidwiki.theme.Theme;
+
+import retrofit.RestAdapter;
+
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.util.Collections;
 import java.util.List;
@@ -28,52 +34,52 @@ import static de.droidwiki.settings.PrefsIoUtil.setString;
 public final class Prefs {
     @Nullable
     public static String getAppChannel() {
-        return getString(de.droidwiki.R.string.preference_key_app_channel, null);
+        return getString(R.string.preference_key_app_channel, null);
     }
 
     public static void setAppChannel(@Nullable String channel) {
-        setString(de.droidwiki.R.string.preference_key_app_channel, channel);
+        setString(R.string.preference_key_app_channel, channel);
     }
 
     @NonNull
     public static String getAppChannelKey() {
-        return getKey(de.droidwiki.R.string.preference_key_app_channel);
+        return getKey(R.string.preference_key_app_channel);
     }
 
     @Nullable
     public static String getAppInstallId() {
-        return getString(de.droidwiki.R.string.preference_key_reading_app_install_id, null);
+        return getString(R.string.preference_key_reading_app_install_id, null);
     }
 
     public static void setAppInstallId(@Nullable String id) {
         // The app install ID uses readingAppInstallID for backwards compatibility with analytics.
-        setString(de.droidwiki.R.string.preference_key_reading_app_install_id, id);
+        setString(R.string.preference_key_reading_app_install_id, id);
     }
 
     @Nullable
     public static String getAppLanguageCode() {
-        return getString(de.droidwiki.R.string.preference_key_language, null);
+        return getString(R.string.preference_key_language, null);
     }
 
     public static void setAppLanguageCode(@Nullable String code) {
-        setString(de.droidwiki.R.string.preference_key_language, code);
+        setString(R.string.preference_key_language, code);
     }
 
     public static int getThemeId() {
-        return getInt(de.droidwiki.R.string.preference_key_color_theme, Theme.getFallback().getMarshallingId());
+        return getInt(R.string.preference_key_color_theme, Theme.getFallback().getMarshallingId());
     }
 
     public static void setThemeId(int theme) {
-        setInt(de.droidwiki.R.string.preference_key_color_theme, theme);
+        setInt(R.string.preference_key_color_theme, theme);
     }
 
     @NonNull
     public static String getCookieDomains() {
-        return getString(de.droidwiki.R.string.preference_key_cookie_domains, "");
+        return getString(R.string.preference_key_cookie_domains, "");
     }
 
     public static void setCookieDomains(@Nullable String domains) {
-        setString(de.droidwiki.R.string.preference_key_cookie_domains, domains);
+        setString(R.string.preference_key_cookie_domains, domains);
     }
 
     @NonNull
@@ -89,22 +95,26 @@ public final class Prefs {
         remove(getCookiesForDomainKey(domain));
     }
 
+    public static boolean isCrashReportAutoUploadEnabled() {
+        return getBoolean(R.string.preference_key_auto_upload_crash_reports, true);
+    }
+
     public static boolean isShowDeveloperSettingsEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_show_developer_settings,
+        return getBoolean(R.string.preference_key_show_developer_settings,
                 WikipediaApp.getInstance().isDevRelease());
     }
 
     public static void setShowDeveloperSettingsEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_show_developer_settings, enabled);
+        setBoolean(R.string.preference_key_show_developer_settings, enabled);
     }
 
     @NonNull
     public static String getEditTokenWikis() {
-        return getString(de.droidwiki.R.string.preference_key_edittoken_wikis, "");
+        return getString(R.string.preference_key_edittoken_wikis, "");
     }
 
     public static void setEditTokenWikis(@Nullable String wikis) {
-        setString(de.droidwiki.R.string.preference_key_edittoken_wikis, wikis);
+        setString(R.string.preference_key_edittoken_wikis, wikis);
     }
 
     @Nullable
@@ -120,123 +130,171 @@ public final class Prefs {
         remove(getEditTokenForWikiKey(wiki));
     }
 
-    public static int getLinkPreviewVersion() {
-        return getInt(de.droidwiki.R.string.preference_key_link_preview_version, 0);
-    }
-
-    public static void setLinkPreviewVersion(int version) {
-        setInt(de.droidwiki.R.string.preference_key_link_preview_version, version);
-    }
-
-    public static boolean hasLinkPreviewVersion() {
-        return contains(de.droidwiki.R.string.preference_key_link_preview_version);
-    }
-
     public static void removeLoginUsername() {
-        remove(de.droidwiki.R.string.preference_key_login_username);
+        remove(R.string.preference_key_login_username);
     }
 
     @Nullable
     public static String getLoginPassword() {
-        return getString(de.droidwiki.R.string.preference_key_login_password, null);
+        return getString(R.string.preference_key_login_password, null);
     }
 
     public static void setLoginPassword(@Nullable String password) {
-        setString(de.droidwiki.R.string.preference_key_login_password, password);
+        setString(R.string.preference_key_login_password, password);
     }
 
     public static boolean hasLoginPassword() {
-        return contains(de.droidwiki.R.string.preference_key_login_password);
+        return contains(R.string.preference_key_login_password);
     }
 
     public static void removeLoginPassword() {
-        remove(de.droidwiki.R.string.preference_key_login_password);
+        remove(R.string.preference_key_login_password);
     }
 
     public static int getLoginUserId() {
-        return getInt(de.droidwiki.R.string.preference_key_login_user_id, 0);
+        return getInt(R.string.preference_key_login_user_id, 0);
     }
 
     public static void setLoginUserId(int id) {
-        setInt(de.droidwiki.R.string.preference_key_login_user_id, id);
+        setInt(R.string.preference_key_login_user_id, id);
     }
 
     public static void removeLoginUserId() {
-        remove(de.droidwiki.R.string.preference_key_login_user_id);
+        remove(R.string.preference_key_login_user_id);
     }
 
     @Nullable
     public static String getLoginUsername() {
-        return getString(de.droidwiki.R.string.preference_key_login_username, null);
+        return getString(R.string.preference_key_login_username, null);
     }
 
     public static void setLoginUsername(@Nullable String username) {
-        setString(de.droidwiki.R.string.preference_key_login_username, username);
+        setString(R.string.preference_key_login_username, username);
     }
 
     public static boolean hasLoginUsername() {
-        return contains(de.droidwiki.R.string.preference_key_login_username);
+        return contains(R.string.preference_key_login_username);
     }
 
     @Nullable
     public static String getMruLanguageCodeCsv() {
-        return getString(de.droidwiki.R.string.preference_key_language_mru, null);
+        return getString(R.string.preference_key_language_mru, null);
     }
 
     public static void setMruLanguageCodeCsv(@Nullable String csv) {
-        setString(de.droidwiki.R.string.preference_key_language_mru, csv);
+        setString(R.string.preference_key_language_mru, csv);
     }
 
     @NonNull
     public static String getRemoteConfigJson() {
-        return getString(de.droidwiki.R.string.preference_key_remote_config, "{}");
+        return getString(R.string.preference_key_remote_config, "{}");
     }
 
     public static void setRemoteConfigJson(@Nullable String json) {
-        setString(de.droidwiki.R.string.preference_key_remote_config, json);
+        setString(R.string.preference_key_remote_config, json);
     }
 
     public static void setTabs(@NonNull List<Tab> tabs) {
-        setString(de.droidwiki.R.string.preference_key_tabs, GsonMarshaller.marshal(tabs));
+        setString(R.string.preference_key_tabs, GsonMarshaller.marshal(tabs));
     }
 
     @NonNull
     public static List<Tab> getTabs() {
         return hasTabs()
-                ? TabUnmarshaller.unmarshal(getString(de.droidwiki.R.string.preference_key_tabs, null))
+                ? TabUnmarshaller.unmarshal(getString(R.string.preference_key_tabs, null))
                 : Collections.<Tab>emptyList();
     }
 
     public static boolean hasTabs() {
-        return contains(de.droidwiki.R.string.preference_key_tabs);
+        return contains(R.string.preference_key_tabs);
+    }
+
+    public static void setSessionData(@NonNull SessionData data) {
+        setString(R.string.preference_key_session_data, GsonMarshaller.marshal(data));
+    }
+
+    @NonNull
+    public static SessionData getSessionData() {
+        return hasSessionData()
+                ? SessionUnmarshaller.unmarshal(getString(R.string.preference_key_session_data, null))
+                : new SessionData();
+    }
+
+    public static boolean hasSessionData() {
+        return contains(R.string.preference_key_session_data);
+    }
+
+    public static int getSessionTimeout() {
+        // return the timeout, but don't let it be less than the minimum
+        return Math.max(getInt(R.string.preference_key_session_timeout, SessionFunnel.DEFAULT_SESSION_TIMEOUT), SessionFunnel.MIN_SESSION_TIMEOUT);
     }
 
     public static int getTextSizeMultiplier() {
-        return getInt(de.droidwiki.R.string.preference_key_text_size_multiplier, 0);
+        return getInt(R.string.preference_key_text_size_multiplier, 0);
     }
 
     public static void setTextSizeMultiplier(int multiplier) {
-        setInt(de.droidwiki.R.string.preference_key_text_size_multiplier, multiplier);
+        setInt(R.string.preference_key_text_size_multiplier, multiplier);
     }
 
     public static boolean isEventLoggingEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_eventlogging_opt_in, true);
+        return getBoolean(R.string.preference_key_eventlogging_opt_in, true);
     }
 
     public static boolean isExperimentalHtmlPageLoadEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_exp_html_page_load, false);
+        return getBoolean(R.string.preference_key_exp_html_page_load, false);
     }
 
-    public static void setExperimentalHtmlPageLoadEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_exp_html_page_load, enabled);
+    public static boolean useRestBaseSetManually() {
+        return getBoolean(R.string.preference_key_use_restbase_manual, false);
     }
 
-    public static boolean isRESTBaseJsonPageLoadEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_exp_json_page_load, false);
+    public static boolean useRestBase() {
+        return getBoolean(R.string.preference_key_use_restbase, false);
     }
 
-    public static void setExperimentalJsonPageLoadEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_exp_json_page_load, enabled);
+    public static void setUseRestBase(boolean enabled) {
+        setBoolean(R.string.preference_key_use_restbase, enabled);
+    }
+
+    public static int getRbTicket(int defaultValue) {
+        return getInt(R.string.preference_key_restbase_ticket, defaultValue);
+    }
+
+    public static void setRbTicket(int rbTicket) {
+        setInt(R.string.preference_key_restbase_ticket, rbTicket);
+    }
+
+    public static int getRequestSuccessCounter(int defaultValue) {
+        return getInt(R.string.preference_key_request_successes, defaultValue);
+    }
+
+    public static void setRequestSuccessCounter(int successes) {
+        setInt(R.string.preference_key_request_successes, successes);
+    }
+
+    public static RestAdapter.LogLevel getRetrofitLogLevel() {
+        String prefValue = getString(R.string.preference_key_retrofit_log_level, null);
+        if (prefValue == null) {
+            return RestAdapter.LogLevel.NONE;
+        }
+        switch (prefValue) {
+            case "BASIC":
+                return RestAdapter.LogLevel.BASIC;
+            case "HEADERS":
+                return RestAdapter.LogLevel.HEADERS;
+            case "HEADERS_AND_ARGS":
+                return RestAdapter.LogLevel.HEADERS_AND_ARGS;
+            case "FULL":
+                return RestAdapter.LogLevel.FULL;
+            case "NONE":
+            default:
+                return RestAdapter.LogLevel.NONE;
+        }
+    }
+
+    public static String getRestbaseUriFormat() {
+        return getString(R.string.preference_key_restbase_uri_format, "%1$s://%2$s/api/rest_v1");
     }
 
     public static long getLastRunTime(@NonNull String task) {
@@ -248,59 +306,63 @@ public final class Prefs {
     }
 
     public static boolean isShowZeroInterstitialEnabled() {
-        return false;
+        return getBoolean(R.string.preference_key_zero_interstitial, true);
     }
 
     public static boolean isSelectTextTutorialEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_select_text_tutorial_enabled, true);
+        return getBoolean(R.string.preference_key_select_text_tutorial_enabled, true);
     }
 
     public static void setSelectTextTutorialEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_select_text_tutorial_enabled, enabled);
+        setBoolean(R.string.preference_key_select_text_tutorial_enabled, enabled);
     }
 
     public static boolean isShareTutorialEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_share_tutorial_enabled, true);
+        return getBoolean(R.string.preference_key_share_tutorial_enabled, true);
     }
 
     public static void setShareTutorialEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_share_tutorial_enabled, enabled);
+        setBoolean(R.string.preference_key_share_tutorial_enabled, enabled);
     }
 
     public static boolean isFeatureSelectTextAndShareTutorialEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_feature_select_text_and_share_tutorials_enabled, true);
+        return getBoolean(R.string.preference_key_feature_select_text_and_share_tutorials_enabled, true);
     }
 
     public static void setFeatureSelectTextAndShareTutorialEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_feature_select_text_and_share_tutorials_enabled, enabled);
+        setBoolean(R.string.preference_key_feature_select_text_and_share_tutorials_enabled, enabled);
     }
 
     public static boolean hasFeatureSelectTextAndShareTutorial() {
-        return contains(de.droidwiki.R.string.preference_key_feature_select_text_and_share_tutorials_enabled);
+        return contains(R.string.preference_key_feature_select_text_and_share_tutorials_enabled);
     }
 
     public static boolean isTocTutorialEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_toc_tutorial_enabled, true);
+        return getBoolean(R.string.preference_key_toc_tutorial_enabled, true);
     }
 
     public static void setTocTutorialEnabled(boolean enabled) {
-        setBoolean(de.droidwiki.R.string.preference_key_toc_tutorial_enabled, enabled);
+        setBoolean(R.string.preference_key_toc_tutorial_enabled, enabled);
     }
 
     public static boolean isImageDownloadEnabled() {
-        return getBoolean(de.droidwiki.R.string.preference_key_show_images, true);
+        return getBoolean(R.string.preference_key_show_images, true);
     }
 
     private static String getCookiesForDomainKey(@NonNull String domain) {
-        return getKey(de.droidwiki.R.string.preference_key_cookies_for_domain_format, domain);
+        return getKey(R.string.preference_key_cookies_for_domain_format, domain);
     }
 
     private static String getLastRunTimeKey(@NonNull String task) {
-        return getKey(de.droidwiki.R.string.preference_key_last_run_time_format, task);
+        return getKey(R.string.preference_key_last_run_time_format, task);
     }
 
     private static String getEditTokenForWikiKey(String wiki) {
-        return getKey(de.droidwiki.R.string.preference_key_edittoken_for_wiki_format, wiki);
+        return getKey(R.string.preference_key_edittoken_for_wiki_format, wiki);
+    }
+
+    public static boolean isLinkPreviewEnabled() {
+        return getBoolean(R.string.preference_key_show_link_previews, true);
     }
 
     private Prefs() { }

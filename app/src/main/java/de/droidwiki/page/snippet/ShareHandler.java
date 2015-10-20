@@ -4,12 +4,10 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.IntegerRes;
 import android.support.annotation.NonNull;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.view.ActionMode;
 import android.util.Log;
 import android.view.Menu;
@@ -24,6 +22,7 @@ import de.droidwiki.page.ImageLicense;
 import de.droidwiki.page.ImageLicenseFetchTask;
 import de.droidwiki.bridge.CommunicationBridge;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.ShareAFactFunnel;
 import de.droidwiki.page.BottomDialog;
@@ -33,11 +32,13 @@ import de.droidwiki.page.PageProperties;
 import de.droidwiki.page.PageFragment;
 import de.droidwiki.tooltip.ToolTipUtil;
 import de.droidwiki.activity.ActivityUtil;
-import de.droidwiki.util.ApiUtil;
+import de.droidwiki.util.ClipboardUtil;
+import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.util.ShareUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import de.droidwiki.util.log.L;
 
 import java.util.Map;
 
@@ -48,9 +49,12 @@ import static de.droidwiki.analytics.ShareAFactFunnel.ShareMode;
  */
 public class ShareHandler {
     public static final String TAG = "ShareHandler";
+    private static final String PAYLOAD_PURPOSE_KEY = "purpose";
+    private static final String PAYLOAD_PURPOSE_SHARE = "share";
+    private static final String PAYLOAD_PURPOSE_COPY = "copy";
+    private static final String PAYLOAD_TEXT_KEY = "text";
 
-    @ColorRes private static final int SHARE_TOOL_TIP_COLOR = de.droidwiki.R.color.blue_liberal;
-    @ColorInt private static final int DEFAULT_ICON_COLOR = Color.WHITE;
+    @ColorRes private static final int SHARE_TOOL_TIP_COLOR = R.color.blue_liberal;
 
     private final PageActivity activity;
     private final CommunicationBridge bridge;
@@ -73,27 +77,41 @@ public class ShareHandler {
         bridge.addListener("onGetTextSelection", new CommunicationBridge.JSEventListener() {
             @Override
             public void onMessage(String messageType, JSONObject messagePayload) {
-                String purpose = messagePayload.optString("purpose", "");
-                String text = messagePayload.optString("text", "");
-                if (purpose.equals("share")) {
-                    createFunnel();
-                    shareSnippet(text);
-                    funnel.logShareTap(text);
+                String purpose = messagePayload.optString(PAYLOAD_PURPOSE_KEY, "");
+                String text = messagePayload.optString(PAYLOAD_TEXT_KEY, "");
+                switch (purpose) {
+                    case PAYLOAD_PURPOSE_SHARE:
+                        onSharePayload(text);
+                        break;
+                    case PAYLOAD_PURPOSE_COPY:
+                        onCopyPayload(text);
+                        break;
+                    default:
+                        L.d("Unknown purpose=" + purpose);
                 }
             }
         });
     }
 
-    private void requestTextSelection() {
-        // send an event to the WebView that will make it return the
-        // selected text (or first paragraph) back to us...
-        try {
-            JSONObject payload = new JSONObject();
-            payload.put("purpose", "share");
-            bridge.sendMessage("getTextSelection", payload);
-        } catch (JSONException e) {
-            //nope
+    private void onSharePayload(String text) {
+        if (funnel == null) {
+            createFunnel();
         }
+        shareSnippet(text);
+        funnel.logShareTap(text);
+    }
+
+    private void onCopyPayload(String text) {
+        copyText(text);
+        showCopySnackbar();
+    }
+
+    private void copyText(String text) {
+        ClipboardUtil.setPlainText(activity, text, text);
+    }
+
+    private void showCopySnackbar() {
+        FeedbackUtil.showMessage(activity, R.string.text_copied);
     }
 
     public void onDestroy() {
@@ -161,21 +179,7 @@ public class ShareHandler {
     public void onTextSelected(ActionMode mode) {
         webViewActionMode = mode;
         Menu menu = mode.getMenu();
-
-        // Hide "select all" and "web search" menu items (but leave them enabled)
-        hideSystemMenuItems(menu, "select_all", "web_search");
-
-        // Find the "share" context menu item from the WebView's action mode.
-        MenuItem shareItem = getSystemMenuItemByName(menu, "share");
-
-        // if we were unable to find the Share button, then inject our own!
-        if (shareItem == null) {
-            shareItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE,
-                    activity.getString(de.droidwiki.R.string.menu_share_page));
-            shareItem.setIcon(de.droidwiki.R.drawable.ic_share_dark);
-            MenuItemCompat.setShowAsAction(shareItem, MenuItemCompat.SHOW_AS_ACTION_ALWAYS
-                                                      | MenuItemCompat.SHOW_AS_ACTION_WITH_TEXT);
-        }
+        MenuItem shareItem = menu.findItem(R.id.menu_text_select_share);
 
         if (WikipediaApp.getInstance().isFeatureSelectTextAndShareTutorialEnabled()
                 && WikipediaApp.getInstance().getOnboardingStateMachine().isShareTutorialEnabled()) {
@@ -183,73 +187,13 @@ public class ShareHandler {
             WikipediaApp.getInstance().getOnboardingStateMachine().setShareTutorial();
         }
 
-        // provide our own listener for the Share button...
-        shareItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                requestTextSelection();
-
-                // leave context mode...
-                if (webViewActionMode != null) {
-                    webViewActionMode.finish();
-                    webViewActionMode = null;
-                }
-                return true;
-            }
-        });
+        // Provide our own listeners for the copy and share buttons.
+        shareItem.setOnMenuItemClickListener(new RequestTextSelectOnMenuItemClickListener(PAYLOAD_PURPOSE_SHARE));
+        MenuItem copyItem = menu.findItem(R.id.menu_text_select_copy);
+        copyItem.setOnMenuItemClickListener(new RequestTextSelectOnMenuItemClickListener(PAYLOAD_PURPOSE_COPY));
 
         createFunnel();
         funnel.logHighlight();
-    }
-
-    /**
-     * Hide desired items from a system-controlled context menu.
-     * @param menu Menu on which to hide buttons.
-     * @param itemNames List of menu item resource names.
-     */
-    private void hideSystemMenuItems(Menu menu, String... itemNames) {
-        for (String itemName : itemNames) {
-            MenuItem item = getSystemMenuItemByName(menu, itemName);
-            if (item != null) {
-                item.setVisible(false);
-            }
-        }
-    }
-
-    /**
-     * Retrieve a specific menu item from a context menu that is controlled by the system
-     * by searching for the item by its actual resource name.
-     * @param menu Menu to search.
-     * @param nameSubstring Portion of the resource name to match.
-     * @return The requested menu item, or null if it wasn't found.
-     */
-    private MenuItem getSystemMenuItemByName(Menu menu, String nameSubstring) {
-        MenuItem foundItem = null;
-        for (int i = 0; i < menu.size(); i++) {
-            MenuItem item = menu.getItem(i);
-            String resourceName = null;
-            try {
-                resourceName = activity.getResources().getResourceName(item.getItemId());
-            } catch (Resources.NotFoundException e) {
-                // Looks like some devices don't provide access to these menu items through
-                // the context of the app, in which case, there's nothing we can do...
-            }
-            if (resourceName != null && resourceName.contains(nameSubstring)) {
-                foundItem = item;
-            }
-            // In APIs lower than 21, some of the action mode icons may not respect the
-            // current theme, so we need to manually tint those icons.
-            if (!ApiUtil.hasLollipop()) {
-                fixMenuItemTheme(item);
-            }
-        }
-        return foundItem;
-    }
-
-    private void fixMenuItemTheme(MenuItem item) {
-        if (item != null && item.getIcon() != null) {
-            WikipediaApp.getInstance().setDrawableTint(item.getIcon(), DEFAULT_ICON_COLOR);
-        }
     }
 
     private void showShareOnboarding(MenuItem shareItem) {
@@ -289,6 +233,37 @@ public class ShareHandler {
 
     private Resources getResources() {
         return activity.getResources();
+    }
+
+    private class RequestTextSelectOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener {
+        @NonNull private final String purpose;
+        public RequestTextSelectOnMenuItemClickListener(@NonNull String purpose) {
+            this.purpose = purpose;
+        }
+
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            requestTextSelection(purpose);
+
+            // leave context mode...
+            if (webViewActionMode != null) {
+                webViewActionMode.finish();
+                webViewActionMode = null;
+            }
+            return true;
+        }
+
+        private void requestTextSelection(String purpose) {
+            // send an event to the WebView that will make it return the
+            // selected text (or first paragraph) back to us...
+            try {
+                JSONObject payload = new JSONObject();
+                payload.put(PAYLOAD_PURPOSE_KEY, purpose);
+                bridge.sendMessage("getTextSelection", payload);
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
 

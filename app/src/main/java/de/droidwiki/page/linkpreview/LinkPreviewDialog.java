@@ -13,8 +13,13 @@ import de.droidwiki.page.gallery.GalleryActivity;
 import de.droidwiki.page.gallery.GalleryCollection;
 import de.droidwiki.page.gallery.GalleryCollectionFetchTask;
 import de.droidwiki.page.gallery.GalleryThumbnailScrollView;
+import de.droidwiki.server.PageLead;
+import de.droidwiki.server.PageServiceFactory;
+import de.droidwiki.server.restbase.RbPageLead;
+import de.droidwiki.settings.RbSwitch;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.FeedbackUtil;
+import de.droidwiki.util.PageLoadUtil;
 import de.droidwiki.views.ViewUtil;
 
 import android.content.DialogInterface;
@@ -26,11 +31,17 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.Map;
+
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
+import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
+import static de.droidwiki.util.L10nUtils.setConditionalLayoutDirection;
 
 public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogInterface.OnDismissListener {
     private static final String TAG = "LinkPreviewDialog";
@@ -79,17 +90,13 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(STYLE_NO_TITLE, R.style.LinkPreviewDialog);
-        int dimenId = R.dimen.linkPreviewPeekHeight;
-        if (!WikipediaApp.getInstance().isProdRelease()) {
-            dimenId = WikipediaApp.getInstance().getLinkPreviewVersion() == 1
-                    ? R.dimen.linkPreviewPeekHeight : R.dimen.linkPreviewPeekHeightB;
-        }
-        setDialogPeekHeight((int) getResources().getDimension(dimenId));
+        setContentPeekHeight((int) getResources().getDimension(R.dimen.linkPreviewPeekHeight));
     }
 
     @Override
     protected View inflateDialogView(LayoutInflater inflater, ViewGroup container) {
         WikipediaApp app = WikipediaApp.getInstance();
+        boolean shouldLoadImages = app.isImageDownloadEnabled();
         pageTitle = getArguments().getParcelable("title");
         entrySource = getArguments().getInt("entrySource");
 
@@ -98,6 +105,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         rootView.findViewById(R.id.link_preview_toolbar).setOnClickListener(goToPageListener);
         TextView titleText = (TextView) rootView.findViewById(R.id.link_preview_title);
         titleText.setText(pageTitle.getDisplayText());
+        setConditionalLayoutDirection(rootView, pageTitle.getSite().getLanguageCode());
         if (!ApiUtil.hasKitKat()) {
             // for oldish devices, reset line spacing to 1, since it truncates the descenders.
             titleText.setLineSpacing(0, 1.0f);
@@ -111,13 +119,15 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         onNavigateListener = new DefaultOnNavigateListener();
         extractText = (TextView) rootView.findViewById(R.id.link_preview_extract);
 
-        thumbnailGallery = (GalleryThumbnailScrollView) rootView.findViewById(de.droidwiki.R.id.link_preview_thumbnail_gallery);
-        if (app.isImageDownloadEnabled()) {
+        thumbnailGallery = (GalleryThumbnailScrollView) rootView.findViewById(R.id.link_preview_thumbnail_gallery);
+        if (shouldLoadImages) {
             new GalleryThumbnailFetchTask(pageTitle).execute();
             thumbnailGallery.setGalleryViewListener(galleryViewListener);
         }
 
-        rootView.findViewById(R.id.link_preview_go_button).setOnClickListener(goToPageListener);
+        Button goButton = (Button) rootView.findViewById(R.id.link_preview_go_button);
+        goButton.setOnClickListener(goToPageListener);
+        goButton.setText(getStringForArticleLanguage(pageTitle, R.string.button_continue_to_article));
 
         final View overflowButton = rootView.findViewById(de.droidwiki.R.id.link_preview_overflow_button);
         overflowButton.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +144,13 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         progressBar.setVisibility(View.VISIBLE);
 
         // and kick off the task to load all the things...
-        new LinkPreviewFetchTask(app.getAPIForSite(pageTitle.getSite()), pageTitle).execute();
+        // Use RESTBase if the user is in the sample group
+        if (pageTitle.getSite().getLanguageCode().equalsIgnoreCase("en")
+                && RbSwitch.INSTANCE.isRestBaseEnabled()) {
+            loadContentWithRestBase(shouldLoadImages);
+        } else {
+            loadContentWithMwapi();
+        }
 
         funnel = new LinkPreviewFunnel(app, pageTitle);
         funnel.logLinkClick();
@@ -144,10 +160,6 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
 
     public interface OnNavigateListener {
         void onNavigate(PageTitle title);
-    }
-
-    public void setOnNavigateListener(OnNavigateListener listener) {
-        onNavigateListener = listener;
     }
 
     public void goToLinkedPage() {
@@ -175,6 +187,42 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         }
     }
 
+    private void loadContentWithMwapi() {
+        Log.v(TAG, "Loading link preview with MWAPI");
+        new LinkPreviewMwapiFetchTask(WikipediaApp.getInstance().getAPIForSite(pageTitle.getSite()), pageTitle).execute();
+    }
+
+    private void loadContentWithRestBase(boolean shouldLoadImages) {
+        Log.v(TAG, "Loading link preview with RESTBase");
+        PageServiceFactory.create(pageTitle.getSite()).pageLead(
+                pageTitle.getPrefixedText(),
+                PageLoadUtil.calculateLeadImageWidth(),
+                !shouldLoadImages,
+                linkPreviewOnLoadCallback);
+    }
+
+    private PageLead.Callback linkPreviewOnLoadCallback = new PageLead.Callback() {
+        @Override
+        public void success(PageLead pageLead, Response response) {
+            Log.v(TAG, response.getUrl());
+            progressBar.setVisibility(View.GONE);
+            if (pageLead.getLeadSectionContent() != null) {
+                contents = new LinkPreviewContents((RbPageLead) pageLead, pageTitle.getSite());
+                layoutPreview();
+            } else {
+                FeedbackUtil.showMessage(getActivity(), R.string.error_network_error);
+                dismiss();
+            }
+        }
+
+        @Override
+        public void failure(RetrofitError error) {
+            Log.e(TAG, "Link preview fetch error: " + error);
+            // Fall back to MWAPI
+            loadContentWithMwapi();
+        }
+    };
+
     private PageActivity getPageActivity() {
         return (PageActivity) getActivity();
     }
@@ -183,6 +231,11 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
+                case R.id.menu_link_preview_open_in_new_tab:
+                    overflowMenuHandler.onOpenInNewTab(pageTitle,
+                            new HistoryEntry(pageTitle, entrySource));
+                    dismiss();
+                    return true;
                 case R.id.menu_link_preview_save_page:
                     overflowMenuHandler.onSavePage(pageTitle);
                     dismiss();
@@ -209,8 +262,8 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         }
     }
 
-    private class LinkPreviewFetchTask extends PreviewFetchTask {
-        public LinkPreviewFetchTask(Api api, PageTitle title) {
+    private class LinkPreviewMwapiFetchTask extends PreviewFetchTask {
+        public LinkPreviewMwapiFetchTask(Api api, PageTitle title) {
             super(api, title);
         }
 
@@ -244,10 +297,6 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         if (contents.getExtract().length() > 0) {
             extractText.setText(contents.getExtract());
         }
-
-        LinearLayout.LayoutParams extractLayoutParams = (LinearLayout.LayoutParams) extractText.getLayoutParams();
-        extractLayoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        extractText.setLayoutParams(extractLayoutParams);
     }
 
     private class GalleryThumbnailFetchTask extends GalleryCollectionFetchTask {
@@ -259,7 +308,15 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         public void onGalleryResult(GalleryCollection result) {
             if (result.getItemList().size() > 2) {
                 thumbnailGallery.setGalleryCollection(result);
-                thumbnailGallery.setVisibility(View.VISIBLE);
+
+                // When the visibility is immediately changed, the images flicker. Add a short delay.
+                final int animationDelayMillis = 100;
+                thumbnailGallery.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        thumbnailGallery.setVisibility(View.VISIBLE);
+                    }
+                }, animationDelayMillis);
             }
         }
 

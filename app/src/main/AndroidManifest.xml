@@ -37,8 +37,8 @@
         <meta-data android:name="@string/preference_key_app_channel" android:value="@string/channel" />
         <!-- Don't delete the meta-data field above -->
 
-        <activity android:name="de.droidwiki.page.PageActivity"
-                  android:theme="@style/NoTitle"
+        <activity android:name=".page.PageActivity"
+                  android:theme="@style/PageTheme"
                   android:windowSoftInputMode="stateHidden"
                   android:configChanges="orientation|screenSize"
                   android:launchMode="singleTask">
@@ -52,20 +52,13 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name="org.acra.CrashReportDialog"
-                  android:launchMode="singleInstance"
+        <activity android:name=".crash.CrashReportActivity"
+                  android:label="@string/crash_report_activity_title"
+                  android:noHistory="true"
                   android:excludeFromRecents="true"
-                  android:finishOnTaskLaunch="true"
-                  android:exported="false"
                 />
-        <activity android:name="de.droidwiki.settings.SettingsActivity"
-                  android:label="@string/more_activity_title"
-                  android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
-                  android:exported="false"
-                />
-        <!-- Settings activity specifically for API 10 (remove when we drop support for API 10) -->
-        <activity android:name="de.droidwiki.settings.SettingsActivityGB"
-                  android:label="@string/more_activity_title"
+        <activity android:name=".settings.SettingsActivity"
+                  android:label="@string/settings_activity_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
@@ -74,12 +67,7 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
             android:exported="false"
             />
-        <activity android:name="de.droidwiki.settings.DeveloperSettingsActivityGB"
-            android:label="@string/developer_settings_activity_title"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
-            android:exported="false"
-            />
-        <activity android:name="de.droidwiki.settings.AboutActivity"
+        <activity android:name=".settings.AboutActivity"
                   android:label="@string/about_activity_title"
                   android:exported="false">
             <intent-filter>
@@ -109,12 +97,7 @@
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.pagehistory.usercontributions.UserContribsActivity"
-                  android:label="@string/activity_my_contributions_title"
-                  android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
-                  android:exported="false"
-                />
-        <activity android:name="de.droidwiki.page.gallery.GalleryActivity"
+        <activity android:name=".page.gallery.GalleryActivity"
                   android:theme="@style/NoTitle"
                   android:exported="false"
                 />

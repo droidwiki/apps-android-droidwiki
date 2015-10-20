@@ -3,7 +3,9 @@ package de.droidwiki.page;
 import de.droidwiki.Utils;
 import de.droidwiki.util.ApiUtil;
 
+import android.annotation.TargetApi;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.view.ActionProvider;
 import android.support.v7.widget.SearchView;
 import android.view.View;
@@ -120,6 +122,7 @@ public class FindInPageActionProvider extends ActionProvider {
         return true;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void findInPage(String s) {
         // to make it stop complaining
         if (ApiUtil.hasJellyBean()) {
@@ -147,6 +150,7 @@ public class FindInPageActionProvider extends ActionProvider {
             });
             parentActivity.getCurPageFragment().getWebView().findAllAsync(s);
         } else {
+            //noinspection deprecation
             parentActivity.getCurPageFragment().getWebView().findAll(s);
         }
     }

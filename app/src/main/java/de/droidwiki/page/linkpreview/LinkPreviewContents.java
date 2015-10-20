@@ -1,5 +1,6 @@
 package de.droidwiki.page.linkpreview;
 
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import de.droidwiki.page.PageTitle;
@@ -7,7 +8,7 @@ import de.droidwiki.Site;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import de.droidwiki.Utils;
+import de.droidwiki.server.restbase.RbPageLead;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
@@ -22,26 +23,27 @@ public class LinkPreviewContents {
         return title;
     }
 
-    private final String leadImageName;
-    public String getLeadImageName() {
-        return leadImageName;
-    }
-
     private final String extract;
     public String getExtract() {
         return extract;
     }
 
-    public LinkPreviewContents(JSONObject json, Site site) throws JSONException {
+    public LinkPreviewContents(@NonNull JSONObject json, @NonNull Site site) throws JSONException {
         title = new PageTitle(json.getString("title"), site);
         extract = makeStringFromSentences(getSentences(removeParens(json.optString("extract")), site), EXTRACT_MAX_SENTENCES);
         if (json.has("thumbnail")) {
             title.setThumbUrl(json.getJSONObject("thumbnail").optString("source"));
         }
         if (json.has("terms") && json.getJSONObject("terms").has("description")) {
-            title.setDescription(Utils.capitalizeFirstChar(json.getJSONObject("terms").getJSONArray("description").optString(0)));
+            title.setDescription(json.getJSONObject("terms").getJSONArray("description").optString(0));
         }
-        leadImageName = json.has("pageimage") ? "File:" + json.optString("pageimage") : null;
+    }
+
+    public LinkPreviewContents(@NonNull RbPageLead pageLead, @NonNull Site site) {
+        title = new PageTitle(pageLead.getDisplayTitle(), site);
+        extract = pageLead.getExtract();
+        title.setThumbUrl(pageLead.getLeadImageUrl());
+        title.setDescription(pageLead.getDescription());
     }
 
     /**

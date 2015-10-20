@@ -89,9 +89,14 @@ bridge.registerListener( "displayLeadSection", function( payload ) {
     // dimension measurements for items.
     document.getElementById( "content" ).appendChild( content );
 
-    content = transformer.transform( "leadSection", content );
-    content = transformer.transform( "section", content );
-    content = transformer.transform( "hideIPA", content );
+    transformer.transform( "moveFirstGoodParagraphUp" );
+    transformer.transform( "addDarkModeStyles", content );
+    transformer.transform( "hideRedLinks", content );
+    transformer.transform( "setDivWidth", content );
+    transformer.transform( "setMathFormulaImageMaxWidth", content );
+    transformer.transform( "anchorPopUpMediaTransforms", content );
+    transformer.transform( "hideIPA", content );
+
     if (!window.isMainPage) {
         content = transformer.transform( "hideTables", content );
         content = transformer.transform( "addImageOverflowXContainers", content );
@@ -160,10 +165,13 @@ function elementsForSection( section ) {
     content.setAttribute( "dir", window.directionality );
     content.innerHTML = section.text;
     content.id = "content_block_" + section.id;
-    content = transformer.transform( "section", content );
-    content = transformer.transform( "hideTables", content );
-    content = transformer.transform( "hideIPA", content );
-    content = transformer.transform( "hideRefs", content );
+    transformer.transform( "addDarkModeStyles", content );
+    transformer.transform( "hideRedLinks", content );
+    transformer.transform( "setDivWidth", content );
+    transformer.transform( "setMathFormulaImageMaxWidth", content );
+    transformer.transform( "anchorPopUpMediaTransforms", content );
+    transformer.transform( "hideIPA", content );
+    transformer.transform( "hideRefs", content );
     if (!window.isMainPage) {
         content = transformer.transform( "addImageOverflowXContainers", content );
         content = transformer.transform( "widenImages", content );
@@ -213,7 +221,7 @@ function scrollToSection( anchor ) {
         window.scrollTo( 0, 0 );
     } else {
         var el = document.getElementById( anchor );
-        var scrollY = el.offsetTop - 48;
+        var scrollY = el.offsetTop - transformer.getDecorOffset();
         window.scrollTo( 0, scrollY );
     }
 }

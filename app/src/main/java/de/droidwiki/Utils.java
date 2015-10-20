@@ -10,9 +10,9 @@ import android.content.pm.ResolveInfo;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Looper;
+import android.support.annotation.DimenRes;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.text.Html;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.DisplayMetrics;
@@ -26,10 +26,9 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import de.droidwiki.bridge.CommunicationBridge;
-import de.droidwiki.interlanguage.LanguageUtil;
 import de.droidwiki.settings.Prefs;
 import de.droidwiki.util.ApiUtil;
+import de.droidwiki.util.DimenUtil;
 import de.droidwiki.util.ShareUtils;
 
 import java.io.BufferedReader;
@@ -45,13 +44,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Contains utility methods that Java doesn't have because we can't make code look too good, can we?
@@ -84,7 +78,7 @@ public final class Utils {
      * @param orig original string
      * @return same string as orig, except the first letter is capitalized
      */
-    public static String capitalizeFirstChar(String orig) {
+    public static String capitalizeFirstChar(@NonNull String orig) {
         return orig.substring(0, 1).toUpperCase() + orig.substring(1);
     }
 
@@ -229,71 +223,7 @@ public final class Utils {
      * @see <a href='http://stackoverflow.com/questions/14413575/how-to-write-style-to-error-text-of-edittext-in-android'>StackOverflow: How to write style to error text of EditText in Android?</a>
      */
     public static void setErrorPopup(TextView textView, String error) {
-        if (ApiUtil.hasHoneyComb()) {
-            textView.setError(error);
-        } else {
-            textView.setError(Html.fromHtml("<font color='red'>" + error + "</font>"));
-        }
-    }
-
-    /**
-     * List of wiki language codes for which the content is primarily RTL.
-     *
-     * Ensure that this is always sorted alphabetically.
-     */
-    private static final String[] RTL_LANGS = {
-            "ar", "arc", "arz", "bcc", "bqi", "ckb", "dv", "fa", "glk", "he",
-            "khw", "ks", "mzn", "pnb", "ps", "sd", "ug", "ur", "yi"
-    };
-
-    /**
-     * Returns true if the given wiki language is to be displayed RTL.
-     *
-     * @param lang Wiki code for the language to check for directionality
-     * @return true if it is RTL, false if LTR
-     */
-    public static boolean isLangRTL(String lang) {
-        return Arrays.binarySearch(RTL_LANGS, lang, null) >= 0;
-    }
-
-    /**
-     * Setup directionality for both UI and content elements in a webview.
-     *
-     * @param contentLang The Content language to use to set directionality. Wiki Language code.
-     * @param uiLang The UI language to use to set directionality. Java language code.
-     * @param bridge The CommunicationBridge to use to communicate with the WebView
-     */
-    public static void setupDirectionality(String contentLang, String uiLang, CommunicationBridge bridge) {
-        JSONObject payload = new JSONObject();
-        try {
-            if (isLangRTL(contentLang)) {
-                payload.put("contentDirection", "rtl");
-            } else {
-                payload.put("contentDirection", "ltr");
-            }
-            if (isLangRTL(LanguageUtil.languageCodeToWikiLanguageCode(uiLang))) {
-                payload.put("uiDirection", "rtl");
-            } else {
-                payload.put("uiDirection", "ltr");
-            }
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
-        bridge.sendMessage("setDirectionality", payload);
-    }
-
-    /**
-     * Sets text direction (RTL / LTR) for given view based on given lang.
-     *
-     * Doesn't do anything on pre Android 4.2, since their RTL support is terrible.
-     *
-     * @param view View to set direction of
-     * @param lang Wiki code for the language based on which to set direction
-     */
-    public static void setTextDirection(View view, String lang) {
-        if (ApiUtil.hasJellyBeanMr1()) {
-            view.setTextDirection(Utils.isLangRTL(lang) ? View.TEXT_DIRECTION_RTL : View.TEXT_DIRECTION_LTR);
-        }
+        textView.setError(error);
     }
 
     /**
@@ -463,38 +393,6 @@ public final class Utils {
     }
 
     /**
-     * Format for formatting/parsing dates to/from the ISO 8601 standard
-     */
-    private static final String ISO8601_FORMAT_STRING = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-
-    /**
-     * Parse a date formatted in ISO8601 format.
-     *
-     * @param dateString Date String to parse
-     * @return Parsed Date object.
-     * @throws ParseException
-     */
-    public static Date parseISO8601(String dateString) throws ParseException {
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(ISO8601_FORMAT_STRING, Locale.ROOT);
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        date.setTime(sdf.parse(dateString).getTime());
-        return date;
-    }
-
-    /**
-     * Format a date to an ISO8601 formatted string.
-     *
-     * @param date Date to format.
-     * @return The given date formatted in ISO8601 format.
-     */
-    public static String formatISO8601(Date date) {
-        SimpleDateFormat sdf = new SimpleDateFormat(ISO8601_FORMAT_STRING, Locale.ROOT);
-        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return sdf.format(date);
-    }
-
-    /**
      * Convert a JSONArray object to a String Array.
      *
      * @param array a JSONArray containing only Strings
@@ -536,20 +434,58 @@ public final class Utils {
         return tv.resourceId;
     }
 
+    public static int getContentTopOffsetPx(Context context) {
+        return DimenUtil.roundedDpToPx(getContentTopOffset(context));
+    }
+
+    public static float getContentTopOffset(Context context) {
+        return getToolbarHeight(context) + getTranslucentStatusBarHeight(context);
+    }
+
+    public static int getTranslucentStatusBarHeightPx(Context context) {
+        return DimenUtil.roundedDpToPx(getTranslucentStatusBarHeight(context));
+    }
+
+    /** @return Height of status bar if translucency is enabled, zero otherwise. */
+    public static float getTranslucentStatusBarHeight(Context context) {
+        return isStatusBarTranslucent() ? getStatusBarHeight(context) : 0;
+    }
+
+    public static int getStatusBarHeightPx(Context context) {
+        return DimenUtil.roundedDpToPx(getStatusBarHeight(context));
+    }
+
+    private static float getStatusBarHeight(Context context) {
+        int id = getStatusBarId(context);
+        return id > 0 ? DimenUtil.getDimension(id) : 0;
+    }
+
+    private static float getToolbarHeight(Context context) {
+        return DimenUtil.roundedPxToDp(getToolbarHeightPx(context));
+    }
+
     /**
-     * Returns the height of the ActionBar in the current activity. The system controls the
-     * height of the ActionBar, which may be slightly different depending on screen orientation,
-     * and device version.
+     * Returns the height of the toolbar in the current activity. The system controls the height of
+     * the toolbar, which may be slightly different depending on screen orientation, and device
+     * version.
      * @param context Context used for retrieving the height attribute.
-     * @return Height of the ActionBar.
+     * @return Height of the toolbar.
      */
-    public static int getActionBarSize(Context context) {
+    private static int getToolbarHeightPx(Context context) {
         final TypedArray styledAttributes = context.getTheme().obtainStyledAttributes(new int[] {
                 android.support.v7.appcompat.R.attr.actionBarSize
         });
-        int size = (int)styledAttributes.getDimension(0, 0);
+        int size = styledAttributes.getDimensionPixelSize(0, 0);
         styledAttributes.recycle();
         return size;
+    }
+
+    private static boolean isStatusBarTranslucent() {
+        return ApiUtil.hasKitKat();
+    }
+
+    @DimenRes private static int getStatusBarId(Context context) {
+        return context.getResources().getIdentifier("status_bar_height", "dimen", "android");
     }
 
     /**

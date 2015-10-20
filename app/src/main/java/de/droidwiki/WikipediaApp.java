@@ -1,5 +1,7 @@
 package de.droidwiki;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.Application;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -13,10 +15,9 @@ import android.webkit.WebView;
 
 import com.squareup.otto.Bus;
 
-import org.acra.ACRA;
-import org.acra.ReportingInteractionMode;
-import org.acra.annotation.ReportsCrashes;
 import org.mediawiki.api.json.Api;
+import de.droidwiki.crash.CrashReporter;
+import de.droidwiki.crash.hockeyapp.HockeyAppCrashReporter;
 import de.droidwiki.analytics.FunnelManager;
 import de.droidwiki.analytics.SessionFunnel;
 import de.droidwiki.data.ContentPersister;
@@ -37,7 +38,6 @@ import de.droidwiki.networking.MccMncStateHandler;
 import de.droidwiki.onboarding.OnboardingStateMachine;
 import de.droidwiki.onboarding.PrefsOnboardingStateMachine;
 import de.droidwiki.page.PageCache;
-import de.droidwiki.page.linkpreview.LinkPreviewVersion;
 import de.droidwiki.pageimages.PageImage;
 import de.droidwiki.pageimages.PageImagePersister;
 import de.droidwiki.savedpages.SavedPage;
@@ -49,6 +49,8 @@ import de.droidwiki.theme.Theme;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.log.L;
 import de.droidwiki.zero.WikipediaZeroHandler;
+
+import retrofit.RequestInterceptor;
 
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -63,13 +65,6 @@ import com.google.android.gms.analytics.Tracker;
 
 import static de.droidwiki.util.StringUtil.emptyIfNull;
 
-@ReportsCrashes(
-        formKey = "",
-        mode = ReportingInteractionMode.DIALOG,
-        resDialogTitle = R.string.acra_report_dialog_title,
-        resDialogText = R.string.acra_report_dialog_text,
-        resDialogCommentPrompt = R.string.acra_report_dialog_comment,
-        mailTo = "info@droidwiki.de")
 public class WikipediaApp extends Application {
     private static final String HTTPS_PROTOCOL = "https";
     private static final int EVENT_LOG_TESTING_ID = new Random().nextInt(Integer.MAX_VALUE);
@@ -115,6 +110,7 @@ public class WikipediaApp extends Application {
     private AppLanguageState appLanguageState;
 
     private Tracker mTracker;
+    private CrashReporter crashReporter;
 
     /**
      * Returns a constant that tells whether this app is a production release,
@@ -129,10 +125,6 @@ public class WikipediaApp extends Application {
         return releaseType == RELEASE_PROD;
     }
 
-    public boolean isDevRelease() {
-        return releaseType == RELEASE_DEV;
-    }
-
     public boolean isPreBetaRelease() {
         switch (getReleaseType()) {
             case RELEASE_PROD:
@@ -141,6 +133,10 @@ public class WikipediaApp extends Application {
             default:
                 return true;
         }
+    }
+
+    public boolean isDevRelease() {
+        return releaseType == RELEASE_DEV;
     }
 
     private SessionFunnel sessionFunnel;
@@ -191,8 +187,7 @@ public class WikipediaApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ACRA.init(this);
-
+        initExceptionHandling();
 
         bus = new Bus();
 
@@ -205,10 +200,7 @@ public class WikipediaApp extends Application {
 
         sessionFunnel = new SessionFunnel(this);
 
-        // Enable debugging on the webview
-        if (ApiUtil.hasKitKat()) {
-            WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
-        }
+        enableWebViewDebugging();
 
         Api.setConnectionFactory(new OkHttpConnectionFactory(this));
 
@@ -306,22 +298,19 @@ public class WikipediaApp extends Application {
         return appLanguageState.getAppOrSystemLanguageCode();
     }
 
+    @NonNull
+    public String getSystemLanguageCode() {
+        return appLanguageState.getSystemLanguageCode();
+    }
+
     public void setAppLanguageCode(@Nullable String code) {
         appLanguageState.setAppLanguageCode(code);
         resetSite();
     }
 
-    public boolean isSystemLanguageEnabled() {
-        return appLanguageState.isSystemLanguageEnabled();
-    }
-
-    public void setSystemLanguageEnabled() {
-        appLanguageState.setSystemLanguageEnabled();
-    }
-
     @Nullable
-    public String getAppLanguageLocalizedName() {
-        return appLanguageState.getAppLanguageLocalizedName();
+    public String getAppOrSystemLanguageLocalizedName() {
+        return appLanguageState.getAppOrSystemLanguageLocalizedName();
     }
 
     @NonNull
@@ -454,15 +443,12 @@ public class WikipediaApp extends Application {
     }
 
     public boolean isFeatureSelectTextAndShareTutorialEnabled() {
-        boolean enabled = false;
-        // Select text does not work on Gingerbread.
-        if (ApiUtil.hasHoneyComb()) {
-            if (Prefs.hasFeatureSelectTextAndShareTutorial()) {
-                enabled = Prefs.isFeatureSelectTextAndShareTutorialEnabled();
-            } else {
-                enabled = new Random().nextInt(2) == 0;
-                Prefs.setFeatureSelectTextAndShareTutorialEnabled(enabled);
-            }
+        boolean enabled;
+        if (Prefs.hasFeatureSelectTextAndShareTutorial()) {
+            enabled = Prefs.isFeatureSelectTextAndShareTutorialEnabled();
+        } else {
+            enabled = new Random().nextInt(2) == 0;
+            Prefs.setFeatureSelectTextAndShareTutorialEnabled(enabled);
         }
         return enabled;
     }
@@ -542,6 +528,14 @@ public class WikipediaApp extends Application {
         bus.post(new ChangeTextSizeEvent());
     }
 
+    public void putCrashReportProperty(String key, String value) {
+        crashReporter.putReportProperty(key, value);
+    }
+
+    public void checkCrashes(@NonNull Activity activity) {
+        crashReporter.checkCrashes(activity);
+    }
+
     /**
      * Gets the current size of the app's font. This is given as a device-specific size (not "sp"),
      * and can be passed directly to setTextSize() functions.
@@ -564,6 +558,10 @@ public class WikipediaApp extends Application {
 
     public boolean isImageDownloadEnabled() {
         return Prefs.isImageDownloadEnabled();
+    }
+
+    public boolean isLinkPreviewEnabled() {
+        return Prefs.isLinkPreviewEnabled();
     }
 
     public void resetSite() {
@@ -596,6 +594,29 @@ public class WikipediaApp extends Application {
         return headers;
     }
 
+    private void initExceptionHandling() {
+        crashReporter = new HockeyAppCrashReporter(getString(R.string.hockeyapp_app_id), consentAccessor());
+        crashReporter.registerCrashHandler(this);
+
+        L.setRemoteLogger(crashReporter);
+    }
+
+    private CrashReporter.AutoUploadConsentAccessor consentAccessor() {
+        return new CrashReporter.AutoUploadConsentAccessor() {
+            @Override
+            public boolean isAutoUploadPermitted() {
+                return Prefs.isCrashReportAutoUploadEnabled();
+            }
+        };
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    private void enableWebViewDebugging() {
+        if (ApiUtil.hasKitKat()) {
+            WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
+        }
+    }
+
     private Theme unmarshalCurrentTheme() {
         int id = Prefs.getThemeId();
         Theme result = Theme.ofMarshallingId(id);
@@ -605,6 +626,7 @@ public class WikipediaApp extends Application {
         }
         return result;
     }
+
     private int calculateReleaseType() {
         if (BuildConfig.APPLICATION_ID.contains("beta")) {
             return RELEASE_BETA;

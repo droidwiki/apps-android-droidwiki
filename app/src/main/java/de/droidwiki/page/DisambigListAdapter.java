@@ -1,6 +1,7 @@
 package de.droidwiki.page;
 
 import de.droidwiki.ParcelableLruCache;
+import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.pageimages.PageImagesTask;
@@ -117,9 +118,9 @@ class DisambigListAdapter extends ArrayAdapter<DisambigResult> {
         if (convertView == null) {
             convertView = inflater.inflate(de.droidwiki.R.layout.item_page_list_entry, null);
             holder = new ViewHolder();
-            holder.icon = (ImageView) convertView.findViewById(de.droidwiki.R.id.page_list_item_image);
-            holder.title = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_title);
-            holder.description = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_description);
+            holder.icon = (ImageView) convertView.findViewById(R.id.page_list_item_image);
+            holder.title = (TextView) convertView.findViewById(R.id.page_list_item_title);
+            holder.description = (GoneIfEmptyTextView) convertView.findViewById(R.id.page_list_item_description);
             convertView.setTag(holder);
         } else {
             // view already defined, retrieve view holder

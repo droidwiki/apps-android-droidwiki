@@ -9,6 +9,7 @@ import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.util.FeedbackUtil;
+import de.droidwiki.views.GoneIfEmptyTextView;
 import de.droidwiki.views.WikiErrorView;
 
 import com.squareup.picasso.Picasso;
@@ -94,7 +95,7 @@ public class SearchResultsFragment extends Fragment {
         searchResultsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                PageTitle item = (PageTitle) searchResultsList.getAdapter().getItem(position);
+                PageTitle item = (PageTitle) getAdapter().getItem(position);
                 searchFragment.navigateToTitle(item, false);
             }
         });
@@ -365,7 +366,12 @@ public class SearchResultsFragment extends Fragment {
         lastFullTextResults = null;
 
         totalResults.clear();
-        ((BaseAdapter)searchResultsList.getAdapter()).notifyDataSetChanged();
+
+        getAdapter().notifyDataSetChanged();
+    }
+
+    private BaseAdapter getAdapter() {
+        return (BaseAdapter) searchResultsList.getAdapter();
     }
 
     // TODO: don't assume host is PageActivity. Use Fragment callbacks pattern.
@@ -394,7 +400,7 @@ public class SearchResultsFragment extends Fragment {
             searchResultsList.setVisibility(View.VISIBLE);
         }
 
-        ((BaseAdapter)searchResultsList.getAdapter()).notifyDataSetChanged();
+        getAdapter().notifyDataSetChanged();
     }
 
     private class LongPressHandler extends PageActivityLongPressHandler
@@ -405,7 +411,7 @@ public class SearchResultsFragment extends Fragment {
 
         @Override
         public PageTitle getTitleForListPosition(int position) {
-            return (PageTitle) searchResultsList.getAdapter().getItem(position);
+            return (PageTitle) getAdapter().getItem(position);
         }
 
         @Override
@@ -417,7 +423,7 @@ public class SearchResultsFragment extends Fragment {
         public void onOpenInNewTab(PageTitle title, HistoryEntry entry) {
             searchFragment.navigateToTitle(title, true);
         }
-    };
+    }
 
     private final class SearchResultAdapter extends BaseAdapter {
         private final LayoutInflater inflater;
@@ -464,7 +470,7 @@ public class SearchResultsFragment extends Fragment {
                 pageTitleText.setText(displayText);
             }
 
-            TextView descriptionText = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_description);
+            GoneIfEmptyTextView descriptionText = (GoneIfEmptyTextView) convertView.findViewById(R.id.page_list_item_description);
             descriptionText.setText(title.getDescription());
 
             ImageView imageView = (ImageView) convertView.findViewById(de.droidwiki.R.id.page_list_item_image);
