@@ -15,6 +15,8 @@ import de.droidwiki.R;
 
 import java.util.Arrays;
 
+import java.util.Arrays;
+
 /** {@link SearchView} that exposes contextual action bar callbacks. */
 public class CabSearchView extends SearchView {
     private static final boolean DEFAULT_CAB_ENABLED = true;
