@@ -12,8 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import de.droidwiki.R;
-
-import java.util.Arrays;
+import de.droidwiki.richtext.RichTextUtil;
 
 import java.util.Arrays;
 
@@ -87,8 +86,9 @@ public class CabSearchView extends SearchView {
 
     private class PlainTextInputFilter implements InputFilter {
         @Override
-        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-            return source.toString();
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest,
+                                   int dstart, int dend) {
+            return RichTextUtil.stripRichText(source, start, end).subSequence(start, end);
         }
     }
 }
