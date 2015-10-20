@@ -60,7 +60,7 @@
                 android:textColor="@color/list_item_text_primary"
                 tools:text="Sample title" />
 
-            <org.wikipedia.views.GoneIfEmptyTextView
+            <de.droidwiki.views.GoneIfEmptyTextView
                 android:id="@+id/page_list_item_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

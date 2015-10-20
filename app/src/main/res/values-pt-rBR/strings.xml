@@ -5,15 +5,9 @@
   <string name="app_name_alpha">Wikipédia Alpha</string>
   <string name="yes">Sim</string>
   <string name="no">Não</string>
-  <string name="acra_report_dialog_title">A Wikipédia travou :(</string>
-  <string name="acra_report_dialog_text">Envie-nos um relatório de erro</string>
-  <string name="acra_report_dialog_comment">O que você estava fazendo quando ocorreu o erro?</string>
   <string name="search_hint">Procurar na Wikipédia</string>
   <string name="nav_item_history">Histórico</string>
-  <string name="error_network_error">A conexão de rede não pode ser estabelecida</string>
-  <string name="search_network_error">Erro de conexão. Toque para tentar novamente.</string>
-  <string name="generic_page_error">Ocorreu um problema ao lidar com o seu pedido.</string>
-  <string name="status_code_unavailable">Código de status do servidor indisponível.</string>
+  <string name="error_network_error" fuzzy="true">A conexão de rede não pode ser estabelecida</string>
   <string name="page_error_retry">Repetir</string>
   <string name="menu_clear_all_history">Limpar histórico</string>
   <string name="menu_clear_all_saved_pages">Apagar todas as páginas salvas</string>
@@ -26,32 +20,30 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Atualizar todas as páginas salvas?</string>
   <string name="share_via">Compartilhar via…</string>
   <string name="dialog_title_clear_saved_pages">Limpar todas as páginas salvas?</string>
-  <string name="toast_saving_page">Salvando página…</string>
-  <string name="toast_saved_page" fuzzy="true">Página salva com sucesso</string>
-  <string name="toast_saved_page_missing_images">Não foi possível salvar todas as imagens</string>
-  <string name="toast_refresh_saved_page">Atualizando páginas salvas…</string>
+  <string name="snackbar_saving_page">Salvando página…</string>
+  <string name="snackbar_saved_page_format">\"%s\" foi salvo para leitura offline</string>
+  <string name="snackbar_saved_page_missing_images">Não foi possível salvar todas as imagens</string>
+  <string name="snackbar_refresh_saved_page">Atualizando páginas salvas…</string>
   <string name="delete_selected_saved_pages">Apagar</string>
-  <string name="toast_saved_page_deleted">Página(s) salva(s) excluída(s)</string>
+  <string name="snackbar_saved_page_deleted">Página(s) salva(s) excluída(s)</string>
   <string name="saved_pages_search_list_hint">Pesquisar páginas salvas</string>
   <string name="saved_pages_search_empty_message">Nenhuma página foi encontrada.</string>
-  <string name="menu_show_tabs">Mostrar abas</string>
-  <string name="menu_other_languages">Ler em outros idiomas</string>
-  <string name="menu_save_page">Salvar página</string>
-  <string name="menu_share_page" fuzzy="true">Compartilhar</string>
-  <string name="find_in_page">Encontrar na página</string>
-  <string name="menu_themechooser">Alterar o tamanho e cor da fonte</string>
-  <string name="menu_open_link" fuzzy="true">Abrir link</string>
-  <string name="menu_open_in_new_tab">Abrir em uma nova aba</string>
+  <string name="menu_page_show_tabs">Mostrar abas</string>
+  <string name="menu_page_other_languages">Ler em outros idiomas</string>
+  <string name="menu_page_save">Salvar página</string>
+  <string name="menu_page_share">Compartilhar link</string>
+  <string name="menu_page_find_in_page">Encontrar na página</string>
+  <string name="menu_page_font_and_theme">Alterar o tamanho e cor da fonte</string>
+  <string name="menu_long_press_open_page">Abrir</string>
+  <string name="menu_long_press_open_in_new_tab">Abrir em uma nova aba</string>
+  <string name="menu_long_press_copy_page">Copiar endereço do link</string>
   <string name="nav_item_nearby">Próximo</string>
-  <string name="menu_update_nearby">Atualizar páginas próximas</string>
   <string name="nearby_empty_title">Sem páginas por perto!</string>
-  <string name="nearby_empty_message">Quando estiver num novo local, experimente atualizar esta página para saber mais sobre o que o rodeia.</string>
+  <string name="nearby_empty_message" fuzzy="true">Quando estiver num novo local, experimente atualizar esta página para saber mais sobre o que o rodeia.</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
   <string name="nearby_distance_in_feet">%d ft</string>
   <string name="nearby_distance_in_miles">%.2f mi</string>
-  <string name="nearby_no_network">Nenhuma conexão de rede</string>
-  <string name="nearby_server_error">Não foi possível obter a lista de locais próximos.</string>
   <string name="nearby_dialog_goto_settings">As atualizações de localização não estão ativadas. Gostaria de ir para as configurações do seu dispositivo para ativa-las?</string>
   <string name="nearby_set_metric">Mostrar metros/km</string>
   <string name="nearby_set_imperial">Mostrar pés/milhas</string>
@@ -62,10 +54,7 @@
   <string name="edit_save_action_license_anon">Ao salvar, você concorda com as &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Condições de uso&lt;/a&gt;, e em publicar irrevogavelmente a sua contribuição sob a licença &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC-BY-SA 3.0&lt;/a&gt;. O seu endereço de IP estará visível nas edições de seu aparelho. Se você &lt;a href=\"https://#login\"&gt;iniciar sessão&lt;/a&gt;, você terá mais privacidade.</string>
   <string name="preference_title_language">Idioma da WIkipédia</string>
   <string name="preference_languages_filter_hint">Pesquisar</string>
-  <string name="preference_system_language_toggle">Usar idioma do sistema</string>
-  <string name="preference_system_language_summary">Idioma do sistema</string>
   <string name="langlinks_filter_hint">Pesquisar</string>
-  <string name="langlinks_error_retry">Repetir</string>
   <string name="langlinks_empty">Esta página não está disponível em outros idiomas</string>
   <string name="langlinks_no_match">Nenhum idioma correspondente com a sua pesquisa.</string>
   <string name="langlinks_activity_title">Outros idiomas</string>
@@ -86,7 +75,7 @@
   <string name="title_captcha">Digite a CAPTCHA</string>
   <string name="edit_section_captcha_reload">Clique no CAPTCHA para recarregar</string>
   <string name="edit_saved_page_refresh">Esta página salva pode estar desatualizada, e deve ser recarregada para ativar a sua edição. Gostaria de recarregar a página?</string>
-  <string name="nav_item_login">Entrar</string>
+  <string name="nav_item_login" fuzzy="true">Entrar</string>
   <string name="login_username_hint">Nome de usuário</string>
   <string name="login_password_hint">Senha</string>
   <string name="login_password_show_check">Mostrar senha</string>
@@ -96,23 +85,19 @@
   <string name="login_error_wrong_password">Senha incorreta.</string>
   <string name="login_error_wrong_username">Nome de usuário incorreto</string>
   <string name="login_error_illegal">Nome de usuário inválido</string>
-  <string name="login_success_toast" fuzzy="true">Login bem sucedido!</string>
+  <string name="login_success_toast">Autenticação bem sucedida!</string>
   <string name="login_error_blocked">Este usuário foi bloqueado</string>
   <string name="login_error_throttled">Muitas tentativas de iniciar a sessão. Aguarde alguns minutos e tente novamente.</string>
   <string name="login_error_unknown">Login falhou :(</string>
-  <string name="login_error_no_network">Sem conexão de internet</string>
   <string name="preference_title_logout">Sair</string>
-  <string name="preference_summary_logout">Sair de sua conta da Wikipédia</string>
-  <string name="preference_summary_notloggedin">Você não está autenticado</string>
   <string name="toast_logout_complete">Saiu</string>
   <string name="saved_pages_empty_title">Sem páginas salvas aqui!</string>
   <string name="saved_pages_empty_message">As páginas salvas são incríveis. Pense nelas como se fossem marcadores que você pode ler mesmo quando estiver offline.</string>
   <string name="history_empty_title">Não existem páginas recentes aqui.</string>
   <string name="history_empty_message">Seu histórico está vazio. Na próxima vez que você buscar uma página, você pode acessar a mesma por aqui.</string>
   <string name="delete_selected_history">Apagar</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
   <string name="create_account_username_hint">Nome de Usuário</string>
-  <string name="create_account_password_hint">Senha</string>
   <string name="login_create_account_link">Ainda não tem uma conta? Cria sua conta Wikipédia</string>
   <string name="create_account_login_link">Já possui uma conta? Inicie sessão</string>
   <string name="create_account_activity_title">Crie uma conta</string>
@@ -131,7 +116,6 @@
   <string name="create_account_blocked_error">Não é possível criar uma conta porque a sua conta está bloqueada.</string>
   <string name="create_account_password_name_match_error">O seu nome de usuário(a) e senha devem ser diferentes.</string>
   <string name="create_account_generic_error">Não foi possível criar a conta</string>
-  <string name="create_account_no_network">Sem conexão de rede</string>
   <string name="create_account_next">Seguinte</string>
   <string name="create_account_button">Criar conta</string>
   <string name="preferences_general_heading">Geral</string>
@@ -154,8 +138,6 @@
   <string name="send_feedback">Enviar comentários sobre o aplicativo</string>
   <string name="nav_item_random">Aleatório</string>
   <string name="create_account_account_created_toast">Conta criada!</string>
-  <string name="user_contribs_more_action">Carregar mais</string>
-  <string name="activity_my_contributions_title">Minhas contribuições</string>
   <string name="preference_title_eventlogging_opt_in">Enviar relatórios de uso</string>
   <string name="preference_summary_eventlogging_opt_in">Permitir que a Wikimedia recolha informações sobre o uso do aplicativo para aperfeiçoá-lo</string>
   <string name="editing_error_spamblacklist">Foram detectados links para páginas bloqueadas (%s). Por favor, remova-os e tente novamente.</string>
@@ -167,8 +149,7 @@
   <string name="page_protected_other">Esta página foi protegida ao seguinte nível: %s</string>
   <string name="page_protected_can_not_edit">Você não tem permissão para editar esta página</string>
   <string name="page_protected_can_not_edit_title">Esta página está protegida</string>
-  <string name="more_item_preferences">Mais</string>
-  <string name="more_activity_title">Mais</string>
+  <string name="settings_activity_title" fuzzy="true">Configurações</string>
   <string name="about_description">Sobre o aplicativo Wikipédia</string>
   <string name="privacy_policy_description">Política de privacidade</string>
   <string name="terms_of_use_description">Termos de uso</string>
@@ -199,7 +180,6 @@
   <string name="saved_pages_update_all_error_retry">Tentar novamente</string>
   <string name="saved_pages_update_all_error_message">Erro ao atualizar as páginas salvas</string>
   <string name="saved_pages_progress_title">Recarregando páginas salvas</string>
-  <string name="saved_pages_refresh_pages_complete">Atualização concluída</string>
   <string name="menu_page_saved">Páginas salvas</string>
   <string name="menu_refresh_saved_page">Atualizar páginas</string>
   <string name="abusefilter_title_warn">Esta edição pode não ser benéfica. Você tem certeza de que gostaria de salvá-la?</string>
@@ -248,16 +228,14 @@ Termos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="alpha_update_notification_text">Toque para baixar</string>
   <string name="dialog_close_description">Fechar</string>
   <string name="preference_title_show_images">Mostrar imagens</string>
-  <string name="preference_summary_show_images">Habilitar ou desabilitar o carregamento de imagens em paginas. Desmarque essa opção se sua conexão de internet for lenta, ou se seu plano for limitado.</string>
+  <string name="preference_summary_show_images" fuzzy="true">Habilitar ou desabilitar o carregamento de imagens em paginas. Desmarque essa opção se sua conexão de internet for lenta, ou se seu plano for limitado.</string>
   <string name="read_more_section">Ler mais</string>
-  <string name="read_next_section">Ler seguinte</string>
   <string name="menu_gallery_visit_page">Ir para a página do arquivo</string>
   <string name="gallery_error_draw_failed">Impossivel desenhar a imagem</string>
   <string name="license_title">Texto da licença para %s biblioteca</string>
   <string name="gallery_menu_share">Compartilhar</string>
   <string name="gallery_share_error">Não podê-se compartilhar a imagem: %s</string>
   <string name="gallery_menu_save">Salvar no dispositivo</string>
-  <string name="gallery_save_error">Não podê-se salvar a imagem: %s</string>
   <string name="gallery_save_error_mediastore">Falha ao importar a imagem para a coleção multimídia</string>
   <string name="gallery_save_success">Imagem salva com sucesso.</string>
   <string name="gallery_error_video_failed">Não se pôde reproduzir o vídeo.</string>
@@ -271,7 +249,6 @@ Termos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="captcha_image">Imagem CAPTCHA</string>
   <string name="gallery_fair_use_license">Fair use</string>
   <string name="gallery_uploader_unknown">Uploader desconhecido</string>
-  <string name="edit_save_unknown_error">Não foi possível salvar sua edição: %s</string>
   <string name="menu_new_tab">Nova aba</string>
   <string name="button_close_tab">Fechar aba</string>
   <string name="tool_tip_select_text">Pressione e segure em qualquer lugar no texto para destacá-lo para copiar e compartilhar</string>
@@ -279,4 +256,10 @@ Termos de uso: https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
   <string name="page_view_in_browser">Ver no navegador</string>
   <string name="tool_tip_toc_button">Consulte a tabela de conteúdos a qualquer momento ao tocar neste botão ou deslizando com o dedo a partir do canto superior direito da tela.</string>
   <string name="error_server_response">O servidor não conseguiu concluir o pedido.</string>
+  <string name="error_response_malformed">A resposta do servidor não foi formatada corretamente.</string>
+  <string name="error_unknown">Ocorreu um erro desconhecido.</string>
+  <string name="format_error_server_message">Mensagem: \"%s\"</string>
+  <string name="format_error_server_code">Código: \"%s\"</string>
+  <string name="address_copied">Endereço copiado para a área de transferência.</string>
+  <string name="button_continue_to_article">Continuar para o artigo</string>
 </resources>

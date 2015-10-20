@@ -5,20 +5,18 @@
   <string name="app_name_alpha">Wiikippiidiyaa Aalfaa</string>
   <string name="yes">Eyyee</string>
   <string name="no">Lakki</string>
-  <string name="acra_report_dialog_title">Wiikipiidiyaan halake :(</string>
-  <string name="acra_report_dialog_text">Gabaasa halakaa nuu ergi</string>
   <string name="search_hint">Wiikippiidiyaa keessa barbaadi</string>
   <string name="nav_item_history">Seenaa</string>
   <string name="page_error_retry">Lammata yaali</string>
   <string name="menu_clear_all_history">Seenaa balleessi</string>
   <string name="nav_item_today">Har\'a</string>
   <string name="nav_item_saved_pages">Fuula olkaayi</string>
-  <string name="toast_saving_page">Fuulaa olkaawaa jira...</string>
-  <string name="toast_saved_page_missing_images">Suura hunda olkaawuu hindandeenye</string>
+  <string name="snackbar_saving_page">Fuulaa olkaawaa jira...</string>
+  <string name="snackbar_saved_page_missing_images">Suura hunda olkaawuu hindandeenye</string>
   <string name="delete_selected_saved_pages">Haqi</string>
   <string name="saved_pages_search_list_hint" fuzzy="true">Barbaadi</string>
-  <string name="menu_save_page">Fuula olkaayi</string>
-  <string name="menu_share_page" fuzzy="true">Hiri</string>
+  <string name="menu_page_save">Fuula olkaayi</string>
+  <string name="menu_page_share" fuzzy="true">Hiri</string>
   <string name="nav_item_nearby">Dhihoo</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
@@ -26,7 +24,6 @@
   <string name="nearby_distance_in_miles">%.2f mi</string>
   <string name="preference_languages_filter_hint">Barbaadi</string>
   <string name="langlinks_filter_hint">Barbaadi</string>
-  <string name="langlinks_error_retry">Lammata yaali</string>
   <string name="langlinks_activity_title">Afaan biraa</string>
   <string name="menu_save_changes">Jijjiirama olkaayi</string>
   <string name="edit_section_error_retry">Lammata yaali</string>
@@ -40,7 +37,7 @@
   <string name="menu_show_toc">Gabatee Qabiyyee</string>
   <string name="search_no_results_found">Homtuu hin argamane</string>
   <string name="title_captcha">Kaapchaa galchi</string>
-  <string name="nav_item_login">Seeni</string>
+  <string name="nav_item_login" fuzzy="true">Seeni</string>
   <string name="login_username_hint">Maqaa fayyadamaa</string>
   <string name="login_password_hint">Iggitaa</string>
   <string name="login_password_show_check">Iggitaa agarsiisi</string>
@@ -52,13 +49,10 @@
   <string name="login_success_toast" fuzzy="true">Seenun milkaa\'e</string>
   <string name="login_error_unknown">Seenun fashale :(</string>
   <string name="preference_title_logout">Ba\'i</string>
-  <string name="preference_summary_logout">Eenyummeessa Wiikippiidiyaa kee keessaa ba\'i</string>
-  <string name="preference_summary_notloggedin">Hin seenne.</string>
   <string name="toast_logout_complete">Baatee jirta</string>
   <string name="saved_pages_empty_title">Fuulli as olkaawwame hinjiru!</string>
   <string name="delete_selected_history">Balleessi</string>
   <string name="create_account_username_hint">Maqaa fayyadamaa</string>
-  <string name="create_account_password_hint">Iggitaa</string>
   <string name="login_create_account_link">Eenyummeessa hinqabdu? Amma galmaa\'i.</string>
   <string name="create_account_login_link">Duraan eenyummeessa qabdaa? Seeni</string>
   <string name="create_account_activity_title">Eenyummeessa uumi</string>
@@ -77,12 +71,10 @@
   <string name="zero_learn_more_dismiss">Didi</string>
   <string name="edit_preview_fetching_dialog_message">Durargii fidaa jira...</string>
   <string name="create_account_account_created_toast">Eenyummeessi uummame!</string>
-  <string name="activity_my_contributions_title">Gumaacha kiyya</string>
   <string name="preference_title_eventlogging_opt_in">Gabaasa fayyadamaa ergi</string>
   <string name="history_search_list_hint" fuzzy="true">Barbaadi</string>
   <string name="error_can_not_process_link">Geessituu kana agarsiisuu hindandeenye</string>
-  <string name="more_item_preferences">Dabalata</string>
-  <string name="more_activity_title">Dabalata</string>
+  <string name="settings_activity_title" fuzzy="true">Qindaa\'ina</string>
   <string name="privacy_policy_description">Seera mateengaa</string>
   <string name="terms_of_use_description">Waliigaltee fayyadamaa</string>
   <string name="about_translators_heading">Afaan hiiktota</string>
@@ -94,7 +86,6 @@
   <string name="find_next">Kan itti aanu barbaadi</string>
   <string name="find_previous">Kan darbe barbaadi</string>
   <string name="saved_pages_update_all_error_retry">Lammata yaali</string>
-  <string name="saved_pages_refresh_pages_complete">Haaromsuun xumurame</string>
   <string name="menu_page_saved">Fuulli olkaawwame</string>
   <string name="menu_refresh_saved_page">Fuula haaromsi</string>
   <string name="text_size_select">Guddina foontii</string>
@@ -107,7 +98,6 @@
   <string name="dialog_close_description">Cufi</string>
   <string name="preference_title_show_images">Suura agarsiisi</string>
   <string name="read_more_section">Dabalata dubbisi</string>
-  <string name="read_next_section">Kan itti aanu dubbisi</string>
   <string name="gallery_menu_share">Hiri</string>
   <string name="err_cannot_save_file">Faayilii olkaawuu hindandeenye</string>
   <string name="snippet_share_preview_image_desc">Suura durargi.</string>

@@ -5,14 +5,9 @@
   <string name="app_name_alpha">വിക്കിപീഡിയ ആൽഫ</string>
   <string name="yes">വേണം</string>
   <string name="no">വേണ്ട</string>
-  <string name="acra_report_dialog_title">വിക്കിപീഡിയയിൽ പ്രശ്നമുണ്ടായി :(</string>
-  <string name="acra_report_dialog_text">ക്രാഷ് റിപ്പോർട്ട് അയയ്ക്കുക</string>
-  <string name="acra_report_dialog_comment">പ്രശ്നമുണ്ടായപ്പോൾ താങ്കൾ എന്തുചെയ്യുകയായിരുന്നു?</string>
   <string name="search_hint">വിക്കിപീഡിയയിൽ തിരയുക</string>
   <string name="nav_item_history">നാൾവഴി</string>
-  <string name="error_network_error" fuzzy="true">നെറ്റ്‌വർക്ക് ബന്ധം ഇല്ല :(</string>
-  <string name="search_network_error">നെറ്റ്‌വർക്ക് പിഴവ്. വീണ്ടും ശ്രമിക്കാൻ ടാപ് ചെയ്യുക.</string>
-  <string name="status_code_unavailable">സെർവറിന്റെ സ്ഥിതിയുടെ കോഡ് ലഭ്യമല്ല.</string>
+  <string name="error_network_error">ഇന്റർനെറ്റുമായി ബന്ധപ്പെടാൻ കഴിയുന്നില്ല.</string>
   <string name="page_error_retry">വീണ്ടും ശ്രമിക്കുക</string>
   <string name="menu_clear_all_history">നാൾവഴി ശൂന്യമാക്കുക</string>
   <string name="menu_clear_all_saved_pages">സേവ് ചെയ്ത താളുകൾ ഒഴിവാക്കുക</string>
@@ -25,28 +20,30 @@
   <string name="dialog_prompt_refresh_all_saved_pages">സേവ് ചെയ്ത എല്ലാ താളുകളും പുതുക്കണോ?</string>
   <string name="share_via">ഇതുവഴി പങ്ക് വെയ്ക്കുക</string>
   <string name="dialog_title_clear_saved_pages">സേവ് ചെയ്ത എല്ലാ താളുകളും ഒഴിവാക്കണോ?</string>
-  <string name="toast_saving_page">താൾ സേവ് ചെയ്യുന്നു…</string>
-  <string name="toast_saved_page" fuzzy="true">താൾ സേവ് ചെയ്തു</string>
-  <string name="toast_saved_page_missing_images">എല്ലാ ചിത്രങ്ങളും സേവ് ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
-  <string name="toast_refresh_saved_page">സേവ് ചെയ്ത് താൾ പുതുക്കുന്നു…</string>
+  <string name="snackbar_saving_page">താൾ സേവ് ചെയ്യുന്നു…</string>
+  <string name="snackbar_saved_page_format">ഓഫ്‍ലൈൻ ആയി  വായിക്കാൻ \"%s\" സേവ് ചെയ്തു</string>
+  <string name="snackbar_saved_page_missing_images">എല്ലാ ചിത്രങ്ങളും സേവ് ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
+  <string name="snackbar_refresh_saved_page">സേവ് ചെയ്ത് താൾ പുതുക്കുന്നു…</string>
   <string name="delete_selected_saved_pages">മായ്ക്കുക</string>
-  <string name="toast_saved_page_deleted">സേവ് ചെയ്ത താൾ (താളുകൾ) മായ്ച്ചു</string>
-  <string name="saved_pages_search_list_hint" fuzzy="true">തിരയുക</string>
+  <string name="snackbar_saved_page_deleted">സേവ് ചെയ്ത താൾ (താളുകൾ) മായ്ച്ചു</string>
+  <string name="saved_pages_search_list_hint">സേവ് ചെയ്തിട്ടുള്ള താളുകളിൽ തിരയുക</string>
   <string name="saved_pages_search_empty_message">താങ്കൾ തിരഞ്ഞതിനോടു യോജിക്കുന്ന താളുകളൊന്നും കണ്ടെത്താനായില്ല</string>
-  <string name="menu_other_languages">മറ്റു ഭാഷകളിൽ വായിക്കുക</string>
-  <string name="menu_save_page">താൾ സേവ് ചെയ്യുക</string>
-  <string name="menu_share_page" fuzzy="true">പങ്ക് വെയ്ക്കുക</string>
-  <string name="find_in_page">താളിൽ കണ്ടെത്തുക</string>
+  <string name="menu_page_show_tabs">ടാബുകൾ പ്രദർശിപ്പിക്കുക</string>
+  <string name="menu_page_other_languages">മറ്റു ഭാഷകളിൽ വായിക്കുക</string>
+  <string name="menu_page_save">താൾ സേവ് ചെയ്യുക</string>
+  <string name="menu_page_share">കണ്ണി പങ്ക് വെയ്ക്കുക</string>
+  <string name="menu_page_find_in_page">താളിൽ കണ്ടെത്തുക</string>
+  <string name="menu_page_font_and_theme">ഫോണ്ടും ദൃശ്യരൂപവും</string>
+  <string name="menu_long_press_open_page">തുറക്കുക</string>
+  <string name="menu_long_press_open_in_new_tab">പുതിയ ടാബിൽ തുറക്കുക</string>
+  <string name="menu_long_press_copy_page">കണ്ണിയുടെ വിലാസം പകർത്തുക</string>
   <string name="nav_item_nearby">സമീപസ്ഥം</string>
-  <string name="menu_update_nearby">സമീപസ്ഥമുള്ളവ പുതുക്കുക</string>
   <string name="nearby_empty_title">സമീപസ്ഥ കാര്യങ്ങളെക്കുറിച്ച് താളുകളൊന്നുമില്ല!</string>
-  <string name="nearby_empty_message">പുതിയ സ്ഥലത്തേക്ക് താങ്കൾ പോവുകയാണെങ്കിൽ, താങ്കളുടെ അടുത്തുള്ള കാര്യങ്ങൾ എന്തൊക്കെയാണെന്ന് പഠിക്കാൻ താൾ പുതുക്കുക.</string>
+  <string name="nearby_empty_message" fuzzy="true">പുതിയ സ്ഥലത്തേക്ക് താങ്കൾ പോവുകയാണെങ്കിൽ, താങ്കളുടെ അടുത്തുള്ള കാര്യങ്ങൾ എന്തൊക്കെയാണെന്ന് പഠിക്കാൻ താൾ പുതുക്കുക.</string>
   <string name="nearby_distance_in_meters">%d മീ</string>
   <string name="nearby_distance_in_kilometers">%.2f കി.മീ.</string>
   <string name="nearby_distance_in_feet">%d അടി</string>
   <string name="nearby_distance_in_miles">%.2f മൈൽ</string>
-  <string name="nearby_no_network">നെറ്റ്‌വർക്ക് ബന്ധം ഇല്ല</string>
-  <string name="nearby_server_error">അടുത്തുള്ള സ്ഥലങ്ങളുടെ പട്ടിക എടുക്കാൻ കഴിഞ്ഞില്ല.</string>
   <string name="nearby_set_metric">മീറ്ററുകൾ/കി.മീ. പ്രദർശിപ്പിക്കുക</string>
   <string name="nearby_set_imperial">അടി/മൈൽസ് പ്രദർശിപ്പിക്കുക</string>
   <string name="nearby_view_on_map">ഭൂപടത്തിൽ സ്ഥലങ്ങൾ കാണുക</string>
@@ -54,10 +51,7 @@
   <string name="content_license_html">മറ്റുവിധത്തിൽ കുറിച്ചിട്ടില്ലെങ്കിൽ ഉള്ളടക്കം &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;സി.സി. ബൈ-എസ്.എ. 3.0&lt;/a&gt; പ്രകാരം ലഭ്യം</string>
   <string name="preference_title_language">വിക്കിപീഡിയ ഭാഷ</string>
   <string name="preference_languages_filter_hint">തിരയുക</string>
-  <string name="preference_system_language_toggle">സിസ്റ്റം ഭാഷ ഉപയോഗിക്കുക</string>
-  <string name="preference_system_language_summary">സിസ്റ്റം ഭാഷ</string>
   <string name="langlinks_filter_hint">തിരയുക</string>
-  <string name="langlinks_error_retry">വീണ്ടും ശ്രമിക്കുക</string>
   <string name="langlinks_empty">ഈ താൾ മറ്റ് ഭാഷകളിൽ ലഭ്യമല്ല</string>
   <string name="langlinks_activity_title">മറ്റു ഭാഷകൾ</string>
   <string name="menu_save_changes">മാറ്റങ്ങൾ സേവ് ചെയ്യുക</string>
@@ -68,6 +62,7 @@
   <string name="dialog_message_edit_failed_retry">വീണ്ടും ശ്രമിക്കുക</string>
   <string name="dialog_message_edit_failed_cancel">റദ്ദാക്കുക</string>
   <string name="dialog_message_leaving_edit_leave">പോവുക</string>
+  <string name="dialog_message_leaving_edit_stay">പിടിച്ചുവെക്കുക</string>
   <string name="menu_show_toc">ഉള്ളടക്കപ്പട്ടിക</string>
   <string name="search_no_results_found">ഫലങ്ങളൊന്നും കണ്ടെത്താനായില്ല</string>
   <string name="edit_section_captcha_message">സ്വയം പ്രവർത്തിക്കുന്ന പാഴെഴുത്ത് സംവിധാനങ്ങളിൽ നിന്നുമുള്ള സംരക്ഷണത്തിനായി, താഴെ പ്രത്യക്ഷപ്പെടുന്ന വാക്കുകൾ എഴുതി നൽകുക</string>
@@ -75,7 +70,7 @@
   <string name="title_captcha">കാപ്ച നൽകുക</string>
   <string name="edit_section_captcha_reload">കാപ്ച വീണ്ടും എടുക്കാനായി ടാപ് ചെയ്യുക</string>
   <string name="edit_saved_page_refresh">സേവ് ചെയ്തിരിക്കുന്ന ഈ താൾ കാലഹരണപ്പെട്ടതാകാം, തിരുത്താനായി സജ്ജമാക്കാൻ ഇത് പുതുക്കിയിരിക്കേണ്ടതുണ്ട്. താൾ പുതുക്കണോ?</string>
-  <string name="nav_item_login">പ്രവേശിക്കുക</string>
+  <string name="nav_item_login" fuzzy="true">പ്രവേശിക്കുക</string>
   <string name="login_username_hint">ഉപയോക്തൃനാമം</string>
   <string name="login_password_hint">രഹസ്യവാക്ക്</string>
   <string name="login_password_show_check">രഹസ്യവാക്ക് പ്രദർശിപ്പിക്കുക</string>
@@ -85,20 +80,17 @@
   <string name="login_error_wrong_password">തെറ്റായ രഹസ്യവാക്ക്</string>
   <string name="login_error_wrong_username">തെറ്റായ ഉപയോക്തൃനാമം</string>
   <string name="login_error_illegal">അസാധുവായ ഉപയോക്തൃനാമം</string>
-  <string name="login_success_toast" fuzzy="true">പ്രവേശനം വിജയകരം!</string>
+  <string name="login_success_toast">പ്രവേശനം വിജയകരം!</string>
   <string name="login_error_blocked">ഈ ഉപയോക്താവ് തടയപ്പെട്ടിരിക്കുന്നു</string>
   <string name="login_error_throttled">പ്രവേശിക്കാനായി നിരവധി ശ്രമങ്ങൾ നടത്തിയിരിക്കുന്നു. ഏതാനം മിനിറ്റുകൾ കാത്തിരുന്ന ശേഷം വീണ്ടും ശ്രമിക്കുക.</string>
   <string name="login_error_unknown">പ്രവേശനം പരാജയപ്പെട്ടു :(</string>
-  <string name="login_error_no_network">നെറ്റ്‌വർക്ക് ബന്ധം ഇല്ല</string>
   <string name="preference_title_logout">ലോഗൗട്ട്</string>
-  <string name="preference_summary_logout">താങ്കളുടെ വിക്കിപീഡിയ അംഗത്വം ലോഗൗട്ട് ചെയ്യുക</string>
-  <string name="preference_summary_notloggedin">പ്രവേശിച്ചിട്ടില്ല.</string>
   <string name="toast_logout_complete">പുറത്തുകടന്നു</string>
+  <string name="saved_pages_empty_title">സേവ് ചെയത താളുകളൊന്നും ഇവിടെയില്ല!</string>
   <string name="saved_pages_empty_message" fuzzy="true">താളുകളൊന്നും സേവ് ചെയ്തിട്ടില്ല.</string>
   <string name="history_empty_message" fuzzy="true">താങ്കളുടെ ഉപയോഗത്തിന്റെ നാൾവഴി ശൂന്യമാണ്.</string>
   <string name="delete_selected_history">മായ്ക്കുക</string>
   <string name="create_account_username_hint">ഉപയോക്തൃനാമം</string>
-  <string name="create_account_password_hint">രഹസ്യവാക്ക്</string>
   <string name="login_create_account_link">അംഗത്വമില്ലേ? വിക്കിപീഡിയയിൽ ചേരുക</string>
   <string name="create_account_login_link">അംഗ്വത്വമുണ്ടോ? പ്രവേശിക്കുക</string>
   <string name="create_account_activity_title">ഒരംഗത്വമെടുക്കുക</string>
@@ -111,7 +103,6 @@
   <string name="create_account_ip_throttle_error">ഈ ഐ.പി. വിലാസത്തിൽ നിന്നും നിരവധി അംഗത്വങ്ങൾ സൃഷ്ടിച്ചിരിക്കുന്നു. പിന്നീട് വീണ്ടും ശ്രമിക്കുക.</string>
   <string name="create_account_open_proxy_error">അംഗത്വം സൃഷ്ടിക്കുന്നതിൽ നിന്നും ഈ ഐ.പി. വിലാസം തടയപ്പെട്ടിരിക്കുന്നു.</string>
   <string name="create_account_generic_error">അംഗത്വം സൃഷ്ടിക്കാൻ കഴിഞ്ഞില്ല</string>
-  <string name="create_account_no_network">നെറ്റ്‌വർക്ക് ബന്ധം ഇല്ല</string>
   <string name="create_account_next">അടുത്തത്</string>
   <string name="create_account_button">അംഗത്വമെടുക്കുക</string>
   <string name="preferences_general_heading">സാർവത്രികം</string>
@@ -133,8 +124,6 @@
   <string name="send_feedback">ആപിനെക്കുറിച്ചുള്ള അഭിപ്രായം അറിയിക്കുക</string>
   <string name="nav_item_random">ക്രമരഹിതം</string>
   <string name="create_account_account_created_toast">അംഗത്വം സൃഷ്ടിച്ചിരിക്കുന്നു!</string>
-  <string name="user_contribs_more_action">കൂടുതൽ എടുക്കുക</string>
-  <string name="activity_my_contributions_title">എന്റെ സം‌ഭാവനകൾ</string>
   <string name="preference_title_eventlogging_opt_in">ഉപയോഗ വിവരങ്ങൾ അയയ്ക്കുക</string>
   <string name="preference_summary_eventlogging_opt_in">താങ്കൾ എങ്ങനെയാണ് ആപ് ഉപയോഗിച്ചതെന്ന വിവരങ്ങൾ ശേഖരിച്ച് ആപ് കൂടുതൽ മെച്ചപ്പെട്ടതാക്കാൻ വിക്കിമീഡിയയെ അനുവദിക്കുക</string>
   <string name="editing_error_spamblacklist">തടയപ്പെട്ട ഡൊമൈനുകളിലോട്ടുള്ള കണ്ണികൾ (%s) കണ്ടെത്താനായി. ദയവായി അവ ഒഴിവാക്കി വീണ്ടും ശ്രമിക്കുക.</string>
@@ -146,8 +135,7 @@
   <string name="page_protected_other">ഈ താൾ ഈ തലങ്ങൾ വരെ സംരക്ഷിക്കപ്പെട്ടിരിക്കുന്നു: %s</string>
   <string name="page_protected_can_not_edit">ഈ താൾ തിരുത്താനുള്ള അവകാശം താങ്കൾക്കില്ല</string>
   <string name="page_protected_can_not_edit_title">ഈ താൾ സംരക്ഷിക്കപ്പെട്ടിരിക്കുന്നു</string>
-  <string name="more_item_preferences">കൂടുതൽ</string>
-  <string name="more_activity_title">കൂടുതൽ</string>
+  <string name="settings_activity_title" fuzzy="true">സജ്ജീകരണങ്ങൾ</string>
   <string name="about_description">വിക്കിപീഡിയ ആപിന്റെ വിവരണം</string>
   <string name="privacy_policy_description">സ്വകാര്യതാനയം</string>
   <string name="terms_of_use_description">ഉപയോഗനിബന്ധനകൾ</string>
@@ -175,7 +163,15 @@
   <string name="saved_pages_update_all_error_retry">വീണ്ടും ശ്രമിക്കുക</string>
   <string name="saved_pages_update_all_error_message">സേവ് ചെയ്തിട്ടുള്ള താളുകൾ പുതുക്കുന്നതിൽ പിഴവുണ്ടായി</string>
   <string name="saved_pages_progress_title">സേവ് ചെയ്തിട്ടുള്ള താൾ പുതുക്കുന്നു</string>
-  <string name="saved_pages_refresh_pages_complete">പുതുക്കൽ പൂർണ്ണമായി</string>
+  <string name="dialog_page_issues">താളിലെ പ്രശ്നങ്ങൾ</string>
+  <string name="button_page_issues">താളിലെ പ്രശ്നങ്ങൾ</string>
+  <string name="text_size_select">ഫോണ്ടിന്റെ വലിപ്പം</string>
+  <string name="color_theme_select">ദൃശ്യരൂപം</string>
+  <string name="color_theme_light">തെളിച്ചം</string>
+  <string name="color_theme_dark">ഇരുളിമ</string>
+  <string name="page_similar_titles">ഇതുപോലുള്ള താളുകൾ</string>
+  <string name="search_did_you_mean">ഉദ്ദേശിച്ചത്  \"%s\" എന്നാണോ?</string>
+  <string name="table_close">അടയ്ക്കുക</string>
   <string name="app_store_description" fuzzy="true">ആൻഡ്രോയിഡിനുള്ള ഔദ്യോഗിക വിക്കിപീഡിയ ആപ്. 280 ഭാഷകളിലായി 3 കോടി 20 ലക്ഷം ലേഖനങ്ങളെ ഉൾക്കൊള്ളുന്ന, മനുഷ്യർ ഉണ്ടാക്കിയിട്ടുള്ള ഏറ്റവും ബൃഹത്തും അറിവിനായി ആശ്രഹിക്കാവുന്നതുമായ സ്വതന്ത്ര വിജ്ഞാനകോശമാണ് വിക്കിപീഡിയ. ഈ ആപ് ഏറ്റവും മികച്ച ഉപയോഗാനുഭവത്തിനായി അടിത്തട്ടിൽ നിന്നും പൊളിച്ചെഴുതിയതാണ്.
 
 സവിശേഷതകൾ:
@@ -188,4 +184,12 @@
  -വിക്കിപീഡിയ സീറോ: പങ്കാളികളായിട്ടുള്ള മൊബൈൽ ഓപ്പറേറ്റർമാരിലൂടെ എടുക്കുന്ന പക്ഷം ഡേറ്റാ ബന്ധം തികച്ചും സൗജന്യമായിരിക്കും.
 
 കോഡ് പൂർണ്ണമായും ഓപ്പൺ സോഴ്സ് ആണ്. ജാവയിലും ആൻഡ്രോയിഡ് എസ്.ഡി.കെ.യിലും പരിചയസമ്പത്തുണ്ടെങ്കിൽ പകർത്താൻ മടിക്കേണ്ടതില്ല! https://github.com/wikimedia/apps-android-wikipedia</string>
+  <string name="dialog_close_description">അടയ്ക്കുക</string>
+  <string name="preference_title_show_images">ചിത്രങ്ങൾ പ്രദർശിപ്പിക്കുക</string>
+  <string name="read_more_section">കൂടുതൽ വായിക്കുക</string>
+  <string name="menu_gallery_visit_page">പ്രമാണത്തിന്റെ താളിലേക്ക് പോകുക</string>
+  <string name="gallery_error_draw_failed">ചിത്രം വരയ്ക്കാൻ കഴിഞ്ഞില്ല</string>
+  <string name="gallery_menu_share">പങ്കുവയ്ക്കുക</string>
+  <string name="gallery_share_error">ചിത്രം പങ്കുവയ്ക്കാൻ കഴിഞ്ഞില്ല: %s</string>
+  <string name="gallery_menu_save">ഡിവൈസിലേക്ക് സേവ് ചെയ്യുക</string>
 </resources>

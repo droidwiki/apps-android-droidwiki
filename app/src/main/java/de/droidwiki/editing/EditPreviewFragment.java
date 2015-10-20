@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.mediawiki.api.json.ApiException;
 
-import de.droidwiki.*
+import de.droidwiki.*;
 import de.droidwiki.analytics.EditFunnel;
 import de.droidwiki.bridge.StyleBundle;
 import de.droidwiki.page.PageTitle;

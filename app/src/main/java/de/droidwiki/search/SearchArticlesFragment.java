@@ -3,6 +3,7 @@ package de.droidwiki.search;
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.Utils;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.SearchFunnel;
 import de.droidwiki.concurrency.SaneAsyncTask;

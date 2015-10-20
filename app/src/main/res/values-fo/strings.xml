@@ -4,13 +4,9 @@
   <string name="app_name_beta">DroidWiki Beta</string>
   <string name="yes">Ja</string>
   <string name="no">Nei</string>
-  <string name="acra_report_dialog_title">DroidWiki krasjaði :(</string>
-  <string name="acra_report_dialog_text">Send okkum eina fráboðan um krasjið</string>
-  <string name="acra_report_dialog_comment">Hvat gjørdi tú, tá ið krasjið fór fram?</string>
   <string name="search_hint">Leita í DroidWiki</string>
   <string name="nav_item_history">Søga</string>
   <string name="error_network_error" fuzzy="true">Tað er onki internet samband :(</string>
-  <string name="search_network_error">Netverksfeilur. Trýst fyri at royna aftur.</string>
   <string name="page_error_retry">Royn aftur</string>
   <string name="menu_clear_all_history">Rudda søguyvirlitið</string>
   <string name="menu_clear_all_saved_pages">Rudda burt goymdar síður</string>
@@ -23,30 +19,28 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Dagføra allar goymdar síður?</string>
   <string name="share_via">Deil via</string>
   <string name="dialog_title_clear_saved_pages">Rudda burt allar goymdar síður?</string>
-  <string name="toast_saving_page">Goymir síðuna…</string>
-  <string name="toast_saved_page" fuzzy="true">Tað eydnaðist at goyma síðuna</string>
-  <string name="toast_saved_page_missing_images">Tað bar ikki til at goyma allar myndir</string>
-  <string name="toast_refresh_saved_page">Uppfrískar goymdar síður…</string>
+  <string name="snackbar_saving_page">Goymir síðuna…</string>
+  <string name="snackbar_saved_page_format" fuzzy="true">Tað eydnaðist at goyma síðuna</string>
+  <string name="snackbar_saved_page_missing_images">Tað bar ikki til at goyma allar myndir</string>
+  <string name="snackbar_refresh_saved_page">Uppfrískar goymdar síður…</string>
   <string name="delete_selected_saved_pages">Sletta</string>
-  <string name="toast_saved_page_deleted">Goymd(ar) síða(ur) slettað(ar)</string>
+  <string name="snackbar_saved_page_deleted">Goymd(ar) síða(ur) slettað(ar)</string>
   <string name="saved_pages_search_list_hint" fuzzy="true">Leita</string>
   <string name="saved_pages_search_empty_message">Fann ongar síður ið svaraðu til tín fyrispurning.</string>
-  <string name="menu_other_languages">Les á øðrum málum</string>
-  <string name="menu_save_page">Goym síðu</string>
-  <string name="menu_share_page" fuzzy="true">Deil</string>
+  <string name="menu_page_other_languages">Les á øðrum málum</string>
+  <string name="menu_page_save">Goym síðu</string>
+  <string name="menu_page_share" fuzzy="true">Deil</string>
   <string name="nav_item_nearby">Nærindis</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
   <string name="nearby_distance_in_feet">%d ft</string>
   <string name="nearby_distance_in_miles">%.2f míl</string>
-  <string name="nearby_no_network">Onki internetsamband</string>
   <string name="nearby_set_metric">Vís metrar/km</string>
   <string name="last_updated_text">Seinast dagført %1$s</string>
   <string name="content_license_html">Innihaldið er tøkt undir &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; um ikki annað er viðmerkt</string>
   <string name="preference_title_language">DroidWikimál</string>
   <string name="preference_languages_filter_hint">Leita</string>
   <string name="langlinks_filter_hint">Leita</string>
-  <string name="langlinks_error_retry">Royn aftur</string>
   <string name="langlinks_empty">Henda síðan er ikki tøk á øðrum málum.</string>
   <string name="langlinks_activity_title">Onnur mál</string>
   <string name="menu_save_changes">Goym broytingar</string>
@@ -63,7 +57,7 @@
   <string name="title_captcha">Skriva hetta captcha</string>
   <string name="edit_section_captcha_reload">Trýst á CAPTCHA fyri at dagføra</string>
   <string name="edit_saved_page_refresh">Henda síðan kann vera ikki-dagførd, og hevur tørv á at blíva uppfríska fyri at rætting kann gerast virki. Ynskir tú at uppfríska síðuna?</string>
-  <string name="nav_item_login">Rita inn</string>
+  <string name="nav_item_login" fuzzy="true">Rita inn</string>
   <string name="login_username_hint">Brúkaranavn</string>
   <string name="login_password_hint">Loyniorð</string>
   <string name="login_password_show_check">Vís loyniorð</string>
@@ -77,17 +71,13 @@
   <string name="login_error_blocked">Hesin brúkarin er sperraður</string>
   <string name="login_error_throttled">Ov nógvar royndir at rita inn. Bíða nakrir minuttir og royn so aftur.</string>
   <string name="login_error_unknown">Innritan miseydnaðist :(</string>
-  <string name="login_error_no_network">Onki internetsamband</string>
   <string name="preference_title_logout">Rita út</string>
-  <string name="preference_summary_logout">Rita út av tínari DroidWiki-konto</string>
-  <string name="preference_summary_notloggedin">Tú ert ikki innritað(ur).</string>
   <string name="toast_logout_complete">Tú ert ritað/ur út</string>
   <string name="saved_pages_empty_message" fuzzy="true">Ongar goymdar síður</string>
   <string name="history_empty_message" fuzzy="true">Títt søguyvirlit er tómt.</string>
   <string name="delete_selected_history">Sletta</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
   <string name="create_account_username_hint">Brúkaranavn</string>
-  <string name="create_account_password_hint">Loyniorð</string>
   <string name="login_create_account_link">Hevur tú onga konto? Blív ein partur av Wikipeida</string>
   <string name="create_account_login_link">Hevur tú longu eina konto? Rita inn</string>
   <string name="create_account_activity_title">Stovna eina kontu</string>
@@ -100,7 +90,6 @@
   <string name="create_account_ip_throttle_error">Ov nógvar kontur eru stovnaðar frá hesi IP adreseeuni. Royn aftur seinni.</string>
   <string name="create_account_open_proxy_error">Henda IP adressan er blivin sperrað fyri upprættan av kontum.</string>
   <string name="create_account_generic_error">Tað bar ikki til at upprætta kontu</string>
-  <string name="create_account_no_network">Onki internetsamband</string>
   <string name="preferences_general_heading">Generelt</string>
   <string name="zero_charged_verbiage">DroidWiki Zero er sløkt</string>
   <string name="zero_search_hint">Leita í DroidWiki Zero</string>
@@ -116,8 +105,6 @@
   <string name="send_feedback">Send app afturmelding</string>
   <string name="nav_item_random">Tilvildarlig grein</string>
   <string name="create_account_account_created_toast">Konto upprættað!</string>
-  <string name="user_contribs_more_action">Innles meira</string>
-  <string name="activity_my_contributions_title">Míni íkøst</string>
   <string name="preference_title_eventlogging_opt_in">Send frágreiðingar um brúkara</string>
   <string name="preference_summary_eventlogging_opt_in">Loyv Wikimedia at savna kunning um hvussu tú nýtir appina, fyri at appin kann gerast betri</string>
   <string name="editing_error_spamblacklist">Leinki til sperraði økisnøvn (domains) (%s) vóru funnin. Vinarliga tak tey burtur og royn aftur.</string>
@@ -129,8 +116,7 @@
   <string name="page_protected_other">Henda síðan er vard á henda hátt: %s</string>
   <string name="page_protected_can_not_edit">Tú hevur ikki loyvi til at rætta hesa síðuna</string>
   <string name="page_protected_can_not_edit_title">Henda síðan er vard</string>
-  <string name="more_item_preferences">Meira</string>
-  <string name="more_activity_title">Meira</string>
+  <string name="settings_activity_title" fuzzy="true">Innstillingar</string>
   <string name="about_description">Um DroidWiki-appina</string>
   <string name="about_contributors_heading">høvundar</string>
   <string name="about_wmf">Ein app frá &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>

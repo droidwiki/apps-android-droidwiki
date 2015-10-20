@@ -5,7 +5,7 @@
     <string name="hockeyapp_app_id">eb167874c1d6569430a9bcfd71d4c24d</string>
 
     <!-- URLs -->
-    <string name="zero_webpage_url">https://m.wikimediafoundation.org/wiki/Wikipedia_Zero_App_FAQ</string>
+    <string name="zero_webpage_url">https://m.wikimediafoundation.org/wiki/DroidWiki_Zero_App_FAQ</string>
     <string name="map_tile_source_url">https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png</string>
 
     <!-- Search -->

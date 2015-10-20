@@ -5,15 +5,9 @@
   <string name="app_name_alpha">ویکیپیڈیا الفا</string>
   <string name="yes">جی ہاں</string>
   <string name="no">نہیں</string>
-  <string name="acra_report_dialog_title">ویکیپیڈیا بند ہوگیا :(</string>
-  <string name="acra_report_dialog_text">ہمیں بند ہونے کی رپورٹ کریں</string>
-  <string name="acra_report_dialog_comment">آپ کیا کررہے تھے جب ویکیپیڈیا کام کرنا رک گیا؟</string>
   <string name="search_hint">ویکیپیڈیا میں تلاش</string>
   <string name="nav_item_history">تاریخچہ</string>
   <string name="error_network_error" fuzzy="true">کوئی نیٹورک کنکشن نہیں ہے :(</string>
-  <string name="search_network_error">نیٹورک ایرر، دوبارہ کوشش کے لیے طق کریں</string>
-  <string name="generic_page_error">آپ کی درخواست ہینڈل کرنے میں کچھ مسائل تھے</string>
-  <string name="status_code_unavailable">سرور سٹیٹس کوڈ کی عدم دستیابی</string>
   <string name="page_error_retry">دوبارہ کوشش کریں</string>
   <string name="menu_clear_all_history">تاریخچہ حذف کریں</string>
   <string name="menu_clear_all_saved_pages">محفوظ صفحات حذف کریں</string>
@@ -26,27 +20,24 @@
   <string name="dialog_prompt_refresh_all_saved_pages">تمام محفوظ صفحات کی تجدید کریں؟</string>
   <string name="share_via">شیئر بذریعہ</string>
   <string name="dialog_title_clear_saved_pages">تمام محفوظ صفحات حذف کریں؟</string>
-  <string name="toast_saving_page">صفحہ محفوظ کررہا ہے...</string>
-  <string name="toast_saved_page">\"%s\"  صفحہ آفلائن پڑھنے کے لیے محفوظ ہوگیا</string>
-  <string name="toast_saved_page_missing_images">صفحے میں موجود تمام تصاویر محفوظ نہیں ہوسکیں</string>
-  <string name="toast_refresh_saved_page">محفوظ صفحہ تازہ کررہا ہے...</string>
+  <string name="snackbar_saving_page">صفحہ محفوظ کررہا ہے...</string>
+  <string name="snackbar_saved_page_format">\"%s\"  صفحہ آفلائن پڑھنے کے لیے محفوظ ہوگیا</string>
+  <string name="snackbar_saved_page_missing_images">صفحے میں موجود تمام تصاویر محفوظ نہیں ہوسکیں</string>
+  <string name="snackbar_refresh_saved_page">محفوظ صفحہ تازہ کررہا ہے...</string>
   <string name="delete_selected_saved_pages">حذف کریں</string>
-  <string name="toast_saved_page_deleted">محفوظ صفحہ/صفحات حذف ہوگیا/ہوگئے</string>
+  <string name="snackbar_saved_page_deleted">محفوظ صفحہ/صفحات حذف ہوگیا/ہوگئے</string>
   <string name="saved_pages_search_list_hint">محفوظ صفحات تلاش کریں</string>
   <string name="saved_pages_search_empty_message">مطلوبہ تلاش کے نتائج نہیں ملے.</string>
-  <string name="menu_other_languages">دوسری زبان میں مطالعہ کریں</string>
-  <string name="menu_save_page">صفحہ محفوظ کریں</string>
-  <string name="menu_share_page" fuzzy="true">شیئر کریں</string>
+  <string name="menu_page_other_languages">دوسری زبان میں مطالعہ کریں</string>
+  <string name="menu_page_save">صفحہ محفوظ کریں</string>
+  <string name="menu_page_share" fuzzy="true">شیئر کریں</string>
   <string name="nav_item_nearby">قریبی</string>
-  <string name="menu_update_nearby">تجدید قریبی</string>
   <string name="nearby_empty_title">کوئی قریبی صفحہ نہیں ہے!</string>
-  <string name="nearby_empty_message">جب آپ کسی دوسری جگہ پر جائیں، تب یہ صفحہ ریفریش کریں اور جانیئے آپ کے اردگرد قریب کیا ہے.</string>
+  <string name="nearby_empty_message" fuzzy="true">جب آپ کسی دوسری جگہ پر جائیں، تب یہ صفحہ ریفریش کریں اور جانیئے آپ کے اردگرد قریب کیا ہے.</string>
   <string name="nearby_distance_in_meters">%d میٹر</string>
   <string name="nearby_distance_in_kilometers">%.2f کلومیٹر</string>
   <string name="nearby_distance_in_feet">%d فٹ</string>
   <string name="nearby_distance_in_miles">%.2f میل</string>
-  <string name="nearby_no_network">کوئی نیٹورک کنکشن نہیں ہے</string>
-  <string name="nearby_server_error">قریبی جگہوں کی فہرست نہیں حاصل ہوسکی.</string>
   <string name="nearby_dialog_goto_settings">آپ کی ڈیوائس میں لوکیشن اپڈیٹس چالو نہیں ہیں. آپ ترتیبات  (سیٹنگز) میں جاکر اسے چالو کریں گے؟</string>
   <string name="nearby_set_metric">میٹر/کلومیٹر دکھائیں</string>
   <string name="nearby_set_imperial">فٹ/میل دکھائیں</string>
@@ -57,10 +48,7 @@
   <string name="edit_save_action_license_anon">محفوظ کرنے پر آپ کو &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;استعمال کی شرائط&lt;/a&gt; سے متفق سمجھا جائے گا اور ترامیم کو&lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; لائسنس کے تحت آزاد سمجھا جائے گا. ترامیم کو آپکے آئی پی ایڈریس سے منسلک کیا جائے گا. اگر آپ &lt;a href=\"https://#login\"&gt;لاگ ان&lt;/a&gt; ہوجائیں تو آپکا آئی پی ایڈریس ظاہر نہیں ہوگا</string>
   <string name="preference_title_language">ویکیپیڈیا زبان منتخب کریں</string>
   <string name="preference_languages_filter_hint">تلاش</string>
-  <string name="preference_system_language_toggle">سسٹم کی زبان استعمال کریں</string>
-  <string name="preference_system_language_summary">سسٹم کی زبان</string>
   <string name="langlinks_filter_hint">تلاش</string>
-  <string name="langlinks_error_retry">دوبارہ کوشش کریں</string>
   <string name="langlinks_empty">یہ صفحہ کسی دوسری زبان میں دستیاب نہیں ہے.</string>
   <string name="langlinks_no_match">مطلوبہ تلاش کے نتائج کسی زبان میں نہیں ملے</string>
   <string name="langlinks_activity_title">دیگر زبانیں</string>
@@ -80,7 +68,7 @@
   <string name="edit_section_captcha_hint">اوپر والے الفاظ دہرائیں</string>
   <string name="title_captcha">کیپچا درج کریں</string>
   <string name="edit_section_captcha_reload">نئے کیپچا کے لیے طق کریں</string>
-  <string name="nav_item_login">داخل ہوجائیے</string>
+  <string name="nav_item_login" fuzzy="true">داخل ہوجائیے</string>
   <string name="login_username_hint">صارف کا نام</string>
   <string name="login_password_hint">کلمۂ شناخت</string>
   <string name="login_password_show_check">ظاہری کملہ شناخت</string>
@@ -94,19 +82,15 @@
   <string name="login_error_blocked">اس صارف پر پابندی لگی ہوئی ہے</string>
   <string name="login_error_throttled">بہت زیادہ لاگ ان ہونے کی کوششیں. کچھ دیر انتظار کریں اور دوبارہ کوشش کریں</string>
   <string name="login_error_unknown">لاگ ان میں ناکامی :(</string>
-  <string name="login_error_no_network">کوئی نیٹورک کنکشن نہیں ہے</string>
   <string name="preference_title_logout">خارج ہوجائیں</string>
-  <string name="preference_summary_logout">ویکیپیڈیا سے لاگ آؤٹ ہوجائیں</string>
-  <string name="preference_summary_notloggedin">لاگ ان نہیں</string>
   <string name="toast_logout_complete">لاگ آؤٹ ہوگئے</string>
   <string name="saved_pages_empty_title">کوئی محفوظ صفحہ نہیں ہے!</string>
   <string name="saved_pages_empty_message">محفوظ صفحات بڑے کام کی چیز ہیں. انہیں بک مارکس کی طرح سمجھیے لیکن انہیں آپ آف لائن بھی پڑھ سکتے ہیں</string>
   <string name="history_empty_title">کوئی حالیہ صفحہ نہیں ہے!</string>
   <string name="history_empty_message">آپ نے شاید ساری ہسٹری حذف کر دی ہے، اگلی مرتبہ آپ کوئی صفحہ کھولیں گے تو یہاں سے آپ اس پر واپس جاسکتے ہیں</string>
   <string name="delete_selected_history">حذف کریں</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;و&lt;/big&gt;یکیپیڈ&lt;big&gt;یا&lt;/big&gt;</string>
   <string name="create_account_username_hint">صارف نام</string>
-  <string name="create_account_password_hint">پاسورڈ</string>
   <string name="login_create_account_link">کھاتہ نہیں ہے؟ ویکیپیڈیا پر کھاتہ بنائیں</string>
   <string name="create_account_login_link">پہلے سے کھاتہ ہے؟ لاگ ان ہوں</string>
   <string name="create_account_activity_title">کھاتا بنائیں</string>
@@ -126,7 +110,6 @@
   <string name="create_account_blocked_error">آپ کھاتا نہیں بناسکتے کیونکہ آپ کے کھاتے پر پابندی ہے</string>
   <string name="create_account_password_name_match_error">آپکا صارف نام اور پاسور ڈ مخلتف ہونا چاہیے.</string>
   <string name="create_account_generic_error">کھاتا نہیں بنایا جاسکا</string>
-  <string name="create_account_no_network">کوئی نیٹورک کنکشن نہیں ہے</string>
   <string name="create_account_next">اگلا</string>
   <string name="create_account_button">کھاتا بنائیں</string>
   <string name="preferences_general_heading">عام</string>

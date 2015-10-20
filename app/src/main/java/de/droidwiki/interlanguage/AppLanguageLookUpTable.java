@@ -6,6 +6,8 @@ import android.support.annotation.ArrayRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import de.droidwiki.R;
+
 import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.List;

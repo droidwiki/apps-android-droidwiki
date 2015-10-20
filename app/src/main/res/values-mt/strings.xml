@@ -5,12 +5,9 @@
   <string name="app_name_alpha">Wikipedija Alpha</string>
   <string name="yes">Iva</string>
   <string name="no">Le</string>
-  <string name="acra_report_dialog_title">Il-Wikipedija wafqet :(</string>
   <string name="search_hint">Fittex fuq il-Wikipedija</string>
   <string name="nav_item_history">Kronoloġija</string>
   <string name="error_network_error" fuzzy="true">M\'hemm l-ebda konnessjoni man-netwerk :(</string>
-  <string name="search_network_error">Żball fin-netwerk. Agħfas biex terġa\' tipprova.</string>
-  <string name="generic_page_error">Kien hemm problema fl-immaniġġjar tar-rikjesta tiegħek.</string>
   <string name="page_error_retry">Erġa\' pprova</string>
   <string name="menu_clear_all_history">Ħassar il-kronoloġija</string>
   <string name="menu_clear_all_saved_pages">Ħassar il-paġni ssejvjati</string>
@@ -23,20 +20,19 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Trid taġġorna l-paġna kollha salvati?</string>
   <string name="share_via">Aqsam permezz...</string>
   <string name="dialog_title_clear_saved_pages">Trid tħassar il-paġna kollha salvati?</string>
-  <string name="toast_saved_page_missing_images">Ma kienx possibbli li l-istampi kollha jiġu ssejvjati.</string>
+  <string name="snackbar_saved_page_missing_images">Ma kienx possibbli li l-istampi kollha jiġu ssejvjati.</string>
   <string name="delete_selected_saved_pages">Ħassar</string>
   <string name="saved_pages_search_list_hint" fuzzy="true">Fittex</string>
   <string name="saved_pages_search_empty_message">L-ebda paġna ma qablet mar-rikjesta tiegħek.</string>
-  <string name="menu_other_languages">Aqra f\'lingwa oħra</string>
-  <string name="menu_save_page">Issejvja l-paġna</string>
-  <string name="menu_share_page" fuzzy="true">Aqsam</string>
-  <string name="find_in_page">Sib fil-paġna</string>
+  <string name="menu_page_other_languages">Aqra f\'lingwa oħra</string>
+  <string name="menu_page_save">Issejvja l-paġna</string>
+  <string name="menu_page_share" fuzzy="true">Aqsam</string>
+  <string name="menu_page_find_in_page">Sib fil-paġna</string>
   <string name="nav_item_nearby">Fil-qrib</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
   <string name="nearby_distance_in_feet">%d ft</string>
   <string name="nearby_distance_in_miles">%.2f mi</string>
-  <string name="nearby_no_network">L-ebda konnessjoni tan-netwerk</string>
   <string name="nearby_set_metric">Uri metri/km</string>
   <string name="nearby_set_imperial">Uri piedi/mili</string>
   <string name="nearby_view_on_map">Ara l-post fuq il-mappa</string>
@@ -46,10 +42,7 @@
   <string name="edit_save_action_license_anon">Billi tissejvja, qiegħed taqbel mat-&lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;Termini t\'Użu&lt;/a&gt;, u li irrevokabbilment tirrilaxxa l-kontribuzzjonijiet taħt il-liċenzja &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;. Il-modifiki se jiġu attribwiti għall-indirizz IP ta\' dan l-apparat. Jekk &lt;a href=\"https://#login\"&gt;tidħol fil-kont&lt;/a&gt;, int ikollok aktar privatezza.</string>
   <string name="preference_title_language">Lingwa tal-Wikipedija</string>
   <string name="preference_languages_filter_hint">Fittex</string>
-  <string name="preference_system_language_toggle">Uża l-lingwa tas-sistema</string>
-  <string name="preference_system_language_summary">Lingwa tas-sistema</string>
   <string name="langlinks_filter_hint">Fittex</string>
-  <string name="langlinks_error_retry">Erġa\' pprova</string>
   <string name="langlinks_empty">Din il-paġna hija disponibbli f\'lingwi oħrajn.</string>
   <string name="langlinks_no_match">L-ebda lingwa ma taqbel mar-rikjesta tiegħek.</string>
   <string name="langlinks_activity_title">Lingwi oħrajn</string>
@@ -65,7 +58,7 @@
   <string name="edit_section_captcha_hint">Irrepeti l-kliem minn hawn fuq</string>
   <string name="title_captcha">Daħħal il-CAPTCHA</string>
   <string name="edit_section_captcha_reload">Agħfas fuq il-CAPTCHA għal waħda ġdida</string>
-  <string name="nav_item_login">Idħol</string>
+  <string name="nav_item_login" fuzzy="true">Idħol</string>
   <string name="login_username_hint">Isem l-utent</string>
   <string name="login_password_hint">Password</string>
   <string name="login_password_show_check">Uri l-password</string>
@@ -76,13 +69,10 @@
   <string name="login_error_wrong_username">Isem l-utent ħażin</string>
   <string name="login_error_illegal">Isem l-utent invalidu</string>
   <string name="login_error_blocked">Dan l-utent ġie mblukkat</string>
-  <string name="login_error_no_network">L-ebda konnessjoni man-netwerk</string>
   <string name="preference_title_logout">Oħroġ</string>
-  <string name="preference_summary_logout">Oħroġ mill-kont tal-Wikipedija</string>
   <string name="delete_selected_history">Ħassar</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDIJ&lt;big&gt;A&lt;/big&gt;</string>
   <string name="create_account_username_hint">Isem l-utent</string>
-  <string name="create_account_password_hint">Password</string>
   <string name="login_create_account_link">M\'għandekx kont? Ingħaqad mal-Wikipedija</string>
   <string name="create_account_activity_title">Irreġistra</string>
   <string name="dialog_create_account_checking_progress">Għaddejja l-verifika</string>
@@ -110,8 +100,6 @@
   <string name="send_feedback">Ibgħat kumment fuq l-app</string>
   <string name="nav_item_random">Paġna kwalunkwe</string>
   <string name="create_account_account_created_toast">Il-kont ġie maħluq!</string>
-  <string name="user_contribs_more_action">Tella\' iktar</string>
-  <string name="activity_my_contributions_title">Il-kontribuzzjonijiet tiegħi</string>
   <string name="preference_title_eventlogging_opt_in">Ibgħat rapporti fuq l-użu</string>
   <string name="preference_summary_eventlogging_opt_in">Ħalli \'l-Wikipedija li tiġbor informazzjoni dwar kif tuża l-app sabiex ittejjeb l-app</string>
   <string name="editing_error_spamblacklist">Instabu ħoloq lejn dominji mblukkati (%s). Jekk jogħġbok neħħihom u erġa\' pprova.</string>
@@ -120,8 +108,6 @@
   <string name="error_can_not_process_link">Il-ħolqa ma setgħetx tintwera</string>
   <string name="page_protected_autoconfirmed">Din il-paġna hija semiprotetta.</string>
   <string name="page_protected_sysop">Din il-paġna hija protetta.</string>
-  <string name="more_item_preferences">Aktar</string>
-  <string name="more_activity_title">Aktar</string>
   <string name="about_description">Dwar l-app tal-Wikipedija</string>
   <string name="privacy_policy_description">Politika dwar il-privatezza</string>
   <string name="terms_of_use_description">Termini ta\' użu</string>
@@ -148,7 +134,6 @@
   <string name="find_previous">Sib ta\' qabel</string>
   <string name="error_network_error_try_again">In-netwerk ma setax jintlaħaq. Jekk jogħġbok erġa\' pprova.</string>
   <string name="saved_pages_update_all_error_retry">Erġa\' pprova</string>
-  <string name="saved_pages_refresh_pages_complete">L-aġġornament tkompla</string>
   <string name="menu_page_saved">Paġna ssejvjata</string>
   <string name="menu_refresh_saved_page">Aġġorna l-paġna</string>
   <string name="abusefilter_title_warn">Din tista\' tkun modifiki inutli. Inti ċert li tixtieq tissejvjaha?</string>
@@ -156,7 +141,6 @@
   <string name="dialog_close_description">Agħlaq</string>
   <string name="preference_title_show_images">Uri l-istampi</string>
   <string name="read_more_section">Aqra aktar</string>
-  <string name="read_next_section">Kompli aqra</string>
   <string name="menu_gallery_visit_page">Mur fil-paġna tal-fajl</string>
   <string name="gallery_error_draw_failed">L-istampa ma setgħetx tiġi ġġenerata.</string>
   <string name="gallery_menu_share">Aqsam</string>

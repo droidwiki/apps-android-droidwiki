@@ -34,7 +34,7 @@
               android:visibility="gone"
             />
 
-    <org.wikipedia.views.WikiErrorView
+    <de.droidwiki.views.WikiErrorView
         android:id="@+id/langlinks_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp">
-            <org.wikipedia.views.PlainPasteEditText
+            <de.droidwiki.views.PlainPasteEditText
                     android:id="@+id/langlinks_filter"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

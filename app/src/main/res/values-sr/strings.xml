@@ -5,14 +5,9 @@
   <string name="app_name_alpha">Википедија Алфа</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
-  <string name="acra_report_dialog_title">Википедија је пала :(</string>
-  <string name="acra_report_dialog_text">Пошаљите нам извештај</string>
-  <string name="acra_report_dialog_comment">Шта сте ви радили кад је дошло до пада?</string>
   <string name="search_hint">Претрага Википедије</string>
   <string name="nav_item_history">Историја</string>
-  <string name="error_network_error">Није могуће успоставити мрежну везу.</string>
-  <string name="search_network_error">Мрежна грешка. Тапните да пробате поново.</string>
-  <string name="generic_page_error">Дошло је до проблема при обради вашег захтева.</string>
+  <string name="error_network_error" fuzzy="true">Није могуће успоставити мрежну везу.</string>
   <string name="page_error_retry">Пробај опет</string>
   <string name="menu_clear_all_history">Очисти историју</string>
   <string name="menu_clear_all_saved_pages">Очисти сачуване странице</string>
@@ -25,43 +20,38 @@
   <string name="dialog_prompt_refresh_all_saved_pages">Ажирирај све сачуване странице?</string>
   <string name="share_via">Делите преко</string>
   <string name="dialog_title_clear_saved_pages">Очистити све сачуване странице?</string>
-  <string name="toast_saving_page">Чување странице…</string>
-  <string name="toast_saved_page" fuzzy="true">Страница успешно сачувана</string>
-  <string name="toast_saved_page_missing_images">Не могу да сачувам све слике</string>
-  <string name="toast_refresh_saved_page">Освежавам сачуване странице...</string>
+  <string name="snackbar_saving_page">Чување странице…</string>
+  <string name="snackbar_saved_page_format">„%s“ сачувана за ванмрежно читање</string>
+  <string name="snackbar_saved_page_missing_images">Не могу да сачувам све слике</string>
+  <string name="snackbar_refresh_saved_page">Освежавам сачуване странице...</string>
   <string name="delete_selected_saved_pages">Обриши</string>
-  <string name="toast_saved_page_deleted">Сачуване странице обрисане</string>
+  <string name="snackbar_saved_page_deleted">Сачуване странице обрисане</string>
   <string name="saved_pages_search_list_hint">Претрага сачуваних страница</string>
-  <string name="menu_show_tabs">Прикажи језичке</string>
-  <string name="menu_other_languages">Други језици</string>
-  <string name="menu_save_page">Сачувај страницу</string>
-  <string name="menu_share_page" fuzzy="true">Дели</string>
-  <string name="find_in_page">Пронађи на страници</string>
-  <string name="menu_themechooser">Фонт и тема</string>
-  <string name="menu_open_link" fuzzy="true">Отвори везу</string>
-  <string name="menu_open_in_new_tab">Отвори у новом језичку</string>
+  <string name="menu_page_show_tabs">Прикажи језичке</string>
+  <string name="menu_page_other_languages">Други језици</string>
+  <string name="menu_page_save">Сачувај страницу</string>
+  <string name="menu_page_share">Дели</string>
+  <string name="menu_page_find_in_page">Пронађи на страници</string>
+  <string name="menu_page_font_and_theme">Фонт и тема</string>
+  <string name="menu_long_press_open_page">Отвори</string>
+  <string name="menu_long_press_open_in_new_tab">Отвори у новом језичку</string>
   <string name="nav_item_nearby">У близини</string>
   <string name="nearby_empty_title">Нема ништа у близини!</string>
   <string name="nearby_distance_in_meters">%d м</string>
   <string name="nearby_distance_in_kilometers">%.2f км</string>
   <string name="nearby_distance_in_feet">%d ft</string>
   <string name="nearby_distance_in_miles">%.2f mi</string>
-  <string name="nearby_no_network">Нема мрежне везе</string>
-  <string name="nearby_server_error">Нема списка места у близини.</string>
   <string name="nearby_dialog_goto_settings">Локацијска ажурирања нису укључена на вашем уређају. Да ли желите да отворите подешавања вашег уређаја и да их укључите?</string>
   <string name="nearby_set_metric">Прикажи метре/км</string>
   <string name="nearby_set_imperial">Прикажи стопе/миље</string>
   <string name="nearby_view_on_map">Погледај место на мапи</string>
   <string name="last_updated_text">Последње ажурирање %s</string>
   <string name="content_license_html">Садржај је доступан под лиценцом &lt;a href=\"//creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; осим ако је другачије наведено</string>
-  <string name="edit_save_action_license_logged_in">Чувањем измена прихватате &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;услове коришћења&lt;/a&gt; и неопозиво прихватате да се ваш допринос објави под лиценцом &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
-  <string name="edit_save_action_license_anon">Чувањем измена прихватате &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;услове коришћења&lt;/a&gt; и неопозиво прихватате да се ваш допринос објави под лиценцом &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;. Измене ће бити приписане ИП адреси вашег уређаја. Ако се &lt;a href=\"https://#login\"&gt;пријавите&lt;/a&gt;, имаћете више приватности.</string>
+  <string name="edit_save_action_license_logged_in">Чувањем измена прихватате &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;услове коришћења&lt;/a&gt; и неопозиво прихватате да се Ваш допринос објави под лиценцом &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
+  <string name="edit_save_action_license_anon">Чувањем измена прихватате &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;услове коришћења&lt;/a&gt; и неопозиво прихватате да се Ваш допринос објави под лиценцом &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;. Измене ће бити приписане ИП адреси вашег уређаја. Ако се &lt;a href=\"https://#login\"&gt;пријавите&lt;/a&gt;, имаћете више приватности.</string>
   <string name="preference_title_language">Језик Википедије</string>
   <string name="preference_languages_filter_hint">Претрага</string>
-  <string name="preference_system_language_toggle">Користи језик уређаја</string>
-  <string name="preference_system_language_summary">Језик уређаја</string>
   <string name="langlinks_filter_hint">Претрага</string>
-  <string name="langlinks_error_retry">Пробај опет</string>
   <string name="langlinks_empty">Ова страница није доступан на другим језицима.</string>
   <string name="langlinks_activity_title">Други језици</string>
   <string name="menu_save_changes">Сачувај измене</string>
@@ -91,16 +81,13 @@
   <string name="login_error_blocked">Корисник је блокиран</string>
   <string name="login_error_throttled">Превише пута сте покушали да се пријавите. Сачекајте неколико минута и покушајте поново.</string>
   <string name="login_error_unknown">Пријављивање није успело :(</string>
-  <string name="login_error_no_network">Нема мрежне везе</string>
   <string name="preference_title_logout">Одјави ме</string>
-  <string name="preference_summary_notloggedin">Нисте пријављени.</string>
   <string name="toast_logout_complete">Одјављени сте</string>
   <string name="saved_pages_empty_title">Нема сачуваних страница!</string>
   <string name="history_empty_message">Највероватније сте их све обрисали. Кад идући пут будете посетили страницу, можете јој се поново вратити овде.</string>
   <string name="delete_selected_history">Брисање</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ИКИПЕДИЈ&lt;big&gt;А&lt;/big&gt;</string>
   <string name="create_account_username_hint">Корисничко име</string>
-  <string name="create_account_password_hint">Лозинка</string>
   <string name="login_create_account_link">Немате налог? Придружите се Википедији</string>
   <string name="create_account_login_link">Већ имате свој налог? Пријавите се</string>
   <string name="create_account_activity_title">Отворите налог</string>
@@ -116,10 +103,9 @@
   <string name="create_account_invalid_email_error">Ваша е-пошта није ваљана.</string>
   <string name="create_account_password_too_short_error">Унета лозинка је прекратка.</string>
   <string name="create_account_blocked_anon_error">Не можете да отворите налог зато што је ваша ИП адреса блокирана.</string>
-  <string name="create_account_blocked_error">Не можете да отворите налог зато што је ваш налог блокиран.</string>
+  <string name="create_account_blocked_error">Не можете да отворите налог зато што је Ваш налог блокиран.</string>
   <string name="create_account_password_name_match_error">Ваше корисничко име и лозинка се морају разликовати.</string>
   <string name="create_account_generic_error">Не могу да отворим налог</string>
-  <string name="create_account_no_network">Нема мрежне везе</string>
   <string name="create_account_next">Следеће</string>
   <string name="create_account_button">Отвори налог</string>
   <string name="preferences_general_heading">Опште</string>
@@ -134,16 +120,14 @@
   <string name="send_feedback">Пошаљи повратне информације</string>
   <string name="nav_item_random">Насумице</string>
   <string name="create_account_account_created_toast">Ваш налог је отворен!</string>
-  <string name="user_contribs_more_action">Учитај још</string>
-  <string name="activity_my_contributions_title">Моји доприноси</string>
   <string name="preference_title_eventlogging_opt_in">Пошаљи корисничке извештаје</string>
   <string name="history_search_list_hint">Претражи историју</string>
   <string name="page_protected_autoconfirmed">Ова страница је полузаштићена.</string>
   <string name="page_protected_sysop">Ова страница је потпуно заштићена.</string>
   <string name="page_protected_can_not_edit">Немате овлашћења да уређујете ову страницу</string>
   <string name="page_protected_can_not_edit_title">Ова страница је заштићена</string>
-  <string name="more_item_preferences">Више</string>
-  <string name="more_activity_title">Више</string>
+  <string name="settings_item_preferences">Подешавања</string>
+  <string name="settings_activity_title">Подешавања</string>
   <string name="privacy_policy_description">Политика приватности</string>
   <string name="terms_of_use_description">Услови коришћења</string>
   <string name="about_contributors_heading">Доприносиоци</string>
@@ -168,7 +152,6 @@
   <string name="saved_pages_update_all_error_retry">Покушај поново</string>
   <string name="saved_pages_update_all_error_message">Дошло је до грешке код ажурирања сачуваних страница</string>
   <string name="saved_pages_progress_title">Освежавам сачуване странице</string>
-  <string name="saved_pages_refresh_pages_complete">Ажурирање завршено</string>
   <string name="menu_page_saved">Страница сачувана</string>
   <string name="menu_refresh_saved_page">Освежи страницу</string>
   <string name="dialog_page_issues">Недостаци странице</string>
@@ -176,7 +159,7 @@
   <string name="text_size_select">Величина фонта</string>
   <string name="color_theme_select">Тема</string>
   <string name="color_theme_light">Светло</string>
-  <string name="color_theme_dark">Тамно.</string>
+  <string name="color_theme_dark">Тамно</string>
   <string name="page_similar_titles">Сличне странице</string>
   <string name="search_did_you_mean">Да ли сте мислили „%s“?</string>
   <string name="search_recent_header">Скорашње претраге:</string>
@@ -192,16 +175,17 @@
   <string name="menu_gallery_visit_page">Иди на страницу датотеке</string>
   <string name="gallery_menu_share">Дели</string>
   <string name="gallery_menu_save">Сачувај на уређај</string>
-  <string name="gallery_save_error">Не могу да сачувам слику: %s</string>
   <string name="gallery_save_success">Слика успешно сачувана.</string>
+  <string name="gallery_image_saved_notification_title">Слика сачувана.</string>
   <string name="gallery_error_video_failed">Не могу да пустим видео.</string>
   <string name="err_cannot_save_file">Не могу да сачувам датотеку</string>
   <string name="share_snippet_button">Подели као слику</string>
   <string name="share_normal_button">Подели као текст</string>
+  <string name="cc_logo">Creative Commons лиценца</string>
   <string name="gallery_fair_use_license">Поштена употреба</string>
   <string name="menu_new_tab">Нови језичак</string>
   <string name="button_close_tab">Затвори језичак</string>
-  <string name="page_view_in_browser">Види страницу у веб прегледачу</string>
+  <string name="page_view_in_browser">Види страницу у веб-прегледачу</string>
   <string name="format_error_server_message">Порука: „%s“</string>
   <string name="format_error_server_code">Код: „%s“</string>
 </resources>

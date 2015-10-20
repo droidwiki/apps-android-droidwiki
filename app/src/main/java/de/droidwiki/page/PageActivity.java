@@ -153,7 +153,7 @@ public class PageActivity extends ThemedActionBarActivity {
      * @return Fragment at the top of the backstack.
      */
     public Fragment getTopFragment() {
-        return getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.content_fragment_container);
+        return getSupportFragmentManager().findFragmentById(R.id.content_fragment_container);
     }
 
     /**
@@ -184,20 +184,20 @@ public class PageActivity extends ThemedActionBarActivity {
         super.onCreate(savedInstanceState);
         app = (WikipediaApp) getApplicationContext();
 
-        PreferenceManager.setDefaultValues(this, de.droidwiki.R.xml.preferences, false);
-        setContentView(de.droidwiki.R.layout.activity_page);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        setContentView(R.layout.activity_page);
 
-        setSupportActionBar((Toolbar) findViewById(de.droidwiki.R.id.main_toolbar));
+        setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        toolbarContainer = findViewById(de.droidwiki.R.id.main_toolbar_container);
+        toolbarContainer = findViewById(R.id.main_toolbar_container);
 
         busMethods = new EventBusMethods();
         registerBus();
 
-        fragmentContainerView = findViewById(de.droidwiki.R.id.content_fragment_container);
-        tabsContainerView = findViewById(de.droidwiki.R.id.tabs_container);
-        progressBar = (ProgressBar)findViewById(de.droidwiki.R.id.main_progressbar);
+        fragmentContainerView = findViewById(R.id.content_fragment_container);
+        tabsContainerView = findViewById(R.id.tabs_container);
+        progressBar = (ProgressBar)findViewById(R.id.main_progressbar);
         progressBar.setMax(PROGRESS_BAR_MAX_VALUE);
         updateProgressBar(false, true, 0);
 
@@ -212,8 +212,8 @@ public class PageActivity extends ThemedActionBarActivity {
 
         randomHandler = navDrawerHelper.getNewRandomHandler();
 
-        searchFragment = (SearchArticlesFragment) getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.search_fragment);
-        searchHintText = (TextView) findViewById(de.droidwiki.R.id.main_search_bar_text);
+        searchFragment = (SearchArticlesFragment) getSupportFragmentManager().findFragmentById(R.id.search_fragment);
+        searchHintText = (TextView) findViewById(R.id.main_search_bar_text);
         searchHintText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -224,14 +224,14 @@ public class PageActivity extends ThemedActionBarActivity {
         mDrawerToggle = new MainDrawerToggle(
                 this,                  /* host Activity */
                 drawerLayout,          /* DrawerLayout object */
-                de.droidwiki.R.string.app_name,     /* "open drawer" description */
-                de.droidwiki.R.string.app_name      /* "close drawer" description */
+                R.string.app_name,     /* "open drawer" description */
+                R.string.app_name      /* "close drawer" description */
         );
 
         // Set the drawer toggle as the DrawerListener
         drawerLayout.setDrawerListener(mDrawerToggle);
         drawerLayout.setDragEdgeWidth(
-                getResources().getDimensionPixelSize(de.droidwiki.R.dimen.drawer_drag_margin));
+                getResources().getDimensionPixelSize(R.dimen.drawer_drag_margin));
         getSupportActionBar().setTitle("");
 
         searchBarHideHandler = new SearchBarHideHandler(this, toolbarContainer);
@@ -255,7 +255,7 @@ public class PageActivity extends ThemedActionBarActivity {
             // the app, MRU languages are not updated. There's no harm in doing that here but since
             // the user didin't choose that language in app, it may be unexpected.
         }
-        searchHintText.setText(getString(pausedStateOfZero ? de.droidwiki.R.string.zero_search_hint : de.droidwiki.R.string.search_hint));
+        searchHintText.setText(getString(pausedStateOfZero ? R.string.zero_search_hint : R.string.search_hint));
 
         if (languageChanged) {
             app.resetSite();
@@ -519,8 +519,8 @@ public class PageActivity extends ThemedActionBarActivity {
         FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
 
         // do an animation on the new fragment, but only if there was a previous one before it.
-        trans.setCustomAnimations(de.droidwiki.R.anim.abc_fade_in, de.droidwiki.R.anim.abc_fade_out, 0, 0);
-        trans.replace(de.droidwiki.R.id.content_fragment_container, f, "fragment_" + Integer.toString(totalFragments));
+        trans.setCustomAnimations(R.anim.abc_fade_in, R.anim.abc_fade_out, 0, 0);
+        trans.replace(R.id.content_fragment_container, f, "fragment_" + Integer.toString(totalFragments));
         trans.addToBackStack(null);
         if (allowStateLoss) {
             trans.commitAllowingStateLoss();
@@ -716,8 +716,8 @@ public class PageActivity extends ThemedActionBarActivity {
 
     /*package*/ void showPageSavedMessage(@NonNull String title, boolean success) {
         FeedbackUtil.showMessage(this, getString(success
-                ? de.droidwiki.R.string.toast_saved_page
-                : de.droidwiki.R.string.toast_saved_page_missing_images, title));
+                ? R.string.snackbar_saved_page_format
+                : R.string.snackbar_saved_page_missing_images, title));
     }
 
     private void displayMainPageIfNoTabs() {
@@ -743,17 +743,17 @@ public class PageActivity extends ThemedActionBarActivity {
             ZeroMessage latestCarrierMessage = app.getWikipediaZeroHandler().getCarrierMessage();
 
             if (pausedStateOfZero && !latestWikipediaZeroDisposition) {
-                String title = getString(de.droidwiki.R.string.zero_charged_verbiage);
-                String verbiage = getString(de.droidwiki.R.string.zero_charged_verbiage_extended);
+                String title = getString(R.string.zero_charged_verbiage);
+                String verbiage = getString(R.string.zero_charged_verbiage_extended);
                 WikipediaZeroHandler.showZeroBanner(PageActivity.this, title,
                         getResources().getColor(android.R.color.white),
-                        getResources().getColor(de.droidwiki.R.color.holo_red_dark));
+                        getResources().getColor(R.color.holo_red_dark));
                 navDrawerHelper.setupDynamicNavDrawerItems();
                 showDialogAboutZero(null, title, verbiage);
             } else if ((!pausedStateOfZero || !pausedMessageOfZero.equals(latestCarrierMessage))
                        && latestWikipediaZeroDisposition) {
                 String title = latestCarrierMessage.getMsg();
-                String verbiage = getString(de.droidwiki.R.string.zero_learn_more);
+                String verbiage = getString(R.string.zero_learn_more);
                 WikipediaZeroHandler.showZeroBanner(PageActivity.this, title,
                         latestCarrierMessage.getFg(), latestCarrierMessage.getBg());
                 navDrawerHelper.setupDynamicNavDrawerItems();
@@ -763,8 +763,8 @@ public class PageActivity extends ThemedActionBarActivity {
             pausedMessageOfZero = latestCarrierMessage;
             searchHintText.setText(getString(
                     latestWikipediaZeroDisposition
-                            ? de.droidwiki.R.string.zero_search_hint
-                            : de.droidwiki.R.string.search_hint));
+                            ? R.string.zero_search_hint
+                            : R.string.search_hint));
         }
     }
 
@@ -778,13 +778,13 @@ public class PageActivity extends ThemedActionBarActivity {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setMessage(Html.fromHtml("<b>" + title + "</b><br/><br/>" + message));
             if (prefsKey != null) {
-                alert.setPositiveButton(getString(de.droidwiki.R.string.zero_learn_more_learn_more), new DialogInterface.OnClickListener() {
+                alert.setPositiveButton(getString(R.string.zero_learn_more_learn_more), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Utils.visitInExternalBrowser(PageActivity.this, Uri.parse(getString(de.droidwiki.R.string.zero_webpage_url)));
+                        Utils.visitInExternalBrowser(PageActivity.this, Uri.parse(getString(R.string.zero_webpage_url)));
                     }
                 });
             }
-            alert.setNegativeButton(getString(de.droidwiki.R.string.zero_learn_more_dismiss), new DialogInterface.OnClickListener() {
+            alert.setNegativeButton(getString(R.string.zero_learn_more_dismiss), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     dialog.dismiss();
                 }
@@ -937,7 +937,7 @@ public class PageActivity extends ThemedActionBarActivity {
 
     private void handleLoginActivityResult(int resultCode) {
         if (resultCode == LoginActivity.RESULT_LOGIN_SUCCESS) {
-            FeedbackUtil.showMessage(this, de.droidwiki.R.string.login_success_toast);
+            FeedbackUtil.showMessage(this, R.string.login_success_toast);
         }
     }
 

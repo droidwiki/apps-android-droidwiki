@@ -9,6 +9,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import de.droidwiki.WikipediaApp;
+import de.droidwiki.server.PageLeadProperties;
+import de.droidwiki.util.StringUtil;
 
 import java.text.ParseException;
 import java.util.Date;
@@ -36,6 +38,35 @@ public class PageProperties implements Parcelable {
     private final boolean canEdit;
 
     /**
+     * Side note: Should later be moved out of this class but I like the similarities with
+     * PageProperties(JSONObject).
+     */
+    public PageProperties(PageLeadProperties core) {
+        pageId = core.getId();
+        revisionId = core.getRevision();
+        displayTitleText = StringUtil.emptyIfNull(core.getDisplayTitle());
+        editProtectionStatus = core.getFirstAllowedEditorRole();
+        languageCount = core.getLanguageCount();
+        leadImageUrl = core.getLeadImageUrl();
+        leadImageName = core.getLeadImageName();
+        lastModified = new Date();
+        String lastModifiedText = core.getLastModified();
+        if (lastModifiedText != null) {
+            try {
+                lastModified.setTime(WikipediaApp.getInstance().getSimpleDateFormat()
+                        .parse(lastModifiedText).getTime());
+            } catch (ParseException e) {
+                Log.d("PageProperties", "Failed to parse date: " + lastModifiedText);
+            }
+        }
+        // assume formatversion=2 is used so we get real booleans from the API
+        canEdit = core.isEditable();
+
+        isMainPage = core.isMainPage();
+        isDisambiguationPage = core.isDisambiguation();
+    }
+
+    /**
      * Create a new PageProperties object.
      * @param json JSON object from which this item will be built.
      */
@@ -45,8 +76,8 @@ public class PageProperties implements Parcelable {
         displayTitleText = json.optString("displaytitle");
         // Mediawiki API is stupid!
         if (!(json.opt("protection") instanceof JSONArray)
-            && json.optJSONObject("protection") != null
-            && json.optJSONObject("protection").has("edit")
+                && json.optJSONObject("protection") != null
+                && json.optJSONObject("protection").has("edit")
                 ) {
             editProtectionStatus = json.optJSONObject("protection").optJSONArray("edit").optString(0);
         } else {

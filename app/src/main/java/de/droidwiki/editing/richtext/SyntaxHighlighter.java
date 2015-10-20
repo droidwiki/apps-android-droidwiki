@@ -12,6 +12,7 @@ import android.text.format.DateUtils;
 import android.util.Log;
 import android.widget.EditText;
 
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.concurrency.SaneAsyncTask;
 

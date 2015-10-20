@@ -102,7 +102,7 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
                     private final String actionModeTag = "actionModeSavedPages";
                     @Override
                     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                        mode.getMenuInflater().inflate(de.droidwiki.R.menu.menu_saved_pages_context, menu);
+                        mode.getMenuInflater().inflate(R.menu.menu_saved_pages_context, menu);
                         return true;
                     }
 
@@ -115,11 +115,11 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
                     @Override
                     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
                         switch (item.getItemId()) {
-                            case de.droidwiki.R.id.menu_refresh_selected_saved_pages:
+                            case R.id.menu_refresh_selected_saved_pages:
                                 refreshSelected();
                                 actionMode.finish();
                                 return true;
-                            case de.droidwiki.R.id.menu_delete_selected_saved_pages:
+                            case R.id.menu_delete_selected_saved_pages:
                                 deleteSelected();
                                 actionMode.finish();
                                 return true;
@@ -141,7 +141,7 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
                                             return;
                                         }
                                         FeedbackUtil.showMessage(getActivity(),
-                                                de.droidwiki.R.string.toast_saved_page_deleted);
+                                                R.string.snackbar_saved_page_deleted);
                                     }
                                 }.execute();
                             }
@@ -182,11 +182,11 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
                     public void afterTextChanged(Editable editable) {
                         getActivity().getSupportLoaderManager().restartLoader(LOADER_ID, null, SavedPagesFragment.this);
                         if (editable.length() == 0) {
-                            savedPagesEmptyTitle.setText(de.droidwiki.R.string.saved_pages_empty_title);
+                            savedPagesEmptyTitle.setText(R.string.saved_pages_empty_title);
                             savedPagesEmptyImage.setVisibility(View.VISIBLE);
                             savedPagesEmptyMessage.setVisibility(View.VISIBLE);
                         } else {
-                            savedPagesEmptyTitle.setText(getString(de.droidwiki.R.string.saved_pages_search_empty_message, editable.toString()));
+                            savedPagesEmptyTitle.setText(getString(R.string.saved_pages_search_empty_message, editable.toString()));
                             savedPagesEmptyImage.setVisibility(View.GONE);
                             savedPagesEmptyMessage.setVisibility(View.GONE);
                         }
@@ -287,22 +287,22 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
 
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-            TextView title = (TextView) view.findViewById(de.droidwiki.R.id.page_list_item_title);
-            ImageView thumbnail = (ImageView) view.findViewById(de.droidwiki.R.id.page_list_item_image);
+            TextView title = (TextView) view.findViewById(R.id.page_list_item_title);
+            ImageView thumbnail = (ImageView) view.findViewById(R.id.page_list_item_image);
             SavedPage entry = SavedPage.PERSISTENCE_HELPER.fromCursor(cursor);
             title.setText(entry.getTitle().getDisplayText());
             view.setTag(entry);
 
             if (app.isImageDownloadEnabled()) {
                 Picasso.with(getActivity())
-                       .load(cursor.getString(SavedPageContentProvider.COL_INDEX_IMAGE))
-                       .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                       .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                       .into(thumbnail);
+                        .load(cursor.getString(SavedPageContentProvider.COL_INDEX_IMAGE))
+                        .placeholder(R.drawable.ic_pageimage_placeholder)
+                        .error(R.drawable.ic_pageimage_placeholder)
+                        .into(thumbnail);
             } else {
                 Picasso.with(getActivity())
-                       .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                       .into(thumbnail);
+                        .load(R.drawable.ic_pageimage_placeholder)
+                        .into(thumbnail);
             }
         }
     }
@@ -312,7 +312,7 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        inflater.inflate(de.droidwiki.R.menu.menu_saved_pages, menu);
+        inflater.inflate(R.menu.menu_saved_pages, menu);
     }
 
     @Override
@@ -321,8 +321,10 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
+
+        // Only enable and show the buttons in the options menu if there are saved pages in the list
+        boolean enabled = savedPagesList.getCount() > 0;
         for (int id : Arrays.asList(R.id.menu_clear_all_saved_pages, R.id.menu_refresh_all_saved_pages)) {
-            boolean enabled = savedPagesList.getCount() > 0;
             menu.findItem(id).setEnabled(enabled).setVisible(enabled);
         }
     }
@@ -330,10 +332,10 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.menu_refresh_all_saved_pages:
+            case R.id.menu_refresh_all_saved_pages:
                 promptToRefreshAll();
                 return true;
-            case de.droidwiki.R.id.menu_clear_all_saved_pages:
+            case R.id.menu_clear_all_saved_pages:
                 promptToDeleteAll();
                 return true;
             default:
@@ -343,21 +345,21 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
 
     private void promptToRefreshAll() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(de.droidwiki.R.string.dialog_prompt_refresh_all_saved_pages);
-        builder.setPositiveButton(de.droidwiki.R.string.yes, new DialogInterface.OnClickListener() {
+        builder.setMessage(R.string.dialog_prompt_refresh_all_saved_pages);
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 refreshAll();
             }
         });
-        builder.setNegativeButton(de.droidwiki.R.string.no, null);
+        builder.setNegativeButton(R.string.no, null);
         builder.create().show();
     }
 
     private void promptToDeleteAll() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(de.droidwiki.R.string.dialog_title_clear_saved_pages);
-        builder.setPositiveButton(de.droidwiki.R.string.yes, new DialogInterface.OnClickListener() {
+        builder.setMessage(R.string.dialog_title_clear_saved_pages);
+        builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 new DeleteAllSavedPagesTask(getActivity()) {
@@ -368,12 +370,12 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
                         }
                         entryFilter.setVisibility(View.GONE);
                         FeedbackUtil.showMessage(getActivity(),
-                                de.droidwiki.R.string.toast_saved_page_deleted);
+                                R.string.snackbar_saved_page_deleted);
                     }
                 }.execute();
             }
         });
-        builder.setNegativeButton(de.droidwiki.R.string.no, null);
+        builder.setNegativeButton(R.string.no, null);
         builder.create().show();
     }
 

@@ -6,17 +6,14 @@ import org.json.JSONObject;
 import de.droidwiki.page.gallery.GalleryCollection;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a particular page along with its full contents.
  */
 public class Page {
-    /**
-     * The props to send to api=mobileview to get all the data required for filling up Page object
-     */
-    public static final String API_REQUEST_PROPS = "lastmodified|normalizedtitle|displaytitle|protection|editable";
     private final PageTitle title;
-    private final ArrayList<Section> sections;
+    private final List<Section> sections;
     private final PageProperties pageProperties;
 
     /**
@@ -33,17 +30,25 @@ public class Page {
         galleryCollection = collection;
     }
 
-    public Page(PageTitle title, ArrayList<Section> sections, PageProperties pageProperties) {
+    /** Regular constructor */
+    public Page(PageTitle title, List<Section> sections, PageProperties pageProperties) {
         this.title = title;
         this.sections = sections;
         this.pageProperties = pageProperties;
+    }
+
+    /** Copy constructor */
+    public Page(Page orig) {
+        this.title = orig.title;
+        this.sections = orig.sections;
+        this.pageProperties = orig.pageProperties;
     }
 
     public PageTitle getTitle() {
         return title;
     }
 
-    public ArrayList<Section> getSections() {
+    public List<Section> getSections() {
         return sections;
     }
 
@@ -125,7 +130,7 @@ public class Page {
         JSONArray sectionsJSON = json.optJSONArray("sections");
         sections = new ArrayList<>(sectionsJSON.length());
         for (int i = 0; i < sectionsJSON.length(); i++) {
-            sections.add(new Section(sectionsJSON.optJSONObject(i)));
+            sections.add(Section.fromJson(sectionsJSON.optJSONObject(i)));
         }
         pageProperties = new PageProperties(json.optJSONObject("properties"));
         if (json.has("gallery")) {

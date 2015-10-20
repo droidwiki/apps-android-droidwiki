@@ -79,10 +79,6 @@ public class NavDrawerHelper {
                         activity.pushFragment(new SavedPagesFragment());
                         funnel.logSavedPages();
                         break;
-                    case R.id.nav_item_nearby:
-                        activity.pushFragment(app.isProdRelease() ? new NearbyFragmentOld() : new NearbyFragment());
-                        funnel.logNearby();
-                        break;
                     case R.id.nav_item_more:
                         launchSettingsActivity();
                         funnel.logMore();
@@ -178,8 +174,6 @@ public class NavDrawerHelper {
             return de.droidwiki.R.id.nav_item_history;
         } else if (fragment instanceof SavedPagesFragment) {
             return R.id.nav_item_saved_pages;
-        } else if (fragment instanceof NearbyFragment || fragment instanceof NearbyFragmentOld) {
-            return R.id.nav_item_nearby;
         }
         return null;
     }

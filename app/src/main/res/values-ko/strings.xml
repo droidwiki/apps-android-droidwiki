@@ -5,15 +5,9 @@
   <string name="app_name_alpha">위키백과 알파</string>
   <string name="yes">예</string>
   <string name="no">아니오</string>
-  <string name="acra_report_dialog_title">위키백과가 충돌했습니다 :(</string>
-  <string name="acra_report_dialog_text">충돌 보고서 보내기</string>
-  <string name="acra_report_dialog_comment">충돌이 일어났을 때 무엇을 하고 있었나요?</string>
   <string name="search_hint">위키백과 검색</string>
   <string name="nav_item_history">방문 기록</string>
-  <string name="error_network_error" fuzzy="true">네트워크 연결이 없습니다 :(</string>
-  <string name="search_network_error">네트워크 오류입니다. 다시 시도하려면 누르세요.</string>
-  <string name="generic_page_error">요청을 처리하는 동안 오류가 생겼습니다.</string>
-  <string name="status_code_unavailable">서버 상태 코드를 사용할 수 없습니다.</string>
+  <string name="error_network_error">인터넷에 연결할 수 없습니다.</string>
   <string name="page_error_retry">다시 시도</string>
   <string name="menu_clear_all_history">방문 기록 지우기</string>
   <string name="menu_clear_all_saved_pages">저장된 문서 지우기</string>
@@ -26,32 +20,30 @@
   <string name="dialog_prompt_refresh_all_saved_pages">모든 저장된 문서를 업데이트할까요?</string>
   <string name="share_via">다음을 통해 공유</string>
   <string name="dialog_title_clear_saved_pages">모든 저장된 문서를 지울까요?</string>
-  <string name="toast_saving_page">문서를 저장하는 중…</string>
-  <string name="toast_saved_page" fuzzy="true">문서를 성공적으로 저장했습니다</string>
-  <string name="toast_saved_page_missing_images">모든 그림을 저장할 수 없습니다</string>
-  <string name="toast_refresh_saved_page">저장된 문서를 새로 고치는 중…</string>
+  <string name="snackbar_saving_page">문서를 저장하는 중…</string>
+  <string name="snackbar_saved_page_format">\"%s\" 문서가 오프라인용으로 저장되었습니다.</string>
+  <string name="snackbar_saved_page_missing_images">모든 그림을 저장할 수 없습니다</string>
+  <string name="snackbar_refresh_saved_page">저장된 문서를 새로 고치는 중…</string>
   <string name="delete_selected_saved_pages">삭제</string>
-  <string name="toast_saved_page_deleted">저장된 문서가 삭제되었습니다</string>
+  <string name="snackbar_saved_page_deleted">저장된 문서가 삭제되었습니다</string>
   <string name="saved_pages_search_list_hint">저장된 문서 검색</string>
   <string name="saved_pages_search_empty_message">검색어와 일치하는 문서를 찾을 수 없습니다.</string>
-  <string name="menu_show_tabs">탭 보기</string>
-  <string name="menu_other_languages">다른 언어로 읽기</string>
-  <string name="menu_save_page">문서 저장</string>
-  <string name="menu_share_page" fuzzy="true">공유</string>
-  <string name="find_in_page">문서에서 찾기</string>
-  <string name="menu_themechooser">글자와 테마</string>
-  <string name="menu_open_link" fuzzy="true">링크 열기</string>
-  <string name="menu_open_in_new_tab">새 탭에 링크 열기</string>
+  <string name="menu_page_show_tabs">탭 보기</string>
+  <string name="menu_page_other_languages">다른 언어로 읽기</string>
+  <string name="menu_page_save">문서 저장</string>
+  <string name="menu_page_share">링크 공유</string>
+  <string name="menu_page_find_in_page">문서에서 찾기</string>
+  <string name="menu_page_font_and_theme">글자와 테마</string>
+  <string name="menu_long_press_open_page">열기</string>
+  <string name="menu_long_press_open_in_new_tab">새 탭에 링크 열기</string>
+  <string name="menu_long_press_copy_page">링크 주소 복사</string>
   <string name="nav_item_nearby">근처</string>
-  <string name="menu_update_nearby">근처 업데이트</string>
   <string name="nearby_empty_title">여기 근처에 문서가 없습니다!</string>
-  <string name="nearby_empty_message">새 위치로 움직일 때, 주위에 무엇이 있는지 자세히 알아 보려면 이 문서를 새로 고치세요.</string>
+  <string name="nearby_empty_message" fuzzy="true">새 위치로 움직일 때, 주위에 무엇이 있는지 자세히 알아 보려면 이 문서를 새로 고치세요.</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
   <string name="nearby_distance_in_feet">%d ft</string>
   <string name="nearby_distance_in_miles">%.2f mi</string>
-  <string name="nearby_no_network">네트워크 연결이 없습니다</string>
-  <string name="nearby_server_error">가까운 장소의 목록을 가져올 수 없습니다.</string>
   <string name="nearby_dialog_goto_settings">위키 업데이트가 장치에서 활성화되어 있지 않습니다. 위치 업데이트를 활성화하기 위해 장치의 설정으로 가겠습니까?</string>
   <string name="nearby_set_metric">meters/km 보이기</string>
   <string name="nearby_set_imperial">feet/miles 보이기</string>
@@ -62,10 +54,7 @@
   <string name="edit_save_action_license_anon">저장하면, &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;이용 약관&lt;/a&gt;에 동의하고 영구히 &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt; 라이선스에 따라 기여를 배포하는 데 동의합니다. 편집에 당신의 장치의 IP 주소가 들어갑니다. &lt;a href=\"https://#login\"&gt;로그인&lt;/a&gt;하면, 개인 정보를 더 보호할 수 있습니다.</string>
   <string name="preference_title_language">위키백과 언어</string>
   <string name="preference_languages_filter_hint">검색</string>
-  <string name="preference_system_language_toggle">시스템 언어 사용하기</string>
-  <string name="preference_system_language_summary">시스템 언어</string>
   <string name="langlinks_filter_hint">검색</string>
-  <string name="langlinks_error_retry">다시 시도</string>
   <string name="langlinks_empty">이 문서는 다른 언어로 읽을 수 없습니다.</string>
   <string name="langlinks_no_match">검색어와 일치하는 언어를 찾을 수 없습니다.</string>
   <string name="langlinks_activity_title">다른 언어</string>
@@ -86,7 +75,7 @@
   <string name="title_captcha">캡차를 입력하세요</string>
   <string name="edit_section_captcha_reload">새로 고치려면 캡차를 누르세요</string>
   <string name="edit_saved_page_refresh">이 저장된 문서는 오래되었을 수 있고, 편집을 활성화하려면 새로 고쳐야 합니다. 문서를 새로 고치겠습니까?</string>
-  <string name="nav_item_login">로그인</string>
+  <string name="nav_item_login">위키백과에 로그인</string>
   <string name="login_username_hint">사용자 이름</string>
   <string name="login_password_hint">비밀번호</string>
   <string name="login_password_show_check">비밀번호 보이기</string>
@@ -100,19 +89,15 @@
   <string name="login_error_blocked">이 사용자는 차단되었습니다</string>
   <string name="login_error_throttled">로그인 시도가 너무 많습니다. 잠시 기다리고 나서 다시 시도하세요.</string>
   <string name="login_error_unknown">로그인 실패 :(</string>
-  <string name="login_error_no_network">네트워크 연결이 없습니다</string>
   <string name="preference_title_logout">로그아웃</string>
-  <string name="preference_summary_logout">위키백과 계정에서 로그아웃</string>
-  <string name="preference_summary_notloggedin">로그인하고 있지 않습니다.</string>
   <string name="toast_logout_complete">로그아웃됨</string>
   <string name="saved_pages_empty_title">여기에 저장된 문서가 없습니다!</string>
   <string name="saved_pages_empty_message">저장된 문서는 정말 훌륭합니다. 오프라인일 때여도 읽을 수 있는 책갈피라고 생각해주세요.</string>
   <string name="history_empty_title">여기에 최근 문서가 없습니다.</string>
   <string name="history_empty_message">방문 기록이 비어 있습니다. 다음 번에 당신이 간 문서를 여기에서 얻을 수 있습니다.</string>
   <string name="delete_selected_history">삭제</string>
-  <string name="wp_stylized">&lt;big&gt;D&lt;/big&gt;ROIDWIK&lt;big&gt;I&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;위&lt;/big&gt;키백&lt;big&gt;과&lt;/big&gt;</string>
   <string name="create_account_username_hint">사용자 이름</string>
-  <string name="create_account_password_hint">비밀번호</string>
   <string name="login_create_account_link">계정이 없나요? 위키백과에 가입하세요</string>
   <string name="create_account_login_link">계정이 이미 있습니까? 로그인하세요</string>
   <string name="create_account_activity_title">계정 만들기</string>
@@ -131,7 +116,6 @@
   <string name="create_account_blocked_error">당신의 계정이 차단되어 있기 때문에 계정을 만들 수 없습니다.</string>
   <string name="create_account_password_name_match_error">사용자 이름과 비밀번호는 달라야 합니다.</string>
   <string name="create_account_generic_error">계정을 만들 수 없습니다</string>
-  <string name="create_account_no_network">네트워크 연결이 없습니다</string>
   <string name="create_account_next">다음</string>
   <string name="create_account_button">계정 만들기</string>
   <string name="preferences_general_heading">일반</string>
@@ -154,8 +138,6 @@
   <string name="send_feedback">앱 피드백 보내기</string>
   <string name="nav_item_random">임의 문서</string>
   <string name="create_account_account_created_toast">계정을 만들었습니다!</string>
-  <string name="user_contribs_more_action">더 불러오기</string>
-  <string name="activity_my_contributions_title">내 기여</string>
   <string name="preference_title_eventlogging_opt_in">사용 보고서 보내기</string>
   <string name="preference_summary_eventlogging_opt_in">위키미디어가 더 나은 앱을 만들기 위해 당신이 어떻게 앱을 사용하는지에 대한 정보를 모을 수 있습니다</string>
   <string name="editing_error_spamblacklist">차단된 도메인 (%s)으로의 링크가 감지되었습니다. 그들을 제거하고 나서 다시 시도하세요.</string>
@@ -167,8 +149,8 @@
   <string name="page_protected_other">이 문서는 다음 수준으로 보호되어 있습니다: %s</string>
   <string name="page_protected_can_not_edit">이 문서를 편집할 권한이 없습니다</string>
   <string name="page_protected_can_not_edit_title">이 문서는 보호되어 있습니다</string>
-  <string name="more_item_preferences">더 보기</string>
-  <string name="more_activity_title">더 보기</string>
+  <string name="settings_item_preferences">설정</string>
+  <string name="settings_activity_title">설정</string>
   <string name="about_description">위키백과 앱 정보</string>
   <string name="privacy_policy_description">개인 정보 정책</string>
   <string name="terms_of_use_description">이용 약관</string>
@@ -197,7 +179,6 @@
   <string name="saved_pages_update_all_error_retry">다시 시도</string>
   <string name="saved_pages_update_all_error_message">저징된 문서를 업데이트하는 동안 오류</string>
   <string name="saved_pages_progress_title">저장된 문서를 새로 고치는 중</string>
-  <string name="saved_pages_refresh_pages_complete">업데이트 완료</string>
   <string name="menu_page_saved">문서가 저장되었습니다</string>
   <string name="menu_refresh_saved_page">문서 새로 고침</string>
   <string name="abusefilter_title_warn">비생산적인 편집일 수도 있습니다. 그것을 저장하겠습니까?</string>
@@ -245,18 +226,18 @@
   <string name="alpha_update_notification_text">다운로드하려면 탭하세요</string>
   <string name="dialog_close_description">닫기</string>
   <string name="preference_title_show_images">그림 보이기</string>
-  <string name="preference_summary_show_images">문서에서 그림을 불러오는 것을 활성화하거나 비활성화합니다. 인터넷 연결이 느리거나, 데이터 요금제가 제한되어 있다면 이 설정을 선택 해제하세요.</string>
+  <string name="preference_summary_show_images" fuzzy="true">문서에서 그림을 불러오는 것을 활성화하거나 비활성화합니다. 인터넷 연결이 느리거나, 데이터 요금제가 제한되어 있다면 이 설정을 선택 해제하세요.</string>
   <string name="read_more_section">더 읽어보기</string>
-  <string name="read_next_section">다음 읽기</string>
   <string name="menu_gallery_visit_page">파일 문서로 가기</string>
   <string name="gallery_error_draw_failed">그림을 그릴 수 없습니다.</string>
   <string name="license_title">%s 라이브러리의 라이선스 텍스트</string>
   <string name="gallery_menu_share">공유</string>
   <string name="gallery_share_error">그림을 공유할 수 없습니다: %s</string>
   <string name="gallery_menu_save">장치에 저장</string>
-  <string name="gallery_save_error">그림을 저장할 수 없습니다: %s</string>
   <string name="gallery_save_error_mediastore">미디어 컬렉션에서 그림을 가져오는 데 실패했습니다</string>
   <string name="gallery_save_success">그림을 성공적으로 저장했습니다.</string>
+  <string name="gallery_image_saved_notification_title">그림이 저장되었습니다.</string>
+  <string name="gallery_image_saved_notification_text">터치해서 보여줍니다.</string>
   <string name="gallery_error_video_failed">동영상을 재생할 수 없습니다.</string>
   <string name="err_cannot_save_file">파일을 저장할 수 없음</string>
   <string name="snippet_share_intro">\@DroidWiki 의 \"%1$s\": %2$s</string>
@@ -268,7 +249,6 @@
   <string name="captcha_image">캡차 이미지</string>
   <string name="gallery_fair_use_license">공정 이용</string>
   <string name="gallery_uploader_unknown">업로더 모름</string>
-  <string name="edit_save_unknown_error">%s 오류로 인해 편집을 저장하지 못했습니다</string>
   <string name="menu_new_tab">새 탭</string>
   <string name="button_close_tab">탭 닫기</string>
   <string name="page_view_in_browser">브라우저에서 페이지 보기</string>
@@ -276,4 +256,5 @@
   <string name="error_unknown">알 수 없는 오류가 발생했습니다.</string>
   <string name="format_error_server_message">메시지: \"%s\"</string>
   <string name="format_error_server_code">코드: \"%s\"</string>
+  <string name="address_copied">주소가 클립보드에 복사되었습니다.</string>
 </resources>

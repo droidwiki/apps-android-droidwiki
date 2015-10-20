@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/blue_progressive">
 
-    <org.wikipedia.views.StatusBarBlankView
+    <de.droidwiki.views.StatusBarBlankView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -16,7 +16,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_margin="16dp"
-        android:src="@drawable/w_nav_mark"
+        android:src="@drawable/d_nav_mark"
         android:contentDescription="@null" />
 
     <LinearLayout

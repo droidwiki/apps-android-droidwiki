@@ -74,7 +74,6 @@ public class HtmlPageLoadStrategy implements PageLoadStrategy {
 //    private BottomContentInterface bottomContentHandler;
 
     private boolean isLoading;
-    private int subState;
 
     @Override
     public void setup(PageViewModel model, PageFragment fragment,
@@ -171,12 +170,10 @@ public class HtmlPageLoadStrategy implements PageLoadStrategy {
 //                    loadPageOnWebViewReady(messagePayload.getBoolean("tryFromCache"));
 
                     PageProperties pageProperties = new PageProperties(messagePayload);
-                    final PageTitle title
-                            = fragment.adjustPageTitleFromMobileview(model.getTitle(), messagePayload);
+                    PageTitle title = model.getTitle();
                     model.setTitle(title);
                     model.setPage(new Page(title, extractToCListFromJSONArray(messagePayload.getJSONArray("toc")), pageProperties));
                     fragment.setupToC(model, !webView.canGoBack());
-
                 } catch (JSONException e) {
                     //nope
                 }
@@ -188,7 +185,7 @@ public class HtmlPageLoadStrategy implements PageLoadStrategy {
         ArrayList<Section> sections = new ArrayList<>();
         if (jArray != null) {
             for (int i = 0; i < jArray.length(); i++) {
-                sections.add(new Section(jArray.getJSONObject(i)));
+                sections.add(Section.fromJson(jArray.getJSONObject(i)));
             }
         }
         return sections;
@@ -223,16 +220,6 @@ public class HtmlPageLoadStrategy implements PageLoadStrategy {
     @Override
     public void onDisplayNewPage(boolean pushBackStack, boolean tryFromCache, int stagedScrollY) {
         webView.loadUrl(getServiceUrlFor(model.getTitle()));
-    }
-
-    @Override
-    public void setSubState(int subState) {
-        this.subState = subState;
-    }
-
-    @Override
-    public int getSubState() {
-        return subState;
     }
 
     @Override

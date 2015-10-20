@@ -29,15 +29,16 @@ import org.mediawiki.api.json.ApiException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.mediawiki.api.json.Api;
-import org.mediawiki.api.json.ApiResult;
-import org.mediawiki.api.json.RequestBuilder;
+
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.support.annotation.DimenRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
@@ -70,7 +71,6 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     public static final int STATE_COMPLETE_FETCH = 3;
 
     private int state = STATE_NO_FETCH;
-    private int subState = PageFragment.SUBSTATE_NONE;
 
     /**
      * List of lightweight history items to serve as the backstack for this fragment.
@@ -215,7 +215,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
 
         bottomContentHandler = new BottomContentHandler(fragment, bridge, webView,
                 fragment.getLinkHandler(),
-                (ViewGroup) fragment.getView().findViewById(de.droidwiki.R.id.bottom_content_container));
+                (ViewGroup) fragment.getView().findViewById(R.id.bottom_content_container));
     }
 
     @Override
@@ -235,7 +235,6 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         }
 
         state = STATE_NO_FETCH;
-        subState = PageFragment.SUBSTATE_NONE;
 
         // increment our sequence number, so that any async tasks that depend on the sequence
         // will invalidate themselves upon completion.
@@ -269,18 +268,18 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                 leadImagesHandler.hide();
                 bottomContentHandler.hide();
                 activity.getSearchBarHideHandler().setFadeEnabled(false);
-                new LeadSectionFetchTask(currentSequenceNum).execute();
+                loadLeadSection(currentSequenceNum);
                 break;
             case STATE_INITIAL_FETCH:
-                new RestSectionsFetchTask(currentSequenceNum).execute();
+                loadRemainingSections(currentSequenceNum);
                 break;
             case STATE_COMPLETE_FETCH:
                 editHandler.setPage(model.getPage());
                 // kick off the lead image layout
                 leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
                     @Override
-                    public void onLayoutComplete() {
-                        if (!fragment.isAdded()) {
+                    public void onLayoutComplete(int sequence) {
+                        if (!fragment.isAdded() || sequence != currentSequenceNum) {
                             return;
                         }
                         searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
@@ -289,7 +288,7 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         displayLeadSection();
                         displayNonLeadSectionForUnsavedPage(1);
                     }
-                });
+                }, currentSequenceNum);
                 break;
             default:
                 // This should never happen
@@ -298,15 +297,10 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     }
 
     private void setState(int state) {
-        setState(state, PageFragment.SUBSTATE_NONE);
-    }
-
-    private void setState(int state, int subState) {
         if (!fragment.isAdded()) {
             return;
         }
         this.state = state;
-        this.subState = subState;
         activity.supportInvalidateOptionsMenu();
 
         // FIXME: Move this out into a PageComplete event of sorts
@@ -331,16 +325,6 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     }
 
     @Override
-    public void setSubState(int subState) {
-        this.subState = subState;
-    }
-
-    @Override
-    public int getSubState() {
-        return subState;
-    }
-
-    @Override
     public boolean isLoading() {
         return state != STATE_COMPLETE_FETCH;
     }
@@ -358,11 +342,12 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         bottomContentHandler.hide();
         bottomContentHandler.setTitle(model.getTitle());
 
-        if (model.getCurEntry().getSource() == HistoryEntry.SOURCE_SAVED_PAGE) {
+        // Before attempting to load saved page upon return from SavedPagesFragment, check to ensure it wasn't just deleted!
+        // TODO: Fix possible race condition when navigating from history fragment
+        if (model.getCurEntry().getSource() == HistoryEntry.SOURCE_SAVED_PAGE && fragment.isPageSaved()) {
             state = STATE_NO_FETCH;
             loadSavedPage();
         } else if (tryFromCache) {
-            //is this page in cache??
             loadPageFromCache();
         } else {
             loadPageFromNetwork();
@@ -378,7 +363,8 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                             return;
                         }
                         if (page != null) {
-                            Log.d(TAG, "Using page from cache: " + model.getTitleOriginal().getDisplayText());
+                            Log.d(TAG, "Using page from cache: "
+                                    + model.getTitleOriginal().getDisplayText());
                             model.setPage(page);
                             model.setTitle(page.getTitle());
                             // Update our history entry, in case the Title was changed (i.e. normalized)
@@ -441,8 +427,8 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                 // kick off the lead image layout
                 leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
                     @Override
-                    public void onLayoutComplete() {
-                        if (!fragment.isAdded()) {
+                    public void onLayoutComplete(int sequence) {
+                        if (!fragment.isAdded() || sequence != currentSequenceNum) {
                             return;
                         }
                         searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
@@ -451,9 +437,9 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         displayLeadSection();
                         displayNonLeadSectionForSavedPage(1);
 
-                        setState(STATE_COMPLETE_FETCH, PageFragment.SUBSTATE_SAVED_PAGE_LOADED);
+                        setState(STATE_COMPLETE_FETCH);
                     }
-                });
+                }, currentSequenceNum);
             }
 
             @Override
@@ -681,26 +667,30 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     @VisibleForTesting
     protected void loadLeadSection(final int startSequenceNum) {
         app.getSessionFunnel().leadSectionFetchStart();
-        PageLoadUtil.getApiService(model.getTitle().getSite()).pageLead(
-                model.getTitle().getPrefixedText(),
-                PageLoadUtil.calculateLeadImageWidth(),
-                !app.isImageDownloadEnabled(),
-                new PageLead.Callback() {
-                    @Override
-                    public void success(PageLead pageLead, Response response) {
-                        Log.v(TAG, response.getUrl());
-                        app.getSessionFunnel().leadSectionFetchEnd();
-                        onLeadSectionLoaded(pageLead, startSequenceNum);
-                    }
+        Log.i("Loaded title: ", model.getTitle().getPrefixedText());
+                PageLoadUtil.getApiService(model.getTitle().getSite()).pageLead(
+                        model.getTitle().getPrefixedText(),
+                        PageLoadUtil.calculateLeadImageWidth(),
+                        !app.isImageDownloadEnabled(),
+                        new PageLead.Callback() {
+                            @Override
+                            public void success(PageLead pageLead, Response response) {
+                                Log.v(TAG, response.getUrl());
+                                app.getSessionFunnel().leadSectionFetchEnd();
+                                onLeadSectionLoaded(pageLead, startSequenceNum);
+                            }
 
-    private class LeadSectionFetchTask extends SectionsFetchTask {
-        private final int startSequenceNum;
-        private PageProperties pageProperties;
-        private String pagePropsResponseName = "mobileview";
+                            @Override
+                            public void failure(RetrofitError error) {
+                                Log.e(TAG, "PageLead error: " + error);
+                                commonSectionFetchOnCatch(error, startSequenceNum);
+                            }
+                });
+    }
 
-        public LeadSectionFetchTask(int startSequenceNum) {
-            super(app, model.getTitle(), "0");
-            this.startSequenceNum = startSequenceNum;
+    private void onLeadSectionLoaded(PageLead pageLead, int startSequenceNum) {
+        if (!fragment.isAdded() || startSequenceNum != currentSequenceNum) {
+            return;
         }
         if (pageLead.hasError()) {
             ServiceError error = pageLead.getError();
@@ -719,84 +709,50 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
         model.setPage(page);
         model.setTitle(page.getTitle());
 
-        @Override
-        public RequestBuilder buildRequest(Api api) {
-            RequestBuilder builder = super.buildRequest(api);
-            builder.param("prop", builder.getParams().get("prop")
-                    + "|thumb|image|id|revision|description|"
-                    + Page.API_REQUEST_PROPS);
-            builder.param("thumbsize", Integer.toString(calculateLeadImageWidth()));
-            return builder;
-        }
+        editHandler.setPage(model.getPage());
 
-        @Override
-        public List<Section> processResult(ApiResult result) throws Throwable {
-            if (startSequenceNum != currentSequenceNum) {
-                return super.processResult(result);
+        // kick off the lead image layout
+        leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
+            @Override
+            public void onLayoutComplete(int sequence) {
+                if (sequence != currentSequenceNum) {
+                    return;
+                }
+                searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
+                // when the lead image is laid out, display the lead section in the webview,
+                // and start loading the rest of the sections.
+                displayLeadSection();
+                setState(STATE_INITIAL_FETCH);
+                performActionForState(state);
             }
-            JSONObject metadata = result.asObject().optJSONObject(pagePropsResponseName);
-            if (metadata != null) {
-                pageProperties = new PageProperties(metadata);
-                model.setTitle(fragment.adjustPageTitleFromMobileview(model.getTitle(), metadata));
-            }
-            return super.processResult(result);
-        }
+        }, currentSequenceNum);
 
         // Update our history entry, in case the Title was changed (i.e. normalized)
         final HistoryEntry curEntry = model.getCurEntry();
         model.setCurEntry(
                 new HistoryEntry(model.getTitle(), curEntry.getTimestamp(), curEntry.getSource()));
 
-            final PageTitle title = model.getTitle();
-            model.setPage(new Page(title, (ArrayList<Section>) result, pageProperties));
-            editHandler.setPage(model.getPage());
+        // Save history entry and page image url
+        new SaveHistoryTask(model.getCurEntry(), app).execute();
 
-            // kick off the lead image layout
-            leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
-                @Override
-                public void onLayoutComplete() {
-                    searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
-                    // when the lead image is laid out, display the lead section in the webview,
-                    // and start loading the rest of the sections.
-                    displayLeadSection();
-                    setState(STATE_INITIAL_FETCH);
-                    performActionForState(state);
+        // Fetch larger thumbnail URL from the network, and save it to our DB.
+        (new PageImagesTask(app.getAPIForSite(model.getTitle().getSite()), model.getTitle().getSite(),
+                Arrays.asList(new PageTitle[]{model.getTitle()}), WikipediaApp.PREFERRED_THUMB_SIZE) {
+            @Override
+            public void onFinish(Map<PageTitle, String> result) {
+                if (result.containsKey(model.getTitle())) {
+                    PageImage pi = new PageImage(model.getTitle(), result.get(model.getTitle()));
+                    app.getPersister(PageImage.class).upsert(pi, PageImage.PERSISTENCE_HELPER.SELECTION_KEYS);
+                    updateThumbnail(result.get(model.getTitle()));
                 }
-            });
+            }
 
-            // Update our history entry, in case the Title was changed (i.e. normalized)
-            final HistoryEntry curEntry = model.getCurEntry();
-            model.setCurEntry(
-                    new HistoryEntry(title, curEntry.getTimestamp(), curEntry.getSource()));
-
-            // Save history entry and page image url
-            new SaveHistoryTask(model.getCurEntry(), app).execute();
-
-            // Fetch larger thumbnail URL from the network, and save it to our DB.
-            (new PageImagesTask(app.getAPIForSite(model.getTitle().getSite()), model.getTitle().getSite(),
-                                Arrays.asList(new PageTitle[]{model.getTitle()}), WikipediaApp.PREFERRED_THUMB_SIZE) {
-                @Override
-                public void onFinish(Map<PageTitle, String> result) {
-                    if (result.containsKey(model.getTitle())) {
-                        PageImage pi = new PageImage(model.getTitle(), result.get(model.getTitle()));
-                        app.getPersister(PageImage.class).upsert(pi, PageImage.PERSISTENCE_HELPER.SELECTION_KEYS);
-                        updateThumbnail(result.get(model.getTitle()));
-                    } else {
-                    }
-                }
-
-                @Override
-                public void onCatch(Throwable caught) {
-                    // Thumbnails are expendable
-                    Log.w("SaveThumbnailTask", "Caught " + caught.getMessage(), caught);
-                }
-            }).execute();
-        }
-
-        @Override
-        public void onCatch(Throwable caught) {
-            commonSectionFetchOnCatch(caught, startSequenceNum);
-        }
+            @Override
+            public void onCatch(Throwable caught) {
+                // Thumbnails are expendable
+                Log.w("SaveThumbnailTask", "Caught " + caught.getMessage(), caught);
+            }
+        }).execute();
     }
 
     private void loadRemainingSections(final int startSequenceNum) {
@@ -812,33 +768,29 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
                         onRemainingSectionsLoaded(pageRemaining, startSequenceNum);
                     }
 
-        public RestSectionsFetchTask(int startSequenceNum) {
-            super(app, model.getTitle(), "1-");
-            this.startSequenceNum = startSequenceNum;
-        }
-
-        @Override
-        public void onFinish(List<Section> result) {
-            if (!fragment.isAdded() || startSequenceNum != currentSequenceNum) {
-                return;
-            }
-
-            ArrayList<Section> newSections = (ArrayList<Section>) model.getPage().getSections().clone();
-            newSections.addAll(result);
-            model.setPage(new Page(model.getTitle(), newSections, model.getPage().getPageProperties()));
-            displayNonLeadSectionForUnsavedPage(1);
-            setState(STATE_COMPLETE_FETCH);
-
-            fragment.onPageLoadComplete();
-        }
-
-        @Override
-        public void onCatch(Throwable caught) {
-            commonSectionFetchOnCatch(caught, startSequenceNum);
-        }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e(TAG, "PageRemaining error: " + error);
+                        commonSectionFetchOnCatch(error, startSequenceNum);
+                    }
+                });
     }
 
-    private void commonSectionFetchOnCatch(Throwable caught, int startSequenceNum) {
+    private void onRemainingSectionsLoaded(PageRemaining pageRemaining, int startSequenceNum) {
+        if (!fragment.isAdded() || startSequenceNum != currentSequenceNum) {
+            return;
+        }
+
+        pageRemaining.mergeInto(model.getPage());
+
+        displayNonLeadSectionForUnsavedPage(1);
+        setState(STATE_COMPLETE_FETCH);
+
+        fragment.onPageLoadComplete();
+    }
+
+    @VisibleForTesting
+    protected void commonSectionFetchOnCatch(Throwable caught, int startSequenceNum) {
         if (startSequenceNum != currentSequenceNum) {
             return;
         }

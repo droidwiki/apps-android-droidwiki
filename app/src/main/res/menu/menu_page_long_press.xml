@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menu_long_press_open_page"
-          android:title="@string/menu_open_link"
-          app:showAsAction="ifRoom" />
+        android:title="@string/menu_long_press_open_page"
+        app:showAsAction="ifRoom" />
 
     <item android:id="@+id/menu_long_press_open_in_new_tab"
-          android:title="@string/menu_open_in_new_tab"
-          app:showAsAction="ifRoom" />
+        android:title="@string/menu_long_press_open_in_new_tab"
+        app:showAsAction="ifRoom" />
 
     <item android:id="@+id/menu_long_press_save_page"
         android:title="@string/menu_long_press_save_page"
@@ -20,7 +20,7 @@
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/menu_long_press_copy_page"
-          android:title="@string/menu_long_press_copy_page"
-          app:showAsAction="ifRoom" />
+        android:title="@string/menu_long_press_copy_page"
+        app:showAsAction="ifRoom" />
 
 </menu>

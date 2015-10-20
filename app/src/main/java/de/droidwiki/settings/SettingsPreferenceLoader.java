@@ -12,6 +12,7 @@ import android.support.v7.internal.view.ContextThemeWrapper;
 import de.droidwiki.BuildConfig;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.util.StringUtil;
+import de.droidwiki.R;
 
 /** UI code for app settings used by PreferenceFragment. */
 public class SettingsPreferenceLoader extends BasePreferenceLoader {
@@ -25,32 +26,6 @@ public class SettingsPreferenceLoader extends BasePreferenceLoader {
     @Override
     public void loadPreferences() {
         loadPreferences(de.droidwiki.R.xml.preferences);
-
-        updateLanguagePrefSummary();
-
-        Preference languagePref = findPreference(R.string.preference_key_language);
-        languagePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                LanguagePreferenceDialog langPrefDialog = new LanguagePreferenceDialog(
-                        new ContextThemeWrapper(activity,
-                                (WikipediaApp.getInstance().isCurrentThemeLight()
-                                        ? R.style.NoTitle
-                                        : R.style.NoTitleDark)), false);
-                langPrefDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        String name = StringUtil.emptyIfNull(WikipediaApp.getInstance().getAppOrSystemLanguageLocalizedName());
-                        if (!findPreference(R.string.preference_key_language).getSummary().equals(name)) {
-                            findPreference(R.string.preference_key_language).setSummary(name);
-                            activity.setResult(SettingsActivity.ACTIVITY_RESULT_LANGUAGE_CHANGED);
-                        }
-                    }
-                });
-                langPrefDialog.show();
-                return true;
-            }
-        });
 
         if (!BuildConfig.APPLICATION_ID.equals("de.droidwiki")) {
             overridePackageName();
@@ -73,11 +48,6 @@ public class SettingsPreferenceLoader extends BasePreferenceLoader {
                 return true;
             }
         });
-    }
-
-    private void updateLanguagePrefSummary() {
-        Preference languagePref = findPreference(R.string.preference_key_language);
-        languagePref.setSummary(WikipediaApp.getInstance().getAppOrSystemLanguageLocalizedName());
     }
 
     private String getString(@StringRes int id) {

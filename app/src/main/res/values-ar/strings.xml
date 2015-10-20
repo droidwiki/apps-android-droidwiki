@@ -5,14 +5,9 @@
   <string name="app_name_alpha">ويكيبيديا ألفا</string>
   <string name="yes">نعم</string>
   <string name="no">لا</string>
-  <string name="acra_report_dialog_title">تعطّلت ويكيبيديا :(</string>
-  <string name="acra_report_dialog_text">أرسل لنا تقرير العطل</string>
-  <string name="acra_report_dialog_comment">ماذا كنت تفعل عندما حدث العطل؟</string>
   <string name="search_hint">البحث في ويكيبيديا</string>
   <string name="nav_item_history">التاريخ</string>
-  <string name="error_network_error" fuzzy="true">لا يوجد اتصال بالشبكة :(</string>
-  <string name="search_network_error">خطأ في الاتصال بالشبكة. اضغط لإعادة المحاولة.</string>
-  <string name="generic_page_error">هناك مشكلة في معالجة طلبك.</string>
+  <string name="error_network_error">لا يوجد اتصال بالشبكة</string>
   <string name="page_error_retry">إعادة المحاولة</string>
   <string name="menu_clear_all_history">مسح التاريخ</string>
   <string name="menu_clear_all_saved_pages">إفراغ الصفحات المحفوظة</string>
@@ -25,32 +20,30 @@
   <string name="dialog_prompt_refresh_all_saved_pages">تحديث كل الصفحات المحفوظة؟</string>
   <string name="share_via">مشاركة عبر</string>
   <string name="dialog_title_clear_saved_pages">مسح كل الصفحات المحفوظة؟</string>
-  <string name="toast_saving_page">جارٍ حفظ الصفحة…</string>
-  <string name="toast_saved_page" fuzzy="true">تم حفظ الصفحة بنجاح</string>
-  <string name="toast_saved_page_missing_images">تعذّر حفظ جميع الصور</string>
-  <string name="toast_refresh_saved_page">جارٍ تحديث الصفحة المحفوظة</string>
+  <string name="snackbar_saving_page">جارٍ حفظ الصفحة…</string>
+  <string name="snackbar_saved_page_format">\"%s\" تم حفظ الصفحة للقراءة بدون اتصال انترنت</string>
+  <string name="snackbar_saved_page_missing_images">تعذّر حفظ جميع الصور</string>
+  <string name="snackbar_refresh_saved_page">جارٍ تحديث الصفحة المحفوظة</string>
   <string name="delete_selected_saved_pages">حذف</string>
-  <string name="toast_saved_page_deleted">حُذفت الصفحة/الصفحات المحفوظة</string>
-  <string name="saved_pages_search_list_hint" fuzzy="true">بحث</string>
+  <string name="snackbar_saved_page_deleted">حُذفت الصفحة/الصفحات المحفوظة</string>
+  <string name="saved_pages_search_list_hint">ابحث في الصفحات المحفوظة</string>
   <string name="saved_pages_search_empty_message">لم يتم العثور على صفحات مطابقة لبحثك.</string>
-  <string name="menu_show_tabs">أظهر الألسنة</string>
-  <string name="menu_other_languages">اقرأ بلغات أخرى</string>
-  <string name="menu_save_page">حفظ الصفحة</string>
-  <string name="menu_share_page" fuzzy="true">مشاركة</string>
-  <string name="find_in_page">البحث في الصفحة</string>
-  <string name="menu_themechooser">الخط والمظهر</string>
-  <string name="menu_open_link" fuzzy="true">افتح الوصلة</string>
-  <string name="menu_open_in_new_tab">افتح في لسان جديد</string>
+  <string name="menu_page_show_tabs">أظهر الألسنة</string>
+  <string name="menu_page_other_languages">اقرأ بلغات أخرى</string>
+  <string name="menu_page_save">حفظ الصفحة</string>
+  <string name="menu_page_share">شارك الوصلة</string>
+  <string name="menu_page_find_in_page">البحث في الصفحة</string>
+  <string name="menu_page_font_and_theme">الخط والمظهر</string>
+  <string name="menu_long_press_open_page">مفتوح</string>
+  <string name="menu_long_press_open_in_new_tab">افتح في لسان جديد</string>
+  <string name="menu_long_press_copy_page">انسخ عنوان الوصلة</string>
   <string name="nav_item_nearby">بالقرب من هنا</string>
-  <string name="menu_update_nearby">تحديث</string>
   <string name="nearby_empty_title">لا يوجد صفحات بالقرب من هنا!</string>
-  <string name="nearby_empty_message">عندما تنتقل إلى مكانٍ جديدٍ، حدّث هذه الصفحة لمعرفة المزيد عن الأماكن التي بقربك.</string>
+  <string name="nearby_empty_message">انتقل إلى مكانٍ جديد، لرؤية صفحات عن الأماكن التي بقربك.</string>
   <string name="nearby_distance_in_meters">%d م</string>
   <string name="nearby_distance_in_kilometers">%.2f كم</string>
   <string name="nearby_distance_in_feet">%d قدم</string>
   <string name="nearby_distance_in_miles">%.2f ميل</string>
-  <string name="nearby_no_network">لا يوجد اتصال بالشبكة</string>
-  <string name="nearby_server_error">تعذّر الحصول على قائمة بالأماكن القريبة.</string>
   <string name="nearby_dialog_goto_settings">تحديثات الأماكن ليست مفعلة في جهازك. هل تود الانتقال إلى إعدادات جهازك لتفعيلها؟</string>
   <string name="nearby_set_metric">إظهار متر/كيلو متر</string>
   <string name="nearby_set_imperial">إظهار قدم/ميل</string>
@@ -61,10 +54,7 @@
   <string name="edit_save_action_license_anon">بالحفظ، فإنك توافق على &lt;a href=\"https://wikimediafoundation.org/wiki/Terms_of_Use\"&gt;شروط الاستخدام&lt;/a&gt;وعلى نشر مساهماتك بلا رجعة تحت رخصة &lt;a href=\"https://creativecommons.org/licenses/by-sa/3.0/\"&gt;CC BY-SA 3.0&lt;/a&gt;. التعديلات سوف تنسب إلى عنوان بروتوكول الإنترنت الخاص بجهازك. في حال كنت &lt;a href=\"https://#login\"&gt;مُسجلًا للدخول&lt;/a&gt;، فإنك ستحظى بالمزيد من الخصوصية.</string>
   <string name="preference_title_language">لغة ويكيبيديا</string>
   <string name="preference_languages_filter_hint">بحث</string>
-  <string name="preference_system_language_toggle">استخدم لغة النظام</string>
-  <string name="preference_system_language_summary">لغة النظام</string>
   <string name="langlinks_filter_hint">بحث</string>
-  <string name="langlinks_error_retry">إعادة المحاولة</string>
   <string name="langlinks_empty">هذه الصفحة غير متوفرة بلغات أخرى</string>
   <string name="langlinks_no_match">لا تتوفر لغات مطابقة لبحثك.</string>
   <string name="langlinks_activity_title">لغات أخرى</string>
@@ -85,7 +75,7 @@
   <string name="title_captcha">أدخل كلمة التحقق</string>
   <string name="edit_section_captcha_reload">انقر على كلمة التحقق لإعادة التحميل</string>
   <string name="edit_saved_page_refresh">قد تكون هذه الصفحة المحفوظة غير محدثة، ويجب تحديثها لتتمكن من تعديلها. هل تود تحديثها؟</string>
-  <string name="nav_item_login">تسجيل الدخول</string>
+  <string name="nav_item_login">تسجيل الدخول إلى ويكيبيديا</string>
   <string name="login_username_hint">اسم المستخدم</string>
   <string name="login_password_hint">كلمة السر</string>
   <string name="login_password_show_check">عرض كلمة السر</string>
@@ -95,23 +85,19 @@
   <string name="login_error_wrong_password">كلمة السر غير صحيحة</string>
   <string name="login_error_wrong_username">اسم المستخدم غير صحيح</string>
   <string name="login_error_illegal">اسم المستخدم غير صالح</string>
-  <string name="login_success_toast" fuzzy="true">تم تسجيل الدخول بنجاح!</string>
+  <string name="login_success_toast">تم تسجيل الدخول بنجاح!</string>
   <string name="login_error_blocked">تم منع هذا المستخدم</string>
   <string name="login_error_throttled">لقد حاولت تسجيل الدخول مرات كثيرة. انتظر لبضع دقائق وحاول مرةً أخرى.</string>
   <string name="login_error_unknown">فشل تسجيل الدخول :(</string>
-  <string name="login_error_no_network">لا يوجد اتصال بالشبكة</string>
   <string name="preference_title_logout">تسجيل الخروج</string>
-  <string name="preference_summary_logout">تسجيل الخروج من حسابك في ويكيبيديا</string>
-  <string name="preference_summary_notloggedin">لم تقم بتسجيل الدخول.</string>
   <string name="toast_logout_complete">تم تسجيل الخروج</string>
   <string name="saved_pages_empty_title">لا صفحات  محفوظة هنا!</string>
   <string name="saved_pages_empty_message">الصفحات المحفوظة خاصيةٌ رائعةٌ جداً، فهي كالمحفوظات التي بإمكانك قراءتها حتى عندما لا تكون متصلًا بالشبكة.</string>
   <string name="history_empty_title">لا صفحات مفتوحة مؤخرًا هنا!</string>
   <string name="history_empty_message">تاريخ تصفحك فارغ، يبدو بأنك قد حذفت جميع مدخلات التاريخ. في المرة القادمة التي تزور فيها إحدى الصفحات بإمكانك العودة إليها مباشرةً من هنا.</string>
   <string name="delete_selected_history">حذف</string>
-  <string name="wp_stylized" fuzzy="true">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">&lt;big&gt;و&lt;/big&gt;يكيبيدي&lt;big&gt;ا&lt;/big&gt;</string>
   <string name="create_account_username_hint">اسم المستخدم</string>
-  <string name="create_account_password_hint">كلمة السر</string>
   <string name="login_create_account_link">ليس لديك حساب؟ انضم إلى ويكيبيديا</string>
   <string name="create_account_login_link">لديك حساب؟ سجل دخولك</string>
   <string name="create_account_activity_title">إنشاء حساب</string>
@@ -130,7 +116,6 @@
   <string name="create_account_blocked_error">لا يمكنك إنشاء حسابٍ لأن حسابك ممنوع.</string>
   <string name="create_account_password_name_match_error">يجب أن يكون اسم المستخدم وكلمة المرور مختلفان.</string>
   <string name="create_account_generic_error">تعذّر إنشاء الحساب</string>
-  <string name="create_account_no_network">لا يوجد اتصال بالشبكة</string>
   <string name="create_account_next">التالي</string>
   <string name="create_account_button">أنشئ حسابًا</string>
   <string name="preferences_general_heading">عام</string>
@@ -153,8 +138,6 @@
   <string name="send_feedback">إرسال الملاحظات على التطبيق</string>
   <string name="nav_item_random">عشوائي</string>
   <string name="create_account_account_created_toast">تم إنشاء الحساب!</string>
-  <string name="user_contribs_more_action">تحميل المزيد</string>
-  <string name="activity_my_contributions_title">مساهماتي</string>
   <string name="preference_title_eventlogging_opt_in">إرسال تقارير الاستخدام</string>
   <string name="preference_summary_eventlogging_opt_in">السماح لويكيميديا بجمع المعلومات حول كيفية استخدام التطبيق لتحسينه</string>
   <string name="editing_error_spamblacklist">تم اكتشاف روابط لنطاقات ممنوعة:  (%s). الرجاء إزالة هذه النطاقات والمحاولة مرةً أخرى.</string>
@@ -166,8 +149,8 @@
   <string name="page_protected_other">تمت حماية هذه الصفحة إلى المستويات التالية: %s</string>
   <string name="page_protected_can_not_edit">أنت لا تمتلك الصلاحيات اللازمة لتحرير هذه الصفحة</string>
   <string name="page_protected_can_not_edit_title">هذه الصفحة محمية</string>
-  <string name="more_item_preferences">المزيد</string>
-  <string name="more_activity_title">المزيد</string>
+  <string name="settings_item_preferences">الإعدادات</string>
+  <string name="settings_activity_title">الإعدادات</string>
   <string name="about_description">حول تطبيق ويكيبيديا</string>
   <string name="privacy_policy_description">سياسة الخصوصية</string>
   <string name="terms_of_use_description">شروط الاستخدام</string>
@@ -196,7 +179,6 @@
   <string name="saved_pages_update_all_error_retry">إعادة المحاولة</string>
   <string name="saved_pages_update_all_error_message">حدث خطأ أثناء تحديث الصفحات المحفوظة</string>
   <string name="saved_pages_progress_title">جارٍ تحديث الصفحات المحفوظة</string>
-  <string name="saved_pages_refresh_pages_complete">اكتمل التحديث</string>
   <string name="menu_page_saved">حُفظت الصفحة</string>
   <string name="menu_refresh_saved_page">تحديث الصفحة</string>
   <string name="abusefilter_title_warn">هذا التعديل ربما لا يكون بنّاءً. هل أنت متأكد من أنك تريد حفظه؟</string>
@@ -221,7 +203,7 @@
   <string name="widget_name_featured_page">صفحة ويكيبيديا المختارة</string>
   <string name="widget_title_featured_page">صفحة اليوم المختارة:</string>
   <string name="widget_name_search">بحث ويكيبيديا</string>
-  <string name="app_store_description" fuzzy="true">تطبيق ويكيبيديا الرسمي لأندرويد. ويكيبيديا هي موسوعة حرة تحتوي على أكثر من 32 مليون مقالة في 280 لغة. كما أنها الموسوعة الأشمل والأكثر استخداماً على نطاق واسع. وهي أكبر عمل موسوعي جمعته البشرية. تمت إعادة تطوير التطبيق من الصفر وأصبح أفضل من أي وقتٍ مضى.
+  <string name="app_store_description">تطبيق ويكيبيديا الرسمي لأندرويد. ويكيبيديا هي موسوعة حرة تحتوي على أكثر من 32 مليون مقالة في 280 لغة. كما أنها الموسوعة الأشمل والأكثر استخداماً على نطاق واسع. وهي أكبر عمل موسوعي جمعته البشرية. تمت إعادة تطوير التطبيق من الصفر وأصبح أفضل من أي وقتٍ مضى.
 
 المميزات:
 -السرعة: يمكنك تطبيقنا الأصلي الجديد من تصفح وتحرير ويكيبيديا بسرعة أكبر من ذي قبل.
@@ -240,15 +222,16 @@ https://github.com/wikimedia/apps-android-wikipedia</string>
   <string name="preference_title_show_images">إظهار الصور</string>
   <string name="preference_summary_show_images">تفعيل أو إلغاء تفعيل تحميل الصور في الصفحات. أزل اختيار هذا الإعداد إذا كان اتصالك بالإنترنت بطيئًا، أو إذا كانت خطة بياناتك محدودة.</string>
   <string name="read_more_section">اقرأ المزيد</string>
-  <string name="read_next_section">قراءة التالي</string>
   <string name="menu_gallery_visit_page">الذهاب إلى صفحة الملف</string>
   <string name="gallery_error_draw_failed">خطأ في إظهار الصورة.</string>
   <string name="license_title">نص الترخيص لمكتبة %s</string>
   <string name="gallery_menu_share">مشاركة</string>
   <string name="gallery_share_error">تعذّرت مشاركة الصورة: %s</string>
   <string name="gallery_menu_save">الحفظ في الجهاز</string>
-  <string name="gallery_save_error">تعذّر حفظ الصورة: %s</string>
+  <string name="gallery_save_error_mediastore">فشل لاستيراد صورة لمجموعة الوسائط</string>
   <string name="gallery_save_success">حُفظت الصورة بنجاح.</string>
+  <string name="gallery_image_saved_notification_title">حُفظت الصورة.</string>
+  <string name="gallery_image_saved_notification_text">اضغط للعرض.</string>
   <string name="gallery_error_video_failed">لا يمكن تشغيل الفيديو.</string>
   <string name="err_cannot_save_file">تعذّر حفظ الملف</string>
   <string name="snippet_share_intro">\"%1$s\" في @DroidWiki: %2$s</string>
@@ -260,7 +243,19 @@ https://github.com/wikimedia/apps-android-wikipedia</string>
   <string name="captcha_image">صورة الكابتشا</string>
   <string name="gallery_fair_use_license">استخدام عادل</string>
   <string name="gallery_uploader_unknown">الرافع غير معروف</string>
-  <string name="edit_save_unknown_error">لم يتمكن من حفظ تعديلك: %s</string>
   <string name="menu_new_tab">لسان جديد</string>
   <string name="button_close_tab">أغلق اللسان</string>
+  <string name="tool_tip_select_text">اضغط مع الاستمرار في أي مكان في النص لتسليط الضوء عليه للنسخ والمشاركة.</string>
+  <string name="tool_tip_share">بعد تسليط الضوء على حقيقة مثيرة للاهتمام، حاول مشاركتها على شبكات التواصل المفضلة لديك!</string>
+  <string name="page_view_in_browser">اعرض الصفحة في المتصفح</string>
+  <string name="tool_tip_toc_button">انظر جدول المحتويات في أي وقت عن طريق النقر على هذا الزر، أو السحب من الحافة اليسري من الشاشة.</string>
+  <string name="error_server_response">خادم تعذر إتمام الطلب.</string>
+  <string name="error_response_malformed">الاستجابة من الملقم لم تكن مهيأة بشكل صحيح.</string>
+  <string name="error_unknown">حدث خطأ غير معروف.</string>
+  <string name="format_error_server_message">الرسالة: \"%s\"</string>
+  <string name="format_error_server_code">الكود: \"%s\"</string>
+  <string name="address_copied">العنوان تم نسخه إلى الحافظة.</string>
+  <string name="button_continue_to_article">الاستمرار للمقالة</string>
+  <string name="preference_title_show_link_previews">إظهار معايناتٍ للوصلة</string>
+  <string name="preference_summary_show_link_previews">إظهار معاينة سريعة للمقالات حين النقر على الوصلات.</string>
 </resources>

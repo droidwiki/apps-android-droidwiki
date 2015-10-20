@@ -5,12 +5,8 @@
   <string name="app_name_alpha">Vikipēdija Alpha</string>
   <string name="yes">Jā</string>
   <string name="no">Nē</string>
-  <string name="acra_report_dialog_title">Vikipēdija avarēja :(</string>
-  <string name="acra_report_dialog_text">Nosūtiet mums avārijas ziņojumu</string>
-  <string name="acra_report_dialog_comment">Ko jūs darījāt, kad notika avārija?</string>
   <string name="search_hint">Meklēt Vikipēdijā</string>
   <string name="nav_item_history">Vēsture</string>
-  <string name="search_network_error">Tīkla kļūda. Pieskarieties, lai mēģinātu vēlreiz.</string>
   <string name="page_error_retry">Mēģināt vēlreiz</string>
   <string name="menu_clear_all_history">Notīrīt vēsturi</string>
   <string name="page_does_not_exist_error">Šī lapa neeksistē.</string>
@@ -19,25 +15,23 @@
   <string name="nav_item_saved_pages">Saglabātās lapas</string>
   <string name="share_via">Dalīties, izmantojot</string>
   <string name="dialog_title_clear_saved_pages" fuzzy="true">Notīrīt grāmatzīmes</string>
-  <string name="toast_saving_page">Saglabā lapu...</string>
+  <string name="snackbar_saving_page">Saglabā lapu...</string>
   <string name="delete_selected_saved_pages">Dzēst</string>
-  <string name="menu_other_languages">Lasīt citās valodās</string>
-  <string name="menu_save_page">Saglabāt lapu</string>
-  <string name="menu_share_page">Dalīties ar saiti</string>
-  <string name="menu_open_link">Atvērt</string>
+  <string name="menu_page_other_languages">Lasīt citās valodās</string>
+  <string name="menu_page_save">Saglabāt lapu</string>
+  <string name="menu_page_share">Dalīties ar saiti</string>
+  <string name="menu_long_press_open_page">Atvērt</string>
   <string name="menu_long_press_copy_page">Kopēt saites adresi</string>
   <string name="nav_item_nearby">Tuvumā</string>
   <string name="nearby_distance_in_meters">%d m</string>
   <string name="nearby_distance_in_kilometers">%.2f km</string>
   <string name="nearby_distance_in_feet">%d pēdas</string>
   <string name="nearby_distance_in_miles">%.2f jūdzes</string>
-  <string name="nearby_no_network">Nav tīkla savienojuma</string>
   <string name="nearby_set_metric">Rādīt metrus/km</string>
   <string name="nearby_set_imperial">Rādīt pēdas/jūdzes</string>
   <string name="preference_title_language">Vikipēdijas valoda</string>
   <string name="preference_languages_filter_hint">Meklēt</string>
   <string name="langlinks_filter_hint">Meklēt</string>
-  <string name="langlinks_error_retry">Mēģināt vēlreiz</string>
   <string name="langlinks_empty">Šī lapa nav pieejama citās valodās</string>
   <string name="langlinks_activity_title">Citas valodas</string>
   <string name="menu_save_changes">Saglabāt izmaiņas</string>
@@ -49,7 +43,7 @@
   <string name="dialog_message_edit_failed_cancel">Atcelt</string>
   <string name="menu_show_toc">Satura rādītājs</string>
   <string name="search_no_results_found">Nav atrasts neviens rezultāts</string>
-  <string name="nav_item_login">Pieslēgties</string>
+  <string name="nav_item_login" fuzzy="true">Pieslēgties</string>
   <string name="login_username_hint">Lietotājvārds</string>
   <string name="login_password_hint">Parole</string>
   <string name="login_password_show_check">Rādīt paroli</string>
@@ -59,12 +53,9 @@
   <string name="login_success_toast">Pieslēgšanās veiksmīga!</string>
   <string name="login_error_blocked">Šis lietotājs ir bloķēts</string>
   <string name="preference_title_logout">Iziet</string>
-  <string name="preference_summary_logout">Iziet no sava Vikipēdijas konta</string>
-  <string name="preference_summary_notloggedin">Neesi iegājis</string>
   <string name="toast_logout_complete">Jūs esat izgājis</string>
   <string name="delete_selected_history">Dzēst</string>
   <string name="create_account_username_hint">Lietotājvārds</string>
-  <string name="create_account_password_hint">Parole</string>
   <string name="login_create_account_link" fuzzy="true">Izveidot kontu</string>
   <string name="create_account_activity_title">Izveidot kontu</string>
   <string name="dialog_create_account_checking_progress">Pārbauda</string>
@@ -80,9 +71,7 @@
   <string name="zero_interstitial_continue">Pamest</string>
   <string name="zero_interstitial_cancel">Palikt šeit</string>
   <string name="zero_learn_more_learn_more" fuzzy="true">Uzzināt vairāk</string>
-  <string name="activity_my_contributions_title">Devums</string>
-  <string name="more_item_preferences">Vairāk</string>
-  <string name="more_activity_title">Vairāk</string>
+  <string name="settings_activity_title" fuzzy="true">Iestatījumi</string>
   <string name="privacy_policy_description">Privātuma politika</string>
   <string name="terms_of_use_description">Lietošanas noteikumi</string>
   <string name="about_libraries_heading">izmantotās bibliotēkas</string>

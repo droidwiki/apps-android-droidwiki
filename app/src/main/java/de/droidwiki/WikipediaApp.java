@@ -33,7 +33,6 @@ import de.droidwiki.history.HistoryEntryPersister;
 import de.droidwiki.interlanguage.AcceptLanguageUtil;
 import de.droidwiki.interlanguage.AppLanguageState;
 import de.droidwiki.login.UserInfoStorage;
-import de.droidwiki.migration.PerformMigrationsTask;
 import de.droidwiki.networking.MccMncStateHandler;
 import de.droidwiki.onboarding.OnboardingStateMachine;
 import de.droidwiki.onboarding.PrefsOnboardingStateMachine;
@@ -109,7 +108,6 @@ public class WikipediaApp extends Application {
 
     private AppLanguageState appLanguageState;
 
-    private Tracker mTracker;
     private CrashReporter crashReporter;
 
     /**
@@ -206,8 +204,6 @@ public class WikipediaApp extends Application {
 
         zeroHandler = new WikipediaZeroHandler(this);
         pageCache = new PageCache(this);
-
-        new PerformMigrationsTask().execute();
     }
 
     public Bus getBus() {
@@ -241,6 +237,9 @@ public class WikipediaApp extends Application {
 
     private HashMap<String, Api> apis = new HashMap<>();
     private MccMncStateHandler mccMncStateHandler = new MccMncStateHandler();
+    public MccMncStateHandler getMccMncStateHandler() {
+        return mccMncStateHandler;
+    }
     public Api getAPIForSite(Site site) {
         String acceptLanguage = getAcceptLanguage(site);
         HashMap<String, String> customHeaders = buildCustomHeaders(acceptLanguage);
@@ -433,15 +432,6 @@ public class WikipediaApp extends Application {
         return EVENT_LOG_TESTING_ID;
     }
 
-    public int getLinkPreviewVersion() {
-        if (Prefs.hasLinkPreviewVersion()) {
-            return Prefs.getLinkPreviewVersion();
-        }
-        int version = LinkPreviewVersion.generateVersion();
-        Prefs.setLinkPreviewVersion(version);
-        return version;
-    }
-
     public boolean isFeatureSelectTextAndShareTutorialEnabled() {
         boolean enabled;
         if (Prefs.hasFeatureSelectTextAndShareTutorial()) {
@@ -578,6 +568,19 @@ public class WikipediaApp extends Application {
         return simpleDateFormat;
     }
 
+    /** For Retrofit requests. Keep in sync with #buildCustomHeaders */
+    public void injectCustomHeaders(RequestInterceptor.RequestFacade request, Site site) {
+        request.addHeader("User-Agent", getUserAgent());
+
+        // Add the app install ID to the header, but only if the user has not opted out of logging
+        if (isEventLoggingEnabled()) {
+            request.addHeader("X-WMF-UUID", getAppInstallID());
+        }
+
+        request.addHeader("Accept-Language", getAcceptLanguage(site));
+    }
+
+    /** For java-mwapi API requests. */
     private HashMap<String, String> buildCustomHeaders(String acceptLanguage) {
         // https://lists.wikimedia.org/pipermail/wikimedia-l/2014-April/071131.html
         HashMap<String, String> headers = new HashMap<>();
@@ -640,6 +643,7 @@ public class WikipediaApp extends Application {
         return RELEASE_PROD;
     }
 
+    private Tracker mTracker;
     /**
      * Gets the default {@link Tracker} for this {@link Application}.
      * @return tracker

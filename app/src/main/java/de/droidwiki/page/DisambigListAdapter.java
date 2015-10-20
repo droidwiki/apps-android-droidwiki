@@ -5,6 +5,7 @@ import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.pageimages.PageImagesTask;
+import de.droidwiki.views.GoneIfEmptyTextView;
 import de.droidwiki.wikidata.GetDescriptionsTask;
 import com.squareup.picasso.Picasso;
 import android.app.Activity;
@@ -116,7 +117,7 @@ class DisambigListAdapter extends ArrayAdapter<DisambigResult> {
         LayoutInflater inflater = activity.getLayoutInflater();
         ViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(de.droidwiki.R.layout.item_page_list_entry, null);
+            convertView = inflater.inflate(R.layout.item_page_list_entry, null);
             holder = new ViewHolder();
             holder.icon = (ImageView) convertView.findViewById(R.id.page_list_item_image);
             holder.title = (TextView) convertView.findViewById(R.id.page_list_item_title);
@@ -135,14 +136,14 @@ class DisambigListAdapter extends ArrayAdapter<DisambigResult> {
         String thumbnail = pageImagesCache.get(item.getTitle().getDisplayText());
         if (thumbnail == null) {
             Picasso.with(parent.getContext())
-                   .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                   .into(holder.icon);
+                    .load(R.drawable.ic_pageimage_placeholder)
+                    .into(holder.icon);
         } else {
             Picasso.with(parent.getContext())
-                   .load(thumbnail)
-                   .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                   .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                   .into(holder.icon);
+                    .load(thumbnail)
+                    .placeholder(R.drawable.ic_pageimage_placeholder)
+                    .error(R.drawable.ic_pageimage_placeholder)
+                    .into(holder.icon);
         }
 
         return convertView;

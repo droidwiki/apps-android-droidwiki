@@ -56,6 +56,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
 import android.text.Html;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -68,8 +69,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.appenguin.onboarding.ToolTip;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,11 +76,18 @@ import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLException;
 
+import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
+
 
 public class PageFragment extends Fragment implements BackPressedHandler {
     public static final int TOC_ACTION_SHOW = 0;
     public static final int TOC_ACTION_HIDE = 1;
     public static final int TOC_ACTION_TOGGLE = 2;
+
+    private boolean pageSaved;
+    private boolean pageRefreshed;
+    private boolean savedPageCheckComplete;
 
     private static final int TOC_BUTTON_HIDE_DELAY = 2000;
     private static final int REFRESH_SPINNER_ADDITIONAL_OFFSET = (int) (16 * WikipediaApp.getInstance().getScreenDensity());
@@ -135,9 +141,6 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     private SavedPagesFunnel savedPagesFunnel;
     private ConnectionIssueFunnel connectionIssueFunnel;
 
-    private ShareHandler shareHandler;
-
-    private TabsProvider tabsProvider;
     private Tracker mTracker;
 
     @NonNull
@@ -219,15 +222,15 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              final Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_page, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_page, container, false);
 
-        webView = (ObservableWebView) rootView.findViewById(de.droidwiki.R.id.page_web_view);
+        webView = (ObservableWebView) rootView.findViewById(R.id.page_web_view);
         initWebViewListeners();
 
-        tocDrawer = (WikiDrawerLayout) rootView.findViewById(de.droidwiki.R.id.page_toc_drawer);
-        tocDrawer.setDragEdgeWidth(getResources().getDimensionPixelSize(de.droidwiki.R.dimen.drawer_drag_margin));
+        tocDrawer = (WikiDrawerLayout) rootView.findViewById(R.id.page_toc_drawer);
+        tocDrawer.setDragEdgeWidth(getResources().getDimensionPixelSize(R.dimen.drawer_drag_margin));
 
-        tocButton = (FloatingActionButton) rootView.findViewById(de.droidwiki.R.id.floating_toc_button);
+        tocButton = (FloatingActionButton) rootView.findViewById(R.id.floating_toc_button);
         tocButton.setOnClickListener(tocButtonOnClickListener);
 
         refreshView = (SwipeRefreshLayoutWithScroll) rootView
@@ -239,7 +242,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         refreshView.setScrollableChild(webView);
         refreshView.setOnRefreshListener(pageRefreshListener);
 
-        errorView = (WikiErrorView)rootView.findViewById(de.droidwiki.R.id.page_error);
+        errorView = (WikiErrorView)rootView.findViewById(R.id.page_error);
 
         return rootView;
     }
@@ -262,7 +265,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         // the background may be shown momentarily while the WebView loads content,
         // creating a seizure-inducing effect, or at the very least, a migraine with aura).
         webView.setBackgroundColor(getResources().getColor(
-                Utils.getThemedAttributeId(getActivity(), de.droidwiki.R.attr.page_background_color)));
+                Utils.getThemedAttributeId(getActivity(), R.attr.page_background_color)));
 
         bridge = new CommunicationBridge(webView, "file:///android_asset/index.html");
         setupMessageHandlers();
@@ -299,7 +302,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             protected void onReferenceClicked(String refHtml) {
                 if (!isAdded()) {
                     Log.d("PageFragment",
-                          "Detached from activity, so stopping reference click.");
+                            "Detached from activity, so stopping reference click.");
                     return;
                 }
 
@@ -416,7 +419,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (!TextUtils.isEmpty(title.getNamespace()) || !app.isLinkPreviewEnabled()) {
             HistoryEntry historyEntry = new HistoryEntry(title, HistoryEntry.SOURCE_INTERNAL_LINK);
             getPageActivity().displayNewPage(title, historyEntry);
-            new LinkPreviewFunnel(app, title).logNavigate();
+            new LinkPreviewFunnel(app).logNavigate();
         } else {
             getPageActivity().showLinkPreview(title, HistoryEntry.SOURCE_INTERNAL_LINK);
         }
@@ -504,11 +507,13 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (!pageLoadStrategy.isLoading()) {
             leadImagesHandler.beginLayout(new LeadImagesHandler.OnLeadImageLayoutListener() {
                 @Override
-                public void onLayoutComplete() {
-                    // when it's finished laying out, make sure the toolbar is shown appropriately.
+                public void onLayoutComplete(int sequence) {
+                    // (We don't care about the sequence number here, since it doesn't affect
+                    // page loading)
+                    // When it's finished laying out, make sure the toolbar is shown appropriately.
                     searchBarHideHandler.setFadeEnabled(leadImagesHandler.isLeadImageEnabled());
                 }
-            });
+            }, 0);
         }
         tabsProvider.onConfigurationChanged();
     }
@@ -537,20 +542,19 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         tabFunnel.logOpenInNew(tabList.size());
     }
 
-    /**
-     * Load a new page into the WebView in this fragment.
-     * This shall be the single point of entry for loading content into the WebView, whether it's
-     * loading an entirely new page, refreshing the current page, retrying a failed network
-     * request, etc.
-     * @param title Title of the new page to load.
-     * @param entry HistoryEntry associated with the new page.
-     * @param tryFromCache Whether to try loading the page from cache (otherwise load directly
-     *                     from network).
-     * @param pushBackStack Whether to push the new page onto the backstack.
-     */
     public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
                                boolean pushBackStack) {
         displayNewPage(title, entry, tryFromCache, pushBackStack, 0);
+    }
+
+    public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
+                               boolean pushBackStack, int stagedScrollY) {
+        displayNewPage(title, entry, tryFromCache, pushBackStack, stagedScrollY, false);
+    }
+
+    public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
+                               boolean pushBackStack, boolean savedPageRefreshed) {
+        displayNewPage(title, entry, tryFromCache, pushBackStack, 0, savedPageRefreshed);
     }
 
     /**
@@ -565,7 +569,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
      * @param pushBackStack Whether to push the new page onto the backstack.
      */
     public void displayNewPage(PageTitle title, HistoryEntry entry, boolean tryFromCache,
-                               boolean pushBackStack, int stagedScrollY) {
+                               boolean pushBackStack, int stagedScrollY, boolean savedPageRefreshed) {
         // disable sliding of the ToC while sections are loading
         tocHandler.setEnabled(false);
         setToCButtonFadedIn(true);
@@ -575,12 +579,19 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         Log.i("PageFragment", "Setting screen name: " + title.getDisplayText());
         mTracker.setScreenName("Page~" + title.getDisplayText());
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
         model.setTitle(title);
         model.setTitleOriginal(title);
         model.setCurEntry(entry);
         savedPagesFunnel = app.getFunnelManager().getSavedPagesFunnel(title.getSite());
 
         getPageActivity().updateProgressBar(true, true, 0);
+
+        pageRefreshed = savedPageRefreshed;
+        if (!pageRefreshed) {
+            savedPageCheckComplete = false;
+            checkIfPageIsSaved();
+        }
 
         pageLoadStrategy.onDisplayNewPage(pushBackStack, tryFromCache, stagedScrollY);
     }
@@ -606,78 +617,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         webView.getSettings().setDefaultFontSize((int) app.getFontSize(getActivity().getWindow()));
     }
 
-    private void openInNewTab(PageTitle title, HistoryEntry entry, int position) {
-        // create a new tab
-        Tab tab = new Tab();
-        // if the requested position is at the top, then make its backstack current
-        if (position == getForegroundTabPosition()) {
-            pageLoadStrategy.setBackStack(tab.getBackStack());
-        }
-        // put this tab in the requested position
-        tabList.add(position, tab);
-        // add the requested page to its backstack
-        tab.getBackStack().add(new PageBackStackItem(title, entry));
-        // and... that should be it.
-        tabsProvider.showAndHideTabs();
+    public boolean isPageSaved() {
+        return pageSaved;
     }
 
-    private int getBackgroundTabPosition() {
-        return Math.max(0, getForegroundTabPosition() - 1);
-    }
-
-    private int getForegroundTabPosition() {
-        return tabList.size();
-    }
-
-    private void setupMessageHandlers() {
-        bridge.addListener("ipaSpan", new CommunicationBridge.JSEventListener() {
-            @Override
-            public void onMessage(String messageType, JSONObject messagePayload) {
-                try {
-                    String text = messagePayload.getString("contents");
-                    final int textSize = 30;
-                    TextView textView = new TextView(getActivity());
-                    textView.setGravity(Gravity.CENTER);
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
-                    textView.setText(Html.fromHtml(text));
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setView(textView);
-                    builder.show();
-                } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
-                }
-            }
-        });
-        bridge.addListener("imageClicked", new CommunicationBridge.JSEventListener() {
-            @Override
-            public void onMessage(String messageType, JSONObject messagePayload) {
-                try {
-                    String href = Utils.decodeURL(messagePayload.getString("href"));
-                    if (href.startsWith("/")) {
-                        PageTitle imageTitle = model.getTitle().getSite().titleForInternalLink(href);
-                        GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
-                                imageTitle, GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
-                    } else {
-                        linkHandler.onUrlClick(href);
-                    }
-                } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
-                }
-            }
-        });
-        bridge.addListener("mediaClicked", new CommunicationBridge.JSEventListener() {
-            @Override
-            public void onMessage(String messageType, JSONObject messagePayload) {
-                try {
-                    String href = Utils.decodeURL(messagePayload.getString("href"));
-                    GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
-                            new PageTitle(href, model.getTitle().getSite()),
-                            GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
-                } catch (JSONException e) {
-                    ACRA.getErrorReporter().handleException(e);
-                }
-            }
-        });
+    public void setPageSaved(boolean saved) {
+        pageSaved = saved;
     }
 
     public void onActionModeShown(ActionMode mode) {
@@ -687,14 +632,13 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         }
     }
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PageActivity.ACTIVITY_REQUEST_EDIT_SECTION
-            && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
+                && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
             pageLoadStrategy.backFromEditing(data);
-            FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.edit_saved_successfully);
+            FeedbackUtil.showMessage(getActivity(), R.string.edit_saved_successfully);
             // and reload the page...
             displayNewPage(model.getTitleOriginal(), model.getCurEntry(), false, false);
         }
@@ -705,7 +649,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (!isAdded() || getPageActivity().isSearching()) {
             return;
         }
-        inflater.inflate(de.droidwiki.R.menu.menu_page_actions, menu);
+        inflater.inflate(R.menu.menu_page_actions, menu);
     }
 
     @Override
@@ -714,15 +658,18 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         if (!isAdded() || getPageActivity().isSearching()) {
             return;
         }
-        MenuItem savePageItem = menu.findItem(de.droidwiki.R.id.menu_page_save);
+        MenuItem savePageItem = menu.findItem(R.id.menu_page_save);
         if (savePageItem == null) {
             return;
         }
+        if (getTitle() != null) {
+            updateSavePageMenuItem(savePageItem);
+        }
 
-        MenuItem shareItem = menu.findItem(de.droidwiki.R.id.menu_page_share);
-        MenuItem otherLangItem = menu.findItem(de.droidwiki.R.id.menu_page_other_languages);
-        MenuItem findInPageItem = menu.findItem(de.droidwiki.R.id.menu_page_find_in_page);
-        MenuItem themeChooserItem = menu.findItem(de.droidwiki.R.id.menu_page_font_and_theme);
+        MenuItem shareItem = menu.findItem(R.id.menu_page_share);
+        MenuItem otherLangItem = menu.findItem(R.id.menu_page_other_languages);
+        MenuItem findInPageItem = menu.findItem(R.id.menu_page_find_in_page);
+        MenuItem themeChooserItem = menu.findItem(R.id.menu_page_font_and_theme);
 
         if (pageLoadStrategy.isLoading()) {
             savePageItem.setEnabled(false);
@@ -731,63 +678,56 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             findInPageItem.setEnabled(false);
             themeChooserItem.setEnabled(false);
         } else {
-            savePageItem.setEnabled(true);
             shareItem.setEnabled(true);
             // Only display "Read in other languages" if the article is in other languages
             otherLangItem.setVisible(model.getPage() != null && model.getPage().getPageProperties().getLanguageCount() != 0);
             otherLangItem.setEnabled(true);
             findInPageItem.setEnabled(true);
             themeChooserItem.setEnabled(true);
-            int subState = pageLoadStrategy.getSubState();
-            if (subState == SUBSTATE_PAGE_SAVED) {
-                savePageItem.setEnabled(false);
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_page_saved));
-            } else if (subState == SUBSTATE_SAVED_PAGE_LOADED) {
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_refresh_saved_page));
-            } else {
-                savePageItem.setTitle(getString(de.droidwiki.R.string.menu_save_page));
-            }
         }
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.homeAsUp:
+            case R.id.homeAsUp:
                 // TODO SEARCH: add up navigation, see also http://developer.android.com/training/implementing-navigation/ancestral.html
                 return true;
-            case de.droidwiki.R.id.menu_page_save:
-                // This means the user explicitly chose to save a new saved page
-                app.getFunnelManager().getSavedPagesFunnel(model.getTitle().getSite()).logSaveNew();
-                if (model.getCurEntry().getSource() == HistoryEntry.SOURCE_SAVED_PAGE) {
-                    // refreshing a saved page...
+            case R.id.menu_page_save:
+                if (item.getTitle().equals(getString(R.string.menu_refresh_saved_page))) {
                     refreshPage(true);
                 } else {
                     savePage();
+                    app.getFunnelManager().getSavedPagesFunnel(model.getTitle().getSite()).logSaveNew();
                 }
                 return true;
             case R.id.menu_page_share:
                 ShareUtils.shareText(getActivity(), model.getTitle());
                 return true;
-            case de.droidwiki.R.id.menu_page_other_languages:
+            case R.id.menu_page_other_languages:
                 Intent langIntent = new Intent();
                 langIntent.setClass(getActivity(), LangLinksActivity.class);
                 langIntent.setAction(LangLinksActivity.ACTION_LANGLINKS_FOR_TITLE);
                 langIntent.putExtra(LangLinksActivity.EXTRA_PAGETITLE, model.getTitle());
                 getActivity().startActivityForResult(langIntent,
-                                                     PageActivity.ACTIVITY_REQUEST_LANGLINKS);
+                        PageActivity.ACTIVITY_REQUEST_LANGLINKS);
                 return true;
-            case de.droidwiki.R.id.menu_page_find_in_page:
+            case R.id.menu_page_find_in_page:
                 showFindInPage();
                 return true;
-            case de.droidwiki.R.id.menu_page_font_and_theme:
+            case R.id.menu_page_font_and_theme:
                 getPageActivity().showThemeChooser();
                 return true;
-            case de.droidwiki.R.id.menu_page_show_tabs:
+            case R.id.menu_page_show_tabs:
                 tabsProvider.enterTabMode();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onDestroyOptionsMenu() {
+        super.onDestroyOptionsMenu();
     }
 
     public void showFindInPage() {
@@ -800,8 +740,9 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             @Override
             public boolean onCreateActionMode(ActionMode mode, Menu menu) {
                 findInPageActionMode = mode;
-                MenuItem menuItem = menu.add(de.droidwiki.R.string.find_in_page);
+                MenuItem menuItem = menu.add(R.string.menu_page_find_in_page);
                 MenuItemCompat.setActionProvider(menuItem, findInPageActionProvider);
+                setToCButtonFadedIn(false);
                 return true;
             }
 
@@ -821,6 +762,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                 findInPageActionMode = null;
                 webView.clearMatches();
                 pageActivity.showToolbar();
+                setToCButtonFadedIn(true);
                 Utils.hideSoftKeyboard(pageActivity);
             }
         });
@@ -863,23 +805,6 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         }
     }
 
-    public PageTitle adjustPageTitleFromMobileview(PageTitle title, JSONObject mobileView)
-            throws JSONException {
-        if (mobileView.has("redirected")) {
-            // Handle redirects properly.
-            title = new PageTitle(mobileView.optString("redirected"), title.getSite(),
-                    title.getThumbUrl());
-        } else if (mobileView.has("normalizedtitle")) {
-            // We care about the normalized title only if we were not redirected
-            title = new PageTitle(mobileView.optString("normalizedtitle"), title.getSite(),
-                    title.getThumbUrl());
-        }
-        if (mobileView.has("description")) {
-            title.setDescription(Utils.capitalizeFirstChar(mobileView.getString("description")));
-        }
-        return title;
-    }
-
     public void commonSectionFetchOnCatch(Throwable caught) {
         if (!isAdded()) {
             return;
@@ -907,22 +832,12 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         }
     }
 
-    /**
-     * Convenience method for hiding all the content of a page.
-     */
-    private void hidePageContent() {
-        leadImagesHandler.hide();
-        searchBarHideHandler.setFadeEnabled(false);
-        pageLoadStrategy.onHidePageContent();
-        webView.setVisibility(View.INVISIBLE);
-    }
-
     public void savePage() {
         if (model.getPage() == null) {
             return;
         }
 
-        FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.toast_saving_page);
+        FeedbackUtil.showMessage(getActivity(), R.string.snackbar_saving_page);
         new SavePageTask(app, model.getTitle(), model.getPage()) {
             @Override
             public void onFinish(Boolean success) {
@@ -930,14 +845,11 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                     Log.d("PageFragment", "Detached from activity, no snackbar.");
                     return;
                 }
-
-                if (success) {
-                    pageLoadStrategy.setSubState(SUBSTATE_PAGE_SAVED);
-                }
-
                 getPageActivity().showPageSavedMessage(model.getTitle().getDisplayText(), success);
             }
         }.execute();
+        // Not technically a refresh but this will prevent needless immediate refreshing
+        pageRefreshed = true;
     }
 
     /**
@@ -975,10 +887,25 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     public void refreshPage(boolean saveOnComplete) {
         this.saveOnComplete = saveOnComplete;
         if (saveOnComplete) {
-            FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.toast_refresh_saved_page);
+            FeedbackUtil.showMessage(getActivity(), R.string.snackbar_refresh_saved_page);
         }
         model.setCurEntry(new HistoryEntry(model.getTitle(), HistoryEntry.SOURCE_HISTORY));
-        displayNewPage(model.getTitle(), model.getCurEntry(), false, false);
+        displayNewPage(model.getTitle(), model.getCurEntry(), false, false, true);
+    }
+
+    public void updateSavePageMenuItem(MenuItem menuItemSavePage) {
+        if (!savedPageCheckComplete) {
+            menuItemSavePage.setEnabled(false);
+        } else if (pageRefreshed) {
+            menuItemSavePage.setEnabled(false);
+            menuItemSavePage.setTitle(getString(R.string.menu_page_saved));
+        } else if (pageSaved) {
+            menuItemSavePage.setEnabled(true);
+            menuItemSavePage.setTitle(getString(R.string.menu_refresh_saved_page));
+        } else {
+            menuItemSavePage.setEnabled(true);
+            menuItemSavePage.setTitle(getString(R.string.menu_page_save));
+        }
     }
 
     private ToCHandler tocHandler;
@@ -1100,6 +1027,16 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         }
     };
 
+    /**
+     * Convenience method for hiding all the content of a page.
+     */
+    private void hidePageContent() {
+        leadImagesHandler.hide();
+        searchBarHideHandler.setFadeEnabled(false);
+        pageLoadStrategy.onHidePageContent();
+        webView.setVisibility(View.INVISIBLE);
+    }
+
     @Override
     public boolean onBackPressed() {
         if (tocHandler != null && tocHandler.isVisible()) {
@@ -1140,20 +1077,20 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     private void checkAndShowSelectTextOnboarding() {
         if (app.isFeatureSelectTextAndShareTutorialEnabled()
-        &&  model.getPage().isArticle()
-        &&  app.getOnboardingStateMachine().isSelectTextTutorialEnabled()) {
+                &&  model.getPage().isArticle()
+                &&  app.getOnboardingStateMachine().isSelectTextTutorialEnabled()) {
             showSelectTextOnboarding();
         }
     }
 
     private void showSelectTextOnboarding() {
-        final View targetView = getView().findViewById(de.droidwiki.R.id.fragment_page_tool_tip_select_text_target);
+        final View targetView = getView().findViewById(R.id.fragment_page_tool_tip_select_text_target);
         targetView.postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (getActivity() != null) {
                     ToolTipUtil.showToolTip(getActivity(),
-                            targetView, de.droidwiki.R.layout.inflate_tool_tip_select_text,
+                            targetView, R.layout.inflate_tool_tip_select_text,
                             ToolTip.Position.CENTER);
                     app.getOnboardingStateMachine().setSelectTextTutorial();
                 }

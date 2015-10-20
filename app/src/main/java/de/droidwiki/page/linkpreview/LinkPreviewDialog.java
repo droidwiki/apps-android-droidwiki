@@ -152,7 +152,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
             loadContentWithMwapi();
         }
 
-        funnel = new LinkPreviewFunnel(app, pageTitle);
+        funnel = new LinkPreviewFunnel(app);
         funnel.logLinkClick();
 
         return rootView;

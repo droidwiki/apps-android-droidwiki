@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var bridge = require('./bridge');
-var util = require('./util');
+var util = require('./utilities');
 
 function ActionsHandler() {
 }
@@ -120,7 +120,7 @@ function collectIssues( sourceNode ) {
 
 module.exports = new ActionsHandler();
 
-},{"./bridge":2,"./util":13}],2:[function(require,module,exports){
+},{"./bridge":2,"./utilities":24}],2:[function(require,module,exports){
 function Bridge() {
 }
 
@@ -181,7 +181,7 @@ transformer.register( 'displayDisambigLink', function( content ) {
     return content;
 } );
 
-},{"./transformer":11}],4:[function(require,module,exports){
+},{"./transformer":12}],4:[function(require,module,exports){
 var actions = require('./actions');
 var bridge = require('./bridge');
 
@@ -215,7 +215,7 @@ transformer.register( 'displayIssuesLink', function( content ) {
     return content;
 } );
 
-},{"./transformer":11}],6:[function(require,module,exports){
+},{"./transformer":12}],6:[function(require,module,exports){
 var bridge = require( "./bridge" );
 
 function addStyleLink( href ) {
@@ -293,65 +293,57 @@ bridge.registerListener( "setDecorOffset", function( payload ) {
 },{"./bridge":2,"./transformer":12}],8:[function(require,module,exports){
 var bridge = require("./bridge");
 var loader = require("./loader");
-var util = require("./util");
+var utilities = require("./utilities");
 
-function parseRgbValues( el, propertyName ) {
-	var property = el.style[propertyName];
-	var bits = parseCSSColor( property );
-	if ( bits === null ) {
-		return;
+function setImageBackgroundsForDarkMode( content ) {
+	var img, allImgs = content.querySelectorAll( 'img' );
+	for ( var i = 0; i < allImgs.length; i++ ) {
+		img = allImgs[i];
+		if ( likelyExpectsLightBackground( img ) ) {
+			img.style.background = '#fff';
+		}
 	}
-	return [ parseInt( bits[0] ), parseInt( bits[1] ), parseInt( bits[2] )];
-}
-
-function invertColorProperty( el, propertyName ) {
-	var rgb = parseRgbValues( el, propertyName );
-	if ( rgb ) {
-		el.style[propertyName] = 'rgb(' + (255 - rgb[0]) + ', ' + (255 - rgb[1]) + ', ' + (255 - rgb[2]) + ')';
-	}
-}
-
-function halveRgbValues( el, propertyName ) {
-	var rgb = parseRgbValues( el, propertyName );
-	if ( rgb ) {
-		el.style[propertyName] = 'rgb(' + Math.floor(rgb[0] / 2) + ', ' + Math.floor(rgb[1] / 2) + ', ' + Math.floor(rgb[2] / 2) + ')';
-	}
-}
-
-var invertProperties = [ 'color', 'background-color', 'border-color' ];
-function invertOneElement( el ) {
-	var isInTable = util.hasAncestor( el, 'TABLE' );
-	for ( var i = 0; i < invertProperties.length; i++ ) {
-		if ( el.style[invertProperties[i]] ) {
-			if ( isInTable ) {
-				halveRgbValues( el, invertProperties[i] );
-			} else {
-				invertColorProperty( el, invertProperties[i] );
-			}
+	// and now, look for Math formula images, and invert them
+	var mathImgs = content.querySelectorAll( "[class*='math-fallback']" );
+	for ( i = 0; i < mathImgs.length; i++ ) {
+		var mathImg = mathImgs[i];
+		// KitKat and higher can use webkit to invert colors
+		if (window.apiLevel >= 19) {
+			mathImg.style.cssText = mathImg.style.cssText + ";-webkit-filter: invert(100%);";
+		} else {
+			// otherwise, just give it a mild background color
+			mathImg.style.backgroundColor = "#ccc";
+			// and give it a little padding, since the text is right up against the edge.
+			mathImg.style.padding = "2px";
 		}
 	}
 }
 
-function invertElement( el ) {
-    // first, invert the colors of tables and other elements
-	var allElements = el.querySelectorAll( '*[style]' );
-	for ( var i = 0; i < allElements.length; i++ ) {
-		invertOneElement( allElements[i] );
-	}
-    // and now, look for Math formula images, and invert them
-    var mathImgs = el.querySelectorAll( "[class*='math-fallback']" );
-    for ( i = 0; i < mathImgs.length; i++ ) {
-        var mathImg = mathImgs[i];
-        // KitKat and higher can use webkit to invert colors
-        if (window.apiLevel >= 19) {
-            mathImg.style.cssText = mathImg.style.cssText + ";-webkit-filter: invert(100%);";
-        } else {
-            // otherwise, just give it a mild background color
-            mathImg.style.backgroundColor = "#ccc";
-            // and give it a little padding, since the text is right up against the edge.
-            mathImg.style.padding = "2px";
-        }
-    }
+/**
+/ An heuristic for determining whether an element tagged 'img' is likely to need a white background applied
+/ (provided a predefined background color is not supplied).
+/
+/ Based on trial, error and observation, this is likely to be the case when a background color is not
+/ explicitly supplied, and:
+/
+/ (1) The element is in the infobox; or
+/ (2) The element is not in a table.  ('img' elements in tables are frequently generated by random
+/ 		templates and should not be altered; see, e.g., T85646).
+*/
+function likelyExpectsLightBackground( element ) {
+	return !hasPredefinedBackgroundColor( element ) && ( isInfoboxImage( element ) || isNotInTable( element ) );
+}
+
+function hasPredefinedBackgroundColor( element ) {
+	return utilities.ancestorHasStyleProperty( element, 'background-color' );
+}
+
+function isInfoboxImage( element ) {
+	return utilities.ancestorContainsClass( element, 'image' ) && utilities.ancestorContainsClass( element, 'infobox' );
+}
+
+function isNotInTable( element ) {
+	return !utilities.isNestedInTable( element );
 }
 
 function toggle( nightCSSURL, hasPageLoaded ) {
@@ -370,7 +362,7 @@ function toggle( nightCSSURL, hasPageLoaded ) {
 		// If we are doing this before the page has loaded, no need to swap colors ourselves
 		// If we are doing this after, that means the transforms in transformers.js won't run
 		// And we have to do this ourselves
-		invertElement( document.querySelector( '.content' ) );
+		setImageBackgroundsForDarkMode( document.querySelector( '.content' ) );
 	}
 }
 
@@ -379,10 +371,19 @@ bridge.registerListener( 'toggleNightMode', function( payload ) {
 } );
 
 module.exports = {
-	invertElement: invertElement
+	setImageBackgroundsForDarkMode: setImageBackgroundsForDarkMode
 };
 
-},{"../lib/js/css-color-parser":16,"./bridge":2,"./loader":6,"./util":13}],9:[function(require,module,exports){
+},{"./bridge":2,"./loader":6,"./utilities":24}],9:[function(require,module,exports){
+var bridge = require("./bridge");
+
+bridge.registerListener( "displayPreviewHTML", function( payload ) {
+    var content = document.getElementById( "content" );
+    content.setAttribute( "dir", window.directionality );
+    content.innerHTML = payload.html;
+} );
+
+},{"./bridge":2}],10:[function(require,module,exports){
 var bridge = require("./bridge");
 
 bridge.registerListener( "setDirectionality", function( payload ) {
@@ -398,7 +399,7 @@ bridge.registerListener( "setDirectionality", function( payload ) {
     html.classList.add( "ui-" + payload.uiDirection );
 } );
 
-},{"./bridge":2}],10:[function(require,module,exports){
+},{"./bridge":2}],11:[function(require,module,exports){
 var bridge = require("./bridge");
 var transformer = require("./transformer");
 
@@ -499,16 +500,16 @@ bridge.registerListener( "displayLeadSection", function( payload ) {
     transformer.transform( "hideIPA", content );
 
     if (!window.isMainPage) {
-        content = transformer.transform( "hideTables", content );
-        content = transformer.transform( "addImageOverflowXContainers", content );
-        content = transformer.transform( "widenImages", content );
+        transformer.transform( "hideTables", content );
+        transformer.transform( "addImageOverflowXContainers", content );
+        transformer.transform( "widenImages", content );
     }
 
     // insert the edit pencil
     content.insertBefore( editButton, content.firstChild );
 
-    content = transformer.transform("displayDisambigLink", content);
-    content = transformer.transform("displayIssuesLink", content);
+    transformer.transform("displayDisambigLink", content);
+    transformer.transform("displayIssuesLink", content);
 
     //if there were no page issues, then hide the container
     if (!issuesContainer.hasChildNodes()) {
@@ -574,8 +575,9 @@ function elementsForSection( section ) {
     transformer.transform( "hideIPA", content );
     transformer.transform( "hideRefs", content );
     if (!window.isMainPage) {
-        content = transformer.transform( "addImageOverflowXContainers", content );
-        content = transformer.transform( "widenImages", content );
+        transformer.transform( "hideTables", content );
+        transformer.transform( "addImageOverflowXContainers", content );
+        transformer.transform( "widenImages", content );
     }
 
     return [ heading, content ];
@@ -659,7 +661,7 @@ bridge.registerListener( "requestCurrentSection", function() {
     bridge.sendMessage( "currentSectionResponse", { sectionID: getCurrentSection() } );
 } );
 
-},{"./bridge":2,"./transformer":11}],11:[function(require,module,exports){
+},{"./bridge":2,"./transformer":12}],12:[function(require,module,exports){
 function Transformer() {
 }
 
@@ -679,7 +681,6 @@ Transformer.prototype.transform = function( transform, element ) {
     for ( var i = 0; i < functions.length; i++ ) {
         element = functions[i](element);
     }
-    return element;
 };
 
 Transformer.prototype.getDecorOffset = function() {
@@ -704,100 +705,76 @@ transformer.register( "addDarkModeStyles", function( content ) {
 var transformer = require("../transformer");
 var utilities = require("../utilities");
 
-// Takes a block of text, and removes any text within parentheses, but only
-// until the end of the first sentence.
-// Based on Extensions:Popups - ext.popups.renderer.article.js
-function removeParensFromText( string ) {
-    var ch;
-    var newString = '';
-    var level = 0;
-    var i = 0;
-    for( ; i < string.length; i++ ) {
-        ch = string.charAt( i );
-        if ( ch === ')' && level === 0  ) {
-            // abort if we have an imbalance of parentheses
-            return string;
-        }
-        if ( ch === '(' ) {
-            level++;
-            continue;
-        } else if ( ch === ')' ) {
-            level--;
-            continue;
-        }
-        if ( level === 0 ) {
-            // Remove leading spaces before parentheses
-            if ( ch === ' ' && (i < string.length - 1) && string.charAt( i + 1 ) === '(' ) {
-                continue;
-            }
-            newString += ch;
-            if ( ch === '.' ) {
-                // stop at the end of the first sentence
-                break;
-            }
-        }
+function shouldAddImageOverflowXContainer(image) {
+    if ((image.width > document.getElementById('content').offsetWidth) && !utilities.isNestedInTable(image)) {
+        return true;
+    } else {
+        return false;
     }
-    // fill in the rest of the string
-    if ( i + 1 < string.length ) {
-        newString += string.substring( i + 1, string.length );
-    }
-    // if we had an imbalance of parentheses, then return the original string,
-    // instead of the transformed one.
-    return ( level === 0 ) ? newString : string;
 }
 
-// Move the first non-empty paragraph of text to the top of the section.
-// This will have the effect of shifting the infobox and/or any images at the top of the page
-// below the first paragraph, allowing the user to start reading the page right away.
-transformer.register( "leadSection", function( leadContent ) {
-    if (window.isMainPage) {
-        // don't do anything if this is the main page, since many wikis
-        // arrange the main page in a series of tables.
-        return leadContent;
-    }
-    var block_0 = document.getElementById( "content_block_0" );
-    if (!block_0) {
-        return leadContent;
-    }
+function addImageOverflowXContainer(image, ancestor) {
+    image.setAttribute('hasOverflowXContainer', 'true'); // So "widenImages" transform knows instantly not to widen this one.
+    var div = document.createElement( 'div' );
+    div.className = 'image_overflow_x_container';
+    ancestor.parentElement.insertBefore( div, ancestor );
+    div.appendChild(ancestor);
+}
 
-    var allPs = block_0.getElementsByTagName( "p" );
-    if (!allPs) {
-        return leadContent;
-    }
-
-    for ( var i = 0; i < allPs.length; i++ ) {
-        var p = allPs[i];
-        // Narrow down to first P which is direct child of content_block_0 DIV.
-        // (Don't want to yank P from somewhere in the middle of a table!)
-        if (p.parentNode !== block_0) {
-            continue;
+function maybeAddImageOverflowXContainer() {
+    var image = this;
+    if (shouldAddImageOverflowXContainer(image)) {
+        var ancestor = utilities.firstAncestorWithMultipleChildren(image);
+        if (ancestor) {
+            addImageOverflowXContainer(image, ancestor);
         }
-        // Ensure the P being pulled up has at least a couple lines of text.
-        // Otherwise silly things like a empty P or P which only contains a
-        // BR tag will get pulled up (see articles on "Chemical Reaction" and
-        // "Hawaii").
-        // Trick for quickly determining element height:
-        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.offsetHeight
-        // http://stackoverflow.com/a/1343350/135557
-        var minHeight = 24;
-        if (p.offsetHeight < minHeight){
-            continue;
-        }
-
-        // Move the P!
-        block_0.insertBefore(p.parentNode.removeChild(p), block_0.firstChild);
-
-        // Transform the first sentence of the first paragraph.
-        // (but only for non-production, and only on enwiki)
-        if ( window.isBeta && window.siteLanguage.indexOf( "en" ) > -1 ) {
-            p.innerHTML = removeParensFromText(p.innerHTML);
-        }
-
-        // But only move one P!
-        break;
     }
-    return leadContent;
+}
+
+transformer.register( "addImageOverflowXContainers", function( content ) {
+    // Wrap wide images in a <div style="overflow-x:auto">...</div> so they can scroll
+    // side to side if needed without causing the entire section to scroll side to side.
+    var images = content.getElementsByTagName('img');
+    for (var i = 0; i < images.length; ++i) {
+        // Load event used so images w/o style or inline width/height
+        // attributes can still have their size determined reliably.
+        images[i].addEventListener('load', maybeAddImageOverflowXContainer, false);
+    }
 } );
+},{"../transformer":12,"../utilities":24}],15:[function(require,module,exports){
+var transformer = require("../transformer");
+
+transformer.register( "anchorPopUpMediaTransforms", function( content ) {
+    // look for video thumbnail containers (divs that have class "PopUpMediaTransform"),
+    // and enclose them in an anchor that will lead to the correct click handler...
+	var mediaDivs = content.querySelectorAll( 'div.PopUpMediaTransform' );
+	for ( var i = 0; i < mediaDivs.length; i++ ) {
+		var mediaDiv = mediaDivs[i];
+		var imgTags = mediaDiv.querySelectorAll( 'img' );
+		if (imgTags.length === 0) {
+		    continue;
+		}
+		// the first img element is the video thumbnail, and its 'alt' attribute is
+		// the file name of the video!
+		if (!imgTags[0].getAttribute( 'alt' )) {
+		    continue;
+		}
+		// also, we should hide the "Play media" link that appears under the thumbnail,
+		// since we don't need it.
+		var aTags = mediaDiv.querySelectorAll( 'a' );
+		if (aTags.length > 0) {
+		    aTags[0].parentNode.removeChild(aTags[0]);
+		}
+		var containerLink = document.createElement( 'a' );
+        containerLink.setAttribute( 'href', imgTags[0].getAttribute( 'alt' ) );
+        containerLink.classList.add( 'app_media' );
+        mediaDiv.parentNode.insertBefore(containerLink, mediaDiv);
+        mediaDiv.parentNode.removeChild(mediaDiv);
+        containerLink.appendChild(imgTags[0]);
+	}
+} );
+},{"../transformer":12}],16:[function(require,module,exports){
+var transformer = require("../transformer");
 
 /*
 Tries to get an array of table header (TH) contents from a given table.
@@ -836,10 +813,7 @@ function getTableHeader( element ) {
     return thArray;
 }
 
-/*
-OnClick handler function for expanding/collapsing tables and infoboxes.
-*/
-function tableCollapseClickHandler() {
+function handleTableCollapseOrExpandClick() {
     var container = this.parentNode;
     var divCollapsed = container.children[0];
     var tableFull = container.children[1];
@@ -931,55 +905,17 @@ transformer.register( "hideTables", function( content ) {
         bottomDiv.style.display = 'none';
 
         //assign click handler to the collapsed divs
-        collapsedDiv.onclick = tableCollapseClickHandler;
-        bottomDiv.onclick = tableCollapseClickHandler;
+        collapsedDiv.onclick = handleTableCollapseOrExpandClick;
+        bottomDiv.onclick = handleTableCollapseOrExpandClick;
     }
-    return content;
 } );
 
-transformer.register( "hideRefs", function( content ) {
-    var refLists = content.querySelectorAll( "div.reflist" );
-    for (var i = 0; i < refLists.length; i++) {
-        var caption = "<strong class='app_table_collapsed_caption'>" + window.string_expand_refs + "</strong>";
-
-        //create the container div that will contain both the original table
-        //and the collapsed version.
-        var containerDiv = document.createElement( 'div' );
-        containerDiv.className = 'app_table_container';
-        refLists[i].parentNode.insertBefore(containerDiv, refLists[i]);
-        refLists[i].parentNode.removeChild(refLists[i]);
-
-        //create the collapsed div
-        var collapsedDiv = document.createElement( 'div' );
-        collapsedDiv.classList.add('app_table_collapsed_container');
-        collapsedDiv.classList.add('app_table_collapsed_open');
-        collapsedDiv.innerHTML = caption;
-
-        //create the bottom collapsed div
-        var bottomDiv = document.createElement( 'div' );
-        bottomDiv.classList.add('app_table_collapsed_bottom');
-        bottomDiv.classList.add('app_table_collapse_icon');
-        bottomDiv.innerHTML = window.string_table_close;
-
-        //add our stuff to the container
-        containerDiv.appendChild(collapsedDiv);
-        containerDiv.appendChild(refLists[i]);
-        containerDiv.appendChild(bottomDiv);
-
-        //give it just a little padding
-        refLists[i].style.padding = "4px";
-
-        //set initial visibility
-        refLists[i].style.display = 'none';
-        collapsedDiv.style.display = 'block';
-        bottomDiv.style.display = 'none';
-
-        //assign click handler to the collapsed divs
-        collapsedDiv.onclick = tableCollapseClickHandler;
-        bottomDiv.onclick = tableCollapseClickHandler;
-    }
-    return content;
-} );
+module.exports = {
+    handleTableCollapseOrExpandClick: handleTableCollapseOrExpandClick
+};
+},{"../transformer":12}],17:[function(require,module,exports){
+var transformer = require("../transformer");
+var bridge = require("../bridge");
 
 /*
 OnClick handler function for IPA spans.
@@ -1025,17 +961,11 @@ transformer.register( "hideIPA", function( content ) {
         //and assign the click handler to it
         containerSpan.onclick = ipaClickHandler;
     }
-    return content;
 } );
+},{"../bridge":2,"../transformer":12}],18:[function(require,module,exports){
+var transformer = require("../transformer");
 
-transformer.register( "section", function( content ) {
-	if ( window.isNightMode ) {
-		night.invertElement ( content );
-	}
-	return content;
-} );
-
-transformer.register( "section", function( content ) {
+transformer.register( "hideRedLinks", function( content ) {
 	var redLinks = content.querySelectorAll( 'a.new' );
 	for ( var i = 0; i < redLinks.length; i++ ) {
 		var redLink = redLinks[i];
@@ -1044,98 +974,55 @@ transformer.register( "section", function( content ) {
 		replacementSpan.setAttribute( 'class', redLink.getAttribute( 'class' ) );
 		redLink.parentNode.replaceChild( replacementSpan, redLink );
 	}
-	return content;
 } );
+},{"../transformer":12}],19:[function(require,module,exports){
+var transformer = require("../transformer");
+var collapseTables = require("./collapseTables");
 
-transformer.register( "section", function( content ) {
-    if (window.apiLevel < 11) {
-        //don't do anything for GB
-        return content;
-    }
-    var allDivs = content.querySelectorAll( 'div' );
-    var contentWrapper = document.getElementById( "content" );
-    var clientWidth = contentWrapper.offsetWidth;
-    for ( var i = 0; i < allDivs.length; i++ ) {
-        if (allDivs[i].style && allDivs[i].style.width) {
-            // if this div has an explicit width, and it's greater than our client width,
-            // then make it overflow (with scrolling), and reset its width to 100%
-            if (parseInt(allDivs[i].style.width) > clientWidth) {
-                allDivs[i].style.overflowX = "auto";
-                allDivs[i].style.width = "100%";
-            }
-        }
-    }
-    return content;
-} );
+transformer.register( "hideRefs", function( content ) {
+    var refLists = content.querySelectorAll( "div.reflist" );
+    for (var i = 0; i < refLists.length; i++) {
+        var caption = "<strong class='app_table_collapsed_caption'>" + window.string_expand_refs + "</strong>";
 
-transformer.register( "section", function( content ) {
-    // Prevent horizontally scrollable pages by checking for math formula images (which are
-    // often quite wide), and explicitly setting their maximum width to fit the viewport.
-    var allImgs = content.querySelectorAll( 'img' );
-    for ( var i = 0; i < allImgs.length; i++ ) {
-        var imgItem = allImgs[i];
-        // is the image a math formula?
-        for ( var c = 0; c < imgItem.classList.length; c++ ) {
-            if (imgItem.classList[c].indexOf("math") > -1) {
-                imgItem.style.maxWidth = "100%";
-            }
-        }
-    }
-    return content;
-} );
+        //create the container div that will contain both the original table
+        //and the collapsed version.
+        var containerDiv = document.createElement( 'div' );
+        containerDiv.className = 'app_table_container';
+        refLists[i].parentNode.insertBefore(containerDiv, refLists[i]);
+        refLists[i].parentNode.removeChild(refLists[i]);
 
-transformer.register( "section", function( content ) {
-    // look for video thumbnail containers (divs that have class "PopUpMediaTransform"),
-    // and enclose them in an anchor that will lead to the correct click handler...
-	var mediaDivs = content.querySelectorAll( 'div.PopUpMediaTransform' );
-	for ( var i = 0; i < mediaDivs.length; i++ ) {
-		var mediaDiv = mediaDivs[i];
-		var imgTags = mediaDiv.querySelectorAll( 'img' );
-		if (imgTags.length === 0) {
-		    continue;
-		}
-		// the first img element is the video thumbnail, and its 'alt' attribute is
-		// the file name of the video!
-		if (!imgTags[0].getAttribute( 'alt' )) {
-		    continue;
-		}
-		// also, we should hide the "Play media" link that appears under the thumbnail,
-		// since we don't need it.
-		var aTags = mediaDiv.querySelectorAll( 'a' );
-		if (aTags.length > 0) {
-		    aTags[0].parentNode.removeChild(aTags[0]);
-		}
-		var containerLink = document.createElement( 'a' );
-        containerLink.setAttribute( 'href', imgTags[0].getAttribute( 'alt' ) );
-        containerLink.classList.add( 'app_media' );
-        mediaDiv.parentNode.insertBefore(containerLink, mediaDiv);
-        mediaDiv.parentNode.removeChild(mediaDiv);
-        containerLink.appendChild(imgTags[0]);
-	}
-	return content;
-} );
+        //create the collapsed div
+        var collapsedDiv = document.createElement( 'div' );
+        collapsedDiv.classList.add('app_table_collapsed_container');
+        collapsedDiv.classList.add('app_table_collapsed_open');
+        collapsedDiv.innerHTML = caption;
 
-transformer.register( "widenImages", function( content ) {
-    var images = content.querySelectorAll( 'img' );
-    for ( var i = 0; i < images.length; i++ ) {
-        // Load event used so images w/o style or inline width/height
-        // attributes can still have their size determined reliably.
-        images[i].addEventListener('load', widenImages.maybeWidenImage, false);
-    }
-    return content;
-} );
+        //create the bottom collapsed div
+        var bottomDiv = document.createElement( 'div' );
+        bottomDiv.classList.add('app_table_collapsed_bottom');
+        bottomDiv.classList.add('app_table_collapse_icon');
+        bottomDiv.innerHTML = window.string_table_close;
 
-transformer.register( "addImageOverflowXContainers", function( content ) {
-    // Wrap wide images in a <div style="overflow-x:auto">...</div> so they can scroll
-    // side to side if needed without causing the entire section to scroll side to side.
-    var images = content.getElementsByTagName('img');
-    for (var i = 0; i < images.length; ++i) {
-        // Load event used so images w/o style or inline width/height
-        // attributes can still have their size determined reliably.
-        images[i].addEventListener('load', util.maybeAddImageOverflowXContainer, false);
+        //add our stuff to the container
+        containerDiv.appendChild(collapsedDiv);
+        containerDiv.appendChild(refLists[i]);
+        containerDiv.appendChild(bottomDiv);
+
+        //give it just a little padding
+        refLists[i].style.padding = "4px";
+
+        //set initial visibility
+        refLists[i].style.display = 'none';
+        collapsedDiv.style.display = 'block';
+        bottomDiv.style.display = 'none';
+
+        //assign click handler to the collapsed divs
+        collapsedDiv.onclick = collapseTables.handleTableCollapseOrExpandClick;
+        bottomDiv.onclick = collapseTables.handleTableCollapseOrExpandClick;
     }
-    return content;
 } );
+},{"../transformer":12,"./collapseTables":16}],20:[function(require,module,exports){
+var transformer = require("../transformer");
 
 // Move the first non-empty paragraph (and related elements) to the top of the section.
 // This will have the effect of shifting the infobox and/or any images at the top of the page
@@ -1221,13 +1108,22 @@ function addTrailingNodes( span, nodes, startIndex ) {
 },{"../transformer":12}],21:[function(require,module,exports){
 var transformer = require("../transformer");
 
-function shouldAddImageOverflowXContainer(image) {
-    if ((image.width > document.getElementById('content').offsetWidth) && !isNestedInTable(image)) {
-        return true;
-    } else {
-        return false;
+transformer.register( "setMathFormulaImageMaxWidth", function( content ) {
+    // Prevent horizontally scrollable pages by checking for math formula images (which are
+    // often quite wide), and explicitly setting their maximum width to fit the viewport.
+    var allImgs = content.querySelectorAll( 'img' );
+    for ( var i = 0; i < allImgs.length; i++ ) {
+        var imgItem = allImgs[i];
+        // is the image a math formula?
+        for ( var c = 0; c < imgItem.classList.length; c++ ) {
+            if (imgItem.classList[c].indexOf("math") > -1) {
+                imgItem.style.maxWidth = "100%";
+            }
+        }
     }
-}
+} );
+},{"../transformer":12}],22:[function(require,module,exports){
+var transformer = require("../transformer");
 
 transformer.register( "setDivWidth", function( content ) {
     var allDivs = content.querySelectorAll( 'div' );
@@ -1243,19 +1139,10 @@ transformer.register( "setDivWidth", function( content ) {
             }
         }
     }
-}
-
-module.exports = {
-    hasAncestor: hasAncestor,
-    ancestorContainsClass: ancestorContainsClass,
-    getDictionaryFromSrcset: getDictionaryFromSrcset,
-    firstDivAncestor: firstDivAncestor,
-    isNestedInTable: isNestedInTable,
-    maybeAddImageOverflowXContainer: maybeAddImageOverflowXContainer
-};
-
-},{}],14:[function(require,module,exports){
-var util = require("./util");
+} );
+},{"../transformer":12}],23:[function(require,module,exports){
+var transformer = require("../transformer");
+var utilities = require("../utilities");
 
 var maxStretchRatioAllowedBeforeRequestingHigherResolution = 1.3;
 
@@ -1285,7 +1172,7 @@ function shouldWidenImage(image) {
         image.hasAttribute('srcset') &&
         !image.hasAttribute('hasOverflowXContainer') &&
         image.parentNode.className === "image" &&
-        !util.isNestedInTable(image)
+        !utilities.isNestedInTable(image)
         ) {
         return true;
     } else {
@@ -1303,7 +1190,7 @@ function makeRoomForImageWidening(image) {
 }
 
 function getStretchRatio(image) {
-    var widthControllingDiv = util.firstDivAncestor(image);
+    var widthControllingDiv = utilities.firstDivAncestor(image);
     if (widthControllingDiv) {
         return (widthControllingDiv.offsetWidth / image.naturalWidth);
     }
@@ -1314,7 +1201,7 @@ function useHigherResolutionImageSrcFromSrcsetIfNecessary(image) {
     if (image.getAttribute('srcset')) {
         var stretchRatio = getStretchRatio(image);
         if (stretchRatio > maxStretchRatioAllowedBeforeRequestingHigherResolution) {
-            var srcsetDict = util.getDictionaryFromSrcset(image.getAttribute('srcset'));
+            var srcsetDict = utilities.getDictionaryFromSrcset(image.getAttribute('srcset'));
             /*
             Grab the highest res url from srcset - avoids the complexity of parsing urls
             to retrieve variants - which can get tricky - canonicals have different paths
@@ -1353,8 +1240,107 @@ function maybeWidenImage() {
     }
 }
 
+transformer.register( "widenImages", function( content ) {
+    var images = content.querySelectorAll( 'img' );
+    for ( var i = 0; i < images.length; i++ ) {
+        // Load event used so images w/o style or inline width/height
+        // attributes can still have their size determined reliably.
+        images[i].addEventListener('load', maybeWidenImage, false);
+    }
+} );
+},{"../transformer":12,"../utilities":24}],24:[function(require,module,exports){
+
+function hasAncestor( el, tagName ) {
+    if (el !== null && el.tagName === tagName) {
+        return true;
+    } else {
+        if ( el.parentNode !== null && el.parentNode.tagName !== 'BODY' ) {
+            return hasAncestor( el.parentNode, tagName );
+        } else {
+            return false;
+        }
+    }
+}
+
+function ancestorContainsClass( element, className ) {
+    var contains = false;
+    var curNode = element;
+    while (curNode) {
+        if (typeof curNode.classList !== "undefined") {
+            if (curNode.classList.contains(className)) {
+                contains = true;
+                break;
+            }
+        }
+        curNode = curNode.parentNode;
+    }
+    return contains;
+}
+
+function ancestorHasStyleProperty( element, styleProperty ) {
+    var hasStyleProperty = false;
+    var curNode = element;
+    while (curNode) {
+        if (typeof curNode.classList !== "undefined") {
+            if (curNode.style[styleProperty]) {
+                hasStyleProperty = true;
+                break;
+            }
+        }
+        curNode = curNode.parentNode;
+    }
+    return hasStyleProperty;
+}
+
+function getDictionaryFromSrcset(srcset) {
+    /*
+    Returns dictionary with density (without "x") as keys and urls as values.
+    Parameter 'srcset' string:
+        '//image1.jpg 1.5x, //image2.jpg 2x, //image3.jpg 3x'
+    Returns dictionary:
+        {1.5: '//image1.jpg', 2: '//image2.jpg', 3: '//image3.jpg'}
+    */
+    var sets = srcset.split(',').map(function(set) {
+        return set.trim().split(' ');
+    });
+    var output = {};
+    sets.forEach(function(set) {
+        output[set[1].replace('x', '')] = set[0];
+    });
+    return output;
+}
+
+function firstDivAncestor (el) {
+    while ((el = el.parentElement)) {
+        if (el.tagName === 'DIV') {
+            return el;
+        }
+    }
+    return null;
+}
+
+function firstAncestorWithMultipleChildren (el) {
+    while ((el = el.parentElement) && (el.childElementCount === 1)){}
+    return el;
+}
+
+function isNestedInTable(el) {
+    while ((el = el.parentElement)) {
+        if (el.tagName === 'TD') {
+            return true;
+        }
+    }
+    return false;
+}
+
 module.exports = {
-    maybeWidenImage: maybeWidenImage
+    hasAncestor: hasAncestor,
+    ancestorContainsClass: ancestorContainsClass,
+    ancestorHasStyleProperty: ancestorHasStyleProperty,
+    getDictionaryFromSrcset: getDictionaryFromSrcset,
+    firstDivAncestor: firstDivAncestor,
+    isNestedInTable: isNestedInTable,
+    firstAncestorWithMultipleChildren: firstAncestorWithMultipleChildren
 };
 
 },{}]},{},[2,7,24,12,13,14,15,16,17,18,19,20,21,22,23,1,3,4,5,6,8,9,10,11])
