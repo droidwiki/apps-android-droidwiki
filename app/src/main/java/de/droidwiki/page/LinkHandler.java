@@ -11,7 +11,7 @@ import de.droidwiki.WikipediaApp;
 import de.droidwiki.bridge.CommunicationBridge;
 
 /**
- * Handles any html links coming from a {@link PageFragment}
+ * Handles any html links coming from a {@link de.droidwiki.page.PageFragment}
  */
 public abstract class LinkHandler implements CommunicationBridge.JSEventListener, LinkMovementMethodExt.UrlHandler {
     private final Context context;
@@ -52,16 +52,13 @@ public abstract class LinkHandler implements CommunicationBridge.JSEventListener
         }
         Log.d("Wikipedia", "Link clicked was " + href);
         if (href.startsWith("/")) {
-            Log.d("Wiikipedia", "Link recognized as internal");
             PageTitle title = getSite().titleForInternalLink(href);
             onInternalLinkClicked(title);
         } else if (href.startsWith("#")) {
-            Log.d("Wikipedia", "Link recognized as fragment");
             onPageLinkClicked(href.substring(1));
         } else {
             Uri uri = Uri.parse(href);
             String authority = uri.getAuthority();
-            Log.d("Wikipedia", authority);
             // FIXME: Make this more complete, only to not handle URIs that contain unsupported actions
             if (authority != null && Site.isSupportedSite(authority) && uri.getPath().startsWith("/")) {
                 Site site = new Site(authority);
@@ -69,7 +66,7 @@ public abstract class LinkHandler implements CommunicationBridge.JSEventListener
                 onInternalLinkClicked(title);
             } else {
                 // if it's a /w/ URI, turn it into a full URI and go external
-                if (href.startsWith("/")) {
+                if (href.startsWith("/index.php")) {
                     href = String.format("%1$s://%2$s", WikipediaApp.getInstance().getNetworkProtocol(), getSite().getDomain()) + href;
                 }
                 Utils.handleExternalLink(context, Uri.parse(href));

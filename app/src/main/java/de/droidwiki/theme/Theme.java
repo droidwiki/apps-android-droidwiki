@@ -2,10 +2,13 @@ package de.droidwiki.theme;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StyleRes;
+
+import de.droidwiki.R;
 
 public enum Theme {
-    LIGHT(0, "light", de.droidwiki.R.style.Theme_Light),
-    DARK(1, "dark", de.droidwiki.R.style.Theme_Dark);
+    LIGHT(0, "light", R.style.Theme_Light),
+    DARK(1, "dark", R.style.Theme_Dark);
 
     private final int marshallingId;
     private final String funnelName;
@@ -34,7 +37,7 @@ public enum Theme {
         return funnelName;
     }
 
-    public int getResourceId() {
+    @StyleRes public int getResourceId() {
         return resourceId;
     }
 

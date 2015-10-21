@@ -44,7 +44,6 @@ import de.droidwiki.login.LoginTask;
 import de.droidwiki.login.User;
 import de.droidwiki.page.LinkMovementMethodExt;
 import de.droidwiki.page.PageProperties;
-import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.FeedbackUtil;
 
 import static de.droidwiki.util.L10nUtils.setConditionalTextDirection;
@@ -97,7 +96,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(de.droidwiki.R.layout.activity_edit_section);
+        setContentView(R.layout.activity_edit_section);
 
         if (!getIntent().getAction().equals(ACTION_EDIT_SECTION)) {
             throw new RuntimeException("Much wrong action. Such exception. Wow");
@@ -113,28 +112,28 @@ public class EditSectionActivity extends ThemedActionBarActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage(getString(de.droidwiki.R.string.dialog_saving_in_progress));
+        progressDialog.setMessage(getString(R.string.dialog_saving_in_progress));
 
         getSupportActionBar().setTitle("");
 
-        sectionText = (EditText) findViewById(de.droidwiki.R.id.edit_section_text);
+        sectionText = (EditText) findViewById(R.id.edit_section_text);
 
         new SyntaxHighlighter(this, sectionText);
 
-        sectionProgress = findViewById(de.droidwiki.R.id.edit_section_load_progress);
-        sectionContainer = findViewById(de.droidwiki.R.id.edit_section_container);
-        sectionError = findViewById(de.droidwiki.R.id.edit_section_error);
-        Button sectionErrorRetry = (Button) findViewById(de.droidwiki.R.id.edit_section_error_retry);
+        sectionProgress = findViewById(R.id.edit_section_load_progress);
+        sectionContainer = findViewById(R.id.edit_section_container);
+        sectionError = findViewById(R.id.edit_section_error);
+        Button sectionErrorRetry = (Button) findViewById(R.id.edit_section_error_retry);
 
-        abusefilterContainer = findViewById(de.droidwiki.R.id.edit_section_abusefilter_container);
-        abuseFilterImage = (ImageView) findViewById(de.droidwiki.R.id.edit_section_abusefilter_image);
-        abusefilterTitle = (TextView) findViewById(de.droidwiki.R.id.edit_section_abusefilter_title);
-        abusefilterText = (TextView) findViewById(de.droidwiki.R.id.edit_section_abusefilter_text);
+        abusefilterContainer = findViewById(R.id.edit_section_abusefilter_container);
+        abuseFilterImage = (ImageView) findViewById(R.id.edit_section_abusefilter_image);
+        abusefilterTitle = (TextView) findViewById(R.id.edit_section_abusefilter_title);
+        abusefilterText = (TextView) findViewById(R.id.edit_section_abusefilter_text);
 
         captchaHandler = new CaptchaHandler(this, title.getSite(), progressDialog, sectionContainer, "", null);
 
-        editPreviewFragment = (EditPreviewFragment) getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.edit_section_preview_fragment);
-        editSummaryFragment = (EditSummaryFragment) getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.edit_section_summary_fragment);
+        editPreviewFragment = (EditPreviewFragment) getSupportFragmentManager().findFragmentById(R.id.edit_section_preview_fragment);
+        editSummaryFragment = (EditSummaryFragment) getSupportFragmentManager().findFragmentById(R.id.edit_section_summary_fragment);
 
         updateEditLicenseText();
         editSummaryFragment.setTitle(title);
@@ -205,13 +204,14 @@ public class EditSectionActivity extends ThemedActionBarActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
+    @Override
+    protected void setTheme() {
+        setActionBarTheme();
+    }
+
     private void updateEditLicenseText() {
-        TextView editLicenseText = (TextView) findViewById(de.droidwiki.R.id.edit_section_license_text);
-        if (!app.getUserInfoStorage().isLoggedIn() && app.getAppLanguageCode() == "de") {
-            editLicenseText.setText(Html.fromHtml(getString(de.droidwiki.R.string.edit_save_action_license_anon)));
-        } else {
-            editLicenseText.setText("");
-        }
+        TextView editLicenseText = (TextView) findViewById(R.id.edit_section_license_text);
+        editLicenseText.setText(Html.fromHtml("Mit dem Speichern stimmst du zu, dass deine Änderung unbeschränkt und unentgeltlich in der DroidWiki veröffentlicht wird."));
 
         editLicenseText.setMovementMethod(new LinkMovementMethodExt(new LinkMovementMethodExt.UrlHandler() {
             @Override
@@ -235,7 +235,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
             if (resultCode == LoginActivity.RESULT_LOGIN_SUCCESS) {
                 updateEditLicenseText();
                 funnel.logLoginSuccess();
-                FeedbackUtil.showMessage(this, de.droidwiki.R.string.login_success_toast);
+                FeedbackUtil.showMessage(this, R.string.login_success_toast);
             } else {
                 funnel.logLoginFailure();
             }
@@ -314,7 +314,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
                             }
                         } else if (result instanceof SpamBlacklistEditResult) {
                             FeedbackUtil.showMessage(EditSectionActivity.this,
-                                    de.droidwiki.R.string.editing_error_spamblacklist);
+                                    R.string.editing_error_spamblacklist);
                             progressDialog.dismiss();
                             editPreviewFragment.hide();
                         } else {
@@ -342,8 +342,8 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
     private void showRetryDialog() {
         final AlertDialog retryDialog = new AlertDialog.Builder(EditSectionActivity.this)
-                .setMessage(de.droidwiki.R.string.dialog_message_edit_failed)
-                .setPositiveButton(de.droidwiki.R.string.dialog_message_edit_failed_retry, new DialogInterface.OnClickListener() {
+                .setMessage(R.string.dialog_message_edit_failed)
+                .setPositiveButton(R.string.dialog_message_edit_failed_retry, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         doSave();
@@ -351,7 +351,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
                         progressDialog.dismiss();
                     }
                 })
-                .setNegativeButton(de.droidwiki.R.string.dialog_message_edit_failed_cancel, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.dialog_message_edit_failed_cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -393,9 +393,9 @@ public class EditSectionActivity extends ThemedActionBarActivity {
             // window and clicking save. Less common, but might as well handle it
             progressDialog.dismiss();
             AlertDialog.Builder builder = new AlertDialog.Builder(EditSectionActivity.this);
-            builder.setTitle(de.droidwiki.R.string.user_blocked_from_editing_title);
+            builder.setTitle(R.string.user_blocked_from_editing_title);
             if (app.getUserInfoStorage().isLoggedIn()) {
-                builder.setMessage(de.droidwiki.R.string.user_logged_in_blocked_from_editing);
+                builder.setMessage(R.string.user_logged_in_blocked_from_editing);
                 builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -403,8 +403,8 @@ public class EditSectionActivity extends ThemedActionBarActivity {
                     }
                 });
             } else {
-                builder.setMessage(de.droidwiki.R.string.user_anon_blocked_from_editing);
-                builder.setPositiveButton(de.droidwiki.R.string.nav_item_login, new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.user_anon_blocked_from_editing);
+                builder.setPositiveButton(R.string.nav_item_login, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -434,14 +434,14 @@ public class EditSectionActivity extends ThemedActionBarActivity {
         }
         if (abusefilterEditResult.getType() == AbuseFilterEditResult.TYPE_ERROR) {
             funnel.logAbuseFilterError(abusefilterEditResult.getCode());
-            abuseFilterImage.setImageResource(de.droidwiki.R.drawable.abusefilter_disallow);
-            abusefilterTitle.setText(getString(de.droidwiki.R.string.abusefilter_title_disallow));
-            abusefilterText.setText(Html.fromHtml(getString(de.droidwiki.R.string.abusefilter_text_disallow)));
+            abuseFilterImage.setImageResource(R.drawable.abusefilter_disallow);
+            abusefilterTitle.setText(getString(R.string.abusefilter_title_disallow));
+            abusefilterText.setText(Html.fromHtml(getString(R.string.abusefilter_text_disallow)));
         } else {
             funnel.logAbuseFilterWarning(abusefilterEditResult.getCode());
-            abuseFilterImage.setImageResource(de.droidwiki.R.drawable.abusefilter_warn);
-            abusefilterTitle.setText(getString(de.droidwiki.R.string.abusefilter_title_warn));
-            abusefilterText.setText(Html.fromHtml(getString(de.droidwiki.R.string.abusefilter_text_warn)));
+            abuseFilterImage.setImageResource(R.drawable.abusefilter_warn);
+            abusefilterTitle.setText(getString(R.string.abusefilter_title_warn));
+            abusefilterText.setText(Html.fromHtml(getString(R.string.abusefilter_text_warn)));
         }
 
         Utils.hideSoftKeyboard(this);
@@ -497,7 +497,7 @@ public class EditSectionActivity extends ThemedActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.menu_save_section:
+            case R.id.menu_save_section:
                 clickNextButton();
                 return true;
             default:
@@ -508,15 +508,15 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(de.droidwiki.R.menu.menu_edit_section, menu);
-        MenuItem item = menu.findItem(de.droidwiki.R.id.menu_save_section);
+        getMenuInflater().inflate(R.menu.menu_edit_section, menu);
+        MenuItem item = menu.findItem(R.id.menu_save_section);
 
         if (editSummaryFragment.isActive()) {
-            item.setTitle(getString(de.droidwiki.R.string.edit_next));
+            item.setTitle(getString(R.string.edit_next));
         } else if (editPreviewFragment.isActive()) {
-            item.setTitle(getString(de.droidwiki.R.string.edit_done));
+            item.setTitle(getString(R.string.edit_done));
         } else {
-            item.setTitle(getString(de.droidwiki.R.string.edit_next));
+            item.setTitle(getString(R.string.edit_next));
         }
 
         if (abusefilterEditResult != null) {
@@ -597,12 +597,16 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
         if (pageProps != null && pageProps.getEditProtectionStatus() != null) {
             String message;
-            if (pageProps.getEditProtectionStatus().equals("sysop")) {
-                message = getString(de.droidwiki.R.string.page_protected_sysop);
-            } else if (pageProps.getEditProtectionStatus().equals("autoconfirmed")) {
-                message = getString(de.droidwiki.R.string.page_protected_autoconfirmed);
-            } else {
-                message = getString(de.droidwiki.R.string.page_protected_other, pageProps.getEditProtectionStatus());
+            switch (pageProps.getEditProtectionStatus()) {
+                case "sysop":
+                    message = getString(R.string.page_protected_sysop);
+                    break;
+                case "autoconfirmed":
+                    message = getString(R.string.page_protected_autoconfirmed);
+                    break;
+                default:
+                    message = getString(R.string.page_protected_other, pageProps.getEditProtectionStatus());
+                    break;
             }
             FeedbackUtil.showMessage(this, message);
         }
@@ -639,14 +643,14 @@ public class EditSectionActivity extends ThemedActionBarActivity {
 
         if (sectionTextModified) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setMessage(getString(de.droidwiki.R.string.edit_abandon_confirm));
-            alert.setPositiveButton(getString(de.droidwiki.R.string.yes), new DialogInterface.OnClickListener() {
+            alert.setMessage(getString(R.string.edit_abandon_confirm));
+            alert.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     dialog.dismiss();
                     finish();
                 }
             });
-            alert.setNegativeButton(getString(de.droidwiki.R.string.no), new DialogInterface.OnClickListener() {
+            alert.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     dialog.dismiss();
                 }

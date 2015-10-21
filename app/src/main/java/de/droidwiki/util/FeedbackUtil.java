@@ -6,6 +6,7 @@ import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
+import de.droidwiki.R;
 import de.droidwiki.page.PageActivity;
 
 import java.util.concurrent.TimeUnit;
@@ -16,7 +17,7 @@ public final class FeedbackUtil {
 
     public static Snackbar makeSnackbar(View view, CharSequence text, int duration) {
         Snackbar snackbar = Snackbar.make(view, text, duration);
-        TextView textView = (TextView) snackbar.getView().findViewById(de.droidwiki.R.id.snackbar_text);
+        TextView textView = (TextView) snackbar.getView().findViewById(R.id.snackbar_text);
         textView.setMaxLines(SNACKBAR_MAX_LINES);
         return snackbar;
     }
@@ -58,7 +59,7 @@ public final class FeedbackUtil {
     private static View findBestView(Activity activity) {
         if (activity instanceof PageActivity
                 && ((PageActivity) activity).getCurPageFragment() != null) {
-            return activity.findViewById(de.droidwiki.R.id.page_contents_container);
+            return activity.findViewById(R.id.page_contents_container);
         } else {
             return activity.findViewById(android.R.id.content);
         }

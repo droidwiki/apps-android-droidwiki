@@ -16,7 +16,7 @@
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:layout_margin="16dp"
-        android:src="@drawable/d_nav_mark"
+        android:src="@drawable/w_nav_mark"
         android:contentDescription="@null" />
 
     <LinearLayout

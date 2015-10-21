@@ -109,7 +109,7 @@ public class WidgetProviderFeaturedPage extends AppWidgetProvider {
         URLSpan[] spans = text.getSpans(0, text.length(), URLSpan.class);
         String titleText = "";
         for (URLSpan span : spans) {
-            if (!span.getURL().startsWith("/wiki/")
+            if (!span.getURL().startsWith("/")
                     || (text.getSpanEnd(span) - text.getSpanStart(span) <= 1)) {
                 continue;
             }

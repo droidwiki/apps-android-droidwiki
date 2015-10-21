@@ -36,7 +36,6 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -121,43 +120,39 @@ public class GalleryActivity extends ThemedActionBarActivity {
         setTheme(Theme.DARK.getResourceId());
         app = (WikipediaApp)getApplicationContext();
 
-        // hide system bar
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        setContentView(de.droidwiki.R.layout.activity_gallery);
-        final Toolbar toolbar = (Toolbar) findViewById(de.droidwiki.R.id.gallery_toolbar);
+        setContentView(R.layout.activity_gallery);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.gallery_toolbar);
         // give it a gradient background
         ViewUtil.setBackgroundDrawable(toolbar, GradientUtil.getCubicGradient(
-                getResources().getColor(de.droidwiki.R.color.lead_gradient_start), Gravity.TOP));
+                getResources().getColor(R.color.lead_gradient_start), Gravity.TOP));
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
-        toolbarContainer = (ViewGroup) findViewById(de.droidwiki.R.id.gallery_toolbar_container);
-        infoContainer = (ViewGroup) findViewById(de.droidwiki.R.id.gallery_info_container);
+        toolbarContainer = (ViewGroup) findViewById(R.id.gallery_toolbar_container);
+        infoContainer = (ViewGroup) findViewById(R.id.gallery_info_container);
         // give it a gradient background
         ViewUtil.setBackgroundDrawable(infoContainer, GradientUtil.getCubicGradient(
-                getResources().getColor(de.droidwiki.R.color.lead_gradient_start), Gravity.BOTTOM));
+                getResources().getColor(R.color.lead_gradient_start), Gravity.BOTTOM));
 
-        progressBar = (ProgressBar) findViewById(de.droidwiki.R.id.gallery_progressbar);
+        progressBar = (ProgressBar) findViewById(R.id.gallery_progressbar);
 
-        descriptionText = (TextView) findViewById(de.droidwiki.R.id.gallery_description_text);
-        descriptionText.setShadowLayer(2, 1, 1, getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
+        descriptionText = (TextView) findViewById(R.id.gallery_description_text);
+        descriptionText.setShadowLayer(2, 1, 1, getResources().getColor(R.color.lead_text_shadow));
         descriptionText.setMovementMethod(linkMovementMethod);
 
         licenseIcon = (ImageView) findViewById(R.id.gallery_license_icon);
         licenseIcon.setOnClickListener(licenseShortClickListener);
         licenseIcon.setOnLongClickListener(licenseLongClickListener);
 
-        creditText = (TextView) findViewById(de.droidwiki.R.id.gallery_credit_text);
-        creditText.setShadowLayer(2, 1, 1, getResources().getColor(de.droidwiki.R.color.lead_text_shadow));
+        creditText = (TextView) findViewById(R.id.gallery_credit_text);
+        creditText.setShadowLayer(2, 1, 1, getResources().getColor(R.color.lead_text_shadow));
 
         pageTitle = getIntent().getParcelableExtra(EXTRA_PAGETITLE);
         initialImageTitle = getIntent().getParcelableExtra(EXTRA_IMAGETITLE);
 
         galleryCache = new HashMap<>();
-        galleryPager = (ViewPager) findViewById(de.droidwiki.R.id.gallery_item_pager);
+        galleryPager = (ViewPager) findViewById(R.id.gallery_item_pager);
         galleryAdapter = new GalleryItemAdapter(this);
         galleryPager.setAdapter(galleryAdapter);
         galleryPager.setOnPageChangeListener(new GalleryPageChangeListener());
@@ -325,14 +320,14 @@ public class GalleryActivity extends ThemedActionBarActivity {
             Log.v(TAG, "Link clicked was " + url);
             url = resolveProtocolRelativeUrl(url);
             Site site = app.getPrimarySite();
-            if (url.startsWith("/wiki/")) {
+            if (url.startsWith("/")) {
                 PageTitle title = site.titleForInternalLink(url);
                 finishWithPageResult(title);
             } else {
                 Uri uri = Uri.parse(url);
                 String authority = uri.getAuthority();
                 if (authority != null && Site.isSupportedSite(authority)
-                    && uri.getPath().startsWith("/wiki/")) {
+                    && uri.getPath().startsWith("/")) {
                     PageTitle title = site.titleForUri(uri);
                     finishWithPageResult(title);
                 } else {
@@ -481,7 +476,7 @@ public class GalleryActivity extends ThemedActionBarActivity {
         // (if UsageTerms is not present, then default to Fair Use)
         String usageTerms = item.getMetadata().get("UsageTerms");
         if (TextUtils.isEmpty(usageTerms)) {
-            usageTerms = getString(de.droidwiki.R.string.gallery_fair_use_license);
+            usageTerms = getString(R.string.gallery_fair_use_license);
         }
         licenseIcon.setContentDescription(usageTerms);
         // Give the license URL to the icon, to be received by the click handler (may be null).
@@ -493,7 +488,7 @@ public class GalleryActivity extends ThemedActionBarActivity {
         }
         // if we couldn't find a attribution string, then default to unknown
         if (TextUtils.isEmpty(creditStr)) {
-            creditStr = getString(de.droidwiki.R.string.gallery_uploader_unknown);
+            creditStr = getString(R.string.gallery_uploader_unknown);
         }
         creditText.setText(creditStr);
 

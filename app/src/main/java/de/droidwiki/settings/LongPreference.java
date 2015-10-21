@@ -7,9 +7,11 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
+import de.droidwiki.R;
+
 public class LongPreference extends EditTextAutoSummarizePreference {
-    private static final int[] DEFAULT_STYLEABLE = de.droidwiki.R.styleable.LongPreference;
-    private static final int DEFAULT_STYLE = de.droidwiki.R.style.LongPreference;
+    private static final int[] DEFAULT_STYLEABLE = R.styleable.LongPreference;
+    private static final int DEFAULT_STYLE = R.style.LongPreference;
     private static final int DEFAULT_RADIX = 10;
     private static final String DEFAULT_SUMMARY_FORMAT = "%d";
 
@@ -91,8 +93,8 @@ public class LongPreference extends EditTextAutoSummarizePreference {
     private void setAttributes(AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         TypedArray array = getContext().obtainStyledAttributes(attrs, DEFAULT_STYLEABLE,
                 defStyleAttr, defStyleRes);
-        radix = array.getInteger(de.droidwiki.R.styleable.LongPreference_radix, DEFAULT_RADIX);
-        summaryFormat = defaultIfEmpty(array.getString(de.droidwiki.R.styleable.LongPreference_summaryFormat),
+        radix = array.getInteger(R.styleable.LongPreference_radix, DEFAULT_RADIX);
+        summaryFormat = defaultIfEmpty(array.getString(R.styleable.LongPreference_summaryFormat),
                 DEFAULT_SUMMARY_FORMAT);
         array.recycle();
     }

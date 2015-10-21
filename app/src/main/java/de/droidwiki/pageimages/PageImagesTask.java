@@ -1,7 +1,5 @@
 package de.droidwiki.pageimages;
 
-import android.util.Log;
-
 import org.json.JSONObject;
 import org.mediawiki.api.json.Api;
 import org.mediawiki.api.json.RequestBuilder;
@@ -33,10 +31,8 @@ public class PageImagesTask extends PageQueryTask<String> {
     public String processPage(int pageId, PageTitle pageTitle, JSONObject pageData) throws Throwable {
         JSONObject thumbnail = pageData.optJSONObject("thumbnail");
         if (thumbnail == null) {
-            Log.d("Wikipedia", "No thumbnail returned");
             return null;
         } else {
-            Log.d("Wikipedia", "Thumbnail returned: " + thumbnail.getString("source"));
             return thumbnail.getString("source");
         }
     }

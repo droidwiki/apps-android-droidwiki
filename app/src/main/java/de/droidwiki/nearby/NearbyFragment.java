@@ -332,7 +332,7 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
 
     private void showDialogForSettings() {
         AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-        alert.setMessage(de.droidwiki.R.string.nearby_dialog_goto_settings);
+        alert.setMessage(R.string.nearby_dialog_goto_settings);
         alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 try {
@@ -537,13 +537,13 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
         if (showImperial) {
             final double feet = meters * METER_TO_FEET;
             if (feet < ONE_THOUSAND) {
-                return getString(de.droidwiki.R.string.nearby_distance_in_feet, (int)feet);
+                return getString(R.string.nearby_distance_in_feet, (int)feet);
             } else {
-                return getString(de.droidwiki.R.string.nearby_distance_in_miles, feet / ONE_MILE);
+                return getString(R.string.nearby_distance_in_miles, feet / ONE_MILE);
             }
         } else {
             if (meters < ONE_THOUSAND) {
-                return getString(de.droidwiki.R.string.nearby_distance_in_meters, meters);
+                return getString(R.string.nearby_distance_in_meters, meters);
             } else {
                 return getString(R.string.nearby_distance_in_kilometers, meters / (double)ONE_THOUSAND);
             }
@@ -559,10 +559,10 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        inflater.inflate(de.droidwiki.R.menu.menu_nearby, menu);
-        menu.findItem(de.droidwiki.R.id.menu_metric_imperial).setTitle(showImperial
-                ? getString(de.droidwiki.R.string.nearby_set_metric)
-                : getString(de.droidwiki.R.string.nearby_set_imperial));
+        inflater.inflate(R.menu.menu_nearby, menu);
+        menu.findItem(R.id.menu_metric_imperial).setTitle(showImperial
+                ? getString(R.string.nearby_set_metric)
+                : getString(R.string.nearby_set_imperial));
     }
 
     @Override
@@ -571,9 +571,9 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        menu.findItem(de.droidwiki.R.id.menu_metric_imperial).setTitle(showImperial
-                ? getString(de.droidwiki.R.string.nearby_set_metric)
-                : getString(de.droidwiki.R.string.nearby_set_imperial));
+        menu.findItem(R.id.menu_metric_imperial).setTitle(showImperial
+                ? getString(R.string.nearby_set_metric)
+                : getString(R.string.nearby_set_imperial));
     }
 
     @Override
@@ -633,7 +633,7 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
     };
 
     private class NearbyAdapter extends ArrayAdapter<NearbyPage> {
-        private static final int LAYOUT_ID = de.droidwiki.R.layout.item_nearby_entry;
+        private static final int LAYOUT_ID = R.layout.item_nearby_entry;
 
         public NearbyAdapter(Context context, ArrayList<NearbyPage> pages) {
             super(context, LAYOUT_ID, pages);
@@ -647,11 +647,11 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
                 viewHolder = new ViewHolder();
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(LAYOUT_ID, parent, false);
-                viewHolder.thumbnail = (NearbyCompassView) convertView.findViewById(de.droidwiki.R.id.nearby_thumbnail);
-                viewHolder.title = (TextView) convertView.findViewById(de.droidwiki.R.id.nearby_title);
-                viewHolder.description = (TextView) convertView.findViewById(de.droidwiki.R.id.nearby_description);
-                viewHolder.distance = (TextView) convertView.findViewById(de.droidwiki.R.id.nearby_distance);
-                viewHolder.markerButton = convertView.findViewById(de.droidwiki.R.id.nearby_marker);
+                viewHolder.thumbnail = (NearbyCompassView) convertView.findViewById(R.id.nearby_thumbnail);
+                viewHolder.title = (TextView) convertView.findViewById(R.id.nearby_title);
+                viewHolder.description = (TextView) convertView.findViewById(R.id.nearby_description);
+                viewHolder.distance = (TextView) convertView.findViewById(R.id.nearby_distance);
+                viewHolder.markerButton = convertView.findViewById(R.id.nearby_marker);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
@@ -687,12 +687,12 @@ public class NearbyFragment extends Fragment implements SensorEventListener {
             if (app.isImageDownloadEnabled()) {
                 Picasso.with(getActivity())
                        .load(nearbyPage.getThumblUrl())
-                       .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                       .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                       .placeholder(R.drawable.ic_pageimage_placeholder)
+                       .error(R.drawable.ic_pageimage_placeholder)
                        .into(viewHolder.thumbnail);
             } else {
                 Picasso.with(getActivity())
-                       .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                       .load(R.drawable.ic_pageimage_placeholder)
                        .into(viewHolder.thumbnail);
             }
             return convertView;

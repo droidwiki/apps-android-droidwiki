@@ -1,5 +1,6 @@
 package de.droidwiki.widgets;
 
+import de.droidwiki.R;
 import de.droidwiki.page.PageActivity;
 
 import android.app.PendingIntent;
@@ -20,7 +21,7 @@ public class WidgetProviderSearch extends AppWidgetProvider {
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
         for (int widgetId : allWidgetIds) {
             Log.d(TAG, "updating widget...");
-            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), de.droidwiki.R.layout.widget_search);
+            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_search);
 
             // Create a PendingIntent to act as the onClickListener
             Intent intent = new Intent(context, PageActivity.class);
@@ -34,7 +35,7 @@ public class WidgetProviderSearch extends AppWidgetProvider {
             //intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
             //PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-            remoteViews.setOnClickPendingIntent(de.droidwiki.R.id.widget_container, pendingIntent);
+            remoteViews.setOnClickPendingIntent(R.id.widget_container, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
     }

@@ -52,6 +52,7 @@ public class FullSearchArticlesTask extends ApiTask<SearchResults> {
         final RequestBuilder req = api.action("query")
                 .param("prop", "pageterms|pageimages|pageprops")
                 .param("ppprop", "mainpage|disambiguation")
+                .param("wbptterms", "description") // only interested in Wikidata description
                 .param("generator", "search")
                 .param("gsrsearch", getMoreLike ? ("morelike:" + searchTerm) : searchTerm)
                 .param("gsrnamespace", "0")

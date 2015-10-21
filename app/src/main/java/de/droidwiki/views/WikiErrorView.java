@@ -1,5 +1,6 @@
 package de.droidwiki.views;
 
+import de.droidwiki.R;
 import de.droidwiki.util.ThrowableUtil;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -25,11 +26,11 @@ public class WikiErrorView extends FrameLayout {
 
     public WikiErrorView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        inflate(context, de.droidwiki.R.layout.custom_error_view, this);
+        inflate(context, R.layout.custom_error_view, this);
 
-        errorTextView = (TextView) findViewById(de.droidwiki.R.id.error_text);
-        retryButton = (Button) findViewById(de.droidwiki.R.id.retry_button);
-        messageTextView = (TextView) findViewById(de.droidwiki.R.id.server_message_text);
+        errorTextView = (TextView) findViewById(R.id.error_text);
+        retryButton = (Button) findViewById(R.id.retry_button);
+        messageTextView = (TextView) findViewById(R.id.server_message_text);
     }
 
     public void setRetryButtonVisible(boolean visible) {

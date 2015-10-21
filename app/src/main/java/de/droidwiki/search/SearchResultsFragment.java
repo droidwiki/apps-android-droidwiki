@@ -78,9 +78,9 @@ public class SearchResultsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_search_results, container, false);
-        searchResultsDisplay = rootView.findViewById(de.droidwiki.R.id.search_results_display);
-        searchFragment = (SearchArticlesFragment) getActivity().getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.search_fragment);
+        View rootView = inflater.inflate(R.layout.fragment_search_results, container, false);
+        searchResultsDisplay = rootView.findViewById(R.id.search_results_display);
+        searchFragment = (SearchArticlesFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.search_fragment);
 
         searchResultsContainer = rootView.findViewById(R.id.search_results_container);
         searchResultsList = (ListView) rootView.findViewById(R.id.search_results_list);
@@ -103,7 +103,7 @@ public class SearchResultsFragment extends Fragment {
         SearchResultAdapter adapter = new SearchResultAdapter(inflater);
         searchResultsList.setAdapter(adapter);
 
-        searchSuggestion = (TextView) rootView.findViewById(de.droidwiki.R.id.search_suggestion);
+        searchSuggestion = (TextView) rootView.findViewById(R.id.search_suggestion);
         searchSuggestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,9 +116,9 @@ public class SearchResultsFragment extends Fragment {
             }
         });
 
-        searchNoResults = rootView.findViewById(de.droidwiki.R.id.search_results_empty);
+        searchNoResults = rootView.findViewById(R.id.search_results_empty);
 
-        searchErrorView = (WikiErrorView) rootView.findViewById(de.droidwiki.R.id.search_error_view);
+        searchErrorView = (WikiErrorView) rootView.findViewById(R.id.search_error_view);
         searchErrorView.setRetryClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -245,7 +245,7 @@ public class SearchResultsFragment extends Fragment {
                 final String suggestion = results.getSuggestion();
                 if (!suggestion.isEmpty()) {
                     searchSuggestion.setText(Html.fromHtml("<u>"
-                            + String.format(getString(de.droidwiki.R.string.search_did_you_mean), suggestion)
+                            + String.format(getString(R.string.search_did_you_mean), suggestion)
                             + "</u>"));
                     searchSuggestion.setTag(suggestion);
                     searchSuggestion.setVisibility(View.VISIBLE);
@@ -450,9 +450,9 @@ public class SearchResultsFragment extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                convertView = inflater.inflate(de.droidwiki.R.layout.item_page_list_entry, parent, false);
+                convertView = inflater.inflate(R.layout.item_page_list_entry, parent, false);
             }
-            TextView pageTitleText = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_title);
+            TextView pageTitleText = (TextView) convertView.findViewById(R.id.page_list_item_title);
             PageTitle title = (PageTitle) getItem(position);
 
             // highlight search term within the text
@@ -473,18 +473,18 @@ public class SearchResultsFragment extends Fragment {
             GoneIfEmptyTextView descriptionText = (GoneIfEmptyTextView) convertView.findViewById(R.id.page_list_item_description);
             descriptionText.setText(title.getDescription());
 
-            ImageView imageView = (ImageView) convertView.findViewById(de.droidwiki.R.id.page_list_item_image);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.page_list_item_image);
 
             String thumbnail = title.getThumbUrl();
             if (app.isImageDownloadEnabled() && thumbnail != null) {
                 Picasso.with(parent.getContext())
                         .load(thumbnail)
-                        .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                        .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                        .placeholder(R.drawable.ic_pageimage_placeholder)
+                        .error(R.drawable.ic_pageimage_placeholder)
                         .into(imageView);
             } else {
                 Picasso.with(getActivity())
-                       .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                       .load(R.drawable.ic_pageimage_placeholder)
                        .into(imageView);
             }
 

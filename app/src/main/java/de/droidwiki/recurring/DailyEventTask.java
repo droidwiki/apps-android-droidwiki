@@ -3,6 +3,7 @@ package de.droidwiki.recurring;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.DailyStatsFunnel;
 
@@ -13,7 +14,7 @@ public class DailyEventTask extends RecurringTask {
     @NonNull private final String name;
 
     public DailyEventTask(Context context) {
-        this(context.getString(de.droidwiki.R.string.preference_key_daily_event_time_task_name));
+        this(context.getString(R.string.preference_key_daily_event_time_task_name));
     }
 
     public DailyEventTask(@NonNull String name) {

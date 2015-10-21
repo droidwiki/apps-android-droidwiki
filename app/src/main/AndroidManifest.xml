@@ -25,9 +25,9 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/launcher"
         android:label="@string/app_name"
-        android:name="de.droidwiki.WikipediaApp"
+        android:name=".WikipediaApp"
         android:theme="@style/AppTheme">
 
         <!--
@@ -62,7 +62,7 @@
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.settings.DeveloperSettingsActivity"
+        <activity android:name=".settings.DeveloperSettingsActivity"
             android:label="@string/developer_settings_activity_title"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
             android:exported="false"
@@ -75,33 +75,33 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="de.droidwiki.interlanguage.LangLinksActivity"
+        <activity android:name=".interlanguage.LangLinksActivity"
                   android:label="@string/langlinks_activity_title"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.editing.EditSectionActivity"
+        <activity android:name=".editing.EditSectionActivity"
                   android:windowSoftInputMode="adjustResize|stateVisible"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.login.LoginActivity"
+        <activity android:name=".login.LoginActivity"
                   android:label="@string/login_activity_title"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.createaccount.CreateAccountActivity"
+        <activity android:name=".createaccount.CreateAccountActivity"
                   android:label="@string/create_account_activity_title"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:configChanges="orientation|keyboardHidden|keyboard|screenSize"
                   android:exported="false"
                 />
         <activity android:name=".page.gallery.GalleryActivity"
-                  android:theme="@style/NoTitle"
+                  android:theme="@style/FullScreen"
                   android:exported="false"
                 />
-        <activity android:name="de.droidwiki.settings.LicenseActivity"
+        <activity android:name=".settings.LicenseActivity"
                   android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -112,36 +112,36 @@
 
         <provider
                 android:authorities="${applicationId}.history"
-                android:name="de.droidwiki.history.HistoryEntryContentProvider"
+                android:name=".history.HistoryEntryContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.editsummaries"
-                android:name="de.droidwiki.editing.summaries.EditSummaryContentProvider"
+                android:name=".editing.summaries.EditSummaryContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.pageimages"
-                android:name="de.droidwiki.pageimages.PageImageContentProvider"
+                android:name=".pageimages.PageImageContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.recentsearches"
-                android:name="de.droidwiki.search.RecentSearchContentProvider"
+                android:name=".search.RecentSearchContentProvider"
                 android:exported="false"
                 />
 
         <provider
                 android:authorities="${applicationId}.savedpages"
-                android:name="de.droidwiki.savedpages.SavedPageContentProvider"
+                android:name=".savedpages.SavedPageContentProvider"
                 android:exported="false"
                 />
 
         <receiver
-            android:icon="@drawable/launcher"
+            android:icon="@mipmap/launcher"
             android:label="@string/widget_name_search"
             android:name="de.droidwiki.widgets.WidgetProviderSearch" >
             <intent-filter >
@@ -154,7 +154,7 @@
         </receiver>
 
         <receiver
-            android:icon="@drawable/launcher"
+            android:icon="@mipmap/launcher"
             android:label="@string/widget_name_featured_page"
             android:name="de.droidwiki.widgets.WidgetProviderFeaturedPage" >
             <intent-filter >

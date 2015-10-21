@@ -19,7 +19,6 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
-import android.util.Log;
 import android.util.TypedValue;
 import android.graphics.PointF;
 import android.view.Gravity;
@@ -486,12 +485,12 @@ public class LeadImagesHandler {
         final float paragraphScalar = DimenUtil.getFloat(R.dimen.lead_subtitle_paragraph_scalar);
         CharSequence nonnullStr = StringUtil.emptyIfNull(str);
         return RichTextUtil.setSpans(new SpannableString(nonnullStr),
-                0,
-                nonnullStr.length(),
-                Spannable.SPAN_INCLUSIVE_INCLUSIVE,
-                new AbsoluteSizeSpan(sizePx, false),
-                new LeadingSpan(leadingScalar),
-                new ParagraphSpan(paragraphScalar));
+                                     0,
+                                     nonnullStr.length(),
+                                     Spannable.SPAN_INCLUSIVE_INCLUSIVE,
+                                     new AbsoluteSizeSpan(sizePx, false),
+                                     new LeadingSpan(leadingScalar),
+                                     new ParagraphSpan(paragraphScalar));
     }
 
     private void loadLeadImage() {
@@ -505,11 +504,10 @@ public class LeadImagesHandler {
     private void loadLeadImage(@Nullable String url) {
         if (!isMainPage() && !TextUtils.isEmpty(url) && leadImagesEnabled) {
             String fullUrl = WikipediaApp.getInstance().getNetworkProtocol() + "://www.droidwiki.de" + url;
-            Log.d("LeadImages", "Full URL: " + fullUrl);
             Picasso.with(getActivity())
-                    .load(fullUrl)
-                    .noFade()
-                    .into((Target) image);
+                   .load(fullUrl)
+                   .noFade()
+                   .into((Target) image);
         }
     }
 
@@ -622,7 +620,6 @@ public class LeadImagesHandler {
     private class ImageLoadListener implements ImageViewWithFace.OnImageLoadListener {
         @Override
         public void onImageLoaded(Bitmap bitmap, @Nullable final PointF faceLocation) {
-            Log.d("LeadImages", "Image loaded");
             final int bmpHeight = bitmap.getHeight();
             final float aspect = (float) bitmap.getHeight() / (float) bitmap.getWidth();
             imageContainer.post(new Runnable() {
@@ -637,7 +634,6 @@ public class LeadImagesHandler {
 
         @Override
         public void onImageFailed() {
-            Log.i("LeadImages", "Load failed");
             // just keep showing the placeholder image...
         }
     }

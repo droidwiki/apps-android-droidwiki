@@ -25,7 +25,7 @@
                     android:id="@+id/about_logo_image"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
-                    android:src="@drawable/droidwiki_about"
+                    android:src="@drawable/about_logo"
                     android:contentDescription="@null"
                     />
             <LinearLayout android:layout_width="0dp"
@@ -36,21 +36,13 @@
                           android:layout_marginStart="4dp"
                     >
                 <TextView android:layout_width="wrap_content"
-                          android:layout_height="30dp"
+                          android:layout_height="48dp"
                           style="?android:textAppearanceLarge"
                           android:gravity="top"
                           android:layout_gravity="top"
                           android:fontFamily="serif"
-                          android:textSize="24sp"
+                          android:textSize="32sp"
                           android:text="@string/app_name" />
-                <TextView android:layout_width="wrap_content"
-                    android:layout_height="15dp"
-                    style="?android:textAppearanceLarge"
-                    android:gravity="top"
-                    android:layout_gravity="top"
-                    android:fontFamily="serif"
-                    android:textSize="12sp"
-                    android:text="based on the Wikipedia App" />
                 <TextView android:id="@+id/about_version_text"
                           android:layout_width="wrap_content"
                           android:layout_height="24dp"
@@ -75,7 +67,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/RtlAwareTextView"
+                android:layoutDirection="ltr"
                 android:text="@string/contributors_list"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textIsSelectable="true"
@@ -121,7 +113,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/RtlAwareTextView"
+                android:layoutDirection="ltr"
                 android:text="@string/libraries_list"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textIsSelectable="true"

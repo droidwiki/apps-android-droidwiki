@@ -76,9 +76,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLException;
 
-import com.google.android.gms.analytics.Tracker;
-import com.google.android.gms.analytics.HitBuilders;
-
 
 public class PageFragment extends Fragment implements BackPressedHandler {
     public static final int TOC_ACTION_SHOW = 0;
@@ -140,8 +137,6 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     private SavedPagesFunnel savedPagesFunnel;
     private ConnectionIssueFunnel connectionIssueFunnel;
-
-    private Tracker mTracker;
 
     @NonNull
     private final SwipeRefreshLayout.OnRefreshListener pageRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
@@ -213,9 +208,6 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         } else {
             pageLoadStrategy = new JsonPageLoadStrategy();
         }
-
-        // Obtain the shared Tracker instance.
-        mTracker = app.getDefaultTracker();
 
         initTabs();
     }
@@ -302,7 +294,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             protected void onReferenceClicked(String refHtml) {
                 if (!isAdded()) {
                     Log.d("PageFragment",
-                            "Detached from activity, so stopping reference click.");
+                          "Detached from activity, so stopping reference click.");
                     return;
                 }
 
@@ -576,10 +568,6 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
         errorView.setVisibility(View.GONE);
 
-        Log.i("PageFragment", "Setting screen name: " + title.getDisplayText());
-        mTracker.setScreenName("Page~" + title.getDisplayText());
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-
         model.setTitle(title);
         model.setTitleOriginal(title);
         model.setCurEntry(entry);
@@ -636,7 +624,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PageActivity.ACTIVITY_REQUEST_EDIT_SECTION
-                && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
+            && resultCode == EditHandler.RESULT_REFRESH_PAGE) {
             pageLoadStrategy.backFromEditing(data);
             FeedbackUtil.showMessage(getActivity(), R.string.edit_saved_successfully);
             // and reload the page...
@@ -709,7 +697,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
                 langIntent.setAction(LangLinksActivity.ACTION_LANGLINKS_FOR_TITLE);
                 langIntent.putExtra(LangLinksActivity.EXTRA_PAGETITLE, model.getTitle());
                 getActivity().startActivityForResult(langIntent,
-                        PageActivity.ACTIVITY_REQUEST_LANGLINKS);
+                                                     PageActivity.ACTIVITY_REQUEST_LANGLINKS);
                 return true;
             case R.id.menu_page_find_in_page:
                 showFindInPage();
@@ -985,7 +973,7 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             public void onMessage(String messageType, JSONObject messagePayload) {
                 try {
                     String href = Utils.decodeURL(messagePayload.getString("href"));
-                    if (href.startsWith("/wiki/")) {
+                    if (href.startsWith("/")) {
                         PageTitle imageTitle = model.getTitle().getSite().titleForInternalLink(href);
                         GalleryActivity.showGallery(getActivity(), model.getTitleOriginal(),
                                 imageTitle, GalleryFunnel.SOURCE_NON_LEAD_IMAGE);
@@ -1077,8 +1065,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     private void checkAndShowSelectTextOnboarding() {
         if (app.isFeatureSelectTextAndShareTutorialEnabled()
-                &&  model.getPage().isArticle()
-                &&  app.getOnboardingStateMachine().isSelectTextTutorialEnabled()) {
+        &&  model.getPage().isArticle()
+        &&  app.getOnboardingStateMachine().isSelectTextTutorialEnabled()) {
             showSelectTextOnboarding();
         }
     }
@@ -1090,8 +1078,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
             public void run() {
                 if (getActivity() != null) {
                     ToolTipUtil.showToolTip(getActivity(),
-                            targetView, R.layout.inflate_tool_tip_select_text,
-                            ToolTip.Position.CENTER);
+                                            targetView, R.layout.inflate_tool_tip_select_text,
+                                            ToolTip.Position.CENTER);
                     app.getOnboardingStateMachine().setSelectTextTutorial();
                 }
             }

@@ -49,7 +49,7 @@ import java.util.List;
 import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
 
 public class BottomContentHandler implements BottomContentInterface,
-        ObservableWebView.OnScrollChangeListener,
+                                                ObservableWebView.OnScrollChangeListener,
                                                 ObservableWebView.OnContentHeightChangedListener {
     private static final String TAG = "BottomContentHandler";
     private final PageFragment parentFragment;
@@ -64,7 +64,7 @@ public class BottomContentHandler implements BottomContentInterface,
 
     private View bottomContentContainer;
     private TextView pageLastUpdatedText;
-    private TextView pageExternalLink;
+    private TextView pageLicenseText;
     private View readMoreContainer;
     private ConfigurableListView readMoreList;
 
@@ -87,10 +87,11 @@ public class BottomContentHandler implements BottomContentInterface,
         webview.addOnContentHeightChangedListener(this);
 
         pageLastUpdatedText = (TextView) bottomContentContainer.findViewById(R.id.page_last_updated_text);
+        pageLicenseText = (TextView) bottomContentContainer.findViewById(R.id.page_license_text);
         readMoreContainer = bottomContentContainer.findViewById(R.id.read_more_container);
         readMoreList = (ConfigurableListView) bottomContentContainer.findViewById(R.id.read_more_list);
 
-        pageExternalLink = (TextView) bottomContentContainer.findViewById(de.droidwiki.R.id.page_external_link);
+        TextView pageExternalLink = (TextView) bottomContentContainer.findViewById(R.id.page_external_link);
         pageExternalLink.setPaintFlags(pageExternalLink.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         pageExternalLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -213,7 +214,7 @@ public class BottomContentHandler implements BottomContentInterface,
         if (parentFragment.getPage().couldHaveReadMoreSection()) {
             preRequestReadMoreItems(activity.getLayoutInflater());
         } else {
-            bottomContentContainer.findViewById(de.droidwiki.R.id.read_more_container).setVisibility(View.GONE);
+            bottomContentContainer.findViewById(R.id.read_more_container).setVisibility(View.GONE);
             layoutContent();
         }
     }
@@ -263,13 +264,15 @@ public class BottomContentHandler implements BottomContentInterface,
 
     private void setupAttribution() {
         Page page = parentFragment.getPage();
+        pageLicenseText.setText(Html.fromHtml("Der Inhalt der DroidWiki wird durch Nutzer wie dich erstellt, verbessert und moderiert."));
+        pageLicenseText.setMovementMethod(new LinkMovementMethodExt(linkHandler));
 
         // Don't display last updated message for main page or file pages, because it's always wrong
         if (page.isMainPage() || page.isFilePage()) {
             pageLastUpdatedText.setVisibility(View.GONE);
         } else {
             String lastUpdatedHtml = "<a href=\"" + page.getTitle().getUriForAction("history")
-                    + "\">" + activity.getString(de.droidwiki.R.string.last_updated_text,
+                    + "\">" + activity.getString(R.string.last_updated_text,
                     Utils.formatDateRelative(page.getPageProperties().getLastModified())
                             + "</a>");
             pageLastUpdatedText.setText(Html.fromHtml(lastUpdatedHtml));
@@ -310,7 +313,7 @@ public class BottomContentHandler implements BottomContentInterface,
         final int numRequestItems = 5;
         new SuggestionsTask(app.getAPIForSite(myTitle.getSite()), myTitle.getSite(),
                 myTitle.getPrefixedText(), numRequestItems, maxResultItems,
-                (int)(parentFragment.getActivity().getResources().getDimension(de.droidwiki.R.dimen.leadImageWidth) / displayDensity), false) {
+                (int)(parentFragment.getActivity().getResources().getDimension(R.dimen.leadImageWidth) / displayDensity), false) {
             @Override
             public void onFinish(SearchResults results) {
                 readMoreItems = results;
@@ -425,26 +428,26 @@ public class BottomContentHandler implements BottomContentInterface,
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                convertView = inflater.inflate(de.droidwiki.R.layout.item_page_list_entry, parent, false);
+                convertView = inflater.inflate(R.layout.item_page_list_entry, parent, false);
             }
-            TextView pageTitleText = (TextView) convertView.findViewById(de.droidwiki.R.id.page_list_item_title);
+            TextView pageTitleText = (TextView) convertView.findViewById(R.id.page_list_item_title);
             PageTitle result = (PageTitle) getItem(position);
             pageTitleText.setText(result.getDisplayText());
 
             GoneIfEmptyTextView descriptionText = (GoneIfEmptyTextView) convertView.findViewById(R.id.page_list_item_description);
             descriptionText.setText(result.getDescription());
 
-            ImageView imageView = (ImageView) convertView.findViewById(de.droidwiki.R.id.page_list_item_image);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.page_list_item_image);
             String thumbnail = result.getThumbUrl();
             if (!app.isImageDownloadEnabled() || thumbnail == null) {
                 Picasso.with(parent.getContext())
-                        .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                        .load(R.drawable.ic_pageimage_placeholder)
                         .into(imageView);
             } else {
                 Picasso.with(parent.getContext())
                         .load(thumbnail)
-                        .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                        .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                        .placeholder(R.drawable.ic_pageimage_placeholder)
+                        .error(R.drawable.ic_pageimage_placeholder)
                         .into(imageView);
             }
 

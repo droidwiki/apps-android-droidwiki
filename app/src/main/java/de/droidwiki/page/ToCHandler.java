@@ -52,7 +52,6 @@ public class ToCHandler {
      * the user clicking on a section.
      */
     private boolean wasClicked = false;
-    private boolean openedViaSwipe = true;
 
     public ToCHandler(final AppCompatActivity activity, final WikiDrawerLayout slidingPane,
                       final CommunicationBridge bridge) {
@@ -115,7 +114,6 @@ public class ToCHandler {
                 if (!wasClicked) {
                     funnel.logClose();
                 }
-                openedViaSwipe = true;
                 sectionRequested = false;
             }
 
@@ -187,7 +185,6 @@ public class ToCHandler {
 
         if (!page.isMainPage() && !firstPage) {
             if (WikipediaApp.getInstance().getOnboardingStateMachine().isTocTutorialEnabled()) {
-                openedViaSwipe = false;
                 showTocOnboarding();
             }
         }
@@ -195,7 +192,6 @@ public class ToCHandler {
 
     public void show() {
         if (slidingPane.getSlidingEnabled(Gravity.END)) {
-            openedViaSwipe = false;
             slidingPane.openDrawer(GravityCompat.END);
         }
     }

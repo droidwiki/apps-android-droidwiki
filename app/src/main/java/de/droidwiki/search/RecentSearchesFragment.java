@@ -1,5 +1,6 @@
 package de.droidwiki.search;
 
+import de.droidwiki.R;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -30,10 +31,10 @@ public class RecentSearchesFragment extends Fragment implements LoaderManager.Lo
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_search_recent, container, false);
-        searchFragment = (SearchArticlesFragment)getActivity().getSupportFragmentManager().findFragmentById(de.droidwiki.R.id.search_fragment);
-        this.container = rootView.findViewById(de.droidwiki.R.id.recent_searches_container);
-        recentSearchesList = (ListView) rootView.findViewById(de.droidwiki.R.id.recent_searches_list);
+        View rootView = inflater.inflate(R.layout.fragment_search_recent, container, false);
+        searchFragment = (SearchArticlesFragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.search_fragment);
+        this.container = rootView.findViewById(R.id.recent_searches_container);
+        recentSearchesList = (ListView) rootView.findViewById(R.id.recent_searches_list);
         return rootView;
     }
 
@@ -112,12 +113,12 @@ public class RecentSearchesFragment extends Fragment implements LoaderManager.Lo
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-            return getActivity().getLayoutInflater().inflate(de.droidwiki.R.layout.item_search_recent, viewGroup, false);
+            return getActivity().getLayoutInflater().inflate(R.layout.item_search_recent, viewGroup, false);
         }
 
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-            TextView textView = (TextView) view.findViewById(de.droidwiki.R.id.text1);
+            TextView textView = (TextView) view.findViewById(R.id.text1);
             RecentSearch entry = getEntry(cursor);
             textView.setText(entry.getText());
             view.setTag(entry);

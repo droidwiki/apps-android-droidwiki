@@ -1,5 +1,6 @@
 package de.droidwiki.page;
 
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import android.app.Activity;
 import android.text.Html;
@@ -46,11 +47,11 @@ class IssuesListAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = activity.getLayoutInflater();
         if (convertView == null) {
-            convertView = inflater.inflate(de.droidwiki.R.layout.item_issue, null);
+            convertView = inflater.inflate(R.layout.item_issue, null);
             holder = new ViewHolder();
-            holder.icon = (ImageView) convertView.findViewById(de.droidwiki.R.id.issue_icon);
-            holder.text = (TextView) convertView.findViewById(de.droidwiki.R.id.issue_text);
-            holder.subText = (TextView) convertView.findViewById(de.droidwiki.R.id.issue_subtext);
+            holder.icon = (ImageView) convertView.findViewById(R.id.issue_icon);
+            holder.text = (TextView) convertView.findViewById(R.id.issue_text);
+            holder.subText = (TextView) convertView.findViewById(R.id.issue_subtext);
             convertView.setTag(holder);
         } else {
             // view already defined, retrieve view holder

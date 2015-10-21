@@ -98,16 +98,16 @@ bridge.registerListener( "displayLeadSection", function( payload ) {
     transformer.transform( "hideIPA", content );
 
     if (!window.isMainPage) {
-        content = transformer.transform( "hideTables", content );
-        content = transformer.transform( "addImageOverflowXContainers", content );
-        content = transformer.transform( "widenImages", content );
+        transformer.transform( "hideTables", content );
+        transformer.transform( "addImageOverflowXContainers", content );
+        transformer.transform( "widenImages", content );
     }
 
     // insert the edit pencil
     content.insertBefore( editButton, content.firstChild );
 
-    content = transformer.transform("displayDisambigLink", content);
-    content = transformer.transform("displayIssuesLink", content);
+    transformer.transform("displayDisambigLink", content);
+    transformer.transform("displayIssuesLink", content);
 
     //if there were no page issues, then hide the container
     if (!issuesContainer.hasChildNodes()) {
@@ -173,8 +173,9 @@ function elementsForSection( section ) {
     transformer.transform( "hideIPA", content );
     transformer.transform( "hideRefs", content );
     if (!window.isMainPage) {
-        content = transformer.transform( "addImageOverflowXContainers", content );
-        content = transformer.transform( "widenImages", content );
+        transformer.transform( "hideTables", content );
+        transformer.transform( "addImageOverflowXContainers", content );
+        transformer.transform( "widenImages", content );
     }
 
     return [ heading, content ];

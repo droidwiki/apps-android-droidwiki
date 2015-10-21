@@ -59,9 +59,6 @@ import java.util.Random;
 import java.util.TimeZone;
 import java.util.UUID;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
-
 import static de.droidwiki.util.StringUtil.emptyIfNull;
 
 public class WikipediaApp extends Application {
@@ -501,7 +498,7 @@ public class WikipediaApp extends Application {
      * @param d Drawable to be adjusted.
      */
     public void adjustLinkDrawableToTheme(Drawable d) {
-        setDrawableTint(d, getColor(isCurrentThemeDark() ? R.color.button_dark : R.color.button_light));
+        setDrawableTint(d, getResources().getColor(isCurrentThemeDark() ? R.color.button_dark : R.color.button_light));
     }
 
     public int getFontSizeMultiplier() {
@@ -641,23 +638,5 @@ public class WikipediaApp extends Application {
             return RELEASE_DEV;
         }
         return RELEASE_PROD;
-    }
-
-    private Tracker mTracker;
-    /**
-     * Gets the default {@link Tracker} for this {@link Application}.
-     * @return tracker
-     */
-    synchronized public Tracker getDefaultTracker() {
-        if (mTracker == null) {
-            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
-            mTracker = analytics.newTracker(R.xml.global_tracker);
-        }
-        return mTracker;
-    }
-
-    private int getColor(int id) {
-        return getResources().getColor(id);
     }
 }

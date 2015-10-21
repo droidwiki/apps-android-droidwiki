@@ -1,8 +1,7 @@
 package de.droidwiki.alphaupdater;
 
-import de.droidwiki.recurring.RecurringTask;
 import de.droidwiki.R;
-
+import de.droidwiki.recurring.RecurringTask;
 import com.github.kevinsawicki.http.HttpRequest;
 import org.json.JSONException;
 import org.json.JSONObject;

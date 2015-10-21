@@ -2,14 +2,15 @@ package de.droidwiki.search;
 
 import de.droidwiki.BackPressedHandler;
 import de.droidwiki.page.PageTitle;
-import de.droidwiki.Utils;
 import de.droidwiki.R;
+import de.droidwiki.Utils;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.SearchFunnel;
 import de.droidwiki.concurrency.SaneAsyncTask;
 import de.droidwiki.events.WikipediaZeroStateChangeEvent;
 import de.droidwiki.history.HistoryEntry;
 import de.droidwiki.page.PageActivity;
+import de.droidwiki.settings.LanguagePreferenceDialog;
 
 import com.squareup.otto.Subscribe;
 
@@ -42,6 +43,7 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
     private SearchView searchView;
     private EditText searchEditText;
     private SearchFunnel funnel;
+    private TextView langButton;
 
     public SearchFunnel getFunnel() {
         return funnel;
@@ -95,7 +97,7 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         app = (WikipediaApp) getActivity().getApplicationContext();
         app.getBus().register(this);
-        View parentLayout = inflater.inflate(de.droidwiki.R.layout.fragment_search, container, false);
+        View parentLayout = inflater.inflate(R.layout.fragment_search, container, false);
 
         searchContainerView = parentLayout.findViewById(R.id.search_container);
         searchContainerView.setPadding(0, Utils.getContentTopOffsetPx(getActivity()), 0, 0);
@@ -108,25 +110,25 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
             }
         });
 
-        View deleteButton = parentLayout.findViewById(de.droidwiki.R.id.recent_searches_delete_button);
+        View deleteButton = parentLayout.findViewById(R.id.recent_searches_delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-                alert.setMessage(getString(de.droidwiki.R.string.clear_recent_searches_confirm));
-                alert.setPositiveButton(getString(de.droidwiki.R.string.yes), new DialogInterface.OnClickListener() {
+                alert.setMessage(getString(R.string.clear_recent_searches_confirm));
+                alert.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         new DeleteAllRecentSearchesTask(app).execute();
                     }
                 });
-                alert.setNegativeButton(getString(de.droidwiki.R.string.no), null);
+                alert.setNegativeButton(getString(R.string.no), null);
                 alert.create().show();
             }
         });
 
-        recentSearchesFragment = (RecentSearchesFragment)getChildFragmentManager().findFragmentById(de.droidwiki.R.id.search_panel_recent);
+        recentSearchesFragment = (RecentSearchesFragment)getChildFragmentManager().findFragmentById(R.id.search_panel_recent);
 
-        searchResultsFragment = (SearchResultsFragment)getChildFragmentManager().findFragmentById(de.droidwiki.R.id.fragment_search_results);
+        searchResultsFragment = (SearchResultsFragment)getChildFragmentManager().findFragmentById(R.id.fragment_search_results);
 
         // make sure we're hidden by default
         searchContainerView.setVisibility(View.GONE);
@@ -282,13 +284,25 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
     }
 
     private void setSearchViewEnabled(boolean enabled) {
-        LinearLayout enabledSearchBar = (LinearLayout) getActivity().findViewById(de.droidwiki.R.id.search_bar_enabled);
-        TextView searchButton = (TextView) getActivity().findViewById(de.droidwiki.R.id.main_search_bar_text);
+        LinearLayout enabledSearchBar = (LinearLayout) getActivity().findViewById(R.id.search_bar_enabled);
+        TextView searchButton = (TextView) getActivity().findViewById(R.id.main_search_bar_text);
+        langButton = (TextView) getActivity().findViewById(R.id.search_lang_button);
+        FrameLayout langButtonContainer = (FrameLayout) getActivity().findViewById(R.id.search_lang_button_container);
 
         if (enabled) {
+            // set up the language picker
+            langButton.setText(app.getAppOrSystemLanguageCode().toUpperCase());
+            formatLangButtonText();
+            langButtonContainer.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showLangPreferenceDialog();
+                }
+            });
+
             // set up the SearchView
             if (searchView == null) {
-                searchView = (SearchView)getActivity().findViewById(de.droidwiki.R.id.main_search_view);
+                searchView = (SearchView)getActivity().findViewById(R.id.main_search_view);
                 searchView.setOnQueryTextListener(searchQueryListener);
                 searchView.setOnCloseListener(searchCloseListener);
 
@@ -343,7 +357,7 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
             // setting the hint directly on the search EditText (instead of the SearchView)
             // gets rid of the magnify icon, which we don't want.
             searchEditText.setHint(app.getWikipediaZeroHandler().isZeroEnabled() ? getString(
-                    de.droidwiki.R.string.zero_search_hint) : getString(de.droidwiki.R.string.search_hint));
+                    R.string.zero_search_hint) : getString(R.string.search_hint));
         }
     }
 
@@ -426,5 +440,39 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
         public void onCatch(Throwable caught) {
             Log.w("SaveRecentSearchTask", "Caught " + caught.getMessage(), caught);
         }
+    }
+
+    private void formatLangButtonText() {
+        final int langCodeStandardLength = 3;
+        final int langButtonTextMaxLength = 7;
+
+        // These values represent scaled pixels (sp)
+        final int langButtonTextSizeSmaller = 10;
+        final int langButtonTextSizeLarger = 13;
+
+        String langCode = app.getAppOrSystemLanguageCode();
+        if (langCode.length() > langCodeStandardLength) {
+            langButton.setTextSize(langButtonTextSizeSmaller);
+            if (langCode.length() > langButtonTextMaxLength) {
+                langButton.setText(langCode.substring(0, langButtonTextMaxLength).toUpperCase());
+            }
+            return;
+        }
+        langButton.setTextSize(langButtonTextSizeLarger);
+    }
+
+    public void showLangPreferenceDialog() {
+        LanguagePreferenceDialog langPrefDialog = new LanguagePreferenceDialog(getActivity(), true);
+        langPrefDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                langButton.setText(app.getAppOrSystemLanguageCode().toUpperCase());
+                formatLangButtonText();
+                if (!TextUtils.isEmpty(lastSearchedText)) {
+                    startSearch(lastSearchedText, true);
+                }
+            }
+        });
+        langPrefDialog.show();
     }
 }

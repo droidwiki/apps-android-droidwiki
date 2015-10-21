@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import de.droidwiki.R;
+
 public class PreferenceMultiLine extends Preference {
 
     public PreferenceMultiLine(Context ctx, AttributeSet attrs, int defStyle) {
@@ -41,7 +43,7 @@ public class PreferenceMultiLine extends Preference {
                         try {
                             getContext().startActivity(preference.getIntent());
                         } catch (ActivityNotFoundException e) {
-                            Toast.makeText(getContext(), getContext().getString(de.droidwiki.R.string.error_browser_not_found), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), getContext().getString(R.string.error_browser_not_found), Toast.LENGTH_LONG).show();
                         }
                         return true;
                     }

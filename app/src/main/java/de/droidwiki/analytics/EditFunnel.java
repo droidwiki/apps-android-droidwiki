@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import org.json.JSONObject;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 
 public class EditFunnel extends Funnel {
@@ -116,16 +117,16 @@ public class EditFunnel extends Funnel {
     public void logEditSummaryTap(int summaryTagStringID) {
         String summaryTag;
         switch (summaryTagStringID) {
-            case de.droidwiki.R.string.edit_summary_tag_typo:
+            case R.string.edit_summary_tag_typo:
                 summaryTag = "typo";
                 break;
-            case de.droidwiki.R.string.edit_summary_tag_grammar:
+            case R.string.edit_summary_tag_grammar:
                 summaryTag = "grammar";
                 break;
-            case de.droidwiki.R.string.edit_summary_tag_links:
+            case R.string.edit_summary_tag_links:
                 summaryTag = "links";
                 break;
-            case de.droidwiki.R.string.edit_summary_tag_other:
+            case R.string.edit_summary_tag_other:
                 summaryTag = "other";
                 break;
             default:

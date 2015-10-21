@@ -35,7 +35,8 @@ public class PreviewFetchTask extends PageQueryTask<LinkPreviewContents> {
                .param("exsentences", "10")
                .param("explaintext", "true")
                .param("piprop", "thumbnail|name")
-               .param("pithumbsize", Integer.toString(WikipediaApp.PREFERRED_THUMB_SIZE));
+               .param("pithumbsize", Integer.toString(WikipediaApp.PREFERRED_THUMB_SIZE))
+               .param("wbptterms", "description");
     }
 
     @Override

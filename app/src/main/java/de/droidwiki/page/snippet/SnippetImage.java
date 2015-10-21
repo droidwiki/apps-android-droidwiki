@@ -16,9 +16,9 @@ import android.text.Spanned;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import android.util.Log;
 
 import de.droidwiki.page.ImageLicense;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.util.ApiUtil;
 import de.droidwiki.util.L10nUtils;
@@ -229,7 +229,7 @@ public final class SnippetImage {
             left = right - SnippetImage.ICONS_WIDTH;
         }
 
-        Drawable d = context.getResources().getDrawable(shouldDefaultToCCLicense() ? de.droidwiki.R.drawable.ic_license_cc : license.getLicenseIcon());
+        Drawable d = context.getResources().getDrawable(shouldDefaultToCCLicense() ? R.drawable.ic_license_cc : license.getLicenseIcon());
         d.setBounds(left, top, right, bottom);
         d.draw(canvas);
     }
@@ -249,8 +249,7 @@ public final class SnippetImage {
         final int bottom = HEIGHT - BOTTOM_PADDING;
         final int top = bottom - height;
 
-        Log.d("Wikipedia", "Set dw_wordmark");
-        Drawable d = context.getResources().getDrawable(de.droidwiki.R.drawable.dw_wordmark);
+        Drawable d = context.getResources().getDrawable(R.drawable.wp_wordmark);
         WikipediaApp.getInstance().setDrawableTint(d, Color.LTGRAY);
 
         int left = WIDTH - HORIZONTAL_PADDING - width;
@@ -275,7 +274,7 @@ public final class SnippetImage {
         textPaint.setTypeface(SERIF);
         textPaint.setTextScaleX(scaleX);
 
-        Spanned wikipedia = Html.fromHtml(context.getString(de.droidwiki.R.string.wp_stylized));
+        Spanned wikipedia = Html.fromHtml(context.getString(R.string.wp_stylized));
         Layout.Alignment align = L10nUtils.isDeviceRTL() ? ALIGN_OPPOSITE : ALIGN_NORMAL;
         StaticLayout wordmarkLayout = buildLayout(
                 new TextLayoutParams(wikipedia, textPaint, maxWidth, 1.0f, align));

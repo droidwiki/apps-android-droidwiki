@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="?attr/page_background_color"
     tools:context=".page.PageActivity">
+
     <de.droidwiki.views.WikiDrawerLayout
             android:id="@+id/page_toc_drawer"
             android:layout_width="match_parent"
@@ -16,6 +17,7 @@
             android:id="@+id/page_refresh_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <android.support.design.widget.CoordinatorLayout
                 android:id="@+id/page_contents_container"
                 android:layout_width="match_parent"
@@ -200,6 +202,7 @@
             </LinearLayout>
 
         </FrameLayout>
+
     </de.droidwiki.views.WikiDrawerLayout>
 
     <de.droidwiki.views.WikiErrorView

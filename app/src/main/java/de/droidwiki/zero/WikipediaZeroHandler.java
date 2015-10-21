@@ -168,9 +168,9 @@ public class WikipediaZeroHandler extends BroadcastReceiver implements OnHeaderC
             We don't need to check against the zeroconfig API unless the (latest) W0 state is *on* (true).
              */
             if (zeroEnabled
-                    && (currentState == NetworkInfo.State.CONNECTED
+                && (currentState == NetworkInfo.State.CONNECTED
                     || currentState == NetworkInfo.State.DISCONNECTED)
-                    && networkInfo.isConnected()
+                && networkInfo.isConnected()
                     ) {
 
                 // OK, now check if we're still eligible for zero-rating

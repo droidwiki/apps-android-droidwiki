@@ -1,5 +1,6 @@
 package de.droidwiki.util;
 
+import de.droidwiki.R;
 import org.mediawiki.api.json.ApiException;
 import com.github.kevinsawicki.http.HttpRequest;
 import org.json.JSONException;
@@ -44,16 +45,16 @@ public final class ThrowableUtil {
                                   getApiErrorMessage(context, (ApiException) inner));
         } else if (isNetworkError(e)) {
             // it's a network error...
-            result = new AppError(context.getString(de.droidwiki.R.string.error_network_error),
-                                  context.getString(de.droidwiki.R.string.format_error_server_message,
+            result = new AppError(context.getString(R.string.error_network_error),
+                                  context.getString(R.string.format_error_server_message,
                                       inner.getLocalizedMessage()));
         } else if (ThrowableUtil.throwableContainsException(e, JSONException.class)) {
             // it's a json exception
-            result = new AppError(context.getString(de.droidwiki.R.string.error_response_malformed),
+            result = new AppError(context.getString(R.string.error_response_malformed),
                                   inner.getLocalizedMessage());
         } else {
             // everything else has fallen through, so just treat it as an "unknown" error
-            result = new AppError(context.getString(de.droidwiki.R.string.error_unknown),
+            result = new AppError(context.getString(R.string.error_unknown),
                                   inner.getLocalizedMessage());
         }
         return result;
@@ -70,9 +71,9 @@ public final class ThrowableUtil {
     private static String getApiError(@NonNull Context context, @NonNull ApiException e) {
         String text;
         if ("missingtitle".equals(e.getCode()) || "invalidtitle".equals(e.getCode())) {
-            text = context.getResources().getString(de.droidwiki.R.string.page_does_not_exist_error);
+            text = context.getResources().getString(R.string.page_does_not_exist_error);
         } else {
-            text = context.getString(de.droidwiki.R.string.error_server_response);
+            text = context.getString(R.string.error_server_response);
         }
         return text;
     }
@@ -83,10 +84,10 @@ public final class ThrowableUtil {
         String text;
         if (e.getInfo() != null) {
             // if we have an actual message from the server, then prefer it
-            text = c.getString(de.droidwiki.R.string.format_error_server_message, e.getInfo());
+            text = c.getString(R.string.format_error_server_message, e.getInfo());
         } else if (e.getCode() != null) {
             // otherwise, just show the error code
-            text = c.getString(de.droidwiki.R.string.format_error_server_code, e.getCode());
+            text = c.getString(R.string.format_error_server_code, e.getCode());
         } else {
             // if all else fails, show the message of the exception
             text = e.getMessage();

@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import org.json.JSONObject;
-
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.analytics.ProtectedEditAttemptFunnel;
 import de.droidwiki.analytics.SavedPagesFunnel;
@@ -35,8 +35,8 @@ public class EditHandler implements CommunicationBridge.JSEventListener {
     private void showUneditableDialog() {
         new AlertDialog.Builder(fragment.getActivity())
                 .setCancelable(false)
-                .setTitle(de.droidwiki.R.string.page_protected_can_not_edit_title)
-                .setMessage(de.droidwiki.R.string.page_protected_can_not_edit)
+                .setTitle(R.string.page_protected_can_not_edit_title)
+                .setMessage(R.string.page_protected_can_not_edit)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -63,7 +63,7 @@ public class EditHandler implements CommunicationBridge.JSEventListener {
                 savedPagesFunnel.logEditAttempt();
                 new AlertDialog.Builder(fragment.getActivity())
                         .setCancelable(false)
-                        .setMessage(de.droidwiki.R.string.edit_saved_page_refresh)
+                        .setMessage(R.string.edit_saved_page_refresh)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {

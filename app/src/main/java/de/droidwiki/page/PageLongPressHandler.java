@@ -1,5 +1,6 @@
 package de.droidwiki.page;
 
+import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.Utils;
 import de.droidwiki.history.HistoryEntry;
@@ -56,7 +57,7 @@ public class PageLongPressHandler implements View.OnCreateContextMenuListener,
         if (title != null && !title.isSpecial()) {
             Utils.hideSoftKeyboard(view);
             entry = new HistoryEntry(title, historySource);
-            new MenuInflater(context).inflate(de.droidwiki.R.menu.menu_page_long_press, menu);
+            new MenuInflater(context).inflate(R.menu.menu_page_long_press, menu);
             menu.setHeaderTitle(title.getDisplayText());
             for (int i = 0; i < menu.size(); i++) {
                 menu.getItem(i).setOnMenuItemClickListener(this);
@@ -67,19 +68,19 @@ public class PageLongPressHandler implements View.OnCreateContextMenuListener,
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.menu_long_press_open_page:
+            case R.id.menu_long_press_open_page:
                 contextMenuListener.onOpenLink(title, entry);
                 return true;
-            case de.droidwiki.R.id.menu_long_press_open_in_new_tab:
+            case R.id.menu_long_press_open_in_new_tab:
                 contextMenuListener.onOpenInNewTab(title, entry);
                 return true;
-            case de.droidwiki.R.id.menu_long_press_copy_page:
+            case R.id.menu_long_press_copy_page:
                 contextMenuListener.onCopyLink(title);
                 return true;
-            case de.droidwiki.R.id.menu_long_press_share_page:
+            case R.id.menu_long_press_share_page:
                 contextMenuListener.onShareLink(title);
                 return true;
-            case de.droidwiki.R.id.menu_long_press_save_page:
+            case R.id.menu_long_press_save_page:
                 contextMenuListener.onSavePage(title);
                 return true;
             default:

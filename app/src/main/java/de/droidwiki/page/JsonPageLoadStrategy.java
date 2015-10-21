@@ -667,24 +667,23 @@ public class JsonPageLoadStrategy implements PageLoadStrategy {
     @VisibleForTesting
     protected void loadLeadSection(final int startSequenceNum) {
         app.getSessionFunnel().leadSectionFetchStart();
-        Log.i("Loaded title: ", model.getTitle().getPrefixedText());
-                PageLoadUtil.getApiService(model.getTitle().getSite()).pageLead(
-                        model.getTitle().getPrefixedText(),
-                        PageLoadUtil.calculateLeadImageWidth(),
-                        !app.isImageDownloadEnabled(),
-                        new PageLead.Callback() {
-                            @Override
-                            public void success(PageLead pageLead, Response response) {
-                                Log.v(TAG, response.getUrl());
-                                app.getSessionFunnel().leadSectionFetchEnd();
-                                onLeadSectionLoaded(pageLead, startSequenceNum);
-                            }
+        PageLoadUtil.getApiService(model.getTitle().getSite()).pageLead(
+                model.getTitle().getPrefixedText(),
+                PageLoadUtil.calculateLeadImageWidth(),
+                !app.isImageDownloadEnabled(),
+                new PageLead.Callback() {
+                    @Override
+                    public void success(PageLead pageLead, Response response) {
+                        Log.v(TAG, response.getUrl());
+                        app.getSessionFunnel().leadSectionFetchEnd();
+                        onLeadSectionLoaded(pageLead, startSequenceNum);
+                    }
 
-                            @Override
-                            public void failure(RetrofitError error) {
-                                Log.e(TAG, "PageLead error: " + error);
-                                commonSectionFetchOnCatch(error, startSequenceNum);
-                            }
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Log.e(TAG, "PageLead error: " + error);
+                        commonSectionFetchOnCatch(error, startSequenceNum);
+                    }
                 });
     }
 

@@ -28,10 +28,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Locale;
 
-import de.droidwiki.Site;
-import de.droidwiki.WikipediaApp;
-import de.droidwiki.util.StringUtil;
-
 import static de.droidwiki.util.StringUtil.emptyIfNull;
 
 public class LangLinksActivity extends ThemedActionBarActivity {
@@ -60,7 +56,7 @@ public class LangLinksActivity extends ThemedActionBarActivity {
         super.onCreate(savedInstanceState);
         app = WikipediaApp.getInstance();
 
-        setContentView(de.droidwiki.R.layout.activity_langlinks);
+        setContentView(R.layout.activity_langlinks);
 
         if (!getIntent().getAction().equals(ACTION_LANGLINKS_FOR_TITLE)) {
             throw new RuntimeException("Only ACTION_LANGLINKS_FOR_TITLE is supported");
@@ -147,6 +143,11 @@ public class LangLinksActivity extends ThemedActionBarActivity {
     }
 
     @Override
+    protected void setTheme() {
+        setActionBarTheme();
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         if (languageEntries != null) {
@@ -162,7 +163,6 @@ public class LangLinksActivity extends ThemedActionBarActivity {
             ViewAnimations.crossFade(langLinksProgress, langLinksContainer);
         }
     }
-
 
     private void fetchLangLinks() {
         if (languageEntries == null) {
@@ -236,8 +236,8 @@ public class LangLinksActivity extends ThemedActionBarActivity {
             filter = filter.toLowerCase();
             for (PageTitle entry : originalLanguageEntries) {
                 String languageCode = entry.getSite().getLanguageCode();
-                String canonicalName = StringUtil.emptyIfNull(app.getAppLanguageCanonicalName(languageCode));
-                String localizedName = StringUtil.emptyIfNull(app.getAppLanguageLocalizedName(languageCode));
+                String canonicalName = emptyIfNull(app.getAppLanguageCanonicalName(languageCode));
+                String localizedName = emptyIfNull(app.getAppLanguageLocalizedName(languageCode));
                 if (canonicalName.toLowerCase().contains(filter)
                         || localizedName.toLowerCase().contains(filter)) {
                     languageEntries.add(entry);
@@ -264,7 +264,7 @@ public class LangLinksActivity extends ThemedActionBarActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
-                convertView = LayoutInflater.from(parent.getContext()).inflate(de.droidwiki.R.layout.item_language_list_entry, parent, false);
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_language_list_entry, parent, false);
             }
 
             PageTitle item = getItem(position);
@@ -276,7 +276,6 @@ public class LangLinksActivity extends ThemedActionBarActivity {
 
             TextView localizedLanguageNameTextView = (TextView) convertView.findViewById(R.id.localized_language_name);
             TextView articleTitleTextView = (TextView) convertView.findViewById(R.id.language_subtitle);
-
 
             localizedLanguageNameTextView.setText(localizedLanguageName);
             articleTitleTextView.setText(item.getText());

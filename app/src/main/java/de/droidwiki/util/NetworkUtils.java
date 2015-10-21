@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 
 public final class NetworkUtils {
@@ -73,7 +74,7 @@ public final class NetworkUtils {
      * Ask user to try connecting again upon (hopefully) recoverable network failure.
      */
     public static void toastNetworkFail() {
-        Toast.makeText(WikipediaApp.getInstance(), de.droidwiki.R.string.error_network_error_try_again, Toast.LENGTH_LONG).show();
+        Toast.makeText(WikipediaApp.getInstance(), R.string.error_network_error_try_again, Toast.LENGTH_LONG).show();
     }
 
     /**

@@ -129,12 +129,12 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
         goButton.setOnClickListener(goToPageListener);
         goButton.setText(getStringForArticleLanguage(pageTitle, R.string.button_continue_to_article));
 
-        final View overflowButton = rootView.findViewById(de.droidwiki.R.id.link_preview_overflow_button);
+        final View overflowButton = rootView.findViewById(R.id.link_preview_overflow_button);
         overflowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopupMenu popupMenu = new PopupMenu(getActivity(), overflowButton);
-                popupMenu.inflate(de.droidwiki.R.menu.menu_link_preview);
+                popupMenu.inflate(R.menu.menu_link_preview);
                 popupMenu.setOnMenuItemClickListener(menuListener);
                 popupMenu.show();
             }
@@ -277,7 +277,7 @@ public class LinkPreviewDialog extends SwipeableBottomDialog implements DialogIn
                 contents = (LinkPreviewContents) result.values().toArray()[0];
                 layoutPreview();
             } else {
-                FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.error_network_error);
+                FeedbackUtil.showMessage(getActivity(), R.string.error_network_error);
                 dismiss();
             }
         }

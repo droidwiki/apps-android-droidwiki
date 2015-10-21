@@ -91,7 +91,7 @@ public abstract class SwipeableBottomDialog extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(STYLE_NO_TITLE, de.droidwiki.R.style.BottomDialog);
+        setStyle(STYLE_NO_TITLE, R.style.BottomDialog);
     }
 
     @NonNull

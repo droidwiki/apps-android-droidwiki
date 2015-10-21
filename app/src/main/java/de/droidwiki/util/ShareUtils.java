@@ -43,7 +43,7 @@ public final class ShareUtils {
         shareIntent.putExtra(Intent.EXTRA_TEXT, text);
         shareIntent.setType("text/plain");
         Intent chooserIntent = createChooserIntent(shareIntent,
-                context.getString(de.droidwiki.R.string.share_via), context);
+                context.getString(R.string.share_via), context);
         if (chooserIntent == null) {
             showUnresolvableIntentMessage(context);
         } else {
@@ -141,7 +141,7 @@ public final class ShareUtils {
     }
 
     public static void showUnresolvableIntentMessage(Context context) {
-        Toast.makeText(context, de.droidwiki.R.string.error_can_not_process_link, Toast.LENGTH_LONG).show();
+        Toast.makeText(context, R.string.error_can_not_process_link, Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -227,7 +227,7 @@ public final class ShareUtils {
     private static boolean isIntentActivityBlacklisted(@Nullable ResolveInfo intentActivity,
                                                        @Nullable String packageNameBlacklistRegex) {
         return intentActivity != null
-                && getPackageName(intentActivity).matches(StringUtil.emptyIfNull(packageNameBlacklistRegex));
+                && getPackageName(intentActivity).matches(emptyIfNull(packageNameBlacklistRegex));
     }
 
     private static LabeledIntent buildLabeledIntent(Intent intent, ResolveInfo intentActivity) {

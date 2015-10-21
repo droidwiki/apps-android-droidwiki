@@ -29,7 +29,6 @@ import android.widget.ProgressBar;
 import android.widget.VideoView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 import java.util.Map;
@@ -87,20 +86,20 @@ public class GalleryItemFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(de.droidwiki.R.layout.fragment_gallery_item, container, false);
-        containerView = rootView.findViewById(de.droidwiki.R.id.gallery_item_container);
+        View rootView = inflater.inflate(R.layout.fragment_gallery_item, container, false);
+        containerView = rootView.findViewById(R.id.gallery_item_container);
         containerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 parentActivity.toggleControls();
             }
         });
-        progressBar = (ProgressBar) rootView.findViewById(de.droidwiki.R.id.gallery_item_progress_bar);
-        videoContainer = rootView.findViewById(de.droidwiki.R.id.gallery_video_container);
-        videoView = (VideoView) rootView.findViewById(de.droidwiki.R.id.gallery_video);
-        videoThumbnail = (ImageView) rootView.findViewById(de.droidwiki.R.id.gallery_video_thumbnail);
-        videoPlayButton = rootView.findViewById(de.droidwiki.R.id.gallery_video_play_button);
-        imageView = (ImageView) rootView.findViewById(de.droidwiki.R.id.gallery_image);
+        progressBar = (ProgressBar) rootView.findViewById(R.id.gallery_item_progress_bar);
+        videoContainer = rootView.findViewById(R.id.gallery_video_container);
+        videoView = (VideoView) rootView.findViewById(R.id.gallery_video);
+        videoThumbnail = (ImageView) rootView.findViewById(R.id.gallery_video_thumbnail);
+        videoPlayButton = rootView.findViewById(R.id.gallery_video_play_button);
+        imageView = (ImageView) rootView.findViewById(R.id.gallery_image);
         attacher = new PhotoViewAttacher(imageView);
         attacher.setOnViewTapListener(new PhotoViewAttacher.OnViewTapListener() {
             @Override
@@ -145,7 +144,7 @@ public class GalleryItemFragment extends Fragment {
         if (!isAdded()) {
             return;
         }
-        inflater.inflate(de.droidwiki.R.menu.menu_gallery, menu);
+        inflater.inflate(R.menu.menu_gallery, menu);
     }
 
     @Override
@@ -164,15 +163,15 @@ public class GalleryItemFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.menu_gallery_visit_page:
+            case R.id.menu_gallery_visit_page:
                 if (galleryItem != null) {
                     parentActivity.finishWithPageResult(imageTitle);
                 }
                 return true;
-            case de.droidwiki.R.id.menu_gallery_save:
+            case R.id.menu_gallery_save:
                 saveImageToMediaStore();
                 return true;
-            case de.droidwiki.R.id.menu_gallery_share:
+            case R.id.menu_gallery_share:
                 shareImage();
                 return true;
             default:
@@ -230,7 +229,7 @@ public class GalleryItemFragment extends Fragment {
                     loadMedia();
                 } else {
                     updateProgressBar(false, true, 0);
-                    FeedbackUtil.showMessage(getActivity(), de.droidwiki.R.string.error_network_error);
+                    FeedbackUtil.showMessage(getActivity(), R.string.error_network_error);
                 }
             }
 
@@ -303,7 +302,7 @@ public class GalleryItemFragment extends Fragment {
                 public boolean onError(MediaPlayer mp, int what, int extra) {
                     updateProgressBar(false, true, 0);
                     FeedbackUtil.showMessage(getActivity(),
-                            de.droidwiki.R.string.gallery_error_video_failed);
+                            R.string.gallery_error_video_failed);
                     videoView.setVisibility(View.GONE);
                     videoThumbnail.setVisibility(View.VISIBLE);
                     videoPlayButton.setVisibility(View.VISIBLE);

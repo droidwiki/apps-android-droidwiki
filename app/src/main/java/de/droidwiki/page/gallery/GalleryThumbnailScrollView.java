@@ -61,7 +61,7 @@ public class GalleryThumbnailScrollView extends RecyclerView {
 
         public GalleryItemHolder(View itemView) {
             super(itemView);
-            mImageView = (ImageView) itemView.findViewById(de.droidwiki.R.id.gallery_thumbnail_image);
+            mImageView = (ImageView) itemView.findViewById(R.id.gallery_thumbnail_image);
         }
 
         public void bindItem(GalleryItem item) {
@@ -72,8 +72,8 @@ public class GalleryThumbnailScrollView extends RecyclerView {
                     && !TextUtils.isEmpty(mGalleryItem.getThumbUrl())) {
                 Picasso.with(mContext)
                         .load(mGalleryItem.getThumbUrl())
-                        .placeholder(de.droidwiki.R.drawable.checkerboard)
-                        .error(de.droidwiki.R.drawable.checkerboard)
+                        .placeholder(R.drawable.checkerboard)
+                        .error(R.drawable.checkerboard)
                         .into(mImageView);
             }
         }
@@ -117,7 +117,7 @@ public class GalleryThumbnailScrollView extends RecyclerView {
         @Override
         public GalleryItemHolder onCreateViewHolder(ViewGroup parent, int pos) {
             View view = LayoutInflater.from(mContext)
-                    .inflate(de.droidwiki.R.layout.item_gallery_thumbnail, parent, false);
+                    .inflate(R.layout.item_gallery_thumbnail, parent, false);
             return new GalleryItemHolder(view);
         }
 

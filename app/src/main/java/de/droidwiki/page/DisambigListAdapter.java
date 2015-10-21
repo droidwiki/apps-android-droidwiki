@@ -136,14 +136,14 @@ class DisambigListAdapter extends ArrayAdapter<DisambigResult> {
         String thumbnail = pageImagesCache.get(item.getTitle().getDisplayText());
         if (thumbnail == null) {
             Picasso.with(parent.getContext())
-                    .load(R.drawable.ic_pageimage_placeholder)
-                    .into(holder.icon);
+                   .load(R.drawable.ic_pageimage_placeholder)
+                   .into(holder.icon);
         } else {
             Picasso.with(parent.getContext())
-                    .load(thumbnail)
-                    .placeholder(R.drawable.ic_pageimage_placeholder)
-                    .error(R.drawable.ic_pageimage_placeholder)
-                    .into(holder.icon);
+                   .load(thumbnail)
+                   .placeholder(R.drawable.ic_pageimage_placeholder)
+                   .error(R.drawable.ic_pageimage_placeholder)
+                   .into(holder.icon);
         }
 
         return convertView;

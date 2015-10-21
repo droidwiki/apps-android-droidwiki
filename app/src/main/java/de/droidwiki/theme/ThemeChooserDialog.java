@@ -25,11 +25,11 @@ public class ThemeChooserDialog extends BottomDialog {
     private AppearanceChangeFunnel funnel;
 
     public ThemeChooserDialog(Context context) {
-        super(context, de.droidwiki.R.layout.dialog_themechooser);
+        super(context, R.layout.dialog_themechooser);
         app = WikipediaApp.getInstance();
         funnel = new AppearanceChangeFunnel(app, app.getPrimarySite());
 
-        buttonDecreaseTextSize = (Button) getDialogLayout().findViewById(de.droidwiki.R.id.buttonDecreaseTextSize);
+        buttonDecreaseTextSize = (Button) getDialogLayout().findViewById(R.id.buttonDecreaseTextSize);
         buttonDecreaseTextSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +41,7 @@ public class ThemeChooserDialog extends BottomDialog {
             }
         });
 
-        buttonDefaultTextSize = (Button) getDialogLayout().findViewById(de.droidwiki.R.id.buttonDefaultTextSize);
+        buttonDefaultTextSize = (Button) getDialogLayout().findViewById(R.id.buttonDefaultTextSize);
         buttonDefaultTextSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +53,7 @@ public class ThemeChooserDialog extends BottomDialog {
             }
         });
 
-        buttonIncreaseTextSize = (Button) getDialogLayout().findViewById(de.droidwiki.R.id.buttonIncreaseTextSize);
+        buttonIncreaseTextSize = (Button) getDialogLayout().findViewById(R.id.buttonIncreaseTextSize);
         buttonIncreaseTextSize.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,13 +66,13 @@ public class ThemeChooserDialog extends BottomDialog {
         });
 
         ThemeOnClickListener themeOnClickListener = new ThemeOnClickListener();
-        buttonThemeLight = (Button) getDialogLayout().findViewById(de.droidwiki.R.id.buttonColorsLight);
+        buttonThemeLight = (Button) getDialogLayout().findViewById(R.id.buttonColorsLight);
         buttonThemeLight.setOnClickListener(themeOnClickListener);
 
-        buttonThemeDark = (Button) getDialogLayout().findViewById(de.droidwiki.R.id.buttonColorsDark);
+        buttonThemeDark = (Button) getDialogLayout().findViewById(R.id.buttonColorsDark);
         buttonThemeDark.setOnClickListener(themeOnClickListener);
 
-        fontChangeProgressBar = (ProgressBar) getDialogLayout().findViewById(de.droidwiki.R.id.font_change_progress_bar);
+        fontChangeProgressBar = (ProgressBar) getDialogLayout().findViewById(R.id.font_change_progress_bar);
 
         updateButtonState();
     }

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-
+import de.droidwiki.R;
 import de.droidwiki.util.DimenUtil;
 
 public class EditSummaryTag extends TextView {
@@ -72,7 +72,7 @@ public class EditSummaryTag extends TextView {
     }
 
     private void updateState() {
-        setBackgroundResource(selected ? de.droidwiki.R.drawable.editpage_improve_tag_selected : de.droidwiki.R.drawable.editpage_improve_tag_unselected);
-        setTextColor(resources.getColor(selected ? android.R.color.white : de.droidwiki.R.color.blue_progressive));
+        setBackgroundResource(selected ? R.drawable.editpage_improve_tag_selected : R.drawable.editpage_improve_tag_unselected);
+        setTextColor(resources.getColor(selected ? android.R.color.white : R.color.blue_progressive));
     }
 }

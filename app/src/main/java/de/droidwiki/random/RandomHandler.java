@@ -3,6 +3,7 @@ package de.droidwiki.random;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
 import de.droidwiki.page.PageActivity;
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.WikipediaApp;

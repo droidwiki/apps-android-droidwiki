@@ -35,7 +35,7 @@ public class NavDrawerHelper {
     private ImageView accountNameArrow;
     private boolean accountToggle;
 
-    public NavDrawerHelper(@NonNull PageActivity activity) {
+    public NavDrawerHelper(@NonNull PageActivity activity, View navDrawerHeader) {
         this.funnel = new NavMenuFunnel();
         this.activity = activity;
         activity.getSupportFragmentManager()
@@ -45,9 +45,9 @@ public class NavDrawerHelper {
                         updateItemSelection(NavDrawerHelper.this.activity.getTopFragment());
                     }
                 });
-        accountNameView = (TextView) activity.getNavDrawer().findViewById(R.id.nav_account_text);
-        accountNameArrow = (ImageView) activity.getNavDrawer().findViewById(R.id.nav_account_arrow);
-        setLoginOnClick(activity.getNavDrawer().findViewById(R.id.nav_account_container));
+        accountNameView = (TextView) navDrawerHeader.findViewById(R.id.nav_account_text);
+        accountNameArrow = (ImageView) navDrawerHeader.findViewById(R.id.nav_account_arrow);
+        setLoginOnClick(navDrawerHeader.findViewById(R.id.nav_account_container));
         updateMenuGroupToggle();
     }
 
@@ -169,9 +169,9 @@ public class NavDrawerHelper {
 
     @Nullable @IdRes private Integer fragmentToMenuId(Fragment fragment) {
         if (fragment instanceof PageFragment) {
-            return de.droidwiki.R.id.nav_item_today;
+            return R.id.nav_item_today;
         } else if (fragment instanceof HistoryFragment) {
-            return de.droidwiki.R.id.nav_item_history;
+            return R.id.nav_item_history;
         } else if (fragment instanceof SavedPagesFragment) {
             return R.id.nav_item_saved_pages;
         }

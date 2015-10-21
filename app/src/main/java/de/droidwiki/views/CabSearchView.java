@@ -3,12 +3,17 @@ package de.droidwiki.views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v7.widget.SearchView;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import de.droidwiki.R;
+
+import java.util.Arrays;
 
 /** {@link SearchView} that exposes contextual action bar callbacks. */
 public class CabSearchView extends SearchView {
@@ -29,6 +34,7 @@ public class CabSearchView extends SearchView {
 
         SearchView.SearchAutoComplete searchSrcTextView = (SearchAutoComplete) findViewById(R.id.search_src_text);
         searchSrcTextView.setCustomSelectionActionModeCallback(new Callback());
+        addFilter(searchSrcTextView, new PlainTextInputFilter());
 
         initLayoutAttributes(attrs, defStyleAttr);
     }
@@ -41,9 +47,16 @@ public class CabSearchView extends SearchView {
         mCabEnabled = enabled;
     }
 
+    private void addFilter(TextView textView, InputFilter filter) {
+        InputFilter[] filters = textView.getFilters();
+        InputFilter[] newFilters = Arrays.copyOf(filters, filters.length + 1);
+        newFilters[filters.length] = filter;
+        textView.setFilters(newFilters);
+    }
+
     private void initLayoutAttributes(AttributeSet attrs, int defStyleAttr) {
         TypedArray attrsArray = getContext().obtainStyledAttributes(attrs,
-                de.droidwiki.R.styleable.CabSearchView, defStyleAttr, 0);
+                R.styleable.CabSearchView, defStyleAttr, 0);
 
         setCabEnabled(attrsArray.getBoolean(R.styleable.CabSearchView_cabEnabled,
                 DEFAULT_CAB_ENABLED));
@@ -68,5 +81,12 @@ public class CabSearchView extends SearchView {
         }
 
         @Override public void onDestroyActionMode(ActionMode mode) { }
+    }
+
+    private class PlainTextInputFilter implements InputFilter {
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            return source.toString();
+        }
     }
 }

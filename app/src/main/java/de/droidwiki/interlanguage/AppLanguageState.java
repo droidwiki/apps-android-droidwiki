@@ -119,7 +119,7 @@ public class AppLanguageState {
         // Null value is used to indicate that system language should be used.
         String systemLanguageCodeString = String.valueOf(SYSTEM_LANGUAGE_CODE);
 
-        String csv = StringUtil.defaultIfNull(Prefs.getMruLanguageCodeCsv(), systemLanguageCodeString);
+        String csv = defaultIfNull(Prefs.getMruLanguageCodeCsv(), systemLanguageCodeString);
 
         List<String> list = new ArrayList<>(StringUtil.csvToList(csv));
 

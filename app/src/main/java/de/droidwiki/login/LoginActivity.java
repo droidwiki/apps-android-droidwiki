@@ -10,19 +10,13 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-
-import de.droidwiki.Utils;
+import de.droidwiki.*;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.analytics.LoginFunnel;
 import de.droidwiki.createaccount.CreateAccountActivity;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.views.PasswordTextInput;
-import de.droidwiki.NonEmptyValidator;
-import de.droidwiki.WikipediaApp;
 
 public class LoginActivity extends ThemedActionBarActivity {
     public static final int REQUEST_LOGIN = 100;
@@ -45,22 +39,16 @@ public class LoginActivity extends ThemedActionBarActivity {
 
     private ProgressDialog progressDialog;
     private boolean wentStraightToCreateAccount;
-    private Tracker mTracker;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         app = (WikipediaApp)getApplicationContext();
 
-        setContentView(de.droidwiki.R.layout.activity_login);
+        setContentView(R.layout.activity_login);
 
-        usernameText = (EditText) findViewById(de.droidwiki.R.id.login_username_text);
-        mTracker = app.getDefaultTracker();
-
-        Log.i("PageFragment", "Setting screen name: Login");
-        mTracker.setScreenName("Activity~Login");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
-        passwordText = ((PasswordTextInput) findViewById(de.droidwiki.R.id.login_password_input)).getEditText();
-        View createAccountLink = findViewById(de.droidwiki.R.id.login_create_account_link);
+        usernameText = (EditText) findViewById(R.id.login_username_text);
+        passwordText = ((PasswordTextInput) findViewById(R.id.login_password_input)).getEditText();
+        View createAccountLink = findViewById(R.id.login_create_account_link);
 
         // Don't allow user to attempt login until they've put in a username and password
         new NonEmptyValidator(new NonEmptyValidator.ValidationChangedCallback() {
@@ -81,7 +69,7 @@ public class LoginActivity extends ThemedActionBarActivity {
             }
         });
 
-        loginButton = findViewById(de.droidwiki.R.id.login_button);
+        loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +85,7 @@ public class LoginActivity extends ThemedActionBarActivity {
         });
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage(getString(de.droidwiki.R.string.login_in_progress_dialog_message));
+        progressDialog.setMessage(getString(R.string.login_in_progress_dialog_message));
         progressDialog.setCancelable(false);
 
         funnel = new LoginFunnel(app);
@@ -118,6 +106,11 @@ public class LoginActivity extends ThemedActionBarActivity {
 
     public void showPrivacyPolicy(View v) {
         Utils.showPrivacyPolicy(this);
+    }
+
+    @Override
+    protected void setTheme() {
+        setActionBarTheme();
     }
 
     private void logLoginStart() {
@@ -151,7 +144,7 @@ public class LoginActivity extends ThemedActionBarActivity {
                 passwordText.setText(data.getStringExtra("password"));
                 funnel.logCreateAccountSuccess();
                 FeedbackUtil.showMessage(this,
-                        de.droidwiki.R.string.create_account_account_created_toast);
+                        R.string.create_account_account_created_toast);
                 doLogin();
             } else {
                 funnel.logCreateAccountFailure();
@@ -224,24 +217,24 @@ public class LoginActivity extends ThemedActionBarActivity {
                 // a global account (i.e. almost every single user), there is no difference between
                 // WrongPass and WrongPluginPass, so we treat them the same here.
                 passwordText.requestFocus();
-                Utils.setErrorPopup(passwordText, getString(de.droidwiki.R.string.login_error_wrong_password));
+                Utils.setErrorPopup(passwordText, getString(R.string.login_error_wrong_password));
                 break;
             case "NotExists":
                 usernameText.requestFocus();
-                Utils.setErrorPopup(usernameText, getString(de.droidwiki.R.string.login_error_wrong_username));
+                Utils.setErrorPopup(usernameText, getString(R.string.login_error_wrong_username));
                 break;
             case "Illegal":
                 usernameText.requestFocus();
-                Utils.setErrorPopup(usernameText, getString(de.droidwiki.R.string.login_error_illegal));
+                Utils.setErrorPopup(usernameText, getString(R.string.login_error_illegal));
                 break;
             case "Blocked":
-                FeedbackUtil.showMessage(this, de.droidwiki.R.string.login_error_blocked);
+                FeedbackUtil.showMessage(this, R.string.login_error_blocked);
                 break;
             case "Throttled":
-                FeedbackUtil.showMessage(this, de.droidwiki.R.string.login_error_throttled);
+                FeedbackUtil.showMessage(this, R.string.login_error_throttled);
                 break;
             default:
-                FeedbackUtil.showMessage(this, de.droidwiki.R.string.login_error_unknown);
+                FeedbackUtil.showMessage(this, R.string.login_error_unknown);
                 Log.d("Wikipedia", "Login failed with result " + result);
                 break;
         }

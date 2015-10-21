@@ -22,18 +22,13 @@ import com.mobsandgeeks.saripaar.annotation.Required;
 import org.mediawiki.api.json.Api;
 import org.mediawiki.api.json.ApiException;
 import org.mediawiki.api.json.RequestBuilder;
-
+import de.droidwiki.*;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.analytics.CreateAccountFunnel;
 import de.droidwiki.editing.CaptchaHandler;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.views.PasswordTextInput;
-
-import de.droidwiki.NonEmptyValidator;
-import de.droidwiki.Utils;
-import de.droidwiki.ViewAnimations;
-import de.droidwiki.WikipediaApp;
 
 import static de.droidwiki.util.FeedbackUtil.showMessage;
 import static de.droidwiki.util.FeedbackUtil.showError;
@@ -52,9 +47,9 @@ public class CreateAccountActivity extends ThemedActionBarActivity {
     @Required(order = 2)
     @Password(order = 3)
     private EditText passwordEdit;
-    @ConfirmPassword(order = 4, messageResId = de.droidwiki.R.string.create_account_passwords_mismatch_error)
+    @ConfirmPassword(order = 4, messageResId = R.string.create_account_passwords_mismatch_error)
     private EditText passwordRepeatEdit;
-    @Email(order = 5, messageResId = de.droidwiki.R.string.create_account_email_error)
+    @Email(order = 5, messageResId = R.string.create_account_email_error)
     private EditText emailEdit;
 
     private Button createAccountButton;
@@ -76,26 +71,26 @@ public class CreateAccountActivity extends ThemedActionBarActivity {
         super.onCreate(savedInstanceState);
         app = (WikipediaApp) getApplicationContext();
 
-        setContentView(de.droidwiki.R.layout.activity_create_account);
+        setContentView(R.layout.activity_create_account);
 
-        usernameEdit = (EditText) findViewById(de.droidwiki.R.id.create_account_username);
-        passwordRepeatEdit = (EditText) findViewById(de.droidwiki.R.id.create_account_password_repeat);
-        emailEdit = (EditText) findViewById(de.droidwiki.R.id.create_account_email);
-        createAccountButton = (Button) findViewById(de.droidwiki.R.id.create_account_submit_button);
-        createAccountButtonCaptcha = (Button) findViewById(de.droidwiki.R.id.captcha_submit_button);
-        EditText captchaText = (EditText) findViewById(de.droidwiki.R.id.captcha_text);
-        View primaryContainer = findViewById(de.droidwiki.R.id.create_account_primary_container);
-        PasswordTextInput passwordInput = (PasswordTextInput) findViewById(de.droidwiki.R.id.create_account_password_input);
+        usernameEdit = (EditText) findViewById(R.id.create_account_username);
+        passwordRepeatEdit = (EditText) findViewById(R.id.create_account_password_repeat);
+        emailEdit = (EditText) findViewById(R.id.create_account_email);
+        createAccountButton = (Button) findViewById(R.id.create_account_submit_button);
+        createAccountButtonCaptcha = (Button) findViewById(R.id.captcha_submit_button);
+        EditText captchaText = (EditText) findViewById(R.id.captcha_text);
+        View primaryContainer = findViewById(R.id.create_account_primary_container);
+        PasswordTextInput passwordInput = (PasswordTextInput) findViewById(R.id.create_account_password_input);
         passwordEdit = passwordInput.getEditText();
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage(getString(de.droidwiki.R.string.dialog_create_account_checking_progress));
+        progressDialog.setMessage(getString(R.string.dialog_create_account_checking_progress));
 
         captchaHandler = new CaptchaHandler(this, app.getPrimarySite(), progressDialog, primaryContainer,
-                                            getString(de.droidwiki.R.string.create_account_activity_title),
-                                            getString(de.droidwiki.R.string.create_account_button));
+                                            getString(R.string.create_account_activity_title),
+                                            getString(R.string.create_account_button));
 
         // We enable the menu item as soon as the username and password fields are filled
         // Tapping does further validation
@@ -190,7 +185,7 @@ public class CreateAccountActivity extends ThemedActionBarActivity {
             }
         }
 
-        findViewById(de.droidwiki.R.id.create_account_login_link).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.create_account_login_link).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // already coming from LoginActivity
@@ -206,6 +201,11 @@ public class CreateAccountActivity extends ThemedActionBarActivity {
         }
         // Set default result to failed, so we can override if it did not
         setResult(RESULT_ACCOUNT_NOT_CREATED);
+    }
+
+    @Override
+    protected void setTheme() {
+        setActionBarTheme();
     }
 
     @Override
@@ -225,46 +225,46 @@ public class CreateAccountActivity extends ThemedActionBarActivity {
             switch (errorCode) {
                 case "blocked":
                     if (app.getUserInfoStorage().isLoggedIn()) {
-                        FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_blocked_error);
+                        showMessage(this, R.string.create_account_blocked_error);
                     } else {
-                        FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_blocked_anon_error);
+                        showMessage(this, R.string.create_account_blocked_anon_error);
                     }
                     break;
                 case "acct_creation_throttle_hit":
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_ip_throttle_error);
+                    showMessage(this, R.string.create_account_ip_throttle_error);
                     break;
                 case "sorbs_create_account_reason":
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_open_proxy_error);
+                    showMessage(this, R.string.create_account_open_proxy_error);
                     break;
                 case "userexists":
                     //Request focus before displaying error message, so that it pops up on its own
                     usernameEdit.requestFocus();
-                    Utils.setErrorPopup(usernameEdit, getString(de.droidwiki.R.string.create_account_username_exists_error));
+                    Utils.setErrorPopup(usernameEdit, getString(R.string.create_account_username_exists_error));
                     break;
                 case "noname":
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_noname_error);
+                    showMessage(this, R.string.create_account_noname_error);
                     break;
                 case "invalidemailaddress":
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_invalid_email_error);
+                    showMessage(this, R.string.create_account_invalid_email_error);
                     break;
                 case "passwordtooshort":
                     //FIXME: Find the value of $wgMinimalPasswordLength and tell the user the minimum pwd length
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_password_too_short_error);
+                    showMessage(this, R.string.create_account_password_too_short_error);
                     break;
                 case "password-name-match":
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_password_name_match_error);
+                    showMessage(this, R.string.create_account_password_name_match_error);
                     break;
                 case "createaccount-hook-aborted":
                     // show the actual message provided by the hook
-                    FeedbackUtil.showMessage(this, Html.fromHtml(((ApiException) e).getInfo()),
+                    showMessage(this, Html.fromHtml(((ApiException) e).getInfo()),
                             FeedbackUtil.LENGTH_DEFAULT);
                     break;
                 default:
-                    FeedbackUtil.showMessage(this, de.droidwiki.R.string.create_account_generic_error);
+                    showMessage(this, R.string.create_account_generic_error);
                     break;
             }
         } else {
-            FeedbackUtil.showError(this, e);
+            showError(this, e);
         }
     }
 

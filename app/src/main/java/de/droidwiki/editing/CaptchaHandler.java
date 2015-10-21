@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import org.mediawiki.api.json.RequestBuilder;
-
+import de.droidwiki.R;
 import de.droidwiki.Site;
 import de.droidwiki.ViewAnimations;
 import de.droidwiki.WikipediaApp;
@@ -39,11 +39,11 @@ public class CaptchaHandler {
         this.primaryView = primaryView;
         this.prevTitle = prevTitle;
 
-        captchaContainer = activity.findViewById(de.droidwiki.R.id.captcha_container);
-        captchaImage = (ImageView) activity.findViewById(de.droidwiki.R.id.captcha_image);
-        captchaText = (EditText) activity.findViewById(de.droidwiki.R.id.captcha_text);
-        captchaProgress = activity.findViewById(de.droidwiki.R.id.captcha_image_progress);
-        Button submitButton = (Button) activity.findViewById(de.droidwiki.R.id.captcha_submit_button);
+        captchaContainer = activity.findViewById(R.id.captcha_container);
+        captchaImage = (ImageView) activity.findViewById(R.id.captcha_image);
+        captchaText = (EditText) activity.findViewById(R.id.captcha_text);
+        captchaProgress = activity.findViewById(R.id.captcha_image_progress);
+        Button submitButton = (Button) activity.findViewById(R.id.captcha_submit_button);
 
         if (submitButtonText != null) {
             submitButton.setText(submitButtonText);
@@ -107,7 +107,7 @@ public class CaptchaHandler {
                 .into(captchaImage, new Callback() {
                     @Override
                     public void onSuccess() {
-                        ((AppCompatActivity)activity).getSupportActionBar().setTitle(de.droidwiki.R.string.title_captcha);
+                        ((AppCompatActivity)activity).getSupportActionBar().setTitle(R.string.title_captcha);
                         if (progressDialog.isShowing()) {
                             progressDialog.hide();
                         }

@@ -5,6 +5,8 @@ import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.view.MenuItem;
 
+import de.droidwiki.R;
+
 /** Boilerplate for a {@link android.support.v4.app.FragmentActivity} containing a single stack of
  *  Fragments. */
 public abstract class BaseSingleFragmentActivity<T> extends ThemedActionBarActivity {
@@ -35,13 +37,13 @@ public abstract class BaseSingleFragmentActivity<T> extends ThemedActionBarActiv
      * whose ID is {@link #getContainerId()}. */
     @LayoutRes
     protected int getLayout() {
-        return de.droidwiki.R.layout.activity_single_fragment;
+        return R.layout.activity_single_fragment;
     }
 
     /** @return The resource identifier for the Fragment container. */
     @IdRes
     protected int getContainerId() {
-        return de.droidwiki.R.id.fragment_container;
+        return R.id.fragment_container;
     }
 
     protected boolean isFragmentCreated() {

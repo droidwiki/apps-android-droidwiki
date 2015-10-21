@@ -154,7 +154,7 @@
   <string name="about_description">Über die DroidWiki-App</string>
   <string name="privacy_policy_description">Datenschutzrichtlinie</string>
   <string name="terms_of_use_description">Nutzungsbedingungen</string>
-  <string name="privacy_policy_url">https://meta.wikimedia.org/wiki/Privacy_policy/de</string>
+  <string name="privacy_policy_url">https://www.droidwiki.de/DroidWiki:Impressum#Datenschutz</string>
   <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use/de</string>
   <string name="about_libraries_heading">Verwendete Bibliotheken</string>
   <string name="about_contributors_heading">Mitwirkende</string>

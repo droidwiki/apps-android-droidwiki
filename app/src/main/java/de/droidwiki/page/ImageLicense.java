@@ -1,5 +1,6 @@
 package de.droidwiki.page;
 
+import de.droidwiki.R;
 import de.droidwiki.util.StringUtil;
 
 public class ImageLicense {
@@ -57,12 +58,12 @@ public class ImageLicense {
      */
     public int getLicenseIcon() {
         if (isLicensePD()) {
-            return de.droidwiki.R.drawable.ic_license_pd;
+            return R.drawable.ic_license_pd;
         }
         if (isLicenseCC()) {
-            return de.droidwiki.R.drawable.ic_license_cc;
+            return R.drawable.ic_license_cc;
         }
-        return de.droidwiki.R.drawable.ic_license_cite;
+        return R.drawable.ic_license_cite;
     }
 
     public boolean hasLicenseInfo() {

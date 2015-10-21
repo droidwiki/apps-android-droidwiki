@@ -42,6 +42,7 @@ public class NearbyFetchTask extends ApiTask<NearbyResult> {
                 .param("piprop", "thumbnail") // so response doesn't contain unused "pageimage" prop
                 .param("pithumbsize", Integer.toString(WikipediaApp.PREFERRED_THUMB_SIZE))
                 .param("pilimit", LIMIT)
+                .param("wbptterms", "description")
                 .param("generator", "geosearch")
                 .param("ggscoord", String.format(Locale.ROOT, "%f|%f", latitude, longitude))
                 .param("ggsradius", Double.toString(radius))

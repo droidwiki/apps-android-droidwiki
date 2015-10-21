@@ -10,6 +10,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import de.droidwiki.page.PageTitle;
+import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.ViewAnimations;
 import de.droidwiki.editing.EditSectionActivity;
@@ -23,8 +24,8 @@ public class EditSummaryFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        editSummaryContainer = inflater.inflate(de.droidwiki.R.layout.fragment_preview_summary, container, false);
-        summaryText = (AutoCompleteTextView) editSummaryContainer.findViewById(de.droidwiki.R.id.edit_summary_edit);
+        editSummaryContainer = inflater.inflate(R.layout.fragment_preview_summary, container, false);
+        summaryText = (AutoCompleteTextView) editSummaryContainer.findViewById(R.id.edit_summary_edit);
 
         // Explicitly enable standard dictionary autocompletion in the edit summary box
         // We should be able to do this in the XML, but doing it there doesn't work. Thanks Android!

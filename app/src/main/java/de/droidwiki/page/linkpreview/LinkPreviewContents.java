@@ -5,7 +5,6 @@ import android.text.TextUtils;
 
 import de.droidwiki.page.PageTitle;
 import de.droidwiki.Site;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import de.droidwiki.server.restbase.RbPageLead;

@@ -51,9 +51,9 @@ public class PasswordTextInput extends FrameLayout {
     }
 
     private void init() {
-        inflate(getContext(), de.droidwiki.R.layout.view_password_text_input, this);
-        editText = (EditText) findViewById(de.droidwiki.R.id.password_edit_text_input);
-        passwordShowButton = findViewById(de.droidwiki.R.id.password_edit_text_show);
+        inflate(getContext(), R.layout.view_password_text_input, this);
+        editText = (EditText) findViewById(R.id.password_edit_text_input);
+        passwordShowButton = findViewById(R.id.password_edit_text_show);
         passwordShowButton.setOnClickListener(new OnShowPasswordClickListener());
         updateButtonOpacity();
     }

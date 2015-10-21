@@ -65,13 +65,13 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
         View rootView = inflater.inflate(R.layout.fragment_history, container, false);
         rootView.setPadding(0, Utils.getContentTopOffsetPx(getActivity()), 0, 0);
 
-        historyEntryList = (ListView) rootView.findViewById(de.droidwiki.R.id.history_entry_list);
-        historyEmptyContainer = rootView.findViewById(de.droidwiki.R.id.history_empty_container);
-        historyEmptyTitle = (TextView) rootView.findViewById(de.droidwiki.R.id.history_empty_title);
-        historyEmptyMessage = (TextView) rootView.findViewById(de.droidwiki.R.id.history_empty_message);
-        entryFilter = (EditText) rootView.findViewById(de.droidwiki.R.id.history_search_list);
+        historyEntryList = (ListView) rootView.findViewById(R.id.history_entry_list);
+        historyEmptyContainer = rootView.findViewById(R.id.history_empty_container);
+        historyEmptyTitle = (TextView) rootView.findViewById(R.id.history_empty_title);
+        historyEmptyMessage = (TextView) rootView.findViewById(R.id.history_empty_message);
+        entryFilter = (EditText) rootView.findViewById(R.id.history_search_list);
 
-        app.adjustDrawableToTheme(((ImageView) rootView.findViewById(de.droidwiki.R.id.history_empty_image)).getDrawable());
+        app.adjustDrawableToTheme(((ImageView) rootView.findViewById(R.id.history_empty_image)).getDrawable());
         return rootView;
     }
 
@@ -99,10 +99,10 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
                     public void afterTextChanged(Editable editable) {
                         getActivity().getSupportLoaderManager().restartLoader(LOADER_ID, null, HistoryFragment.this);
                         if (editable.length() == 0) {
-                            historyEmptyTitle.setText(de.droidwiki.R.string.history_empty_title);
+                            historyEmptyTitle.setText(R.string.history_empty_title);
                             historyEmptyMessage.setVisibility(View.VISIBLE);
                         } else {
-                            historyEmptyTitle.setText(getString(de.droidwiki.R.string.history_search_empty_message, editable.toString()));
+                            historyEmptyTitle.setText(getString(R.string.history_search_empty_message, editable.toString()));
                             historyEmptyMessage.setVisibility(View.GONE);
                         }
                     }
@@ -130,7 +130,7 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
                     private final String actionModeTag = "actionModeHistory";
                     @Override
                     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-                        mode.getMenuInflater().inflate(de.droidwiki.R.menu.menu_history_context, menu);
+                        mode.getMenuInflater().inflate(R.menu.menu_history_context, menu);
                         return true;
                     }
 
@@ -142,7 +142,7 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
 
                     @Override
                     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                        if (item.getItemId() == de.droidwiki.R.id.menu_delete_selected_history) {
+                        if (item.getItemId() == R.id.menu_delete_selected_history) {
                             SparseBooleanArray checkedItems = historyEntryList.getCheckedItemPositions();
                             for (int i = 0; i < checkedItems.size(); i++) {
                                 if (checkedItems.valueAt(i)) {
@@ -260,8 +260,8 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
 
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
-            TextView title = (TextView) view.findViewById(de.droidwiki.R.id.page_list_item_title);
-            ImageView thumbnail = (ImageView) view.findViewById(de.droidwiki.R.id.page_list_item_image);
+            TextView title = (TextView) view.findViewById(R.id.page_list_item_title);
+            ImageView thumbnail = (ImageView) view.findViewById(R.id.page_list_item_image);
             HistoryEntry entry = HistoryEntry.PERSISTENCE_HELPER.fromCursor(cursor);
             title.setText(entry.getTitle().getDisplayText());
             view.setTag(entry);
@@ -269,12 +269,12 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
             if (app.isImageDownloadEnabled()) {
                 Picasso.with(getActivity())
                        .load(cursor.getString(HistoryEntryContentProvider.COL_INDEX_IMAGE))
-                       .placeholder(de.droidwiki.R.drawable.ic_pageimage_placeholder)
-                       .error(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                       .placeholder(R.drawable.ic_pageimage_placeholder)
+                       .error(R.drawable.ic_pageimage_placeholder)
                        .into(thumbnail);
             } else {
                 Picasso.with(getActivity())
-                       .load(de.droidwiki.R.drawable.ic_pageimage_placeholder)
+                       .load(R.drawable.ic_pageimage_placeholder)
                        .into(thumbnail);
             }
 
@@ -288,7 +288,7 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
                 prevTime = getDateString(prevEntry.getTimestamp());
             }
             curTime = getDateString(entry.getTimestamp());
-            TextView sectionHeader = (TextView) view.findViewById(de.droidwiki.R.id.page_list_header_text);
+            TextView sectionHeader = (TextView) view.findViewById(R.id.page_list_header_text);
             if (!curTime.equals(prevTime)) {
                 sectionHeader.setText(curTime);
                 sectionHeader.setVisibility(View.VISIBLE);
@@ -303,7 +303,7 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        inflater.inflate(de.droidwiki.R.menu.menu_history, menu);
+        inflater.inflate(R.menu.menu_history, menu);
     }
 
     @Override
@@ -312,16 +312,16 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
         if (!isAdded() || ((PageActivity)getActivity()).isSearching()) {
             return;
         }
-        menu.findItem(de.droidwiki.R.id.menu_clear_all_history).setEnabled(historyEntryList.getCount() > 0);
+        menu.findItem(R.id.menu_clear_all_history).setEnabled(historyEntryList.getCount() > 0);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.menu_clear_all_history:
+            case R.id.menu_clear_all_history:
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setMessage(de.droidwiki.R.string.dialog_title_clear_history);
-                builder.setPositiveButton(de.droidwiki.R.string.yes, new DialogInterface.OnClickListener() {
+                builder.setMessage(R.string.dialog_title_clear_history);
+                builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Clear history!
@@ -330,7 +330,7 @@ public class HistoryFragment extends Fragment implements LoaderManager.LoaderCal
                     }
                 });
 
-                builder.setNegativeButton(de.droidwiki.R.string.no, new DialogInterface.OnClickListener() {
+                builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Uh, do nothing?

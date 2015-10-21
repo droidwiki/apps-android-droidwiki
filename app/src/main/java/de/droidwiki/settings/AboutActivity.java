@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,8 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-
 import de.droidwiki.BuildConfig;
+import de.droidwiki.R;
 import de.droidwiki.activity.ActivityUtil;
 import de.droidwiki.activity.ThemedActionBarActivity;
 import de.droidwiki.Utils;
@@ -28,38 +25,31 @@ public class AboutActivity extends ThemedActionBarActivity {
     private static final String KEY_SCROLL_Y = "KEY_SCROLL_Y";
 
     private ScrollView mScrollView;
-    private Tracker mTracker;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(de.droidwiki.R.layout.activity_about);
+        setContentView(R.layout.activity_about);
 
-        mScrollView = (ScrollView) findViewById(de.droidwiki.R.id.about_scrollview);
-        ((TextView) findViewById(de.droidwiki.R.id.about_translators)).setText(Html.fromHtml(getString(de.droidwiki.R.string.about_translators_translatewiki)));
-        // ((TextView) findViewById(de.droidwiki.R.id.about_wmf)).setText(Html.fromHtml(getString(de.droidwiki.R.string.about_wmf)));
-        ((TextView) findViewById(de.droidwiki.R.id.about_version_text)).setText(BuildConfig.VERSION_NAME);
-        ((TextView) findViewById(de.droidwiki.R.id.send_feedback_text)).setText(Html.fromHtml(
+        mScrollView = (ScrollView) findViewById(R.id.about_scrollview);
+        ((TextView) findViewById(R.id.about_translators)).setText(Html.fromHtml(getString(R.string.about_translators_translatewiki)));
+        ((TextView) findViewById(R.id.about_version_text)).setText(BuildConfig.VERSION_NAME);
+        ((TextView) findViewById(R.id.send_feedback_text)).setText(Html.fromHtml(
                 "<a href=\"mailto:info@droidwiki.de?subject=Android App "
                 + BuildConfig.VERSION_NAME
                 + " Feedback\">"
-                + getString(de.droidwiki.R.string.send_feedback)
+                + getString(R.string.send_feedback)
                 + "</a>"));
 
-        findViewById(de.droidwiki.R.id.about_logo_image).setOnClickListener(new AboutLogoClickListener(this));
+        findViewById(R.id.about_logo_image).setOnClickListener(new AboutLogoClickListener(this));
 
         //if there's no Email app, hide the Feedback link.
         if (!Utils.mailAppExists(this)) {
-            findViewById(de.droidwiki.R.id.send_feedback_text).setVisibility(View.GONE);
+            findViewById(R.id.send_feedback_text).setVisibility(View.GONE);
         }
 
-        WikipediaApp app = (WikipediaApp) WikipediaApp.getInstance();
-        app.adjustDrawableToTheme(((ImageView) findViewById(de.droidwiki.R.id.about_logo_image)).getDrawable());
-        Tracker mTracker = app.getDefaultTracker();
-        Log.i("PageFragment", "Setting screen name: About");
-        mTracker.setScreenName("Activity~About");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        WikipediaApp.getInstance().adjustDrawableToTheme(((ImageView) findViewById(R.id.about_logo_image)).getDrawable());
 
-        makeEverythingClickable((ViewGroup) findViewById(de.droidwiki.R.id.about_container));
+        makeEverythingClickable((ViewGroup) findViewById(R.id.about_container));
     }
 
     @Override
@@ -86,6 +76,11 @@ public class AboutActivity extends ThemedActionBarActivity {
                 mScrollView.scrollTo(x, y);
             }
         });
+    }
+
+    @Override
+    protected void setTheme() {
+        setActionBarTheme();
     }
 
     private void makeEverythingClickable(ViewGroup vg) {
@@ -127,12 +122,12 @@ public class AboutActivity extends ThemedActionBarActivity {
         }
 
         private void showSettingEnabledMessage() {
-            FeedbackUtil.showMessage(mActivity, de.droidwiki.R.string.show_developer_settings_enabled);
+            FeedbackUtil.showMessage(mActivity, R.string.show_developer_settings_enabled);
         }
 
         private void showSettingAlreadyEnabledMessage() {
             FeedbackUtil.showMessage(mActivity,
-                    de.droidwiki.R.string.show_developer_settings_already_enabled);
+                    R.string.show_developer_settings_already_enabled);
         }
     }
 }

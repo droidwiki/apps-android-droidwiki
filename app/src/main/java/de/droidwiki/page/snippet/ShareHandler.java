@@ -130,7 +130,7 @@ public class ShareHandler {
 
         final String selectedText = sanitizeText(input.toString());
         final PageTitle title = curPageFragment.getTitle();
-        final String introText = activity.getString(de.droidwiki.R.string.snippet_share_intro,
+        final String introText = activity.getString(R.string.snippet_share_intro,
                 title.getDisplayText(),
                 title.getCanonicalUri() + "?wprov=sfia1"); // See https://wikitech.wikimedia.org/wiki/Provenance;
 
@@ -179,6 +179,7 @@ public class ShareHandler {
     public void onTextSelected(ActionMode mode) {
         webViewActionMode = mode;
         Menu menu = mode.getMenu();
+
         MenuItem shareItem = menu.findItem(R.id.menu_text_select_share);
 
         if (WikipediaApp.getInstance().isFeatureSelectTextAndShareTutorialEnabled()
@@ -218,7 +219,7 @@ public class ShareHandler {
     }
 
     private void showShareToolTip(View shareItemView) {
-        ToolTipUtil.showToolTip(activity, shareItemView, de.droidwiki.R.layout.inflate_tool_tip_share,
+        ToolTipUtil.showToolTip(activity, shareItemView, R.layout.inflate_tool_tip_share,
                 getColor(SHARE_TOOL_TIP_COLOR), ToolTip.Position.CENTER);
     }
 
@@ -277,10 +278,10 @@ class PreviewDialog extends BottomDialog {
     public PreviewDialog(final PageActivity activity, final Bitmap resultBitmap,
                          final String title, final String introText, final String selectedText,
                          final ShareAFactFunnel funnel) {
-        super(activity, de.droidwiki.R.layout.dialog_share_preview);
-        ImageView previewImage = (ImageView) getDialogLayout().findViewById(de.droidwiki.R.id.preview_img);
+        super(activity, R.layout.dialog_share_preview);
+        ImageView previewImage = (ImageView) getDialogLayout().findViewById(R.id.preview_img);
         previewImage.setImageBitmap(resultBitmap);
-        getDialogLayout().findViewById(de.droidwiki.R.id.share_as_image_button)
+        getDialogLayout().findViewById(R.id.share_as_image_button)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -289,7 +290,7 @@ class PreviewDialog extends BottomDialog {
                         completed = true;
                     }
                 });
-        getDialogLayout().findViewById(de.droidwiki.R.id.share_as_text_button)
+        getDialogLayout().findViewById(R.id.share_as_text_button)
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

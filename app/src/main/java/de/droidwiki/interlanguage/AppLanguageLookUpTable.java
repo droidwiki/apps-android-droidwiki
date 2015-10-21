@@ -63,7 +63,6 @@ public class AppLanguageLookUpTable {
         List<String> names = canonicalNamesRef.get();
         if (names == null) {
             names = getStringList(R.array.preference_language_canonical_names);
-
             canonicalNamesRef = new SoftReference<>(names);
         }
         return names;
@@ -73,7 +72,6 @@ public class AppLanguageLookUpTable {
         List<String> names = localizedNamesRef.get();
         if (names == null) {
             names = getStringList(R.array.preference_language_local_names);
-
             localizedNamesRef = new SoftReference<>(names);
         }
         return names;

@@ -24,7 +24,7 @@ import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
     private final ListView disambigList;
 
     /*package*/ PageInfoDialog(final PageActivity activity, PageInfo pageInfo, int height) {
-        super(activity, de.droidwiki.R.layout.dialog_page_info);
+        super(activity, R.layout.dialog_page_info);
 
         View parentView = getDialogLayout();
         flipper = (ViewFlipper) parentView.findViewById(R.id.page_info_flipper);
@@ -88,8 +88,8 @@ import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
 
     /*package*/ void showDisambig() {
         if (flipper.getCurrentView() != flipper.getChildAt(0)) {
-            flipper.setInAnimation(getContext(), de.droidwiki.R.anim.slide_in_left);
-            flipper.setOutAnimation(getContext(), de.droidwiki.R.anim.slide_out_right);
+            flipper.setInAnimation(getContext(), R.anim.slide_in_left);
+            flipper.setOutAnimation(getContext(), R.anim.slide_out_right);
             flipper.showNext();
         }
 
@@ -101,8 +101,8 @@ import static de.droidwiki.util.L10nUtils.getStringForArticleLanguage;
 
     /*package*/ void showIssues() {
         if (flipper.getCurrentView() != flipper.getChildAt(1)) {
-            flipper.setInAnimation(getContext(), de.droidwiki.R.anim.slide_in_right);
-            flipper.setOutAnimation(getContext(), de.droidwiki.R.anim.slide_out_left);
+            flipper.setInAnimation(getContext(), R.anim.slide_in_right);
+            flipper.setOutAnimation(getContext(), R.anim.slide_out_left);
             flipper.showPrevious();
         }
 

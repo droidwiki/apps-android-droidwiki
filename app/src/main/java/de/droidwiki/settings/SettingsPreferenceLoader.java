@@ -7,12 +7,11 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
-import android.support.v7.internal.view.ContextThemeWrapper;
 
 import de.droidwiki.BuildConfig;
+import de.droidwiki.R;
 import de.droidwiki.WikipediaApp;
 import de.droidwiki.util.StringUtil;
-import de.droidwiki.R;
 
 /** UI code for app settings used by PreferenceFragment. */
 public class SettingsPreferenceLoader extends BasePreferenceLoader {
@@ -25,7 +24,7 @@ public class SettingsPreferenceLoader extends BasePreferenceLoader {
 
     @Override
     public void loadPreferences() {
-        loadPreferences(de.droidwiki.R.xml.preferences);
+        loadPreferences(R.xml.preferences);
 
         if (!BuildConfig.APPLICATION_ID.equals("de.droidwiki")) {
             overridePackageName();

@@ -284,8 +284,8 @@ public final class Utils {
     }
 
     public static boolean isValidPageLink(Uri uri) {
-        return ("wikipedia.org".equals(uri.getAuthority()) && !TextUtils.isEmpty(uri.getPath())
-                && uri.getPath().startsWith("/wiki"));
+        return ("droidwiki.de".equals(uri.getAuthority()) && !TextUtils.isEmpty(uri.getPath())
+                && uri.getPath().startsWith("/"));
     }
 
     public static void showPrivacyPolicy(Context context) {

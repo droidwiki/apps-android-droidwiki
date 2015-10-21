@@ -33,7 +33,7 @@ public class SettingsFragment extends PreferenceLoaderFragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(de.droidwiki.R.menu.menu_settings, menu);
+        inflater.inflate(R.menu.menu_settings, menu);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class SettingsFragment extends PreferenceLoaderFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case de.droidwiki.R.id.developer_settings:
+            case R.id.developer_settings:
                 launchDeveloperSettingsActivity();
                 return true;
             default:
@@ -58,7 +58,7 @@ public class SettingsFragment extends PreferenceLoaderFragment {
     }
 
     private void prepareDeveloperSettingsMenuItem(Menu menu) {
-        menu.findItem(de.droidwiki.R.id.developer_settings).setVisible(Prefs.isShowDeveloperSettingsEnabled());
+        menu.findItem(R.id.developer_settings).setVisible(Prefs.isShowDeveloperSettingsEnabled());
     }
 
     private void invalidateOptionsMenu() {

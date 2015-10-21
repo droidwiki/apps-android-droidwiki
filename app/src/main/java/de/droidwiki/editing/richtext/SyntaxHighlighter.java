@@ -11,7 +11,6 @@ import android.text.TextWatcher;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.widget.EditText;
-
 import de.droidwiki.R;
 import de.droidwiki.Utils;
 import de.droidwiki.concurrency.SaneAsyncTask;
@@ -51,7 +50,7 @@ public class SyntaxHighlighter {
         syntaxRules.add(new SyntaxRule("{{", "}}", new SyntaxRule.SyntaxRuleStyle() {
             @Override
             public SpanExtents createSpan(int spanStart, SyntaxRule syntaxItem) {
-                return new ColorSpanEx(parentActivity.getResources().getColor(Utils.getThemedAttributeId(parentActivity, de.droidwiki.R.attr.syntax_highlight_template_color)),
+                return new ColorSpanEx(parentActivity.getResources().getColor(Utils.getThemedAttributeId(parentActivity, R.attr.syntax_highlight_template_color)),
                                        Color.TRANSPARENT, spanStart, syntaxItem);
             }
         }));

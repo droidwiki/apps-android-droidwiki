@@ -18,7 +18,6 @@ import android.widget.ScrollView;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.mediawiki.api.json.ApiException;
-
 import de.droidwiki.*;
 import de.droidwiki.analytics.EditFunnel;
 import de.droidwiki.bridge.StyleBundle;
@@ -34,12 +33,6 @@ import de.droidwiki.page.PageActivity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import de.droidwiki.NightModeHandler;
-import de.droidwiki.Site;
-import de.droidwiki.Utils;
-import de.droidwiki.ViewAnimations;
-import de.droidwiki.WikipediaApp;
 
 public class EditPreviewFragment extends Fragment {
     private ObservableWebView webview;
@@ -60,10 +53,10 @@ public class EditPreviewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View parent = inflater.inflate(de.droidwiki.R.layout.fragment_preview_edit, container, false);
-        webview = (ObservableWebView) parent.findViewById(de.droidwiki.R.id.edit_preview_webview);
-        previewContainer = (ScrollView) parent.findViewById(de.droidwiki.R.id.edit_preview_container);
-        editSummaryTagsContainer = (ViewGroup) parent.findViewById(de.droidwiki.R.id.edit_summary_tags_container);
+        View parent = inflater.inflate(R.layout.fragment_preview_edit, container, false);
+        webview = (ObservableWebView) parent.findViewById(R.id.edit_preview_webview);
+        previewContainer = (ScrollView) parent.findViewById(R.id.edit_preview_container);
+        editSummaryTagsContainer = (ViewGroup) parent.findViewById(R.id.edit_summary_tags_container);
 
         bridge = new CommunicationBridge(webview, "file:///android_asset/preview.html");
 
@@ -100,9 +93,9 @@ public class EditPreviewFragment extends Fragment {
 
         // build up summary tags...
         int[] summaryTagStrings = {
-                de.droidwiki.R.string.edit_summary_tag_typo,
-                de.droidwiki.R.string.edit_summary_tag_grammar,
-                de.droidwiki.R.string.edit_summary_tag_links
+                R.string.edit_summary_tag_typo,
+                R.string.edit_summary_tag_grammar,
+                R.string.edit_summary_tag_links
         };
 
         summaryTags = new ArrayList<>();
@@ -122,12 +115,12 @@ public class EditPreviewFragment extends Fragment {
         }
 
         otherTag = new EditSummaryTag(getActivity());
-        otherTag.setText(tempResources.getString(de.droidwiki.R.string.edit_summary_tag_other));
+        otherTag.setText(tempResources.getString(R.string.edit_summary_tag_other));
         editSummaryTagsContainer.addView(otherTag);
         otherTag.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                funnel.logEditSummaryTap(de.droidwiki.R.string.edit_summary_tag_other);
+                funnel.logEditSummaryTap(R.string.edit_summary_tag_other);
                 if (otherTag.getSelected()) {
                     otherTag.setSelected(false);
                 } else {
@@ -165,12 +158,12 @@ public class EditPreviewFragment extends Fragment {
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setIndeterminate(true);
-        progressDialog.setMessage(getString(de.droidwiki.R.string.edit_preview_fetching_dialog_message));
+        progressDialog.setMessage(getString(R.string.edit_preview_fetching_dialog_message));
         progressDialog.setCancelable(false);
     }
 
     public void setCustomSummary(String summary) {
-        otherTag.setText(summary.length() > 0 ? summary : getString(de.droidwiki.R.string.edit_summary_tag_other));
+        otherTag.setText(summary.length() > 0 ? summary : getString(R.string.edit_summary_tag_other));
         otherTag.setSelected(summary.length() > 0);
     }
 
@@ -194,7 +187,7 @@ public class EditPreviewFragment extends Fragment {
                 @Override
                 public void onUrlClick(final String href) {
                     // Check if this is an internal link, and if it is then open it internally
-                    if (href.startsWith("/wiki/")) {
+                    if (href.startsWith("/")) {
                         PageTitle title = getSite().titleForInternalLink(href);
                         onInternalLinkClicked(title);
                     } else {
@@ -231,8 +224,8 @@ public class EditPreviewFragment extends Fragment {
                 private void showLeavingEditDialogue(final Runnable runnable) {
                     //Ask the user if they really meant to leave the edit workflow
                     final AlertDialog leavingEditDialog = new AlertDialog.Builder(getActivity())
-                            .setMessage(de.droidwiki.R.string.dialog_message_leaving_edit)
-                            .setPositiveButton(de.droidwiki.R.string.dialog_message_leaving_edit_leave, new DialogInterface.OnClickListener() {
+                            .setMessage(R.string.dialog_message_leaving_edit)
+                            .setPositiveButton(R.string.dialog_message_leaving_edit_leave, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     //They meant to leave; close dialogue and run specified action
@@ -240,7 +233,7 @@ public class EditPreviewFragment extends Fragment {
                                     runnable.run();
                                 }
                             })
-                            .setNegativeButton(de.droidwiki.R.string.dialog_message_leaving_edit_stay, null)
+                            .setNegativeButton(R.string.dialog_message_leaving_edit_stay, null)
                             .create();
                     leavingEditDialog.show();
                 }
@@ -275,7 +268,7 @@ public class EditPreviewFragment extends Fragment {
                 parentActivity.supportInvalidateOptionsMenu();
             }
         });
-        ViewAnimations.fadeOut(getActivity().findViewById(de.droidwiki.R.id.edit_section_container));
+        ViewAnimations.fadeOut(getActivity().findViewById(R.id.edit_section_container));
 
         JSONObject payload = new JSONObject();
         try {
@@ -328,15 +321,15 @@ public class EditPreviewFragment extends Fragment {
                 }
                 Log.d("Wikipedia", "Caught " + caught.toString());
                 final AlertDialog retryDialog = new AlertDialog.Builder(getActivity())
-                        .setMessage(de.droidwiki.R.string.error_network_error)
-                        .setPositiveButton(de.droidwiki.R.string.dialog_message_edit_failed_retry, new DialogInterface.OnClickListener() {
+                        .setMessage(R.string.error_network_error)
+                        .setPositiveButton(R.string.dialog_message_edit_failed_retry, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 showPreview(title, wikiText);
                                 dialog.dismiss();
                             }
                         })
-                        .setNegativeButton(de.droidwiki.R.string.dialog_message_edit_failed_cancel, new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.dialog_message_edit_failed_cancel, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
@@ -392,7 +385,7 @@ public class EditPreviewFragment extends Fragment {
      * When fade-out completes, the state of the actionbar button(s) is updated.
      */
     public void hide() {
-        View editSectionContainer = getActivity().findViewById(de.droidwiki.R.id.edit_section_container);
+        View editSectionContainer = getActivity().findViewById(R.id.edit_section_container);
         ViewAnimations.crossFade(previewContainer, editSectionContainer, new Runnable() {
             @Override
             public void run() {

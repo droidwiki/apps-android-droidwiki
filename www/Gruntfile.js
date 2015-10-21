@@ -1,13 +1,18 @@
 module.exports = function ( grunt ) {
     var allScriptFiles = [
-        "js/main.js",
-        "js/tranformer.js",
-        "js/transforms.js",
         "js/bridge.js",
+        "js/main.js",
+        "js/utilities.js",
+        "js/transformer.js",
+        "js/transforms/*.js",
         "js/actions.js",
+        "js/disambig.js",
         "js/editaction.js",
         "js/issues.js",
-        "js/disambig.js",
+        "js/loader.js",
+        "js/night.js",
+        "js/preview.js",
+        "js/rtlsupport.js",
         "js/sections.js",
         "tests/*.js"
     ];
@@ -28,14 +33,13 @@ module.exports = function ( grunt ) {
             dist: {
                 files: {
                     "bundle.js": [
-                        "js/loader.js",
-                        "lib/js/css-color-parser.js",
-                        "js/main.js",
-                        "js/night.js",
-                        "js/transformer.js",
-                        "js/transforms.js",
                         "js/bridge.js",
+                        "js/main.js",
+                        "js/utilities.js",
+                        "js/transformer.js",
+                        "js/transforms/*.js",
                         "js/actions.js",
+                        "js/disambig.js",
                         "js/editaction.js",
                         "js/issues.js",
                         "js/loader.js",
@@ -72,28 +76,23 @@ module.exports = function ( grunt ) {
             main: {
                 files: [
                     // App files
-                    {src: ["bundle.js", "index.html"], dest: "../app/src/main/assets/"},
+                    { src: [ "bundle.js", "index.html" ], dest: distFolder },
 
                     // Test files
-                    {src: ["bundle-test.js", "tests/index.html"], dest: "../app/src/main/assets/"},
+                    { src: [ "bundle-test.js", "tests/index.html" ], dest: distFolder },
 
                     // Preview files
-                    { src: ["preview.js", "preview.html"], dest: "../app/src/main/assets/" },
+                    { src: [ "preview.js", "preview.html" ], dest: distFolder },
                 ]
             }
         },
         watch: {
             scripts: {
                 files: allScriptFiles.concat( allHTMLFiles ),
-                tasks: ["default"]
+                tasks: [ "default" ]
             }
         }
     } );
-
-    grunt.loadNpmTasks( 'grunt-browserify' );
-    grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-    grunt.loadNpmTasks( 'grunt-contrib-copy' );
-    grunt.loadNpmTasks( 'grunt-contrib-watch' );
 
     grunt.registerTask( 'default', [ 'browserify', 'copy' ] );
 };

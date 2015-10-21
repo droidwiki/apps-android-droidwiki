@@ -295,14 +295,14 @@ public class SavedPagesFragment extends Fragment implements LoaderManager.Loader
 
             if (app.isImageDownloadEnabled()) {
                 Picasso.with(getActivity())
-                        .load(cursor.getString(SavedPageContentProvider.COL_INDEX_IMAGE))
-                        .placeholder(R.drawable.ic_pageimage_placeholder)
-                        .error(R.drawable.ic_pageimage_placeholder)
-                        .into(thumbnail);
+                       .load(cursor.getString(SavedPageContentProvider.COL_INDEX_IMAGE))
+                       .placeholder(R.drawable.ic_pageimage_placeholder)
+                       .error(R.drawable.ic_pageimage_placeholder)
+                       .into(thumbnail);
             } else {
                 Picasso.with(getActivity())
-                        .load(R.drawable.ic_pageimage_placeholder)
-                        .into(thumbnail);
+                       .load(R.drawable.ic_pageimage_placeholder)
+                       .into(thumbnail);
             }
         }
     }
