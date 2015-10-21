@@ -98,9 +98,14 @@
 -keep class com.nineoldandroids.util.Property {*;}
 # --- /Mapbox ---
 
-# --- Wikipedia ---
+# --- GAnalytics ---
+-keep public class com.google.android.gms.**
+-dontwarn com.google.android.gms.**
+# --- /GAnalytics ---
+
+# --- DroidWiki ---
 -keep class de.droidwiki.** { <init>(...); *; }
 -keep enum de.droidwiki.** { <init>(...); *; }
 -keep class org.mediawiki.api.json.** {*;}
 -keep enum de.droidwiki.api.json.** { <init>(...); *; }
-# --- /Wikipedia ---
+# --- /DroidWiki ---

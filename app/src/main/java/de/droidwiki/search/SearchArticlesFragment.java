@@ -286,20 +286,8 @@ public class SearchArticlesFragment extends Fragment implements BackPressedHandl
     private void setSearchViewEnabled(boolean enabled) {
         LinearLayout enabledSearchBar = (LinearLayout) getActivity().findViewById(R.id.search_bar_enabled);
         TextView searchButton = (TextView) getActivity().findViewById(R.id.main_search_bar_text);
-        langButton = (TextView) getActivity().findViewById(R.id.search_lang_button);
-        FrameLayout langButtonContainer = (FrameLayout) getActivity().findViewById(R.id.search_lang_button_container);
 
         if (enabled) {
-            // set up the language picker
-            langButton.setText(app.getAppOrSystemLanguageCode().toUpperCase());
-            formatLangButtonText();
-            langButtonContainer.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showLangPreferenceDialog();
-                }
-            });
-
             // set up the SearchView
             if (searchView == null) {
                 searchView = (SearchView)getActivity().findViewById(R.id.main_search_view);

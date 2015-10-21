@@ -18,6 +18,9 @@ import de.droidwiki.createaccount.CreateAccountActivity;
 import de.droidwiki.util.FeedbackUtil;
 import de.droidwiki.views.PasswordTextInput;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 public class LoginActivity extends ThemedActionBarActivity {
     public static final int REQUEST_LOGIN = 100;
 
@@ -49,6 +52,11 @@ public class LoginActivity extends ThemedActionBarActivity {
         usernameText = (EditText) findViewById(R.id.login_username_text);
         passwordText = ((PasswordTextInput) findViewById(R.id.login_password_input)).getEditText();
         View createAccountLink = findViewById(R.id.login_create_account_link);
+
+        Tracker mTracker = app.getDefaultTracker();
+        Log.i("PageFragment", "Setting screen name: Login");
+        mTracker.setScreenName("Activity~Login");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
 
         // Don't allow user to attempt login until they've put in a username and password
         new NonEmptyValidator(new NonEmptyValidator.ValidationChangedCallback() {

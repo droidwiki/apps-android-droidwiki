@@ -68,6 +68,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import com.appenguin.onboarding.ToolTip;
 
 import java.util.ArrayList;
@@ -91,6 +94,8 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
     private PageLoadStrategy pageLoadStrategy = null;
     private PageViewModel model;
+
+    private Tracker mTracker;
 
     /**
      * List of tabs, each of which contains a backstack of page titles.
@@ -208,6 +213,9 @@ public class PageFragment extends Fragment implements BackPressedHandler {
         } else {
             pageLoadStrategy = new JsonPageLoadStrategy();
         }
+
+        // Obtain the shared Tracker instance.
+        mTracker = app.getDefaultTracker();
 
         initTabs();
     }
@@ -568,6 +576,9 @@ public class PageFragment extends Fragment implements BackPressedHandler {
 
         errorView.setVisibility(View.GONE);
 
+        Log.i("PageFragment", "Setting screen name: " + title.getDisplayText());
+        mTracker.setScreenName("Page~" + title.getDisplayText());
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         model.setTitle(title);
         model.setTitleOriginal(title);
         model.setCurEntry(entry);

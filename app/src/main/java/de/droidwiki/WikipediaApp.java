@@ -59,6 +59,9 @@ import java.util.Random;
 import java.util.TimeZone;
 import java.util.UUID;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
+
 import static de.droidwiki.util.StringUtil.emptyIfNull;
 
 public class WikipediaApp extends Application {
@@ -106,6 +109,8 @@ public class WikipediaApp extends Application {
     private AppLanguageState appLanguageState;
 
     private CrashReporter crashReporter;
+
+    private Tracker mTracker;
 
     /**
      * Returns a constant that tells whether this app is a production release,
@@ -638,5 +643,18 @@ public class WikipediaApp extends Application {
             return RELEASE_DEV;
         }
         return RELEASE_PROD;
+    }
+
+    /**
+     * Gets the default {@link Tracker} for this {@link Application}.
+     * @return tracker
+     */
+    synchronized public Tracker getDefaultTracker() {
+        if (mTracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+            mTracker = analytics.newTracker(R.xml.global_tracker);
+        }
+        return mTracker;
     }
 }

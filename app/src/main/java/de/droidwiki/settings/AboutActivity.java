@@ -5,12 +5,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import de.droidwiki.BuildConfig;
 import de.droidwiki.R;
@@ -47,7 +51,12 @@ public class AboutActivity extends ThemedActionBarActivity {
             findViewById(R.id.send_feedback_text).setVisibility(View.GONE);
         }
 
-        WikipediaApp.getInstance().adjustDrawableToTheme(((ImageView) findViewById(R.id.about_logo_image)).getDrawable());
+        WikipediaApp app = (WikipediaApp) WikipediaApp.getInstance();
+        app.adjustDrawableToTheme(((ImageView) findViewById(R.id.about_logo_image)).getDrawable());
+        Tracker mTracker = app.getDefaultTracker();
+        Log.i("PageFragment", "Setting screen name: About");
+        mTracker.setScreenName("Activity~About");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
 
         makeEverythingClickable((ViewGroup) findViewById(R.id.about_container));
     }
