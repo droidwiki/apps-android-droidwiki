@@ -62,8 +62,8 @@ public class WikiSite implements Parcelable {
 
     public static WikiSite forLanguageCode(@NonNull String languageCode) {
         Uri uri = ensureScheme(Prefs.getMediaWikiBaseUri());
-        return new WikiSite((languageCode.isEmpty()
-                ? "" : (languageCodeToSubdomain(languageCode) + ".")) + uri.getAuthority(),
+        return new WikiSite(((languageCode.isEmpty() || languageCode.equals("de"))
+                ? "www." : (languageCodeToSubdomain(languageCode) + ".")) + uri.getAuthority(),
                 languageCode);
     }
 

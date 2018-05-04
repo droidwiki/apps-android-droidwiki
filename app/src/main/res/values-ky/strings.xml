@@ -47,7 +47,7 @@
   <string name="toast_logout_complete">Сиз системден чыктыңыз</string>
   <string name="history_empty_title">Жакында каралган барактар жок!</string>
   <string name="history_empty_message">Кыязы, сиз алардын баарын өчүргөн окшойсуз. Кийинки жолу баракка киргенде, бул жактан кайрылсаңыз болот</string>
-  <string name="wp_stylized">&lt;big&gt;У&lt;/big&gt;ИКИПЕДИ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Колдонуучу аты</string>
   <string name="create_account_activity_title">Катталуу</string>
   <string name="dialog_create_account_checking_progress">Текшерүү</string>
@@ -88,7 +88,7 @@
   <string name="privacy_policy_description">Купуялуулук саясаты</string>
   <string name="terms_of_use_description">Колдонуу шарттары</string>
   <string name="privacy_policy_url" fuzzy="true">https://meta.wikimedia.org/wiki/Купуялуулук_саясаты</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Колдонуу_шарттары</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="about_libraries_heading" fuzzy="true">колдонулган китепканалар</string>
   <string name="about_contributors_heading" fuzzy="true">авторлор</string>
   <string name="about_translators_heading" fuzzy="true">котормочулар</string>

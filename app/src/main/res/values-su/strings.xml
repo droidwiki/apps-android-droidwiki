@@ -92,7 +92,7 @@
   <string name="history_empty_message">Lacak naon nu geus ku anjeun baca di dieu.</string>
   <string name="search_empty_message">Paluruh sarta baca énsiklopédi bébas dina basa anjeun</string>
   <string name="delete_selected_items">Pupus leunjeuran nu dipilih</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Sandiasma</string>
   <string name="login_dont_have_account">Teu boga akun?</string>
   <string name="login_join_wikipedia">Gabung Wikipédia</string>
@@ -113,7 +113,7 @@
   <string name="wikipedia_app_faq">NLD aplikasi Wikipédia</string>
   <string name="zero_charged_verbiage">Aksés haratis ka Wikipédia geus teu bisa.</string>
   <string name="zero_warn_when_leaving">Ingetkeun mun ninggalkeun Wikipédia Zéro</string>
-  <string name="zero_warn_when_leaving_summary">Mun operator sélulér anjeun ngabébaskeun biaya aksés data pikeun aplikasi Wikipédia liwat kamitraan Wikipédia Zero, ninggalkeun ieu pangaturan kalawan dicontréng bisa nulungan anjeun nalika ninggalkeun aplikasi Wikipedia sarta bisa dikeunakeun biaya.</string>
+  <string name="zero_warn_when_leaving_summary">Mun operator sélulér anjeun ngabébaskeun biaya aksés data pikeun aplikasi Wikipédia liwat kamitraan Wikipédia Zero, ninggalkeun ieu pangaturan kalawan dicontréng bisa nulungan anjeun nalika ninggalkeun aplikasi DroidWiki sarta bisa dikeunakeun biaya.</string>
   <string name="zero_webpage_title">NLD Wikipédia Zéro</string>
   <string name="zero_wikipedia_zero_heading">Wikipédia Zéro</string>
   <string name="zero_interstitial_title">Ninggalkeun Wikipédia Zéro</string>
@@ -158,7 +158,7 @@
   <string name="about_translators_heading">Panarjamah</string>
   <string name="about_translators_translatewiki">Ieu aplikasi ditarjamahkeun ku rélawan dina &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Lisénsi</string>
-  <string name="about_app_license">Kodeu sumber nyangkaruk di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gérrit&lt;/a&gt; jeung &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; di handapeun &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Lisénsi Apache 2.0&lt;/a&gt;. Eusi nyangkaruk na handapeun &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Lisénsi Atribusi-BabagiSarupa Creative Commons&lt;/a&gt; iwal mun dikedalkeun lian.</string>
+  <string name="about_app_license">Kodeu sumber nyangkaruk di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gérrit&lt;/a&gt; jeung &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; di handapeun &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Lisénsi Apache 2.0&lt;/a&gt;. Eusi nyangkaruk na handapeun &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Lisénsi Atribusi-BabagiSarupa Creative Commons&lt;/a&gt; iwal mun dikedalkeun lian.</string>
   <string name="about_wmf">Hiji prodak ti &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Yayasan Wikimédia&lt;/a&gt;</string>
   <string name="about_activity_title">Ngeunaan</string>
   <string name="edit_abandon_confirm">Ieu kaca geus dirobah. Anjeun rék kaluar tanpa nyimpen parobahan?</string>
@@ -217,7 +217,7 @@
   <string name="gallery_error_video_failed">Teu bisa maénkeun vidio.</string>
   <string name="gallery_save_image_write_permission_rationale">Idin pikeun nulis kana panyimpenan dina parangkat anjeun dibutuhkeun, pikeun nyimpen gambar.</string>
   <string name="err_cannot_save_file">Teu bisa nyimpen berkas</string>
-  <string name="snippet_share_intro">\"%1$s\" na @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" na @DroidWiki: %2$s</string>
   <string name="expand_refs">Toél pikeun ngalegakeun</string>
   <string name="share_snippet_button">Bagikeun minangka gambar</string>
   <string name="share_normal_button">Bagikeun minangka téks</string>

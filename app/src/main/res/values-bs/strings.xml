@@ -3,10 +3,10 @@
 * Srdjan m
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
   <string name="search_hint">Pretraži Wikipediju</string>
   <string name="search_hint_search_history">Pretraži historiju</string>
   <string name="search_hint_search_my_lists">Pretraži moje spiskove</string>
@@ -92,7 +92,7 @@
   <string name="history_empty_message">Ovdje pratite sve što ste čitali.</string>
   <string name="search_empty_message">Pretražujte i čitajte slobodnu enciklopediju na svom jeziku</string>
   <string name="delete_selected_items">Obriši izabrane stavke</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Korisničko ime</string>
   <string name="login_dont_have_account">Nemate račun?</string>
   <string name="login_join_wikipedia">Pridružite se Wikipediji</string>
@@ -114,9 +114,9 @@
   <string name="wikipedia_app_faq">ČPP o aplikaciji</string>
   <string name="zero_charged_verbiage">Besplatan pristup Wikipediji više nije aktivan.</string>
   <string name="zero_warn_when_leaving">Upozori me ako napuštam Wikipediju Zero</string>
-  <string name="zero_warn_when_leaving_summary">Pod uslovom da Vaš mobilni operater ne naplaćuje troškove podataka za Wikipedijinu aplikaciju kroz partnerstvo Wikipedia Zero, znat ćete kad napuštate aplikaciju i hoće li se troškovi mobilnih podataka naplaćivati ako ostavite ovu opciju uključenu.</string>
+  <string name="zero_warn_when_leaving_summary">Pod uslovom da Vaš mobilni operater ne naplaćuje troškove podataka za Wikipedijinu aplikaciju kroz partnerstvo DroidWiki Zero, znat ćete kad napuštate aplikaciju i hoće li se troškovi mobilnih podataka naplaćivati ako ostavite ovu opciju uključenu.</string>
   <string name="zero_webpage_title">ČPP o Wikipediji Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">Napuštate Wikipediju Zero</string>
   <string name="zero_interstitial_leave_app">Moguće je da će se naplatiti troškovi mobilnih podataka. Da nastavim na vanjski sajt?</string>
   <string name="zero_interstitial_continue">Napusti aplikaciju</string>
@@ -149,11 +149,11 @@
   <string name="page_protected_can_not_edit_title">Ova stranica je zaštićena</string>
   <string name="settings_item_preferences">Postavke</string>
   <string name="settings_activity_title">Postavke</string>
-  <string name="about_description">O aplikaciji Wikipedia</string>
+  <string name="about_description">O aplikaciji DroidWiki</string>
   <string name="privacy_policy_description">Politika privatnosti</string>
   <string name="terms_of_use_description">Uslovi korištenja</string>
-  <string name="privacy_policy_url">https://m.wikimediafoundation.org/wiki/Privacy_policy</string>
-  <string name="terms_of_use_url">https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="privacy_policy_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">Korištene biblioteke</string>
@@ -161,7 +161,7 @@
   <string name="about_translators_heading">Prevodioci</string>
   <string name="about_translators_translatewiki">Aplikaciju su preveli dobrovoljci na sajtu &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licenca</string>
-  <string name="about_app_license">Izvorni kôd dostupan je na &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerritu&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHubu&lt;/a&gt; pod &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licencom Apache 2.0&lt;/a&gt;. Osim gdje je drukčije navedeno, sadržaj je dostupan pod &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;slobodnom licencom Autorstvo-Dijeliti pod istim uvjetima&lt;/a&gt;.</string>
+  <string name="about_app_license">Izvorni kôd dostupan je na &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerritu&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHubu&lt;/a&gt; pod &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licencom Apache 2.0&lt;/a&gt;. Osim gdje je drukčije navedeno, sadržaj je dostupan pod &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;slobodnom licencom Autorstvo-Dijeliti pod istim uvjetima&lt;/a&gt;.</string>
   <string name="about_wmf">Proizvod &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Fondacije Wikimedia&lt;/a&gt;</string>
   <string name="about_activity_title">O aplikaciji</string>
   <string name="edit_abandon_confirm">Izmijenili ste stranicu. Jeste li sigurni da želite izaći bez da sačuvate izmjene?</string>
@@ -186,7 +186,7 @@
   <string name="abusefilter_title_warn">Moguće je da je ovo nekonstruktivna izmjena. Jeste li sigurni da je želite objaviti?</string>
   <string name="abusefilter_title_disallow">Ne možete objaviti ovu izmjenu. Vratite se i promijenite je.</string>
   <string name="abusefilter_text_warn">Automatizirani filter označio je Vašu izmjenu kao potencijalno nekonstruktivnu. Možda sadrži nešto od sljedećeg:&lt;br /&gt;&lt;br /&gt;· Pisanje svega velikim slovima&lt;br /&gt;· Brisanje ili dodavanje neželjenog sadržaja&lt;br /&gt;· Nevažne vanjske linkove ili slike&lt;br /&gt;· Nekoliko istih znakova uzastopno</string>
-  <string name="abusefilter_text_disallow">Automatizirani filter označio je Vašu izmjenu kao potencijalno nekonstruktivnu ili vandalizam.&lt;br /&gt;&lt;br /&gt;Wikipedia je enciklopedija i pripada joj samo neutralan i provjerljiv sadržaj.</string>
+  <string name="abusefilter_text_disallow">Automatizirani filter označio je Vašu izmjenu kao potencijalno nekonstruktivnu ili vandalizam.&lt;br /&gt;&lt;br /&gt;DroidWiki je enciklopedija i pripada joj samo neutralan i provjerljiv sadržaj.</string>
   <string name="dialog_page_issues">Problemi sa sadržajem</string>
   <string name="button_page_issues">Problemi sa sadržajem</string>
   <string name="text_size_select">Veličina fonta</string>
@@ -222,7 +222,7 @@
   <string name="gallery_error_video_failed">Ne mogu reproducirati videozapis.</string>
   <string name="gallery_save_image_write_permission_rationale">Potrebna je dozvola za čuvanje slika na Vaš uređaj.</string>
   <string name="err_cannot_save_file">Ne mogu sačuvati datoteku</string>
-  <string name="snippet_share_intro">\"%1$s\" na sajtu @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" na sajtu @DroidWiki: %2$s</string>
   <string name="expand_refs">Dodirnite da biste proširili</string>
   <string name="share_snippet_button">Podijeli kao sliku</string>
   <string name="share_normal_button">Podijeli kao tekst</string>
@@ -277,7 +277,7 @@
   <string name="crash_report_dialog_always_send_button">Uvijek pošalji</string>
   <string name="crash_report_dialog_send_button">Pošalji</string>
   <string name="crash_report_activity_title">Greška u aplikaciji</string>
-  <string name="crash_report_relaunch_or_quit">Žao nam je. Došlo je do greške u aplikaciji Wikipedia i prekinula je s radom.\n\nŽelite li je ponovo pokrenuti ili je zatvoriti?</string>
+  <string name="crash_report_relaunch_or_quit">Žao nam je. Došlo je do greške u aplikaciji DroidWiki i prekinula je s radom.\n\nŽelite li je ponovo pokrenuti ili je zatvoriti?</string>
   <string name="crash_report_relaunch">Ponovo pokreni</string>
   <string name="crash_report_quit">Zatvori</string>
   <string name="article_menu_bar_bookmark">Dodaj ovaj članak na spisak za čitanje</string>

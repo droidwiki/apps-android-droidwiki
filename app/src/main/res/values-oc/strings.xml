@@ -81,7 +81,7 @@
   <string name="toast_logout_complete">Desconnectat</string>
   <string name="history_empty_title">Cap d\'articles pas legits recentament</string>
   <string name="history_empty_message">Consultatz çò qu\'avètz legit aicí.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÈDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Nom d\'utilizaire</string>
   <string name="login_join_wikipedia">Rejónher Wikipèdia</string>
   <string name="login_forgot_password">Senhal doblidat ?</string>
@@ -182,7 +182,7 @@
   <string name="gallery_save_success">Fichièr enregistrat corrèctament.</string>
   <string name="gallery_error_video_failed">Impossible de jogar la vidèo.</string>
   <string name="err_cannot_save_file">Impossible d’enregistrar lo fichièr</string>
-  <string name="snippet_share_intro">Fait interessant sus @Wikipedia %1$s : %2$s</string>
+  <string name="snippet_share_intro">Fait interessant sus @DroidWiki %1$s : %2$s</string>
   <string name="expand_refs">Tustar per desvolopar</string>
   <string name="share_snippet_button">Partejar coma imatge</string>
   <string name="share_normal_button">Partejar coma tèxte</string>

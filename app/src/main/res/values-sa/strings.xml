@@ -69,7 +69,7 @@
   <string name="toast_logout_complete">निर्गतम्</string>
   <string name="history_empty_title" fuzzy="true">अत्र नवीनपृष्ठानि न सन्ति !</string>
   <string name="history_empty_message" fuzzy="true">कदाचित् तानि सर्वाणि भवता/भवत्या अपाकृतानि । द्वितीयवारं यदा भवान्/भवती तत् पृष्ठं गच्छति, तदा इतः तत् पुनः प्राप्स्यति ।</string>
-  <string name="wp_stylized">&lt;big&gt;वि&lt;/big&gt;किपीडि&lt;big&gt;या&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">सदस्यनाम</string>
   <string name="create_account_activity_title">सदस्यता प्राप्यताम्</string>
   <string name="dialog_create_account_checking_progress">सत्यापयति</string>
@@ -171,7 +171,7 @@
   <string name="gallery_error_video_failed">चलच्चित्रम् आरब्धुं न शक्तम् ।</string>
   <string name="gallery_save_image_write_permission_rationale" fuzzy="true">चित्राणि सङ्ग्रहे रक्षयितुं भवतः/भवत्याः सङ्ग्रहाकस्य अनुमतिः आवश्यकी । कृपया पुनः प्रयत्नं कृत्वा अनुमतिं ददातु ।</string>
   <string name="err_cannot_save_file">सञ्चिकारक्षणम् असफलम्</string>
-  <string name="snippet_share_intro">\@Wikipedia उपरि \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki उपरि \"%1$s\": %2$s</string>
   <string name="expand_refs">विस्तारयितुं नुद्यताम्</string>
   <string name="share_snippet_button">चित्ररूपेण वितरतु</string>
   <string name="share_normal_button">पाठरूपेण वितरतु</string>

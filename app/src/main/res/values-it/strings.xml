@@ -29,11 +29,11 @@
 * The Polish
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Cerca su Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Cerca su DroidWiki</string>
   <string name="search_hint_search_history">Cerca nella cronologia</string>
   <string name="search_hint_search_my_lists">Cerca nei miei elenchi</string>
   <string name="search_hint_search_reading_list">Cerca nell\'elenco di lettura</string>
@@ -78,7 +78,7 @@
   <string name="content_license_html">Il contenuto è disponibile in base alla &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; se non diversamente specificato</string>
   <string name="edit_save_action_license_logged_in">Salvando, accetti le nostre &lt;a href=\"%1$s\"&gt;condizioni d\'uso&lt;/a&gt; e accetti di rilasciare irrevocabilmente il tuo contributo in base alla licenza &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Salvando, accetti le nostre &lt;a href=\"%1$s\"&gt;condizioni d\'uso&lt;/a&gt; e accetti di rilasciare irrevocabilmente il tuo contributo in base alla licenza &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;. Le modifiche verranno attribuite all\'indirizzo IP del tuo dispositivo. Se &lt;a href=\"https://#login\"&gt;accedi&lt;/a&gt; avrai maggiore privacy.</string>
-  <string name="preference_title_language">Lingua di Wikipedia</string>
+  <string name="preference_title_language">Lingua di DroidWiki</string>
   <string name="preference_languages_filter_hint">Ricerca</string>
   <string name="langlinks_filter_hint">Cerca</string>
   <string name="langlinks_empty">Questa pagina non è disponibile in altre lingue</string>
@@ -102,12 +102,12 @@
   <string name="edit_section_captcha_hint">Ripeti le parole dall\'alto</string>
   <string name="title_captcha">Inserisci il captcha</string>
   <string name="edit_section_captcha_reload">Toccare il CAPTCHA per ricaricare</string>
-  <string name="nav_item_login">Accedi a Wikipedia</string>
+  <string name="nav_item_login">Accedi a DroidWiki</string>
   <string name="login_username_hint">Nome utente</string>
   <string name="login_password_hint">Password</string>
   <string name="login_2fa_hint">Codice autenticazione a due fattori</string>
   <string name="menu_login">Entra</string>
-  <string name="login_activity_title">Accedi a Wikipedia</string>
+  <string name="login_activity_title">Accedi a DroidWiki</string>
   <string name="login_in_progress_dialog_message">Accesso in corso…</string>
   <string name="login_success_toast">Accesso eseguito con successo!</string>
   <string name="preference_title_logout">Esci</string>
@@ -116,10 +116,10 @@
   <string name="history_empty_message">Traccia quello che hai letto qui.</string>
   <string name="search_empty_message">Cerca e leggi l\'enciclopedia libera nella tua lingua</string>
   <string name="delete_selected_items">Cancella gli elementi selezionati</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Nome utente</string>
   <string name="login_dont_have_account">Non hai un\'utenza?</string>
-  <string name="login_join_wikipedia">Unisciti a Wikipedia</string>
+  <string name="login_join_wikipedia">Unisciti a DroidWiki</string>
   <string name="login_forgot_password">Hai dimenticato la password?</string>
   <string name="create_account_already_have">Hai già un\'utenza?</string>
   <string name="create_account_activity_title">Registrati</string>
@@ -134,24 +134,24 @@
   <string name="create_account_next">Successivo</string>
   <string name="create_account_button">Crea un\'utenza</string>
   <string name="preferences_general_heading">Generale</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">L\'accesso gratuito a Wikipedia non è più attivo.</string>
-  <string name="zero_warn_when_leaving">Avvisa se sto uscendo da Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Se il tuo operatore di telefonia mobile rinuncia alle tariffe dati per l\'applicazione Wikipedia attraverso una partnership di Wikipedia Zero, lasciare questa impostazione selezionata ti permette di conoscere quando si esce dall\'applicazione Wikipedia e potrebbero essere addebitate le tariffe.</string>
-  <string name="zero_webpage_title">FAQ di Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Stai uscendo da Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">L\'accesso gratuito a DroidWiki non è più attivo.</string>
+  <string name="zero_warn_when_leaving">Avvisa se sto uscendo da DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Se il tuo operatore di telefonia mobile rinuncia alle tariffe dati per l\'applicazione DroidWiki attraverso una partnership di DroidWiki Zero, lasciare questa impostazione selezionata ti permette di conoscere quando si esce dall\'applicazione DroidWiki e potrebbero essere addebitate le tariffe.</string>
+  <string name="zero_webpage_title">FAQ di DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Stai uscendo da DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Potrebbero essere applicati i costi di connessione. Continuare su un sito esterno?</string>
   <string name="zero_interstitial_continue">Lascia</string>
   <string name="zero_interstitial_cancel">Resta qui</string>
-  <string name="zero_learn_more">Il tuo gestore di telefonia mobile ha fornito l\'accesso gratuito al contenuto di Wikipedia!</string>
+  <string name="zero_learn_more">Il tuo gestore di telefonia mobile ha fornito l\'accesso gratuito al contenuto di DroidWiki!</string>
   <string name="zero_learn_more_learn_more">Ulteriori informazioni</string>
   <string name="zero_learn_more_dismiss">Nascondi</string>
   <string name="edit_preview_fetching_dialog_message">Recupero anteprima…</string>
   <string name="send_feedback">Invia commento sull\'applicazione</string>
   <string name="create_account_account_created_toast">Utenza creata!</string>
   <string name="preference_title_sync_reading_lists">Sincronizza elenco di lettura</string>
-  <string name="preference_summary_sync_reading_lists">Sincronizza gli elenchi di lettura su diversi dispositivi salvandoli sul tuo account Wikipedia</string>
+  <string name="preference_summary_sync_reading_lists">Sincronizza gli elenchi di lettura su diversi dispositivi salvandoli sul tuo account DroidWiki</string>
   <string name="preferences_privacy_settings_heading">Privacy</string>
   <string name="preference_title_eventlogging_opt_in">Invia rapporti sull\'utilizzo</string>
   <string name="preference_summary_eventlogging_opt_in">Consenti a Wikimedia di raccogliere informazioni su come usi l\'applicazione per renderla migliore</string>
@@ -168,11 +168,11 @@
   <string name="page_protected_can_not_edit_title">Questa pagina è protetta</string>
   <string name="settings_item_preferences">Impostazioni</string>
   <string name="settings_activity_title">Impostazioni</string>
-  <string name="about_description">Informazioni sull\'app di Wikipedia</string>
+  <string name="about_description">Informazioni sull\'app di DroidWiki</string>
   <string name="privacy_policy_description">Informativa sulla privacy</string>
   <string name="terms_of_use_description">Condizioni d\'uso</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.it</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.it</string>
   <string name="about_libraries_heading">Librerie usate</string>
@@ -180,7 +180,7 @@
   <string name="about_translators_heading">Traduttori</string>
   <string name="about_translators_translatewiki">Questa applicazione è stata tradotta da traduttori volontari su &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licenza</string>
-  <string name="about_app_license">Codice sorgente disponibile su &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; e &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; in base alla &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Licenza Apache 2.0&lt;/a&gt;. Se non diversamente specificato, il contenuto è disponibile sotto la &lt;a href=\"https://it.wikipedia.org/wiki/Wikipedia:Testo_della_Creative_Commons_Attribuzione-Condividi_allo_stesso_modo_3.0_Unported\"&gt;licenza Creative Commons Attribuzione-Condividi allo stesso modo&lt;/a&gt;.</string>
+  <string name="about_app_license">Codice sorgente disponibile su &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; e &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; in base alla &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Licenza Apache 2.0&lt;/a&gt;. Se non diversamente specificato, il contenuto è disponibile sotto la &lt;a href=\"https://it.wikipedia.org/wiki/DroidWiki:Testo_della_Creative_Commons_Attribuzione-Condividi_allo_stesso_modo_3.0_Unported\"&gt;licenza Creative Commons Attribuzione-Condividi allo stesso modo&lt;/a&gt;.</string>
   <string name="about_wmf">Un prodotto della &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Informazioni</string>
   <string name="edit_abandon_confirm">La pagina è stata modificata. Sei sicuro di voler uscire senza salvare le modifiche?</string>
@@ -204,7 +204,7 @@
   <string name="abusefilter_title_warn">Questa potrebbe essere una modifica inutile. Sei sicuro di volerla pubblicare?</string>
   <string name="abusefilter_title_disallow">Non puoi pubblicare questa modifica. Per favore torna indietro e modificala.</string>
   <string name="abusefilter_text_warn">Un filtro automatico ha identificato inutile questa modifica. Potrebbe includere uno o più dei seguenti elementi:&lt;br /&gt;&lt;br /&gt;· Scritte tutte in maiuscolo&lt;br /&gt;· Articolo vuoto o di spam&lt;br /&gt;· Collegamenti esterni o immagini non pertinenti&lt;br /&gt;· Caratteri ripetuti</string>
-  <string name="abusefilter_text_disallow">Un filtro automatico ha identificato questa modifica come potenzialmente inconcludente, o potenziale vandalismo.&lt;br /&gt;&lt;br /&gt;Wikipedia è un\'enciclopedia e devono esserci solo contenuti neutrali e degni di nota.</string>
+  <string name="abusefilter_text_disallow">Un filtro automatico ha identificato questa modifica come potenzialmente inconcludente, o potenziale vandalismo.&lt;br /&gt;&lt;br /&gt;DroidWiki è un\'enciclopedia e devono esserci solo contenuti neutrali e degni di nota.</string>
   <string name="dialog_page_issues">Problemi con la pagina</string>
   <string name="button_page_issues">Problemi con la pagina</string>
   <string name="text_size_select">Dimensione carattere</string>
@@ -219,9 +219,9 @@
   <string name="table_infobox">Fatti in breve</string>
   <string name="table_other">Ulteriori informazioni</string>
   <string name="table_close">Chiudi</string>
-  <string name="widget_name_featured_page">Pagina di Wikipedia in primo piano</string>
+  <string name="widget_name_featured_page">Pagina di DroidWiki in primo piano</string>
   <string name="widget_title_featured_page">Pagina di oggi in primo piano:</string>
-  <string name="widget_name_search">Ricerca di Wikipedia</string>
+  <string name="widget_name_search">Ricerca di DroidWiki</string>
   <string name="wiktionary_no_definitions_found">Nessuna definizione trovata.</string>
   <string name="alpha_update_notification_title">Nuovo aggiornamento alfa disponibile</string>
   <string name="alpha_update_notification_text">Tocca per scaricare</string>
@@ -240,7 +240,7 @@
   <string name="gallery_error_video_failed">Impossibile riprodurre il video.</string>
   <string name="gallery_save_image_write_permission_rationale">Il permesso di scrittura sul dispositivo è necessario per il salvataggio delle immagini.</string>
   <string name="err_cannot_save_file">Impossibile salvare il file</string>
-  <string name="snippet_share_intro">\"%1$s\" su @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" su @DroidWiki: %2$s</string>
   <string name="expand_refs">Tocca per espandere</string>
   <string name="share_snippet_button">Condividi come immagine</string>
   <string name="share_normal_button">Condividi come testo</string>
@@ -273,7 +273,7 @@
   <string name="error_no_maps_app">Impossibile trovare applicazioni che forniscono indicazioni.</string>
   <string name="preference_title_show_link_previews">Mostra anteprime collegamenti</string>
   <string name="preference_summary_show_link_previews">Mostra una piccola anteprima delle voci quando si preme sui collegamenti.</string>
-  <string name="nav_item_donate">Sostieni Wikipedia</string>
+  <string name="nav_item_donate">Sostieni DroidWiki</string>
   <string name="error_voice_search_not_available">Siacenti, il riconoscimento vocale non è disponibile.</string>
   <string name="location_service_disabled">I servizi di localizzazione sono disattivati.</string>
   <string name="enable_location_service">Attiva</string>
@@ -290,7 +290,7 @@
   <string name="crash_report_dialog_always_send_button">Invia sempre</string>
   <string name="crash_report_dialog_send_button">Invia</string>
   <string name="crash_report_activity_title">Errore dell\'applicazione</string>
-  <string name="crash_report_relaunch_or_quit">Spiacenti, si è verificato un errore nell\'applicazione Wikipedia ed è stata terminata.\n\nVuoi riavviarla o uscire?</string>
+  <string name="crash_report_relaunch_or_quit">Spiacenti, si è verificato un errore nell\'applicazione DroidWiki ed è stata terminata.\n\nVuoi riavviarla o uscire?</string>
   <string name="crash_report_relaunch">Avvia di nuovo</string>
   <string name="crash_report_quit">Esci</string>
   <string name="article_menu_bar_bookmark">Aggiungi questa voce ad un elenco lettura</string>
@@ -377,7 +377,7 @@
     <item quantity="other">Queste voci non saranno più disponibili non in linea.</item>
   </plurals>
   <string name="user_option_sync_label">Preferenze</string>
-  <string name="notification_talk_title">Nuovo messaggio su Wikipedia</string>
+  <string name="notification_talk_title">Nuovo messaggio su DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; ti ha lasciato un messaggio sulla tua pagina di discussione &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Modifica annullata</string>
   <string name="notification_reverted">La tua modifica alla voce &lt;strong&gt;%2$s&lt;/strong&gt; è stata annullata da &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -392,10 +392,10 @@
   <string name="view_continue_reading_card_title">Continua a leggere</string>
   <string name="view_because_you_read_card_title">Perché hai letto</string>
   <string name="view_random_card_title">Una pagina a caso</string>
-  <string name="view_random_card_subtitle">Sfoglia voci casuali da leggere da Wikipedia.</string>
+  <string name="view_random_card_subtitle">Sfoglia voci casuali da leggere da DroidWiki.</string>
   <string name="view_random_card_action">Lancia i dadi</string>
   <string name="view_next_random_article">Carica un\'altra voce a caso</string>
-  <string name="view_main_page_card_title">Oggi su Wikipedia</string>
+  <string name="view_main_page_card_title">Oggi su DroidWiki</string>
   <string name="view_main_page_card_subtitle">Pagina principale del %s</string>
   <string name="view_main_page_card_action">Visualizza la pagina principale</string>
   <string name="view_featured_image_card_title">Immagine del giorno</string>
@@ -421,13 +421,13 @@
   <string name="feed_configure_activity_title">Personalizza il feed</string>
   <string name="feed_configure_menu_select_all">Mostra tutto</string>
   <string name="feed_configure_menu_deselect_all">Nascondi tutto</string>
-  <string name="feed_configure_language_warning">Nota che non tutti i tipi di contenuti sono disponibili in tutte le lingue di Wikipedia. Modifica la tua lingua selezionata nelle impostazioni.</string>
+  <string name="feed_configure_language_warning">Nota che non tutti i tipi di contenuti sono disponibili in tutte le lingue di DroidWiki. Modifica la tua lingua selezionata nelle impostazioni.</string>
   <string name="feed_item_type_news">Voci su eventi attuali</string>
   <string name="feed_item_type_on_this_day">Eventi nella storia in questo giorno</string>
   <string name="feed_item_type_because_you_read">Suggerimenti basati su una voce letta di recente dalla tua cronologia</string>
   <string name="feed_item_type_trending">Voci più viste al giorno</string>
   <string name="feed_item_type_featured_image">Immagine in primo piano quotidiana di Wikimedia Commons</string>
-  <string name="feed_item_type_main_page">Pagina principale di Wikipedia con contenuti giornalieri in primo piano</string>
+  <string name="feed_item_type_main_page">Pagina principale di DroidWiki con contenuti giornalieri in primo piano</string>
   <string name="feed_item_type_randomizer">Genera voci casuali da leggere</string>
   <string name="feed_configure_onboarding_action">Personalizza</string>
   <string name="description_edit_text_hint">Descrizione del titolo</string>
@@ -440,7 +440,7 @@
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduzione/it</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description/it</string>
   <string name="description_edit_success_saved">Descrizione pubblicata!</string>
-  <string name="description_edit_success_encouragement">Hai appena reso Wikipedia migliore per tutti</string>
+  <string name="description_edit_success_encouragement">Hai appena reso DroidWiki migliore per tutti</string>
   <string name="description_edit_success_done">Fatto</string>
   <string name="description_edit_success_did_you_know">Lo sapevi?</string>
   <string name="description_edit_tutorial_title_descriptions">Descrizioni del titolo</string>
@@ -453,7 +453,7 @@
   <string name="description_edit_help_tips_example2">La montagna più alta della Terra</string>
   <string name="description_edit_help_tips_example2_hint">descrizione del titolo per un articolo sul Monte Everest</string>
   <string name="description_edit_help_more_info">Ulteriori informazioni</string>
-  <string name="description_edit_revert_subtitle">Grazie per aver modificato Wikipedia!</string>
+  <string name="description_edit_revert_subtitle">Grazie per aver modificato DroidWiki!</string>
   <string name="description_edit_revert_reason2">il tuo contributo sembra essere un esperimento o un vandalismo.</string>
   <string name="description_edit_revert_history">Se sei interessato, vedi la &lt;a href=\"%1$s\"&gt;cronologia delle modifiche&lt;/a&gt;.</string>
   <string name="offline_read_permission_rationale">Per accedere allo spazio di archiviazione sul tuo dispositivo per la navigazione offline è richiesto un permesso.</string>
@@ -503,14 +503,14 @@
   <string name="languages_list_activity_title">Aggiungi una lingua</string>
   <string name="languages_list_suggested_text">Consigliato</string>
   <string name="languages_list_all_text">Tutte le lingue</string>
-  <string name="wikipedia_languages_title">Lingue di Wikipedia</string>
+  <string name="wikipedia_languages_title">Lingue di DroidWiki</string>
   <string name="wikipedia_languages_your_languages_text">Le tue lingue</string>
   <string name="wikipedia_languages_add_language_text">Aggiungi lingua</string>
   <string name="wikipedia_languages_remove_text">Rimuovi</string>
   <string name="wikipedia_languages_remove_action_mode_title">Rimuovi lingua</string>
   <string name="wikipedia_languages_remove_dialog_title">Rimuovere le lingue selezionate?</string>
-  <string name="wikipedia_languages_remove_dialog_content">Veisualizzerai solo il contenuto sul collegamento Explore e filtri di ricerca rapida per le restanti lingue di Wikipedia.</string>
+  <string name="wikipedia_languages_remove_dialog_content">Veisualizzerai solo il contenuto sul collegamento Explore e filtri di ricerca rapida per le restanti lingue di DroidWiki.</string>
   <string name="wikipedia_languages_remove_warning_dialog_title">Impossibile rimuovere tutte le lingue</string>
-  <string name="wikipedia_languages_remove_warning_dialog_content">Mantieni almeno una lingua Wikipedia da cui potrai cercare e leggere il contenuto.</string>
+  <string name="wikipedia_languages_remove_warning_dialog_content">Mantieni almeno una lingua DroidWiki da cui potrai cercare e leggere il contenuto.</string>
   <string name="more_language_options">altro</string>
 </resources>

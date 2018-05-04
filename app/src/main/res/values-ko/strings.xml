@@ -110,7 +110,7 @@
   <string name="history_empty_message">당신이 읽고 계신 문서를 여기에서 추적하세요.</string>
   <string name="search_empty_message">여러분의 언어로 우리 모두의 백과사전을 검색하고 읽습니다</string>
   <string name="delete_selected_items">선택된 개체 삭제</string>
-  <string name="wp_stylized">&lt;big&gt;위&lt;/big&gt;키백&lt;big&gt;과&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">사용자 이름</string>
   <string name="login_dont_have_account">계정이 없나요?</string>
   <string name="login_join_wikipedia">위키백과 가입</string>
@@ -184,7 +184,7 @@
   <string name="about_translators_heading">번역자</string>
   <string name="about_translators_translatewiki">이 앱은 &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;의 자원 번역자가 번역했습니다.</string>
   <string name="about_app_license_heading">라이선스</string>
-  <string name="about_app_license">소스 코드는 &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;아파치 2.0 라이선스&lt;/a&gt; 하에 있으며, &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt;과 &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt;에서 찾아볼 수 있습니다. 별도로 명시하지 않는 한 콘텐츠는 &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;크리에이티브 커먼즈 저작자표시-동일조건변경허락&lt;/a&gt;에 따라 이용할 수 있습니다.</string>
+  <string name="about_app_license">소스 코드는 &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;아파치 2.0 라이선스&lt;/a&gt; 하에 있으며, &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt;과 &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt;에서 찾아볼 수 있습니다. 별도로 명시하지 않는 한 콘텐츠는 &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;크리에이티브 커먼즈 저작자표시-동일조건변경허락&lt;/a&gt;에 따라 이용할 수 있습니다.</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;위키미디어 재단&lt;/a&gt;의 제품</string>
   <string name="about_activity_title">정보</string>
   <string name="edit_abandon_confirm">문서가 수정되어 있습니다. 바뀐 내용을 저장하지 않고 빠져나가겠습니까?</string>
@@ -247,7 +247,7 @@
   <string name="gallery_error_video_failed">동영상을 재생할 수 없습니다.</string>
   <string name="gallery_save_image_write_permission_rationale">장치에서 저장소의 쓰기 권한은 그림 저장에 필요합니다.</string>
   <string name="err_cannot_save_file">파일을 저장할 수 없음</string>
-  <string name="snippet_share_intro">\@Wikipedia의 \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki의 \"%1$s\": %2$s</string>
   <string name="expand_refs">펼치려면 탭</string>
   <string name="share_snippet_button">그림 공유하기</string>
   <string name="share_normal_button">텍스트 공유하기</string>

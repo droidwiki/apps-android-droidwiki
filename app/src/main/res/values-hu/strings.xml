@@ -106,7 +106,7 @@
   <string name="history_empty_message">Itt követheted az elolvasott szócikkeket.</string>
   <string name="search_empty_message">Keresd és olvasd a cikkeket a saját nyelveden</string>
   <string name="delete_selected_items">Kijelölt elemek törlése</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Szerkesztőnév</string>
   <string name="login_dont_have_account">Nincs még fiókod?</string>
   <string name="login_join_wikipedia">Csatlakozz a Wikipédiához</string>
@@ -176,7 +176,7 @@
   <string name="about_translators_heading">Fordítók</string>
   <string name="about_translators_translatewiki">Ezt az alkalmazást önkéntesek fordították a &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; segítségével.</string>
   <string name="about_app_license_heading">Licenc</string>
-  <string name="about_app_license">A forráskód elérhető &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerriten&lt;/a&gt; és &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHubon&lt;/a&gt; az &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; alatt. Ha nincs másként jelezve, a tartalom egy &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creatice Commons Nevezd meg! – Így add tovább! licenc&lt;/a&gt; alatt érhető el.</string>
+  <string name="about_app_license">A forráskód elérhető &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerriten&lt;/a&gt; és &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHubon&lt;/a&gt; az &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; alatt. Ha nincs másként jelezve, a tartalom egy &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creatice Commons Nevezd meg! – Így add tovább! licenc&lt;/a&gt; alatt érhető el.</string>
   <string name="about_wmf">A &lt;a href=\"https://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimédia Alapítvány&lt;/a&gt; terméke</string>
   <string name="about_activity_title">Névjegy</string>
   <string name="edit_abandon_confirm">A lap megváltozott. Biztos mentés nélkül akarsz kilépni?</string>
@@ -238,7 +238,7 @@
   <string name="gallery_error_video_failed">A videó lejátszása sikertelen.</string>
   <string name="gallery_save_image_write_permission_rationale">Képek elmentéséhez szükséges engedély az eszközöd tárhelyére íráshoz.</string>
   <string name="err_cannot_save_file">Fájl mentése sikertelen</string>
-  <string name="snippet_share_intro">„%1$s” a @Wikipedia szabad enciklopédiában: %2$s</string>
+  <string name="snippet_share_intro">„%1$s” a @DroidWiki szabad enciklopédiában: %2$s</string>
   <string name="expand_refs">Érintsd meg a kinyitáshoz</string>
   <string name="share_snippet_button">Megosztás képként</string>
   <string name="share_normal_button">Megosztás szövegként</string>

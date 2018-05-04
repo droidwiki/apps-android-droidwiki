@@ -57,9 +57,9 @@ public class ExploreOverflowView extends FrameLayout {
                 ? -DimenUtil.getToolbarHeightPx(anchorView.getContext()) + DimenUtil.roundedDpToPx(compatOffset) : 0, Gravity.END);
     }
 
-    @OnClick({R.id.explore_overflow_settings, R.id.explore_overflow_donate,
-            R.id.explore_overflow_account_container, R.id.explore_overflow_log_out,
-            R.id.explore_overflow_compilations, R.id.explore_overflow_configure_cards})
+    @OnClick({R.id.explore_overflow_settings, R.id.explore_overflow_account_container,
+            R.id.explore_overflow_log_out, R.id.explore_overflow_compilations, R.id
+            .explore_overflow_configure_cards})
     void onItemClick(View view) {
         if (popupWindowHost != null) {
             popupWindowHost.dismiss();
@@ -82,9 +82,6 @@ public class ExploreOverflowView extends FrameLayout {
                 break;
             case R.id.explore_overflow_settings:
                 callback.settingsClick();
-                break;
-            case R.id.explore_overflow_donate:
-                callback.donateClick();
                 break;
             case R.id.explore_overflow_log_out:
                 callback.logoutClick();

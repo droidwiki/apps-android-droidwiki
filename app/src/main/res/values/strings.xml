@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name_prod">Wikipedia</string>
-    <string name="app_name_beta" tools:ignore="UnusedResources">Wikipedia Beta</string>
-    <string name="app_name_alpha" tools:ignore="UnusedResources">Wikipedia Alpha</string>
+    <string name="app_name_prod">DroidWiki</string>
+    <string name="app_name_beta" tools:ignore="UnusedResources">DroidWiki Beta</string>
+    <string name="app_name_alpha" tools:ignore="UnusedResources">DroidWiki Alpha</string>
 
-    <string name="wikimedia">Wikimedia</string>
+    <string name="wikimedia">DroidWiki</string>
 
-    <string name="search_hint">Search Wikipedia</string>
+    <string name="search_hint">Search DroidWiki</string>
     <string name="search_hint_search_history">Search history</string>
     <string name="search_hint_search_my_lists">Search my lists</string>
     <string name="search_hint_search_reading_list">Search reading list</string>
@@ -63,13 +63,13 @@
     <string name="content_license_html"><![CDATA[Content is available under <a href=\"%1$s\">CC BY-SA 3.0</a> unless otherwise noted]]></string>
     <string name="edit_save_action_license_logged_in"><![CDATA[By saving, you agree to the <a href="%1$s">Terms of Use</a>, and to irrevocably release your contributions under the <a href="%2$s">CC BY-SA 3.0</a> license.]]></string>
     <string name="edit_save_action_license_anon"><![CDATA[By saving, you agree to the <a href="%1$s">Terms of Use</a>, and to irrevocably release your contributions under the <a href="%2$s/">CC BY-SA 3.0</a> license. Edits will be attributed to the IP address of your device. If you <a href="https://#login">log in</a>, you will have more privacy.]]></string>
-    <string name="preference_title_language">Wikipedia languages</string>
+    <string name="preference_title_language">DroidWiki languages</string>
     <string name="preference_languages_filter_hint">Search</string>
     <string name="langlinks_filter_hint">Search</string>
     <string name="langlinks_empty">This page is not available in other languages.</string>
     <string name="langlinks_no_match">No languages found</string>
     <string name="langlinks_activity_title">Other languages</string>
-    <string name="langlinks_your_wikipedia_languages">Your Wikipedia languages</string>
+    <string name="langlinks_your_wikipedia_languages">Your DroidWiki languages</string>
     <string name="menu_save_changes">Publish changes</string>
     <string name="dialog_saving_in_progress">Publishing…</string>
     <string name="edit_saved_successfully">Edit published!</string>
@@ -88,13 +88,13 @@
     <string name="edit_section_captcha_hint">Repeat words from above</string>
     <string name="title_captcha">Enter CAPTCHA</string>
     <string name="edit_section_captcha_reload">Tap CAPTCHA to reload</string>
-    <string name="nav_item_login">Log in to Wikipedia</string>
+    <string name="nav_item_login">Log in to DroidWiki</string>
     <string name="login_username_hint">Username</string>
     <string name="login_password_hint">Password</string>
     <string name="login_2fa_hint">Two-Factor Authentication Code</string>
     <string name="login_2fa_other_workflow_error_msg">Two-factor authentication required!  Please return to the main activity and log in with your 2FA token, then retry.</string>
     <string name="menu_login">Log in</string>
-    <string name="login_activity_title">Log in to Wikipedia</string>
+    <string name="login_activity_title">Log in to DroidWiki</string>
     <string name="login_in_progress_dialog_message">Logging you in…</string>
     <string name="login_success_toast">Logged in successfully!</string>
     <string name="preference_title_logout">Log out</string>
@@ -103,10 +103,10 @@
     <string name="history_empty_message">Track what you\'ve been reading here.</string>
     <string name="search_empty_message">Search and read the free encyclopedia in your language</string>
     <string name="delete_selected_items">Delete selected items</string>
-    <string name="wp_stylized"><![CDATA[<big>W</big>IKIPEDI<big>A</big>]]></string>
+    <string name="wp_stylized">DroidWiki</string>
     <string name="create_account_username_hint">Username</string>
     <string name="login_dont_have_account">Don\'t have an account?</string>
-    <string name="login_join_wikipedia">Join Wikipedia</string>
+    <string name="login_join_wikipedia">Join DroidWiki</string>
     <string name="login_forgot_password">Forgot your password?</string>
     <string name="create_account_already_have">Already have an account?</string>
     <string name="create_account_activity_title">Create an account</string>
@@ -122,17 +122,17 @@
     <string name="create_account_button">Create account</string>
     <string name="create_account_name_unavailable">The user name \"%s\" is not available. Please choose a different name.</string>
     <string name="preferences_general_heading">General</string>
-    <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-    <string name="zero_charged_verbiage">Free access to Wikipedia is no longer active.</string>
-    <string name="zero_warn_when_leaving">Warn if leaving Wikipedia Zero</string>
-    <string name="zero_warn_when_leaving_summary">If your mobile operator waives data access charges for the Wikipedia app through a Wikipedia Zero partnership, leaving this setting checked helps you know when you are leaving the Wikipedia app and could be charged.</string>
-    <string name="zero_webpage_title">Wikipedia Zero FAQ</string>
-    <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-    <string name="zero_interstitial_title">Leaving Wikipedia Zero</string>
+    <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+    <string name="zero_charged_verbiage">Free access to DroidWiki is no longer active.</string>
+    <string name="zero_warn_when_leaving">Warn if leaving DroidWiki Zero</string>
+    <string name="zero_warn_when_leaving_summary">If your mobile operator waives data access charges for the DroidWiki app through a DroidWiki Zero partnership, leaving this setting checked helps you know when you are leaving the DroidWiki app and could be charged.</string>
+    <string name="zero_webpage_title">DroidWiki Zero FAQ</string>
+    <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+    <string name="zero_interstitial_title">Leaving DroidWiki Zero</string>
     <string name="zero_interstitial_leave_app">Data charges may apply. Continue to external site?</string>
     <string name="zero_interstitial_continue">Leave</string>
     <string name="zero_interstitial_cancel">Stay Here</string>
-    <string name="zero_learn_more">Your wireless carrier has provided free access to Wikipedia content!</string>
+    <string name="zero_learn_more">Your wireless carrier has provided free access to DroidWiki content!</string>
     <string name="zero_learn_more_learn_more">Learn more</string>
     <string name="zero_learn_more_dismiss">Dismiss</string>
     <string name="edit_preview_fetching_dialog_message">Fetching preview…</string>
@@ -144,8 +144,8 @@
     <string name="preferences_heading_experimental">Experimental</string>
     <string name="preference_title_sync_reading_lists">Sync reading lists</string>
     <string name="preference_title_sync_reading_lists_from_account">Enable reading list syncing</string>
-    <string name="preference_summary_sync_reading_lists">Sync reading lists across different devices by saving them to your Wikipedia account</string>
-    <string name="preference_summary_sync_reading_lists_from_account">Sync reading lists across different devices by saving them to your Wikipedia account \"%s\"</string>
+    <string name="preference_summary_sync_reading_lists">Sync reading lists across different devices by saving them to your DroidWiki account</string>
+    <string name="preference_summary_sync_reading_lists_from_account">Sync reading lists across different devices by saving them to your DroidWiki account \"%s\"</string>
     <string name="preference_dialog_of_turning_off_reading_list_sync_title">Remove synced reading lists from \"%s\"?</string>
     <string name="preference_dialog_of_turning_off_reading_list_sync_text">This will completely delete all previously synced reading lists from remote storage. Remove all synced lists from your account \"%s\"?</string>
     <string name="preferences_privacy_settings_heading">Privacy</string>
@@ -164,14 +164,14 @@
     <string name="page_protected_can_not_edit_title">This page is protected</string>
     <string name="settings_item_preferences">Settings</string>
     <string name="settings_activity_title">Settings</string>
-    <string name="about_description">About the Wikipedia app</string>
+    <string name="about_description">About the DroidWiki app</string>
     <string name="privacy_policy_description">Privacy policy</string>
     <string name="terms_of_use_description">Terms of use</string>
-    <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
-    <string name="privacy_policy_url">https://m.wikimediafoundation.org/wiki/Privacy_policy</string>
+    <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
+    <string name="privacy_policy_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
     <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
     <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
-    <string name="terms_of_use_url">https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
+    <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
     <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
     <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
     <string name="about_libraries_heading">Libraries used</string>
@@ -179,7 +179,7 @@
     <string name="about_translators_heading">Translators</string>
     <string name="about_translators_translatewiki"><![CDATA[This app was translated by the volunteer translators at <a href="https://translatewiki.net">translatewiki.net</a>.]]></string>
     <string name="about_app_license_heading">License</string>
-    <string name="about_app_license"><![CDATA[Source code available on <a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\">Gerrit</a> and <a href=\"https://github.com/wikimedia/apps-android-wikipedia\">GitHub</a> under the <a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\">Apache 2.0 License</a>. Unless otherwise specified, content is available under a <a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\">Creative Commons Attribution-ShareAlike License</a>.]]></string>
+    <string name="about_app_license"><![CDATA[Source code available on <a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\">Gerrit</a> and <a href=\"https://github.com/wikimedia/apps-android-wikipedia\">GitHub</a> under the <a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\">Apache 2.0 License</a>. Unless otherwise specified, content is available under a <a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\">Creative Commons Attribution-ShareAlike License</a>.]]></string>
     <string name="about_wmf"><![CDATA[A product of the <a href="http://m.wikimediafoundation.org/wiki/Home">Wikimedia Foundation</a>]]></string>
     <string name="about_activity_title">About</string>
     <string name="edit_abandon_confirm">The page has been modified. Are you sure you want to exit without saving your changes?</string>
@@ -207,7 +207,7 @@
     <string name="abusefilter_title_warn">This may be an unconstructive edit. Are you sure you want to publish it?</string>
     <string name="abusefilter_title_disallow">You cannot publish this edit. Please go back and change it.</string>
     <string name="abusefilter_text_warn"><![CDATA[An automated filter has identified this edit as potentially unconstructive. It may contain one or more of the following:<br /><br />· Typing in all caps<br />· Blanking articles or spamming<br />· Irrelevant external links or images<br />· Repeating characters]]></string>
-    <string name="abusefilter_text_disallow"><![CDATA[An automated filter has identified this edit as potentially unconstructive, or potential vandalism.<br /><br />Wikipedia is an encyclopedia and only neutral, notable content belongs here.]]></string>
+    <string name="abusefilter_text_disallow"><![CDATA[An automated filter has identified this edit as potentially unconstructive, or potential vandalism.<br /><br />DroidWiki is an encyclopedia and only neutral, notable content belongs here.]]></string>
     <string name="dialog_page_issues">Page issues</string>
     <string name="button_page_issues">Page issues</string>
     <string name="text_size_select">Font size</string>
@@ -222,9 +222,9 @@
     <string name="table_infobox">Quick facts</string>
     <string name="table_other">More information</string>
     <string name="table_close">Close</string>
-    <string name="widget_name_featured_page">Wikipedia featured page</string>
+    <string name="widget_name_featured_page">DroidWiki featured page</string>
     <string name="widget_title_featured_page">Today\'s featured page:</string>
-    <string name="widget_name_search">Wikipedia search</string>
+    <string name="widget_name_search">DroidWiki search</string>
     <string name="wiktionary_no_definitions_found">No definitions found.</string>
     <string name="alpha_update_notification_title">New alpha update available</string>
     <string name="alpha_update_notification_text">Tap to download</string>
@@ -243,7 +243,7 @@
     <string name="gallery_error_video_failed">Could not play the video.</string>
     <string name="gallery_save_image_write_permission_rationale">Permission to write to storage on your device is required for saving images.</string>
     <string name="err_cannot_save_file">Cannot save file</string>
-    <string name="snippet_share_intro">\"%1$s\" on @Wikipedia: %2$s</string>
+    <string name="snippet_share_intro">\"%1$s\" on @DroidWiki: %2$s</string>
     <string name="expand_refs">Tap to expand</string>
     <string name="share_snippet_button">Share as image</string>
     <string name="share_normal_button">Share as text</string>
@@ -278,7 +278,7 @@
     <string name="error_no_maps_app">Could not find any apps that provide directions.</string>
     <string name="preference_title_show_link_previews">Show link previews</string>
     <string name="preference_summary_show_link_previews">Show a quick preview of articles when tapping on links.</string>
-    <string name="nav_item_donate">Support Wikipedia</string>
+    <string name="nav_item_donate">Support DroidWiki</string>
     <string name="error_voice_search_not_available">Sorry, voice recognition is not available.</string>
     <string name="location_service_disabled">Location services are disabled.</string>
     <string name="enable_location_service">Enable</string>
@@ -295,7 +295,7 @@
     <string name="preference_title_prefer_offline_content">Prefer offline content</string>
     <string name="preference_summary_prefer_offline_content">Save data usage by loading articles that are available offline rather than always loading the latest version of an article</string>
     <string name="preference_title_enable_offline_library">Enable Offline Library</string>
-    <string name="preference_summary_enable_offline_library"><![CDATA[Access Wikipedia article packs (shown as .ZIM files) that have been downloaded to your device for reading when you\'re offline. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support">Find out more</a>]]></string>
+    <string name="preference_summary_enable_offline_library"><![CDATA[Access DroidWiki article packs (shown as .ZIM files) that have been downloaded to your device for reading when you\'re offline. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support">Find out more</a>]]></string>
 
     <!-- Crash reporter -->
     <string name="crash_report_dialog_title">Sorry, app crashed last time</string>
@@ -304,7 +304,7 @@
     <string name="crash_report_dialog_always_send_button">Always send</string>
     <string name="crash_report_dialog_send_button">Send</string>
     <string name="crash_report_activity_title">Application error</string>
-    <string name="crash_report_relaunch_or_quit">We\'re sorry, the Wikipedia app has experienced an error and was terminated.\n\nWould you like to start over or quit?</string>
+    <string name="crash_report_relaunch_or_quit">We\'re sorry, the DroidWiki app has experienced an error and was terminated.\n\nWould you like to start over or quit?</string>
     <string name="crash_report_relaunch">Start over</string>
     <string name="crash_report_quit">Quit</string>
     <!-- /Crash reporter -->
@@ -387,11 +387,11 @@
     <string name="reading_list_confirm_remove_article_from_offline_title">Article appears in multiple lists</string>
     <string name="reading_list_confirm_remove_article_from_offline_message">%s will no longer be available offline for all reading lists:</string>
     <string name="reading_lists_sync_reminder_title">Turn on reading list syncing?</string>
-    <string name="reading_lists_sync_reminder_text"><![CDATA[Articles saved to reading lists can now be synced to your Wikipedia account. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists">Learn more</a>]]></string>
-    <string name="reading_lists_login_reminder_text_with_link"><![CDATA[Reading lists can now be synced across devices. Log in to your Wikipedia account and allow your lists to be saved. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists">Learn more</a>]]></string>
+    <string name="reading_lists_sync_reminder_text"><![CDATA[Articles saved to reading lists can now be synced to your DroidWiki account. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists">Learn more</a>]]></string>
+    <string name="reading_lists_login_reminder_text_with_link"><![CDATA[Reading lists can now be synced across devices. Log in to your DroidWiki account and allow your lists to be saved. <a href="https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists">Learn more</a>]]></string>
     <string name="reading_lists_sync_reminder_action">Enable syncing</string>
     <string name="reading_list_login_reminder_title">Sync reading lists</string>
-    <string name="reading_lists_login_reminder_text">Reading lists can now be synced across devices. Log in to your Wikipedia account and allow your lists to be saved.</string>
+    <string name="reading_lists_login_reminder_text">Reading lists can now be synced across devices. Log in to your DroidWiki account and allow your lists to be saved.</string>
     <string name="reading_lists_confirm_remote_delete">This will delete any previously synced reading lists from remote storage. Proceed?</string>
     <string name="reading_lists_confirm_remote_delete_yes">Yes</string>
     <string name="reading_lists_confirm_remote_delete_no">No</string>
@@ -408,7 +408,7 @@
     <string name="reading_list_turned_sync_off_dialog_ok">OK</string>
     <string name="reading_list_turned_sync_off_dialog_settings">Settings</string>
     <string name="reading_list_prompt_turned_sync_on_dialog_title">Turn on reading list sync?</string>
-    <string name="reading_list_prompt_turned_sync_on_dialog_text"><![CDATA[Articles saved to reading lists can now be synced to your Wikipedia account. <a href="#faq">Learn more</a>]]></string>
+    <string name="reading_list_prompt_turned_sync_on_dialog_text"><![CDATA[Articles saved to reading lists can now be synced to your DroidWiki account. <a href="#faq">Learn more</a>]]></string>
     <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Don’t show me this again</string>
     <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Enable syncing</string>
     <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">No thanks</string>
@@ -428,7 +428,7 @@
     <string name="split_reading_list_message">There is a limit of %d articles per reading list. Existing lists with more than this limit have been split into multiple lists.</string>
     <string name="reading_list_article_limit_message">Can\'t add to this list. You\'ve reached the limit of %2$d articles per list for \"%1$s\".</string>
     <string name="reading_lists_limit_message">Can\'t create another list. You\'ve reached the limit of 100 reading lists per account.</string>
-    <string name="feed_reading_lists_sync_onboarding_text"><![CDATA[<strong>Sync reading lists</strong><br /><br />Reading lists can now be synced across devices. Log in to your Wikipedia account and allow your lists to be saved.]]></string>
+    <string name="feed_reading_lists_sync_onboarding_text"><![CDATA[<strong>Sync reading lists</strong><br /><br />Reading lists can now be synced across devices. Log in to your DroidWiki account and allow your lists to be saved.]]></string>
     <string name="reading_lists_menu_create_list">Create new list</string>
     <string name="reading_lists_menu_sort_by">Sort by</string>
     <string name="reading_lists_refresh_sync_option">Refresh sync</string>
@@ -449,7 +449,7 @@
 
     <!-- Notifications -->
     <string name="notification_button_view_user">Talk to user</string>
-    <string name="notification_talk_title">New message on Wikipedia</string>
+    <string name="notification_talk_title">New message on DroidWiki</string>
     <string name="notification_talk"><![CDATA[<em>%1$s</em> left a message on your Talk page <strong>%2$s</strong>]]></string>
     <string name="notification_reverted_title">Reverted edit</string>
     <string name="notification_reverted"><![CDATA[Your edit to the article <strong>%2$s</strong> was reverted by <em>%1$s</em>.]]></string>
@@ -491,10 +491,10 @@
     <string name="view_continue_reading_card_title">Continue reading</string>
     <string name="view_because_you_read_card_title">Because you read</string>
     <string name="view_random_card_title">Randomizer</string>
-    <string name="view_random_card_subtitle">Flip through random articles to read from Wikipedia.</string>
+    <string name="view_random_card_subtitle">Flip through random articles to read from DroidWiki.</string>
     <string name="view_random_card_action">Roll the dice</string>
     <string name="view_next_random_article">Load another random article</string>
-    <string name="view_main_page_card_title">Today on Wikipedia</string>
+    <string name="view_main_page_card_title">Today on DroidWiki</string>
     <string name="view_main_page_card_subtitle">Main page on %s</string>
     <string name="view_main_page_card_action">View main page</string>
     <string name="view_featured_image_card_title">Picture of the day</string>
@@ -523,15 +523,15 @@
     <string name="feed_configure_menu_reset">Restore default view</string>
     <string name="feed_configure_menu_select_all">Show all</string>
     <string name="feed_configure_menu_deselect_all">Hide all</string>
-    <string name="feed_configure_language_warning">Note that not all card types are available in all Wikipedia languages. Edit your selected languages in Settings.</string>
+    <string name="feed_configure_language_warning">Note that not all card types are available in all DroidWiki languages. Edit your selected languages in Settings.</string>
     <string name="feed_item_type_news">Articles about current events</string>
     <string name="feed_item_type_on_this_day">Events in history on this day</string>
     <string name="feed_item_type_continue_reading">Quick link back to reading an open article in one of your tabs</string>
     <string name="feed_item_type_because_you_read">Suggestions based on a recently read article from your history</string>
-    <string name="feed_item_type_featured_article">Daily featured article on Wikipedia</string>
+    <string name="feed_item_type_featured_article">Daily featured article on DroidWiki</string>
     <string name="feed_item_type_trending">Daily most-viewed articles</string>
     <string name="feed_item_type_featured_image">Daily featured image from Wikimedia Commons</string>
-    <string name="feed_item_type_main_page">Main page of Wikipedia with daily featured content</string>
+    <string name="feed_item_type_main_page">Main page of DroidWiki with daily featured content</string>
     <string name="feed_item_type_randomizer">Generate random articles to read</string>
     <string name="feed_empty_message">There\'s nothing on your Explore feed</string>
     <string name="feed_configure_onboarding_action">Customize</string>
@@ -549,13 +549,13 @@
     <string name="description_edit_help_wikidata_guide">Wikidata guide for writing descriptions</string>
     <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
     <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-    <string name="description_edit_anon_limit">Thanks for your continued interest in editing descriptions! To make additional edits, please log in to your Wikipedia account.</string>
+    <string name="description_edit_anon_limit">Thanks for your continued interest in editing descriptions! To make additional edits, please log in to your DroidWiki account.</string>
     <string name="description_edit_license_notice"><![CDATA[By changing the title description, I agree to the <a href="%1$s">Terms of Use</a> and to irrevocably release my contributions under the <a href="%2$s">Creative Commons CC0</a> license.]]></string>
     <!-- /Description editing -->
 
     <!-- Description editing success -->
     <string name="description_edit_success_saved">Description published!</string>
-    <string name="description_edit_success_encouragement">You just made Wikipedia better for everyone</string>
+    <string name="description_edit_success_encouragement">You just made DroidWiki better for everyone</string>
     <string name="description_edit_success_done">Done</string>
     <string name="description_edit_success_did_you_know">Did you know?</string>
     <string name="description_edit_success_article_edit_hint">You can also edit articles within this app. Try fixing typos and small sentences by clicking on the ^1 icon next time</string>
@@ -581,11 +581,11 @@
     <string name="description_edit_help_tips_example2">Earth\'s highest mountain</string>
     <string name="description_edit_help_tips_example2_hint">title description for an article about Mount Everest</string>
     <string name="description_edit_help_more_info">More information</string>
-    <string name="description_edit_help_meta_info">Descriptions are stored and maintained on Wikidata, a project of the Wikimedia Foundation which provides a free, collaborative, multilingual, secondary database supporting Wikipedia and other projects.</string>
+    <string name="description_edit_help_meta_info">Descriptions are stored and maintained on Wikidata, a project of the Wikimedia Foundation which provides a free, collaborative, multilingual, secondary database supporting DroidWiki and other projects.</string>
     <!-- /Description editing help -->
 
     <!-- Description editing revert help -->
-    <string name="description_edit_revert_subtitle">Thanks for editing Wikipedia!</string>
+    <string name="description_edit_revert_subtitle">Thanks for editing DroidWiki!</string>
     <string name="description_edit_revert_intro">We know you tried your best, but one of the reviewers had a concern. Possible reasons your edit was reverted include:</string>
     <string name="description_edit_revert_reason1"><![CDATA[your contribution didn\'t follow one of the <a href="%1$s">guidelines</a>.]]></string>
     <string name="description_edit_revert_reason2">your contribution looked like an experiment or vandalism.</string>
@@ -597,7 +597,7 @@
     <string name="offline_read_permission_rationale">Permission to access storage on your device is required for offline browsing.</string>
     <string name="offline_read_final_rationale">Permission to access storage on your device is required to use the Offline Library.</string>
     <string name="offline_read_permission_error">Permission not granted to read from device storage.</string>
-    <string name="offline_card_sideloading_text">You are now browsing Wikipedia offline from article packs in your Offline Library.</string>
+    <string name="offline_card_sideloading_text">You are now browsing DroidWiki offline from article packs in your Offline Library.</string>
     <string name="offline_my_compilations">Manage my offline library</string>
     <string name="offline_compilations_title">Offline Library</string>
     <string name="offline_compilations_search_by_name">Search article packs by name</string>
@@ -635,11 +635,11 @@
     <string name="offline_library_search_results_state">Search results from your Offline Library</string>
     <string name="offline_library_onboarding_button_done">Done</string>
     <string name="offline_library_onboarding_build_library_title">Build your Offline Library</string>
-    <string name="offline_library_onboarding_build_library_subtitle">Download Wikipedia article packs now for data-free access later.</string>
+    <string name="offline_library_onboarding_build_library_subtitle">Download DroidWiki article packs now for data-free access later.</string>
     <string name="offline_library_onboarding_uninterrupted_reading_title">Uninterrupted reading</string>
     <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Keep on reading and searching for articles within your Offline Library when you don\'t have access to internet.</string>
     <string name="offline_library_onboarding_store_knowledge_title">Store more knowledge</string>
-    <string name="offline_library_onboarding_store_knowledge_subtitle">Download as much Wikipedia as your device can handle. Offline Library can also access article packs on external storage.</string>
+    <string name="offline_library_onboarding_store_knowledge_subtitle">Download as much DroidWiki as your device can handle. Offline Library can also access article packs on external storage.</string>
     <string name="offline_library_main_page_hint_html"><![CDATA[This Main Page provides an overview of the contents of this article pack.<br /><br />You may also explore the contents of any article pack in your Offline Library by searching for available articles while you are offline.]]></string>
     <!-- /Offline -->
 
@@ -648,14 +648,14 @@
     <string name="onboarding_continue">Continue</string>
     <string name="onboarding_get_started">Get started</string>
     <string name="onboarding_welcome_title">The free encyclopedia</string>
-    <string name="onboarding_welcome_text"><![CDATA[Wikipedia is written collaboratively by volunteers and consists of more than 40 million articles in nearly 300 different languages. <a href="#about">Learn more</a>]]></string>
+    <string name="onboarding_welcome_text"><![CDATA[DroidWiki is written collaboratively by volunteers and consists of more than 40 million articles in nearly 300 different languages. <a href="#about">Learn more</a>]]></string>
     <string name="onboarding_explore_title">New ways to explore</string>
-    <string name="onboarding_explore_text"><![CDATA[Dive down the Wikipedia rabbit hole with a constantly updating Explore feed. <br/> <b>Customize</b> the feed to your interests – whether it’s learning about historical events <b>On this day</b>, or rolling the dice with <b>Random</b>.]]></string>
+    <string name="onboarding_explore_text"><![CDATA[Dive down the DroidWiki rabbit hole with a constantly updating Explore feed. <br/> <b>Customize</b> the feed to your interests – whether it’s learning about historical events <b>On this day</b>, or rolling the dice with <b>Random</b>.]]></string>
     <string name="onboarding_save_to_reading_lists_title">Save to reading lists</string>
     <string name="onboarding_save_to_reading_lists_text">Create reading lists from articles you want to read later, even when you’re offline.</string>
     <string name="onboarding_reading_list_sync_title">Reading lists with sync</string>
-    <string name="onboarding_reading_list_sync_text"><![CDATA[Create reading lists from articles you want to read later, even when you\'re offline. <a href="#login">Log in or create</a> your Wikipedia account to keep your reading lists backed up.]]></string>
-    <string name="onboarding_reading_list_sync_text_v2"><![CDATA[You can make reading lists from articles you want to read later, even when you’re offline. <br/>Login to your Wikipedia account to sync your reading lists. <a href="#login">Join Wikipedia</a> ]]></string>
+    <string name="onboarding_reading_list_sync_text"><![CDATA[Create reading lists from articles you want to read later, even when you\'re offline. <a href="#login">Log in or create</a> your DroidWiki account to keep your reading lists backed up.]]></string>
+    <string name="onboarding_reading_list_sync_text_v2"><![CDATA[You can make reading lists from articles you want to read later, even when you’re offline. <br/>Login to your DroidWiki account to sync your reading lists. <a href="#login">Join DroidWiki</a> ]]></string>
     <string name="onboarding_analytics_title">Send anonymous data</string>
     <string name="onboarding_analytics_offline_text"><![CDATA[Help make the app better by letting us know how you use it. Data collected is anonymous. <a href="#privacy">Learn more</a>]]></string>
     <string name="onboarding_analytics_switch_title">Send usage data</string>
@@ -689,7 +689,7 @@
     <string name="languages_list_activity_title">Add a language</string>
     <string name="languages_list_suggested_text">Suggested</string>
     <string name="languages_list_all_text">All languages</string>
-    <string name="wikipedia_languages_title">Wikipedia languages</string>
+    <string name="wikipedia_languages_title">DroidWiki languages</string>
     <string name="wikipedia_languages_your_languages_text">Your languages</string>
     <string name="wikipedia_languages_add_language_text">Add language</string>
     <string name="wikipedia_languages_remove_text">Remove</string>
@@ -698,9 +698,9 @@
         <item quantity="one">Remove selected language?</item>
         <item quantity="other">Remove selected languages?</item>
     </plurals>
-    <string name="wikipedia_languages_remove_dialog_content">You will only see content on the Explore feed and quick search filters for remaining Wikipedia languages.</string>
+    <string name="wikipedia_languages_remove_dialog_content">You will only see content on the Explore feed and quick search filters for remaining DroidWiki languages.</string>
     <string name="wikipedia_languages_remove_warning_dialog_title">Can\'t remove all languages</string>
-    <string name="wikipedia_languages_remove_warning_dialog_content">Keep at least one Wikipedia language from which to search and read content.</string>
+    <string name="wikipedia_languages_remove_warning_dialog_content">Keep at least one DroidWiki language from which to search and read content.</string>
     <string name="more_language_options">more</string>
     <!-- /MultiLingual -->
 

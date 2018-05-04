@@ -4,11 +4,11 @@
 * Pahles
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Bèta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Doorzeuk Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Bèta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Doorzeuk DroidWiki</string>
   <string name="search_hint_search_history">Zeukgesjiedenis</string>
   <string name="search_hint_search_my_lists">Doorzeuk mien lieste</string>
   <string name="search_hint_search_reading_list">Doorzeuk mien laeslieste</string>
@@ -53,7 +53,7 @@
   <string name="content_license_html">Inhawd is besjikbaar ónger de &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie behauve wen anges is aangegaove</string>
   <string name="edit_save_action_license_logged_in">Door op te slaon geis se akkaord mit de &lt;a href=\"%1$s\"&gt;gebroeksveurwaerd&lt;/a&gt; en \'t ónherropelik vriegaeve van dien biedraag ónger de &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie.</string>
   <string name="edit_save_action_license_anon">Door op te slaon geis se akkaord mit de &lt;a href=\"%1$s\"&gt;gebroeksveurwaerd&lt;/a&gt; en \'t ónherropelik vriegaeve van dien biedraag ónger de &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie. Bewirkinge waere toegesjreve aan \'t IP-adres van die toestèl. Es se dich &lt;a href=\"https://#login\"&gt;aanmeljs&lt;/a&gt;, höbs se mieër privaatrechte.</string>
-  <string name="preference_title_language">Wikipedia-spraok</string>
+  <string name="preference_title_language">DroidWiki-spraok</string>
   <string name="preference_languages_filter_hint">Zeuk</string>
   <string name="langlinks_filter_hint">Zeuk</string>
   <string name="langlinks_empty">Dees pagina is neet besjikbaar in anger spraoke.</string>
@@ -77,13 +77,13 @@
   <string name="edit_section_captcha_hint">Herhaol de baovestäönde wäörd</string>
   <string name="title_captcha">Tik CAPTCHA in</string>
   <string name="edit_section_captcha_reload">Klik veur CAPTCHA oppernuuj te laje</string>
-  <string name="nav_item_login">Meld dich aan bie Wikipedia</string>
+  <string name="nav_item_login">Meld dich aan bie DroidWiki</string>
   <string name="login_username_hint">Gebroekersnaam</string>
   <string name="login_password_hint">Wachwaord</string>
   <string name="login_2fa_hint">Twieëtrapsauthenticatiecode</string>
   <string name="login_2fa_other_workflow_error_msg">Twieëtrapsauthenticatie vereisj! Gank trögk nao de wichtigste aktiviteit en melj dich aan mit dien 2FA-code en perbeer \'t den oppernuuj.</string>
   <string name="menu_login">Meld dich aan</string>
-  <string name="login_activity_title">Meld dich aan bie Wikipedia</string>
+  <string name="login_activity_title">Meld dich aan bie DroidWiki</string>
   <string name="login_in_progress_dialog_message">Zich aan \'nt melde...</string>
   <string name="login_success_toast">Doe bös aangemeld!</string>
   <string name="preference_title_logout">Meld dich aaf</string>
@@ -92,10 +92,10 @@
   <string name="history_empty_message">Haaj bie waat se hie höbs gelaeze.</string>
   <string name="search_empty_message">Zeuk en laes de vriej encyclopedie in dien eige spraok</string>
   <string name="delete_selected_items">Wösj aangevinkde óngerdeile</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Gebroekersnaam</string>
   <string name="login_dont_have_account">Höbs se geine gebroeker?</string>
-  <string name="login_join_wikipedia">Waer lid van Wikipedia</string>
+  <string name="login_join_wikipedia">Waer lid van DroidWiki</string>
   <string name="login_forgot_password">Wachwaord kwiet?</string>
   <string name="create_account_already_have">Höbs te al \'ne gebroekersnaam?</string>
   <string name="create_account_activity_title">Maak \'ne gebroekersnaam aan</string>
@@ -111,17 +111,17 @@
   <string name="create_account_button">Maak \'ne gebroeker aan</string>
   <string name="create_account_name_unavailable">De gebroekersnaam \"%s\" is neet besjikbaar. Kees estebleef \'nen angere naam.</string>
   <string name="preferences_general_heading">Algemein</string>
-  <string name="wikipedia_app_faq">Väölgestèlde vraoge euver de Wikipedia-app</string>
-  <string name="zero_charged_verbiage">Gratis toegank toet Wikipedia is neet mier aktief.</string>
-  <string name="zero_warn_when_leaving">Waorsjoew mich bie \'t verlaote van Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Es diene mobielen aanbejer gein köste in raekening bringk veur \'t gegaevesgebroek via de Wikipedia-app door e Wikipedia Zero-partnersjap den zörg \'t aanzètte van dees instèlling d\'rveur det se weurs gewaorsjoewd wens se Wikipedia verleuts en se meugelik köste maaks veur gegaeves.</string>
-  <string name="zero_webpage_title">Väölgestèlde vraoge euver Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Doe verluuets Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Väölgestèlde vraoge euver de DroidWiki-app</string>
+  <string name="zero_charged_verbiage">Gratis toegank toet DroidWiki is neet mier aktief.</string>
+  <string name="zero_warn_when_leaving">Waorsjoew mich bie \'t verlaote van DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Es diene mobielen aanbejer gein köste in raekening bringk veur \'t gegaevesgebroek via de DroidWiki-app door e DroidWiki Zero-partnersjap den zörg \'t aanzètte van dees instèlling d\'rveur det se weurs gewaorsjoewd wens se DroidWiki verleuts en se meugelik köste maaks veur gegaeves.</string>
+  <string name="zero_webpage_title">Väölgestèlde vraoge euver DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Doe verluuets DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Kuste kónne waere geraekend veur mobiel gegaeves. Doorgaon nao de extern website?</string>
   <string name="zero_interstitial_continue">Sloet aaf</string>
   <string name="zero_interstitial_cancel">Blief hie</string>
-  <string name="zero_learn_more">Diene mobielprovider bèdj gratis tougank aan toet inhawd van Wikipedia!</string>
+  <string name="zero_learn_more">Diene mobielprovider bèdj gratis tougank aan toet inhawd van DroidWiki!</string>
   <string name="zero_learn_more_learn_more">Laes mieë</string>
   <string name="zero_learn_more_dismiss">Sloet</string>
   <string name="edit_preview_fetching_dialog_message">Veurvertuining op \'nt haole...</string>
@@ -144,10 +144,10 @@
   <string name="page_protected_can_not_edit_title">Dees pagina is aafgesjurmp</string>
   <string name="settings_item_preferences">Instèllinge</string>
   <string name="settings_activity_title">Instèllinge</string>
-  <string name="about_description">Euver de Wikipedia-app</string>
+  <string name="about_description">Euver de DroidWiki-app</string>
   <string name="privacy_policy_description">Privaatbeleid</string>
   <string name="terms_of_use_description">Algemein veurwaerd</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>

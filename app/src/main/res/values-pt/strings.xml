@@ -18,7 +18,7 @@
   <string name="app_name_prod">Wikipédia</string>
   <string name="app_name_beta">Wikipédia Beta</string>
   <string name="app_name_alpha">Wikipédia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
+  <string name="wikimedia">DroidWiki</string>
   <string name="search_hint">Pesquisar na Wikipédia</string>
   <string name="search_hint_search_history">Histórico de pesquisa</string>
   <string name="search_hint_search_my_lists">Pesquisar nas minhas listas</string>
@@ -104,7 +104,7 @@
   <string name="history_empty_message">Registo do que esteve a ler</string>
   <string name="search_empty_message">Pesquise e leia a enciclopédia livre na sua língua</string>
   <string name="delete_selected_items">Eliminar os elementos selecionados</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPÉDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Nome de utilizador</string>
   <string name="login_dont_have_account">Não tem uma conta?</string>
   <string name="login_join_wikipedia">Junte-se à Wikipédia</string>
@@ -172,7 +172,7 @@
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/pt#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/pt</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.pt</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.pt</string>
   <string name="about_libraries_heading">Bibliotecas usadas</string>
@@ -180,7 +180,7 @@
   <string name="about_translators_heading">Tradutores</string>
   <string name="about_translators_translatewiki">Esta aplicação foi traduzida pelos tradutores voluntários da &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licença</string>
-  <string name="about_app_license">Código fonte disponível no &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; e no &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; nos termos da &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licença Apache 2.0&lt;/a&gt;. Salvo indicação em contrário, o conteúdo está disponível nos termos da &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;licença Creative Commons - Atribuição-CompartilhaIgual&lt;/a&gt;.</string>
+  <string name="about_app_license">Código fonte disponível no &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; e no &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; nos termos da &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licença Apache 2.0&lt;/a&gt;. Salvo indicação em contrário, o conteúdo está disponível nos termos da &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;licença Creative Commons - Atribuição-CompartilhaIgual&lt;/a&gt;.</string>
   <string name="about_wmf">Um produto da &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Sobre</string>
   <string name="edit_abandon_confirm">A página foi modificada. Tem certeza que pretende sair sem gravar as suas alterações?</string>
@@ -243,7 +243,7 @@
   <string name="gallery_error_video_failed">Não foi possível reproduzir o vídeo.</string>
   <string name="gallery_save_image_write_permission_rationale">Para gravar imagens, é necessária permissão de escrita no armazenamento do seu dispositivo.</string>
   <string name="err_cannot_save_file">Não é possível gravar o ficheiro</string>
-  <string name="snippet_share_intro">\"%1$s\" em @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" em @DroidWiki: %2$s</string>
   <string name="expand_refs">Toque para expandir</string>
   <string name="share_snippet_button">Partilhar como imagem</string>
   <string name="share_normal_button">Partilhar como texto</string>

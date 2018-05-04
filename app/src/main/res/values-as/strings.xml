@@ -93,7 +93,7 @@
   <string name="history_empty_message">আপুনি ইয়াত কি পঢ়িছে সেয়া অনুসৰণ কৰক।</string>
   <string name="search_empty_message">আপোনাৰ ভাষাত মুক্ত বিশ্বকোষ সন্ধান কৰক আৰু পঢ়ক</string>
   <string name="delete_selected_items">নিৰ্বাচিত আইটেম বিলোপ কৰক</string>
-  <string name="wp_stylized">&lt;big&gt;ৱি&lt;/big&gt;কিপিডি&lt;big&gt;য়া&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">সদস্যনাম</string>
   <string name="login_dont_have_account">কোনো একাউণ্ট নাই?</string>
   <string name="login_join_wikipedia">ৱিকিপিডিয়াত যোগ দিয়ক</string>
@@ -156,7 +156,7 @@
   <string name="about_translators_heading">অনুবাদকসকল</string>
   <string name="about_translators_translatewiki">এই এপ্‌টো স্বেচ্ছাসেৱক অনুবাদকে &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;ত অনুবাদ কৰিছে।</string>
   <string name="about_app_license_heading">অনুজ্ঞাপত্ৰ</string>
-  <string name="about_app_license">উৎস ক\'ড &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 অনুজ্ঞাপত্ৰৰ&lt;/a&gt; অধীনত &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;জেৰিট&lt;/a&gt; আৰু &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;গিটহাবত&lt;/a&gt; উপলব্ধ। অন্যভাৱে উল্লেখ নাথাকিলে সমল &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;ক্ৰিয়েটিভ কমন্স এট্ৰিবিউচন-শ্বেয়াৰ এলাইক অনুজ্ঞাপত্ৰ&lt;/a&gt; অধীনত উপলব্ধ।</string>
+  <string name="about_app_license">উৎস ক\'ড &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 অনুজ্ঞাপত্ৰৰ&lt;/a&gt; অধীনত &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;জেৰিট&lt;/a&gt; আৰু &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;গিটহাবত&lt;/a&gt; উপলব্ধ। অন্যভাৱে উল্লেখ নাথাকিলে সমল &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;ক্ৰিয়েটিভ কমন্স এট্ৰিবিউচন-শ্বেয়াৰ এলাইক অনুজ্ঞাপত্ৰ&lt;/a&gt; অধীনত উপলব্ধ।</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;ৱিকিমিডিয়া ফাউণ্ডেছনৰ&lt;/a&gt; এটা সামগ্ৰী</string>
   <string name="about_activity_title">বিষয়ে</string>
   <string name="edit_abandon_confirm">এই পৃষ্ঠাটো সলোৱা হৈছে। আপোনাৰ সালসলনি সাঁচি নোথোৱাকৈ গুচি যাব বুলি নিশ্চিতনে?</string>
@@ -216,7 +216,7 @@
   <string name="gallery_error_video_failed">ভিডিঅ\'টো চলাব পৰা নগ\'ল।</string>
   <string name="gallery_save_image_write_permission_rationale">ছবি সাঁচিবৰ বাবে আপোনাৰ সঁজুলিৰ সংগ্ৰহস্থলত লিখাৰ অনুমতিৰ প্ৰয়োজন।</string>
   <string name="err_cannot_save_file">ফাইল সাঁচিব পৰা নগ\'ল</string>
-  <string name="snippet_share_intro">\@Wikipedia ত \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki ত \"%1$s\": %2$s</string>
   <string name="expand_refs">বহলাবলৈ টেপ্‌ কৰক</string>
   <string name="share_snippet_button">ছবি হিচাপে শ্বেয়াৰ কৰক</string>
   <string name="share_normal_button">পাঠ্য হিচাপে শ্বেয়াৰ কৰক</string>

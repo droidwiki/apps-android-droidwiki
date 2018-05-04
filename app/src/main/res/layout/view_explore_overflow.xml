@@ -68,26 +68,6 @@
             style="@style/OverflowMenuItem"
             android:text="@string/settings_item_preferences"/>
 
-        <LinearLayout
-            android:id="@+id/explore_overflow_donate"
-            style="@style/OverflowMenuItem"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/nav_item_donate"
-                style="@android:style/TextAppearance"/>
-            <android.support.v7.widget.AppCompatImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@null"
-                android:layout_marginStart="16dp"
-                android:layout_gravity="center_vertical"
-                app:srcCompat="@drawable/ic_open_in_new_black_24px"
-                app:tint="?attr/material_theme_secondary_color"/>
-        </LinearLayout>
-
         <TextView
             android:id="@+id/explore_overflow_log_out"
             style="@style/OverflowMenuItem"

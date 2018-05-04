@@ -97,7 +97,7 @@
   <string name="history_empty_message">Следете какво сте чели тук.</string>
   <string name="search_empty_message">Търсене и четене в свободната енциклопедия на вашия език</string>
   <string name="delete_selected_items">Изтриване на избраните обекти</string>
-  <string name="wp_stylized">&lt;big&gt;У&lt;/big&gt;ИКИПЕДИ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Потребителско име</string>
   <string name="login_dont_have_account">Нямате сметка?</string>
   <string name="login_join_wikipedia">Присъединете се към Уикипедия</string>
@@ -171,7 +171,7 @@
   <string name="about_translators_heading">Преводачи</string>
   <string name="about_translators_translatewiki">Това приложение е преведено от доброволните преводачи на &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Лиценз</string>
-  <string name="about_app_license">Програмният код е достъпен на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; под лиценз &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Освен ако друго не е упоменато, съдържанието е достъпно под лиценз &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Програмният код е достъпен на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; под лиценз &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Освен ако друго не е упоменато, съдържанието е достъпно под лиценз &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Продукт на &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Фондация Уикимедия&lt;/a&gt;</string>
   <string name="about_activity_title">Относно</string>
   <string name="edit_abandon_confirm">Страницата е била променена. Сигурни ли сте, че искате да излезете, без да запазите промените си?</string>
@@ -233,7 +233,7 @@
   <string name="gallery_error_video_failed">Видеото не може да бъде възпроизведено.</string>
   <string name="gallery_save_image_write_permission_rationale">Нужно е разрешение за записване в паметта на устройството, за да се запази изображение.</string>
   <string name="err_cannot_save_file">Файлът не може да бъде запазен</string>
-  <string name="snippet_share_intro">„%1$s“ на @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">„%1$s“ на @DroidWiki: %2$s</string>
   <string name="expand_refs">Докоснете за разширяване</string>
   <string name="share_snippet_button">Споделяне като изображение</string>
   <string name="share_normal_button">Споделяне като текст</string>

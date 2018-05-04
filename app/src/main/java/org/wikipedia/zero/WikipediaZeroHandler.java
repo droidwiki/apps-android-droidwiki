@@ -57,7 +57,7 @@ public class WikipediaZeroHandler {
     }
 
     public boolean isZeroEnabled() {
-        return zeroEnabled;
+        return false;
     }
 
     @Nullable

@@ -52,11 +52,11 @@ android {
     }
 
     defaultConfig {
-        applicationId 'org.wikipedia'
+        applicationId 'de.droidwiki'
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 232
-        testApplicationId 'org.wikipedia.test'
+        testApplicationId 'de.droidwiki.test'
         testInstrumentationRunner "org.wikipedia.WikipediaTestRunner"
         vectorDrawables.useSupportLibrary = true
 

@@ -6,7 +6,7 @@
 -->
 <resources>
   <string name="app_name_prod">Wicipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
   <string name="app_name_alpha">Wicipedia Alffa</string>
   <string name="wikimedia">Wicimedia</string>
   <string name="search_hint">Chwilio Wicipedia</string>
@@ -81,7 +81,7 @@
   <string name="history_empty_title">Does yr un dalen diweddar yma!</string>
   <string name="history_empty_message">Traciwch yr hyn rydych wedi\'i ddarllen, yma.</string>
   <string name="delete_selected_items">Diewch yr eitemau a ddewisiwyd</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;ICIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Enw defnyddiwr</string>
   <string name="create_account_activity_title">Crëwch gyfrif</string>
   <string name="dialog_create_account_checking_progress">Wrthi\' n dilysu</string>

@@ -18,12 +18,6 @@
                     android:data="@string/privacy_policy_url"
                     />
         </org.wikipedia.settings.PreferenceMultiLineWithExternalLink>
-        <org.wikipedia.settings.PreferenceMultiLineWithExternalLink
-            android:title="@string/terms_of_use_description">
-            <intent android:action="android.intent.action.VIEW"
-                    android:data="@string/terms_of_use_url"
-                    />
-        </org.wikipedia.settings.PreferenceMultiLineWithExternalLink>
     </PreferenceCategory>
 
 </android.support.v7.preference.PreferenceScreen>

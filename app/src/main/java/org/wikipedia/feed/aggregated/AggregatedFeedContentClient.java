@@ -4,19 +4,14 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import org.wikipedia.WikipediaApp;
 import org.wikipedia.dataclient.WikiSite;
 import org.wikipedia.dataclient.retrofit.RetrofitFactory;
 import org.wikipedia.feed.FeedContentType;
 import org.wikipedia.feed.FeedCoordinator;
 import org.wikipedia.feed.dataclient.FeedClient;
-import org.wikipedia.feed.featured.FeaturedArticleCard;
 import org.wikipedia.feed.image.FeaturedImageCard;
 import org.wikipedia.feed.model.Card;
 import org.wikipedia.feed.model.UtcDate;
-import org.wikipedia.feed.mostread.MostReadListCard;
-import org.wikipedia.feed.news.NewsListCard;
-import org.wikipedia.feed.onthisday.OnThisDayCard;
 import org.wikipedia.settings.Prefs;
 import org.wikipedia.util.DateUtil;
 import org.wikipedia.util.log.L;
@@ -52,15 +47,15 @@ public class AggregatedFeedContentClient {
         @Override
         void getCardFromResponse(@NonNull Map<String, AggregatedFeedContent> responses,
                                  @NonNull WikiSite wiki, int age, @NonNull List<Card> outCards) {
-            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
-                if (responses.containsKey(appLangCode)
-                        && !FeedContentType.ON_THIS_DAY.getLangCodesDisabled().contains(appLangCode)) {
-                    AggregatedFeedContent content = responses.get(appLangCode);
-                    if (content.onthisday() != null && !content.onthisday().isEmpty()) {
-                        outCards.add(new OnThisDayCard(content.onthisday(), WikiSite.forLanguageCode(appLangCode), age));
-                    }
-                }
-            }
+//            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
+//                if (responses.containsKey(appLangCode)
+//                        && !FeedContentType.ON_THIS_DAY.getLangCodesDisabled().contains(appLangCode)) {
+//                    AggregatedFeedContent content = responses.get(appLangCode);
+//                    if (content.onthisday() != null && !content.onthisday().isEmpty()) {
+//                        outCards.add(new OnThisDayCard(content.onthisday(), WikiSite.forLanguageCode(appLangCode), age));
+//                    }
+//                }
+//            }
         }
     }
     public static class InTheNews extends BaseClient {
@@ -72,15 +67,15 @@ public class AggregatedFeedContentClient {
         void getCardFromResponse(@NonNull Map<String, AggregatedFeedContent> responses,
                                  @NonNull WikiSite wiki, int age, @NonNull List<Card> outCards) {
             // todo: remove age check when news endpoint provides dated content, T139481.
-            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
-                if (responses.containsKey(appLangCode)
-                        && !FeedContentType.NEWS.getLangCodesDisabled().contains(appLangCode)) {
-                    AggregatedFeedContent content = responses.get(appLangCode);
-                    if (age == 0 && content.news() != null) {
-                        outCards.add(new NewsListCard(content.news(), age, WikiSite.forLanguageCode(appLangCode)));
-                    }
-                }
-            }
+//            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
+//                if (responses.containsKey(appLangCode)
+//                        && !FeedContentType.NEWS.getLangCodesDisabled().contains(appLangCode)) {
+//                    AggregatedFeedContent content = responses.get(appLangCode);
+//                    if (age == 0 && content.news() != null) {
+//                        outCards.add(new NewsListCard(content.news(), age, WikiSite.forLanguageCode(appLangCode)));
+//                    }
+//                }
+//            }
         }
     }
 
@@ -92,15 +87,15 @@ public class AggregatedFeedContentClient {
         @Override
         void getCardFromResponse(@NonNull Map<String, AggregatedFeedContent> responses,
                                  @NonNull WikiSite wiki, int age, @NonNull List<Card> outCards) {
-            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
-                if (responses.containsKey(appLangCode)
-                        && !FeedContentType.FEATURED_ARTICLE.getLangCodesDisabled().contains(appLangCode)) {
-                    AggregatedFeedContent content = responses.get(appLangCode);
-                    if (content.tfa() != null) {
-                        outCards.add(new FeaturedArticleCard(content.tfa(), age, WikiSite.forLanguageCode(appLangCode)));
-                    }
-                }
-            }
+//            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
+//                if (responses.containsKey(appLangCode)
+//                        && !FeedContentType.FEATURED_ARTICLE.getLangCodesDisabled().contains(appLangCode)) {
+//                    AggregatedFeedContent content = responses.get(appLangCode);
+//                    if (content.tfa() != null) {
+//                        outCards.add(new FeaturedArticleCard(content.tfa(), age, WikiSite.forLanguageCode(appLangCode)));
+//                    }
+//                }
+//            }
         }
     }
 
@@ -112,15 +107,15 @@ public class AggregatedFeedContentClient {
         @Override
         void getCardFromResponse(@NonNull Map<String, AggregatedFeedContent> responses,
                                  @NonNull WikiSite wiki, int age, @NonNull List<Card> outCards) {
-            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
-                if (responses.containsKey(appLangCode)
-                        && !FeedContentType.TRENDING_ARTICLES.getLangCodesDisabled().contains(appLangCode)) {
-                    AggregatedFeedContent content = responses.get(appLangCode);
-                    if (content.mostRead() != null) {
-                        outCards.add(new MostReadListCard(content.mostRead(), WikiSite.forLanguageCode(appLangCode)));
-                    }
-                }
-            }
+//            for (String appLangCode : WikipediaApp.getInstance().language().getAppLanguageCodes()) {
+//                if (responses.containsKey(appLangCode)
+//                        && !FeedContentType.TRENDING_ARTICLES.getLangCodesDisabled().contains(appLangCode)) {
+//                    AggregatedFeedContent content = responses.get(appLangCode);
+//                    if (content.mostRead() != null) {
+//                        outCards.add(new MostReadListCard(content.mostRead(), WikiSite.forLanguageCode(appLangCode)));
+//                    }
+//                }
+//            }
         }
     }
 

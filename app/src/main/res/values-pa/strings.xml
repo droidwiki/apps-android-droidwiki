@@ -79,7 +79,7 @@
   <string name="toast_logout_complete">ਬਾਹਰ ਆਏ</string>
   <string name="history_empty_title" fuzzy="true">ਇੱਥੇ ਕੋਈ ਹਾਲੀਆ ਵਰਕੇ ਨਹੀਂ!</string>
   <string name="history_empty_message" fuzzy="true">ਤੁਸੀਂ ਸ਼ਾਇਦ ਇਹ ਸਾਰੇ ਮਿਟਾ ਦਿੱਤੇ ਹਨ। ਅਗਲੀ ਵਾਰ ਜਦ ਤੁਸੀਂ ਕਿਸੇ ਸਫ਼ੇ \'ਤੇ ਜਾਉਂ ਤਾਂ ਤੁਸੀਂ ਇੱਥੋਂ ਉਹਦੇ ਤੱਕ ਪਰਤ ਸਕਦੇ ਹੋ।</string>
-  <string name="wp_stylized">&lt;big&gt;ਵਿ&lt;/big&gt;ਕੀਪੀਡੀ&lt;big&gt;ਆ&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">ਵਰਤੋਂਕਾਰ-ਨਾਂ</string>
   <string name="login_join_wikipedia">ਵਿਕੀਪੀਡੀਆ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ</string>
   <string name="login_forgot_password">ਆਪਣਾ ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ ਹੋ?</string>
@@ -127,13 +127,13 @@
   <string name="privacy_policy_description">ਪਰਦਾ ਨੀਤੀ</string>
   <string name="terms_of_use_description">ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="about_libraries_heading">ਵਰਤੀਆਂ ਲਾਇਬ੍ਰੇਰੀਆਂ</string>
   <string name="about_contributors_heading">ਯੋਗਦਾਨੀ</string>
   <string name="about_translators_heading">ਅਨੁਵਾਦਕ</string>
   <string name="about_translators_translatewiki">ਇਸ ਐਪ ਦਾ ਤਰਜਮਾ&lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; ਵਿਖੇ ਸਵੈਇੱਛਕ ਤਰਜਮਾਕਾਰਾਂ ਨੇ ਕੀਤਾ ਸੀ।</string>
   <string name="about_app_license_heading">ਲਸੰਸ</string>
-  <string name="about_app_license">ਸਰੋਤ ਕੋਡ &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ਅਤੇ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; ਉੱਪਰ &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; ਹੇਠ  ਉਪਲੱਬਧ ਹੈ। ਜੇ ਹੋਰ ਕੁਝ ਨਹੀੰ ਕਿਹਾ ਗਿਆ ਤਾੰ ਸਮੱਗਰੀ &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; ਹੇਠ ਉਪਲੱਬਧ ਹੈ।</string>
+  <string name="about_app_license">ਸਰੋਤ ਕੋਡ &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ਅਤੇ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; ਉੱਪਰ &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; ਹੇਠ  ਉਪਲੱਬਧ ਹੈ। ਜੇ ਹੋਰ ਕੁਝ ਨਹੀੰ ਕਿਹਾ ਗਿਆ ਤਾੰ ਸਮੱਗਰੀ &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; ਹੇਠ ਉਪਲੱਬਧ ਹੈ।</string>
   <string name="about_wmf" fuzzy="true">&lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;ਵਿਕੀਮੀਡੀਆ ਸੰਸਥਾ&lt;/a&gt; ਦੀ ਇੱਕ ਉਪਜ</string>
   <string name="about_activity_title">ਬਾਬਤ</string>
   <string name="edit_abandon_confirm">ਇਹ ਸਫ਼ਾ ਬਦਲਿਆ ਗਿਆ ਹੈ? ਕੀ ਤੁਸੀਂ ਸੱਚੀਂ ਤਬਦੀਲੀਆਂ ਬਿਨਾਂ ਸਾਂਭੇ ਕੂਚ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
@@ -187,7 +187,7 @@
   <string name="gallery_save_success">ਫਾਈਲ ਸਫਲਤਾਪੂਰਵਕ ਸਾਂਭੀ ਗਈ।</string>
   <string name="gallery_error_video_failed">ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕੇ।</string>
   <string name="err_cannot_save_file">ਫਾਈਲ ਸਾਂਭੀ ਨਹੀਂ ਗਈ</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia ਉੱਤੇ: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki ਉੱਤੇ: %2$s</string>
   <string name="expand_refs">ਫੈਲਾਉਣ ਲਈ ਦਬਾਉ</string>
   <string name="share_snippet_button">ਤਸਵੀਰ ਦੇ ਤੌਰ \'ਤੇ ਸਾਂਝਾ ਕਰੋ</string>
   <string name="share_normal_button">ਲਿਖਤ ਦੇ ਤੌਰ \'ਤੇ ਸਾਂਝਾ ਕਰੋ</string>

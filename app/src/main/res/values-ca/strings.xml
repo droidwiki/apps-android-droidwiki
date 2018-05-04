@@ -20,7 +20,7 @@
   <string name="app_name_prod">Viquipèdia</string>
   <string name="app_name_beta">Viquipèdia Beta</string>
   <string name="app_name_alpha">Viquipèdia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
+  <string name="wikimedia">DroidWiki</string>
   <string name="search_hint">Cerca a la Viquipèdia</string>
   <string name="search_hint_search_history">Historial de cerca</string>
   <string name="search_hint_search_my_lists">Cerca a les meves llistes</string>
@@ -106,7 +106,7 @@
   <string name="history_empty_message">Consulteu el que heu llegit aquí.</string>
   <string name="search_empty_message">Cerqueu i llegiu l\'enciclopèdia lliure en la vostra llengua</string>
   <string name="delete_selected_items">Elimina els elements seleccionats</string>
-  <string name="wp_stylized">&lt;big&gt;V&lt;/big&gt;IQUIPÈDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Nom d\'usuari</string>
   <string name="login_dont_have_account">No teniu un compte?</string>
   <string name="login_join_wikipedia">Uniu-vos a la Viquipèdia</string>
@@ -172,7 +172,7 @@
   <string name="about_wikipedia_url">https://ca.m.wikipedia.org/wiki/Viquipèdia:Quant_a_la_Viquipèdia</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.ca</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.ca</string>
   <string name="about_libraries_heading">Biblioteques utilitzades</string>
@@ -180,7 +180,7 @@
   <string name="about_translators_heading">Traductors</string>
   <string name="about_translators_translatewiki">La traducció de l\'aplicació és obra dels traductors voluntaris de &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Llicència</string>
-  <string name="about_app_license">Codi font disponible a &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; sota la &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Llicència Apache 2.0&lt;/a&gt;. Si no s\'indica el contrari, el contingut es troba disponible sota una llicència &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Codi font disponible a &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; sota la &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Llicència Apache 2.0&lt;/a&gt;. Si no s\'indica el contrari, el contingut es troba disponible sota una llicència &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Un producte de la &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Fundació Wikimedia&lt;/a&gt;</string>
   <string name="about_activity_title">Quant a</string>
   <string name="edit_abandon_confirm">S\'ha modificat la pàgina. Segur que voleu sortir sense desar-ne els canvis?</string>

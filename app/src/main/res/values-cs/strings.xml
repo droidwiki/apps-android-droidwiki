@@ -20,7 +20,7 @@
   <string name="app_name_prod">Wikipedie</string>
   <string name="app_name_beta">Wikipedie Beta</string>
   <string name="app_name_alpha">Wikipedie Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
+  <string name="wikimedia">DroidWiki</string>
   <string name="search_hint">Hledání ve Wikipedii</string>
   <string name="search_hint_search_history">Hledat v historii</string>
   <string name="search_hint_search_my_lists">Hledat v mých seznamech</string>
@@ -106,7 +106,7 @@
   <string name="history_empty_message">Mějte přehled o tom, co jste zde četli.</string>
   <string name="search_empty_message">Prohledávejte a čtěte otevřenou encyklopedii ve svém jazyce</string>
   <string name="delete_selected_items">Smazat vybrané položky</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;E&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Uživatelské jméno</string>
   <string name="login_dont_have_account">Nemáte účet?</string>
   <string name="login_join_wikipedia">Připojte se k Wikipedii</string>
@@ -127,10 +127,10 @@
   <string name="preferences_general_heading">Obecné</string>
   <string name="wikipedia_app_faq">FAQ aplikace Wikipedie</string>
   <string name="zero_charged_verbiage">Přístup k Wikipedii zdarma již není aktivní.</string>
-  <string name="zero_warn_when_leaving">Varovat při opuštění Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Pokud váš mobilní operátor neúčtuje poplatky za datové připojení k Wikipedii v rámci partnerství Wikipedia Zero, ponecháním tohoto políčka zaškrtnutého zajistíte, že se dozvíte o opouštění aplikace a možnosti placení za další datové připojení.</string>
-  <string name="zero_webpage_title">FAQ k Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">Varovat při opuštění DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Pokud váš mobilní operátor neúčtuje poplatky za datové připojení k Wikipedii v rámci partnerství DroidWiki Zero, ponecháním tohoto políčka zaškrtnutého zajistíte, že se dozvíte o opouštění aplikace a možnosti placení za další datové připojení.</string>
+  <string name="zero_webpage_title">FAQ k DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
   <string name="zero_interstitial_title">Opuštění Wikipedie Zero</string>
   <string name="zero_interstitial_leave_app">Mohou být účtovány poplatky za přenos dat. Pokračovat na externí web?</string>
   <string name="zero_interstitial_continue">Odejít</string>
@@ -174,7 +174,7 @@
   <string name="privacy_policy_url" fuzzy="true">https://meta.wikimedia.org/wiki/Privacy_policy/cs</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use/cs</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">Použité knihovny</string>
@@ -245,7 +245,7 @@
   <string name="gallery_error_video_failed">Nebylo možné přehrát video.</string>
   <string name="gallery_save_image_write_permission_rationale">Pro ukládání obrázků je nutné oprávnění zapisovat na úložiště vašeho zařízení.</string>
   <string name="err_cannot_save_file">Není možno uložit soubor</string>
-  <string name="snippet_share_intro">„%1$s“ na @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">„%1$s“ na @DroidWiki: %2$s</string>
   <string name="expand_refs">Klepnutím rozbalte</string>
   <string name="share_snippet_button">Sdílet jako obrázek</string>
   <string name="share_normal_button">Sdílet jako text</string>

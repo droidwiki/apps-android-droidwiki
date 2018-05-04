@@ -51,7 +51,7 @@
   <string name="preference_title_logout">නික්මීම</string>
   <string name="toast_logout_complete">නික්මී ඇත</string>
   <string name="history_empty_title">මෑත පිටු මෙහි නොමැත!</string>
-  <string name="wp_stylized">&lt;big&gt;වි&lt;/big&gt;කිපීඩි&lt;big&gt;යා&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">පරිශීලක නාමය</string>
   <string name="create_account_activity_title">ගිණුමක් තනන්න</string>
   <string name="dialog_create_account_checking_progress">තහවුරු කරමින්</string>

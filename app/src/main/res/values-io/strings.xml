@@ -91,7 +91,7 @@
   <string name="history_empty_message">Hike tu povas vidar la kozi quin tu lektabis.</string>
   <string name="search_empty_message">Serchez e lektez la libera enciklopedio en tua propra linguo</string>
   <string name="delete_selected_items">Efacez la selektita topiki</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;O&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Uzeronomo</string>
   <string name="login_dont_have_account">Ka tu ne havas konto?</string>
   <string name="login_join_wikipedia">Unionar a Wikipedio</string>
@@ -111,7 +111,7 @@
   <string name="preferences_general_heading">generale</string>
   <string name="wikipedia_app_faq">FAQ pri la Wikipedio</string>
   <string name="zero_charged_verbiage">Libera aceso a Wikipedio ne pluse esas posibla.</string>
-  <string name="zero_warn_when_leaving">Warn if leaving Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">Warn if leaving DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Livar</string>
   <string name="zero_interstitial_cancel">Restez hike</string>
   <string name="zero_learn_more">Tua provizero \'wireless\' furnisis libera aceso a la Wikipedio!</string>

@@ -99,7 +99,7 @@
   <string name="history_empty_message">आपण येथे काय वाचत आहात त्याचा मागोवा घ्या</string>
   <string name="search_empty_message">शोधा आणि वाचा, तुमच्या भाषेतला मुक्त विकीपिडीया!</string>
   <string name="delete_selected_items">शोधलेला मजकूर काढून टाका</string>
-  <string name="wp_stylized">&lt;big&gt;वि&lt;/big&gt;किपीडि&lt;big&gt;या&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">सदस्यनाम</string>
   <string name="login_dont_have_account">आपले सदस्यखाते नाही काय? $1.</string>
   <string name="login_join_wikipedia">विकीपिडीया सदस्य व्हा</string>
@@ -161,7 +161,7 @@
   <string name="about_description">विकिपीडिया अॅपविषयी</string>
   <string name="privacy_policy_description">गुप्तता नीती</string>
   <string name="terms_of_use_description">वापराच्या अटी</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
@@ -171,7 +171,7 @@
   <string name="about_translators_heading">भाषांतरकार</string>
   <string name="about_translators_translatewiki">हे  अॅप स्वयंसेवक भाषांतरकारांनी  &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; येथे भाषांतरीत केले आहे.</string>
   <string name="about_app_license_heading">परवाना</string>
-  <string name="about_app_license">&lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; वर स्रोत संकेत उपलब्ध आहे व &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; खालील परवान्यांतर्गत &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. जोपर्यंत नमूद केले नसेल तोपर्यंत, आशय हा &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\" &gt;या परवान्यांतर्गत उपलब्ध आहे</string>
+  <string name="about_app_license">&lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; वर स्रोत संकेत उपलब्ध आहे व &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; खालील परवान्यांतर्गत &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. जोपर्यंत नमूद केले नसेल तोपर्यंत, आशय हा &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\" &gt;या परवान्यांतर्गत उपलब्ध आहे</string>
   <string name="about_wmf" fuzzy="true">हे &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;विकिमिडिया फाउंडेशनचे&lt;/a&gt; उत्पादन आहे.</string>
   <string name="about_activity_title">आमच्याबद्दल</string>
   <string name="edit_abandon_confirm">हे पान बदलण्यात आले आहे. आपणास आपले बदल जतन न करताच बाहेर व्हायचे आहे काय?</string>
@@ -232,7 +232,7 @@
   <string name="gallery_error_video_failed">व्हिडिओ चालवता आला नाही.</string>
   <string name="gallery_save_image_write_permission_rationale">चित्रे जतन करण्यास, आपल्या उपकरणावर, भांडार-लेखन परवानगी आवश्यक आहे.</string>
   <string name="err_cannot_save_file">संचिका जतन करता येत नाही.</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia वर: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki वर: %2$s</string>
   <string name="expand_refs">विस्तार करण्यास टिचकी मारा</string>
   <string name="share_snippet_button">वित्र म्हणुन सहभाग करा</string>
   <string name="share_normal_button">मजकूर म्हणून सहभाग करा</string>

@@ -5,8 +5,8 @@
     <string name="hockeyapp_app_id">8d5acf26899e6d2fd16282bf89b78784</string>
 
     <!-- The alpha build uses a different signature than beta and prod. -->
-    <string name="account_name">Wikimedia (Alpha)</string>
-    <string name="account_type">org.wikimedia.alpha</string>
+    <string name="account_name">DroidWiki (Alpha)</string>
+    <string name="account_type">de.droidwiki.alpha</string>
 
     <string name="user_option_sync_label">Preferences (Alpha)</string>
 </resources>

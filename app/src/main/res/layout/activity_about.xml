@@ -32,14 +32,6 @@
             android:src="@drawable/w_nav_mark"
             android:contentDescription="@null" />
 
-        <ImageView
-            android:layout_width="114dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/wp_wordmark"
-            android:tint="?attr/chart_shade1"
-            android:contentDescription="@null" />
-
         <TextView android:id="@+id/about_version_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -144,29 +136,6 @@
             android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_wmf_logo"
-            android:tint="?attr/secondary_text_color"
-            android:contentDescription="@null" />
-
-        <org.wikipedia.views.AppTextView
-            android:id="@+id/about_wmf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="16dp"
-            android:layout_gravity="center_horizontal"
-            android:textSize="12sp"
-            android:text="@string/about_wmf"
-            style="?android:textAppearanceSmall"
-            android:textIsSelectable="true"
-            android:textColor="?attr/material_theme_secondary_color" />
-
     </LinearLayout>
 
 </ScrollView>

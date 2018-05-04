@@ -71,7 +71,7 @@
   <string name="toast_logout_complete">బయటకు వచ్చేసారు</string>
   <string name="history_empty_title" fuzzy="true">ఇటీవలి పేజీలు ఏమీ లేవు.</string>
   <string name="history_empty_message" fuzzy="true">మీరు బహుశా వాటిని అన్నిటిని తొలగించి ఉంటారు. తదుపరి సమయం\nమీరు ఒక పేజీకి వెళ్ళినప్పుడు మీరు ఇక్కడ నుండి తిరిగి పొందవచ్చు.</string>
-  <string name="wp_stylized">&lt;big&gt;వి&lt;/big&gt;కీపీడి&lt;big&gt;యా&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">వాడుకరి పేరు</string>
   <string name="create_account_activity_title">ఖాతా సృష్టించుకోండి</string>
   <string name="dialog_create_account_checking_progress">ధృవీకరిస్తోంది</string>
@@ -172,7 +172,7 @@
   <string name="gallery_save_success" fuzzy="true">బొమ్మ విజయవంతంగా భద్రపరచబడింది.</string>
   <string name="gallery_error_video_failed">దృశ్యకాన్ని ప్రదర్శించలేకపోతున్నాము.</string>
   <string name="err_cannot_save_file">ద్దస్త్రాన్ని భద్రపరచలేము</string>
-  <string name="snippet_share_intro">\@Wikipedia పై \"%1$s\" : %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki పై \"%1$s\" : %2$s</string>
   <string name="expand_refs">పెద్దది చేసేందుకు ట్యాప్ చెయ్యి</string>
   <string name="share_snippet_button">బొమ్మగా పంచుకో</string>
   <string name="share_normal_button">పాఠ్యంగా పంచుకో</string>

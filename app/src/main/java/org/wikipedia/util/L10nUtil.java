@@ -121,7 +121,7 @@ public final class L10nUtil {
      * @return true if the translated stylized WP logo text is the same as in English.
      */
     public static boolean canLangUseImageForWikipediaWordmark(Context context) {
-        return "<big>W</big>IKIPEDI<big>A</big>".equals(context.getString(R.string.wp_stylized));
+        return "DroidWiki".equals(context.getString(R.string.wp_stylized));
     }
 
     /**

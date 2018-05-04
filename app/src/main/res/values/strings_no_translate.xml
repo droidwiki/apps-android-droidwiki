@@ -6,12 +6,12 @@
     <string name="mapbox_public_token">pk.eyJ1IjoiZG1pdHJ5YnJhbnQiLCJhIjoiY2lnd3FzdTI1MHNicHZrbTVhMno4anF4dCJ9.HG3mJUj8xbqOvk_ieFDCfA</string>
 
     <!-- URLs -->
-    <string name="zero_webpage_url">https://m.wikimediafoundation.org/wiki/Wikipedia_Zero_App_FAQ</string>
-    <string name="donate_url">https://donate.wikimedia.org/?utm_medium=WikipediaApp&amp;utm_campaign=Android&amp;utm_source=%1$s&amp;uselang=%2$s</string>
+    <string name="zero_webpage_url">https://m.wikimediafoundation.org/wiki/DroidWiki_Zero_App_FAQ</string>
+    <string name="donate_url">https://donate.wikimedia.org/?utm_medium=DroidWikiApp&amp;utm_campaign=Android&amp;utm_source=%1$s&amp;uselang=%2$s</string>
 
     <!-- Accounts -->
     <string name="account_name">@string/wikimedia</string>
-    <string name="account_type">org.wikimedia</string>
+    <string name="account_type">de.droidwiki</string>
 
     <!-- Provenance parameters for sharing URLs (https://wikitech.wikimedia.org/wiki/Provenance) -->
     <string name="prov_share_image">sfia1</string>

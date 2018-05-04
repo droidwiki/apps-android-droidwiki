@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="search_hint">Hanapin sa Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="search_hint">Hanapin sa DroidWiki</string>
   <string name="nav_item_history">Kasaysayan</string>
   <string name="error_network_error" fuzzy="true">Walang koneksyon sa talalambatan (network) :\'(</string>
   <string name="page_error_retry">Subukan muli</string>
@@ -23,7 +23,7 @@
   <string name="content_license_html" fuzzy="true">Naroon ang nilalaman sa ilalim ng &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; maliban na lang kung itinala</string>
   <string name="edit_save_action_license_logged_in">Sa pagtatala (saving), sumasang-ayon ka sa &lt;a href=\"%1$s\"&gt;Tuntunin sa Paggamit&lt;/a&gt;, at walang alinlangan inililimbag ang iyong mga ambag sa ilalim ng &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; na lisensya.</string>
   <string name="edit_save_action_license_anon" fuzzy="true">Sa pagtatala (saving), sumasang-ayon ka sa &lt;a href=\"%1$s\"&gt;Tuntunin sa Paggamit&lt;/a&gt;, at walang alinlangan inililimbag ang iyong mga ambag sa ilalim ng &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; na lisensya. Ang mga binago ay mapapasa-lagay sa direksyong IP ng iyong aparato. Kapag ikaw ay  &lt;a href=\"https://#login\"&gt;naglagda (login)&lt;/a&gt;, magkakarron ka ng higit na sarilinan (privacy).</string>
-  <string name="preference_title_language">Wika ng Wikipedia</string>
+  <string name="preference_title_language">Wika ng DroidWiki</string>
   <string name="preference_languages_filter_hint">Hanapin</string>
   <string name="langlinks_filter_hint">Hanapin</string>
   <string name="langlinks_empty">Ang pahinang ito ay hindi mababasa sa iba pang wika</string>
@@ -44,18 +44,18 @@
   <string name="edit_section_captcha_hint">Ulitin ang mga salita mula sa itaas</string>
   <string name="title_captcha">Pakipasok ang CAPTCHA</string>
   <string name="edit_section_captcha_reload">Tapikin ang CAPTCHA upang kargahin muli</string>
-  <string name="nav_item_login">Lumagda (login) sa Wikipedia</string>
+  <string name="nav_item_login">Lumagda (login) sa DroidWiki</string>
   <string name="login_username_hint">Pangalan ng tagagamit</string>
   <string name="login_password_hint">Hudyat (password)</string>
   <string name="menu_login">Lumagda (login)</string>
-  <string name="login_activity_title">Lumagda (login) sa Wikipedia</string>
+  <string name="login_activity_title">Lumagda (login) sa DroidWiki</string>
   <string name="login_in_progress_dialog_message">Inilalagda ka na…</string>
   <string name="login_success_toast" fuzzy="true">Paglalagda ay tagumpay!</string>
   <string name="preference_title_logout">Umalis sa pagkaka-lagda</string>
   <string name="toast_logout_complete">Nakaalis na sa pagkakalagda</string>
   <string name="history_empty_title" fuzzy="true">Walang makabagong mga pahina rito!</string>
   <string name="history_empty_message" fuzzy="true">Maaaring nabura mo ang lahat ng mga iyon. Sa susunod pumunta ka sa pahinang maaaring makabalik doon mula rito.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Pangalan ng tagagamit</string>
   <string name="create_account_activity_title">Lumikha ng akawnt</string>
   <string name="dialog_create_account_checking_progress">Pinapatotoo (verifying)</string>
@@ -67,17 +67,17 @@
   <string name="create_account_next">Kasunod</string>
   <string name="create_account_button">Lumikha ng akawnt</string>
   <string name="preferences_general_heading">Pangkalahatan</string>
-  <string name="wikipedia_app_faq">Mga madalas itanong (FAQ) ng Wikipedia App</string>
-  <string name="zero_charged_verbiage">Ang libreng pag-access sa Wikipedia ay hindi na aktibo.</string>
-  <string name="zero_warn_when_leaving">Bigyang-babala kapag lilisanin ang Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Kapag nag-urong ang iyong mobile operator ng singil sa data access para sa Wikipedia app sa pamamagitan ng isang pakikipag-korporasyon ng Wikipedia Zero, sa pag-iwan ng kaayusang ito na naka-tsek ay tinutulungang ipaalam sa iyo kapag lilisanin ang Wikipedia app at maaaring masingil.</string>
-  <string name="zero_webpage_title">Wikipedia Zero FAQ (Mga Madalas Itanong)</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Nililisan ang Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Mga madalas itanong (FAQ) ng DroidWiki App</string>
+  <string name="zero_charged_verbiage">Ang libreng pag-access sa DroidWiki ay hindi na aktibo.</string>
+  <string name="zero_warn_when_leaving">Bigyang-babala kapag lilisanin ang DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Kapag nag-urong ang iyong mobile operator ng singil sa data access para sa DroidWiki app sa pamamagitan ng isang pakikipag-korporasyon ng DroidWiki Zero, sa pag-iwan ng kaayusang ito na naka-tsek ay tinutulungang ipaalam sa iyo kapag lilisanin ang DroidWiki app at maaaring masingil.</string>
+  <string name="zero_webpage_title">DroidWiki Zero FAQ (Mga Madalas Itanong)</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Nililisan ang DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Maaring may bayad. Tumuloy sa panlabas na site?</string>
   <string name="zero_interstitial_continue">Umalis</string>
   <string name="zero_interstitial_cancel">Manatili dito</string>
-  <string name="zero_learn_more" fuzzy="true">Walang bayad sa paggamit ng Wikipedia app na ito</string>
+  <string name="zero_learn_more" fuzzy="true">Walang bayad sa paggamit ng DroidWiki app na ito</string>
   <string name="zero_learn_more_learn_more">Matuto pa</string>
   <string name="zero_learn_more_dismiss">Ipagwalang-bahala</string>
   <string name="edit_preview_fetching_dialog_message">Kinukuha ang paunang tingin</string>
@@ -85,7 +85,7 @@
   <string name="create_account_account_created_toast">Nalikha ang akawnt!</string>
   <string name="preferences_privacy_settings_heading">Paglilihim/Pribasidad</string>
   <string name="preference_title_eventlogging_opt_in">Magpadala ng mga ulat sa paggamit</string>
-  <string name="preference_summary_eventlogging_opt_in">Pahintulutan ang Wikipedia na mangumpuni ng impormasyon tungkol sa kung paano mo ginagamit ang aplikasyon upang maipabuti pa ang aplikasyon</string>
+  <string name="preference_summary_eventlogging_opt_in">Pahintulutan ang DroidWiki na mangumpuni ng impormasyon tungkol sa kung paano mo ginagamit ang aplikasyon upang maipabuti pa ang aplikasyon</string>
   <string name="editing_error_spamblacklist">May natagpuang mga dominyong nakaharang (%s).  Mangyari po lamang na tanggalin ito at subukan muli.</string>
   <string name="history_search_list_hint">Tingnan ang kasaysayan</string>
   <string name="error_can_not_process_link">Hindi maipakita ang kawing (link) na ito</string>
@@ -95,7 +95,7 @@
   <string name="page_protected_can_not_edit" fuzzy="true">Wala kang karapatang baguhin ang pahinang ito</string>
   <string name="page_protected_can_not_edit_anon">Paalala: ang pahinang ito ay hindi mapapalitan ng \'anonymously\' sa ngayon.</string>
   <string name="page_protected_can_not_edit_title">Nakasanggalang ang pahinang ito</string>
-  <string name="about_description">Tungkol sa Wikipedia app</string>
+  <string name="about_description">Tungkol sa DroidWiki app</string>
   <string name="privacy_policy_description">Patakaran sa paglilihim</string>
   <string name="terms_of_use_description">Mga tuntunin sa paggamit</string>
   <string name="about_libraries_heading" fuzzy="true">mga aklatang ginamit</string>
@@ -122,7 +122,7 @@
   <string name="abusefilter_title_warn" fuzzy="true">Maaaring hindi makakatulong na pahina ito. Tiyak ka bang nais mong itala ito?</string>
   <string name="abusefilter_title_disallow" fuzzy="true">Hindi mo maaaring maitala ang edit na ito. Mangyaring bumalik muli at baguhin iyon.</string>
   <string name="abusefilter_text_warn">Natukoy ng isang automated filter ang edit na ito na potensyal na di-makakatulong. Maaaring naglalaman ito ng isa o humigit pa sa mga sumusunod:&lt;br /&gt;&lt;br /&gt;· Pagta-type ng naka-all caps&lt;br /&gt;· Pagba-blangko ng mga artikulo o pag-ispam&lt;br /&gt;· Walang kaugnay na mga kawing panlabas (external links) o mga larawan&lt;br /&gt;· Pag-uulit ng mga karakter</string>
-  <string name="abusefilter_text_disallow">Natukoy ng isang automated filter ang edit na ito na potensyal na di-makakatulong, o potensyal na pambababoy (bandalismo).&lt;br /&gt;&lt;br /&gt;Ang Wikipedia ay isang ensiklopedya at tanging niyutral na nakapansin-pansing nilalaman ang nabibilang dito.</string>
+  <string name="abusefilter_text_disallow">Natukoy ng isang automated filter ang edit na ito na potensyal na di-makakatulong, o potensyal na pambababoy (bandalismo).&lt;br /&gt;&lt;br /&gt;Ang DroidWiki ay isang ensiklopedya at tanging niyutral na nakapansin-pansing nilalaman ang nabibilang dito.</string>
   <string name="dialog_page_issues">Mga isyu ng pahina</string>
   <string name="button_page_issues">Mga isyu ng pahina</string>
   <string name="text_size_select">Sukat ng estilo ng titik (font)</string>
@@ -135,9 +135,9 @@
   <string name="table_infobox">Madaliang kabatiran</string>
   <string name="table_other">Higit pang kabatiran (impormasyon)</string>
   <string name="table_close">Isara</string>
-  <string name="widget_name_featured_page">Tampok na pahina sa Wikipedia</string>
+  <string name="widget_name_featured_page">Tampok na pahina sa DroidWiki</string>
   <string name="widget_title_featured_page">Tampok na pahina ngayon:</string>
-  <string name="widget_name_search">Hanapin sa Wikipedia</string>
+  <string name="widget_name_search">Hanapin sa DroidWiki</string>
   <string name="alpha_update_notification_text">Tapikin upang i-download</string>
   <string name="dialog_close_description">Isara</string>
   <string name="preference_title_show_images">Ipakita ang mga larawan</string>
@@ -149,7 +149,7 @@
   <string name="gallery_save_success" fuzzy="true">Matagumpay na naitala ang larawan.</string>
   <string name="gallery_error_video_failed">Hindi mai-play ang video.</string>
   <string name="err_cannot_save_file">Hindi maitala ang talakasan</string>
-  <string name="snippet_share_intro">\"%1$s\" sa @Wikipedia: %2$s%2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" sa @DroidWiki: %2$s%2$s</string>
   <string name="expand_refs">Tapakin upang palawakin</string>
   <string name="share_snippet_button">Ibahagi bilang larawan</string>
   <string name="share_normal_button">Ibahagi bilang teksto</string>

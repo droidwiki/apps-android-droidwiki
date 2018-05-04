@@ -77,7 +77,7 @@
   <string name="preference_title_logout">لاگ آؤٹ</string>
   <string name="toast_logout_complete">لاگ آؤٹ تھی ڳئے</string>
   <string name="delete_selected_items">چُݨے ہوئے آئٹم مٹاو</string>
-  <string name="wp_stylized">&lt;big&gt;و&lt;/big&gt;کیپیڈ&lt;big&gt;یا&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">صارف دا ناں</string>
   <string name="login_dont_have_account">تہاݙا کھاتہ کائنی؟</string>
   <string name="login_join_wikipedia">وکی پیڈیا جائن کرو</string>

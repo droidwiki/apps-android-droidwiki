@@ -75,7 +75,7 @@
   <string name="toast_logout_complete">Elsalutiĝinta</string>
   <string name="history_empty_title" fuzzy="true">Neniuj lastaj paĝoj ĉi tie!</string>
   <string name="history_empty_message" fuzzy="true">Tre eble vi forigis ĉiujn. Venontfoje kiam vi vizitu paĝon, vi povas rehavigi ĝin el ĉi tie.</string>
-  <string name="wp_stylized">&lt;big&gt;V&lt;/big&gt;IKIPEDI&lt;big&gt;O&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Uzantnomo</string>
   <string name="create_account_activity_title">Krei konton</string>
   <string name="dialog_create_account_checking_progress">Kontrolante</string>
@@ -170,7 +170,7 @@
   <string name="gallery_save_success">Dosiero sukcese konservita.</string>
   <string name="gallery_error_video_failed">Ne eblis ludi la videon</string>
   <string name="err_cannot_save_file">Ne eblis konservi la dosieron</string>
-  <string name="snippet_share_intro">\"%1$s\" ĉe @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" ĉe @DroidWiki: %2$s</string>
   <string name="expand_refs">klaku por pligrandigi</string>
   <string name="share_snippet_button">Kundividi kiel bildo</string>
   <string name="share_normal_button">Kundividi kiel teksto</string>

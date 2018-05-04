@@ -42,7 +42,7 @@
   <string name="login_activity_title" fuzzy="true">Idħol fil-Wikipedija</string>
   <string name="login_in_progress_dialog_message">Dieħel…</string>
   <string name="preference_title_logout">Oħroġ</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDIJ&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Isem l-utent</string>
   <string name="create_account_activity_title">Irreġistra</string>
   <string name="dialog_create_account_checking_progress">Għaddejja l-verifika</string>
@@ -53,11 +53,11 @@
   <string name="create_account_next">Li jmiss</string>
   <string name="create_account_button">Oħloq kont</string>
   <string name="preferences_general_heading">Ġenerali</string>
-  <string name="zero_charged_verbiage" fuzzy="true">Wikipedia Zero huwa mitfi</string>
-  <string name="zero_warn_when_leaving">Avżani jekk ħiereġ minn Wikipedia Zero</string>
-  <string name="zero_webpage_title">Mistoqsijiet fuq Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Ħiereġ mill-Wikipedia Zero</string>
+  <string name="zero_charged_verbiage" fuzzy="true">DroidWiki Zero huwa mitfi</string>
+  <string name="zero_warn_when_leaving">Avżani jekk ħiereġ minn DroidWiki Zero</string>
+  <string name="zero_webpage_title">Mistoqsijiet fuq DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Ħiereġ mill-DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Oħroġ</string>
   <string name="zero_interstitial_cancel">Ibqa\' hawnhekk</string>
   <string name="zero_learn_more_learn_more" fuzzy="true">Aqra aktar</string>

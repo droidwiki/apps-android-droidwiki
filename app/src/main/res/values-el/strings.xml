@@ -15,7 +15,7 @@
   <string name="app_name_prod">Βικιπαίδεια</string>
   <string name="app_name_beta">Βικιπαίδεια Beta</string>
   <string name="app_name_alpha">Βικιπαίδεια Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
+  <string name="wikimedia">DroidWiki</string>
   <string name="search_hint">Αναζήτηση στη Βικιπαίδεια</string>
   <string name="search_hint_search_history">Ερευνήστε το ιστορικό</string>
   <string name="search_hint_search_my_lists">Ερευνήστε στις λίστες μου</string>
@@ -86,13 +86,13 @@
   <string name="edit_section_captcha_hint">Επαναλάβετε τις λέξεις από πάνω</string>
   <string name="title_captcha">Εισάγετε CAPTCHA</string>
   <string name="edit_section_captcha_reload">Πατήστε το CAPTCHA για επαναφόρτωση</string>
-  <string name="nav_item_login">Σύνδεση στη Wikipedia</string>
+  <string name="nav_item_login">Σύνδεση στη DroidWiki</string>
   <string name="login_username_hint">Όνομα χρήστη</string>
   <string name="login_password_hint">Κωδικός</string>
   <string name="login_2fa_hint">Κωδικός Ταυτοποίησης Δύο-Παραγόντων</string>
   <string name="login_2fa_other_workflow_error_msg">Απαιτείται έλεγχος ταυτότητας δύο παραγόντων! Παρακαλούμε επιστρέψτε στην κύρια δραστηριότητα και συνδεθείτε εκεί με το 2FA αδειοδοτικό σας, και ξαναπροσπαθήστε.</string>
   <string name="menu_login">Σύνδεση</string>
-  <string name="login_activity_title">Σύνδεση στη Wikipedia</string>
+  <string name="login_activity_title">Σύνδεση στη DroidWiki</string>
   <string name="login_in_progress_dialog_message">Σύνδεση…</string>
   <string name="login_success_toast">Επιτυχής σύνδεση!</string>
   <string name="preference_title_logout">Αποσύνδεση</string>
@@ -101,7 +101,7 @@
   <string name="history_empty_message">Ιχνηλατήστε τι έχετε διαβάσει εδώ.</string>
   <string name="search_empty_message">Αναζητήστε και διαβάστε την ελεύθερη εγκυκλοπαίδεια στη δική σας γλώσσα</string>
   <string name="delete_selected_items">Διαγραφή επιλεγμένων αντικειμένων</string>
-  <string name="wp_stylized">&lt;big&gt;Β&lt;/big&gt;ΙΚΙΠΑΙΔΕΙ&lt;big&gt;Α&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Όνομα χρήστη</string>
   <string name="login_dont_have_account">Δεν έχετε λογαριασμό;</string>
   <string name="login_join_wikipedia">Συμμετάσχετε στη Βικιπαίδεια</string>
@@ -120,13 +120,13 @@
   <string name="create_account_button">Δημιουργία λογαριασμού</string>
   <string name="create_account_name_unavailable">Το όνομα χρήστη «%s» δεν είναι διαθέσιμο. Παρακαλούμε επίλεξε διαφορετικό όνομα.</string>
   <string name="preferences_general_heading">Γενικά</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Το Wikipedia Zero είναι απενεργοποιημένο</string>
-  <string name="zero_warn_when_leaving">Προειδοποιήστε με αν φεύγω από το Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Εάν ο πάροχος κινητής τηλεφωνίας σας δεν χρεώνει δεδομένα για τη χρήση της εφαρμογής της Βικιπαιδείας μέσω συνεργασίας του με το Wikipedia Zero, αφήνοντας αυτή τη ρύθμιση επιλεγμένη σας βοηθά ώστε να γνωρίζετε πότε εγκαταλείπετε την εφαρμογή της Βικιπαίδειας και επομένως μπορεί να χρεώνεστε.</string>
-  <string name="zero_webpage_title">Wikipedia Zero FAQ</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Αφήνετε το Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">Το DroidWiki Zero είναι απενεργοποιημένο</string>
+  <string name="zero_warn_when_leaving">Προειδοποιήστε με αν φεύγω από το DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Εάν ο πάροχος κινητής τηλεφωνίας σας δεν χρεώνει δεδομένα για τη χρήση της εφαρμογής της Βικιπαιδείας μέσω συνεργασίας του με το DroidWiki Zero, αφήνοντας αυτή τη ρύθμιση επιλεγμένη σας βοηθά ώστε να γνωρίζετε πότε εγκαταλείπετε την εφαρμογή της Βικιπαίδειας και επομένως μπορεί να χρεώνεστε.</string>
+  <string name="zero_webpage_title">DroidWiki Zero FAQ</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Αφήνετε το DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Ενδέχεται να ισχύουν χρεώσεις δεδομένων. Να συνεχίσετε στον εξωτερικό ιστότοπο;</string>
   <string name="zero_interstitial_continue">Φύγετε</string>
   <string name="zero_interstitial_cancel">Μείνετε Εδώ</string>
@@ -168,7 +168,7 @@
   <string name="privacy_policy_url">https://. wikimediafoundation.org/wiki/Privacy_policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.el</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/3.0/</string>
   <string name="about_libraries_heading">Βιβλιοθήκες που χρησιμοποιούνται</string>
@@ -218,7 +218,7 @@
   <string name="table_close">Κλείσιμο</string>
   <string name="widget_name_featured_page">Προβεβλημένο λήμμα της Βικιπαίδειας</string>
   <string name="widget_title_featured_page">Προβεβλημένο λήμμα της ημέρας:</string>
-  <string name="widget_name_search">Αναζήτηση στη Wikipedia</string>
+  <string name="widget_name_search">Αναζήτηση στη DroidWiki</string>
   <string name="wiktionary_no_definitions_found">Δε βρέθηκαν ορισμοί.</string>
   <string name="alpha_update_notification_title">Νέα έκδοση alpha είναι διαθέσιμη</string>
   <string name="alpha_update_notification_text">Πατήστε για να κατεβάσετε</string>
@@ -237,7 +237,7 @@
   <string name="gallery_error_video_failed">Το βίντεο δεν μπόρεσε να παιχτεί.</string>
   <string name="gallery_save_image_write_permission_rationale">Απαιτείται άδεια για εγγραφή στο χώρο αποθήκευσης της συσκευής σας για να αποθηκεύσετε εικόνες.</string>
   <string name="err_cannot_save_file">Δεν ήταν δυνατό να αποθηκευτεί το αρχείο</string>
-  <string name="snippet_share_intro">\"%1$s\" στη @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" στη @DroidWiki: %2$s</string>
   <string name="expand_refs">Πατήστε για να επεκτείνετε</string>
   <string name="share_snippet_button">Μοιραστείτε ως εικόνα</string>
   <string name="share_normal_button">Μοιραστείτε ως κείμενο</string>
@@ -502,7 +502,7 @@
   <string name="offline_compilation_download_device_offline">Χωρίς σύνδεση στο διαδίκτυο. Όταν θα έχετε πάλι σύνδεση στο διαδίκτυο, προσπαθήστε πάλι.</string>
   <string name="offline_read_permission_rationale">Η άδεια για την πρόσβαση στον αποθηκευτικό χώρο στη συσκευή σας απαιτείται για τη περιήγηση εκτός σύνδεσης.</string>
   <string name="offline_read_final_rationale">Η άδεια στον αποθηκευτικό χώρο της συσκευής σας απαιτείται για να χρησιμοποιήσετε την βιβλιοθήκη εκτός σύνδεσης.</string>
-  <string name="offline_card_sideloading_text">Vous naviguez maintenant sur Wikipedia offline de paquets d\'articles de Votre Bibliothèque Offline</string>
+  <string name="offline_card_sideloading_text">Vous naviguez maintenant sur DroidWiki offline de paquets d\'articles de Votre Bibliothèque Offline</string>
   <string name="offline_my_compilations">Διαχείρηση της βιβλιοθήκης εκτός σύνδεσής μου</string>
   <string name="offline_compilations_title">Βιβλιοθήκη εκτός σύνδεσης</string>
   <string name="offline_compilations_search_by_name">Αναζήτηση πακέτων λημμάτων ανά όνομα</string>
@@ -549,7 +549,7 @@
   <string name="onboarding_welcome_title">Η ελεύθερη εγκυκλοπαίδεια</string>
   <string name="onboarding_explore_title">Νέοι τρόποι να εξερευνήσετε</string>
   <string name="onboarding_save_to_reading_lists_title">Αποθήκευση στις λίστες ανάγνωσης</string>
-  <string name="onboarding_reading_list_sync_text_v2">Μπορείτε να δημιουργήσετε λίστες ανάγνωσης από άρθρα που θέλετε να διαβάσετε αργότερα, ακόμα και όταν είστε εκτός σύνδεσης. &lt;br/&gt; Συνδεθείτε στον λογαριασμό σας στη Wikipedia για να συγχρονίσετε τις λίστες ανάγνωσης. &lt;a href=\"#login\"&gt; Εγγραφείτε στο Wikipedia &lt;/a&gt;</string>
+  <string name="onboarding_reading_list_sync_text_v2">Μπορείτε να δημιουργήσετε λίστες ανάγνωσης από άρθρα που θέλετε να διαβάσετε αργότερα, ακόμα και όταν είστε εκτός σύνδεσης. &lt;br/&gt; Συνδεθείτε στον λογαριασμό σας στη DroidWiki για να συγχρονίσετε τις λίστες ανάγνωσης. &lt;a href=\"#login\"&gt; Εγγραφείτε στο DroidWiki &lt;/a&gt;</string>
   <string name="onboarding_analytics_title">Αποστολή ανώνυμων δεδομένων</string>
   <string name="onboarding_analytics_switch_title">Αποστολή δεδομένων χρήσης</string>
   <string name="onboarding_create_account_sync">Συγχρονίστε τις λίστες ανάγνωσης σας</string>

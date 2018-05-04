@@ -126,7 +126,7 @@
   <string name="history_empty_message">Отслеживайте то, что вы уже читали здесь.</string>
   <string name="search_empty_message">Ищите и читайте свободную энциклопедию на своём языке</string>
   <string name="delete_selected_items">Удалить выбранные элементы</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ИКИПЕДИ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Имя участника</string>
   <string name="login_dont_have_account">Нет учётной записи?</string>
   <string name="login_join_wikipedia">Присоединиться к Википедии</string>
@@ -147,11 +147,11 @@
   <string name="preferences_general_heading">Общие</string>
   <string name="wikipedia_app_faq">Частые вопросы по приложению Википедии</string>
   <string name="zero_charged_verbiage">Свободный доступ к Википедии больше не является активным.</string>
-  <string name="zero_warn_when_leaving">Предупреждать, если покидаете Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Если ваш мобильный оператор не берёт плату за доступ к данным из приложения Википедии через партнерство Wikipedia Zero, включение этого параметра поможет вам знать, когда вы покидаете приложение Википедии, и может начать взиматься плата за трафик.</string>
-  <string name="zero_webpage_title">ЧаВо по Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Покидаем Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">Предупреждать, если покидаете DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Если ваш мобильный оператор не берёт плату за доступ к данным из приложения Википедии через партнерство DroidWiki Zero, включение этого параметра поможет вам знать, когда вы покидаете приложение Википедии, и может начать взиматься плата за трафик.</string>
+  <string name="zero_webpage_title">ЧаВо по DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Покидаем DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Может взиматься стандартная плата за передачу данных. Продолжить переход на внешний сайт?</string>
   <string name="zero_interstitial_continue">Уйти</string>
   <string name="zero_interstitial_cancel">Остаться</string>
@@ -194,7 +194,7 @@
   <string name="privacy_policy_url">https://meta.m.wikimedia.org/w/index.php?title=Privacy_policy/ru</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/ru#Чтение_в_офлайне_и_данные</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/ru</string>
-  <string name="terms_of_use_url">https://m.wikimediafoundation.org/wiki/Terms_of_Use/ru</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.ru</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.ru</string>
   <string name="about_libraries_heading">Используемые библиотеки</string>
@@ -202,7 +202,7 @@
   <string name="about_translators_heading">Переводчики</string>
   <string name="about_translators_translatewiki">Это приложение было переведено добровольцами на &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Лицензия</string>
-  <string name="about_app_license">Исходный код доступен на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;Gerrit&lt;/a&gt; под лицензией &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Если не указано иное, содержимое доступно в соответствии с лицензией &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Исходный код доступен на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;Gerrit&lt;/a&gt; под лицензией &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Если не указано иное, содержимое доступно в соответствии с лицензией &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Продукт &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Фонда Викимедиа&lt;/a&gt;</string>
   <string name="about_activity_title">О приложении</string>
   <string name="edit_abandon_confirm">Страница была изменена. Вы уверены, что хотите выйти без сохранения изменений?</string>
@@ -265,7 +265,7 @@
   <string name="gallery_error_video_failed">Не удаётся воспроизвести видео.</string>
   <string name="gallery_save_image_write_permission_rationale">Для сохранения изображений требуется разрешение на запись в хранилище вашего устройства.</string>
   <string name="err_cannot_save_file">Не удаётся сохранить файл</string>
-  <string name="snippet_share_intro">«%1$s» на сайте @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">«%1$s» на сайте @DroidWiki: %2$s</string>
   <string name="expand_refs">Нажмите, чтобы развернуть</string>
   <string name="share_snippet_button">Поделиться как изображением</string>
   <string name="share_normal_button">Поделиться как текстом</string>

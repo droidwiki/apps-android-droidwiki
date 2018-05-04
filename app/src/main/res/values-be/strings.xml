@@ -92,7 +92,7 @@
   <string name="history_empty_message">Адсочвайце тое, што вы ўжо чыталі тут.</string>
   <string name="search_empty_message">Шукайце і чытайце вольную энцыклапедыю на сваёй мове</string>
   <string name="delete_selected_items">Выдаліць выбраныя элементы</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ІКІПЕДЫ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Імя карыстальніка</string>
   <string name="login_dont_have_account">Не маеце ўліковага запісу?</string>
   <string name="login_join_wikipedia">Далучыцца да Вікіпедыі</string>
@@ -112,11 +112,11 @@
   <string name="preferences_general_heading">Агульныя</string>
   <string name="wikipedia_app_faq">Частыя пытанні па дадатку Вікіпедыі</string>
   <string name="zero_charged_verbiage">Свабодны доступ да Вікіпедыі больш не з\'яўляецца актыўным.</string>
-  <string name="zero_warn_when_leaving">Папярэджваць, калі пакідаеце Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Калі Ваш мабільны аператар не бярэ плату за доступ да дадзеных з дадатка Вікіпедыі праз партнёрства Wikipedia Zero, ўключэнне гэтага параметру дапаможа Вам ведаць, калі Вы пакідаеце дадатак Вікіпедыі, і можа пачаць спаганяцца плата за трафік.</string>
-  <string name="zero_webpage_title">ЧаПы па Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Пакінуць Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">Папярэджваць, калі пакідаеце DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Калі Ваш мабільны аператар не бярэ плату за доступ да дадзеных з дадатка Вікіпедыі праз партнёрства DroidWiki Zero, ўключэнне гэтага параметру дапаможа Вам ведаць, калі Вы пакідаеце дадатак Вікіпедыі, і можа пачаць спаганяцца плата за трафік.</string>
+  <string name="zero_webpage_title">ЧаПы па DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Пакінуць DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Можа спаганяцца стандартная плата за перадачу дадзеных. Працягнуць пераход на знешні сайт?</string>
   <string name="zero_interstitial_continue">Выйсці</string>
   <string name="zero_interstitial_cancel">Застацца тут</string>
@@ -155,7 +155,7 @@
   <string name="about_translators_heading">Перакладчыкі</string>
   <string name="about_translators_translatewiki">Гэты дадатак быў перакладзены валанцёрамі &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Ліцэнзія</string>
-  <string name="about_app_license">Зыходны код даступны на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; і &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; пад ліцэнзіяй &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Калі не пазначана іншае, змесціва даступна ў адпаведнасці з ліцэнзіяй &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Зыходны код даступны на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; і &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; пад ліцэнзіяй &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Калі не пазначана іншае, змесціва даступна ў адпаведнасці з ліцэнзіяй &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Прадукт &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Фонду Вікімедыа&lt;/a&gt;</string>
   <string name="about_activity_title">Аб дадатку</string>
   <string name="edit_abandon_confirm">Старонка была зменена. Вы ўпэўненыя, што жадаеце выйсці без захавання зменаў?</string>
@@ -213,7 +213,7 @@
   <string name="gallery_error_video_failed">Немагчыма прайграць відэа.</string>
   <string name="gallery_save_image_write_permission_rationale">Для захавання выяваў патрабуецца дазвол на запіс у сховішча Вашай прылады.</string>
   <string name="err_cannot_save_file">Немагчыма захаваць файл</string>
-  <string name="snippet_share_intro">\"%1$s\" на сайце @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" на сайце @DroidWiki: %2$s</string>
   <string name="expand_refs">Націсніце, каб разгарнуць</string>
   <string name="share_snippet_button">Падзяліцца як выявай</string>
   <string name="share_normal_button">Падзяліцца як тэкстам</string>

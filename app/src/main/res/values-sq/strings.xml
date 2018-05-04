@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="search_hint">Kërko në Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="search_hint">Kërko në DroidWiki</string>
   <string name="nav_item_history">Historiku</string>
   <string name="error_network_error">Nuk mund të lidhet me internet.</string>
   <string name="page_error_retry">Riprovo</string>
@@ -33,7 +33,7 @@
   <string name="content_license_html">Përmbajtja është nën disponim, &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; përveç rasteve kur tregohet ndryshe</string>
   <string name="edit_save_action_license_logged_in">Duke e ruajtur, ju pajtoheni me &lt;a href=\"%1$s\"&gt;Kushtet e Përdorimit&lt;/a&gt;, dhe e lëshoni kontributin tuaj në mënyrë të pakthyeshme nën licencën &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Duke e ruajtur, ju pajtoheni me &lt;a href=\"%1$s\"&gt;Kushtet e Përdorimit&lt;/a&gt;, dhe e lëshoni kontributin tuaj në mënyrë të pakthyeshme nën licencën &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;. Redaktimet do t\'i atribuohen IP adresës të pajisjes tuaj. Nëse ju &lt;a href=\"https://#login\"&gt;kyçeni&lt;/a&gt;, do të keni më shumë privatësi.</string>
-  <string name="preference_title_language">Gjuha e Wikipedias</string>
+  <string name="preference_title_language">Gjuha e DroidWikis</string>
   <string name="preference_languages_filter_hint">Kërko</string>
   <string name="langlinks_filter_hint">Kërko</string>
   <string name="langlinks_empty">Kjo faqe nuk është në dispozicion në gjuhë të tjera.</string>
@@ -54,17 +54,17 @@
   <string name="edit_section_captcha_hint">Përsërit fjalët nga lart</string>
   <string name="title_captcha">Futni CAPTCHA</string>
   <string name="edit_section_captcha_reload">Shtyp  mbi captcha per te ringarkuaar</string>
-  <string name="nav_item_login">Hyni në Wikipedia</string>
+  <string name="nav_item_login">Hyni në DroidWiki</string>
   <string name="login_username_hint">Emri i përdoruesit</string>
   <string name="login_password_hint">Fjalëkalimi</string>
   <string name="menu_login">Hyni</string>
-  <string name="login_activity_title">Hyni në Wikipedia</string>
+  <string name="login_activity_title">Hyni në DroidWiki</string>
   <string name="login_in_progress_dialog_message">Duke hyrë…</string>
   <string name="login_success_toast">Identifikim i suksesshëm!</string>
   <string name="preference_title_logout">Dil</string>
   <string name="toast_logout_complete">Dolët</string>
   <string name="history_empty_message">Ndoshta i keni fshirë të gjitha. Herën tjetër që shkoni në një faqe, ju mund të riktheheni te ajo nga këtu.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Emri i përdoruesit</string>
   <string name="create_account_activity_title">Krijo një llogari</string>
   <string name="dialog_create_account_checking_progress">Due verifikuar</string>
@@ -76,14 +76,14 @@
   <string name="create_account_button">Krijo llogari</string>
   <string name="preferences_general_heading">Të përgjithshme</string>
   <string name="wikipedia_app_faq">Pyetje dhe përgjigje</string>
-  <string name="zero_charged_verbiage" fuzzy="true">Wikipedia Zero është e çaktivizuar</string>
-  <string name="zero_warn_when_leaving">Paralajmëroni në qoftë se largohet nga Wikipedia Zero</string>
-  <string name="zero_webpage_title">Pyetje dhe përgjigje për Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Lëre Wikipedia Zero</string>
+  <string name="zero_charged_verbiage" fuzzy="true">DroidWiki Zero është e çaktivizuar</string>
+  <string name="zero_warn_when_leaving">Paralajmëroni në qoftë se largohet nga DroidWiki Zero</string>
+  <string name="zero_webpage_title">Pyetje dhe përgjigje për DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Lëre DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Largohu</string>
   <string name="zero_interstitial_cancel">Qëndro këtu</string>
-  <string name="zero_learn_more" fuzzy="true">Dëshironi të mësoni në lidhje me Wikipedia Zero?</string>
+  <string name="zero_learn_more" fuzzy="true">Dëshironi të mësoni në lidhje me DroidWiki Zero?</string>
   <string name="zero_learn_more_learn_more" fuzzy="true">Lexo më shumë</string>
   <string name="zero_learn_more_dismiss">Largoje</string>
   <string name="create_account_account_created_toast">Llogaria u krijua!</string>
@@ -98,7 +98,7 @@
   <string name="address_copied">Adresa që keni kopjuar në clipboard.</string>
   <string name="text_copied">Teksti që keni kopjuar në clipboard.</string>
   <string name="button_continue_to_article">Lexoni artikullin</string>
-  <string name="nav_item_donate">Mbështesni Wikipedia-n</string>
+  <string name="nav_item_donate">Mbështesni DroidWiki-n</string>
   <string name="error_voice_search_not_available">Na vjen keq, njohja e zërit nuk është në dispozicion.</string>
   <string name="location_service_disabled">Shërbimet e vendndodhjes janë të çaktivizuara.</string>
   <string name="enable_location_service">Aktivizo</string>

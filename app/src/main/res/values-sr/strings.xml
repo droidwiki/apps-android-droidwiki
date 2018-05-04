@@ -96,7 +96,7 @@
   <string name="history_empty_message">Овде пратите прочитано.</string>
   <string name="search_empty_message">Претражујте и читајте слободну енциклопедију на свом језику</string>
   <string name="delete_selected_items">Обриши одабране ставке</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ИКИПЕДИЈ&lt;big&gt;А&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Корисничко име</string>
   <string name="login_dont_have_account">Немате налог?</string>
   <string name="login_join_wikipedia">Придружите се Википедији</string>
@@ -116,11 +116,11 @@
   <string name="preferences_general_heading">Опште</string>
   <string name="wikipedia_app_faq">ЧПП о апликацији Википедија</string>
   <string name="zero_charged_verbiage">Слободни приступ Википедији више није активан.</string>
-  <string name="zero_warn_when_leaving">Упозори ме ако напуштам Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Ако се ваш мобилни оператер одриче наплате за приступ подацима за апликацију Википедија преко партнерства Wikipedia Zero, остављање овог подешавања означеним помаже вам да знате када напуштате апликацију Википедија и када би вам се саобраћај могао почети наплаћивати.</string>
-  <string name="zero_webpage_title">ЧПП о режиму Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Напуштање режима Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">Упозори ме ако напуштам DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Ако се ваш мобилни оператер одриче наплате за приступ подацима за апликацију Википедија преко партнерства DroidWiki Zero, остављање овог подешавања означеним помаже вам да знате када напуштате апликацију Википедија и када би вам се саобраћај могао почети наплаћивати.</string>
+  <string name="zero_webpage_title">ЧПП о режиму DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Напуштање режима DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Пренос података ће вам можда бити наплаћен. Наставити на спољни сајт?</string>
   <string name="zero_interstitial_continue">Напусти</string>
   <string name="zero_interstitial_cancel">Остани</string>
@@ -159,7 +159,7 @@
   <string name="about_translators_heading">Преводиоци</string>
   <string name="about_translators_translatewiki">Апликацију су превели добровољци сајта &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Лиценца</string>
-  <string name="about_app_license">Изворни кôд је доступан на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit-у&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub-у&lt;/a&gt; под лиценцом &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Садржај је доступан под лиценцом &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Ауторство-Делити под истим условима&lt;/a&gt; осим ако није другачије наведено.</string>
+  <string name="about_app_license">Изворни кôд је доступан на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit-у&lt;/a&gt; и &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub-у&lt;/a&gt; под лиценцом &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Садржај је доступан под лиценцом &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Ауторство-Делити под истим условима&lt;/a&gt; осим ако није другачије наведено.</string>
   <string name="about_wmf">Производ &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Задужбине Викимедија&lt;/a&gt;</string>
   <string name="about_activity_title">О апликацији</string>
   <string name="edit_abandon_confirm">Страница је измењена. Заиста желите да изађете без чувања измена?</string>
@@ -220,7 +220,7 @@
   <string name="gallery_error_video_failed">Не могу да репродукујем видео.</string>
   <string name="gallery_save_image_write_permission_rationale">Потребна је ваша дозвола за чување слика на вашем уређају.</string>
   <string name="err_cannot_save_file">Не могу да сачувам датотеку</string>
-  <string name="snippet_share_intro">„%1$s“ на @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">„%1$s“ на @DroidWiki: %2$s</string>
   <string name="expand_refs">Додирните да бисте проширили</string>
   <string name="share_snippet_button">Дели као слику</string>
   <string name="share_normal_button">Дели као текст</string>

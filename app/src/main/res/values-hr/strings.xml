@@ -75,7 +75,7 @@
   <string name="toast_logout_complete">Odjavili ste se</string>
   <string name="history_empty_title" fuzzy="true">Ovdje nema nedavnih stranica.</string>
   <string name="history_empty_message" fuzzy="true">Vjerojatno ste ih izbrisali. Sljedeći put kad posjetite stranice, možete se vratiti na njih odavde.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDIJ&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Suradničko ime</string>
   <string name="create_account_activity_title">Stvorite račun</string>
   <string name="dialog_create_account_checking_progress">Provjera</string>
@@ -90,7 +90,7 @@
   <string name="wikipedia_app_faq">ČPP o aplikaciji Wikipedija</string>
   <string name="zero_charged_verbiage" fuzzy="true">Wikipedija Zero je isključen</string>
   <string name="zero_warn_when_leaving">Upozori prilikom napuštanja Wikipedija Zero</string>
-  <string name="zero_warn_when_leaving_summary">Ako vaš davatelj usluga ne naplaćuje pristup Wikipediji kroz partnerstvo Wikipedia Zero, uključivanjem ove opcije dobit ćete obavijest ukoliko napuštate besplatne stranice, te se prijenos podataka može dodatno naplatiti.</string>
+  <string name="zero_warn_when_leaving_summary">Ako vaš davatelj usluga ne naplaćuje pristup Wikipediji kroz partnerstvo DroidWiki Zero, uključivanjem ove opcije dobit ćete obavijest ukoliko napuštate besplatne stranice, te se prijenos podataka može dodatno naplatiti.</string>
   <string name="zero_webpage_title">Wikipedija Zero ČPP</string>
   <string name="zero_wikipedia_zero_heading">Wikipedija Zero</string>
   <string name="zero_interstitial_title">Napuštanje Wikipedija Zero</string>
@@ -117,7 +117,7 @@
   <string name="page_protected_can_not_edit_title">Ova stranica je zaštićena</string>
   <string name="settings_item_preferences">Postavke</string>
   <string name="settings_activity_title">Postavke</string>
-  <string name="about_description">O aplikaciji \"Wikipedia\"</string>
+  <string name="about_description">O aplikaciji \"DroidWiki\"</string>
   <string name="privacy_policy_description">Politika privatnosti</string>
   <string name="terms_of_use_description">Uvjeti uporabe</string>
   <string name="about_libraries_heading">Korištene biblioteke</string>
@@ -125,7 +125,7 @@
   <string name="about_translators_heading">Prevoditelji</string>
   <string name="about_translators_translatewiki">Ovu aplikaciju preveli su su prevoditelji volonteri na projektu &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licencija</string>
-  <string name="about_app_license">Izvorni kod dostupan na &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; pod licencijom &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Ako nije drugačije navedeno, sadržaj je dostupan pod licencijom &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt;.</string>
+  <string name="about_app_license">Izvorni kod dostupan na &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; i &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; pod licencijom &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Ako nije drugačije navedeno, sadržaj je dostupan pod licencijom &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt;.</string>
   <string name="about_wmf" fuzzy="true">Proizvod &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Zaklade Wikimedija&lt;/a&gt;</string>
   <string name="about_activity_title">O</string>
   <string name="edit_abandon_confirm">Stranica je promijenjena. Jeste li sigurni da želite izaći bez spremanja promjena?</string>
@@ -146,7 +146,7 @@
   <string name="abusefilter_title_warn" fuzzy="true">Ovo uređivanje je možda nekonstruktivno. Želite li ga spremiti?</string>
   <string name="abusefilter_title_disallow" fuzzy="true">Ne možete spremiti ovo uređivanje. Vratite se natrag i promijenite ga.</string>
   <string name="abusefilter_text_warn">Automatizirani filter je ovo uređivanje označio kao moguće nekonstruktivno. Moguće je da sadrži nešto od sljedećeg:&lt;br /&gt;&lt;br /&gt;· pisanje tiskanim slovima&lt;br /&gt;· brisanje članaka ili spamiranje&lt;br /&gt;· nevažne vanjske poveznice ili slike&lt;br /&gt;· ponavljanje znakova</string>
-  <string name="abusefilter_text_disallow">An automated filter has identified this edit as potentially unconstructive, or potential vandalism.&lt;br /&gt;&lt;br /&gt;Wikipedia is an encyclopedia and only neutral, notable content belongs here.\n\nAutomatizirani filter je ovo uređivanje označio kao moguće nekonstruktivno ili vandalizam.&lt;br /&gt;&lt;br /&gt;Wikipedija je enciklopedija i dodajite samo neutralan i provjerljiv sadržaj.</string>
+  <string name="abusefilter_text_disallow">An automated filter has identified this edit as potentially unconstructive, or potential vandalism.&lt;br /&gt;&lt;br /&gt;DroidWiki is an encyclopedia and only neutral, notable content belongs here.\n\nAutomatizirani filter je ovo uređivanje označio kao moguće nekonstruktivno ili vandalizam.&lt;br /&gt;&lt;br /&gt;Wikipedija je enciklopedija i dodajite samo neutralan i provjerljiv sadržaj.</string>
   <string name="dialog_page_issues">Problemi sa stranicom</string>
   <string name="button_page_issues">Problemi sa stranicom</string>
   <string name="text_size_select">Veličina pisma</string>

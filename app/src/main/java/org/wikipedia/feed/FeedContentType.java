@@ -11,7 +11,6 @@ import org.wikipedia.feed.becauseyouread.BecauseYouReadClient;
 import org.wikipedia.feed.continuereading.ContinueReadingClient;
 import org.wikipedia.feed.dataclient.FeedClient;
 import org.wikipedia.feed.mainpage.MainPageClient;
-import org.wikipedia.feed.random.RandomClient;
 import org.wikipedia.model.EnumCode;
 import org.wikipedia.model.EnumCodeMap;
 import org.wikipedia.settings.Prefs;
@@ -22,20 +21,20 @@ import java.util.List;
 import java.util.Map;
 
 public enum FeedContentType implements EnumCode {
-    NEWS(0, R.string.view_card_news_title, R.string.feed_item_type_news, true) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && age == 0 && isOnline ? new AggregatedFeedContentClient.InTheNews(aggregatedClient) : null;
-        }
-    },
-    ON_THIS_DAY(1, R.string.on_this_day_card_title, R.string.feed_item_type_on_this_day, true) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && isOnline ? new AggregatedFeedContentClient.OnThisDayFeed(aggregatedClient) : null;
-        }
-    },
+//    NEWS(0, R.string.view_card_news_title, R.string.feed_item_type_news, true) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && age == 0 && isOnline ? new AggregatedFeedContentClient.InTheNews(aggregatedClient) : null;
+//        }
+//    },
+//    ON_THIS_DAY(1, R.string.on_this_day_card_title, R.string.feed_item_type_on_this_day, true) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && isOnline ? new AggregatedFeedContentClient.OnThisDayFeed(aggregatedClient) : null;
+//        }
+//    },
     CONTINUE_READING(2, R.string.view_continue_reading_card_title, R.string.feed_item_type_continue_reading, false) {
         @Nullable
         @Override
@@ -43,13 +42,13 @@ public enum FeedContentType implements EnumCode {
             return isEnabled() ? new ContinueReadingClient() : null;
         }
     },
-    TRENDING_ARTICLES(3, R.string.most_read_list_card_title, R.string.feed_item_type_trending, true) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && isOnline ? new AggregatedFeedContentClient.TrendingArticles(aggregatedClient) : null;
-        }
-    },
+//    TRENDING_ARTICLES(3, R.string.most_read_list_card_title, R.string.feed_item_type_trending, true) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && isOnline ? new AggregatedFeedContentClient.TrendingArticles(aggregatedClient) : null;
+//        }
+//    },
     MAIN_PAGE(4, R.string.view_main_page_card_title, R.string.feed_item_type_main_page, false) {
         @Nullable
         @Override
@@ -57,27 +56,27 @@ public enum FeedContentType implements EnumCode {
             return isEnabled() && age == 0 ? new MainPageClient() : null;
         }
     },
-    RANDOM(5, R.string.view_random_card_title, R.string.feed_item_type_randomizer, false) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && age % 2 == 0 ? new RandomClient() : null;
-        }
-    },
-    FEATURED_ARTICLE(6, R.string.view_featured_article_card_title, R.string.feed_item_type_featured_article, true) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && isOnline ? new AggregatedFeedContentClient.FeaturedArticle(aggregatedClient) : null;
-        }
-    },
-    FEATURED_IMAGE(7, R.string.view_featured_image_card_title, R.string.feed_item_type_featured_image, false) {
-        @Nullable
-        @Override
-        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-            return isEnabled() && isOnline ? new AggregatedFeedContentClient.FeaturedImage(aggregatedClient) : null;
-        }
-    },
+//    RANDOM(5, R.string.view_random_card_title, R.string.feed_item_type_randomizer, false) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && age % 2 == 0 ? new RandomClient() : null;
+//        }
+//    },
+//    FEATURED_ARTICLE(6, R.string.view_featured_article_card_title, R.string.feed_item_type_featured_article, true) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && isOnline ? new AggregatedFeedContentClient.FeaturedArticle(aggregatedClient) : null;
+//        }
+//    },
+//    FEATURED_IMAGE(7, R.string.view_featured_image_card_title, R.string.feed_item_type_featured_image, false) {
+//        @Nullable
+//        @Override
+//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+//            return isEnabled() && isOnline ? new AggregatedFeedContentClient.FeaturedImage(aggregatedClient) : null;
+//        }
+//    },
     BECAUSE_YOU_READ(8, R.string.view_because_you_read_card_title, R.string.feed_item_type_because_you_read, false) {
         @Nullable
         @Override

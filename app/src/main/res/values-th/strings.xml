@@ -95,7 +95,7 @@
   <string name="history_empty_message">ติดตามสิ่งที่คุณได้อ่านที่นี่</string>
   <string name="search_empty_message">ค้นหาและอ่านสารานุกรมเสรีในภาษาของคุณ</string>
   <string name="delete_selected_items">ลบรายการที่เลือก</string>
-  <string name="wp_stylized">&lt;big&gt;วิ&lt;/big&gt;กิพีเดี&lt;big&gt;ย&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">ชื่อผู้ใช้</string>
   <string name="login_dont_have_account">ไม่มีบัญชีหรือ</string>
   <string name="login_join_wikipedia">เข้าร่วมกับวิกิพีเดีย</string>
@@ -115,8 +115,8 @@
   <string name="preferences_general_heading">ทั่วไป</string>
   <string name="wikipedia_app_faq">คำถามที่พบบ่อยเกี่ยวกับแอปวิกิพีเดีย</string>
   <string name="zero_charged_verbiage">ไม่สามารถใช้บริการวิกิพีเดียฟรีได้อีกต่อไป</string>
-  <string name="zero_warn_when_leaving">เตือนถ้ากำลังจะออกจาก Wikipedia Zero</string>
-  <string name="zero_interstitial_title">ออกจาก Wikipedia Zero</string>
+  <string name="zero_warn_when_leaving">เตือนถ้ากำลังจะออกจาก DroidWiki Zero</string>
+  <string name="zero_interstitial_title">ออกจาก DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">อาจมีการคิดค่าบริการเพิ่ม ต้องจากออกไปยังภายนอกไซต์หรือไม่?</string>
   <string name="zero_interstitial_continue">ออก</string>
   <string name="zero_interstitial_cancel">อยู่ต่อ</string>
@@ -166,7 +166,7 @@
   <string name="gallery_error_video_failed">ไม่สามารถเล่นวีดีโอได้</string>
   <string name="gallery_save_image_write_permission_rationale" fuzzy="true">ต้องการการยินยอมให้เขียนข้อมูลลงในที่จัดเก็บบนอุปกรณ์ของคุณ เพื่อบันทึกภาพ กรุณาลองอีกครั้ง และยินยอมการอนุญาต</string>
   <string name="err_cannot_save_file">ไม่สามารถบันทึกไฟล์</string>
-  <string name="snippet_share_intro">\"%1$s\" บน @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" บน @DroidWiki: %2$s</string>
   <string name="expand_refs">แตะเพื่อขยาย</string>
   <string name="share_snippet_button">แบ่งปันเป็นรูปภาพ</string>
   <string name="share_normal_button">แบ่งปันเป็นข้อความ</string>

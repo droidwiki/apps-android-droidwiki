@@ -81,7 +81,7 @@
   <string name="toast_logout_complete">אַרויסלאגירט</string>
   <string name="history_empty_title">קיין לעצטיקע געוויזענע בלעטער נישט דא.</string>
   <string name="delete_selected_items">אויסמעקן אויסגעקליבענע אביעקטן</string>
-  <string name="wp_stylized">&lt;big&gt;וו&lt;/big&gt;יקיפעדי&lt;big&gt;ע&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">באַניצער נאָמען</string>
   <string name="login_dont_have_account">איר האט נישט קיין קאנטע?</string>
   <string name="login_join_wikipedia">צוטרעטן וויקיפעדיע</string>
@@ -180,7 +180,7 @@
   <string name="gallery_save_success">טעקע דערפאלגרייך געשפייכלערט.</string>
   <string name="gallery_error_video_failed">קען נישט שפילן ווידעא.</string>
   <string name="err_cannot_save_file">קען נישט אויפהיטן טעקע</string>
-  <string name="snippet_share_intro">\"%1$s\" ביי @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" ביי @DroidWiki: %2$s</string>
   <string name="expand_refs">דריקט צו פארברייטערן</string>
   <string name="share_snippet_button">טיילן אלס בילד</string>
   <string name="share_normal_button">טיילן אלס טעקסט</string>

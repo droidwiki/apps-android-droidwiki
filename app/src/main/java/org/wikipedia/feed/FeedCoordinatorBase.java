@@ -101,14 +101,14 @@ public abstract class FeedCoordinatorBase {
     public int dismissCard(@NonNull Card card) {
         int position = cards.indexOf(card);
         if (card.type() == CardType.RANDOM) {
-            FeedContentType.RANDOM.setEnabled(false);
-            FeedContentType.saveState();
+//            FeedContentType.RANDOM.setEnabled(false);
+//            FeedContentType.saveState();
         } else if (card.type() == CardType.MAIN_PAGE) {
             FeedContentType.MAIN_PAGE.setEnabled(false);
             FeedContentType.saveState();
         } else if (card.type() == CardType.NEWS_LIST) {
-            FeedContentType.NEWS.setEnabled(false);
-            FeedContentType.saveState();
+//            FeedContentType.NEWS.setEnabled(false);
+//            FeedContentType.saveState();
         } else {
             addHiddenCard(card);
         }
@@ -119,14 +119,14 @@ public abstract class FeedCoordinatorBase {
 
     public void undoDismissCard(@NonNull Card card, int position) {
         if (card.type() == CardType.RANDOM) {
-            FeedContentType.RANDOM.setEnabled(true);
-            FeedContentType.saveState();
+//            FeedContentType.RANDOM.setEnabled(true);
+//            FeedContentType.saveState();
         } else if (card.type() == CardType.MAIN_PAGE) {
             FeedContentType.MAIN_PAGE.setEnabled(true);
             FeedContentType.saveState();
         } else if (card.type() == CardType.NEWS_LIST) {
-            FeedContentType.NEWS.setEnabled(true);
-            FeedContentType.saveState();
+//            FeedContentType.NEWS.setEnabled(true);
+//            FeedContentType.saveState();
         } else {
             unHideCard(card);
         }

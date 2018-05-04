@@ -13,11 +13,11 @@
 * WikiPhoenix
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Sök på Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Sök på DroidWiki</string>
   <string name="search_hint_search_history">Sök i historik</string>
   <string name="search_hint_search_my_lists">Sök i mina listor</string>
   <string name="search_hint_search_reading_list">Sök i läslista</string>
@@ -63,7 +63,7 @@
   <string name="content_license_html">Innehållet är tillgängligt under &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; om inget annat anges</string>
   <string name="edit_save_action_license_logged_in">Genom att spara godkänner du &lt;a href=\"%1$s\"&gt;Användarvillkoren&lt;/a&gt;, och att oåterkalleligen släppa ditt bidrag med licensen &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Genom att spara samtycker till &lt;a href=\"%1$s\"&gt;Användarvillkoren&lt;/a&gt; och att oåterkalleligt släppa dina bidrag under licensen &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;. Redigeringar kommer att tillskrivas till din enhets IP-adress. Om du &lt;a href=\"https://#login\"&gt;loggar in&lt;/a&gt; kommer du få mer integritet.</string>
-  <string name="preference_title_language">Wikipediaspråk</string>
+  <string name="preference_title_language">DroidWikispråk</string>
   <string name="preference_languages_filter_hint">Sök</string>
   <string name="langlinks_filter_hint">Sök</string>
   <string name="langlinks_empty">Denna sida är inte tillgänglig på andra språk</string>
@@ -87,13 +87,13 @@
   <string name="edit_section_captcha_hint">Upprepa orden ovan</string>
   <string name="title_captcha">Ange captcha</string>
   <string name="edit_section_captcha_reload">Tryck på captcha för att uppdatera</string>
-  <string name="nav_item_login">Logga in på Wikipedia</string>
+  <string name="nav_item_login">Logga in på DroidWiki</string>
   <string name="login_username_hint">Användarnamn</string>
   <string name="login_password_hint">Lösenord</string>
   <string name="login_2fa_hint">Tvåstegsverifieringskod</string>
   <string name="login_2fa_other_workflow_error_msg">Tvåstegsverifiering krävs! Gå tillbaka till huvudaktiviteten och logga in med din tvåstegsverifieringskod och försök igen.</string>
   <string name="menu_login">Logga in</string>
-  <string name="login_activity_title">Logga in på Wikipedia</string>
+  <string name="login_activity_title">Logga in på DroidWiki</string>
   <string name="login_in_progress_dialog_message">Loggar in dig…</string>
   <string name="login_success_toast">Inloggningen lyckades!</string>
   <string name="preference_title_logout">Logga ut</string>
@@ -102,10 +102,10 @@
   <string name="history_empty_message">Håll koll på vad du har läst här.</string>
   <string name="search_empty_message">Sök och läs den fria encyklopedin på ditt språk</string>
   <string name="delete_selected_items">Radera markerade objekt</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Användarnamn</string>
   <string name="login_dont_have_account">Har du inget konto?</string>
-  <string name="login_join_wikipedia">Registrera dig på Wikipedia</string>
+  <string name="login_join_wikipedia">Registrera dig på DroidWiki</string>
   <string name="login_forgot_password">Glömt ditt lösenord?</string>
   <string name="create_account_already_have">Har du redan ett konto?</string>
   <string name="create_account_activity_title">Skapa ett konto</string>
@@ -121,17 +121,17 @@
   <string name="create_account_button">Skapa konto</string>
   <string name="create_account_name_unavailable">Användarnamnet \"%s\" är inte tillgängligt. Var god välj ett annat namn.</string>
   <string name="preferences_general_heading">Allmänt</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Fri tillgång till Wikipedia är inte längre aktiv.</string>
-  <string name="zero_warn_when_leaving">Varna om jag lämnar Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Om din mobiloperatör ingått ett partnerskap med Wikipedia Zero, som ger dig tillgång till Wikipedia utan datatrafiksavgifter, varnas du om du lämnar appen och riskerar att betala för datatrafik om du har aktiverat denna inställning.</string>
-  <string name="zero_webpage_title">Vanliga frågor om Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Du lämnar nu Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">Fri tillgång till DroidWiki är inte längre aktiv.</string>
+  <string name="zero_warn_when_leaving">Varna om jag lämnar DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Om din mobiloperatör ingått ett partnerskap med DroidWiki Zero, som ger dig tillgång till DroidWiki utan datatrafiksavgifter, varnas du om du lämnar appen och riskerar att betala för datatrafik om du har aktiverat denna inställning.</string>
+  <string name="zero_webpage_title">Vanliga frågor om DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Du lämnar nu DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Avgifter för datatrafik kan tillkomma. Vill du fortsätta till den externa webbplatsen?</string>
   <string name="zero_interstitial_continue">Lämna appen</string>
   <string name="zero_interstitial_cancel">Avbryt</string>
-  <string name="zero_learn_more">Din mobiloperatör har gett dig fri tillgång till Wikipedias innehåll!</string>
+  <string name="zero_learn_more">Din mobiloperatör har gett dig fri tillgång till DroidWikis innehåll!</string>
   <string name="zero_learn_more_learn_more">Läs mer</string>
   <string name="zero_learn_more_dismiss">Stäng</string>
   <string name="edit_preview_fetching_dialog_message">Hämtar förhandsgranskning…</string>
@@ -143,8 +143,8 @@
   <string name="preferences_heading_experimental">Experimentell</string>
   <string name="preference_title_sync_reading_lists">Synkroniserar läslistor</string>
   <string name="preference_title_sync_reading_lists_from_account">Aktivera synkronisering av läslistor</string>
-  <string name="preference_summary_sync_reading_lists">Synkronisera läslistor över olika enheter genom att spara dem till ditt Wikipedia-konto</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Synkronisera läslistor över olika enheter genom att spara dem till ditt Wikipedia-konto %s</string>
+  <string name="preference_summary_sync_reading_lists">Synkronisera läslistor över olika enheter genom att spara dem till ditt DroidWiki-konto</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Synkronisera läslistor över olika enheter genom att spara dem till ditt DroidWiki-konto %s</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Ta bort synkroniserade läslistor från \"%s\"?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Detta kommer att radera alla tidigare synkroniserade läslistor från fjärrlagringen helt och hållet. Ta bort alla synkroniserade listor från ditt konto \"%s\"?</string>
   <string name="preferences_privacy_settings_heading">Integritet</string>
@@ -163,14 +163,14 @@
   <string name="page_protected_can_not_edit_title">Denna sida är skrivskyddad</string>
   <string name="settings_item_preferences">Inställningar</string>
   <string name="settings_activity_title">Inställningar</string>
-  <string name="about_description">Om Wikipedia-appen</string>
+  <string name="about_description">Om DroidWiki-appen</string>
   <string name="privacy_policy_description">Integritetspolicy</string>
   <string name="terms_of_use_description">Användarvillkor</string>
-  <string name="about_wikipedia_url">https://sv.m.wikipedia.org/wiki/Wikipedia:Om</string>
+  <string name="about_wikipedia_url">https://sv.m.wikipedia.org/wiki/DroidWiki:Om</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/sv#Läsa_offline_och_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/sv</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.sv</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.sv</string>
   <string name="about_libraries_heading">Bibliotek som har använts</string>
@@ -178,7 +178,7 @@
   <string name="about_translators_heading">Översättare</string>
   <string name="about_translators_translatewiki">Denna app översattes av de frivilliga översättarna på &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licens</string>
-  <string name="about_app_license">Källkoden finns tillgänglig på &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; och &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; under licensen &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Om inget annat anges är innehållet tillgängligt under licensen &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Erkännande-DelaLika&lt;/a&gt;.</string>
+  <string name="about_app_license">Källkoden finns tillgänglig på &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; och &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; under licensen &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Om inget annat anges är innehållet tillgängligt under licensen &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Erkännande-DelaLika&lt;/a&gt;.</string>
   <string name="about_wmf">En app utvecklad av &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Om</string>
   <string name="edit_abandon_confirm">Ändringar har gjorts i sidan. Är du säker på att du vill lämna den utan att spara dina ändringar?</string>
@@ -205,7 +205,7 @@
   <string name="abusefilter_title_warn">Detta kan vara en icke-konstruktiv redigering. Är du säker på att du vill publicera den?</string>
   <string name="abusefilter_title_disallow">Du kan inte publicera denna redigering. Gå tillbaka och ändra den.</string>
   <string name="abusefilter_text_warn">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv. Den kan innehålla en eller flera av följande:&lt;br /&gt;&lt;br /&gt;· Text skriven helt med versaler&lt;br /&gt;· Tömmande av artiklar eller spam&lt;br /&gt;· Irrelevanta externa länkar eller bilder&lt;br /&gt;· Upprepade tecken</string>
-  <string name="abusefilter_text_disallow">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv eller potentiell vandalism.&lt;br /&gt;&lt;br /&gt;Wikipedia är en encyklopedi och endast neutralt, nämnvärt innehåll hör hemma här.</string>
+  <string name="abusefilter_text_disallow">Ett automatiserat filter har identifierat denna redigering som potentiellt okonstruktiv eller potentiell vandalism.&lt;br /&gt;&lt;br /&gt;DroidWiki är en encyklopedi och endast neutralt, nämnvärt innehåll hör hemma här.</string>
   <string name="dialog_page_issues">Sidproblem</string>
   <string name="button_page_issues">Sidproblem</string>
   <string name="text_size_select">Teckenstorlek</string>
@@ -220,9 +220,9 @@
   <string name="table_infobox">Snabbfakta</string>
   <string name="table_other">Mer information</string>
   <string name="table_close">Stäng</string>
-  <string name="widget_name_featured_page">Utmärkt Wikipedia-artikel</string>
+  <string name="widget_name_featured_page">Utmärkt DroidWiki-artikel</string>
   <string name="widget_title_featured_page">Dagens utmärkta artikel:</string>
-  <string name="widget_name_search">Wikipedia-sök</string>
+  <string name="widget_name_search">DroidWiki-sök</string>
   <string name="wiktionary_no_definitions_found">Inga definitioner hittades.</string>
   <string name="alpha_update_notification_title">Ny alpha-uppdatering tillgänglig</string>
   <string name="alpha_update_notification_text">Tryck för att ladda ner</string>
@@ -241,7 +241,7 @@
   <string name="gallery_error_video_failed">Kan inte spela upp video.</string>
   <string name="gallery_save_image_write_permission_rationale">Behörighet för att skriva till lagringsutrymmet på din enhet krävs för att spara bilder.</string>
   <string name="err_cannot_save_file">Kan inte spara filen</string>
-  <string name="snippet_share_intro">\"%1$s\" på @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" på @DroidWiki: %2$s</string>
   <string name="expand_refs">Tryck för att expandera</string>
   <string name="share_snippet_button">Dela som bild</string>
   <string name="share_normal_button">Dela som text</string>
@@ -276,7 +276,7 @@
   <string name="error_no_maps_app">Kunde inte hitta några appar som kan ge vägbeskrivningar.</string>
   <string name="preference_title_show_link_previews">Visa förhandsvisning för länkar</string>
   <string name="preference_summary_show_link_previews">Visar en kort förhandsvisning av artiklar när du trycker på länkar.</string>
-  <string name="nav_item_donate">Stöd Wikipedia</string>
+  <string name="nav_item_donate">Stöd DroidWiki</string>
   <string name="error_voice_search_not_available">Tyvärr, röststyrning är inte tillgänglig.</string>
   <string name="location_service_disabled">Platstjänster är inaktiverade.</string>
   <string name="enable_location_service">Aktivera</string>
@@ -293,14 +293,14 @@
   <string name="preference_title_prefer_offline_content">Visa offlineinnehåll om möjligt</string>
   <string name="preference_summary_prefer_offline_content">Spara dataanvändning genom att läsa in artiklar som är tillgängliga offline istället för att alltid läsa in den senaste versionen av en artikel</string>
   <string name="preference_title_enable_offline_library">Aktivera offlinebiblioteket</string>
-  <string name="preference_summary_enable_offline_library">Få tillgång till Wikipedia-artikelpaket (visas som .ZIM-filer) som laddas ned till din enhet så du kan läsa när du är offline. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Läs mer&lt;/a&gt;</string>
+  <string name="preference_summary_enable_offline_library">Få tillgång till DroidWiki-artikelpaket (visas som .ZIM-filer) som laddas ned till din enhet så du kan läsa när du är offline. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Läs mer&lt;/a&gt;</string>
   <string name="crash_report_dialog_title">Beklagar att appen kraschade förra gången</string>
   <string name="crash_report_dialog_text">Vill du skicka en kraschrapport till tredjepartstjänsten HockeyApp så Wikimedia kan granska din krasch och åtgärda felet som orsakade den?</string>
   <string name="crash_report_dialog_dont_send_button">Hoppa över</string>
   <string name="crash_report_dialog_always_send_button">Skicka alltid</string>
   <string name="crash_report_dialog_send_button">Skicka</string>
   <string name="crash_report_activity_title">Applikationsfel</string>
-  <string name="crash_report_relaunch_or_quit">Tyvärr stötte Wikipedia-appen på ett fel och avslutades.\n\nVill du starta om eller avsluta?</string>
+  <string name="crash_report_relaunch_or_quit">Tyvärr stötte DroidWiki-appen på ett fel och avslutades.\n\nVill du starta om eller avsluta?</string>
   <string name="crash_report_relaunch">Starta om</string>
   <string name="crash_report_quit">Avsluta</string>
   <string name="article_menu_bar_bookmark">Lägg till denna artikel i en läslista</string>
@@ -374,11 +374,11 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Artikeln förekommer i flera listor</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">%s kommer inte längre vara tillgänglig offline för alla läslistor:</string>
   <string name="reading_lists_sync_reminder_title">Aktivera synkronisering av läslistor?</string>
-  <string name="reading_lists_sync_reminder_text">Artiklar som har sparats i läslistor kan nu synkroniseras till ditt Wikipedia-konto. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Läs mer&lt;/a&gt;</string>
-  <string name="reading_lists_login_reminder_text_with_link">Läslistor kan nu synkroniseras över enheter. Logga in till ditt Wikipedia-konto och tillåt dina listor att sparas. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Läs mer&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Artiklar som har sparats i läslistor kan nu synkroniseras till ditt DroidWiki-konto. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Läs mer&lt;/a&gt;</string>
+  <string name="reading_lists_login_reminder_text_with_link">Läslistor kan nu synkroniseras över enheter. Logga in till ditt DroidWiki-konto och tillåt dina listor att sparas. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Läs mer&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Aktivera synkronisering</string>
   <string name="reading_list_login_reminder_title">Synkronisera läslistor</string>
-  <string name="reading_lists_login_reminder_text">Läslistor kan nu synkroniseras över enheter. Logga in på ditt Wikipedia-konto och tillåt dina listor att sparas.</string>
+  <string name="reading_lists_login_reminder_text">Läslistor kan nu synkroniseras över enheter. Logga in på ditt DroidWiki-konto och tillåt dina listor att sparas.</string>
   <string name="reading_lists_confirm_remote_delete">Detta kommer att radera alla tidigare synkroniserade läslistor från fjärrlagringen. Vill du fortsätta?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Ja</string>
   <string name="reading_lists_confirm_remote_delete_no">Nej</string>
@@ -395,7 +395,7 @@
   <string name="reading_list_turned_sync_off_dialog_ok">OK</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Inställningar</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Aktivera synkronisering av läslistor?</string>
-  <string name="reading_list_prompt_turned_sync_on_dialog_text">Artiklar som sparas i läslistor kan nu synkroniseras till ditt Wikipedia-konto. &lt;a href=\"#faq\"&gt;Läs mer&lt;/a&gt;</string>
+  <string name="reading_list_prompt_turned_sync_on_dialog_text">Artiklar som sparas i läslistor kan nu synkroniseras till ditt DroidWiki-konto. &lt;a href=\"#faq\"&gt;Läs mer&lt;/a&gt;</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Visa inte detta igen</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Aktivera synkronisering</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">Nej tack</string>
@@ -415,7 +415,7 @@
   <string name="split_reading_list_message">Det finns en gräns på %d artiklar per läslista. Befintliga listor med fler än denna gräns har delats upp i flera listor.</string>
   <string name="reading_list_article_limit_message">Kan inte lägga till i denna lista. Du har nått gränsen på %2$d artiklar per lista för \"%1$s\".</string>
   <string name="reading_lists_limit_message">Kan inte skapa en till lista. Du har nått gränsen på 100 läslistor per konto.</string>
-  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Synkronisera läslistor&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Läslistor kan nu synkroniseras över enheter. Logga in till ditt Wikipedia-konto och tillåt dina listor att sparas.</string>
+  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Synkronisera läslistor&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Läslistor kan nu synkroniseras över enheter. Logga in till ditt DroidWiki-konto och tillåt dina listor att sparas.</string>
   <string name="reading_lists_menu_create_list">Skapa ny lista</string>
   <string name="reading_lists_menu_sort_by">Sortera efter</string>
   <string name="reading_lists_refresh_sync_option">Uppdatera synkronisering</string>
@@ -430,7 +430,7 @@
   </plurals>
   <string name="user_option_sync_label">Inställningar</string>
   <string name="notification_button_view_user">Diskutera med användare</string>
-  <string name="notification_talk_title">Nytt meddelande på Wikipedia</string>
+  <string name="notification_talk_title">Nytt meddelande på DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; lämnade ett meddelande på din diskussionssida &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Ogjord redigering</string>
   <string name="notification_reverted">Din redigering på artikeln &lt;strong&gt;%2$s&lt;/strong&gt; gjordes ogjord av &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -450,10 +450,10 @@
   <string name="view_continue_reading_card_title">Fortsätt läs</string>
   <string name="view_because_you_read_card_title">Eftersom du läste</string>
   <string name="view_random_card_title">Randomiserare</string>
-  <string name="view_random_card_subtitle">Bläddra bland slumpartiklar att läsa från Wikipedia</string>
+  <string name="view_random_card_subtitle">Bläddra bland slumpartiklar att läsa från DroidWiki</string>
   <string name="view_random_card_action">Kasta tärningen</string>
   <string name="view_next_random_article">Läs in en annan slumpartikel</string>
-  <string name="view_main_page_card_title">Idag på Wikipedia</string>
+  <string name="view_main_page_card_title">Idag på DroidWiki</string>
   <string name="view_main_page_card_subtitle">Huvudsidan på %s</string>
   <string name="view_main_page_card_action">Visa huvudsidan</string>
   <string name="view_featured_image_card_title">Dagens bild</string>
@@ -485,10 +485,10 @@
   <string name="feed_item_type_on_this_day">Händelser i historien på denna dag</string>
   <string name="feed_item_type_continue_reading">Snabblänk tillbaka för att läsa en öppnad artikel i en av dina flikar</string>
   <string name="feed_item_type_because_you_read">Förslag baserade på en nyligen läst artikel från din historik</string>
-  <string name="feed_item_type_featured_article">Dagens utmärkta artikel på Wikipedia</string>
+  <string name="feed_item_type_featured_article">Dagens utmärkta artikel på DroidWiki</string>
   <string name="feed_item_type_trending">Dagens mest lästa artiklar</string>
   <string name="feed_item_type_featured_image">Dagens utmärkta bild från Wikimedia Commons</string>
-  <string name="feed_item_type_main_page">Wikipedias huvudsida med dagens utmärkta innehåll</string>
+  <string name="feed_item_type_main_page">DroidWikis huvudsida med dagens utmärkta innehåll</string>
   <string name="feed_item_type_randomizer">Generera slumpartiklar att läsa</string>
   <string name="feed_empty_message">Det finns ingenting i ditt Utforskningsflöde.</string>
   <string name="feed_configure_onboarding_action">Anpassa</string>
@@ -503,10 +503,10 @@
   <string name="description_edit_help_wikidata_guide">Wikidata-guide för att skriva beskrivningar</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction/sv</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-  <string name="description_edit_anon_limit">Tack för ditt fortsatta intresse för att redigera beskrivningar! För att redigera mera, logga in på ditt Wikipedia-konto.</string>
+  <string name="description_edit_anon_limit">Tack för ditt fortsatta intresse för att redigera beskrivningar! För att redigera mera, logga in på ditt DroidWiki-konto.</string>
   <string name="description_edit_license_notice">Genom att ändra titelbeskrivningen samtycker jag till &lt;a href=\"%1$s\"&gt;användarvillkoren&lt;/a&gt; och till att oåterkalleligt släppa mina bidrag under licensen &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt;.</string>
   <string name="description_edit_success_saved">Beskrivningen publicerades!</string>
-  <string name="description_edit_success_encouragement">Du gjorde precis Wikipedia bättre för alla</string>
+  <string name="description_edit_success_encouragement">Du gjorde precis DroidWiki bättre för alla</string>
   <string name="description_edit_success_done">Klar</string>
   <string name="description_edit_success_did_you_know">Visste du att?</string>
   <string name="description_edit_success_article_edit_hint">Du kan även redigera artiklar i denna app. Prova att korrigera stavfel och små meningar genom att klicka på ikonen ^1 nästa gång</string>
@@ -526,8 +526,8 @@
   <string name="description_edit_help_tips_example2">Jordens högsta berg</string>
   <string name="description_edit_help_tips_example2_hint">titelbeskrivning av en artikel om Mount Everest</string>
   <string name="description_edit_help_more_info">Mer information</string>
-  <string name="description_edit_help_meta_info">Beskrivningar lagras och underhålls på Wikidata, ett projekt av Wikimedia Foundation som tillhandahåller en gratis, gemensam och flerspråkig sekundär databas för att stödja Wikipedia och andra projekt.</string>
-  <string name="description_edit_revert_subtitle">Tack för att du redigerar på Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Beskrivningar lagras och underhålls på Wikidata, ett projekt av Wikimedia Foundation som tillhandahåller en gratis, gemensam och flerspråkig sekundär databas för att stödja DroidWiki och andra projekt.</string>
+  <string name="description_edit_revert_subtitle">Tack för att du redigerar på DroidWiki!</string>
   <string name="description_edit_revert_intro">Vi vet att du försökte ditt bästa men en av korrekturläsarna hade en invändning. Möjliga anledningar till att din redigering gjordes om inkluderar:</string>
   <string name="description_edit_revert_reason1">ditt bidrag följde inte ett av &lt;a href=\"%1$s\"&gt;riktlinjerna&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">ditt bidrag såg ut som ett experiment eller vandalism</string>
@@ -536,7 +536,7 @@
   <string name="offline_read_permission_rationale">Behörighet för att skriva till lagringsutrymmet på din enhet krävs för att läsa artiklar offline.</string>
   <string name="offline_read_final_rationale">Behörighet för åtkomst till lagringsutrymmet på din enhet krävs för att använda offlinebiblioteket.</string>
   <string name="offline_read_permission_error">Behörighet för att läsa från enhetslagringen krävs.</string>
-  <string name="offline_card_sideloading_text">Du läser nu Wikipedia offline från artiklar i ditt offlinebibliotek.</string>
+  <string name="offline_card_sideloading_text">Du läser nu DroidWiki offline från artiklar i ditt offlinebibliotek.</string>
   <string name="offline_my_compilations">Hantera mitt offlinebibliotek</string>
   <string name="offline_compilations_title">Offlinebibliotek</string>
   <string name="offline_compilations_search_by_name">Sök artikelpaket efter namn</string>
@@ -574,24 +574,24 @@
   <string name="offline_library_search_results_state">Sökresultat från ditt offlinebibliotek</string>
   <string name="offline_library_onboarding_button_done">Klar</string>
   <string name="offline_library_onboarding_build_library_title">Bygg ditt offlinebibliotek</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Ladda ned artikelpaket från Wikipedia nu för datafri åtkomst senare.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Ladda ned artikelpaket från DroidWiki nu för datafri åtkomst senare.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Läsning utan avbrott</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Fortsätt läsa och söka efter artiklar i ditt offlinebibliotek när du inte har åtkomst till Internet.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Lagra mer kunskap</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Ladda ned så mycket av Wikipedia som din enhet kan hantera. Offlinebiblioteket kan även komma åt artikelpaket på externa lagringsutrymmen.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Ladda ned så mycket av DroidWiki som din enhet kan hantera. Offlinebiblioteket kan även komma åt artikelpaket på externa lagringsutrymmen.</string>
   <string name="offline_library_main_page_hint_html">Denna huvudsida ger dig en översikt av innehållet i detta artikelpaket.&lt;br /&gt;&lt;br /&gt;Du kan även utforska innehållet för alla artikelpaket i ditt offlinebibliotek genom att söka efter tillgängliga artiklar när du är offline.</string>
   <string name="onboarding_skip">Hoppa över</string>
   <string name="onboarding_continue">Fortsätt</string>
   <string name="onboarding_get_started">Kom igång</string>
   <string name="onboarding_welcome_title">Den fria encyklopedin</string>
-  <string name="onboarding_welcome_text">Wikipedia skrivs tillsammans av frivilliga och består av fler än 40 miljoner artiklar på nästan 300 olika språk. &lt;a href=\"#about\"&gt;Läs mer&lt;/a&gt;</string>
+  <string name="onboarding_welcome_text">DroidWiki skrivs tillsammans av frivilliga och består av fler än 40 miljoner artiklar på nästan 300 olika språk. &lt;a href=\"#about\"&gt;Läs mer&lt;/a&gt;</string>
   <string name="onboarding_explore_title">Nya sätt att utforska</string>
-  <string name="onboarding_explore_text">Gör en djupdykning i Wikipedia genom att uppdatera Utforskningsflödet. &lt;br/&gt; &lt;b&gt;Anpassa&lt;/b&gt; flödet för att möta dina intressen – vare sig det handlar om historiska händelser &lt;b&gt;på denna dag&lt;/b&gt; eller kasta tärningen och få en &lt;b&gt;slumpartikel&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Gör en djupdykning i DroidWiki genom att uppdatera Utforskningsflödet. &lt;br/&gt; &lt;b&gt;Anpassa&lt;/b&gt; flödet för att möta dina intressen – vare sig det handlar om historiska händelser &lt;b&gt;på denna dag&lt;/b&gt; eller kasta tärningen och få en &lt;b&gt;slumpartikel&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">Spara till läslistor</string>
   <string name="onboarding_save_to_reading_lists_text">Skapa läslistor av artiklar du vill läsa senare, även när du är offline.</string>
   <string name="onboarding_reading_list_sync_title">Läslistor med synkronisering</string>
-  <string name="onboarding_reading_list_sync_text">Skapa läslistor från artiklar du vill läsa senare, även när du inte har någon uppkoppling. &lt;a href=\"#login\"&gt;Logga in eller skapa&lt;/a&gt; ditt Wikipedia-konto för att säkerhetskopiera dina läslistor.</string>
-  <string name="onboarding_reading_list_sync_text_v2">Du kan skapa läslistor från artiklar du vill läsa senare, även när du inte har någon uppkoppling. &lt;br/&gt;Logga in på ditt Wikipedia-konto för att synkronisera dina läslistor. &lt;a href=\"#login\"&gt;Registrera dig på Wikipedia&lt;/a&gt;</string>
+  <string name="onboarding_reading_list_sync_text">Skapa läslistor från artiklar du vill läsa senare, även när du inte har någon uppkoppling. &lt;a href=\"#login\"&gt;Logga in eller skapa&lt;/a&gt; ditt DroidWiki-konto för att säkerhetskopiera dina läslistor.</string>
+  <string name="onboarding_reading_list_sync_text_v2">Du kan skapa läslistor från artiklar du vill läsa senare, även när du inte har någon uppkoppling. &lt;br/&gt;Logga in på ditt DroidWiki-konto för att synkronisera dina läslistor. &lt;a href=\"#login\"&gt;Registrera dig på DroidWiki&lt;/a&gt;</string>
   <string name="onboarding_analytics_title">Skicka anonym data</string>
   <string name="onboarding_analytics_offline_text">Hjälp till att göra appen bättre genom att låta oss veta hur du använder den. Data som samlas in är anonym. &lt;a href=\"#privacy\"&gt;Läs mer&lt;/a&gt;</string>
   <string name="onboarding_analytics_switch_title">Skicka användningsdata</string>
@@ -616,13 +616,13 @@
   <string name="languages_list_activity_title">Lägg till språk</string>
   <string name="languages_list_suggested_text">Föreslagna</string>
   <string name="languages_list_all_text">Alla språk</string>
-  <string name="wikipedia_languages_title">Wikipediaspråk</string>
+  <string name="wikipedia_languages_title">DroidWikispråk</string>
   <string name="wikipedia_languages_your_languages_text">Dina språk</string>
   <string name="wikipedia_languages_add_language_text">Lägg till språk</string>
   <string name="wikipedia_languages_remove_text">Ta bort</string>
   <string name="wikipedia_languages_remove_action_mode_title">Ta bort språk</string>
   <string name="wikipedia_languages_remove_dialog_title">Ta bort valda språk?</string>
-  <string name="wikipedia_languages_remove_dialog_content">Du kommer endast se innehåll i Utforskningsflödet och snabbsökningsfilter för tillgängliga Wikipediaspråk.</string>
+  <string name="wikipedia_languages_remove_dialog_content">Du kommer endast se innehåll i Utforskningsflödet och snabbsökningsfilter för tillgängliga DroidWikispråk.</string>
   <string name="wikipedia_languages_remove_warning_dialog_title">Kan inte ta bort alla språk</string>
-  <string name="wikipedia_languages_remove_warning_dialog_content">Behåll minst ett Wikipediaspråk att söka och läsa innehåll på.</string>
+  <string name="wikipedia_languages_remove_warning_dialog_content">Behåll minst ett DroidWikispråk att söka och läsa innehåll på.</string>
 </resources>

@@ -91,7 +91,7 @@
   <string name="history_empty_message">आफूले पढिरहेका कुराहरूलाई यहाँबाट पहिल्याउनुहोस्।</string>
   <string name="search_empty_message">स्वतन्त्र विश्वकोश आफ्नै भाषामा खोज्नुहोस् र पढ्नुहोस्</string>
   <string name="delete_selected_items">चयन गरिएका वस्तुहरू मेट्नुहोस्</string>
-  <string name="wp_stylized">&lt;big&gt;वि&lt;/big&gt;किपिडि&lt;big&gt;या&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">प्रयोगकर्ताको नाम</string>
   <string name="login_join_wikipedia">विकिपिडियामा सहभागीहुनुहोस्</string>
   <string name="login_forgot_password">पासवर्ड भुल्नुभयो?</string>
@@ -145,8 +145,8 @@
   <string name="about_description">विकिपिडिया अनुप्रयोगको बारेमा</string>
   <string name="privacy_policy_description">गोपनीयता नीति</string>
   <string name="terms_of_use_description">प्रयोगका सर्तहरू</string>
-  <string name="privacy_policy_url">https://m.wikimediafoundation.org/wiki/Privacy_policy</string>
-  <string name="terms_of_use_url">https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="privacy_policy_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">प्रयोग भएका पुस्तकालयहरू</string>
@@ -154,7 +154,7 @@
   <string name="about_translators_heading">अनुवादकहरू</string>
   <string name="about_translators_translatewiki">यो अनुप्रयोग &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; का अनुवाद स्वयंसेवकहरूद्वारा अनुवाद गरिएको हो।</string>
   <string name="about_app_license_heading">इजाजतपत्र</string>
-  <string name="about_app_license">स्रोत कोड &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; तथा &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; मा &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; अन्तर्गत् उपलब्ध छ। अन्यथा निर्दिष्ट नभएसम्म, सामग्री &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; अन्तर्गत् उपलब्ध छ।</string>
+  <string name="about_app_license">स्रोत कोड &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; तथा &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; मा &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; अन्तर्गत् उपलब्ध छ। अन्यथा निर्दिष्ट नभएसम्म, सामग्री &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; अन्तर्गत् उपलब्ध छ।</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;विकिमिडिया फाउन्डेसन&lt;/a&gt;को एक उत्पादन</string>
   <string name="about_activity_title">बारेमा</string>
   <string name="edit_abandon_confirm">यो पृष्ठ परिवर्तन भइसक्यो। आफ्ना परिवर्तनहरू सङ्ग्रह नगरी बाहिर निक्लन चाहनुहुन्छ?</string>
@@ -211,7 +211,7 @@
   <string name="gallery_save_success">फाइल सफलतापूर्वक सङ्ग्रह गरियो।</string>
   <string name="gallery_error_video_failed">भिडियो चलाउन सकिएन।</string>
   <string name="err_cannot_save_file">फाइल सुरक्षित गर्न सकिएन</string>
-  <string name="snippet_share_intro">\@Wikipedia मा \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki मा \"%1$s\": %2$s</string>
   <string name="expand_refs">विस्तृत गर्न ट्याप गर्नुहोस्</string>
   <string name="share_snippet_button">चित्रको रूपमा आदान-प्रदान गर्नुहोस्</string>
   <string name="share_normal_button">अक्षरको रूपमा आदान-प्रदान गर्नुहोस्</string>

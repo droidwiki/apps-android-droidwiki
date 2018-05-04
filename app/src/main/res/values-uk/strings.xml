@@ -100,7 +100,7 @@
   <string name="history_empty_message">Відстежувати те, що Ви вже читали тут.</string>
   <string name="search_empty_message">Шукайте і читайте вільну енциклопедію вашою мовою</string>
   <string name="delete_selected_items">Вилучити вибрані елементи</string>
-  <string name="wp_stylized">&lt;big&gt;В&lt;/big&gt;ІКІПЕДІ&lt;big&gt;Я&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Ім\'я користувача</string>
   <string name="login_dont_have_account">Не маєте облікового запису?</string>
   <string name="login_join_wikipedia">Приєднуйтесь до Вікіпедії</string>
@@ -168,7 +168,7 @@
   <string name="privacy_policy_url" fuzzy="true">https://meta.wikimedia.org/wiki/Privacy_policy/uk</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/uk</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.uk</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.uk</string>
   <string name="about_libraries_heading">Використовувані бібліотеки</string>
@@ -176,7 +176,7 @@
   <string name="about_translators_heading">Перекладачі</string>
   <string name="about_translators_translatewiki">Цю програмку переклали добровольці на &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Ліцензія</string>
-  <string name="about_app_license">Вихідний код доступний на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; та &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; під ліцензією &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Якщо не вказано інше, вміст доступний під ліцензією &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Вихідний код доступний на &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; та &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; під ліцензією &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0&lt;/a&gt;. Якщо не вказано інше, вміст доступний під ліцензією &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Продукт &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Фонду Вікімедіа&lt;/a&gt;</string>
   <string name="about_activity_title">Про программу</string>
   <string name="edit_abandon_confirm">Сторінка була змінена. Ви впевнені, що хочете вийти без збереження змін?</string>
@@ -238,7 +238,7 @@
   <string name="gallery_error_video_failed">Не вдалось відтворити відео.</string>
   <string name="gallery_save_image_write_permission_rationale">Для збереження зображень потрібен дозвіл на запис у сховищі вашого пристрою.</string>
   <string name="err_cannot_save_file">Не вдається зберегти файл</string>
-  <string name="snippet_share_intro">\"%1$s\" на сайті @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" на сайті @DroidWiki: %2$s</string>
   <string name="expand_refs">Торкніться, щоб розкрити</string>
   <string name="share_snippet_button">Поділитися як зображенням</string>
   <string name="share_normal_button">Поділитися як текстом</string>

@@ -13,11 +13,11 @@
 * Xabier Armendaritz
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Bilatu Wikipedian</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Bilatu DroidWikin</string>
   <string name="search_hint_search_history">Bilatu historia</string>
   <string name="search_hint_search_my_lists">Nire zerrendetan bilatu</string>
   <string name="search_hint_search_reading_list">Irakurketa zerrenda bilatu</string>
@@ -61,7 +61,7 @@
   <string name="content_license_html">Edukia eskuragarri &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; lizentziapean, besterik aipatu ezean</string>
   <string name="edit_save_action_license_logged_in">Gordetzen baduzu &lt;a href=\"%1$s\"&gt;Erabilera Baldintzak&lt;/a&gt; onartzen dituzu, eta zure ekarpen guztiak atzera bueltarik gabe &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; lizentziapean jartzen dituzu.</string>
   <string name="edit_save_action_license_anon">Aurreztuz, &lt;a href=\"%1$s\"&gt;Terms of Use&lt;/a&gt; onartuko duzu, eta ezinbestez zure ekarpenak askatu beharko dituzu &lt;a href=\"%2$s/\"&gt;CC BY-SA 3.0&lt;/a&gt; lizentziaren babespean. Aldaketak zure gailuaren IP helbideari egotziko zaizkio. Zu &lt;a href=\"https://#login\"&gt;log in&lt;/a&gt; ba zara, pribautasun gehiago edukiko duzu.</string>
-  <string name="preference_title_language">Wikipediaren hizkuntza</string>
+  <string name="preference_title_language">DroidWikiren hizkuntza</string>
   <string name="preference_languages_filter_hint">Bilatu</string>
   <string name="langlinks_filter_hint">Bilatu</string>
   <string name="langlinks_empty">Orrialde hau ez dago eskuragarri beste hizkuntzetan.</string>
@@ -85,13 +85,13 @@
   <string name="edit_section_captcha_hint">Goiko hitzak errepikatu</string>
   <string name="title_captcha">Sartu CAPTCHA</string>
   <string name="edit_section_captcha_reload">CAPTCHA sakatu eguneratu</string>
-  <string name="nav_item_login">Saioa hasi Wikipedian</string>
+  <string name="nav_item_login">Saioa hasi DroidWikin</string>
   <string name="login_username_hint">Erabiltzaile izena</string>
   <string name="login_password_hint">Pasahitza</string>
   <string name="login_2fa_hint">Bi-faktoreko Autentikatze Kodea</string>
   <string name="login_2fa_other_workflow_error_msg">Bi-faktoreko autentikatzea beharrezkoa da! Mesedez bueltatu jarduera normalera eta sartu zure 2FA tokena, eta orduan berriro saiatu.</string>
   <string name="menu_login">Hasi saioa</string>
-  <string name="login_activity_title">Saioa hasi Wikipedian</string>
+  <string name="login_activity_title">Saioa hasi DroidWikin</string>
   <string name="login_in_progress_dialog_message">Saioa hasten…</string>
   <string name="login_success_toast">Saio hasiera egina!</string>
   <string name="preference_title_logout">Saioa itxi</string>
@@ -100,10 +100,10 @@
   <string name="history_empty_message">Egin hemen irakurri duzunaren jarraipena.</string>
   <string name="search_empty_message">Bilatu eta irakurri doako entziklopedia zure hizkuntzan</string>
   <string name="delete_selected_items">Ezabatu aukeratutako item-ak</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Erabiltzaile izena</string>
   <string name="login_dont_have_account">Ez al duzu konturik?</string>
-  <string name="login_join_wikipedia">Wikipediara batu</string>
+  <string name="login_join_wikipedia">DroidWikira batu</string>
   <string name="login_forgot_password">Zure pasahitza ahaztu duzu?</string>
   <string name="create_account_already_have">Baduzu erabiltzaile kontua?</string>
   <string name="create_account_activity_title">Kontua sortu</string>
@@ -119,17 +119,17 @@
   <string name="create_account_button">Kontua sortu</string>
   <string name="create_account_name_unavailable">%s erabiltzaile-izena ez dago erabilgarri. Mesedez hauta ezazu beste izen bat.</string>
   <string name="preferences_general_heading">Orokorra</string>
-  <string name="wikipedia_app_faq">Wikipedia App FAQ</string>
-  <string name="zero_charged_verbiage">Wikipediarako doako sarbidea ez dago martxan.</string>
-  <string name="zero_warn_when_leaving">Abisatu Wikipedia Zero uzten badut</string>
-  <string name="zero_warn_when_leaving_summary">Mugikorreko operadoreak, Wikipediaren Zero lankidetzaren bidez, Wikipedia aplikaziorako datuen sarbide-gastuak kentzen badizkizu, ezarpen hau markatuta utziz gero, Wikipediaren aplikaziotik irtetzean jakin ahal izango duzu kobratuko zaizun ala ez.</string>
-  <string name="zero_webpage_title">Wikipedia Zero FAQ</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Wikipedia Zerotik irteten</string>
+  <string name="wikipedia_app_faq">DroidWiki App FAQ</string>
+  <string name="zero_charged_verbiage">DroidWikirako doako sarbidea ez dago martxan.</string>
+  <string name="zero_warn_when_leaving">Abisatu DroidWiki Zero uzten badut</string>
+  <string name="zero_warn_when_leaving_summary">Mugikorreko operadoreak, DroidWikiren Zero lankidetzaren bidez, DroidWiki aplikaziorako datuen sarbide-gastuak kentzen badizkizu, ezarpen hau markatuta utziz gero, DroidWikiren aplikaziotik irtetzean jakin ahal izango duzu kobratuko zaizun ala ez.</string>
+  <string name="zero_webpage_title">DroidWiki Zero FAQ</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">DroidWiki Zerotik irteten</string>
   <string name="zero_interstitial_leave_app">Datuengatik kobratzea posible da. Kanpoko gune batera jarraitu nahi duzu?</string>
   <string name="zero_interstitial_continue">Irten</string>
   <string name="zero_interstitial_cancel">Hemen gelditu</string>
-  <string name="zero_learn_more">Zure Internet konpainiak doako sarbidea du Wikipediako edukira!</string>
+  <string name="zero_learn_more">Zure Internet konpainiak doako sarbidea du DroidWikiko edukira!</string>
   <string name="zero_learn_more_learn_more">Gehiago ikasi</string>
   <string name="zero_learn_more_dismiss">Utzi</string>
   <string name="edit_preview_fetching_dialog_message">Aurreikuspena eskuratzen…</string>
@@ -141,8 +141,8 @@
   <string name="preferences_heading_experimental">Esperimentala</string>
   <string name="preference_title_sync_reading_lists">Zure irakurketa zerrendak sinkronizatu</string>
   <string name="preference_title_sync_reading_lists_from_account">Kontu honetarako irakurketa zerrendak sinkronizatzea ahalbidetu</string>
-  <string name="preference_summary_sync_reading_lists">Utzi zure irakurketa zerrendak gailuen zehar sinkronizatzen, zure Wikipedia kontuan gordez</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Utzi Wikipediak sinkroniza ditzala irakurketa zerrendak zure \"%s\" Wikipedia kontura gordez</string>
+  <string name="preference_summary_sync_reading_lists">Utzi zure irakurketa zerrendak gailuen zehar sinkronizatzen, zure DroidWiki kontuan gordez</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Utzi DroidWikik sinkroniza ditzala irakurketa zerrendak zure \"%s\" DroidWiki kontura gordez</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Zure %s kontutik kendu nahi dituzu sinkronizatutako irakurketa zerrendak?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Aurretik sinkronizatutako irakurketa zerrendak ezabatu egingo dira urruneko biltegitik. Kendu nahi dituzu sinkronizatutako zerrenda guztiak \"%s\" kontutik?</string>
   <string name="preferences_privacy_settings_heading">Pribatutasuna</string>
@@ -161,10 +161,10 @@
   <string name="page_protected_can_not_edit_title">Orrialde hau babestuta dago</string>
   <string name="settings_item_preferences">Ezarpenak</string>
   <string name="settings_activity_title">Ezarpenak</string>
-  <string name="about_description">Wikipediaren aplikazioari buruz</string>
+  <string name="about_description">DroidWikiren aplikazioari buruz</string>
   <string name="privacy_policy_description">Pribatutasun politika</string>
   <string name="terms_of_use_description">Erabilera-baldintzak</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.eu</string>
@@ -174,7 +174,7 @@
   <string name="about_translators_heading">Itzultzaileak</string>
   <string name="about_translators_translatewiki">Aplikazio hau boluntarioek itzuli dute hementxe &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Lizentzia</string>
-  <string name="about_app_license">Iturri kodea eskuragarri hemen &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; and &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; under the &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Unless otherwise specified, content is available under a &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt;.</string>
+  <string name="about_app_license">Iturri kodea eskuragarri hemen &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; and &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; under the &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Unless otherwise specified, content is available under a &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt;.</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Fundazioaren&lt;/a&gt; produktua</string>
   <string name="about_activity_title">Honi buruz</string>
   <string name="edit_abandon_confirm">Orrialde honek aldaketak jasan ditu. Ziur zaude zure aldaketak gorde gabe irten nahi duzula?</string>
@@ -201,7 +201,7 @@
   <string name="abusefilter_title_warn">Hau editatze ezezaguna izan daiteke. Ziur al zaude argitaratu nahi duzula?</string>
   <string name="abusefilter_title_disallow">Ezin duzu aldaketa hau argitaratu. Mesedez itzul zaitez eta alda ezazu.</string>
   <string name="abusefilter_text_warn">Iragazki automatizatu batek aldaketa hau ezezagun potentzial gisa identifikatu du. Hurrengotariko baten bat izan daiteke:&lt;br /&gt;&lt;br /&gt;· Typing in all caps&lt;br /&gt;· Blanking articles or spamming&lt;br /&gt;· Irrelevant external links or images&lt;br /&gt;· Errepikaturiko karaktereak</string>
-  <string name="abusefilter_text_disallow">Iragazki automatizatu batek aldaketa hau potentzialki ezezaguna edo bandalismo gisa identifikatu du.&lt;br /&gt;&lt;br /&gt;Wikipedia entziklopedia bat da, eta hemen bakarrik egon daitezke eduki neutralak eta onargarriak.</string>
+  <string name="abusefilter_text_disallow">Iragazki automatizatu batek aldaketa hau potentzialki ezezaguna edo bandalismo gisa identifikatu du.&lt;br /&gt;&lt;br /&gt;DroidWiki entziklopedia bat da, eta hemen bakarrik egon daitezke eduki neutralak eta onargarriak.</string>
   <string name="dialog_page_issues">Orriaren arazoak</string>
   <string name="button_page_issues">Orriaren arazoak</string>
   <string name="text_size_select">Letra-tamaina</string>
@@ -216,9 +216,9 @@
   <string name="table_infobox">Datu azkarrak</string>
   <string name="table_other">Informazio gehiago</string>
   <string name="table_close">Itxi</string>
-  <string name="widget_name_featured_page">Wikipediako nabarmendutako orrialdea</string>
+  <string name="widget_name_featured_page">DroidWikiko nabarmendutako orrialdea</string>
   <string name="widget_title_featured_page">Gaurko orrialde nabarmena:</string>
-  <string name="widget_name_search">Wikipedia bilaketa</string>
+  <string name="widget_name_search">DroidWiki bilaketa</string>
   <string name="wiktionary_no_definitions_found">Ez da definiziorik aurkitu.</string>
   <string name="alpha_update_notification_title">Alpha eguneraketa berria eskuragarri</string>
   <string name="alpha_update_notification_text">Ukitu jaisteko</string>
@@ -237,7 +237,7 @@
   <string name="gallery_error_video_failed">Ezin da bideoa ikusi.</string>
   <string name="gallery_save_image_write_permission_rationale">Beharrezkoa da zure gailuko gordegailuari idazteko baimena ematea argazkiak gordetzeko.</string>
   <string name="err_cannot_save_file">Ezin da fitxategia gorde</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia: %2$s -(e)n</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki: %2$s -(e)n</string>
   <string name="expand_refs">Ukitu hedatzeko</string>
   <string name="share_snippet_button">Irudi bezala partekatu</string>
   <string name="share_normal_button">Testu bezala partekatu</string>
@@ -272,7 +272,7 @@
   <string name="error_no_maps_app">Ez da aurkitu helbiderik eskaintzen duen aplikaziorik.</string>
   <string name="preference_title_show_link_previews">Lotura aurreikuspenak erakutsi</string>
   <string name="preference_summary_show_link_previews">Erakutsi artikuluen aurrebista bizkorra esteketan sakatzen denean.</string>
-  <string name="nav_item_donate">Wikipedia Lagundu</string>
+  <string name="nav_item_donate">DroidWiki Lagundu</string>
   <string name="error_voice_search_not_available">Barkatu, ahots ezagutza ez dago erabilgarri.</string>
   <string name="location_service_disabled">Kokapen zerbitzuak desgaituak daude.</string>
   <string name="enable_location_service">Gaitu</string>
@@ -289,14 +289,14 @@
   <string name="preference_title_prefer_offline_content">Konexiorik gabeko edukia hobestu</string>
   <string name="preference_summary_prefer_offline_content">Aurreztu itzazu datuak, lineaz kanpo erabilgarri dauden artikuluak kargatuz, artikulu baten azken bertsioa kargatzearen ordez</string>
   <string name="preference_title_enable_offline_library">Konexiorik gabeko Liburutegia Gaitu</string>
-  <string name="preference_summary_enable_offline_library">Wikipedia artikuluen sortara sartu (.ZIM artxibo gisa irudikatuta) konexiorik gabe zeunden bitartean deskargatu direnak. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Find out more&lt;/a&gt;</string>
+  <string name="preference_summary_enable_offline_library">DroidWiki artikuluen sortara sartu (.ZIM artxibo gisa irudikatuta) konexiorik gabe zeunden bitartean deskargatu direnak. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Find out more&lt;/a&gt;</string>
   <string name="crash_report_dialog_title">Barkatu, aplikazioa eten egin da</string>
   <string name="crash_report_dialog_text">Kraskadurari buruzko txostena HockeyApp / hirugarrenen zerbitzu-hornitzaileari bidali nahi diozu Wikimedia-ek zure kraskadura berrikusi eta konpondu duen akatsa zuzentzeko?</string>
   <string name="crash_report_dialog_dont_send_button">Utzi</string>
   <string name="crash_report_dialog_always_send_button">Beti bidali</string>
   <string name="crash_report_dialog_send_button">Bidali</string>
   <string name="crash_report_activity_title">Aplikazioaren akatsa</string>
-  <string name="crash_report_relaunch_or_quit">Sentitzen dugu, Wikipedia aplikazioak errorea jasan du eta eten egin da.\n\nBerriro hasi ala irten nahiko zenuke?</string>
+  <string name="crash_report_relaunch_or_quit">Sentitzen dugu, DroidWiki aplikazioak errorea jasan du eta eten egin da.\n\nBerriro hasi ala irten nahiko zenuke?</string>
   <string name="crash_report_relaunch">Berriro ere hasi</string>
   <string name="crash_report_quit">Irten</string>
   <string name="article_menu_bar_bookmark">Artikulu hau gehitu irakurtze zerrendara</string>
@@ -370,11 +370,11 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Artikulua zerrenda anitzetan agertzen da</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">%s ez da erabilgarri egongo konexiorik gabe hurrengo zerrendetan:</string>
   <string name="reading_lists_sync_reminder_title">Irakurketa zerrendaren sinkronizazioa piztu?</string>
-  <string name="reading_lists_sync_reminder_text">Gordetako artikuluak gehitu ahalko dira orain zure Wikipedia kontura. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Learn more&lt;/a&gt;</string>
-  <string name="reading_lists_login_reminder_text_with_link">Irakurketa zerrendak orain gailuen zehar sinkroniza daitezke. Hasi saioa zure Wikipedia kontuan eta baimena eman zure zerrendak gorde daitezen. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Gehiago ikasi&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Gordetako artikuluak gehitu ahalko dira orain zure DroidWiki kontura. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Learn more&lt;/a&gt;</string>
+  <string name="reading_lists_login_reminder_text_with_link">Irakurketa zerrendak orain gailuen zehar sinkroniza daitezke. Hasi saioa zure DroidWiki kontuan eta baimena eman zure zerrendak gorde daitezen. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Gehiago ikasi&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Sinkronizazioa ahalbidetu</string>
   <string name="reading_list_login_reminder_title">Zure irakurketa zerrendak sinkronizatu</string>
-  <string name="reading_lists_login_reminder_text">Irakurketa-zerrendak gailu guztietan sinkronizatu daitezke. Hasi saioa zure Wikipedia kontuan, zure zerrendak gorde ahal izateko.</string>
+  <string name="reading_lists_login_reminder_text">Irakurketa-zerrendak gailu guztietan sinkronizatu daitezke. Hasi saioa zure DroidWiki kontuan, zure zerrendak gorde ahal izateko.</string>
   <string name="reading_lists_confirm_remote_delete">Honek aurreko sinkronizatutako irakurketen zerrendak ezabatuko ditu urruneko biltegitik. Jarraitu?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Bai</string>
   <string name="reading_lists_confirm_remote_delete_no">Ez</string>
@@ -391,7 +391,7 @@
   <string name="reading_list_turned_sync_off_dialog_ok">Ados</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Ezarpenak</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Irakurketa zerrendaren sinkronizazioa piztu?</string>
-  <string name="reading_list_prompt_turned_sync_on_dialog_text">Irakurketa zerrendetan gordetako artikuluak zure Wikipedia kontuarekin sinkroniza daitezke. &lt;a href=\"#faq\"&gt;Learn more&lt;/a&gt;</string>
+  <string name="reading_list_prompt_turned_sync_on_dialog_text">Irakurketa zerrendetan gordetako artikuluak zure DroidWiki kontuarekin sinkroniza daitezke. &lt;a href=\"#faq\"&gt;Learn more&lt;/a&gt;</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Ez erakutsi hau berriro</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Sinkronizazioa ahalbidetu</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">Ez, eskerrik asko</string>
@@ -400,7 +400,7 @@
   <string name="reading_list_login_option_reminder_dialog_yes">Bai, gehitu itzazu nire irakurketa zerrendetara</string>
   <string name="reading_list_login_option_reminder_dialog_no">Ez, ezaba itzazu artikuluak</string>
   <string name="reading_list_logout_option_reminder_dialog_title">Gordetako artikuluak aplikazioan mantendu nahi dituzu?</string>
-  <string name="reading_list_logout_option_reminder_dialog_text">Zure Wikipedia kontuan sinkronizatutako artikuluak daude. Saioa itxi eta gero, gailuan mantendu nahiko zenituzke?</string>
+  <string name="reading_list_logout_option_reminder_dialog_text">Zure DroidWiki kontuan sinkronizatutako artikuluak daude. Saioa itxi eta gero, gailuan mantendu nahiko zenituzke?</string>
   <string name="reading_list_logout_option_reminder_dialog_yes">Bai, mantendu itzazu artikuluak zerrendetan.</string>
   <string name="reading_list_logout_option_reminder_dialog_no">Ez, ezaba itzazu artikuluak zerrendetatik</string>
   <string name="default_reading_list_name">Gordeta</string>
@@ -411,7 +411,7 @@
   <string name="split_reading_list_message">Irakurketa zerrenda bakoitzeko %d artikuluen muga dago. Muga gainditu dituzten jada existitzen diren zerrendak beste zerrendatan banatu dira.</string>
   <string name="reading_list_article_limit_message">Ezin da zerrenda honetara gehitu. %2$d artikulu zerrenda bakoitzeko %1$s gatik mugara iritsi zara.</string>
   <string name="reading_lists_limit_message">Ezin duzu beste zerrenda sortu. 100 irakurketa zerrenden muga kontu bakoitzeko jada asetu duzu.</string>
-  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Irakurketa zerrendak sinkronizatu&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Irakurketa zerrendak gailu guztietan sinkroniza daitezke. Hasi saioa zure Wikipedia kontuan, zerrendak gorde ahal izateko.</string>
+  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Irakurketa zerrendak sinkronizatu&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Irakurketa zerrendak gailu guztietan sinkroniza daitezke. Hasi saioa zure DroidWiki kontuan, zerrendak gorde ahal izateko.</string>
   <string name="reading_lists_menu_create_list">Zerrenda berria sortu</string>
   <string name="reading_lists_menu_sort_by">Honen arabera sailkatu</string>
   <string name="reading_lists_refresh_sync_option">Sinkronizatzea freskatu</string>
@@ -426,7 +426,7 @@
   </plurals>
   <string name="user_option_sync_label">Hobespenak</string>
   <string name="notification_button_view_user">Hitz egin erabiltzeari</string>
-  <string name="notification_talk_title">Mezu berria Wikipedian</string>
+  <string name="notification_talk_title">Mezu berria DroidWikin</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt;(e) mezu bat utzi dizu zure Talk orrialdean &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Lehengoratutako aldaketa</string>
   <string name="notification_reverted">&lt;strong&gt;%2$s&lt;/strong&gt; artikuluari egin diozun aldaketa &lt;em&gt;%1$s&lt;/em&gt;(e)k lehengoratu du.</string>
@@ -446,10 +446,10 @@
   <string name="view_continue_reading_card_title">Irakurtzen jarraitu</string>
   <string name="view_because_you_read_card_title">Irakurtzen duzulako</string>
   <string name="view_random_card_title">Ausazkoa</string>
-  <string name="view_random_card_subtitle">Irakurri Wikipediako ausazko artikulu bat</string>
+  <string name="view_random_card_subtitle">Irakurri DroidWikiko ausazko artikulu bat</string>
   <string name="view_random_card_action">Bota dadoa</string>
   <string name="view_next_random_article">Ausazko beste artikulu bat kargatu</string>
-  <string name="view_main_page_card_title">Gaur Wikipedian</string>
+  <string name="view_main_page_card_title">Gaur DroidWikin</string>
   <string name="view_main_page_card_subtitle">Azala %s(e)an</string>
   <string name="view_main_page_card_action">Orrialde nagusia ikusi</string>
   <string name="view_featured_image_card_title">Eguneko irudia</string>
@@ -481,10 +481,10 @@
   <string name="feed_item_type_on_this_day">Gaurko eguneko historian zehar gertaturiko ekitaldiak</string>
   <string name="feed_item_type_continue_reading">Lotura azkarra zure betile batean irekita zegoen artikulu batera itzultzeko</string>
   <string name="feed_item_type_because_you_read">Orain dela gutxi irakurritako zure historiako artikulu batean oinarritutako iradokizunak</string>
-  <string name="feed_item_type_featured_article">Eguneko Wikipediako artikulu aipagarria</string>
+  <string name="feed_item_type_featured_article">Eguneko DroidWikiko artikulu aipagarria</string>
   <string name="feed_item_type_trending">Egunean gehien ikusten diren artikuluak</string>
   <string name="feed_item_type_featured_image">Wikimedia Commonsetik hartutako eguneko irudi aipagarria</string>
-  <string name="feed_item_type_main_page">Wikipediako orrialde nagusia eguneko eduki aipagarriarekin</string>
+  <string name="feed_item_type_main_page">DroidWikiko orrialde nagusia eguneko eduki aipagarriarekin</string>
   <string name="feed_item_type_randomizer">Irakurtzeko ausazko artikuluak sortu</string>
   <string name="feed_empty_message">Ez dago ezer zure Arakatze-jarioan</string>
   <string name="feed_configure_onboarding_action">Pertsonalizatu</string>
@@ -498,10 +498,10 @@
   <string name="description_edit_help_about_wikidata">Wikidatari buruz</string>
   <string name="description_edit_help_wikidata_guide">Wikidata gida idatzitako deskribapenentzat</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
-  <string name="description_edit_anon_limit">Eskerrik asko deskribapenak aldatzen jarri duzun etengabeko interesagatik! Aldaketa gehigarriak egiteko, saioa hasi zure Wikipedia kontuan.</string>
+  <string name="description_edit_anon_limit">Eskerrik asko deskribapenak aldatzen jarri duzun etengabeko interesagatik! Aldaketa gehigarriak egiteko, saioa hasi zure DroidWiki kontuan.</string>
   <string name="description_edit_license_notice">Deskribapena aldatzerakoan, hurrengo hau onartzen dut &lt;a href=\"%1$s\"&gt;Terms of Use&lt;/a&gt; eta onartzen dut nire ekarpenak aske uzten ditudala &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt; lizentziaren babespean.</string>
   <string name="description_edit_success_saved">Deskribapea argiraratu da!</string>
-  <string name="description_edit_success_encouragement">Wikipedia askoz hobea egin duzu gu denontzat</string>
+  <string name="description_edit_success_encouragement">DroidWiki askoz hobea egin duzu gu denontzat</string>
   <string name="description_edit_success_done">Egina</string>
   <string name="description_edit_success_did_you_know">Ba al zenekien?</string>
   <string name="description_edit_success_article_edit_hint">Aplikazio honetatik ere artikuluak alda ditzakezu. Saia zaitez tipoak eta esaldi laburrak konpontzen ^1 ikonoaren bitartez hurrengo batean</string>
@@ -521,8 +521,8 @@
   <string name="description_edit_help_tips_example2">Lurreko mendirik garaiena</string>
   <string name="description_edit_help_tips_example2_hint">Everest Mendiari buruzko artikuluarentzako izenburu-deskribapena</string>
   <string name="description_edit_help_more_info">Informazio gehiago</string>
-  <string name="description_edit_help_meta_info">Deskribapenak Wikidatan gorde eta mantentzen dira, Wikimedia Fundazioaren proiektua, doako, lankidetzarako, eleaniztasuneko eta bigarren mailako datu-baseak Wikipedia eta beste proiektu batzuk babesten dituena.</string>
-  <string name="description_edit_revert_subtitle">Eskerrik asko Wikipedia aldatzeagatik!</string>
+  <string name="description_edit_help_meta_info">Deskribapenak Wikidatan gorde eta mantentzen dira, Wikimedia Fundazioaren proiektua, doako, lankidetzarako, eleaniztasuneko eta bigarren mailako datu-baseak DroidWiki eta beste proiektu batzuk babesten dituena.</string>
+  <string name="description_edit_revert_subtitle">Eskerrik asko DroidWiki aldatzeagatik!</string>
   <string name="description_edit_revert_intro">Badakigu hoberen egiten saiatu zarela, baina gure berrikuskarietako batek arazo bat ikusi du. Zure aldaketa lehengoratzeko arrazoi posibleen artean hurrengoak daude:</string>
   <string name="description_edit_revert_reason1">zure ekarpenak ez du &lt;a href=\"%1$s\"&gt;guidelines&lt;/a&gt;(e)tatik bat jarraitu.</string>
   <string name="description_edit_revert_reason2">Zure ekarpenak esperimentua edo hantura ematen zuen.</string>
@@ -531,7 +531,7 @@
   <string name="offline_read_permission_rationale">Zeure gailuko memorian konexiorik gabe sartzeko baimena.</string>
   <string name="offline_read_final_rationale">Offline liburutegia erabiltzeko zeure gailuko memorian konexiorik gabe sartzeko baimena eman behar duzu.</string>
   <string name="offline_read_permission_error">Ez daukazu baimenik gailuaren memoriatik irakurtzeko.</string>
-  <string name="offline_card_sideloading_text">Oraintxe ari zara deskonektatu gabeko artikuluetatik kanpoko Liburutegiko artikulu-paketeetatik Wikipedia erabiltzen.</string>
+  <string name="offline_card_sideloading_text">Oraintxe ari zara deskonektatu gabeko artikuluetatik kanpoko Liburutegiko artikulu-paketeetatik DroidWiki erabiltzen.</string>
   <string name="offline_my_compilations">Nire offline bildumak kudeatu</string>
   <string name="offline_compilations_title">Konexiorik gabeko bilduma</string>
   <string name="offline_compilations_search_by_name">Bildumak bilatu izenaren bidez</string>
@@ -569,7 +569,7 @@
   <string name="offline_library_search_results_state">Konexio gabeko bildumatik emaitzak bilatu</string>
   <string name="offline_library_onboarding_button_done">Eginda</string>
   <string name="offline_library_onboarding_build_library_title">Zure Offline Bilduma sortu</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Deskargatu Wikipedia artikulu sortak orain, gerorako datu gabeko sarbiderako.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Deskargatu DroidWiki artikulu sortak orain, gerorako datu gabeko sarbiderako.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Etenik gabeko irakurketa</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Jarraitu irakurtzen eta bilatzen zure Offline Bilduman artikuluak internetik ez duzunerako.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Eduki gehiago pilatu</string>
@@ -579,14 +579,14 @@
   <string name="onboarding_continue">Jarraitu</string>
   <string name="onboarding_get_started">Has zaitez!</string>
   <string name="onboarding_welcome_title">Entziklopedia askea</string>
-  <string name="onboarding_welcome_text">Wikipedia boluntarioek elkarlanean idatzi dute eta 40 milioi artikulu baino gehiago biltzen ditu ia 300 hizkuntzatan. &lt;a href=\"#about\"&gt;Gehiago ikasi&lt;/a&gt;</string>
+  <string name="onboarding_welcome_text">DroidWiki boluntarioek elkarlanean idatzi dute eta 40 milioi artikulu baino gehiago biltzen ditu ia 300 hizkuntzatan. &lt;a href=\"#about\"&gt;Gehiago ikasi&lt;/a&gt;</string>
   <string name="onboarding_explore_title">Exploratzeko era berriak</string>
-  <string name="onboarding_explore_text">Murgildu zaitez Wikipedian etengabe Arakatzaile ezarpena eguneratuz.&lt;br/&gt; &lt;b&gt;Pertsonalizatu&lt;/b&gt; zure interesetako jarioa – bai gertakari historikoen inguruan ikasteko &lt;b&gt;Egun honetan&lt;/b&gt;, zein dadoa botaz &lt;b&gt;Ausazkoa&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Murgildu zaitez DroidWikin etengabe Arakatzaile ezarpena eguneratuz.&lt;br/&gt; &lt;b&gt;Pertsonalizatu&lt;/b&gt; zure interesetako jarioa – bai gertakari historikoen inguruan ikasteko &lt;b&gt;Egun honetan&lt;/b&gt;, zein dadoa botaz &lt;b&gt;Ausazkoa&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">Gordu irakurketa zerrendan</string>
   <string name="onboarding_save_to_reading_lists_text">Irakurketa zerrendak sortu gero irakurri nahi dituzun artikuluekin, konexiorik gabe egonda ere.</string>
   <string name="onboarding_reading_list_sync_title">Sinkronizatutako irakurketa zerrendak</string>
-  <string name="onboarding_reading_list_sync_text">Geroago irakurri nahi dituzun artikuluen irakurketa zerrenda sortu, baita konexiorik gabe zaudenean ere. &lt;a href=\"#login\"&gt;Log in or create&lt;/a&gt; zure Wikipedia kontuan irakurketa zerrendak gordetzeko.</string>
-  <string name="onboarding_reading_list_sync_text_v2">Gero irakurri nahi dituzun artikuluen irakurketa-zerrendak egin ditzakezu, nahiz eta offline egon. &lt;br/&gt;Hasi saioa zure Wikipedian kontuan zure irakurketa-zerrendak sinkronizatzeko. &lt;a href=\"#login\"&gt;Wikipediara batu&lt;/a&gt;</string>
+  <string name="onboarding_reading_list_sync_text">Geroago irakurri nahi dituzun artikuluen irakurketa zerrenda sortu, baita konexiorik gabe zaudenean ere. &lt;a href=\"#login\"&gt;Log in or create&lt;/a&gt; zure DroidWiki kontuan irakurketa zerrendak gordetzeko.</string>
+  <string name="onboarding_reading_list_sync_text_v2">Gero irakurri nahi dituzun artikuluen irakurketa-zerrendak egin ditzakezu, nahiz eta offline egon. &lt;br/&gt;Hasi saioa zure DroidWikin kontuan zure irakurketa-zerrendak sinkronizatzeko. &lt;a href=\"#login\"&gt;DroidWikira batu&lt;/a&gt;</string>
   <string name="onboarding_analytics_title">Datuak anonimoki bidali</string>
   <string name="onboarding_analytics_offline_text">Lagundu iezaguzu aplikazioa hobetzen zure erabilera azalduz. Bildutako datuak anonimoak izango dira.&lt;a href=\"#offline\"&gt;Gehiago ikasi&lt;/a&gt;</string>
   <string name="onboarding_analytics_switch_title">Erabilitako data bidali</string>

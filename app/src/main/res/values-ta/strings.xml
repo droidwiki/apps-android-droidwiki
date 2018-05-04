@@ -95,7 +95,7 @@
   <string name="history_empty_message" fuzzy="true">அனைத்தையும் அழித்துவிட்டீர்கள் போல. அடுத்த முறை ஒருபக்கத்துக்கு செல்லும்போது அதற்கு இங்கிருந்து திரும்பச் செல்லலாம்.</string>
   <string name="search_empty_message">உங்களது மொழியில் இலவச கலைக் களஞ்சியத்தைப் படிக்கவும்</string>
   <string name="delete_selected_items">தேர்தெடுக்கப்பட்ட உருப்படிகளை நீக்குக</string>
-  <string name="wp_stylized">&lt;big&gt;வி&lt;/big&gt;க்கிப்பீடி&lt;big&gt;யா&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">பயனர் பெயர்</string>
   <string name="login_dont_have_account">பயனர் கணக்கு இல்லையா?</string>
   <string name="login_join_wikipedia">விக்கிப்பீடியாவில் சேர்க</string>
@@ -145,7 +145,7 @@
   <string name="privacy_policy_description">தகவல் பாதுகாப்பு</string>
   <string name="terms_of_use_description">பயன்பாட்டு விதிமுறைகள்</string>
   <string name="privacy_policy_url" fuzzy="true">https://meta.wikimedia.org/wiki/Privacy_policy/ta</string>
-  <string name="terms_of_use_url">https://meta.wikimedia.org/wiki/Terms_of_use/ta</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">பயன்படுத்தும் நிரலகங்கள்</string>
@@ -209,7 +209,7 @@
   <string name="gallery_error_video_failed">காணொளியை இயக்க இயலவில்லை.</string>
   <string name="gallery_save_image_write_permission_rationale">படங்களை இந்த சேமிபகத்தில் சேமிப்பதற்கு எழுவதற்கான அனுமதி தேவை.</string>
   <string name="err_cannot_save_file">ஆவணத்தை சேமிக்க முடியாது.</string>
-  <string name="snippet_share_intro">\@Wikipedia வில் \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki வில் \"%1$s\": %2$s</string>
   <string name="expand_refs">விரிவாக்க தட்டுங்கள்</string>
   <string name="share_snippet_button">அமைகையாக பகிர்.</string>
   <string name="share_normal_button">உரையாக பகிர்.</string>

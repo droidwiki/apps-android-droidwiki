@@ -9,11 +9,11 @@
 * Macofe
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Cari dalam Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Cari dalam DroidWiki</string>
   <string name="search_hint_search_history">Cari dalam sejarah</string>
   <string name="search_hint_search_my_lists">Cari senarai saya</string>
   <string name="search_hint_search_reading_list">Cari senarai bacaan</string>
@@ -58,7 +58,7 @@
   <string name="content_license_html">Kandungan ini tersedia dengan lesen &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; melainkan dinyatakan sebaliknya</string>
   <string name="edit_save_action_license_logged_in">Dengan menyimpan, anda menyetujui &lt;a href=\"%1$s\"&gt;Syarat-Syarat Penggunaan&lt;/a&gt; serta melepaskan kesemua sumbangan anda tanpa tertarik balik dengan lesen &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;.</string>
   <string name="edit_save_action_license_anon">Dengan menyimpan, anda menyetujui &lt;a href=\"%1$s\"&gt;Syarat-Syarat Penggunaan&lt;/a&gt; serta melepaskan kesemua sumbangan anda tanpa tertarik balik dengan lesen &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;. Suntingan akan diatribusikan kepada alamat IP peranti anda. Jika anda &lt;a href=\"https://#login\"&gt;log masuk&lt;/a&gt;, maka privasi anda bertambah baik.</string>
-  <string name="preference_title_language">Bahasa Wikipedia</string>
+  <string name="preference_title_language">Bahasa DroidWiki</string>
   <string name="preference_languages_filter_hint">Cari</string>
   <string name="langlinks_filter_hint">Cari</string>
   <string name="langlinks_empty">Laman ini tidak terdapat dalam bahasa lain</string>
@@ -82,13 +82,13 @@
   <string name="edit_section_captcha_hint">Ulangi kata-kata dari atas</string>
   <string name="title_captcha">Taipkan captcha</string>
   <string name="edit_section_captcha_reload">Ketik CAPTCHA untuk muat semula</string>
-  <string name="nav_item_login">Log masuk ke dalam Wikipedia</string>
+  <string name="nav_item_login">Log masuk ke dalam DroidWiki</string>
   <string name="login_username_hint">Nama pengguna</string>
   <string name="login_password_hint">Kata laluan</string>
   <string name="login_2fa_hint">Kod Pengesahan Dwifaktor</string>
   <string name="login_2fa_other_workflow_error_msg">Pengesahan dua faktor yang diperlukan! Sila kembali ke aktiviti utama dan log masuk dengan token 2FA anda, kemudian cuba lagi.</string>
   <string name="menu_login">Log masuk</string>
-  <string name="login_activity_title">Log masuk ke dalam Wikipedia</string>
+  <string name="login_activity_title">Log masuk ke dalam DroidWiki</string>
   <string name="login_in_progress_dialog_message">Sedang log masuk…</string>
   <string name="login_success_toast">Berjaya log masuk!</string>
   <string name="preference_title_logout">Log keluar</string>
@@ -97,10 +97,10 @@
   <string name="history_empty_message">Menjejaki apa yang anda telah membaca di sini.</string>
   <string name="search_empty_message">Cari dan baca ensiklopedia bebas dalam bahasa anda</string>
   <string name="delete_selected_items">Padam item yang dipilih</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Nama pengguna</string>
   <string name="login_dont_have_account">Belum buka akaun?</string>
-  <string name="login_join_wikipedia">Sertai Wikipedia</string>
+  <string name="login_join_wikipedia">Sertai DroidWiki</string>
   <string name="login_forgot_password">Lupa kata laluan anda?</string>
   <string name="create_account_already_have">Sudah mempunyai akaun?</string>
   <string name="create_account_activity_title">Buka akaun</string>
@@ -116,17 +116,17 @@
   <string name="create_account_button">Buka akaun</string>
   <string name="create_account_name_unavailable">Nama pengguna \"%s\" tidak tersedia. Sila pilih nama lain.</string>
   <string name="preferences_general_heading">Umum</string>
-  <string name="wikipedia_app_faq">Soalan Lazim Aplikasi Wikipedia</string>
-  <string name="zero_charged_verbiage">Akses percuma ke Wikipedia tidak lagi aktif.</string>
-  <string name="zero_warn_when_leaving">Pesan apabila keluar dari Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Jika operator mudah alih anda mengecualikan caj akses data untuk aplikasi Wikipedia menerusi persepakatan Wikipedia Zero, jika tetapan ini dibiarkan pasang, anda akan dipesan bahawa caj mungkin dikenakan ketika anda keluar dari aplikasi Wikipedia.</string>
-  <string name="zero_webpage_title">Soalan Lazim Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Keluar dari Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Soalan Lazim Aplikasi DroidWiki</string>
+  <string name="zero_charged_verbiage">Akses percuma ke DroidWiki tidak lagi aktif.</string>
+  <string name="zero_warn_when_leaving">Pesan apabila keluar dari DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Jika operator mudah alih anda mengecualikan caj akses data untuk aplikasi DroidWiki menerusi persepakatan DroidWiki Zero, jika tetapan ini dibiarkan pasang, anda akan dipesan bahawa caj mungkin dikenakan ketika anda keluar dari aplikasi DroidWiki.</string>
+  <string name="zero_webpage_title">Soalan Lazim DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Keluar dari DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Caj data mungkin dikenakan. Terus ke laman web luaran?</string>
   <string name="zero_interstitial_continue">Ya</string>
   <string name="zero_interstitial_cancel">Tidak</string>
-  <string name="zero_learn_more">Pembawa wayarles anda telah menyediakan akses percuma ke kandungan Wikipedia!</string>
+  <string name="zero_learn_more">Pembawa wayarles anda telah menyediakan akses percuma ke kandungan DroidWiki!</string>
   <string name="zero_learn_more_learn_more">Ketahui lebih lanjut</string>
   <string name="zero_learn_more_dismiss">Singkir</string>
   <string name="edit_preview_fetching_dialog_message">Mengolah pralihat…</string>
@@ -138,8 +138,8 @@
   <string name="preferences_heading_experimental">Percubaan</string>
   <string name="preference_title_sync_reading_lists">Menyegerakkan senarai bacaan</string>
   <string name="preference_title_sync_reading_lists_from_account">Dayakan penyegerakan senarai bacaan</string>
-  <string name="preference_summary_sync_reading_lists">Segerakkan senarai bacaan merentas peranti yang berbeza dengan menyimpannya ke akaun Wikipedia anda</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Segerakkan senarai bacaan merentas peranti yang berbeza dengan menyimpannya ke akaun Wikipedia anda \"%s\"</string>
+  <string name="preference_summary_sync_reading_lists">Segerakkan senarai bacaan merentas peranti yang berbeza dengan menyimpannya ke akaun DroidWiki anda</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Segerakkan senarai bacaan merentas peranti yang berbeza dengan menyimpannya ke akaun DroidWiki anda \"%s\"</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Buang senarai bacaan yang diselaraskan dari \"%s\"?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Ini akan memadam semua senarai bacaan yang diselaraskan sebelum ini dari storan jauh. Buang semua senarai yang disegerakkan dari akaun anda \"%s\"?</string>
   <string name="preferences_privacy_settings_heading">Privasi</string>
@@ -158,14 +158,14 @@
   <string name="page_protected_can_not_edit_title">Halaman ini dilindungi</string>
   <string name="settings_item_preferences">Tetapan</string>
   <string name="settings_activity_title">Tetapan</string>
-  <string name="about_description">Tentang aplikasi Wikipedia</string>
+  <string name="about_description">Tentang aplikasi DroidWiki</string>
   <string name="privacy_policy_description">Dasar privasi</string>
   <string name="terms_of_use_description">Syarat-syarat penggunaan</string>
-  <string name="about_wikipedia_url">https://ms.m.wikipedia.org/wiki/Wikipedia:Perihal</string>
-  <string name="privacy_policy_url">https://m.wikimediafoundation.org/wiki/Privacy_policy</string>
+  <string name="about_wikipedia_url">https://ms.m.wikipedia.org/wiki/DroidWiki:Perihal</string>
+  <string name="privacy_policy_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.ms</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.ms</string>
   <string name="about_libraries_heading">Perpustakaan yang digunakan</string>
@@ -173,7 +173,7 @@
   <string name="about_translators_heading">Penterjemah</string>
   <string name="about_translators_translatewiki">Aplikasi ini diterjemah oleh para penterjemah sukarela di &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Lesen</string>
-  <string name="about_app_license">Kod sumber tersedia di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; dan &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; di bawah &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Lesen Apache 2.0&lt;/a&gt;. Kecuali dinyatakan lain, kandungan tersedia di bawah &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Lesen Atribusi-BerbagiSerupa Creative Commons&lt;/a&gt;.</string>
+  <string name="about_app_license">Kod sumber tersedia di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; dan &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; di bawah &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Lesen Apache 2.0&lt;/a&gt;. Kecuali dinyatakan lain, kandungan tersedia di bawah &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Lesen Atribusi-BerbagiSerupa Creative Commons&lt;/a&gt;.</string>
   <string name="about_wmf">Keluaran &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Yayasan Wikimedia&lt;/a&gt;</string>
   <string name="about_activity_title">Perihal</string>
   <string name="edit_abandon_confirm">Laman ini telah disunting. Adakah anda pasti ingin keluar tanpa menyimpan suntingan?</string>
@@ -200,7 +200,7 @@
   <string name="abusefilter_title_warn">Suntingan ini mungkin tidak membina. Adakah anda betul-betul mahu menerbitkannya?</string>
   <string name="abusefilter_title_disallow">Suntingan ini tidak boleh diterbitkan. Sila kembali dan suntingnya semula.</string>
   <string name="abusefilter_text_warn">Penapis automatik mendapati suntingan ini berkemungkinan adalah tidak membina. Mungkin ia ada antara yang berikut:&lt;br /&gt;&lt;br /&gt;. Menaip dalam huruf besar&lt;br /&gt;. Mengosongkan rencana atau menspam&lt;br /&gt;. Pautan luar atau imej-imej tidak berkaitan&lt;br /&gt;. Aksara berulang</string>
-  <string name="abusefilter_text_disallow">Penapis automatik mendapati suntingan ini berkemungkinan tidak membina, atau laku musnah.&lt;br /&gt;&lt;br /&gt;Wikipedia ialah ensiklopedia dan hanya kandungan neutral, penting yang perlu di sini.</string>
+  <string name="abusefilter_text_disallow">Penapis automatik mendapati suntingan ini berkemungkinan tidak membina, atau laku musnah.&lt;br /&gt;&lt;br /&gt;DroidWiki ialah ensiklopedia dan hanya kandungan neutral, penting yang perlu di sini.</string>
   <string name="dialog_page_issues">Isu-isu laman</string>
   <string name="button_page_issues">Isu-isu laman</string>
   <string name="text_size_select">Saiz fon</string>
@@ -215,9 +215,9 @@
   <string name="table_infobox">Fakta segera</string>
   <string name="table_other">Maklumat lanjut</string>
   <string name="table_close">Tutup</string>
-  <string name="widget_name_featured_page">Laman pilihan Wikipedia</string>
+  <string name="widget_name_featured_page">Laman pilihan DroidWiki</string>
   <string name="widget_title_featured_page">Laman pilihan hari ini:</string>
-  <string name="widget_name_search">Pencarian Wikipedia</string>
+  <string name="widget_name_search">Pencarian DroidWiki</string>
   <string name="wiktionary_no_definitions_found">Tiada takrifan dijumpai.</string>
   <string name="alpha_update_notification_title">Terdapat kemaskinian alfa baru</string>
   <string name="alpha_update_notification_text">Ketik untuk muat turun</string>
@@ -236,7 +236,7 @@
   <string name="gallery_error_video_failed">Video tidak dapat ditayangkan.</string>
   <string name="gallery_save_image_write_permission_rationale">Kebenaran untuk menulis kepada storan pada peranti anda diperlukan untuk menyimpan gambar.</string>
   <string name="err_cannot_save_file">Fail tidak dapat disimpan</string>
-  <string name="snippet_share_intro">Fakta menarik di @Wikipedia %1$s: %2$s</string>
+  <string name="snippet_share_intro">Fakta menarik di @DroidWiki %1$s: %2$s</string>
   <string name="expand_refs">Ketik untuk kembangkan</string>
   <string name="share_snippet_button">Sebarkan dalam bentuk imej</string>
   <string name="share_normal_button">Sebarkan dalam bentuk teks</string>
@@ -271,7 +271,7 @@
   <string name="error_no_maps_app">Tidak dapat menemui sebarang aplikasi yang boleh menunjukkan jalan.</string>
   <string name="preference_title_show_link_previews">Paparkan pratonton pautan</string>
   <string name="preference_summary_show_link_previews">Paparkan pratonton cepat bagi rencana apabila mengetik pautan.</string>
-  <string name="nav_item_donate">Sokonglah Wikipedia</string>
+  <string name="nav_item_donate">Sokonglah DroidWiki</string>
   <string name="error_voice_search_not_available">Maaf, pengenalan undi tidak tersedia.</string>
   <string name="location_service_disabled">Perkhidmatan lokasi dilumpuhkan.</string>
   <string name="enable_location_service">Hidupkan</string>
@@ -288,14 +288,14 @@
   <string name="preference_title_prefer_offline_content">Lebih suka kandungan luar talian</string>
   <string name="preference_summary_prefer_offline_content">Menjimatkan penggunaan data dengan memuatkan rencana yang tersedia di luar talian dan bukannya memuatkan versi terkini rencana</string>
   <string name="preference_title_enable_offline_library">Bolehkan Perpustakaan Luar Talian</string>
-  <string name="preference_summary_enable_offline_library">Akses pek rencana Wikipedia (ditunjukkan sebagai fail .ZIM) yang telah dimuat turun ke peranti anda untuk dibaca apabila anda berada di luar talian. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
+  <string name="preference_summary_enable_offline_library">Akses pek rencana DroidWiki (ditunjukkan sebagai fail .ZIM) yang telah dimuat turun ke peranti anda untuk dibaca apabila anda berada di luar talian. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
   <string name="crash_report_dialog_title">Maaf kerana aplikasi runtuh dahulu</string>
   <string name="crash_report_dialog_text">Adakah anda ingin menghantar laporan keruntuhan ke HockeyApp atau penyedia perkhidmatan pihak ketiga supaya Wikimedia boleh mengkaji keruntuhan anda dan membaiki pepijat yang menyebabkannya?</string>
   <string name="crash_report_dialog_dont_send_button">Langkau</string>
   <string name="crash_report_dialog_always_send_button">Sentiasa hantar</string>
   <string name="crash_report_dialog_send_button">Hantar</string>
   <string name="crash_report_activity_title">Ralat aplikasi</string>
-  <string name="crash_report_relaunch_or_quit">Maaf, aplikasi Wikipedia telah mengalami ralat dan terpaksa ditutup</string>
+  <string name="crash_report_relaunch_or_quit">Maaf, aplikasi DroidWiki telah mengalami ralat dan terpaksa ditutup</string>
   <string name="crash_report_relaunch">Mula balik</string>
   <string name="crash_report_quit">Keluar</string>
   <string name="article_menu_bar_bookmark">Tambahkan rencana ini ke dalam senarai bacaan</string>
@@ -369,11 +369,11 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Rencana muncul dalam beberapa senarai</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">%s tidak lagi akan tersedia di luar talian untuk semua senarai baca:</string>
   <string name="reading_lists_sync_reminder_title">Hidupkan penyegerakan senarai bacaan?</string>
-  <string name="reading_lists_sync_reminder_text">Rencana yang disimpan untuk membaca senarai kini boleh diselaraskan ke akaun Wikipedia anda. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
-  <string name="reading_lists_login_reminder_text_with_link">Senarai bacaan kini boleh disegerakkan merentas peranti. Log masuk ke akaun Wikipedia anda dan izinkan daftar anda disimpan. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Rencana yang disimpan untuk membaca senarai kini boleh diselaraskan ke akaun DroidWiki anda. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
+  <string name="reading_lists_login_reminder_text_with_link">Senarai bacaan kini boleh disegerakkan merentas peranti. Log masuk ke akaun DroidWiki anda dan izinkan daftar anda disimpan. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Dayakan penyegerakan</string>
   <string name="reading_list_login_reminder_title">Menyegerakkan senarai bacaan</string>
-  <string name="reading_lists_login_reminder_text">Senarai bacaan kini boleh disegerakkan merentas peranti. Masuk ke akaun Wikipedia anda dan izinkan senarai anda disimpan.</string>
+  <string name="reading_lists_login_reminder_text">Senarai bacaan kini boleh disegerakkan merentas peranti. Masuk ke akaun DroidWiki anda dan izinkan senarai anda disimpan.</string>
   <string name="reading_lists_confirm_remote_delete">Ini akan memadam sebarang senarai bacaan diselaraskan sebelumnya dari storan jauh. Teruskan?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Ya</string>
   <string name="reading_lists_confirm_remote_delete_no">Tidak</string>
@@ -390,7 +390,7 @@
   <string name="reading_list_turned_sync_off_dialog_ok">OK</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Tetapan</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Hidupkan penyegerakan senarai bacaan?</string>
-  <string name="reading_list_prompt_turned_sync_on_dialog_text">Rencana yang disimpan untuk membaca senarai kini boleh diselaraskan ke akaun Wikipedia anda. &lt;a href=\"#faq\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
+  <string name="reading_list_prompt_turned_sync_on_dialog_text">Rencana yang disimpan untuk membaca senarai kini boleh diselaraskan ke akaun DroidWiki anda. &lt;a href=\"#faq\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Jangan tunjukkan saya lagi ini</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Dayakan penyegerakan</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">Tak apalah</string>
@@ -410,7 +410,7 @@
   <string name="split_reading_list_message">Terdapat had %d rencana setiap senarai bacaan. Senarai sedia ada dengan lebih daripada had ini telah dibahagikan kepada beberapa senarai.</string>
   <string name="reading_list_article_limit_message">Tidak dapat menambah ke senarai ini. Anda telah mencapai had %2$d rencanabagi setiap senarai untuk senarai \"%1$s\".</string>
   <string name="reading_lists_limit_message">Tidak dapat membuat senarai lain. Anda telah mencapai had 100 senarai bacaan setiap akaun.</string>
-  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Segerakkan senarai bacaan&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Senarai bacaan kini boleh disegerakkan merentas peranti. Masuk ke akaun Wikipedia anda dan izinkan senarai anda disimpan.</string>
+  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Segerakkan senarai bacaan&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Senarai bacaan kini boleh disegerakkan merentas peranti. Masuk ke akaun DroidWiki anda dan izinkan senarai anda disimpan.</string>
   <string name="reading_lists_menu_create_list">Cipta senarai baru</string>
   <string name="reading_lists_menu_sort_by">Isih mengikut</string>
   <string name="reading_lists_refresh_sync_option">Segarkan semula penyegerakan</string>
@@ -425,7 +425,7 @@
   </plurals>
   <string name="user_option_sync_label">Keutamaan</string>
   <string name="notification_button_view_user">Bincang ke pengguna</string>
-  <string name="notification_talk_title">Mesej baru pada Wikipedia</string>
+  <string name="notification_talk_title">Mesej baru pada DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; meninggalkan mesej di halaman perbincangan anda di &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Suntingan yang dibatalkan</string>
   <string name="notification_reverted">Suntingan anda pada rencana &lt;strong&gt;%2$s&lt;/strong&gt; telah dibatalkan oleh &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -445,10 +445,10 @@
   <string name="view_continue_reading_card_title">Teruskan membaca</string>
   <string name="view_because_you_read_card_title">Kerana anda membaca</string>
   <string name="view_random_card_title">Rencana sembarang</string>
-  <string name="view_random_card_subtitle">Flip melalui rencana rawak untuk dibaca dari Wikipedia</string>
+  <string name="view_random_card_subtitle">Flip melalui rencana rawak untuk dibaca dari DroidWiki</string>
   <string name="view_random_card_action">Membaling dadu</string>
   <string name="view_next_random_article">Muatkan satu lagi artikel rawak</string>
-  <string name="view_main_page_card_title">Hari ini di Wikipedia</string>
+  <string name="view_main_page_card_title">Hari ini di DroidWiki</string>
   <string name="view_main_page_card_subtitle">Laman utama pada %s</string>
   <string name="view_main_page_card_action">Lihat laman utama</string>
   <string name="view_featured_image_card_title">Gambar pilihan</string>
@@ -480,10 +480,10 @@
   <string name="feed_item_type_on_this_day">Peristiwa dalam sejarah pada hari ini</string>
   <string name="feed_item_type_continue_reading">Pautan pantas kembali membaca rencana terbuka di salah satu tab anda</string>
   <string name="feed_item_type_because_you_read">Cadangan berdasarkan rencana yang baru dibaca dari sejarah anda</string>
-  <string name="feed_item_type_featured_article">Rencana pilihan harian di Wikipedia</string>
+  <string name="feed_item_type_featured_article">Rencana pilihan harian di DroidWiki</string>
   <string name="feed_item_type_trending">Rencana harian yang paling banyak dilihat</string>
   <string name="feed_item_type_featured_image">Imej pilihan harian dari Wikimedia Commons</string>
-  <string name="feed_item_type_main_page">Halaman utama Wikipedia dengan kandungan pilihan harian</string>
+  <string name="feed_item_type_main_page">Halaman utama DroidWiki dengan kandungan pilihan harian</string>
   <string name="feed_item_type_randomizer">Menjana rencana rawak untuk dibaca</string>
   <string name="feed_empty_message">Tiada apa-apa pada suapan Jelajah anda</string>
   <string name="feed_configure_onboarding_action">Ubah suai</string>
@@ -498,10 +498,10 @@
   <string name="description_edit_help_wikidata_guide">Bimbingan Wikidata untuk menulis penerangan</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-  <string name="description_edit_anon_limit">Terima kasih kerana minat anda terus dalam menyunting huraian! Untuk membuat suntingan tambahan, sila log masuk ke akaun Wikipedia anda.</string>
+  <string name="description_edit_anon_limit">Terima kasih kerana minat anda terus dalam menyunting huraian! Untuk membuat suntingan tambahan, sila log masuk ke akaun DroidWiki anda.</string>
   <string name="description_edit_license_notice">Dengan menukar huraian tajuk, saya menyetujui &lt;a href=\"%1$s\"&gt;Syarat-Syarat Penggunaan&lt;/a&gt; serta melepaskan kesemua sumbangan saya tanpa tertarik balik dengan lesen &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt;.</string>
   <string name="description_edit_success_saved">Huraian diterbitkan!</string>
-  <string name="description_edit_success_encouragement">Anda baru sahaja menciptakan Wikipedia lebih baik untuk semua orang</string>
+  <string name="description_edit_success_encouragement">Anda baru sahaja menciptakan DroidWiki lebih baik untuk semua orang</string>
   <string name="description_edit_success_done">Siap</string>
   <string name="description_edit_success_did_you_know">Tahukah anda?</string>
   <string name="description_edit_success_article_edit_hint">Anda juga boleh menyunting rencana dalam aplikasi ini. Cuba betulkan kesilapan menaip dan ayat kecil dengan klik pada ikon ^1 lain kali</string>
@@ -521,8 +521,8 @@
   <string name="description_edit_help_tips_example2">gunung tertinggi di Bumi</string>
   <string name="description_edit_help_tips_example2_hint">huraian tajuk untuk rencana mengenai Gunung Everest</string>
   <string name="description_edit_help_more_info">Maklumat lanjut</string>
-  <string name="description_edit_help_meta_info">Huraian disimpan dan disenggarakan di Wikidata, projek Wikimedia Foundation yang menyediakan pangkalan pengetahuan bebas, kerjasama, berbilang bahasa, sekunder menyokong Wikipedia dan projek-projek lain.</string>
-  <string name="description_edit_revert_subtitle">Terima kasih kerana menyunting di Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Huraian disimpan dan disenggarakan di Wikidata, projek Wikimedia Foundation yang menyediakan pangkalan pengetahuan bebas, kerjasama, berbilang bahasa, sekunder menyokong DroidWiki dan projek-projek lain.</string>
+  <string name="description_edit_revert_subtitle">Terima kasih kerana menyunting di DroidWiki!</string>
   <string name="description_edit_revert_intro">Kami tahu anda mencuba yang terbaik, tetapi salah satu pengulas mempunyai kebimbangan. Sebab yang mungkin suntingan anda ditukar semula termasuk:</string>
   <string name="description_edit_revert_reason1">sumbangan anda tidak mengikuti salah satu daripada &lt;a href=\"%1$s\"&gt;garis panduan&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">sumbangan anda kelihatan seperti eksperimen atau vandalisme.</string>
@@ -531,7 +531,7 @@
   <string name="offline_read_permission_rationale">Kebenaran untuk mengakses storan pada peranti anda diperlukan untuk melayari luar talian.</string>
   <string name="offline_read_final_rationale">Kebenaran untuk mengakses storan pada peranti anda diperlukan untuk menggunakan Perpustakaan Luar Talian.</string>
   <string name="offline_read_permission_error">Kebenaran tidak diberikan untuk baca dari storan peranti.</string>
-  <string name="offline_card_sideloading_text">Anda kini melayari Wikipedia luar talian dari pek rencana dalam Perpustakaan Luar Talian anda.</string>
+  <string name="offline_card_sideloading_text">Anda kini melayari DroidWiki luar talian dari pek rencana dalam Perpustakaan Luar Talian anda.</string>
   <string name="offline_my_compilations">Uruskan pustaka luar talian saya</string>
   <string name="offline_compilations_title">Perpustakaan Luar Talian</string>
   <string name="offline_compilations_search_by_name">Cari pek rencana mengikut nama</string>
@@ -569,24 +569,24 @@
   <string name="offline_library_search_results_state">Hasil carian dari Perpustakaan Luar Talian anda</string>
   <string name="offline_library_onboarding_button_done">Siap</string>
   <string name="offline_library_onboarding_build_library_title">Bina Perpustakaan Luar Talian anda</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Muat turun pek rencana Wikipedia sekarang untuk akses tanpa data kemudian.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Muat turun pek rencana DroidWiki sekarang untuk akses tanpa data kemudian.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Pembacaan tidak terganggu</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Terus membaca dan mencari rencana dalam Perpustakaan Luar Talian anda apabila anda tidak mempunyai akses ke internet.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Simpan lebih banyak pengetahuan</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Muat turun seberapa banyak Wikipedia sebagai peranti anda boleh mengendalikan. Perpustakaan Luar Talian juga boleh mengakses pek rencana mengenai storan luaran.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Muat turun seberapa banyak DroidWiki sebagai peranti anda boleh mengendalikan. Perpustakaan Luar Talian juga boleh mengakses pek rencana mengenai storan luaran.</string>
   <string name="offline_library_main_page_hint_html">Laman Utama ini memberikan gambaran keseluruhan kandungan pek rencana ini.&lt;br /&gt;&lt;br /&gt;Anda juga boleh meneroka kandungan mana-mana pek rencana dalam Perpustakaan Luar Talian anda dengan mencari rencana yang ada semasa anda berada di luar talian.</string>
   <string name="onboarding_skip">Langkau</string>
   <string name="onboarding_continue">Teruskan</string>
   <string name="onboarding_get_started">Memulakan</string>
   <string name="onboarding_welcome_title">Ensiklopedia bebas</string>
-  <string name="onboarding_welcome_text">Wikipedia ditulis secara sukarela oleh sukarelawan dan terdiri daripada lebih 40 juta rencana dalam hampir 300 bahasa yang berbeza. &lt;a href=\"#about\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
+  <string name="onboarding_welcome_text">DroidWiki ditulis secara sukarela oleh sukarelawan dan terdiri daripada lebih 40 juta rencana dalam hampir 300 bahasa yang berbeza. &lt;a href=\"#about\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
   <string name="onboarding_explore_title">Cara baru untuk diterokai</string>
-  <string name="onboarding_explore_text">Dengarkan lubang kelinci Wikipedia dengan mengemas kini suapan Jelajah secara berterusan. &lt;br/&gt; &lt;b&gt;Ubahsuai&lt;/b&gt; suapan untuk minat anda – sama ada pembelajaran tentang peristiwa sejarah &lt;b&gt;Pada hari ini&lt;/b&gt;, atau membaling dadu dengan &lt;b&gt;Rawak&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Dengarkan lubang kelinci DroidWiki dengan mengemas kini suapan Jelajah secara berterusan. &lt;br/&gt; &lt;b&gt;Ubahsuai&lt;/b&gt; suapan untuk minat anda – sama ada pembelajaran tentang peristiwa sejarah &lt;b&gt;Pada hari ini&lt;/b&gt;, atau membaling dadu dengan &lt;b&gt;Rawak&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">Simpan ke senarai bacaan</string>
   <string name="onboarding_save_to_reading_lists_text">Buat senarai bacaan dari rencana yang ingin dibaca kemudian, walaupun semasa anda berada di luar talian.</string>
   <string name="onboarding_reading_list_sync_title">Senarai bacaan dengan penyegerakan</string>
-  <string name="onboarding_reading_list_sync_text">Buat senarai bacaan dari artikel yang ingin dibaca kemudian, walaupun semasa anda berada di luar talian. &lt;a href=\"#login\"&gt;Log masuk atau buat&lt;/a&gt; akaun Wikipedia anda untuk memastikan senarai bacaan anda disokong.</string>
-  <string name="onboarding_reading_list_sync_text_v2">Anda boleh membuat senarai bacaan dari artikel yang ingin dibaca kemudian, walaupun semasa anda berada di luar talian. &lt;br/&gt;Log masuk ke akaun Wikipedia anda untuk menyegerakkan senarai bacaan anda. &lt;a href=\"#login\"&gt;Sertai Wikipedia&lt;/a&gt;</string>
+  <string name="onboarding_reading_list_sync_text">Buat senarai bacaan dari artikel yang ingin dibaca kemudian, walaupun semasa anda berada di luar talian. &lt;a href=\"#login\"&gt;Log masuk atau buat&lt;/a&gt; akaun DroidWiki anda untuk memastikan senarai bacaan anda disokong.</string>
+  <string name="onboarding_reading_list_sync_text_v2">Anda boleh membuat senarai bacaan dari artikel yang ingin dibaca kemudian, walaupun semasa anda berada di luar talian. &lt;br/&gt;Log masuk ke akaun DroidWiki anda untuk menyegerakkan senarai bacaan anda. &lt;a href=\"#login\"&gt;Sertai DroidWiki&lt;/a&gt;</string>
   <string name="onboarding_analytics_title">Hantar data tanpa nama</string>
   <string name="onboarding_analytics_offline_text">Bantu menjadikan aplikasi lebih baik dengan memberitahu kami bagaimana anda menggunakannya. Data yang dikumpul tidak dikenali. &lt;a href=\"#privacy\"&gt;Ketahui lebih lanjut&lt;/a&gt;</string>
   <string name="onboarding_analytics_switch_title">Hantar data penggunaan</string>

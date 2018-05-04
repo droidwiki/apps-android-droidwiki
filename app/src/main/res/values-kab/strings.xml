@@ -5,11 +5,11 @@
 * Mastanabal
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Bêta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Nadi di Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Bêta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Nadi di DroidWiki</string>
   <string name="search_hint_search_history">Nadi amazray</string>
   <string name="search_hint_search_my_lists">Nadi di tebdart-iw</string>
   <string name="search_hint_search_reading_list">Nadi di tebdart-iw n tɣuri</string>
@@ -76,13 +76,13 @@
   <string name="edit_section_captcha_hint">Ales awalen n daw-a</string>
   <string name="title_captcha">Sekcem CAPTCHA</string>
   <string name="edit_section_captcha_reload">Sekcem CAPTCHA ad talseḍ asali</string>
-  <string name="nav_item_login">Kcem ar Wikipedia</string>
+  <string name="nav_item_login">Kcem ar DroidWiki</string>
   <string name="login_username_hint">Isem n useqdac</string>
   <string name="login_password_hint">Awal uffir</string>
   <string name="login_2fa_hint">Tangalt n usesteb s snat n tarrayin</string>
   <string name="login_2fa_other_workflow_error_msg">Asesteb s stan n tarrayin ilaq!\nUɣal ar urmud agekdan sakin qqen s ujuṭun 2FA, sakin ɛreḍ tikelt-nniḍen.</string>
   <string name="menu_login">Qqen</string>
-  <string name="login_activity_title">Qqen ar Wikipedia</string>
+  <string name="login_activity_title">Qqen ar DroidWiki</string>
   <string name="login_in_progress_dialog_message">Tuqqna tetteddu...</string>
   <string name="login_success_toast">Yeqqen akken iwata!</string>
   <string name="preference_title_logout">Ffeɣ</string>
@@ -91,10 +91,10 @@
   <string name="history_empty_message">Ḍfeṛ ayen tɣareḍ dagi.</string>
   <string name="search_empty_message">Nadi sakin ɣeṛ tasanayt tilellit s tutlayt-ik</string>
   <string name="delete_selected_items">Kkes iferdisen yettwafernen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Isem n useqdac</string>
   <string name="login_dont_have_account">Ur tesɛiḍ ara amiḍan ?</string>
-  <string name="login_join_wikipedia">Ddu ar Wikipedia</string>
+  <string name="login_join_wikipedia">Ddu ar DroidWiki</string>
   <string name="login_forgot_password">Tettuḍ awal uffir?</string>
   <string name="create_account_already_have">Ɣur-k yakan amiḍan?</string>
   <string name="create_account_activity_title">Rnu amiḍan</string>
@@ -109,17 +109,17 @@
   <string name="create_account_next">Ar zdat</string>
   <string name="create_account_button">Rnu amiḍan</string>
   <string name="preferences_general_heading">Amatu</string>
-  <string name="wikipedia_app_faq">Isteqsiyen FAQ n isnasen Wikipedia</string>
-  <string name="zero_charged_verbiage">Anekcum ilelli ar Wikipedia ur yezgi yermed.</string>
-  <string name="zero_warn_when_leaving">Lɣu-yid di tuffɣa Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Ma yella asaǧǧaw-ik n aziraz ur yettawi ara tadrimt ɣef useqdec n usnas Wikipedia deg umtawa n Wikipedia Zero, eǧǧ aɣewwaṛ-agi yermed akken ak(yeǧǧ ad tettwalɣuḍ ticki teffɣeḍ seg usnas Wikipedia neɣ ma ulac  ad txelseḍ tasqamt n isefka.</string>
-  <string name="zero_webpage_title">Isteqsiyen FAQ Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Tuffɣa si Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Isteqsiyen FAQ n isnasen DroidWiki</string>
+  <string name="zero_charged_verbiage">Anekcum ilelli ar DroidWiki ur yezgi yermed.</string>
+  <string name="zero_warn_when_leaving">Lɣu-yid di tuffɣa DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Ma yella asaǧǧaw-ik n aziraz ur yettawi ara tadrimt ɣef useqdec n usnas DroidWiki deg umtawa n DroidWiki Zero, eǧǧ aɣewwaṛ-agi yermed akken ak(yeǧǧ ad tettwalɣuḍ ticki teffɣeḍ seg usnas DroidWiki neɣ ma ulac  ad txelseḍ tasqamt n isefka.</string>
+  <string name="zero_webpage_title">Isteqsiyen FAQ DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Tuffɣa si DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Yezmer ad yili lexlaṣ. Tebɣiḍ ad tkemmleḍ ɣer usmel azɣaray?</string>
   <string name="zero_interstitial_continue">Ffeɣ</string>
   <string name="zero_interstitial_cancel">Qim dagi</string>
-  <string name="zero_learn_more">Asaǧǧaw-ik n unekcum ar Internet imudd anekcum baṭel ar ugbur n Wikipedia!</string>
+  <string name="zero_learn_more">Asaǧǧaw-ik n unekcum ar Internet imudd anekcum baṭel ar ugbur n DroidWiki!</string>
   <string name="zero_learn_more_learn_more">Issin ugar</string>
   <string name="zero_learn_more_dismiss">Mdel</string>
   <string name="edit_preview_fetching_dialog_message">Awway n teskant...</string>
@@ -144,10 +144,10 @@
   <string name="page_protected_can_not_edit_title">Asebter-agi yettummesten</string>
   <string name="settings_item_preferences">Iɣewwaṛen</string>
   <string name="settings_activity_title">Iɣewwaṛen</string>
-  <string name="about_description">Ɣef usnas Wikipedia</string>
+  <string name="about_description">Ɣef usnas DroidWiki</string>
   <string name="privacy_policy_description">Tasertit n tbaḍnit</string>
   <string name="terms_of_use_description">Tiwtilin n useqdec</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
@@ -156,7 +156,7 @@
   <string name="about_translators_heading">Imsuqal</string>
   <string name="about_translators_translatewiki">Asnas-agi suqlen-t imsuqal iwiziwen n &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Turagt</string>
-  <string name="about_app_license">Tangalt aɣbalu yella di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; akked &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; daw n  &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;turagt Apache 2.0&lt;/a&gt;. Ala ma yettwammel akken-nniḍen, agbur yella daw n &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;turagt Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Tangalt aɣbalu yella di &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; akked &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; daw n  &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;turagt Apache 2.0&lt;/a&gt;. Ala ma yettwammel akken-nniḍen, agbur yella daw n &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;turagt Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Afaris n &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;tesbeddit Wikimedia&lt;/a&gt;</string>
   <string name="about_activity_title">Ɣef</string>
   <string name="edit_abandon_confirm">Asebter-agi yettusnifel. Tebɣid ad teffɣeḍ war ma teskelseḍ asnifel-ik?</string>
@@ -181,7 +181,7 @@
   <string name="abusefilter_title_warn">Ahat yezmer ad yili d asnifel ur nemɛin ara. Tebɣiḍ ad tessuffɣeḍ?</string>
   <string name="abusefilter_title_disallow">Ur tezmireḍ ara ad tessuffɣeḍ taẓrigt-agi. Ma ulac aɣilif, uɣal ar deffir sakin beddel-it.</string>
   <string name="abusefilter_text_warn">Imzizdig awurman yufa-d asnifel-agi d ayen ur yelhin ara. Yezmer d akken yegber kra  n iferdisen-agi::&lt;br /&gt;&lt;br /&gt;. Tira s usekkil ameqqran &lt;br /&gt;. Beṭṭu n imagraden neɣ n ispamen &lt;br /&gt;. Iseɣwan neɣ tugniwin tizɣarayin ur ilaqen ara&lt;br /&gt;.  Tulsa n uisekkilen</string>
-  <string name="abusefilter_text_disallow">Imzizdig awurman yufa-d tazrigt-agi d akken diri-tt, neɣ ahat d asexseṛ.&lt;br /&gt;&lt;br /&gt;Wikipedia d tasanayt tarawsant, s ugbur yelhan.</string>
+  <string name="abusefilter_text_disallow">Imzizdig awurman yufa-d tazrigt-agi d akken diri-tt, neɣ ahat d asexseṛ.&lt;br /&gt;&lt;br /&gt;DroidWiki d tasanayt tarawsant, s ugbur yelhan.</string>
   <string name="dialog_page_issues">Asqerdec ɣef usebter</string>
   <string name="button_page_issues">Isteqsiyen ɣef usebter</string>
   <string name="text_size_select">Teɣzi n tsefsit</string>
@@ -196,9 +196,9 @@
   <string name="table_infobox">Axeddim s tewzel</string>
   <string name="table_other">Ugar n telɣut</string>
   <string name="table_close">Mdel</string>
-  <string name="widget_name_featured_page">Asebter amedya n Wikipedia</string>
+  <string name="widget_name_featured_page">Asebter amedya n DroidWiki</string>
   <string name="widget_title_featured_page">Asebter amedya n wass-a:</string>
-  <string name="widget_name_search">Anadi Wikipedia</string>
+  <string name="widget_name_search">Anadi DroidWiki</string>
   <string name="wiktionary_no_definitions_found">Ulac tabadut.</string>
   <string name="alpha_update_notification_title">Lqem amaynut alpha yella</string>
   <string name="alpha_update_notification_text">Nnal akken ad tessidreḍ</string>
@@ -217,7 +217,7 @@
   <string name="gallery_error_video_failed">Ur izmir ara ad yurar tavidyut-agi.</string>
   <string name="gallery_save_image_write_permission_rationale">Tasiregt n tira ar umḍiq n usekles n yibenk-ik tlaq i usekles n tugniwin.</string>
   <string name="err_cannot_save_file">Ur izmir ara ad isekles afaylu</string>
-  <string name="snippet_share_intro">\"%1$s\" ɣef @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" ɣef @DroidWiki: %2$s</string>
   <string name="expand_refs">Aru akken ad tesnefliḍ</string>
   <string name="share_snippet_button">Bḍu tugna</string>
   <string name="share_normal_button">Bḍu am uḍris</string>
@@ -252,7 +252,7 @@
   <string name="error_no_maps_app">Ur izmir ara ad d-yaf asnas yettmuddun iwellihen.</string>
   <string name="preference_title_show_link_previews">Wali tiskanin n useɣwen</string>
   <string name="preference_summary_show_link_previews">Wali taskant taruraḍt n imagraden s unali n iseɣwan.</string>
-  <string name="nav_item_donate">Mudd afus i Wikipedia</string>
+  <string name="nav_item_donate">Mudd afus i DroidWiki</string>
   <string name="error_voice_search_not_available">Suref-aɣ, aɛqal aɣectan ulac-it.</string>
   <string name="location_service_disabled">Imezla n usideg nsan.</string>
   <string name="enable_location_service">Rmed</string>
@@ -358,7 +358,7 @@
   </plurals>
   <string name="user_option_sync_label">Ismenyifen</string>
   <string name="notification_button_view_user">Meslay i useqdac</string>
-  <string name="notification_talk_title">Izen amaynut di Wikipedia</string>
+  <string name="notification_talk_title">Izen amaynut di DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; yeǧǧa-d izen deg usebter-ik n usqerdec &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Asnifel yettwasefsex</string>
   <string name="notification_reverted">Asnifel-ik n umagrad &lt;strong&gt;%2$s&lt;/strong&gt; isefsex-it &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -367,9 +367,9 @@
   <string name="view_continue_reading_card_title">Kemmel taɣuri</string>
   <string name="view_because_you_read_card_title">Acku teɣriḍ</string>
   <string name="view_random_card_title">Agacuran</string>
-  <string name="view_random_card_subtitle" fuzzy="true">Ɣeṛ amagrad agacuran si Wikipedia</string>
+  <string name="view_random_card_subtitle" fuzzy="true">Ɣeṛ amagrad agacuran si DroidWiki</string>
   <string name="view_next_random_article">Sali-d amagrad nniden agacuran</string>
-  <string name="view_main_page_card_title">Ass-a di Wikipedia</string>
+  <string name="view_main_page_card_title">Ass-a di DroidWiki</string>
   <string name="view_main_page_card_subtitle">Asebter agejdan di %s</string>
   <string name="view_featured_image_card_title">Tugna n wass</string>
   <string name="view_featured_image_card_download">Sider</string>
@@ -399,13 +399,13 @@
   <string name="description_edit_edit_description">Ẓreg aglam</string>
   <string name="description_edit_cancel_hint">Sefsex</string>
   <string name="description_edit_help_title">Tallelt: iglamen n izwal</string>
-  <string name="description_edit_help_about_wikidata">Ɣef Wikipedia</string>
+  <string name="description_edit_help_about_wikidata">Ɣef DroidWiki</string>
   <string name="description_edit_help_wikidata_guide">Amnir n Wikidata  n tira n yeglamen</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
-  <string name="description_edit_anon_limit">Tanemmirt imi turiḍ aglma amaynut ! Akken ad tisnifleḍ ugar, qqen ar umiḍan-ik Wikipedia.</string>
+  <string name="description_edit_anon_limit">Tanemmirt imi turiḍ aglma amaynut ! Akken ad tisnifleḍ ugar, qqen ar umiḍan-ik DroidWiki.</string>
   <string name="description_edit_license_notice">Ma bedleɣ aglam n uzwel, ad qebleɣ &lt;a href=\"%1$s\"&gt;Tiwtilin n useqdec&lt;/a&gt; udiɣ ad erreɣ ilebda attekki-iw daw  n turagt &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt;.</string>
   <string name="description_edit_success_saved">Aglam yeffeɣ-d!</string>
-  <string name="description_edit_success_encouragement">Hatan akken kan i terriḍ Wikipedia yelha i yal yiwen</string>
+  <string name="description_edit_success_encouragement">Hatan akken kan i terriḍ DroidWiki yelha i yal yiwen</string>
   <string name="description_edit_success_done">Immed</string>
   <string name="description_edit_success_did_you_know">Tezriḍ?</string>
   <string name="description_edit_success_article_edit_hint">Tzemreḍ daɣen ad tesnifleḍ imagraden deg usnas. Ɛreḍ aseɣti n tuccḍiwin akked tifyar meẓẓiyen s usiti ɣeftignit ^1 tikelt-nniḍen.</string>
@@ -425,8 +425,8 @@
   <string name="description_edit_help_tips_example2">Adrar aɛlayen deg umaḍal</string>
   <string name="description_edit_help_tips_example2_hint">aglam n uzwel i umagrad ɣef udrar n Everest</string>
   <string name="description_edit_help_more_info">Ugar n telɣut</string>
-  <string name="description_edit_help_meta_info">Iglamen ttwaskelsen udiɣ ttwaleqmen di Wikipedia, asenfaṛ n tesbeddit Wikimedia yettmuddun taffa n isefka tillellit, tamɛiwent, s ddeqs n tutlayin, tisnawanin yettmuddun afus i Wikipedia akked isenfaṛen-nniḍen.</string>
-  <string name="description_edit_revert_subtitle">Tanemmirt ɣef teẓrigt Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Iglamen ttwaskelsen udiɣ ttwaleqmen di DroidWiki, asenfaṛ n tesbeddit Wikimedia yettmuddun taffa n isefka tillellit, tamɛiwent, s ddeqs n tutlayin, tisnawanin yettmuddun afus i DroidWiki akked isenfaṛen-nniḍen.</string>
+  <string name="description_edit_revert_subtitle">Tanemmirt ɣef teẓrigt DroidWiki!</string>
   <string name="description_edit_revert_intro">Neẓra d akken txeddmeḍ ayen tzemreḍ, acu kan yiwen seg imeɣriyen-nneɣ yufa-d ugur. D ayen i d-yewwin asefsex n usnifel-ik. Hatan wacuɣeṛ:</string>
   <string name="description_edit_revert_reason1">attekki-ik ur yedfiṛ ara yiwen seg &lt;a href=\"%1$s\"&gt;imniren&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">attekki-ik yettban am termit neɣ ahuddu.</string>
@@ -462,18 +462,18 @@
   <string name="offline_library_search_results_state">Anadi n igmaḍ di tnedlis-ik n war tuqqna</string>
   <string name="offline_library_onboarding_button_done">Immed</string>
   <string name="offline_library_onboarding_build_library_title">Bnu tamkarḍit-ik war tuqqna</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Sider tigrummiwin n imagraden Wikipedia tura i unekcum ilelli ar zdat.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Sider tigrummiwin n imagraden DroidWiki tura i unekcum ilelli ar zdat.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Taɣuri teḥbes</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Kemmel taɣuri udiɣ nadi imagraden di tnedlist n war tuqqna ticki ur ɣur-k ara tuqqna Internet.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Sekles ugar n tmusni</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Sider ayen yemzer ad tawi tiliɣri-ik si Wikipedia. Tanedlist n war tuqqna tezmer ad tekcem ar tagrumma n imagraden deg usekles azɣaray.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Sider ayen yemzer ad tawi tiliɣri-ik si DroidWiki. Tanedlist n war tuqqna tezmer ad tekcem ar tagrumma n imagraden deg usekles azɣaray.</string>
   <string name="onboarding_skip">Zgel</string>
   <string name="onboarding_continue">Kemmel</string>
   <string name="onboarding_get_started">Bdu</string>
   <string name="onboarding_explore_title">Tarryin-nniden n usnirem</string>
   <string name="onboarding_explore_text" fuzzy="true">Wali imagraden ufrinen, isental imaynutenakked isumar n tɣuri di tnelli n usnirem.</string>
   <string name="onboarding_reading_list_sync_title" fuzzy="true">Tibdarin n tɣuri s umtawi</string>
-  <string name="onboarding_reading_list_sync_text" fuzzy="true">Rnu tibdarin n tɣuri s s yimagraden ara teɣreḍ ticki, ɣas s war tuqqna. &lt;a href=\"#login\"&gt;qqen neɣ rnu&lt;/a&gt; amiḍan-ik Wikipedia akken ad tḥ€rzeḍ tibdarin-ik n tɣuri ttwaskelsent.</string>
+  <string name="onboarding_reading_list_sync_text" fuzzy="true">Rnu tibdarin n tɣuri s s yimagraden ara teɣreḍ ticki, ɣas s war tuqqna. &lt;a href=\"#login\"&gt;qqen neɣ rnu&lt;/a&gt; amiḍan-ik DroidWiki akken ad tḥ€rzeḍ tibdarin-ik n tɣuri ttwaskelsent.</string>
   <string name="onboarding_analytics_title">Azen isefka udrigen</string>
   <string name="onboarding_analytics_switch_title">Azen isefka n useqdec</string>
   <string name="onboarding_create_account_sync">Mtawi tibdarin-ik n tɣuri</string>

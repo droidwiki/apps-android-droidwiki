@@ -86,7 +86,7 @@
   <string name="history_empty_message">आप इहाँ का पढ़त रहल बानी ओपर नजर फेरीं</string>
   <string name="search_empty_message">अपना भासा में ज्ञानकोश में खोजीं आ पढ़ीं</string>
   <string name="delete_selected_items">चुनल गइल चीज डिलीट करीं</string>
-  <string name="wp_stylized">&lt;big&gt;वि&lt;/big&gt;किपीडि&lt;big&gt;या&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">प्रयोगकर्तानाँव</string>
   <string name="login_dont_have_account">का एगो खाता नइखे?</string>
   <string name="login_join_wikipedia">विकिपीडिया से जुड़ीं</string>
@@ -149,7 +149,7 @@
   <string name="about_translators_heading">अनुवादक</string>
   <string name="about_translators_translatewiki">एह एप के अनुवाद वालंटियर अनुवादक द्वारा &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; पर कइल गइल।</string>
   <string name="about_app_license_heading">लाइसेंस</string>
-  <string name="about_app_license">&lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; आ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; पर &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;अपाचे 2.0 लाइसेंस&lt;/a&gt; के तहत सोर्स कोड मौजूद बा। अगर अलग से इंगित न होखे, सामग्री &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; के तहत उपलब्ध बा।</string>
+  <string name="about_app_license">&lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; आ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; पर &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;अपाचे 2.0 लाइसेंस&lt;/a&gt; के तहत सोर्स कोड मौजूद बा। अगर अलग से इंगित न होखे, सामग्री &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; के तहत उपलब्ध बा।</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;विकिमीडिया फाउंडेशन&lt;/a&gt; के एगो प्रोडक्ट</string>
   <string name="about_activity_title">बारे में</string>
   <string name="edit_abandon_confirm">पन्ना में बदलाव भइल बा। आप निश्चित बानी की आप बिना बदलाव सहेजले बाहर निकलल चाहत बानी?</string>
@@ -198,7 +198,7 @@
   <string name="gallery_save_success">फाइल सहेजल सफल।</string>
   <string name="gallery_error_video_failed">बीडियो प्ले ना हो पावल।</string>
   <string name="err_cannot_save_file">फाइल ना सहेजा पाई</string>
-  <string name="snippet_share_intro">\"%1$s\" on @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" on @DroidWiki: %2$s</string>
   <string name="gallery_uploader_unknown">अनजान अपलोडर</string>
   <string name="remote_compilations_description" fuzzy="true">ऑफलाइन कंपाइलेशन, लेख सभ के अइसन बंडल हवे जे एगो सिंगल फाइल के रूप में राउर मोबाइलयंत्र में डाउनलोड कइल जा सके ला, जवना से कि आप ऑफलाइन रहले पर भी ब्राउजिंग क सकीं।</string>
   <string name="offline_compilation_detail_button_remove">हटाईं</string>

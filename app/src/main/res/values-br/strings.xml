@@ -9,11 +9,11 @@
 * Y-M D
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikipedia</string>
-  <string name="search_hint">Klask e Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Klask e DroidWiki</string>
   <string name="search_hint_search_history">Klask er roll istor</string>
   <string name="search_hint_search_my_lists">Klask em rolloù</string>
   <string name="search_hint_search_reading_list">Klask er roll lenn</string>
@@ -58,7 +58,7 @@
   <string name="content_license_html">An endalc\'had a c\'haller kaout e &lt;a  href=\"%1$s\"&gt; aotre-implijout CC BY-SA 3.0&lt;/a&gt; nemet e vefe merket ar c\'hontrol</string>
   <string name="edit_save_action_license_logged_in">Pa\'z enrollit e tegemerit an &lt;a href=\"%1$s\"&gt;Amplegadoù implijout&lt;/a&gt;,ha lakaat a rit ho tegasadennoù dindan an aotre-implijout &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; en ur doare didorradus.</string>
   <string name="edit_save_action_license_anon">Pa\'z enrollit e tegemerit an &lt;a href=\"%1$s\"&gt;Amplegadoù implijout&lt;/a&gt;, ha lakaat a rit ho tegasadennoù dindan aotre-implijout &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; en un doare didorradus. Ar c\'hemmoù a vo deroet da chomlec\'h IP hoc\'h ardivink. M\'ho peus &lt;a href=\"https://#login\"&gt;kevreit&lt;/a&gt; ho po muioc\'h a zegasadennoù e kuzhut.</string>
-  <string name="preference_title_language">Yezh Wikipedia</string>
+  <string name="preference_title_language">Yezh DroidWiki</string>
   <string name="preference_languages_filter_hint">Klask</string>
   <string name="langlinks_filter_hint">Klask</string>
   <string name="langlinks_empty">N\'haller ket kaout ar bajenn-mañ e yezhoù all</string>
@@ -82,13 +82,13 @@
   <string name="edit_section_captcha_hint">Advizskrivañ ar gerioù amañ a-us</string>
   <string name="title_captcha">Ebarzhiñ ar c\'haptcha</string>
   <string name="edit_section_captcha_reload">Bizskrivañ ar c\'haptcha evit pellgargañ</string>
-  <string name="nav_item_login">Kevreañ ouzh Wikipedia</string>
+  <string name="nav_item_login">Kevreañ ouzh DroidWiki</string>
   <string name="login_username_hint">Anv implijer</string>
   <string name="login_password_hint">Ger-tremen</string>
   <string name="login_2fa_hint">Kod gwiriañ dezhañ daou faktor</string>
   <string name="login_2fa_other_workflow_error_msg">Dilesadur gant daou faktor ret ! Distroit, mar plij, d\'an obererezh pennañ ha kevreit gant ho jedouer 2FA, klaskit en-dro goude-se.</string>
   <string name="menu_login">Kevreañ</string>
-  <string name="login_activity_title">Kevreañ ouzh Wikipedia</string>
+  <string name="login_activity_title">Kevreañ ouzh DroidWiki</string>
   <string name="login_in_progress_dialog_message">O kevreañ ouzh…</string>
   <string name="login_success_toast">Kevreet oc\'h !</string>
   <string name="preference_title_logout">Digevreañ</string>
@@ -97,10 +97,10 @@
   <string name="history_empty_message">Heuliañ ar pezh hoc\'h eus lennet amañ</string>
   <string name="search_empty_message">Kit a-dreuz an hollouezhiadur dieub en ho yezh ha lennit anezhañ</string>
   <string name="delete_selected_items">Diverkañ an elfennoù diuzet</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Anv implijer</string>
   <string name="login_dont_have_account">N\'hoc\'h eus kont ebet ?</string>
-  <string name="login_join_wikipedia">Mont gant Wikipedia</string>
+  <string name="login_join_wikipedia">Mont gant DroidWiki</string>
   <string name="login_forgot_password">Ankouaet ho ker-tremen ganeoc\'h ?</string>
   <string name="create_account_already_have">Ur gont hoc\'h eus c\'hoazh ?</string>
   <string name="create_account_activity_title">Krouiñ ur gont</string>
@@ -115,17 +115,17 @@
   <string name="create_account_next">War-lerc\'h</string>
   <string name="create_account_button">Krouiñ ur gont</string>
   <string name="preferences_general_heading">Hollek</string>
-  <string name="wikipedia_app_faq">Arload FAG Wikipedia</string>
-  <string name="zero_charged_verbiage">N\'hallit ket mui mont digoust war Wikipedia.</string>
-  <string name="zero_warn_when_leaving">Roit da c\'houzout ma kuitait Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">M\'en deus savet hoc\'h oberataer hezoug ur c\'henemglev gant Wikipedia Zero ha ma tilez e vizoù liammet ouzh an implij eus Wikipedia e vo en roet deoc\'h da c\'houzout pa vezit o kuitaat an arload Wikipedia. E riskl emaoc\'h, a-hend-all, da baeañ mizoù roadennoù.</string>
-  <string name="zero_webpage_title">FAG Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">O kuitaat Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Arload FAG DroidWiki</string>
+  <string name="zero_charged_verbiage">N\'hallit ket mui mont digoust war DroidWiki.</string>
+  <string name="zero_warn_when_leaving">Roit da c\'houzout ma kuitait DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">M\'en deus savet hoc\'h oberataer hezoug ur c\'henemglev gant DroidWiki Zero ha ma tilez e vizoù liammet ouzh an implij eus DroidWiki e vo en roet deoc\'h da c\'houzout pa vezit o kuitaat an arload DroidWiki. E riskl emaoc\'h, a-hend-all, da baeañ mizoù roadennoù.</string>
+  <string name="zero_webpage_title">FAG DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">O kuitaat DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Gallout a ra bezañ mizoù da baeañ evit ar roadennoù. Mont d\'al lec\'hienn diavaez ?</string>
   <string name="zero_interstitial_continue">Mont kuit</string>
   <string name="zero_interstitial_cancel">Chom amañ</string>
-  <string name="zero_learn_more">Ho pourvezer Internet a grata deoc\'h ur moned digoust da Wikipedia !</string>
+  <string name="zero_learn_more">Ho pourvezer Internet a grata deoc\'h ur moned digoust da DroidWiki !</string>
   <string name="zero_learn_more_learn_more">Gouzout hiroc\'h</string>
   <string name="zero_learn_more_dismiss">Disteurel</string>
   <string name="edit_preview_fetching_dialog_message">O klask un alberz…</string>
@@ -138,12 +138,12 @@
   <string name="preference_title_sync_reading_lists">Sinkronelaat ar rolloù lenn</string>
   <string name="preference_title_sync_reading_lists_from_account">Gweredekaat sinkroneladur ar rolloù lenn</string>
   <string name="preference_summary_sync_reading_lists">Sinkronelaat ar rolloù lenn etre ardivinkoù a bep seurt en ur enrollañ anezho en ho kont wikipedia</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Sinkronelaat ar rolloù lenn etre ardinvikoù a bep seurt en ur enrollañ anezho en ho kont Wikipedia « %s »</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Sinkronelaat ar rolloù lenn etre ardinvikoù a bep seurt en ur enrollañ anezho en ho kont DroidWiki « %s »</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Lemel ar rolloù lenn sinkronelaet diouzh ho kont « %s » ?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Gant an dra-se e vo lamet ar rolloù lenn sinkronelaet a-raok penn-da-benn diouzh ar pellskotañ. Lemel an holl rolloù sinkronelaet diouzh ho kont « %s » ?</string>
   <string name="preferences_privacy_settings_heading">Prevezded</string>
   <string name="preference_title_eventlogging_opt_in">Kas danevelloù implij</string>
-  <string name="preference_summary_eventlogging_opt_in">Aotren Wikipedia da zastum titouroù diwar-benn an doare ma implijit an arload evit gwellaat anezhañ</string>
+  <string name="preference_summary_eventlogging_opt_in">Aotren DroidWiki da zastum titouroù diwar-benn an doare ma implijit an arload evit gwellaat anezhañ</string>
   <string name="preference_title_auto_upload_crash_reports">Kas danevelloù implij</string>
   <string name="preference_summary_auto_upload_crash_reports">Reiñ tro d\'an arload da gas danevelloù implij da HockeyApp - ur pourchaser servijoù tredeour - en un doare emgefreek, abalamour ma c\'hallimp kompren warno ha reizhañ ar c\'hudennoù buanoc\'h hag aesoc\'h.</string>
   <string name="editing_error_spamblacklist">Liammoù war-zu an domanioù stanket (%s). Lamit anezho ha klaskit en-dro, mar plij.</string>
@@ -157,14 +157,14 @@
   <string name="page_protected_can_not_edit_title">Gwarezet eo ar bajenn-mañ</string>
   <string name="settings_item_preferences">Arventennoù</string>
   <string name="settings_activity_title">Arventennoù</string>
-  <string name="about_description">Diwar-benn an arload Wikipedia</string>
+  <string name="about_description">Diwar-benn an arload DroidWiki</string>
   <string name="privacy_policy_description">Reolennoù prevezded</string>
   <string name="terms_of_use_description">Termenoù implijout</string>
-  <string name="about_wikipedia_url">https://fr.m.wikipedia.org/wiki/Wikipédia:Diwar_benn_Wikipedia</string>
+  <string name="about_wikipedia_url">https://fr.m.wikipedia.org/wiki/Wikipédia:Diwar_benn_DroidWiki</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/fr</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">http://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">http://creativecommons.org/publicdomain/mark/1.0/</string>
   <string name="about_libraries_heading">Levraouegoù implijet</string>
@@ -172,7 +172,7 @@
   <string name="about_translators_heading">Troerien</string>
   <string name="about_translators_translatewiki">Troet eo bet an arload-mañ gant troerien a-youl vat e &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Aotre-implijout</string>
-  <string name="about_app_license">Kod mammennoù a c\'haller kaout e &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ha &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; dindan &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licence Apache 2.0&lt;/a&gt;. Nemet kemennoù kontrol a vefe, e c\'haller kaout an endalc\'had &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;licence Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
+  <string name="about_app_license">Kod mammennoù a c\'haller kaout e &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ha &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; dindan &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;licence Apache 2.0&lt;/a&gt;. Nemet kemennoù kontrol a vefe, e c\'haller kaout an endalc\'had &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;licence Creative Commons Attribution-ShareAlike&lt;/a&gt;.</string>
   <string name="about_wmf">Ur produ gant &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Diazezadur Wikimedia&lt;/a&gt;</string>
   <string name="about_activity_title">Diwar-benn</string>
   <string name="edit_abandon_confirm">Kemmet eo bet ar bajenn. Ha sur oc\'h e fell deoc\'h mont kuit anez enrollañ ho kemmoù ?</string>
@@ -195,7 +195,7 @@
   <string name="abusefilter_title_warn">Evit doare n\'eo ket gwall dalvoudus ar c\'hemmoù-se. Ha sur oc\'h e fell deoc\'h embann anezho ?</string>
   <string name="abusefilter_title_disallow">N\'hallit ket embann ar c\'hemm-mañ. Kit war ho kiz ha kemmit anezhañ.</string>
   <string name="abusefilter_text_warn">Ur sil emgefre en deus anavezet ar c\'hemm-mañ. Hervezañ ne zegaso ket kalz a dra. Ennañ e c\'hallfe bezañ un elfenn pe meur a hini &lt;br/br/&gt;Bizskrivañ pep tra gant pennlizherennoù&lt;br/&gt;. Pennadoù goullo pe posteloù strobus &lt;br/&gt;. Liammoù pe skeudennoù diavaez  diazaz&lt;br/&gt;. Arouezennoù bizskrivet en-dro.</string>
-  <string name="abusefilter_text_disallow">Ur sil emgefreek en deus anavezet ar c\'hemm-mañ evel unan na zegas ket kalz a dra pe evel un dra a zegas drast &lt;br/&gt;&lt;br/&gt;. Un holloueziadur eo Wikipedia. Ne c\'haller lakaat nemet traoù neptu ha pouezus e-barzh.</string>
+  <string name="abusefilter_text_disallow">Ur sil emgefreek en deus anavezet ar c\'hemm-mañ evel unan na zegas ket kalz a dra pe evel un dra a zegas drast &lt;br/&gt;&lt;br/&gt;. Un holloueziadur eo DroidWiki. Ne c\'haller lakaat nemet traoù neptu ha pouezus e-barzh.</string>
   <string name="dialog_page_issues">Kaozioù war ar bajenn</string>
   <string name="button_page_issues">Goulennoù war ar bajennoù</string>
   <string name="text_size_select">Ment ar font</string>
@@ -210,9 +210,9 @@
   <string name="table_infobox">Graet buan</string>
   <string name="table_other">Muioc\'h a ditouroù</string>
   <string name="table_close">Serriñ</string>
-  <string name="widget_name_featured_page">Pajenn a-zoare Wikipedia</string>
+  <string name="widget_name_featured_page">Pajenn a-zoare DroidWiki</string>
   <string name="widget_title_featured_page">Pajennoù a-zoare hiziv :</string>
-  <string name="widget_name_search">Klask Wikipedia</string>
+  <string name="widget_name_search">Klask DroidWiki</string>
   <string name="wiktionary_no_definitions_found">N\'eus bet kavet termenadur ebet.</string>
   <string name="alpha_update_notification_title">Un hizadenn alpha nevez a c\'haller kaout</string>
   <string name="alpha_update_notification_text">Pouezañ evit pellgargañ</string>
@@ -231,7 +231,7 @@
   <string name="gallery_error_video_failed">Ne c\'haller ket lenn ar video.</string>
   <string name="gallery_save_image_write_permission_rationale">Ret eo kaout gwir da skrivañ e lec\'h stokañ hoc\'h ardivink evit enrollañ skeudennoù.</string>
   <string name="err_cannot_save_file">Ne c\'haller ket enrollañ ar restr</string>
-  <string name="snippet_share_intro">Fed dedennus e @Wikipedia %1$s : %2$s</string>
+  <string name="snippet_share_intro">Fed dedennus e @DroidWiki %1$s : %2$s</string>
   <string name="expand_refs">Pouezañ war ur stokell evit diorren</string>
   <string name="share_snippet_button">Rannañ evel ur skeudenn</string>
   <string name="share_normal_button">Rannañ evel un destenn</string>
@@ -361,10 +361,10 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Pennadoù o tont wel e meur a roll</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">Ne c\'haller ket mui kaout %s er mod digevreet en holl rolloù lenn :</string>
   <string name="reading_lists_sync_reminder_title">Gweredekaat sinkroneladur ar roll lenn ?</string>
-  <string name="reading_lists_sync_reminder_text">Ar pennadoù enrollet e rolloù lenn a c\'hall bremañ bezañ sinkronelaet gant ho kont Wikipedia &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Evit gouzout hiroc\'h&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Ar pennadoù enrollet e rolloù lenn a c\'hall bremañ bezañ sinkronelaet gant ho kont DroidWiki &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Evit gouzout hiroc\'h&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Gweredekaat ar sinkroneladur</string>
   <string name="reading_list_login_reminder_title">Sinkronelaat ar rolloù lenn</string>
-  <string name="reading_lists_login_reminder_text">Ar rolloù lenn a c\'hall bremañ bezañ sinkronelaet etre ardivinkoù. Kevreit ouzh ho kont Wikipedia ha roit aotre da enrollañ ho rolloù.</string>
+  <string name="reading_lists_login_reminder_text">Ar rolloù lenn a c\'hall bremañ bezañ sinkronelaet etre ardivinkoù. Kevreit ouzh ho kont DroidWiki ha roit aotre da enrollañ ho rolloù.</string>
   <string name="reading_lists_confirm_remote_delete">Gant an dra-se e vo lamet an holl rolloù lenn sinkronelaet a-raok diouzh ar pellstokañ. Kenderc\'hel ?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Ya</string>
   <string name="reading_lists_confirm_remote_delete_no">Ket</string>
@@ -384,7 +384,7 @@
   </plurals>
   <string name="user_option_sync_label">Penndibaboù</string>
   <string name="notification_button_view_user">Komz gant an implijer</string>
-  <string name="notification_talk_title">Kemennadenn nevez war Wikipedia</string>
+  <string name="notification_talk_title">Kemennadenn nevez war DroidWiki</string>
   <string name="notification_talk">Lezet ez eus bet ur gemennadenn war ho pajenn gaozeal &lt;strong&gt;%2$s&lt;/strong&gt; gant &lt;em&gt;%1$s&lt;/em&gt;</string>
   <string name="notification_reverted_title">Kemm distaolet</string>
   <string name="notification_reverted">Nullet eo bet ar c\'hemm hoc\'h eus degaset er pennad &lt;strong&gt;%2$s&lt;/strong&gt; gant &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -393,8 +393,8 @@
   <string name="view_continue_reading_card_title">Kenderc\'hel da lenn</string>
   <string name="view_because_you_read_card_title">Peogwir ho peus lennet</string>
   <string name="view_random_card_title">Dre zegouezh</string>
-  <string name="view_random_card_subtitle" fuzzy="true">Lenn ur pennad eus Wikipedia dre zegouezh</string>
-  <string name="view_main_page_card_title">Hiziv e Wikipedia</string>
+  <string name="view_random_card_subtitle" fuzzy="true">Lenn ur pennad eus DroidWiki dre zegouezh</string>
+  <string name="view_main_page_card_title">Hiziv e DroidWiki</string>
   <string name="view_main_page_card_subtitle">Pajenn bennañ d\'an %s</string>
   <string name="view_featured_image_card_title">Skeudenn an deiz</string>
   <string name="view_featured_image_card_download">Pellgargañ</string>
@@ -426,10 +426,10 @@
   <string name="description_edit_help_wikidata_guide">Sturlevr Wikidata evit skrivañ deskrivadurioù</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-  <string name="description_edit_anon_limit">Trugarez da ziskouez oc\'h dedennet da zegas cheñchamantoù en deskrivadurioù. Trugarez ! Evit ober muioc\'h a gemmoù, kevreit ouzh ho kont Wikipedia.</string>
+  <string name="description_edit_anon_limit">Trugarez da ziskouez oc\'h dedennet da zegas cheñchamantoù en deskrivadurioù. Trugarez ! Evit ober muioc\'h a gemmoù, kevreit ouzh ho kont DroidWiki.</string>
   <string name="description_edit_license_notice">Pa gemann deskrivadur an titl e tegemeran an &lt;a href=\"%1$s\"&gt; Divizoù implijout&lt;/a&gt; ha lakaat ma tegasadennoù dindan an aotre-implijout &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt; ha ne c\'hallan ket distreiñ war ma diviz.</string>
   <string name="description_edit_success_saved">Embannet eo an deskrivadur !</string>
-  <string name="description_edit_success_encouragement">Emaoc\'h o paouez gwellaat Wikipedia evit mad an holl</string>
+  <string name="description_edit_success_encouragement">Emaoc\'h o paouez gwellaat DroidWiki evit mad an holl</string>
   <string name="description_edit_success_done">Graet</string>
   <string name="description_edit_success_did_you_know">Ha gouzout a raec\'h ?</string>
   <string name="description_edit_success_article_edit_hint">Gant an arload-mañ e c\'hallit kemmañ pennadoù ivez. Kentañ tro, grit un taol-esae gant reizhadennoù tipografiezh pe frazennoù berr en ur glikañ war an arlun ^1.</string>
@@ -449,8 +449,8 @@
   <string name="description_edit_help_tips_example2">Menez uhelañ ar bed</string>
   <string name="description_edit_help_tips_example2_hint">Deskrivadur un titl evit ur pennad diwar-benn ar menez Everest</string>
   <string name="description_edit_help_more_info">Muioc\'h a ditouroù</string>
-  <string name="description_edit_help_meta_info">Stoket ha hizivaet e vez an deskrivadurioù e Wikidata, en ur raktres eus an Diazezadur Wikimedia hag a bourvez un diaz roadennoù frank, kenober, liesyezhek hag a-eilrenk oc\'h embregañ Wikipedia ha raktresoù all.</string>
-  <string name="description_edit_revert_subtitle">Trugarez evit kemer perzh e Wikipedia !</string>
+  <string name="description_edit_help_meta_info">Stoket ha hizivaet e vez an deskrivadurioù e Wikidata, en ur raktres eus an Diazezadur Wikimedia hag a bourvez un diaz roadennoù frank, kenober, liesyezhek hag a-eilrenk oc\'h embregañ DroidWiki ha raktresoù all.</string>
+  <string name="description_edit_revert_subtitle">Trugarez evit kemer perzh e DroidWiki !</string>
   <string name="description_edit_revert_intro">Gouzout a reomp hoc\'h eus graet eus ho kwellañ, met un tamm bec\'h zo bet gant unan eus hon adlennerien. Nullet eo bet ho tegasadenn evit an abegoù-mañ moarvat :</string>
   <string name="description_edit_revert_reason1">Ne zoujfe ket ho tegasadenn da unan eus &lt;a href=\"%1$s\"&gt;sturiadoù&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">Ho tegasadenn a oa heñvel ouzh un taol-arnod pe ouzh vandalerezh.</string>
@@ -469,7 +469,7 @@
   <string name="offline_compilation_detail_button_remove">Dilemel</string>
   <string name="remote_compilation_download">Pellgargañ</string>
   <string name="storage_size_free_v2">%s dieub</string>
-  <string name="storage_used_by_compilations" fuzzy="true">implijet gant Wikipedia</string>
+  <string name="storage_used_by_compilations" fuzzy="true">implijet gant DroidWiki</string>
   <string name="storage_other_apps">Arloadoù all</string>
   <string name="offline_compilation_download_progress_text_v2">%1$s / %2$s</string>
   <plurals name="offline_compilation_download_time_remaining">
@@ -499,7 +499,7 @@
   <string name="onboarding_create_account_contributions">Mirout roudoù eus ho tegasadennoù</string>
   <string name="onboarding_create_account_preferences">Enrollañ ho penndibaboù</string>
   <string name="languages_list_all_text">An holl yezhoù</string>
-  <string name="wikipedia_languages_title">Yezhoù Wikipedia</string>
+  <string name="wikipedia_languages_title">Yezhoù DroidWiki</string>
   <string name="wikipedia_languages_add_language_text">Ouzhpennañ ur yezh</string>
   <string name="wikipedia_languages_remove_text">Lemel</string>
 </resources>

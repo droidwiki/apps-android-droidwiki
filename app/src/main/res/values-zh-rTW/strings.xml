@@ -106,7 +106,7 @@
   <string name="history_empty_message">追蹤您在此讀過的內容。</string>
   <string name="search_empty_message">以您的語言來搜尋閱讀自由的百科全書</string>
   <string name="delete_selected_items">刪除所選項目</string>
-  <string name="wp_stylized">&lt;big&gt;維&lt;/big&gt;基百&lt;big&gt;科&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">用戶名</string>
   <string name="login_dont_have_account">還沒有帳號嗎？</string>
   <string name="login_join_wikipedia">加入維基百科</string>
@@ -170,11 +170,11 @@
   <string name="about_description">關於維基百科應用程式</string>
   <string name="privacy_policy_description">隱私政策</string>
   <string name="terms_of_use_description">使用條款</string>
-  <string name="about_wikipedia_url">https://zh.m.wikipedia.org/wiki/Wikipedia:關於</string>
+  <string name="about_wikipedia_url">https://zh.m.wikipedia.org/wiki/DroidWiki:關於</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/zh</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.zh_TW</string>
   <string name="about_libraries_heading">使用的函式庫</string>
@@ -182,7 +182,7 @@
   <string name="about_translators_heading">翻譯人員</string>
   <string name="about_translators_translatewiki">此應用程式是由 &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; 的志工翻譯的。</string>
   <string name="about_app_license_heading">授權條款</string>
-  <string name="about_app_license">原始碼位於 &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; 與 &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt;，根據 &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 許可證明&lt;/a&gt;授權。除非另有聲明，内容採用&lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;創用 CC 姓名標示 -相同方式分享授權條款&lt;/a&gt;。</string>
+  <string name="about_app_license">原始碼位於 &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; 與 &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt;，根據 &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 許可證明&lt;/a&gt;授權。除非另有聲明，内容採用&lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;創用 CC 姓名標示 -相同方式分享授權條款&lt;/a&gt;。</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;維基媒體基金會&lt;/a&gt;出品</string>
   <string name="about_activity_title">關於</string>
   <string name="edit_abandon_confirm">頁面已修改。確定要離開，而不存儲更改？</string>
@@ -245,7 +245,7 @@
   <string name="gallery_error_video_failed">無法播放影片</string>
   <string name="gallery_save_image_write_permission_rationale">需要寫入您的裝置儲存庫的權限方能儲存圖片。</string>
   <string name="err_cannot_save_file">無法儲存檔案</string>
-  <string name="snippet_share_intro">\"%1$s\" 於 @Wikipedia：%2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" 於 @DroidWiki：%2$s</string>
   <string name="expand_refs">輕觸展開</string>
   <string name="share_snippet_button">以圖片分享</string>
   <string name="share_normal_button">以文字分享</string>

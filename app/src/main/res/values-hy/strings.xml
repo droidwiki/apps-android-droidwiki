@@ -56,7 +56,7 @@
   <string name="login_success_toast">Հաջող մուտք</string>
   <string name="preference_title_logout">Դուրս գալ</string>
   <string name="history_empty_title">Վերջնադիտված էջեր չկան</string>
-  <string name="wp_stylized">&lt;big&gt;Վ&lt;/big&gt;ԻՔԻՊԵԴԻ&lt;big&gt;Ա&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Մասնակցային անուն</string>
   <string name="create_account_activity_title">Ստեղծել մասնակցային հաշիվ</string>
   <string name="dialog_create_account_checking_progress">Ստուգում</string>

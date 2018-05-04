@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="search_hint">Leita í Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="search_hint">Leita í DroidWiki</string>
   <string name="nav_item_history">Søga</string>
   <string name="error_network_error" fuzzy="true">Tað er onki internet samband :(</string>
   <string name="page_error_retry">Royn aftur</string>
@@ -15,7 +15,7 @@
   <string name="nav_item_nearby">Nærindis</string>
   <string name="last_updated_text">Seinast dagført %1$s</string>
   <string name="content_license_html">Innihaldið er tøkt undir &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; um ikki annað er viðmerkt</string>
-  <string name="preference_title_language">Wikipediamál</string>
+  <string name="preference_title_language">DroidWikimál</string>
   <string name="preference_languages_filter_hint">Leita</string>
   <string name="langlinks_filter_hint">Leita</string>
   <string name="langlinks_empty">Henda síðan er ikki tøk á øðrum málum.</string>
@@ -36,13 +36,13 @@
   <string name="login_username_hint">Brúkaranavn</string>
   <string name="login_password_hint">Loyniorð</string>
   <string name="menu_login">Rita inn</string>
-  <string name="login_activity_title" fuzzy="true">Rita inn á Wikipedia</string>
+  <string name="login_activity_title" fuzzy="true">Rita inn á DroidWiki</string>
   <string name="login_in_progress_dialog_message">Ritar teg inn…</string>
   <string name="login_success_toast" fuzzy="true">Væleydnað innritan!</string>
   <string name="preference_title_logout">Rita út</string>
   <string name="toast_logout_complete">Tú ert ritað/ur út</string>
   <string name="history_empty_message" fuzzy="true">Títt søguyvirlit er tómt.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Brúkaranavn</string>
   <string name="create_account_activity_title">Stovna eina kontu</string>
   <string name="dialog_create_account_checking_progress">Váttar</string>
@@ -52,14 +52,14 @@
   <string name="create_account_email_error">Ógyldug t-post adressa</string>
   <string name="create_account_generic_error">Tað bar ikki til at upprætta kontu</string>
   <string name="preferences_general_heading">Generelt</string>
-  <string name="zero_charged_verbiage">Wikipedia Zero er sløkt</string>
-  <string name="zero_warn_when_leaving">Ávara meg um eg fari frá Wikipedia Zero</string>
-  <string name="zero_webpage_title">Wikipedia Zero OSS</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Tú fert frá Wikipedia Zero</string>
+  <string name="zero_charged_verbiage">DroidWiki Zero er sløkt</string>
+  <string name="zero_warn_when_leaving">Ávara meg um eg fari frá DroidWiki Zero</string>
+  <string name="zero_webpage_title">DroidWiki Zero OSS</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Tú fert frá DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Far frá appini</string>
   <string name="zero_interstitial_cancel">Ver verandi her</string>
-  <string name="zero_learn_more">Ongin kostnaður verður kravdur fyri hesa Wikipedia appina.</string>
+  <string name="zero_learn_more">Ongin kostnaður verður kravdur fyri hesa DroidWiki appina.</string>
   <string name="zero_learn_more_learn_more">Les meira</string>
   <string name="zero_learn_more_dismiss">Lat aftur</string>
   <string name="send_feedback">Send app afturmelding</string>
@@ -75,7 +75,7 @@
   <string name="page_protected_can_not_edit">Tú hevur ikki loyvi til at rætta hesa síðuna</string>
   <string name="page_protected_can_not_edit_title">Henda síðan er vard</string>
   <string name="settings_activity_title" fuzzy="true">Innstillingar</string>
-  <string name="about_description">Um Wikipedia-appina</string>
+  <string name="about_description">Um DroidWiki-appina</string>
   <string name="about_contributors_heading" fuzzy="true">høvundar</string>
   <string name="about_wmf">Ein app frá &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Um</string>

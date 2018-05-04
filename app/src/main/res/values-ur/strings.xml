@@ -100,7 +100,7 @@
   <string name="history_empty_message">آپ یہاں جو پڑھ رہے تھے اسے دیکھ سکتے ہیں۔</string>
   <string name="search_empty_message">اپنی زبان میں آزاد دائرۃ المعارف پڑھیں اور تلاش کریں</string>
   <string name="delete_selected_items">منتخب چیزوں کو حذف کریں</string>
-  <string name="wp_stylized">&lt;big&gt;و&lt;/big&gt;یکیپیڈ&lt;big&gt;یا&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">صارف نام</string>
   <string name="login_dont_have_account">کھاتا نہیں ہے؟</string>
   <string name="login_join_wikipedia">ویکیپیڈیا میں شامل ہوں</string>
@@ -222,7 +222,7 @@
   <string name="gallery_error_video_failed">ویڈیو کو چلایا نہیں جا سکا۔</string>
   <string name="gallery_save_image_write_permission_rationale">اپنے آلے پر تصاویر کو محفوظ کرنے کے لیے اجازت کی ضرورت ہے۔</string>
   <string name="err_cannot_save_file">ملف کو محفوظ نہیں کرسکتے</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia: \"%2$s\" پر</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki: \"%2$s\" پر</string>
   <string name="expand_refs">پھیلانے کے لیے طق کیجیے</string>
   <string name="share_snippet_button">تصویر کے طور پر دوسروں کو بھیجیں</string>
   <string name="share_normal_button">متن کے طور پر دوسروں کو بھیجیں</string>

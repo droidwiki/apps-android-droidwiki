@@ -93,7 +93,7 @@
   <string name="history_empty_message">توھان ھتي جيڪو ڪجھ ڪري رھيا آھيو ان جو دڳ رکو.</string>
   <string name="search_empty_message">کليل انسائيڪلوپيڊيا پنھنجي ٻوليءَ ۾ ڳوليو ۽ پڙھو</string>
   <string name="delete_selected_items">چونڊيل شيون ڊاھيو</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">واپرائيندڙ-نانءُ</string>
   <string name="login_dont_have_account">کاتو نہ اٿو؟</string>
   <string name="login_join_wikipedia">وڪيپيڊيا ۾ شامل ٿيو</string>
@@ -147,7 +147,7 @@
   <string name="about_description">وڪيپيڊيا ايپ بابت</string>
   <string name="privacy_policy_description">ذاتيات پاليسي</string>
   <string name="terms_of_use_description">استعمال جا شرط</string>
-  <string name="about_wikipedia_url">https://sd.m.wikipedia.org/wiki/Wikipedia:بابت</string>
+  <string name="about_wikipedia_url">https://sd.m.wikipedia.org/wiki/DroidWiki:بابت</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
@@ -157,7 +157,7 @@
   <string name="about_translators_heading">ترجميڪارَ</string>
   <string name="about_translators_translatewiki">هيءَ ايپ &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; تي موجود رضاڪار ترجميڪارن ترجمو ڪري ڏني.</string>
   <string name="about_app_license_heading">لائسنس</string>
-  <string name="about_app_license">سورس ڪوڊ &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ۽ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; جي تحت &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; موجود آھي. جيسيتائين ٻي صورت ۾ وضاحت ڪئي وڃي، مواد &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;ڪريئيٽو ڪامنز انتساب-ھڪجھڙي ڀاڱيداري لائسنس جي تحت موجود آھي&lt;/a&gt;.</string>
+  <string name="about_app_license">سورس ڪوڊ &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; ۽ &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; جي تحت &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; موجود آھي. جيسيتائين ٻي صورت ۾ وضاحت ڪئي وڃي، مواد &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;ڪريئيٽو ڪامنز انتساب-ھڪجھڙي ڀاڱيداري لائسنس جي تحت موجود آھي&lt;/a&gt;.</string>
   <string name="about_wmf">&lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;وڪيميڊيا فائونڊيشن&lt;/a&gt; جي ھڪ اپت</string>
   <string name="about_activity_title">بابت</string>
   <string name="edit_abandon_confirm">هيءُ صفحو ترميم ٿي چڪو آهي. توهان کي پڪ آهي تہ توهان تبديليون سانڍڻ کان سواءِ ڇڏي وڃڻ چاهيو ٿا؟</string>
@@ -219,7 +219,7 @@
   <string name="gallery_error_video_failed">وڊيو هلائي نہ سگھيو.</string>
   <string name="gallery_save_image_write_permission_rationale">تصويرون سانڍڻ لاءِ توھان ڊوائيس جي سنڀار تي ڪم ڪرڻ جي اجازت گھربل آھي.</string>
   <string name="err_cannot_save_file">فائيل سانڍي نٿو سگھجي</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia تي: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki تي: %2$s</string>
   <string name="expand_refs">وڏو ڪرڻ لاءِ ڪلڪ ڪريو</string>
   <string name="share_snippet_button">بطور عڪس ونڊيو</string>
   <string name="share_normal_button">بطور ٽيڪسٽ ونڊيو</string>

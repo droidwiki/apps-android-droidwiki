@@ -17,11 +17,11 @@
 * Wikibelgiaan
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">In Wikipedia zoeken</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">In DroidWiki zoeken</string>
   <string name="search_hint_search_history">Zoekgeschiedenis</string>
   <string name="search_hint_search_my_lists">In mijn lijsten zoeken</string>
   <string name="search_hint_search_reading_list">In leeslijsten zoeken</string>
@@ -64,7 +64,7 @@
   <string name="content_license_html">Inhoud is beschikbaar onder de &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie tenzij anders aangegeven</string>
   <string name="edit_save_action_license_logged_in">Door op te slaan gaat u akkoord met de &lt;a href=\"%1$s\"&gt;gebruiksvoorwaarden&lt;/a&gt; en het onherroepelijk vrijgeven van uw bijdragen onder de &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie.</string>
   <string name="edit_save_action_license_anon">Door op te slaan gaat u akkoord met de &lt;a href=\"%1$s\"&gt;gebruiksvoorwaarden&lt;/a&gt; en het onherroepelijk vrijgeven van uw bijdragen onder de &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;-licentie. Bewerkingen worden toegeschreven aan het IP-adres van uw apparaat. Als u zich &lt;a href=\"https://#login\"&gt;aanmeldt&lt;/a&gt;, hebt u meer privacy.</string>
-  <string name="preference_title_language">Wikipediataal</string>
+  <string name="preference_title_language">DroidWikitaal</string>
   <string name="preference_languages_filter_hint">Zoeken</string>
   <string name="langlinks_filter_hint">Zoeken</string>
   <string name="langlinks_empty">Deze pagina is niet beschikbaar in andere talen.</string>
@@ -88,13 +88,13 @@
   <string name="edit_section_captcha_hint">Herhaal de bovenstaande woorden</string>
   <string name="title_captcha">CAPTCHA invoeren</string>
   <string name="edit_section_captcha_reload">Klik om CAPTCHA opnieuw te laden</string>
-  <string name="nav_item_login">Aanmelden bij Wikipedia</string>
+  <string name="nav_item_login">Aanmelden bij DroidWiki</string>
   <string name="login_username_hint">Gebruikersnaam</string>
   <string name="login_password_hint">Wachtwoord</string>
   <string name="login_2fa_hint">Tweetrapsauthenticatiecode</string>
   <string name="login_2fa_other_workflow_error_msg">Tweetrapsauthenticatie vereist! Keer terug naar de belangrijkste activiteit en log in met uw 2FA-code en probeer het vervolgens opnieuw.</string>
   <string name="menu_login">Aanmelden</string>
-  <string name="login_activity_title">Aanmelden bij Wikipedia</string>
+  <string name="login_activity_title">Aanmelden bij DroidWiki</string>
   <string name="login_in_progress_dialog_message">Bezig met aanmelden…</string>
   <string name="login_success_toast">U bent aangemeld.</string>
   <string name="preference_title_logout">Afmelden</string>
@@ -103,10 +103,10 @@
   <string name="history_empty_message">Blijf op de hoogte van wat u hier hebt gelezen.</string>
   <string name="search_empty_message">Zoek en lees de vrije encyclopedie in uw eigen taal</string>
   <string name="delete_selected_items">Geselecteerde items verwijderen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Gebruikersnaam</string>
   <string name="login_dont_have_account">Nog geen account?</string>
-  <string name="login_join_wikipedia">Word lid van Wikipedia</string>
+  <string name="login_join_wikipedia">Word lid van DroidWiki</string>
   <string name="login_forgot_password">Wachtwoord vergeten?</string>
   <string name="create_account_already_have">Hebt u al een account?</string>
   <string name="create_account_activity_title">Een account aanmaken</string>
@@ -121,17 +121,17 @@
   <string name="create_account_next">Volgende</string>
   <string name="create_account_button">Registreren</string>
   <string name="preferences_general_heading">Algemeen</string>
-  <string name="wikipedia_app_faq">Veelgestelde vragen over de Wikipedia-app</string>
-  <string name="zero_charged_verbiage">Gratis toegang tot Wikipedia is niet meer actief.</string>
-  <string name="zero_warn_when_leaving">Waarschuwen bij het verlaten van Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Als uw mobiele provider geen kosten in rekening brengt voor het gegevensgebruik via de Wikipedia-app vanwege een Wikipedia Zero-partnerschap, dan zorgt het inschakelen van deze instelling ervoor dat u wordt gewaarschuwd als u Wikipedia verlaat en mogelijk kosten voor data moet betalen.</string>
-  <string name="zero_webpage_title">Veelgestelde vragen over Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">U verlaat Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Veelgestelde vragen over de DroidWiki-app</string>
+  <string name="zero_charged_verbiage">Gratis toegang tot DroidWiki is niet meer actief.</string>
+  <string name="zero_warn_when_leaving">Waarschuwen bij het verlaten van DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Als uw mobiele provider geen kosten in rekening brengt voor het gegevensgebruik via de DroidWiki-app vanwege een DroidWiki Zero-partnerschap, dan zorgt het inschakelen van deze instelling ervoor dat u wordt gewaarschuwd als u DroidWiki verlaat en mogelijk kosten voor data moet betalen.</string>
+  <string name="zero_webpage_title">Veelgestelde vragen over DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">U verlaat DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Er kunnen kosten gerekend worden voor mobiele data. Doorgaan naar de externe website?</string>
   <string name="zero_interstitial_continue">Afsluiten</string>
   <string name="zero_interstitial_cancel">Hier blijven</string>
-  <string name="zero_learn_more">Uw mobiele provider biedt gratis toegang tot inhoud van Wikipedia aan!</string>
+  <string name="zero_learn_more">Uw mobiele provider biedt gratis toegang tot inhoud van DroidWiki aan!</string>
   <string name="zero_learn_more_learn_more">Meer leren</string>
   <string name="zero_learn_more_dismiss">Sluiten</string>
   <string name="edit_preview_fetching_dialog_message">Voorvertoning aan het ophalen…</string>
@@ -156,13 +156,13 @@
   <string name="page_protected_can_not_edit_title">Deze pagina is beveiligd</string>
   <string name="settings_item_preferences">Instellingen</string>
   <string name="settings_activity_title">Instellingen</string>
-  <string name="about_description">Over de Wikipedia-app</string>
+  <string name="about_description">Over de DroidWiki-app</string>
   <string name="privacy_policy_description">Privacybeleid</string>
   <string name="terms_of_use_description">Gebruiksvoorwaarden</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="privacy_policy_url" fuzzy="true">https://wikimediafoundation.org/wiki/Privacy_Policy</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.nl</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.nl</string>
   <string name="about_libraries_heading">Gebruikte bibliotheken</string>
@@ -170,7 +170,7 @@
   <string name="about_translators_heading">Vertalers</string>
   <string name="about_translators_translatewiki">Deze app is vertaald door vrijwillige vertalers van &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Licentie</string>
-  <string name="about_app_license">Broncode beschikbaar op &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; en &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; onder de &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Tenzij anders vermeld, is de inhoud beschikbaar onder de licentie &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Naamsvermelding-GelijkDelen&lt;/a&gt;.</string>
+  <string name="about_app_license">Broncode beschikbaar op &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; en &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; onder de &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt;. Tenzij anders vermeld, is de inhoud beschikbaar onder de licentie &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Naamsvermelding-GelijkDelen&lt;/a&gt;.</string>
   <string name="about_wmf">Een product van de &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Over</string>
   <string name="edit_abandon_confirm">Deze pagina is bewerkt. Weet u zeker dat u wilt afsluiten zonder de wijzigingen op te slaan?</string>
@@ -195,7 +195,7 @@
   <string name="abusefilter_title_warn">Dit kan een niet-constructieve bewerking zijn. Weet u zeker dat u het wilt publiceren?</string>
   <string name="abusefilter_title_disallow">U kunt deze bewerking niet opslaan. Ga terug en wijzig de inhoud.</string>
   <string name="abusefilter_text_warn">Een geautomatiseerde filter heeft deze bewerking als potentieel onconstructief geïdentificeerd. Het kan een of meer van de volgende bevatten:&lt;br /&gt;&lt;br /&gt;· Getypt in hoofdletters&lt;br /&gt;· Leeghalen van pagina\'s of spammen&lt;br /&gt;· Irrelevant externe koppelingen of afbeeldingen&lt;br /&gt;· Tekens herhalen</string>
-  <string name="abusefilter_text_disallow">Een geautomatiseerde filter heeft deze bewerking als niet-constructief of potentieel vandalisme geïdentificeerd.&lt;br /&gt;&lt;br /&gt;Wikipedia is een encyclopedie en alleen neutrale, relevante inhoud hoort hier thuis.</string>
+  <string name="abusefilter_text_disallow">Een geautomatiseerde filter heeft deze bewerking als niet-constructief of potentieel vandalisme geïdentificeerd.&lt;br /&gt;&lt;br /&gt;DroidWiki is een encyclopedie en alleen neutrale, relevante inhoud hoort hier thuis.</string>
   <string name="dialog_page_issues">Paginaproblemen</string>
   <string name="button_page_issues">Paginaproblemen</string>
   <string name="text_size_select">Lettergrootte</string>
@@ -210,9 +210,9 @@
   <string name="table_infobox">Snelle feiten</string>
   <string name="table_other">Meer informatie</string>
   <string name="table_close">Sluiten</string>
-  <string name="widget_name_featured_page">Uitgelichte pagina op Wikipedia</string>
+  <string name="widget_name_featured_page">Uitgelichte pagina op DroidWiki</string>
   <string name="widget_title_featured_page">Vandaag uitgelicht:</string>
-  <string name="widget_name_search">Zoeken op Wikipedia</string>
+  <string name="widget_name_search">Zoeken op DroidWiki</string>
   <string name="wiktionary_no_definitions_found">Geen definities gevonden.</string>
   <string name="alpha_update_notification_title">Nieuwe alpha-update beschikbaar</string>
   <string name="alpha_update_notification_text">Tik om te downloaden</string>
@@ -231,7 +231,7 @@
   <string name="gallery_error_video_failed">De video kan niet afgespeeld worden.</string>
   <string name="gallery_save_image_write_permission_rationale">Er is toestemming vereist om naar de opslagmedia op uw apparaat te mogen schrijven.</string>
   <string name="err_cannot_save_file">Het bestand kan niet opgeslagen worden</string>
-  <string name="snippet_share_intro">\"%1$s\" op @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" op @DroidWiki: %2$s</string>
   <string name="expand_refs">Aantikken om te vergroten</string>
   <string name="share_snippet_button">Als afbeelding delen</string>
   <string name="share_normal_button">Als tekst delen</string>
@@ -266,7 +266,7 @@
   <string name="error_no_maps_app">Er zijn geen apps gevonden die routebeschrijvingen bieden.</string>
   <string name="preference_title_show_link_previews">Voorvertoningen van koppelingen weergeven</string>
   <string name="preference_summary_show_link_previews">Korte voorvertoning weergeven van pagina\'s bij het aanraken van koppelingen.</string>
-  <string name="nav_item_donate">Steun Wikipedia</string>
+  <string name="nav_item_donate">Steun DroidWiki</string>
   <string name="error_voice_search_not_available">Spraakherkenning is helaas niet beschikbaar.</string>
   <string name="location_service_disabled">Locatievoorzieningen zijn uitgeschakeld.</string>
   <string name="enable_location_service">Inschakelen</string>
@@ -289,7 +289,7 @@
   <string name="crash_report_dialog_always_send_button">Altijd verzenden</string>
   <string name="crash_report_dialog_send_button">Verzenden</string>
   <string name="crash_report_activity_title">Programmafout</string>
-  <string name="crash_report_relaunch_or_quit">Er is helaas een fout opgetreden in de Wikipedia-app en de app is beëindigd.\n\nWilt u overnieuw beginnen of sluiten?</string>
+  <string name="crash_report_relaunch_or_quit">Er is helaas een fout opgetreden in de DroidWiki-app en de app is beëindigd.\n\nWilt u overnieuw beginnen of sluiten?</string>
   <string name="crash_report_relaunch">Opnieuw beginnen</string>
   <string name="crash_report_quit">Afsluiten</string>
   <string name="article_menu_bar_bookmark">Deze pagina aan een leeslijst toevoegen</string>
@@ -363,7 +363,7 @@
   <string name="reading_lists_sync_reminder_title">Leeslijstsynchronisatie inschakelen?</string>
   <string name="reading_lists_sync_reminder_action">Synchronisatie inschakelen</string>
   <string name="reading_list_login_reminder_title">Leeslijsten synchroniseren</string>
-  <string name="reading_lists_login_reminder_text">Leeslijsten kunnen nu gesynchroniseerd worden met verschillende apparaten. Meld u aan met uw Wikipedia-account en sta toe dat uw lijsten opgeslagen worden.</string>
+  <string name="reading_lists_login_reminder_text">Leeslijsten kunnen nu gesynchroniseerd worden met verschillende apparaten. Meld u aan met uw DroidWiki-account en sta toe dat uw lijsten opgeslagen worden.</string>
   <string name="reading_lists_confirm_remote_delete">Dit zal alle voorgaande gesynchroniseerde leeslijsten verwijderen van uw apparaat. Doorgaan?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Ja</string>
   <string name="reading_lists_confirm_remote_delete_no">Nee</string>
@@ -387,7 +387,7 @@
   </plurals>
   <string name="user_option_sync_label">Voorkeuren</string>
   <string name="notification_button_view_user">Met gebruiker overleggen</string>
-  <string name="notification_talk_title">Nieuw bericht op Wikipedia</string>
+  <string name="notification_talk_title">Nieuw bericht op DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; heeft een bericht nagelaten op uw overlegpagina &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Bewerking teruggedraaid</string>
   <string name="notification_reverted">Uw bewerking van de pagina &lt;strong&gt;%2$s&lt;/strong&gt; is teruggedraaid door &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -403,10 +403,10 @@
   <string name="view_continue_reading_card_title">Verder lezen</string>
   <string name="view_because_you_read_card_title">Omdat u hebt gelezen</string>
   <string name="view_random_card_title">Randomizer</string>
-  <string name="view_random_card_subtitle">Een willekeurige pagina uit Wikipedia lezen.</string>
+  <string name="view_random_card_subtitle">Een willekeurige pagina uit DroidWiki lezen.</string>
   <string name="view_random_card_action">De dobbelsteen gooien</string>
   <string name="view_next_random_article">Ander willekeurige pagina laden</string>
-  <string name="view_main_page_card_title">Vandaag op Wikipedia</string>
+  <string name="view_main_page_card_title">Vandaag op DroidWiki</string>
   <string name="view_main_page_card_subtitle">Hoofdpagina op %s</string>
   <string name="view_main_page_card_action">Hoofdpagina bekijken</string>
   <string name="view_featured_image_card_title">Afbeelding van de dag</string>
@@ -438,10 +438,10 @@
   <string name="feed_item_type_on_this_day">Gebeurtenissen in de geschiedenis op deze dag</string>
   <string name="feed_item_type_continue_reading">Snelle link naar een open pagina in een van uw tabbladen</string>
   <string name="feed_item_type_because_you_read">Suggesties gebaseerd op een recent gelezen pagina vanuit uw geschiedenis</string>
-  <string name="feed_item_type_featured_article">Dagelijks uitgelichte pagina op Wikipedia</string>
+  <string name="feed_item_type_featured_article">Dagelijks uitgelichte pagina op DroidWiki</string>
   <string name="feed_item_type_trending">Dagelijkse meeste bekeken pagina\'s</string>
   <string name="feed_item_type_featured_image">Dagelijkse uitgelichte afbeelding van Wikimedia Commons</string>
-  <string name="feed_item_type_main_page">Hoofdpagina van Wikipedia met dagelijkse uitgelichte inhoud</string>
+  <string name="feed_item_type_main_page">Hoofdpagina van DroidWiki met dagelijkse uitgelichte inhoud</string>
   <string name="feed_item_type_randomizer">Genereert willekeurige pagina\'s om te lezen</string>
   <string name="feed_configure_onboarding_action">Aanpassen</string>
   <string name="description_edit_text_hint">Titelbeschrijving</string>
@@ -454,10 +454,10 @@
   <string name="description_edit_help_wikidata_guide">Wikidata-gids voor het schrijven van beschrijvingen</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction/nl</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-  <string name="description_edit_anon_limit">Bedankt voor uw blijvende interesse in het bewerken van beschrijvingen! Om extra bewerkingen te maken, gelieve in te loggen op uw Wikipedia-profiel.</string>
+  <string name="description_edit_anon_limit">Bedankt voor uw blijvende interesse in het bewerken van beschrijvingen! Om extra bewerkingen te maken, gelieve in te loggen op uw DroidWiki-profiel.</string>
   <string name="description_edit_license_notice">Bij het veranderen van de titelbeschrijving gaat u akkoord met de &lt;a href=\"%1$s\"&gt;gebruiksvoorwaarden&lt;/a&gt; en het onherroepelijk vrijgeven van uw bijdragen onder de &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt;-licentie.</string>
   <string name="description_edit_success_saved">Beschrijving gepubliceerd!</string>
-  <string name="description_edit_success_encouragement">U hebt zojuist Wikipedia voor iedereen beter gemaakt</string>
+  <string name="description_edit_success_encouragement">U hebt zojuist DroidWiki voor iedereen beter gemaakt</string>
   <string name="description_edit_success_done">Afgerond</string>
   <string name="description_edit_success_did_you_know">Wist u dat?</string>
   <string name="description_edit_success_article_edit_hint">In deze app kunt u ook pagina\'s bewerken. Corrigeer typefouten en voeg zinnen toe door volgende keer op het pictogram ^1 te klikken.</string>
@@ -477,8 +477,8 @@
   <string name="description_edit_help_tips_example2">hoogste berg op aarde</string>
   <string name="description_edit_help_tips_example2_hint">titelbeschrijving voor een pagina over de Mount Everest</string>
   <string name="description_edit_help_more_info">Meer informatie</string>
-  <string name="description_edit_help_meta_info">Beschrijvingen worden bewaard en onderhouden op Wikidata, een project van de Wikimedia Foundation deze een gratis, samenwerkende, meertalig, tweede database is als ondersteuning voor Wikipedia en andere projecten.</string>
-  <string name="description_edit_revert_subtitle">Bedankt voor het bewerken van Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Beschrijvingen worden bewaard en onderhouden op Wikidata, een project van de Wikimedia Foundation deze een gratis, samenwerkende, meertalig, tweede database is als ondersteuning voor DroidWiki en andere projecten.</string>
+  <string name="description_edit_revert_subtitle">Bedankt voor het bewerken van DroidWiki!</string>
   <string name="description_edit_revert_intro">Wij weten dat u uw best gedaan hebt, maar een van de beoordelaars zag een punt van zorg. Mogelijke redenen waarom uw bewerking is teruggedraaid, zijn:</string>
   <string name="description_edit_revert_reason1">uw bijdrage valt niet onder één van de &lt;a href=\"%1$s\"&gt;richtlijnen&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">uw bijdrage leek op een experiment of vandalisme.</string>
@@ -518,19 +518,19 @@
   <string name="offline_library_search_results_state">Zoekresultaten uit uw offline-bibliotheek</string>
   <string name="offline_library_onboarding_button_done">Gereed</string>
   <string name="offline_library_onboarding_build_library_title">Uw offline-biblotheek bouwen</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Download nu Wikipedia-paginaverzamelingen voor internetvrije toegang later.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Download nu DroidWiki-paginaverzamelingen voor internetvrije toegang later.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Lezen zonder onderbrekingen</string>
   <string name="offline_library_onboarding_store_knowledge_title">Meer kennis opslaan</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Download zoveel Wikipedia als uw apparaat aankan. Offline-bibliotheek kan tevens paginaverzamelingen op externe opslag gebruiken.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Download zoveel DroidWiki als uw apparaat aankan. Offline-bibliotheek kan tevens paginaverzamelingen op externe opslag gebruiken.</string>
   <string name="onboarding_skip">Overslaan</string>
   <string name="onboarding_continue">Doorgaan</string>
   <string name="onboarding_get_started">Aan de slag</string>
   <string name="onboarding_welcome_title">De vrije encyclopedie</string>
   <string name="onboarding_explore_title">Nieuwe manieren om te ontdekken</string>
-  <string name="onboarding_explore_text">Stap in de wereld van Wikipedia met een steeds bijgewerkt overzicht op Verkennen. &lt;br/&gt; &lt;b&gt;Pas&lt;/b&gt; het overzicht aan uw interesses aan – of u nou geïnteresseerd bent in historische gebeurtenissen &lt;b&gt;op deze dag&lt;/b&gt;of het gooien met de dobbelsteen voor een &lt;b&gt;willekeurige pagina&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Stap in de wereld van DroidWiki met een steeds bijgewerkt overzicht op Verkennen. &lt;br/&gt; &lt;b&gt;Pas&lt;/b&gt; het overzicht aan uw interesses aan – of u nou geïnteresseerd bent in historische gebeurtenissen &lt;b&gt;op deze dag&lt;/b&gt;of het gooien met de dobbelsteen voor een &lt;b&gt;willekeurige pagina&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">In leeslijsten opslaan</string>
   <string name="onboarding_reading_list_sync_title" fuzzy="true">Leeslijsten met synchronisatie</string>
-  <string name="onboarding_reading_list_sync_text" fuzzy="true">Maak leeslijsten aan van artikels dat u later wenst te lezen wanneer u offline bent. &lt;a href=\"#login\"&gt;Log in of maak aan&lt;/a&gt; uw Wikipedia-account om uw leeslijsten op te slaan in een backup.</string>
+  <string name="onboarding_reading_list_sync_text" fuzzy="true">Maak leeslijsten aan van artikels dat u later wenst te lezen wanneer u offline bent. &lt;a href=\"#login\"&gt;Log in of maak aan&lt;/a&gt; uw DroidWiki-account om uw leeslijsten op te slaan in een backup.</string>
   <string name="onboarding_analytics_title">Gegevens anoniem versturen</string>
   <string name="onboarding_analytics_switch_title">Uw gebruiksgegevens verzenden</string>
   <string name="onboarding_create_account_sync">Uw leeslijsten synchroniseren</string>

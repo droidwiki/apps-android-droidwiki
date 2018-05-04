@@ -80,7 +80,7 @@
   <string name="history_empty_title">ბოლოს ძირაფილი ხასჷლეფი ვარე</string>
   <string name="search_empty_message">დოგორით დო იკითხით დუდიშული ენციკლოპედია თქვან ნინაშა</string>
   <string name="delete_selected_items">გიშაგორილი ელემენტეფიშ ლასუა</string>
-  <string name="wp_stylized">&lt;big&gt;ვ&lt;/big&gt;იკიპედი&lt;big&gt;ა&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">მახვარებუშ ჯოხო</string>
   <string name="create_account_activity_title">ანგარიშიშ გონწყუმა</string>
   <string name="dialog_create_account_checking_progress">გჷნომოწება</string>
@@ -98,7 +98,7 @@
   <string name="zero_warn_when_leaving">გჷმართხილი ვიკიპედია ზეროშე დოტებაშ გეშა</string>
   <string name="zero_webpage_title">ვიკიპედიაშ აპლიკაციაშ შდკ</string>
   <string name="zero_wikipedia_zero_heading">ვიკიპედია Zero</string>
-  <string name="zero_interstitial_title">გიშმურთ Wikipedia Zero-შე</string>
+  <string name="zero_interstitial_title">გიშმურთ DroidWiki Zero-შე</string>
   <string name="zero_interstitial_leave_app">მუნაჩემეფიშ გინოჩამაშე შილებე ფარაქ გაჸუან ოგაფალი. გეგნობთათო გალენურ საიტშა?</string>
   <string name="zero_interstitial_continue">დოტება</string>
   <string name="zero_interstitial_cancel">თაქ დოსქილადა</string>

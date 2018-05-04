@@ -85,7 +85,7 @@
   <string name="history_empty_message">ಈರ್ ಮೂಲು ಓದೊಂದುಪ್ಪುನೇನ್ ಟ್ರ್ಯಾಕ್ ಮಲ್ಪುಲೆ</string>
   <string name="search_empty_message">ಉಚಿತ ಎನ್ಸೈಕ್ಲೋಪೀಡಿಯಾನ್ ಇರೆನ ಬಾಸೆಡ್ ನಾಡ್‌ದ್ ಓದುಲೆ.</string>
   <string name="delete_selected_items">ಆಯ್ಕೆ ಮಲ್ತಿನೆನ್ ಮಾಜಾಲೆ</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">ಸದಸ್ಯೆರ್ನ ಪುದರ್</string>
   <string name="login_dont_have_account">ಈರೆನ ಖಾತೆ ಇಜ್ಜೇ?</string>
   <string name="login_join_wikipedia">ವಿಕಿಪೀಡಿಯಗ್ ಸೇರ್ಲೆ</string>

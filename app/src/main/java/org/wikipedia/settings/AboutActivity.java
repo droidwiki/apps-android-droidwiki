@@ -28,7 +28,6 @@ public class AboutActivity extends BaseActivity {
     @BindView(R.id.activity_about_libraries) TextView librariesTextView;
     @BindView(R.id.about_app_license) TextView appLicenseTextView;
     @BindView(R.id.send_feedback_text) TextView feedbackTextView;
-    @BindView(R.id.about_wmf) TextView wmfTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,8 +37,6 @@ public class AboutActivity extends BaseActivity {
 
         translatorsTextView.setText(StringUtil.fromHtml(getString(R.string.about_translators_translatewiki)));
         RichTextUtil.removeUnderlinesFromLinks(translatorsTextView);
-        wmfTextView.setText(StringUtil.fromHtml(getString(R.string.about_wmf)));
-        RichTextUtil.removeUnderlinesFromLinks(wmfTextView);
         appLicenseTextView.setText(StringUtil.fromHtml(getString(R.string.about_app_license)));
         RichTextUtil.removeUnderlinesFromLinks(appLicenseTextView);
         ((TextView) findViewById(R.id.about_version_text)).setText(BuildConfig.VERSION_NAME);
@@ -58,7 +55,7 @@ public class AboutActivity extends BaseActivity {
     @OnClick(R.id.send_feedback_text) void onSendFeedbackClick(View v) {
         Intent intent = new Intent()
                 .setAction(Intent.ACTION_SENDTO)
-                .setData(Uri.parse("mailto:mobile-android-wikipedia@wikimedia.org?subject=Android App "
+                .setData(Uri.parse("mailto:info@droidwiki.org?subject=Android App "
                         + BuildConfig.VERSION_NAME + " Feedback"));
         startActivity(intent);
     }

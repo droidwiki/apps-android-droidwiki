@@ -26,7 +26,7 @@
             android:id="@+id/single_fragment_toolbar_wordmark"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/feed_header_wordmark"
+            app:srcCompat="@drawable/wp_wordmark"
             android:contentDescription="@null"/>
 
     </android.support.v7.widget.Toolbar>

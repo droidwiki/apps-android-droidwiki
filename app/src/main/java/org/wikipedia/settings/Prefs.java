@@ -123,7 +123,7 @@ public final class Prefs {
     }
 
     public static boolean isCrashReportAutoUploadEnabled() {
-        return getBoolean(R.string.preference_key_auto_upload_crash_reports, true);
+        return false;
     }
 
     public static boolean isShowDeveloperSettingsEnabled() {
@@ -280,19 +280,19 @@ public final class Prefs {
     }
 
     public static boolean isEventLoggingEnabled() {
-        return getBoolean(R.string.preference_key_eventlogging_opt_in, true);
+        return false;
     }
 
     public static void setEventLoggingEnabled(boolean enabled) {
-        setBoolean(R.string.preference_key_eventlogging_opt_in, enabled);
+        // no-op
     }
 
     public static boolean useRestBaseSetManually() {
-        return getBoolean(R.string.preference_key_use_restbase_manual, false);
+        return getBoolean(R.string.preference_key_use_restbase_manual, true);
     }
 
     public static boolean useRestBase() {
-        return getBoolean(R.string.preference_key_use_restbase, true);
+        return getBoolean(R.string.preference_key_use_restbase, false);
     }
 
     public static void setUseRestBase(boolean enabled) {
@@ -486,7 +486,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListSyncEnabled() {
-        return getBoolean(R.string.preference_key_sync_reading_lists, false);
+        return false;
     }
 
     public static void setReadingListSyncEnabled(boolean enabled) {
@@ -494,7 +494,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListSyncReminderEnabled() {
-        return getBoolean(R.string.preference_key_reading_list_sync_reminder_enabled, true);
+        return false;
     }
 
     public static void setReadingListSyncReminderEnabled(boolean enabled) {
@@ -502,7 +502,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListLoginReminderEnabled() {
-        return getBoolean(R.string.preference_key_reading_list_login_reminder_enabled, true);
+        return false;
     }
 
     public static void setReadingListLoginReminderEnabled(boolean enabled) {
@@ -510,7 +510,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsRemoteDeletePending() {
-        return getBoolean(R.string.preference_key_reading_lists_remote_delete_pending, false);
+        return false;
     }
 
     public static void setReadingListsRemoteDeletePending(boolean pending) {
@@ -518,7 +518,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsRemoteSetupPending() {
-        return getBoolean(R.string.preference_key_reading_lists_remote_setup_pending, false);
+        return false;
     }
 
     public static void setReadingListsRemoteSetupPending(boolean pending) {
@@ -526,7 +526,7 @@ public final class Prefs {
     }
 
     public static boolean isInitialOnboardingEnabled() {
-        return getBoolean(R.string.preference_key_initial_onboarding_enabled, true);
+        return false;
     }
 
     public static void setInitialOnboardingEnabled(boolean enabled) {
@@ -725,7 +725,7 @@ public final class Prefs {
     }
 
     public static boolean shouldShowReadingListSyncEnablePrompt() {
-        return getBoolean(R.string.preference_key_show_reading_lists_sync_prompt, true);
+        return false;
     }
 
     public static void shouldShowReadingListSyncEnablePrompt(boolean enabled) {
@@ -733,7 +733,7 @@ public final class Prefs {
     }
 
     public static boolean shouldShowReadingListSyncMergePrompt() {
-        return getBoolean(R.string.preference_key_show_reading_lists_merge_prompt, true);
+        return false;
     }
 
     public static void shouldShowReadingListSyncMergePrompt(boolean enabled) {
@@ -741,7 +741,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsFirstTimeSync() {
-        return getBoolean(R.string.preference_key_reading_lists_first_time_sync, true);
+        return false;
     }
 
     public static void setReadingListsFirstTimeSync(boolean value) {

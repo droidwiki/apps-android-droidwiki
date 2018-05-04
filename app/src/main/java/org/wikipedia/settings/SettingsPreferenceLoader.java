@@ -40,17 +40,6 @@ class SettingsPreferenceLoader extends BasePreferenceLoader {
             loadPreferences(R.xml.preferences_zero);
         }
 
-        findPreference(R.string.preference_key_sync_reading_lists)
-                .setOnPreferenceChangeListener(new SyncReadingListsListener());
-
-        Preference eventLoggingOptInPref = findPreference(R.string.preference_key_eventlogging_opt_in);
-        eventLoggingOptInPref.setOnPreferenceChangeListener((preference, newValue) -> {
-            if (!((boolean) newValue)) {
-                Prefs.setAppInstallId(null);
-            }
-            return true;
-        });
-
         if (ReleaseUtil.isPreBetaRelease()) {
             loadPreferences(R.xml.preferences_experimental);
             Preference offlineLibPref = findPreference(R.string.preference_key_enable_offline_library);
@@ -122,12 +111,7 @@ class SettingsPreferenceLoader extends BasePreferenceLoader {
     }
 
     void updateSyncReadingListsPrefSummary() {
-        Preference syncReadingListsPref = findPreference(R.string.preference_key_sync_reading_lists);
-        if (AccountUtil.isLoggedIn()) {
-            syncReadingListsPref.setSummary(getActivity().getString(R.string.preference_summary_sync_reading_lists_from_account, AccountUtil.getUserName()));
-        } else {
-            syncReadingListsPref.setSummary(R.string.preference_summary_sync_reading_lists);
-        }
+        // no-op
     }
 
     private final class OfflineLibraryEnableListener implements Preference.OnPreferenceChangeListener {

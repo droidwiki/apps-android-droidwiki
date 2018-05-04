@@ -90,7 +90,7 @@
   <string name="history_empty_message">តាមដានអ្វីដែលអ្នកបានអាននៅទីនេះ។</string>
   <string name="search_empty_message">ស្វែងរកនិងអានសព្វវចនាធិប្បាយសេរីជាភាសារបស់អ្នក</string>
   <string name="delete_selected_items">លុបចោលវត្ថុដែលបានជ្រើសយក</string>
-  <string name="wp_stylized">&lt;big&gt;វី&lt;/big&gt;គីភី&lt;big&gt;ឌា&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">អត្តនាម</string>
   <string name="login_dont_have_account">តើលោកអ្នក​មិនទាន់មាន​គណនី​សម្រាប់​ប្រើ​ទេ​ឬ?</string>
   <string name="login_join_wikipedia">ចូលរួមជាមួយវិគីភីឌា</string>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="search_hint">Wikipedia ah kawl</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="search_hint">DroidWiki ah kawl</string>
   <string name="nav_item_history">Cakhumh</string>
   <string name="error_network_error" fuzzy="true">Network connection a um lo,</string>
   <string name="page_error_retry">Tuah than</string>
@@ -15,7 +15,7 @@
   <string name="content_license_html" fuzzy="true">Hi kong hi an chim lo asicun &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; ah zoh khawh a si.</string>
   <string name="edit_save_action_license_logged_in">Na khonnak thawng in atanglei hi hmanding ah na lungtling. &lt;a href=\"%1$s\"&gt; Na tuahmi pawl cu hi license tangah chuah na lungtling.\n&lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt;</string>
   <string name="edit_save_action_license_anon">Na khonnak thawngin atanglei pawl hi na lungtling..&lt;a href=\"%1$s\"&gt;Terms of Use&lt;/a&gt; Na tuahmi pawl cu hi license ning chuah a si lai. Na IP address kha kan lak lai. &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; Achung na luh asicun &lt;a href=\"https://#login\"&gt;log in&lt;/a&gt;, na him deuh lai dakaw.</string>
-  <string name="preference_title_language">Wikipedia holh pawl</string>
+  <string name="preference_title_language">DroidWiki holh pawl</string>
   <string name="preference_languages_filter_hint">Kawlnak</string>
   <string name="langlinks_filter_hint">Kawlnak</string>
   <string name="langlinks_empty">Holh dang in a ngah lo.</string>
@@ -40,14 +40,14 @@
   <string name="login_username_hint">Na Min</string>
   <string name="login_password_hint">Biathup</string>
   <string name="menu_login">Lutnak</string>
-  <string name="login_activity_title" fuzzy="true">Wikipedia ah lut</string>
+  <string name="login_activity_title" fuzzy="true">DroidWiki ah lut</string>
   <string name="login_in_progress_dialog_message">Kan in luh lio...</string>
   <string name="login_success_toast" fuzzy="true">Na lut kho cang!</string>
   <string name="preference_title_logout">Chuahnak</string>
   <string name="toast_logout_complete">Chuak cang</string>
   <string name="history_empty_title" fuzzy="true">Zohmi cahmai a um rih lo.</string>
   <string name="history_empty_message" fuzzy="true">Na hloh dih hna i si men lai. Voidang cu cahmai na kal khawhnak ah kal cang.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Na min</string>
   <string name="create_account_activity_title">Account sernak</string>
   <string name="dialog_create_account_checking_progress">A zohfel lio</string>
@@ -59,17 +59,17 @@
   <string name="create_account_next">Kal</string>
   <string name="create_account_button">Account sernak</string>
   <string name="preferences_general_heading">Adangdang</string>
-  <string name="wikipedia_app_faq">Wikipedia App Biahalnak</string>
-  <string name="zero_charged_verbiage" fuzzy="true">Wikipedia Alak a phit</string>
-  <string name="zero_warn_when_leaving">Wikipedia Alak in chuah tikah ka chim te</string>
-  <string name="zero_warn_when_leaving_summary">Na phone operator nih Wikipedia Alak ah tangka an lak lai paoh ah na zahpiaknak ruangah an hngalhter peng lai.</string>
-  <string name="zero_webpage_title">Wikipedia Alak Biahalnak</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Alak</string>
-  <string name="zero_interstitial_title">Wikipedia Alak a chuak lio</string>
+  <string name="wikipedia_app_faq">DroidWiki App Biahalnak</string>
+  <string name="zero_charged_verbiage" fuzzy="true">DroidWiki Alak a phit</string>
+  <string name="zero_warn_when_leaving">DroidWiki Alak in chuah tikah ka chim te</string>
+  <string name="zero_warn_when_leaving_summary">Na phone operator nih DroidWiki Alak ah tangka an lak lai paoh ah na zahpiaknak ruangah an hngalhter peng lai.</string>
+  <string name="zero_webpage_title">DroidWiki Alak Biahalnak</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Alak</string>
+  <string name="zero_interstitial_title">DroidWiki Alak a chuak lio</string>
   <string name="zero_interstitial_leave_app">Data man an lak lai hih. Aleng na chuah ko lai maw?</string>
   <string name="zero_interstitial_continue">Chuak ning</string>
   <string name="zero_interstitial_cancel">Um ko lai</string>
-  <string name="zero_learn_more" fuzzy="true">Hi Wikipedia app cu data man liamter lo a si.</string>
+  <string name="zero_learn_more" fuzzy="true">Hi DroidWiki app cu data man liamter lo a si.</string>
   <string name="zero_learn_more_learn_more" fuzzy="true">Tamdeuh in relnak</string>
   <string name="zero_learn_more_dismiss">Kal ko.</string>
   <string name="edit_preview_fetching_dialog_message">A langhchung lio</string>
@@ -85,7 +85,7 @@
   <string name="page_protected_other">Hi cahmai atanglei dotning in kilven a si: %s</string>
   <string name="page_protected_can_not_edit" fuzzy="true">Hi cahmai remhnak nawl na ngei lo.</string>
   <string name="page_protected_can_not_edit_title">Hi cahmai hi kilvenpiak a si.</string>
-  <string name="about_description">Hi Wikipedia app konglam</string>
+  <string name="about_description">Hi DroidWiki app konglam</string>
   <string name="privacy_policy_description">Pumpak Kilvenak Policy</string>
   <string name="terms_of_use_description">Hmannak Hngalhawk Phung</string>
   <string name="about_libraries_heading" fuzzy="true">Hmanmi caruuk</string>
@@ -112,7 +112,7 @@
   <string name="abusefilter_title_warn" fuzzy="true">Na remhning a dik deuh kho lo men. Na khon ko lai maw?</string>
   <string name="abusefilter_title_disallow" fuzzy="true">Na remhnak hi na khong kho lai lo. Kir than law thleng than.</string>
   <string name="abusefilter_text_warn">Seh nih na tuahning a tha lo, a ti. Ai thuatmi a um &lt;br/&gt;&lt;br/&gt;. Cafang lian in  tialmi &lt;br/&gt;. Cabia pingpalo asiloah cachia a tel &lt;br/&gt;. Link dik lo asiloah hmanthlak thalo &lt;br/&gt;. Cafang a nawlh thanmi pawl</string>
-  <string name="abusefilter_text_disallow">Seh nih na remh mi pawl a duh lo. Remh ning tha lo asiloah hrawhduhnak pawl a tel. &lt;br/&gt;&lt;br/&gt; Wikipedia hi konglamtling relnak a si. Aho papeknak umlomi cabia pawl lawng a cohlan.</string>
+  <string name="abusefilter_text_disallow">Seh nih na remh mi pawl a duh lo. Remh ning tha lo asiloah hrawhduhnak pawl a tel. &lt;br/&gt;&lt;br/&gt; DroidWiki hi konglamtling relnak a si. Aho papeknak umlomi cabia pawl lawng a cohlan.</string>
   <string name="dialog_page_issues">Cahmai nambar</string>
   <string name="button_page_issues">Cahmai nambar</string>
   <string name="text_size_select">Cafang hmetngan</string>
@@ -125,9 +125,9 @@
   <string name="table_infobox">Cinkenawk tete</string>
   <string name="table_other">Konglam tamdeuh</string>
   <string name="table_close">Chuak</string>
-  <string name="widget_name_featured_page">Wikipedia thimmi cahmai</string>
+  <string name="widget_name_featured_page">DroidWiki thimmi cahmai</string>
   <string name="widget_title_featured_page">Tuni thimmi cahmai:</string>
-  <string name="widget_name_search">Wikipedia kawlnak</string>
+  <string name="widget_name_search">DroidWiki kawlnak</string>
   <string name="alpha_update_notification_title">Update thar a chuak cang</string>
   <string name="alpha_update_notification_text">Download ding ah hmet</string>
   <string name="dialog_close_description">Chuak</string>
@@ -142,7 +142,7 @@
   <string name="gallery_save_success" fuzzy="true">Hmanthlak a khon khawh cang.</string>
   <string name="gallery_error_video_failed">Video a langh kholo.</string>
   <string name="err_cannot_save_file">File a khong kholo</string>
-  <string name="snippet_share_intro">\@Wikipedia ah \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki ah \"%1$s\": %2$s</string>
   <string name="expand_refs">Kauh ding in hmet</string>
   <string name="share_snippet_button">Hmanthlak hrawmh ding</string>
   <string name="share_normal_button">Biafang hrawmh ding</string>

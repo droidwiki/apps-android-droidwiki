@@ -94,7 +94,7 @@
   <string name="history_empty_message">အားလုံးကို သင် ဖျက်ပစ်လိုက်တာ ဖြစ်နိုင်သည်။ နောင်တွင် သင်သွားရောက်သည့် စာမျက်နှာအား ဤနေရာတွင် ပြန်ရယူနိုင်ပါသည်။</string>
   <string name="search_empty_message">အခမဲ့စွယ်စုံကျမ်းကို သင့်ဘာသာစကားဖြင့် ရှာဖွေဖတ်ရှုပါ။</string>
   <string name="delete_selected_items">ရွေးချယ်ထားသော အကြောင်းအရာများကို ဖျက်ပါ</string>
-  <string name="wp_stylized">&lt;big&gt;ဝီ&lt;/big&gt;ကီပီးဒီး&lt;big&gt;ယား&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">အသုံးပြုသူအမည်</string>
   <string name="login_dont_have_account">အကောင့် မရှိဘူးလား?</string>
   <string name="login_join_wikipedia">ဝီကီပီးဒီးယားကို ဝင်ရောက်ပါ</string>
@@ -147,7 +147,7 @@
   <string name="about_description">ဝီကီပီးဒီးယားအက်ပ် အကြောင်း</string>
   <string name="privacy_policy_description">ကိုယ်ရေးကိုယ်တာ မူဝါဒ</string>
   <string name="terms_of_use_description">အသုံးပြုခြင်းဆိုင်ရာ သတ်မှတ်ချက်များ</string>
-  <string name="about_wikipedia_url">https://my.m.wikipedia.org/wiki/Wikipedia:About</string>
+  <string name="about_wikipedia_url">https://my.m.wikipedia.org/wiki/DroidWiki:About</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">အသုံးပြုထားသော စာကြည့်တိုက်များ</string>
@@ -155,7 +155,7 @@
   <string name="about_translators_heading">ဘာသာပြန်သူများ</string>
   <string name="about_translators_translatewiki">ဤအက်ပ်ကို &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; ရှိ စေတနာ့ဝန်ထမ်း ဘာသာပြန်သူများက ဘာသာပြန်ပေးထားသည်။</string>
   <string name="about_app_license_heading">လိုင်စင်</string>
-  <string name="about_app_license">ရင်းမြစ်ကုဒ်ကို &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; နှင့် &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; တို့တွင် &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; ဖြင့် ရယူနိုင်သည်။ သီးခြားဖော်ပြထားခြင်း မရှိပါက &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; ဖြင့် ရယူနိုင်သည်။</string>
+  <string name="about_app_license">ရင်းမြစ်ကုဒ်ကို &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; နှင့် &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; တို့တွင် &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 License&lt;/a&gt; ဖြင့် ရယူနိုင်သည်။ သီးခြားဖော်ပြထားခြင်း မရှိပါက &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike License&lt;/a&gt; ဖြင့် ရယူနိုင်သည်။</string>
   <string name="about_wmf">&lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt; ၏ ထုတ်ကုန်တစ်ခု</string>
   <string name="about_activity_title">အကြောင်း</string>
   <string name="edit_abandon_confirm">ဤစာမျက်နှာသည် ပြောင်းလဲထားသည်။ သင့်ပြောင်းလဲမှုများအား မသိမ်းဆည်းဘဲ ထွက်ရန် သေချာပါသလား?</string>
@@ -216,7 +216,7 @@
   <string name="gallery_error_video_failed">ဗီဒီယိုကို ဖွင့်၍ မရနိုင်ပါ။</string>
   <string name="gallery_save_image_write_permission_rationale">ပုံများအား သိမ်းဆည်းရန် သင့်စက်ရှိ သိုလှောင်မှုတွင် ရေးသားနိုင်ရန် ခွင့်ပြုချက် လိုအပ်သည်။</string>
   <string name="err_cannot_save_file">ဖိုင်အား မသိမ်းဆည်းနိုင်ပါ</string>
-  <string name="snippet_share_intro">\@Wikipedia ပေါ်ရှိ \"%1$s\": %2$s</string>
+  <string name="snippet_share_intro">\@DroidWiki ပေါ်ရှိ \"%1$s\": %2$s</string>
   <string name="expand_refs">ချဲ့ကားရန် တို့ထိ</string>
   <string name="share_snippet_button">ပုံအဖြစ် မျှဝေရန်</string>
   <string name="share_normal_button">စာသားအဖြစ် မျှဝေရန်</string>

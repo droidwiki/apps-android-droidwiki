@@ -17,8 +17,8 @@
 * Trizek (WMF)
 -->
 <resources>
-  <string name="app_name_prod">Name of the application.\n{{Identical|Wikipedia}}</string>
-  <string name="app_name_beta">Name of the beta version of the application.\n{{Identical|Wikipedia Beta}}</string>
+  <string name="app_name_prod">Name of the application.\n{{Identical|DroidWiki}}</string>
+  <string name="app_name_beta">Name of the beta version of the application.\n{{Identical|DroidWiki Beta}}</string>
   <string name="app_name_alpha">Name of the alpha version of the application.</string>
   <string name="wikimedia">Wikimedia\'s name.\n{{Identical|Wikimedia}}</string>
   <string name="search_hint">Hint text for the search box</string>
@@ -67,7 +67,7 @@
   <string name="content_license_html">HTML specifying license of the Wiki and link to appropriate CC page. Please preserve the %1$s parameter, since this will be replaced with the actual URL.</string>
   <string name="edit_save_action_license_logged_in">HTML specifying Terms of Use and CC license before saving edits. Please preserve the %1$s and %2$s parameters, since these will be replaced with the actual URLs.</string>
   <string name="edit_save_action_license_anon">HTML specifying Terms of Use and CC license and a login link before saving edits, only when the user has not logged in. Please preserve the %1$s and %2$s parameters, since these will be replaced with the actual URLs. Also please do not change the href=\'https://#login\' part of the message.</string>
-  <string name="preference_title_language">Title for preference in settings screen for setting which language Wikipedia to use.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show images}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title language}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show link previews}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|Wikipedia-android-strings-zero warn when leaving}}</string>
+  <string name="preference_title_language">Title for preference in settings screen for setting which language DroidWiki to use.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show images}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title language}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show link previews}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|DroidWiki-android-strings-zero warn when leaving}}</string>
   <string name="preference_languages_filter_hint">Placeholder text for the textbox that when typed filters list of language wikipedias from which user can pick a language to use.\n{{Identical|Search}}</string>
   <string name="langlinks_filter_hint">{{Identical|Search}}</string>
   <string name="langlinks_empty">Message shown when the user requested a list of languages in which the current article is available, but the current article is not available in any other language</string>
@@ -107,10 +107,10 @@
   <string name="history_empty_message">Brief explanation that there are currently no History entries to look at. Just to fill an empty screen. This usually happens when a user just deleted history entries.</string>
   <string name="search_empty_message">Brief explanation that there are currently no Search entries to look at. Just to fill an empty screen. This usually happens when a user just deleted search entries.</string>
   <string name="delete_selected_items">Menu item hint for deleting selected items in a list.</string>
-  <string name="wp_stylized">A stylized string saying \"Wikipedia\". Used before wp_tag_line if no image representation exists. Usually the first and last characters are within big tags, if this fits the Wikipedia logo in your language.</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">{{Identical|Username}}</string>
   <string name="login_dont_have_account">Label asking the user if they do not yet have an account.</string>
-  <string name="login_join_wikipedia">Button label that lets the user create a new account on Wikipedia.</string>
+  <string name="login_join_wikipedia">Button label that lets the user create a new account on DroidWiki.</string>
   <string name="login_forgot_password">Label asking the user if they have forgotten their password, and will allow them to reset it.</string>
   <string name="create_account_already_have">Label asking the user if they already have an account.</string>
   <string name="create_account_activity_title">{{Identical|Create account}}</string>
@@ -126,19 +126,19 @@
   <string name="create_account_button">Button text on Create Account screen to go start creating the account (may also go to a CAPTCHA screen first).\n{{Identical|Create account}}</string>
   <string name="create_account_name_unavailable">Error message shown when the selected user name is not available for a new account. The \"%s\" symbol is replaced with the requested user name.</string>
   <string name="preferences_general_heading">Preferences general heading.\n{{Identical|General}}</string>
-  <string name="wikipedia_app_faq">Label for a preferences menu link to the FAQ (frequently asked questions) wiki page for the Wikipedia apps for Android and iOS.</string>
-  <string name="zero_charged_verbiage">Text for toast connoting that Wikipedia Zero status went to OFF</string>
-  <string name="zero_warn_when_leaving">Settings label for option for warning a Wikipedia Zero user if tapping on an external link.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show images}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title language}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show link previews}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|Wikipedia-android-strings-zero warn when leaving}}</string>
-  <string name="zero_warn_when_leaving_summary">Lengthy explanation of Wikipedia Zero for settings screen</string>
-  <string name="zero_webpage_title">Link title for the Wikipedia Zero FAQ for the app</string>
-  <string name="zero_wikipedia_zero_heading">Settings heading for Wikipedia Zero.\n{{Identical|Wikipedia Zero}}</string>
-  <string name="zero_interstitial_title">Dialog title text to inform Wikipedia Zero user that the user is about to leave the app for an external link</string>
-  <string name="zero_interstitial_leave_app">Dialog text to ask Wikipedia Zero user whether the user wants to continue to an external site where standard data charges may apply</string>
-  <string name="zero_interstitial_continue">Dialog button text for Wikipedia Zero user to leave the app for an external site where standard data charges may apply.</string>
-  <string name="zero_interstitial_cancel">Dialog button text for Wikipedia Zero to stay in the app and thereby avoid leaving the app for an external site where standard data charges may apply.\n{{Identical|Stay here}}</string>
-  <string name="zero_learn_more">Message of a dialog shown the first time Wikipedia Zero mode is On.</string>
-  <string name="zero_learn_more_learn_more">Dialog button text for Wikipedia Zero user to learn more about Wikipedia Zero at the Wikipedia Zero FAQ for the app.\n{{Identical|Learn more}}</string>
-  <string name="zero_learn_more_dismiss">Dialog button text for Wikipedia Zero user to dismiss the prompt about visiting the Wikipedia Zero FAQ for the app\n{{Identical|Dismiss}}</string>
+  <string name="wikipedia_app_faq">Label for a preferences menu link to the FAQ (frequently asked questions) wiki page for the DroidWiki apps for Android and iOS.</string>
+  <string name="zero_charged_verbiage">Text for toast connoting that DroidWiki Zero status went to OFF</string>
+  <string name="zero_warn_when_leaving">Settings label for option for warning a DroidWiki Zero user if tapping on an external link.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show images}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title language}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show link previews}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|DroidWiki-android-strings-zero warn when leaving}}</string>
+  <string name="zero_warn_when_leaving_summary">Lengthy explanation of DroidWiki Zero for settings screen</string>
+  <string name="zero_webpage_title">Link title for the DroidWiki Zero FAQ for the app</string>
+  <string name="zero_wikipedia_zero_heading">Settings heading for DroidWiki Zero.\n{{Identical|DroidWiki Zero}}</string>
+  <string name="zero_interstitial_title">Dialog title text to inform DroidWiki Zero user that the user is about to leave the app for an external link</string>
+  <string name="zero_interstitial_leave_app">Dialog text to ask DroidWiki Zero user whether the user wants to continue to an external site where standard data charges may apply</string>
+  <string name="zero_interstitial_continue">Dialog button text for DroidWiki Zero user to leave the app for an external site where standard data charges may apply.</string>
+  <string name="zero_interstitial_cancel">Dialog button text for DroidWiki Zero to stay in the app and thereby avoid leaving the app for an external site where standard data charges may apply.\n{{Identical|Stay here}}</string>
+  <string name="zero_learn_more">Message of a dialog shown the first time DroidWiki Zero mode is On.</string>
+  <string name="zero_learn_more_learn_more">Dialog button text for DroidWiki Zero user to learn more about DroidWiki Zero at the DroidWiki Zero FAQ for the app.\n{{Identical|Learn more}}</string>
+  <string name="zero_learn_more_dismiss">Dialog button text for DroidWiki Zero user to dismiss the prompt about visiting the DroidWiki Zero FAQ for the app\n{{Identical|Dismiss}}</string>
   <string name="edit_preview_fetching_dialog_message">Message shown to the user while the user is waiting for the preview of their edit to be shown</string>
   <string name="send_feedback">Text to show for link used for sending feedback about the app.</string>
   <string name="create_account_account_created_toast">Message shown in a small toast when account creation is successful.\n* {{msg-mw|Accountcreatedtext|message}}</string>
@@ -153,7 +153,7 @@
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Title of a warning dialog when turning off the reading list sync. The %s symbol is replaced with the username if logged in</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Description of a warning dialog when turning off the reading list sync. The %s symbol is replaced with the username.</string>
   <string name="preferences_privacy_settings_heading">Section title for privacy related settings\n{{Identical|Privacy}}</string>
-  <string name="preference_title_eventlogging_opt_in">Title of preference that when checked enables data collection of user behavior.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show images}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title language}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show link previews}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|Wikipedia-android-strings-zero warn when leaving}}</string>
+  <string name="preference_title_eventlogging_opt_in">Title of preference that when checked enables data collection of user behavior.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show images}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title language}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show link previews}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|DroidWiki-android-strings-zero warn when leaving}}</string>
   <string name="preference_summary_eventlogging_opt_in">Description of preference that when checked enables data collection of user behavior.</string>
   <string name="preference_title_auto_upload_crash_reports">Title of preference that when checked enables automatic upload of crash reports.</string>
   <string name="preference_summary_auto_upload_crash_reports">Description of preference that when checked checked enables automatic upload of crash reports.</string>
@@ -171,11 +171,11 @@
   <string name="about_description">Summary of the preference item to show the About screen.</string>
   <string name="privacy_policy_description">Summary of the preference item to show the terms of use.\n{{Identical|Privacy policy}}</string>
   <string name="terms_of_use_description">Summary of the preference item to show the terms of use.\n{{Identical|Terms of use}}</string>
-  <string name="about_wikipedia_url">URL leading to the About Wikipedia page. If you can find the appropriate language specific URL of the mobile site please do so. If not feel free to keep the English one. Example for German (lang code \"de\"): https://de.wikipedia.org/wiki/Wikipedia:Über_Wikipedia\nPlease test the URL to make sure it works.</string>
+  <string name="about_wikipedia_url">URL leading to the About DroidWiki page. If you can find the appropriate language specific URL of the mobile site please do so. If not feel free to keep the English one. Example for German (lang code \"de\"): https://de.wikipedia.org/wiki/DroidWiki:Über_DroidWiki\nPlease test the URL to make sure it works.</string>
   <string name="privacy_policy_url">URL leading to the Wikimedia Foundation privacy policy. If you can find the appropriate language specific URL of the mobile site please do so. If not feel free to keep the English one. Example for German (lang code \"de\"): https://meta.m.wikimedia.org/w/index.php?title=Privacy_policy/de\nPlease test the URL to make sure it works.</string>
   <string name="offline_reading_and_data_url">URL leading to the Offline reading and data section of Wikimedia Android app FAQ. If you can find the appropriate language specific URL of the mobile site please do so.</string>
   <string name="android_app_faq_url">URL leading to the page of Wikimedia Android app FAQ. If you can find the appropriate language specific URL of the mobile site please do so.</string>
-  <string name="terms_of_use_url">URL leading to the Wikimedia Foundation terms of use. If you can find the appropriate language specific URL of the mobile site please do so. If not feel free to keep the English one. Example for German (lang code \"de\"): https://m.wikimediafoundation.org/wiki/Terms_of_Use/de\nPlease test the URL to make sure it works</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">URL for details about the Creative Commons CC BY-SA 3.0 license. When possible, please use the appropriate language-specific URL, and the mobile version of the site.</string>
   <string name="cc_0_url">URL for details about the Creative Commons CC0 license. When possible, please use the appropriate language-specific URL, and the mobile version of the site.</string>
   <string name="about_libraries_heading">Heading for section that lists the libraries that have been used in the app</string>
@@ -227,12 +227,12 @@
   <string name="table_close">{{Identical|Close}}</string>
   <string name="widget_name_featured_page">Name of the Widget (as seen in the Android widget picker) that displays today\'s featured page.</string>
   <string name="widget_title_featured_page">Text shown inside the widget that tells the user that the link below is today\'s featured page.</string>
-  <string name="widget_name_search">Name of the Widget (as seen in the Android widget picker) for searching Wikipedia\n\nFollowed by {{msg-wm|Wikipedia-android-strings-alpha update notification text}}.</string>
+  <string name="widget_name_search">Name of the Widget (as seen in the Android widget picker) for searching DroidWiki\n\nFollowed by {{msg-wm|DroidWiki-android-strings-alpha update notification text}}.</string>
   <string name="wiktionary_no_definitions_found">Message shown when a user requests a definition from Wiktionary but no definition is found.</string>
-  <string name="alpha_update_notification_title">Title for notification when new alpha update is available.\n\n\n\n\nFollowed by {{msg-wm|Wikipedia-android-strings-alpha update notification text}}.</string>
-  <string name="alpha_update_notification_text">Text for notification when new alpha update is available.\n\nPreceded by {{msg-wm|Wikipedia-android-strings-alpha update notification title}}.</string>
+  <string name="alpha_update_notification_title">Title for notification when new alpha update is available.\n\n\n\n\nFollowed by {{msg-wm|DroidWiki-android-strings-alpha update notification text}}.</string>
+  <string name="alpha_update_notification_text">Text for notification when new alpha update is available.\n\nPreceded by {{msg-wm|DroidWiki-android-strings-alpha update notification title}}.</string>
   <string name="dialog_close_description">Button description for the close image button. The text is mainly for screen readers.\n{{Identical|Close}}</string>
-  <string name="preference_title_show_images">Preference title for selecting whether images are loaded in pages.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show images}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title language}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show link previews}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|Wikipedia-android-strings-zero warn when leaving}}\n\n{{Identical|Show image}}</string>
+  <string name="preference_title_show_images">Preference title for selecting whether images are loaded in pages.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show images}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title language}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show link previews}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|DroidWiki-android-strings-zero warn when leaving}}\n\n{{Identical|Show image}}</string>
   <string name="preference_summary_show_images">Description of the preference for whether images are loaded, mentioning that this setting should be disabled if the user\'s internet connection is slow, or if their data plan is limited or restricted.</string>
   <string name="read_more_section">Title of the Read More section at the bottom of each page.\n\nThis section shows other automatically-selected articles, similarly to how it works with \"Related Articles\" ({{msg-mw|Relatedarticles-read-more-heading}}).\n\n{{Identical|Read more}}</string>
   <string name="about_article_section">Title of section that contains information specific to the current article.</string>
@@ -246,7 +246,7 @@
   <string name="gallery_error_video_failed">Error message displayed when a video fails to be played on the device.</string>
   <string name="gallery_save_image_write_permission_rationale">Message shown to explain that an extra write permission is needed to save an image.</string>
   <string name="err_cannot_save_file">Error message when we detect that a file cannot be written to storage.</string>
-  <string name="snippet_share_intro">Intro text included as part of the shared text snippet, aka Tweet-a-fact. Please do not translate the \"@Wikipedia\" in the message and preserve the spaces around it, as it refers specifically to Wikipedia\'s Twitter account. This message has two parameters. Please keep the parameters exactly as in the original English message.\n* %1$s is the title of the page the text snippet is from.\n* %2$s is an HTML link to the page.</string>
+  <string name="snippet_share_intro">Intro text included as part of the shared text snippet, aka Tweet-a-fact. Please do not translate the \"@DroidWiki\" in the message and preserve the spaces around it, as it refers specifically to DroidWiki\'s Twitter account. This message has two parameters. Please keep the parameters exactly as in the original English message.\n* %1$s is the title of the page the text snippet is from.\n* %2$s is an HTML link to the page.</string>
   <string name="expand_refs">Title for a button that, when clicked, will expand the list of references or notes at the bottom of a page.</string>
   <string name="share_snippet_button">Button on share snippet preview to share as image card.</string>
   <string name="share_normal_button">Button on share snippet preview to share as plain text.</string>
@@ -274,14 +274,14 @@
   <string name="button_continue_to_article">Button to continue to the full article from the current link preview.</string>
   <string name="button_add_to_reading_list">Button text for adding the current page to a reading list.</string>
   <string name="page_offline_notice_cannot_load_while_offline">Message informing the user that an article cannot be loaded while the app is offline. This message is followed by page_offline_notice_add_to_reading_list.</string>
-  <string name="page_offline_notice_add_to_reading_list">Message inviting the user to add the requested article to a reading list to be downloaded when the app is online. This message follows {{msg-wm|Wikipedia-android-strings-page_offline_notice_cannot_load_while_offline}}.</string>
+  <string name="page_offline_notice_add_to_reading_list">Message inviting the user to add the requested article to a reading list to be downloaded when the app is online. This message follows {{msg-wm|DroidWiki-android-strings-page_offline_notice_cannot_load_while_offline}}.</string>
   <string name="page_offline_notice_last_date">Message that tells the user that the current article is loaded from offline storage. The %s symbol is replaced with the date when the article was saved.</string>
   <string name="page_offline_notice_compilation_download_date">Message that tells the user that the current article is loaded from a downloaded offline compilation. The %1$s symbol is replaced with the name of the article pack containing the article, and the %2$s symbol is replaced with the date when the compilation was downloaded.</string>
   <string name="button_get_directions">Button to obtain directions to the location specified in the link preview.</string>
   <string name="error_no_maps_app">Error displayed when the device does not have any apps installed that are capable of providing directions to a location.</string>
-  <string name="preference_title_show_link_previews">Title of the preference for enabling or disabling link previews.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show images}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title language}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title show link previews}}\n* {{msg-wikimedia|Wikipedia-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|Wikipedia-android-strings-zero warn when leaving}}</string>
+  <string name="preference_title_show_link_previews">Title of the preference for enabling or disabling link previews.\n\nShown in the preferences screen along with the following:\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show images}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title language}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title show link previews}}\n* {{msg-wikimedia|DroidWiki-android-strings-preference title eventlogging opt in}}\n* {{msg-wikimedia|DroidWiki-android-strings-zero warn when leaving}}</string>
   <string name="preference_summary_show_link_previews">Description of the preference for enabling or disabling link previews.</string>
-  <string name="nav_item_donate">Text in navigation sidebar that when tapped leads to a web page where the user may donate to Wikipedia.</string>
+  <string name="nav_item_donate">Text in navigation sidebar that when tapped leads to a web page where the user may donate to DroidWiki.</string>
   <string name="error_voice_search_not_available">Error displayed when the device does not support voice recognition.</string>
   <string name="location_service_disabled">Message shown when trying to use location services but they are unavailable</string>
   <string name="enable_location_service">Button label for enabling location services\n{{Identical|Enable}}</string>
@@ -396,7 +396,7 @@
   <string name="reading_list_preference_login_to_enable_sync_dialog_cancel">Negative answer to cancel the current process.\n{{Identical|Cancel}}</string>
   <string name="reading_list_preference_login_to_enable_sync_dialog_login">Affirmative answer to confirm and redirect to the login page.\n{{Identical|Log in}}</string>
   <string name="reading_list_turned_sync_off_dialog_title">Title of warning message shown to a user when the user turns OFF syncing on one of their devices.</string>
-  <string name="reading_list_turned_sync_off_dialog_text">Warning message shown to a user when the user turns OFF syncing on one of their devices.\n\n\"Settings\" is {{msg-wm|Wikipedia-android-strings-settings item preferences}}.</string>
+  <string name="reading_list_turned_sync_off_dialog_text">Warning message shown to a user when the user turns OFF syncing on one of their devices.\n\n\"Settings\" is {{msg-wm|DroidWiki-android-strings-settings item preferences}}.</string>
   <string name="reading_list_turned_sync_off_dialog_ok">Negative answer to dismiss the dialog.\n{{Identical|OK}}</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Affirmative answer to confirm and redirect to the settings page.\n{{Identical|Settings}}</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Title of warning message shown to a user who is logged in who has not opted-in to syncing enters this screen at the first time.</string>
@@ -472,20 +472,20 @@
   </plurals>
   <string name="view_continue_reading_card_title">Label for card in the feed that reminds the user to continue reading an article from their browsing history.</string>
   <string name="view_because_you_read_card_title">Label for card in the feed that gives the user reading suggestions based on an article from their browsing history.</string>
-  <string name="view_random_card_title">Title of a card that the user can click to view a randomly selected Wikipedia article</string>
-  <string name="view_random_card_subtitle">Message inviting the user to view a randomly selected Wikipedia article.</string>
+  <string name="view_random_card_title">Title of a card that the user can click to view a randomly selected DroidWiki article</string>
+  <string name="view_random_card_subtitle">Message inviting the user to view a randomly selected DroidWiki article.</string>
   <string name="view_random_card_action">Buttol label for navigating to the screen where random articles are shown.</string>
   <string name="view_next_random_article">Button hint for loading another random article.</string>
-  <string name="view_main_page_card_title">Title of a card that the user can click to view the main page of the Wikipedia project for the current app language.</string>
+  <string name="view_main_page_card_title">Title of a card that the user can click to view the main page of the DroidWiki project for the current app language.</string>
   <string name="view_main_page_card_subtitle">Message indicating that the user will be shown the project\'s main page for the current date. The \"%s\" symbol is replaced with the current date.</string>
-  <string name="view_main_page_card_action">Button label for navigating to the Main Page of Wikipedia.</string>
+  <string name="view_main_page_card_action">Button label for navigating to the Main Page of DroidWiki.</string>
   <string name="view_featured_image_card_title">Title of a card showing the Picture of the Day from Wikimedia Commons.</string>
   <string name="view_featured_image_card_download">Label for a button the user can click to download the full-size Picture of the Day.\n{{Identical|Download}}</string>
   <string name="menu_feed_card_dismiss">Menu item used for hiding a certain item in the list of feed cards.</string>
   <string name="menu_feed_card_dismissed">Message to inform the user that the selected item has been hidden.</string>
   <string name="menu_feed_overflow_label">Label for toolbar menu item that shows the user more options, such as logging in and accessing the app settings.</string>
   <string name="feed_featured_image_share_subject">Text included as the subject when a user shares an image from the Today\'s Featured Image feed card.</string>
-  <string name="feed">Menu item label for exploring Wikipedia content through Feed cards.\n{{Identical|Explore}}</string>
+  <string name="feed">Menu item label for exploring DroidWiki content through Feed cards.\n{{Identical|Explore}}</string>
   <string name="most_read_list_card_title">Feed card title for recently popular articles.\n{{Identical|Trending}}</string>
   <string name="view_static_card_icon_content_description">Feed card icon description for use when the icon cannot be seen and acessibility.</string>
   <string name="view_card_news_title">Feed card title for news articles.</string>
@@ -530,7 +530,7 @@
   <string name="description_edit_anon_limit">Dialog message that informs the user that they must log in before making edits to additional descriptions.</string>
   <string name="description_edit_license_notice">Disclaimer that specifies the Terms of Use and CC license that applies to editing descriptions. Please preserve the %1$s and %2$s parameters, since these will be replaced with URLs.</string>
   <string name="description_edit_success_saved">Message that the description the user just added was saved.</string>
-  <string name="description_edit_success_encouragement">Message that the user made Wikipedia better for everyone</string>
+  <string name="description_edit_success_encouragement">Message that the user made DroidWiki better for everyone</string>
   <string name="description_edit_success_done">Button text to dismiss the description editing success screen\n{{Identical|Done}}</string>
   <string name="description_edit_success_did_you_know">Heading for a tip about editing articles in the app\n{{Identical|Did you know}}</string>
   <string name="description_edit_success_article_edit_hint">A message informing the user about how to edit articles in the app.  The \"^1\" symbol is replaced with an edit pencil icon.</string>
@@ -546,9 +546,9 @@
   <string name="description_edit_help_tips_description">A quick overview of some guidelines for creating descriptions. These can be adapted to your language; for example, if your language doesn\'t have small and capital letters, you don\'t have to mention it.</string>
   <string name="description_edit_help_tips_examples">Heading for a list of example descriptions.</string>
   <string name="description_edit_help_tips_example1">An example description of a notable work of art, music, or literature.</string>
-  <string name="description_edit_help_tips_example1_hint">Title description for the article mentioned in {{msg-wikimedia|Wikipedia-android-strings-description edit help tips example1\"}}</string>
+  <string name="description_edit_help_tips_example1_hint">Title description for the article mentioned in {{msg-wikimedia|DroidWiki-android-strings-description edit help tips example1\"}}</string>
   <string name="description_edit_help_tips_example2">An example description of a notable landmark or geological feature. Like all Wikdata descriptions, it \'\'mustn\'t start with a capital\'\' unless if the first word requires it.</string>
-  <string name="description_edit_help_tips_example2_hint">Title description for the article mentioned in {{msg-wikimedia|Wikipedia-android-strings-description edit help tips example2\"}}</string>
+  <string name="description_edit_help_tips_example2_hint">Title description for the article mentioned in {{msg-wikimedia|DroidWiki-android-strings-description edit help tips example2\"}}</string>
   <string name="description_edit_help_more_info">Heading for further information about descriptions.\n{{Identical|More information}}</string>
   <string name="description_edit_help_meta_info">Meta information about Wikidata descriptions and their role in Wikimedia Foundation projects.</string>
   <string name="description_edit_revert_subtitle">Subtitle in the dialog that informs the user that their edit was reverted.</string>
@@ -560,7 +560,7 @@
   <string name="offline_read_permission_rationale">Message explaining why we need permission to access the device storage when reading articles in offline mode.</string>
   <string name="offline_read_final_rationale">Message explaining why we need permission to access the device storage when reading articles in offline mode.</string>
   <string name="offline_read_permission_error">Error shown when the app could not read from the internal or external storage of the device due to permission not being granted.</string>
-  <string name="offline_card_sideloading_text">Message shown in the Feed card that informs the user that they are now browsing Wikipedia from article packs in offline mode.</string>
+  <string name="offline_card_sideloading_text">Message shown in the Feed card that informs the user that they are now browsing DroidWiki from article packs in offline mode.</string>
   <string name="offline_my_compilations">Button label for the user to navigate to the offline library screen.</string>
   <string name="offline_compilations_title">Title shown on the toolbar of the activity for managing article packs.</string>
   <string name="offline_compilations_search_by_name">Menu item for searching article packs by name.</string>
@@ -593,7 +593,7 @@
   <string name="offline_library_empty_title">Message shown when the offline library is empty.</string>
   <string name="offline_library_empty_description_sideload">Quick description of the benefits of offline article packs, with a link to a MediaWiki page with further details about the feature.</string>
   <string name="offline_library_packs_hint">Hint informing the user that article packs remain available for browsing offline, with a link to a MediaWiki page with further details about the feature.</string>
-  <string name="offline_library_data_usage_hint">Hint informing the user that turning on a specific setting will allow the app to default to getting article content from offline packs. The included link will take the user to the Settings screen.\n\n* \"Prefer offline content\" is {{msg-wm|Wikipedia-android-strings-preference title prefer offline content}}\n* \"Settings\" is {{msg-wm|Wikipedia-android-strings-settings item preferences}}</string>
+  <string name="offline_library_data_usage_hint">Hint informing the user that turning on a specific setting will allow the app to default to getting article content from offline packs. The included link will take the user to the Settings screen.\n\n* \"Prefer offline content\" is {{msg-wm|DroidWiki-android-strings-preference title prefer offline content}}\n* \"Settings\" is {{msg-wm|DroidWiki-android-strings-settings item preferences}}</string>
   <string name="offline_library_empty_search">Button label for searching the list of possible article packs to download.</string>
   <string name="offline_library_search_results_state">Label informing the user that the current search results are from one or more offline article packs.</string>
   <string name="offline_library_onboarding_button_done">Label for a button for the user to confirm that the user is done with the tutorial for the Offline Library.\n{{Identical|Done}}</string>
@@ -607,10 +607,10 @@
   <string name="onboarding_skip">Button label to skip the current onboarding or tutorial screen.\n{{Identical|Skip}}</string>
   <string name="onboarding_continue">Button label to continue to the next onboarding or tutorial screen.\n{{Identical|Continue}}</string>
   <string name="onboarding_get_started">Button label to finish the current onboarding or tutorial workflow.\n{{Identical|Get started}}</string>
-  <string name="onboarding_welcome_title">Title for a tutorial screen about the general introducing to Wikipedia.</string>
-  <string name="onboarding_welcome_text">General introduction about the Wikipedia. (Please preserve the anchor tag in its exact form)</string>
+  <string name="onboarding_welcome_title">Title for a tutorial screen about the general introducing to DroidWiki.</string>
+  <string name="onboarding_welcome_text">General introduction about the DroidWiki. (Please preserve the anchor tag in its exact form)</string>
   <string name="onboarding_explore_title">Title for a tutorial screen about the Explore feed.</string>
-  <string name="onboarding_explore_text">Short explanatory text about the benefits of the Explore feed.\n\n* \"On this day\" is {{Msg-wm|Wikipedia-android-strings-on this day card title}}\n* \"Random\" is {{Msg-wm|Wikipedia-android-strings-app shortcuts random}}</string>
+  <string name="onboarding_explore_text">Short explanatory text about the benefits of the Explore feed.\n\n* \"On this day\" is {{Msg-wm|DroidWiki-android-strings-on this day card title}}\n* \"Random\" is {{Msg-wm|DroidWiki-android-strings-app shortcuts random}}</string>
   <string name="onboarding_save_to_reading_lists_title">Title for a tutorial screen about saving articles to reading lists.</string>
   <string name="onboarding_save_to_reading_lists_text">Short explanatory text about the benefits of saving articles to reading lists. (Please preserve the anchor tag in its exact form)</string>
   <string name="onboarding_reading_list_sync_title">Title for a tutorial screen about synchronizing reading lists.</string>

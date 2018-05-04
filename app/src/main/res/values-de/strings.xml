@@ -7,11 +7,11 @@
 * Xqt
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Wikipedia durchsuchen</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">DroidWiki durchsuchen</string>
   <string name="search_hint_search_history">Suchverlauf</string>
   <string name="search_hint_search_my_lists">Meine Listen durchsuchen</string>
   <string name="search_hint_search_reading_list">Leseliste durchsuchen</string>
@@ -57,7 +57,7 @@
   <string name="content_license_html">Der Inhalt ist verfügbar unter &lt;a href=\"%1$s\"&gt;CC-BY-SA 3.0&lt;/a&gt;, sofern nicht anders angegeben.</string>
   <string name="edit_save_action_license_logged_in">Mit dem Speichern stimmst du den &lt;a href=\"%1$s\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; Lizenz zu.</string>
   <string name="edit_save_action_license_anon">Mit dem Speichern stimmst du den &lt;a href=\"%1$s\"&gt;Nutzungsbedingungen&lt;/a&gt; und unwiderruflich der Veröffentlichung deiner Beiträge unter der &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0-Lizenz&lt;/a&gt; zu. Bearbeitungen werden der IP-Adresse deines Gerätes zugeordnet. Wenn du dich &lt;a href=\"https://#login\"&gt;anmeldest&lt;/a&gt;, verfügst du über mehr Datenschutz.</string>
-  <string name="preference_title_language">Wikipedia-Sprache</string>
+  <string name="preference_title_language">DroidWiki-Sprache</string>
   <string name="preference_languages_filter_hint">Suche</string>
   <string name="langlinks_filter_hint">Suche</string>
   <string name="langlinks_empty">Diese Seite ist nicht in anderen Sprachen verfügbar.</string>
@@ -81,13 +81,13 @@
   <string name="edit_section_captcha_hint">Wörter von oben wiederholen</string>
   <string name="title_captcha">Captcha eingeben</string>
   <string name="edit_section_captcha_reload">Tippen zum Aktualisieren des Captchas</string>
-  <string name="nav_item_login">Bei Wikipedia anmelden</string>
+  <string name="nav_item_login">Bei DroidWiki anmelden</string>
   <string name="login_username_hint">Benutzername</string>
   <string name="login_password_hint">Passwort</string>
   <string name="login_2fa_hint">Zwei-Faktor-Authentifikationscode</string>
   <string name="login_2fa_other_workflow_error_msg">Zwei-Faktor-Authentifikation erforderlich! Bitte gehe zu den Hauptaktivitäten zurück, melde dich mit deinem 2FA-Token an und versuche es erneut.</string>
   <string name="menu_login">Anmelden</string>
-  <string name="login_activity_title">Bei Wikipedia anmelden</string>
+  <string name="login_activity_title">Bei DroidWiki anmelden</string>
   <string name="login_in_progress_dialog_message">Melde dich an …</string>
   <string name="login_success_toast">Erfolgreich angemeldet!</string>
   <string name="preference_title_logout">Abmelden</string>
@@ -96,10 +96,10 @@
   <string name="history_empty_message">Verfolge hier, was du gelesen hast.</string>
   <string name="search_empty_message">Die freie Enzyklopädie in deiner Sprache durchsuchen und lesen</string>
   <string name="delete_selected_items">Ausgewählte Elemente löschen</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Benutzername</string>
   <string name="login_dont_have_account">Noch kein Benutzerkonto?</string>
-  <string name="login_join_wikipedia">Wikipedia beitreten</string>
+  <string name="login_join_wikipedia">DroidWiki beitreten</string>
   <string name="login_forgot_password">Passwort vergessen?</string>
   <string name="create_account_already_have">Hast du bereits ein Benutzerkonto?</string>
   <string name="create_account_activity_title">Ein Benutzerkonto erstellen</string>
@@ -115,17 +115,17 @@
   <string name="create_account_button">Benutzerkonto erstellen</string>
   <string name="create_account_name_unavailable">Der Benutzername „%s“ ist nicht verfügbar. Bitte wähle einen anderen Namen aus.</string>
   <string name="preferences_general_heading">Allgemein</string>
-  <string name="wikipedia_app_faq">FAQ zur Wikipedia-App</string>
-  <string name="zero_charged_verbiage">Die kostenlose Verbindung zu Wikipedia ist nicht mehr aktiv.</string>
-  <string name="zero_warn_when_leaving">Beim Verlassen von Wikipedia Zero warnen</string>
-  <string name="zero_warn_when_leaving_summary">Falls dein Mobilfunkbetreiber auf Datenzugriffsgebühren für die Wikipedia-App aufgrund einer Wikipedia-Zero-Partnerschaft verzichtet, wirst du bei Aktivierung dieser Einstellung informiert, wenn du die Wikipedia-App verlässt und Gebühren anfallen können.</string>
-  <string name="zero_webpage_title">FAQ zu Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Wikipedia Zero wird verlassen</string>
+  <string name="wikipedia_app_faq">FAQ zur DroidWiki-App</string>
+  <string name="zero_charged_verbiage">Die kostenlose Verbindung zu DroidWiki ist nicht mehr aktiv.</string>
+  <string name="zero_warn_when_leaving">Beim Verlassen von DroidWiki Zero warnen</string>
+  <string name="zero_warn_when_leaving_summary">Falls dein Mobilfunkbetreiber auf Datenzugriffsgebühren für die DroidWiki-App aufgrund einer DroidWiki-Zero-Partnerschaft verzichtet, wirst du bei Aktivierung dieser Einstellung informiert, wenn du die DroidWiki-App verlässt und Gebühren anfallen können.</string>
+  <string name="zero_webpage_title">FAQ zu DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">DroidWiki Zero wird verlassen</string>
   <string name="zero_interstitial_leave_app">Datenübertragungsgebühren können anfallen. Mit der externen Website fortfahren?</string>
   <string name="zero_interstitial_continue">Verlassen</string>
   <string name="zero_interstitial_cancel">Hier bleiben</string>
-  <string name="zero_learn_more">Dein Mobilfunkanbieter stellt einen kostenlosen Zugang zu Wikipedia-Inhalten bereit!</string>
+  <string name="zero_learn_more">Dein Mobilfunkanbieter stellt einen kostenlosen Zugang zu DroidWiki-Inhalten bereit!</string>
   <string name="zero_learn_more_learn_more">Mehr erfahren</string>
   <string name="zero_learn_more_dismiss">Ausblenden</string>
   <string name="edit_preview_fetching_dialog_message">Vorschau wird abgerufen …</string>
@@ -137,8 +137,8 @@
   <string name="preferences_heading_experimental">Experimentell</string>
   <string name="preference_title_sync_reading_lists">Leselisten synchronisieren</string>
   <string name="preference_title_sync_reading_lists_from_account">Synchronisierung von Leselisten aktivieren</string>
-  <string name="preference_summary_sync_reading_lists">Synchronisiere Leselisten zwischen unterschiedlichen Geräten durch das Speichern der Listen in dein Wikipedia-Benutzerkonto</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Synchronisiere Leselisten zwischen unterschiedlichen Geräten durch das Speichern der Listen in dein Wikipedia-Benutzerkonto „%s“</string>
+  <string name="preference_summary_sync_reading_lists">Synchronisiere Leselisten zwischen unterschiedlichen Geräten durch das Speichern der Listen in dein DroidWiki-Benutzerkonto</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Synchronisiere Leselisten zwischen unterschiedlichen Geräten durch das Speichern der Listen in dein DroidWiki-Benutzerkonto „%s“</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Synchronisierte Leselisten von „%s“ entfernen?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Dies wird alle früher synchronisierten Leselisten vollständig aus dem Fernspeicher löschen. Alle synchronisierten Listen aus deinem Benutzerkonto „%s“ entfernen?</string>
   <string name="preferences_privacy_settings_heading">Datenschutz</string>
@@ -157,14 +157,14 @@
   <string name="page_protected_can_not_edit_title">Diese Seite ist geschützt</string>
   <string name="settings_item_preferences">Einstellungen</string>
   <string name="settings_activity_title">Einstellungen</string>
-  <string name="about_description">Über die Wikipedia-App</string>
+  <string name="about_description">Über die DroidWiki-App</string>
   <string name="privacy_policy_description">Datenschutzrichtlinie</string>
   <string name="terms_of_use_description">Nutzungsbedingungen</string>
-  <string name="about_wikipedia_url">https://de.m.wikipedia.org/wiki/Wikipedia:Über_Wikipedia</string>
+  <string name="about_wikipedia_url">https://de.m.wikipedia.org/wiki/DroidWiki:Über_DroidWiki</string>
   <string name="privacy_policy_url" fuzzy="true">https://meta.wikimedia.org/wiki/Privacy_policy/de</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Special:MyLanguage/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ/de</string>
-  <string name="terms_of_use_url">https://wikimediafoundation.org/wiki/Terms_of_Use/de</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/deed.de</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/deed.de</string>
   <string name="about_libraries_heading">Verwendete Bibliotheken</string>
@@ -172,7 +172,7 @@
   <string name="about_translators_heading">Übersetzer</string>
   <string name="about_translators_translatewiki">Diese App wurde von freiwilligen Übersetzern auf &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt; übersetzt.</string>
   <string name="about_app_license_heading">Lizenz</string>
-  <string name="about_app_license">Der Quellcode ist bei &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; und &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; unter der &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache-2.0-Lizenz&lt;/a&gt; abrufbar. Sofern nicht anders angegeben, ist der Inhalt unter einer &lt;a href=\"https://de.wikipedia.org/wiki/Wikipedia:Lizenzbestimmungen_Creative_Commons_Attribution-ShareAlike_3.0_Unported\"&gt;Creative-Commons-Attribution-ShareAlike-Lizenz&lt;/a&gt; verfügbar.</string>
+  <string name="about_app_license">Der Quellcode ist bei &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; und &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; unter der &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache-2.0-Lizenz&lt;/a&gt; abrufbar. Sofern nicht anders angegeben, ist der Inhalt unter einer &lt;a href=\"https://de.wikipedia.org/wiki/DroidWiki:Lizenzbestimmungen_Creative_Commons_Attribution-ShareAlike_3.0_Unported\"&gt;Creative-Commons-Attribution-ShareAlike-Lizenz&lt;/a&gt; verfügbar.</string>
   <string name="about_wmf">Ein Produkt der &lt;a href=\"http://m.wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Über</string>
   <string name="edit_abandon_confirm">Die Seite wurde verändert. Bist du sicher, dass du sie ohne Speichern deiner Änderungen verlassen möchtest?</string>
@@ -199,7 +199,7 @@
   <string name="abusefilter_title_warn">Dies könnte eine unkonstruktive Bearbeitung sein. Bist du sicher, dass du sie veröffentlichen möchtest?</string>
   <string name="abusefilter_title_disallow">Du kannst diese Bearbeitung nicht veröffentlichen. Bitte gehe zurück und ändere sie ab.</string>
   <string name="abusefilter_text_warn">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv identifiziert. Sie könnte eine oder mehrere der folgenden Dinge beinhalten:&lt;br /&gt;&lt;br /&gt;· Eingeben aller Kapitälchen&lt;br /&gt;· Artikel leeren oder Einbringen von Spam&lt;br /&gt;· Irrelevante externe Links oder Bilder&lt;br /&gt;· Wiederholte Zeichen</string>
-  <string name="abusefilter_text_disallow">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv oder als potenziellen Vandalismus identifiziert.&lt;br /&gt;&lt;br /&gt;Wikipedia ist eine Enzyklopädie und ausschließlich neutraler, relevanter Inhalt gehört hierher.</string>
+  <string name="abusefilter_text_disallow">Ein automatischer Filter hat diese Bearbeitung als potenziell unkonstruktiv oder als potenziellen Vandalismus identifiziert.&lt;br /&gt;&lt;br /&gt;DroidWiki ist eine Enzyklopädie und ausschließlich neutraler, relevanter Inhalt gehört hierher.</string>
   <string name="dialog_page_issues">Seitenprobleme</string>
   <string name="button_page_issues">Seitenprobleme</string>
   <string name="text_size_select">Schriftgröße</string>
@@ -214,9 +214,9 @@
   <string name="table_infobox">Schnelle Fakten</string>
   <string name="table_other">Weitere Informationen</string>
   <string name="table_close">Schließen</string>
-  <string name="widget_name_featured_page">Lesenswerte Wikipedia-Seite</string>
+  <string name="widget_name_featured_page">Lesenswerte DroidWiki-Seite</string>
   <string name="widget_title_featured_page">Seite des Tages:</string>
-  <string name="widget_name_search">Wikipedia-Suche</string>
+  <string name="widget_name_search">DroidWiki-Suche</string>
   <string name="wiktionary_no_definitions_found">Keine Definitionen gefunden.</string>
   <string name="alpha_update_notification_title">Neue Alpha-Aktualisierung verfügbar</string>
   <string name="alpha_update_notification_text">Zum Herunterladen tippen</string>
@@ -235,7 +235,7 @@
   <string name="gallery_error_video_failed">Das Video konnte nicht abgespielt werden.</string>
   <string name="gallery_save_image_write_permission_rationale">Zum Speichern von Bildern ist eine Berechtigung zum Schreiben auf den Speicher deines Gerätes erforderlich.</string>
   <string name="err_cannot_save_file">Datei konnte nicht gespeichert werden</string>
-  <string name="snippet_share_intro">Interessante Tatsache auf @Wikipedia %1$s: %2$s</string>
+  <string name="snippet_share_intro">Interessante Tatsache auf @DroidWiki %1$s: %2$s</string>
   <string name="expand_refs">Tippen zum Erweitern</string>
   <string name="share_snippet_button">Als Bild teilen</string>
   <string name="share_normal_button">Als Text teilen</string>
@@ -270,7 +270,7 @@
   <string name="error_no_maps_app">Es konnten keine Apps gefunden werden, die Richtungen zur Verfügung stellen.</string>
   <string name="preference_title_show_link_previews">Vorschaubilder von Links anzeigen</string>
   <string name="preference_summary_show_link_previews">Zeigt eine schnelle Vorschau von Artikeln beim Antippen von Links.</string>
-  <string name="nav_item_donate">Wikipedia unterstützen</string>
+  <string name="nav_item_donate">DroidWiki unterstützen</string>
   <string name="error_voice_search_not_available">Leider ist die Stimmenerkennung nicht verfügbar.</string>
   <string name="location_service_disabled">Standortdienste sind deaktiviert.</string>
   <string name="enable_location_service">Aktivieren</string>
@@ -287,14 +287,14 @@
   <string name="preference_title_prefer_offline_content">Offline-Inhalt bevorzugen</string>
   <string name="preference_summary_prefer_offline_content">Datennutzung durch das Laden von offline verfügbaren Artikeln einsparen und nicht immer die aktuelle Artikelversion laden.</string>
   <string name="preference_title_enable_offline_library">Offline-Bibliothek aktivieren</string>
-  <string name="preference_summary_enable_offline_library">Auf Wikipedia-Artikelpakete zugreifen (als .ZIM-Dateien angezeigt), die auf dein Gerät zum Offline-Lesen heruntergeladen wurden. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Mehr erfahren&lt;/a&gt;</string>
+  <string name="preference_summary_enable_offline_library">Auf DroidWiki-Artikelpakete zugreifen (als .ZIM-Dateien angezeigt), die auf dein Gerät zum Offline-Lesen heruntergeladen wurden. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Mehr erfahren&lt;/a&gt;</string>
   <string name="crash_report_dialog_title">Leider ist die App beim letzten Mal abgestürzt</string>
   <string name="crash_report_dialog_text">Möchtest du einen Absturzbericht an HockeyApp/einen Drittpartei-Diensteanbieter senden, so dass Wikimedia deinen Absturz überprüfen und den verursachenden Fehler beheben kann?</string>
   <string name="crash_report_dialog_dont_send_button">Überspringen</string>
   <string name="crash_report_dialog_always_send_button">Immer senden</string>
   <string name="crash_report_dialog_send_button">Senden</string>
   <string name="crash_report_activity_title">Anwendungsfehler</string>
-  <string name="crash_report_relaunch_or_quit">Leider ist in der Wikipedia-App ein Fehler aufgetreten.\n\nMöchtest du die App neu starten oder beenden?</string>
+  <string name="crash_report_relaunch_or_quit">Leider ist in der DroidWiki-App ein Fehler aufgetreten.\n\nMöchtest du die App neu starten oder beenden?</string>
   <string name="crash_report_relaunch">Neu starten</string>
   <string name="crash_report_quit">Beenden</string>
   <string name="article_menu_bar_bookmark">Füge diesen Artikel zu einer Leseliste hinzu</string>
@@ -368,11 +368,11 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Der Artikel erscheint in mehreren Listen</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">%s ist für keine Leseliste mehr offline verfügbar:</string>
   <string name="reading_lists_sync_reminder_title">Synchronisierung von Leselisten anschalten?</string>
-  <string name="reading_lists_sync_reminder_text">Artikel, die in Leselisten gespeichert sind, können jetzt mit deinem Wikipedia-Benutzerkonto synchronisiert werden. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Mehr erfahren&lt;/a&gt;</string>
-  <string name="reading_lists_login_reminder_text_with_link">Leselisten können jetzt zwischen deinen Geräten synchronisiert werden. Melde dich bei deinem Wikipedia-Benutzerkonto an und erlaube die Speicherung deiner Listen. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Mehr erfahren&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Artikel, die in Leselisten gespeichert sind, können jetzt mit deinem DroidWiki-Benutzerkonto synchronisiert werden. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Mehr erfahren&lt;/a&gt;</string>
+  <string name="reading_lists_login_reminder_text_with_link">Leselisten können jetzt zwischen deinen Geräten synchronisiert werden. Melde dich bei deinem DroidWiki-Benutzerkonto an und erlaube die Speicherung deiner Listen. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Mehr erfahren&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Synchronisierung aktivieren</string>
   <string name="reading_list_login_reminder_title">Leselisten synchronisieren</string>
-  <string name="reading_lists_login_reminder_text">Leselisten können jetzt zwischen Geräten synchronisiert werden. Melde dich bei deinem Wikipedia-Benutzerkonto an und erlaube die Speicherung deiner Listen.</string>
+  <string name="reading_lists_login_reminder_text">Leselisten können jetzt zwischen Geräten synchronisiert werden. Melde dich bei deinem DroidWiki-Benutzerkonto an und erlaube die Speicherung deiner Listen.</string>
   <string name="reading_lists_confirm_remote_delete">Dies wird alle bisherigen synchronisierten Leselisten aus dem Fernspeicher löschen. Fortfahren?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Ja</string>
   <string name="reading_lists_confirm_remote_delete_no">Nein</string>
@@ -389,7 +389,7 @@
   <string name="reading_list_turned_sync_off_dialog_ok">Okay</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Einstellungen</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Synchronisierung von Leselisten anschalten?</string>
-  <string name="reading_list_prompt_turned_sync_on_dialog_text">In Leselisten gespeicherte Artikel können jetzt mit deinem Wikipedia-Benutzerkonto synchronisiert werden. &lt;a href=\"#faq\"&gt;Mehr erfahren&lt;/a&gt;</string>
+  <string name="reading_list_prompt_turned_sync_on_dialog_text">In Leselisten gespeicherte Artikel können jetzt mit deinem DroidWiki-Benutzerkonto synchronisiert werden. &lt;a href=\"#faq\"&gt;Mehr erfahren&lt;/a&gt;</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Diese Nachricht nicht erneut anzeigen</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Synchronisierung aktivieren</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">Nein danke</string>
@@ -409,7 +409,7 @@
   <string name="split_reading_list_message">Es gibt eine Begrenzung auf %d Artikel pro Leseliste. Vorhandene Listen mit mehr als dieser Anzahl wurden in mehrere Listen aufgeteilt.</string>
   <string name="reading_list_article_limit_message">Der Artikel konnte nicht zu dieser Liste hinzugefügt werden. Du hast für „%1$s“ die maximale Anzahl von %2$d Artikeln pro Liste erreicht.</string>
   <string name="reading_lists_limit_message">Es können keine weiteren Listen erstellt werden. Du hast die maximale Anzahl von 100 Leselisten pro Benutzerkonto erreicht.</string>
-  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Leselisten synchronisieren&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Leselisten können jetzt zwischen Geräten synchronisiert werden. Melde dich bei deinem Wikipedia-Benutzerkonto an und erlaube die Speicherung deiner Listen.</string>
+  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Leselisten synchronisieren&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Leselisten können jetzt zwischen Geräten synchronisiert werden. Melde dich bei deinem DroidWiki-Benutzerkonto an und erlaube die Speicherung deiner Listen.</string>
   <string name="reading_lists_menu_create_list">Neue Liste erstellen</string>
   <string name="reading_lists_menu_sort_by">Sortieren nach</string>
   <string name="reading_lists_refresh_sync_option">Erneut synchronisieren</string>
@@ -424,7 +424,7 @@
   </plurals>
   <string name="user_option_sync_label">Einstellungen</string>
   <string name="notification_button_view_user">Mit dem Benutzer diskutieren</string>
-  <string name="notification_talk_title">Neue Nachricht auf Wikipedia</string>
+  <string name="notification_talk_title">Neue Nachricht auf DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; hinterließ eine Nachricht auf deiner Diskussionsseite &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Zurückgesetzte Bearbeitung</string>
   <string name="notification_reverted">Deine Bearbeitung an dem Artikel &lt;strong&gt;%2$s&lt;/strong&gt; wurde von &lt;em&gt;%1$s&lt;/em&gt; rückgängig gemacht.</string>
@@ -444,10 +444,10 @@
   <string name="view_continue_reading_card_title">Mit dem Lesen fortfahren</string>
   <string name="view_because_you_read_card_title">Weil du das gelesen hast</string>
   <string name="view_random_card_title">Zufallsgenerator</string>
-  <string name="view_random_card_subtitle">Durch zufällige Artikel aus der Wikipedia blättern.</string>
+  <string name="view_random_card_subtitle">Durch zufällige Artikel aus der DroidWiki blättern.</string>
   <string name="view_random_card_action">Würfeln</string>
   <string name="view_next_random_article">Einen anderen zufälligen Artikel laden</string>
-  <string name="view_main_page_card_title">Heute auf der Wikipedia</string>
+  <string name="view_main_page_card_title">Heute auf der DroidWiki</string>
   <string name="view_main_page_card_subtitle">Hauptseite auf %s</string>
   <string name="view_main_page_card_action">Hauptseite ansehen</string>
   <string name="view_featured_image_card_title">Bild des Tages</string>
@@ -475,15 +475,15 @@
   <string name="feed_configure_menu_reset">Standardansicht wiederherstellen</string>
   <string name="feed_configure_menu_select_all">Alle anzeigen</string>
   <string name="feed_configure_menu_deselect_all">Alle ausblenden</string>
-  <string name="feed_configure_language_warning">Beachte, dass nicht alle Cardtypen in allen Wikipedia-Sprachen verfügbar sind. Bearbeite deine ausgewählten Sprachen in den Einstellungen.</string>
+  <string name="feed_configure_language_warning">Beachte, dass nicht alle Cardtypen in allen DroidWiki-Sprachen verfügbar sind. Bearbeite deine ausgewählten Sprachen in den Einstellungen.</string>
   <string name="feed_item_type_news">Artikel über aktuelle Ereignisse</string>
   <string name="feed_item_type_on_this_day">Ereignisse in der Vergangenheit an diesem Tag</string>
   <string name="feed_item_type_continue_reading">Schneller Link zurück zum Lesen eines offenen Artikels in einer deiner Registerkarten</string>
   <string name="feed_item_type_because_you_read">Vorschläge basierend auf einem kürzlich gelesenen Artikel aus deinem Verlauf</string>
-  <string name="feed_item_type_featured_article">Täglich auf Wikipedia vorgestellter Artikel</string>
+  <string name="feed_item_type_featured_article">Täglich auf DroidWiki vorgestellter Artikel</string>
   <string name="feed_item_type_trending">Täglich meistgelesene Artikel</string>
   <string name="feed_item_type_featured_image">Täglich auf Wikimedia Commons vorgestelltes Bild</string>
-  <string name="feed_item_type_main_page">Hauptseite der Wikipedia mit täglich vorgestelltem Inhalt</string>
+  <string name="feed_item_type_main_page">Hauptseite der DroidWiki mit täglich vorgestelltem Inhalt</string>
   <string name="feed_item_type_randomizer">Zufällige Artikel zum Lesen erzeugen</string>
   <string name="feed_empty_message">Es gibt nichts in deinem Entdecken-Feed</string>
   <string name="feed_configure_onboarding_action">Anpassen</string>
@@ -498,10 +498,10 @@
   <string name="description_edit_help_wikidata_guide">Wikidata-Anleitung zum Verfassen von Beschreibungen</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction/de</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description/de#Richtlinien</string>
-  <string name="description_edit_anon_limit">Vielen Dank für dein fortwährendes Interesse an der Bearbeitung von Beschreibungen! Um zusätzliche Bearbeitungen durchzuführen, melde dich bitte bei deinem Wikipedia-Benutzerkonto an.</string>
+  <string name="description_edit_anon_limit">Vielen Dank für dein fortwährendes Interesse an der Bearbeitung von Beschreibungen! Um zusätzliche Bearbeitungen durchzuführen, melde dich bitte bei deinem DroidWiki-Benutzerkonto an.</string>
   <string name="description_edit_license_notice">Durch das Ändern der Titelbeschreibungen stimme ich den &lt;a href=\"%1$s\"&gt;Nutzungsbedingungen&lt;/a&gt; und der unwiderruflichen Veröffentlichung meiner Beiträge unter der &lt;a href=\"%2$s\"&gt;Creative-Commons-Lizenz CC0&lt;/a&gt; zu.</string>
   <string name="description_edit_success_saved">Beschreibung veröffentlicht!</string>
-  <string name="description_edit_success_encouragement">Du hast soeben Wikipedia für jeden besser gemacht</string>
+  <string name="description_edit_success_encouragement">Du hast soeben DroidWiki für jeden besser gemacht</string>
   <string name="description_edit_success_done">Fertig</string>
   <string name="description_edit_success_did_you_know">Schon gewusst?</string>
   <string name="description_edit_success_article_edit_hint">Du kannst auch Artikel innerhalb dieser App bearbeiten. Korrigiere Tippfehler und kleine Sätze, indem du das nächste Mal auf das Symbol ^1 klickst.</string>
@@ -521,8 +521,8 @@
   <string name="description_edit_help_tips_example2">Höchster Berg der Erde</string>
   <string name="description_edit_help_tips_example2_hint">Titelbeschreibung für einen Artikel über den Mount Everest</string>
   <string name="description_edit_help_more_info">Weitere Informationen</string>
-  <string name="description_edit_help_meta_info">Beschreibungen werden in Wikidata gespeichert und verwaltet, ein Projekt der Wikimedia Foundation, das eine freie, kollaborative, mehrsprachige sekundäre Datenbank bietet, die von Wikipedia und anderen Projekten unterstützt wird.</string>
-  <string name="description_edit_revert_subtitle">Vielen Dank für das Bearbeiten von Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Beschreibungen werden in Wikidata gespeichert und verwaltet, ein Projekt der Wikimedia Foundation, das eine freie, kollaborative, mehrsprachige sekundäre Datenbank bietet, die von DroidWiki und anderen Projekten unterstützt wird.</string>
+  <string name="description_edit_revert_subtitle">Vielen Dank für das Bearbeiten von DroidWiki!</string>
   <string name="description_edit_revert_intro">Wir wissen, dass du dein Bestes gegeben hast, aber einer unserer Prüfer hat Bedenken. Mögliche Gründe, warum deine Bearbeitung rückgängig gemacht wurde:</string>
   <string name="description_edit_revert_reason1">Dein Beitrag folgt keiner der &lt;a href=\"%1$s\"&gt;Richtlinien&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">Dein Beitrag sieht wie ein Experiment oder Vandalismus aus.</string>
@@ -531,7 +531,7 @@
   <string name="offline_read_permission_rationale">Zum Offline-Browsen ist eine Berechtigung für den Zugriff auf den Speicher deines Gerätes erforderlich.</string>
   <string name="offline_read_final_rationale">Es ist die Berechtigung zum Zugriff auf deinen Gerätespeicher erforderlich, um die Offline-Bibliothek zu nutzen.</string>
   <string name="offline_read_permission_error">Die Berechtigung zum Lesen vom Gerätespeicher wurde nicht gewährt.</string>
-  <string name="offline_card_sideloading_text">Du durchstöberst jetzt Wikipedia offline aufgrund der Artikelpakete in deiner Offline-Bibliothek.</string>
+  <string name="offline_card_sideloading_text">Du durchstöberst jetzt DroidWiki offline aufgrund der Artikelpakete in deiner Offline-Bibliothek.</string>
   <string name="offline_my_compilations">Meine Offline-Bibliothek verwalten</string>
   <string name="offline_compilations_title">Offline-Bibliothek</string>
   <string name="offline_compilations_search_by_name">Artikelpakete nach Namen suchen</string>
@@ -569,24 +569,24 @@
   <string name="offline_library_search_results_state">Ergebnisse von deiner Offline-Bibliothek suchen</string>
   <string name="offline_library_onboarding_button_done">Fertig</string>
   <string name="offline_library_onboarding_build_library_title">Erstelle deine Offline-Bibliothek</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Lade Wikipedia-Artikelpakete jetzt zum späteren datenfreien Zugriff herunter.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Lade DroidWiki-Artikelpakete jetzt zum späteren datenfreien Zugriff herunter.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Ununterbrochenes Lesen</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Lese und suche Artikel innerhalb deiner Offline-Bibliothek weiter, wenn du keinen Zugang zum Internet hast.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Speichere mehr Wissen</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Lade so viel Wikipedia herunter, wie dein Gerät verarbeiten kann. Deine Offline-Bibliothek kann auch auf Artikelpakete auf externen Speichern zugreifen.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Lade so viel DroidWiki herunter, wie dein Gerät verarbeiten kann. Deine Offline-Bibliothek kann auch auf Artikelpakete auf externen Speichern zugreifen.</string>
   <string name="offline_library_main_page_hint_html">Diese Hauptseite bietet eine Übersicht über die Inhalte dieses Artikelpakets.&lt;br /&gt;&lt;br /&gt;Du kannst auch die Inhalte eines beliebigen Artikelpakets in deiner Offline-Bibliothek entdecken, indem du nach verfügbaren Artikeln suchst, während du offline bist.</string>
   <string name="onboarding_skip">Überspringen</string>
   <string name="onboarding_continue">Fortfahren</string>
   <string name="onboarding_get_started">Anfangen</string>
   <string name="onboarding_welcome_title">Die freie Enzyklopädie</string>
-  <string name="onboarding_welcome_text">Wikipedia wird kollaborativ von Freiwilligen erstellt und besteht aus mehr als 40 Millionen Artikeln in fast 300 unterschiedlichen Sprachen. &lt;a href=\"#about\"&gt;Mehr erfahren&lt;/a&gt;</string>
+  <string name="onboarding_welcome_text">DroidWiki wird kollaborativ von Freiwilligen erstellt und besteht aus mehr als 40 Millionen Artikeln in fast 300 unterschiedlichen Sprachen. &lt;a href=\"#about\"&gt;Mehr erfahren&lt;/a&gt;</string>
   <string name="onboarding_explore_title">Neue Wege zum Entdecken</string>
-  <string name="onboarding_explore_text">Tauche in das Wikipedia-Kaninchenloch ein mit einem ständig aktuellen Entdecken-Feed.&lt;br/&gt; &lt;b&gt;Passe&lt;/b&gt; den Feed deinen Interessen an – ob er dir historische Ereignisse &lt;b&gt;An diesem Tag&lt;/b&gt; nahebringt oder wirf den Würfel mit &lt;b&gt;Zufällig&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Tauche in das DroidWiki-Kaninchenloch ein mit einem ständig aktuellen Entdecken-Feed.&lt;br/&gt; &lt;b&gt;Passe&lt;/b&gt; den Feed deinen Interessen an – ob er dir historische Ereignisse &lt;b&gt;An diesem Tag&lt;/b&gt; nahebringt oder wirf den Würfel mit &lt;b&gt;Zufällig&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">Zu den Leselisten speichern</string>
   <string name="onboarding_save_to_reading_lists_text">Erstelle Leselisten von Artikeln, die du später lesen möchtest, auch wenn du offline bist.</string>
   <string name="onboarding_reading_list_sync_title">Leselisten mit Synchronisierung</string>
-  <string name="onboarding_reading_list_sync_text">Erstelle Leselisten von Artikeln, die du später lesen möchtest, auch wenn du offline bist. &lt;a href=\"#login\"&gt;Melde dich an oder erstelle&lt;/a&gt; ein Wikipedia-Benutzerkonto, damit deine Leselisten immer gesichert werden.</string>
-  <string name="onboarding_reading_list_sync_text_v2">Du kannst Leselisten von Artikeln erstellen, die du später lesen möchtest, auch wenn du offline bist. &lt;br/&gt;Melde dich bei deinem Wikipedia-Benutzerkonto an, um deine Leselisten zu synchronisieren. &lt;a href=\"#login\"&gt;Wikipedia beitreten&lt;/a&gt;</string>
+  <string name="onboarding_reading_list_sync_text">Erstelle Leselisten von Artikeln, die du später lesen möchtest, auch wenn du offline bist. &lt;a href=\"#login\"&gt;Melde dich an oder erstelle&lt;/a&gt; ein DroidWiki-Benutzerkonto, damit deine Leselisten immer gesichert werden.</string>
+  <string name="onboarding_reading_list_sync_text_v2">Du kannst Leselisten von Artikeln erstellen, die du später lesen möchtest, auch wenn du offline bist. &lt;br/&gt;Melde dich bei deinem DroidWiki-Benutzerkonto an, um deine Leselisten zu synchronisieren. &lt;a href=\"#login\"&gt;DroidWiki beitreten&lt;/a&gt;</string>
   <string name="onboarding_analytics_title">Anonymisierte Daten senden</string>
   <string name="onboarding_analytics_offline_text">Hilf uns dabei, die App zu verbessern, indem du uns wissen lässt, wie du sie nutzt. Die gesammelten Daten sind anonym. &lt;a href=\"#privacy\"&gt;Mehr erfahren&lt;/a&gt;</string>
   <string name="onboarding_analytics_switch_title">Nutzungsdaten senden</string>
@@ -611,14 +611,14 @@
   <string name="languages_list_activity_title">Eine Sprache hinzufügen</string>
   <string name="languages_list_suggested_text">Vorgeschlagen</string>
   <string name="languages_list_all_text">Alle Sprachen</string>
-  <string name="wikipedia_languages_title">Wikipedia-Sprachen</string>
+  <string name="wikipedia_languages_title">DroidWiki-Sprachen</string>
   <string name="wikipedia_languages_your_languages_text">Deine Sprachen</string>
   <string name="wikipedia_languages_add_language_text">Sprache hinzufügen</string>
   <string name="wikipedia_languages_remove_text">Entfernen</string>
   <string name="wikipedia_languages_remove_action_mode_title">Sprache entfernen</string>
   <string name="wikipedia_languages_remove_dialog_title">Ausgewählte Sprache(n) entfernen?</string>
-  <string name="wikipedia_languages_remove_dialog_content">Du wirst nur die Inhalte im Entdecken-Feed und Schnellsuchfilter für die verbleibenden Wikipedia-Sprachen sehen.</string>
+  <string name="wikipedia_languages_remove_dialog_content">Du wirst nur die Inhalte im Entdecken-Feed und Schnellsuchfilter für die verbleibenden DroidWiki-Sprachen sehen.</string>
   <string name="wikipedia_languages_remove_warning_dialog_title">Es konnten nicht alle Sprachen entfernt werden</string>
-  <string name="wikipedia_languages_remove_warning_dialog_content">Mindestens eine Wikipedia-Sprache für die Suche und das Lesen von Inhalten behalten.</string>
+  <string name="wikipedia_languages_remove_warning_dialog_content">Mindestens eine DroidWiki-Sprache für die Suche und das Lesen von Inhalten behalten.</string>
   <string name="more_language_options">mehr</string>
 </resources>

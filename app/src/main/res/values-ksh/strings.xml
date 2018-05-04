@@ -69,7 +69,7 @@
   <string name="toast_logout_complete">Ußjelogg</string>
   <string name="history_empty_title" fuzzy="true">Kein köözlesche Sigge heh!</string>
   <string name="history_empty_message" fuzzy="true">Do hä se velleisch alle fott jeschmeße. Et nähkste Mohl woh de obb en Sigg jeihß, kanns De op se zeröck jonn.</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKKIPEHDIJ&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Metmaacher_Nahme</string>
   <string name="create_account_activity_title">Ene neue Zohjang aanmälde</string>
   <string name="dialog_create_account_checking_progress">Pröhve</string>
@@ -82,11 +82,11 @@
   <string name="create_account_button">Ene neue Zohjang aanmälde</string>
   <string name="preferences_general_heading">Alljemein</string>
   <string name="wikipedia_app_faq">Öff jeschtallte Frohre övver de Wikkipedija Äpp</string>
-  <string name="zero_charged_verbiage">De Wikipedia Zero es uß.</string>
+  <string name="zero_charged_verbiage">De DroidWiki Zero es uß.</string>
   <string name="zero_warn_when_leaving">Donn warne, wann de Wikkipehdija Zero ophührt.</string>
-  <string name="zero_webpage_title">Öff jeschtallte Frohre övver de Wikipedia Zero, un de Antwoote dozoh</string>
-  <string name="zero_wikipedia_zero_heading">De Wikipedia Zero</string>
-  <string name="zero_interstitial_title">De Wikipedia Zero hührd jäz op</string>
+  <string name="zero_webpage_title">Öff jeschtallte Frohre övver de DroidWiki Zero, un de Antwoote dozoh</string>
+  <string name="zero_wikipedia_zero_heading">De DroidWiki Zero</string>
+  <string name="zero_interstitial_title">De DroidWiki Zero hührd jäz op</string>
   <string name="zero_interstitial_leave_app">Dat künnt Jäld koste för de Dahte ze övverdrahre. Wells De trozdämm op di Sigg ußerhallef jonn?</string>
   <string name="zero_interstitial_continue">Jangk fott</string>
   <string name="zero_interstitial_cancel">Bliehv heh</string>
@@ -114,7 +114,7 @@
   <string name="privacy_policy_description">Rääjelle för der Daateschotz un de Jeheimhaldung</string>
   <string name="terms_of_use_description">Bedengonge för der Jebruch</string>
   <string name="privacy_policy_url" fuzzy="true">https://m.wikimediafoundation.org/wiki/Privacy_Policy/ksh</string>
-  <string name="terms_of_use_url">//m.wikimediafoundation.org/wiki/Terms_of_Use/ksh</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="about_libraries_heading">Jebruchte Projrammbibblijothke</string>
   <string name="about_contributors_heading">Schrihver</string>
   <string name="about_translators_heading">Övversäzer</string>

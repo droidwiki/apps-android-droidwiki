@@ -92,7 +92,7 @@
   <string name="history_empty_message">აკონტროლეთ რაც უკვე წაიკითხეთ.</string>
   <string name="search_empty_message">მოძებნეთ და წაიკითხეთ თავისუფალ ენციკლოპედიაში თქვენს მშობლიურ ენაზე</string>
   <string name="delete_selected_items">არჩეული ელემენტების წაშლა</string>
-  <string name="wp_stylized">&lt;big&gt;ვ&lt;/big&gt;იკიპედი&lt;big&gt;ა&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">მომხმარებლის სახელი</string>
   <string name="login_dont_have_account">არ გაქვთ ანგარიში?</string>
   <string name="login_join_wikipedia">შემოუერთდი ვიკიპედიას</string>
@@ -202,7 +202,7 @@
   <string name="gallery_error_video_failed">ამ ვიდეოს გახსნა ვერ მოხერხდა.</string>
   <string name="gallery_save_image_write_permission_rationale">თქვენი მოწყობილობის მეხსიერებაში ჩასაწერად საჭიროა სურათების შენახვა.</string>
   <string name="err_cannot_save_file">ფაილი ვერ შეინახა</string>
-  <string name="snippet_share_intro">„%1$s“ საიტზე @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">„%1$s“ საიტზე @DroidWiki: %2$s</string>
   <string name="expand_refs">გადიდებისათვის დააჭირეთ</string>
   <string name="share_snippet_button">სურათად გაზიარება</string>
   <string name="share_normal_button">ტექსტად გაზიარება</string>

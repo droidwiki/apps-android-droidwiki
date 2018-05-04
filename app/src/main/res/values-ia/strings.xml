@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alpha</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Cercar in Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alpha</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Cercar in DroidWiki</string>
   <string name="nav_item_history">Historia</string>
   <string name="error_network_error">Il non es possibile connecter se a Internet.</string>
   <string name="page_error_retry">Reprobar</string>
@@ -33,7 +33,7 @@
   <string name="content_license_html">Content is available under &lt;a href=\"%1$s\"&gt;CC BY-SA 3.0&lt;/a&gt; unless otherwise noted</string>
   <string name="edit_save_action_license_logged_in">By saving, you agree to the &lt;a href=\"%1$s\"&gt;Terms of Use&lt;/a&gt;, and to irrevocably release your contributions under the &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; license.</string>
   <string name="edit_save_action_license_anon" fuzzy="true">By saving, you agree to the &lt;a href=\"%1$s\"&gt;Terms of Use&lt;/a&gt;, and to irrevocably release your contributions under the &lt;a href=\"%2$s\"&gt;CC BY-SA 3.0&lt;/a&gt; license. Edits will be attributed to the IP address of your device. If you &lt;a href=\"https://#login\"&gt;log in&lt;/a&gt;, you will have more privacy.</string>
-  <string name="preference_title_language">Lingua de Wikipedia</string>
+  <string name="preference_title_language">Lingua de DroidWiki</string>
   <string name="preference_languages_filter_hint">Cercar</string>
   <string name="langlinks_filter_hint">Cercar</string>
   <string name="langlinks_empty">Iste pagina non es disponibile in altere linguas</string>
@@ -54,11 +54,11 @@
   <string name="edit_section_captcha_hint">Repete le parolas de supra</string>
   <string name="title_captcha">Scribe le CAPTCHA</string>
   <string name="edit_section_captcha_reload">Tocca CAPTCHA pro recargar</string>
-  <string name="nav_item_login">Aperir session in Wikipedia</string>
+  <string name="nav_item_login">Aperir session in DroidWiki</string>
   <string name="login_username_hint">Nomine de usator</string>
   <string name="login_password_hint">Contrasigno</string>
   <string name="menu_login">Aperir session</string>
-  <string name="login_activity_title">Aperir session in Wikipedia</string>
+  <string name="login_activity_title">Aperir session in DroidWiki</string>
   <string name="login_in_progress_dialog_message">Accesso in curso…</string>
   <string name="login_success_toast">Session aperite con successo!</string>
   <string name="preference_title_logout">Clauder session</string>
@@ -76,11 +76,11 @@
   <string name="create_account_next">Sequente</string>
   <string name="create_account_button">Crear conto</string>
   <string name="preferences_general_heading">General</string>
-  <string name="wikipedia_app_faq">FAQ re app Wikipedia</string>
-  <string name="zero_charged_verbiage" fuzzy="true">Wikipedia Zero es disactivate</string>
-  <string name="zero_warn_when_leaving">Advertir al momento de quitar Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Tu quita Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">FAQ re app DroidWiki</string>
+  <string name="zero_charged_verbiage" fuzzy="true">DroidWiki Zero es disactivate</string>
+  <string name="zero_warn_when_leaving">Advertir al momento de quitar DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Tu quita DroidWiki Zero</string>
   <string name="zero_interstitial_continue">Quitar</string>
   <string name="zero_interstitial_cancel">Restar</string>
   <string name="zero_learn_more_learn_more" fuzzy="true">Leger plus</string>
@@ -89,7 +89,7 @@
   <string name="create_account_account_created_toast">Conto create!</string>
   <string name="history_search_list_hint">Cercar in le historia</string>
   <string name="page_protected_can_not_edit_title">Iste pagina es protegite</string>
-  <string name="about_description">A proposito del app Wikipedia</string>
+  <string name="about_description">A proposito del app DroidWiki</string>
   <string name="privacy_policy_description">Politica de confidentialitate</string>
   <string name="terms_of_use_description">Conditiones de uso</string>
   <string name="about_libraries_heading">Bibliothecas usate</string>
@@ -122,7 +122,7 @@
   <string name="table_infobox">Factos in breve</string>
   <string name="table_other">Plus de informationes</string>
   <string name="table_close">Clauder</string>
-  <string name="widget_name_featured_page">Pagina de Wikipedia in prime plano</string>
+  <string name="widget_name_featured_page">Pagina de DroidWiki in prime plano</string>
   <string name="widget_title_featured_page">Pagina in prime plano de hodie:</string>
   <string name="dialog_close_description">Clauder</string>
   <string name="preference_title_show_images">Monstrar imagines</string>
@@ -133,7 +133,7 @@
   <string name="gallery_share_error">Non poteva divider imagine: %s</string>
   <string name="gallery_save_success">File salveguardate correctemente.</string>
   <string name="err_cannot_save_file">Impossibile salveguardar le file</string>
-  <string name="snippet_share_intro">\"%1$s\" sur @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" sur @DroidWiki: %2$s</string>
   <string name="expand_refs">Tocca pro displicar</string>
   <string name="share_snippet_button">Divider como imagine</string>
   <string name="share_normal_button">Divider como texto</string>

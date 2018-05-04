@@ -65,7 +65,7 @@
   <string name="login_success_toast">Têketin serkeftî bû!</string>
   <string name="preference_title_logout">Derkeve</string>
   <string name="history_empty_title">Rûpelên ku te di demên dawî de dîtibe tine ne!</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;ÎKÎPEDIY&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Navê bikarhêner</string>
   <string name="login_dont_have_account">Hesabek te tine ye?</string>
   <string name="login_join_wikipedia">Beşdarê Wîkîpediyayê bibe</string>

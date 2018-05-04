@@ -6,11 +6,11 @@
 * Vignir
 -->
 <resources>
-  <string name="app_name_prod">Wikipedia</string>
-  <string name="app_name_beta">Wikipedia Beta</string>
-  <string name="app_name_alpha">Wikipedia Alfa</string>
-  <string name="wikimedia">Wikimedia</string>
-  <string name="search_hint">Leita á Wikipedia</string>
+  <string name="app_name_prod">DroidWiki</string>
+  <string name="app_name_beta">DroidWiki Beta</string>
+  <string name="app_name_alpha">DroidWiki Alfa</string>
+  <string name="wikimedia">DroidWiki</string>
+  <string name="search_hint">Leita á DroidWiki</string>
   <string name="search_hint_search_history">Leitarferill</string>
   <string name="search_hint_search_my_lists">Leita í listunum mínum</string>
   <string name="search_hint_search_reading_list">Leita í leslista</string>
@@ -79,13 +79,13 @@
   <string name="edit_section_captcha_hint">Endurtaktu orðin að ofan</string>
   <string name="title_captcha">Settu inn CAPTCHA</string>
   <string name="edit_section_captcha_reload">Banka á CAPTCHA til að endurhlaða</string>
-  <string name="nav_item_login">Skrá inn á Wikipedia</string>
+  <string name="nav_item_login">Skrá inn á DroidWiki</string>
   <string name="login_username_hint">Notandanafn</string>
   <string name="login_password_hint">Lykilorð</string>
   <string name="login_2fa_hint">Tveggja-þrepa auðkenningarkóði</string>
   <string name="login_2fa_other_workflow_error_msg">Krafist er tveggja-þrepa auðkenningar! Snúðu aftur í aðalverkefnið og skráðu þig inn með 2FA-teikninu þínu, prófaðu svo aftur.</string>
   <string name="menu_login">Skrá inn</string>
-  <string name="login_activity_title">Skrá inn á Wikipedia</string>
+  <string name="login_activity_title">Skrá inn á DroidWiki</string>
   <string name="login_in_progress_dialog_message">Skráir þig inn…</string>
   <string name="login_success_toast">Sending tókst!</string>
   <string name="preference_title_logout">Skrá út</string>
@@ -94,10 +94,10 @@
   <string name="history_empty_message">Haltu utan um það sem þú hefur verið að lesa hérna.</string>
   <string name="search_empty_message">Leitaðu og lestu í frjálsa alfræðiorðasafninu á móðurmálinu þínu</string>
   <string name="delete_selected_items">Eyða völdum atriðum</string>
-  <string name="wp_stylized">&lt;big&gt;W&lt;/big&gt;IKIPEDI&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Notandanafn</string>
   <string name="login_dont_have_account">Ekki með aðgang?</string>
-  <string name="login_join_wikipedia">Skráðu þig hjá Wikipedia</string>
+  <string name="login_join_wikipedia">Skráðu þig hjá DroidWiki</string>
   <string name="login_forgot_password">Gleymt lykilorð?</string>
   <string name="create_account_already_have">Ertu með aðgang?</string>
   <string name="create_account_activity_title">Stofnaðu aðgang</string>
@@ -113,17 +113,17 @@
   <string name="create_account_button">Stofna aðgang</string>
   <string name="create_account_name_unavailable">Notandanafnið \"%s\" er ekki tiltækt. Veldu eitthvað annað nafn.</string>
   <string name="preferences_general_heading">Almennt</string>
-  <string name="wikipedia_app_faq">Algengar spurningar um Wikipedia Zero</string>
-  <string name="zero_charged_verbiage">Frjáls aðgangur að Wikipedia er ekki lengur virkur.</string>
-  <string name="zero_warn_when_leaving">Áminna mig ef ég fer burt af Wikipedia Zero</string>
-  <string name="zero_warn_when_leaving_summary">Ef símafyrirtækið þitt krefst greiðslu vegna gagnanotkunar í Wikipedia-appinu á Wikipedia Zero, ef þú hakar við þennan reit hjálpar það til að vita þegar þú ferð af síðum Wikipedia-appsins og átt á hættu að fá bakreikninga.</string>
-  <string name="zero_webpage_title">Algengar spurningar um Wikipedia Zero</string>
-  <string name="zero_wikipedia_zero_heading">Wikipedia Zero</string>
-  <string name="zero_interstitial_title">Fer burt af Wikipedia Zero</string>
+  <string name="wikipedia_app_faq">Algengar spurningar um DroidWiki Zero</string>
+  <string name="zero_charged_verbiage">Frjáls aðgangur að DroidWiki er ekki lengur virkur.</string>
+  <string name="zero_warn_when_leaving">Áminna mig ef ég fer burt af DroidWiki Zero</string>
+  <string name="zero_warn_when_leaving_summary">Ef símafyrirtækið þitt krefst greiðslu vegna gagnanotkunar í DroidWiki-appinu á DroidWiki Zero, ef þú hakar við þennan reit hjálpar það til að vita þegar þú ferð af síðum DroidWiki-appsins og átt á hættu að fá bakreikninga.</string>
+  <string name="zero_webpage_title">Algengar spurningar um DroidWiki Zero</string>
+  <string name="zero_wikipedia_zero_heading">DroidWiki Zero</string>
+  <string name="zero_interstitial_title">Fer burt af DroidWiki Zero</string>
   <string name="zero_interstitial_leave_app">Kostnaður vegna niðurhals gagna getur kannski orðið. Halda áfram á ytri vef?</string>
   <string name="zero_interstitial_continue">Fara</string>
   <string name="zero_interstitial_cancel">Vera hér</string>
-  <string name="zero_learn_more">Símafyrirtæki þitt býður upp á ókeypis aðgang að efni á Wikipedia!</string>
+  <string name="zero_learn_more">Símafyrirtæki þitt býður upp á ókeypis aðgang að efni á DroidWiki!</string>
   <string name="zero_learn_more_learn_more">Vita meira</string>
   <string name="zero_learn_more_dismiss">Hafna</string>
   <string name="edit_preview_fetching_dialog_message">Sæki forskoðun…</string>
@@ -135,8 +135,8 @@
   <string name="preferences_heading_experimental">Á tilraunastigi</string>
   <string name="preference_title_sync_reading_lists">Samstilla leslista</string>
   <string name="preference_title_sync_reading_lists_from_account">Virkja samstillingu leslista</string>
-  <string name="preference_summary_sync_reading_lists">Samstilla leslista á milli mismunandi tækja með því að vista þá á Wikipedia-notandaaðganginn þinn</string>
-  <string name="preference_summary_sync_reading_lists_from_account">Samstilla leslista á milli mismunandi tækja með því að vista þá á Wikipedia-notandaaðganginn \"%s\"</string>
+  <string name="preference_summary_sync_reading_lists">Samstilla leslista á milli mismunandi tækja með því að vista þá á DroidWiki-notandaaðganginn þinn</string>
+  <string name="preference_summary_sync_reading_lists_from_account">Samstilla leslista á milli mismunandi tækja með því að vista þá á DroidWiki-notandaaðganginn \"%s\"</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_title">Fjarlægja samstillta leslista af %s?</string>
   <string name="preference_dialog_of_turning_off_reading_list_sync_text">Þetta mun eyða öllum áður samstilltum leslistum af fjartengdu gagnageymslunni. Fjarlægja alla samstillta leslista af \"%s notandaaðganginum þínum?</string>
   <string name="preferences_privacy_settings_heading">Gagnaleynd</string>
@@ -155,14 +155,14 @@
   <string name="page_protected_can_not_edit_title">Þessi síða er varin</string>
   <string name="settings_item_preferences">Stillingar</string>
   <string name="settings_activity_title">Stillingar</string>
-  <string name="about_description">Um Wikipedia-appið</string>
+  <string name="about_description">Um DroidWiki-appið</string>
   <string name="privacy_policy_description">Meðferð persónuupplýsinga</string>
   <string name="terms_of_use_description">Notkunarskilmálar</string>
-  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/Wikipedia:About</string>
-  <string name="privacy_policy_url">https://m.wikimediafoundation.org/wiki/Privacy_policy</string>
+  <string name="about_wikipedia_url">https://en.m.wikipedia.org/wiki/DroidWiki:About</string>
+  <string name="privacy_policy_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="offline_reading_and_data_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Offline_reading_and_data</string>
   <string name="android_app_faq_url">https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ</string>
-  <string name="terms_of_use_url">https://m.wikimediafoundation.org/wiki/Terms_of_Use</string>
+  <string name="terms_of_use_url">https://www.droidwiki.org/wiki/DroidWiki:Impressum#Datenschutz</string>
   <string name="cc_by_sa_3_url">https://creativecommons.org/licenses/by-sa/3.0/</string>
   <string name="cc_0_url">https://creativecommons.org/publicdomain/zero/1.0/</string>
   <string name="about_libraries_heading">notuð aðgerðasöfn</string>
@@ -170,7 +170,7 @@
   <string name="about_translators_heading">þýðendur</string>
   <string name="about_translators_translatewiki">Þetta forrit/app var þýtt af sjálfboðaliðum á &lt;a href=\"https://translatewiki.net\"&gt;translatewiki.net&lt;/a&gt;.</string>
   <string name="about_app_license_heading">Notkunarleyfi</string>
-  <string name="about_app_license">Grunnkóðinn er tiltækur á &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; og &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; með &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 notkunarleyfinu&lt;/a&gt;. Ef ekkert annað er tekið fram, er allt efnið tiltækt með &lt;a href=\"https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike notkunarleyfi&lt;/a&gt;.</string>
+  <string name="about_app_license">Grunnkóðinn er tiltækur á &lt;a href=\"https://gerrit.wikimedia.org/r/#/admin/projects/apps/android/wikipedia\"&gt;Gerrit&lt;/a&gt; og &lt;a href=\"https://github.com/wikimedia/apps-android-wikipedia\"&gt;GitHub&lt;/a&gt; með &lt;a href=\"https://phabricator.wikimedia.org/diffusion/APAW/browse/master/COPYING?view=raw\"&gt;Apache 2.0 notkunarleyfinu&lt;/a&gt;. Ef ekkert annað er tekið fram, er allt efnið tiltækt með &lt;a href=\"https://en.wikipedia.org/wiki/DroidWiki:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License\"&gt;Creative Commons Attribution-ShareAlike notkunarleyfi&lt;/a&gt;.</string>
   <string name="about_wmf">Í boði &lt;a href=\"http://wikimediafoundation.org/wiki/Home\"&gt;Wikimedia Foundation&lt;/a&gt;</string>
   <string name="about_activity_title">Um hugbúnaðinn</string>
   <string name="edit_abandon_confirm">Síðunni hefur verið breytt. Ertu viss um að þú viljir hætta án þess að vista breytingarnar þínar ?</string>
@@ -197,7 +197,7 @@
   <string name="abusefilter_title_warn">Þetta lítur ekki út fyrir að vera uppbyggileg breyting, ert þú viss um að þú viljir birta hana?</string>
   <string name="abusefilter_title_disallow">Þú getur ekki gefið út þessa breytingu. Farðu til baka og breyttu henni.</string>
   <string name="abusefilter_text_warn">Sjálfvirk sía hefur greint þessa breytingu sem mögulega eyðileggjandi. Hún gæti innihaldið eitt af eftirtöldu:&lt;br /&gt;&lt;br /&gt;· Eintómir hástafir&lt;br /&gt;· Tæming greina eða þvaður&lt;br /&gt;· Óviðeigandi ytri tenglar eða myndir&lt;br /&gt;· Endurteknir stafir</string>
-  <string name="abusefilter_text_disallow">Sjálfvirk sía hefur greint þessa breytingu sem eyðileggjandi eða sem tilraun til skemmdarverks. &lt;br /&gt;&lt;br /&gt;Wikipedia er alfræðirit og því tilheyrir aðeins hlutlaust og markvert efni.</string>
+  <string name="abusefilter_text_disallow">Sjálfvirk sía hefur greint þessa breytingu sem eyðileggjandi eða sem tilraun til skemmdarverks. &lt;br /&gt;&lt;br /&gt;DroidWiki er alfræðirit og því tilheyrir aðeins hlutlaust og markvert efni.</string>
   <string name="dialog_page_issues">Vandamál varðandi síðu</string>
   <string name="button_page_issues">Vandamál varðandi síðu</string>
   <string name="text_size_select">Leturstærð</string>
@@ -212,9 +212,9 @@
   <string name="table_infobox">Staðreyndir strax</string>
   <string name="table_other">Nánari upplýsingar</string>
   <string name="table_close">Loka</string>
-  <string name="widget_name_featured_page">Forsíða Wikipedia</string>
-  <string name="widget_title_featured_page">Forsíða Wikipedia í dag:</string>
-  <string name="widget_name_search">Wikipedia-leit</string>
+  <string name="widget_name_featured_page">Forsíða DroidWiki</string>
+  <string name="widget_title_featured_page">Forsíða DroidWiki í dag:</string>
+  <string name="widget_name_search">DroidWiki-leit</string>
   <string name="wiktionary_no_definitions_found">Engar skilgreiningar fundust.</string>
   <string name="alpha_update_notification_title">Ný alfa-uppfærsla tiltæk</string>
   <string name="alpha_update_notification_text">Banka til að sækja</string>
@@ -233,7 +233,7 @@
   <string name="gallery_error_video_failed">Tókst ekki að spila myndskeiðið.</string>
   <string name="gallery_save_image_write_permission_rationale">Til að vista myndir er nauðsynlegt að hafa heimild til að skrifa í gagnageymslu tækisins.</string>
   <string name="err_cannot_save_file">Gat ekki vistað skrá</string>
-  <string name="snippet_share_intro">\"%1$s\" á @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" á @DroidWiki: %2$s</string>
   <string name="expand_refs">Banka til að stækka</string>
   <string name="share_snippet_button">Deila sem mynd</string>
   <string name="share_normal_button">Deila sem texta</string>
@@ -268,7 +268,7 @@
   <string name="error_no_maps_app">Gat ekki fundið nein forrit fyrir kortaleiðsögn.</string>
   <string name="preference_title_show_link_previews">Birta forskoðun tengla</string>
   <string name="preference_summary_show_link_previews">Birta flýtiforskoðun greina þegar bankað er á tengla.</string>
-  <string name="nav_item_donate">Styðja Wikipedia</string>
+  <string name="nav_item_donate">Styðja DroidWiki</string>
   <string name="error_voice_search_not_available">Því miður, talgreining er ekki tiltæk.</string>
   <string name="location_service_disabled">Staðsetningarþjónustur eru óvirkar.</string>
   <string name="enable_location_service">Virkja</string>
@@ -285,14 +285,14 @@
   <string name="preference_title_prefer_offline_content">Kjósa helst efni án nettengingar</string>
   <string name="preference_summary_prefer_offline_content">Sparaðu gagnamagn með því að hlaða inn greinum sem tiltækar eru án nettengingar fremur en að hlaða alltaf inn nýjustu útgáfu greina</string>
   <string name="preference_title_enable_offline_library">Virkja safn utan nettengingar</string>
-  <string name="preference_summary_enable_offline_library">Fáðu aðgang að Wikipedia-greinapökkum (sýndar sem .ZIM skrár) sem halað hefur verið inn á tækið þitt til lestrar án nettengingar. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Skoða þetta nánar&lt;/a&gt;</string>
+  <string name="preference_summary_enable_offline_library">Fáðu aðgang að DroidWiki-greinapökkum (sýndar sem .ZIM skrár) sem halað hefur verið inn á tækið þitt til lestrar án nettengingar. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Offline_support\"&gt;Skoða þetta nánar&lt;/a&gt;</string>
   <string name="crash_report_dialog_title">Því miður, appið hrundi síðast</string>
   <string name="crash_report_dialog_text">Viltu senda tilkynningu um hrunið til HockeyApp eða annarar slíkrar utanaðkomandi þjónustu þannig að Wikimedia geti skoðað hvað fór úrskeiðis?</string>
   <string name="crash_report_dialog_dont_send_button">Sleppa</string>
   <string name="crash_report_dialog_always_send_button">Alltaf senda</string>
   <string name="crash_report_dialog_send_button">Senda</string>
   <string name="crash_report_activity_title">Villa í forriti</string>
-  <string name="crash_report_relaunch_or_quit">Því miður, Wikipedia-appið varð fyrir villu og vað þessvegna lokað.\n\nViltu byrja aftur eða hætta alveg?</string>
+  <string name="crash_report_relaunch_or_quit">Því miður, DroidWiki-appið varð fyrir villu og vað þessvegna lokað.\n\nViltu byrja aftur eða hætta alveg?</string>
   <string name="crash_report_relaunch">Byrja aftur</string>
   <string name="crash_report_quit">Hætta</string>
   <string name="article_menu_bar_bookmark">Bæta þessari grein á leslista</string>
@@ -366,11 +366,11 @@
   <string name="reading_list_confirm_remove_article_from_offline_title">Greinin er á mörgum listum</string>
   <string name="reading_list_confirm_remove_article_from_offline_message">%s verður ekki lengur tiltækt án nettengingar úr öllum leslistum:</string>
   <string name="reading_lists_sync_reminder_title">Kveikja á samstillingu leslista?</string>
-  <string name="reading_lists_sync_reminder_text">Nú er hægt að samstilla greinar sem vistaðar hafa verið í leslista við Wikipedia-aðganginn þinn. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Læra meira&lt;/a&gt;</string>
-  <string name="reading_lists_login_reminder_text_with_link">Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á Wikipedia-aðganginn þinn og leyfðu vistun á leslistunum þínum. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Vita meira&lt;/a&gt;</string>
+  <string name="reading_lists_sync_reminder_text">Nú er hægt að samstilla greinar sem vistaðar hafa verið í leslista við DroidWiki-aðganginn þinn. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Læra meira&lt;/a&gt;</string>
+  <string name="reading_lists_login_reminder_text_with_link">Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á DroidWiki-aðganginn þinn og leyfðu vistun á leslistunum þínum. &lt;a href=\"https://www.mediawiki.org/wiki/Wikimedia_Apps/Android_FAQ#Synced_reading_lists\"&gt;Vita meira&lt;/a&gt;</string>
   <string name="reading_lists_sync_reminder_action">Virkja samstillingu</string>
   <string name="reading_list_login_reminder_title">Samstilla leslista</string>
-  <string name="reading_lists_login_reminder_text">Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á Wikipedia-aðganginn þinn og leyfðu vistun á leslistunum þínum.</string>
+  <string name="reading_lists_login_reminder_text">Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á DroidWiki-aðganginn þinn og leyfðu vistun á leslistunum þínum.</string>
   <string name="reading_lists_confirm_remote_delete">Þetta mun eyða öllum áður samstilltum leslistum af fjartengdu gagnageymslunni. Halda áfram?</string>
   <string name="reading_lists_confirm_remote_delete_yes">Já</string>
   <string name="reading_lists_confirm_remote_delete_no">Nei</string>
@@ -387,7 +387,7 @@
   <string name="reading_list_turned_sync_off_dialog_ok">Í lagi</string>
   <string name="reading_list_turned_sync_off_dialog_settings">Stillingar</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_title">Kveikja á samstillingu leslista?</string>
-  <string name="reading_list_prompt_turned_sync_on_dialog_text">Nú er hægt að samstilla greinar sem vistaðar hafa verið í leslista við Wikipedia-aðganginn þinn. &lt;a href=\"#faq\"&gt;Læra meira&lt;/a&gt;</string>
+  <string name="reading_list_prompt_turned_sync_on_dialog_text">Nú er hægt að samstilla greinar sem vistaðar hafa verið í leslista við DroidWiki-aðganginn þinn. &lt;a href=\"#faq\"&gt;Læra meira&lt;/a&gt;</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_do_not_show">Ekki sýna þessi skilaboð aftur</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_enable_syncing">Virkja samstillingu</string>
   <string name="reading_list_prompt_turned_sync_on_dialog_no_thanks">Nei, takk</string>
@@ -407,7 +407,7 @@
   <string name="split_reading_list_message">Leslistar eru takmarkaðir við %d greinar. Fyrirliggjandi listum sem hafa fleiri greinar en þau mörk, hefur verið skipt upp í fleiri lista.</string>
   <string name="reading_list_article_limit_message">Get ekki bætt á þennan lista. Þú hefur náð %2$d greina takmörkum á hvern lista fyrir \"%1$s\".</string>
   <string name="reading_lists_limit_message">Get ekki búið til annan lista. Þú hefur náð 100 leslista takmörkum á hvern notandaaðgang.</string>
-  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Samstilling leslista&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á Wikipedia-aðganginn þinn og leyfðu vistun á leslistunum þínum.</string>
+  <string name="feed_reading_lists_sync_onboarding_text">&lt;strong&gt;Samstilling leslista&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Nú er hægt að samstilla leslista á milli tækja. Skráðu þig inn á DroidWiki-aðganginn þinn og leyfðu vistun á leslistunum þínum.</string>
   <string name="reading_lists_menu_create_list">Búa til nýjan lista</string>
   <string name="reading_lists_menu_sort_by">Raða eftir</string>
   <string name="reading_lists_refresh_sync_option">Uppfæra samstillingu</string>
@@ -422,7 +422,7 @@
   </plurals>
   <string name="user_option_sync_label">Kjörstillingar</string>
   <string name="notification_button_view_user">Tala við notandann</string>
-  <string name="notification_talk_title">Ný skilaboð á Wikipedia</string>
+  <string name="notification_talk_title">Ný skilaboð á DroidWiki</string>
   <string name="notification_talk">&lt;em&gt;%1$s&lt;/em&gt; skildi eftir skilaboð á spjallsíðunni þinni &lt;strong&gt;%2$s&lt;/strong&gt;</string>
   <string name="notification_reverted_title">Afturkölluð breyting</string>
   <string name="notification_reverted">Breyting þín á greininni &lt;strong&gt;%2$s&lt;/strong&gt; var tekin aftur af &lt;em&gt;%1$s&lt;/em&gt;.</string>
@@ -442,10 +442,10 @@
   <string name="view_continue_reading_card_title">Halda lestri áfram</string>
   <string name="view_because_you_read_card_title">Því þú last</string>
   <string name="view_random_card_title">Slembið</string>
-  <string name="view_random_card_subtitle">Flettu í gegnum handahófsvaldar greinar af Wikipedia.</string>
+  <string name="view_random_card_subtitle">Flettu í gegnum handahófsvaldar greinar af DroidWiki.</string>
   <string name="view_random_card_action">Kasta teningnum</string>
   <string name="view_next_random_article">Hlaða inn annari handahófsvalinni grein</string>
-  <string name="view_main_page_card_title">Í dag á Wikipedia</string>
+  <string name="view_main_page_card_title">Í dag á DroidWiki</string>
   <string name="view_main_page_card_subtitle">Forsíða þann %s</string>
   <string name="view_main_page_card_action">Skoða forsíðu</string>
   <string name="view_featured_image_card_title">Mynd dagsins</string>
@@ -477,10 +477,10 @@
   <string name="feed_item_type_on_this_day">Sögulegir atburðir á þessum degi</string>
   <string name="feed_item_type_continue_reading">Flýtitengill til baka til að lesa opna grein í einum af flipunum þínum</string>
   <string name="feed_item_type_because_you_read">Uppástungur byggðar á nýlesnum greinum í ferilskránni þinni</string>
-  <string name="feed_item_type_featured_article">Forsíðugrein dagsins á Wikipedia</string>
+  <string name="feed_item_type_featured_article">Forsíðugrein dagsins á DroidWiki</string>
   <string name="feed_item_type_trending">Mest lesnu greinar dagsins</string>
   <string name="feed_item_type_featured_image">Forsíðumynd dagsins frá Wikimedia Commons</string>
-  <string name="feed_item_type_main_page">Aðalsíða Wikipedia með úrvalsefni dagsins</string>
+  <string name="feed_item_type_main_page">Aðalsíða DroidWiki með úrvalsefni dagsins</string>
   <string name="feed_item_type_randomizer">Útbúðu handahófsvaldar greinar til að lesa</string>
   <string name="feed_empty_message">Það er ekkert á \'Uppgötva\'-streyminu þínu</string>
   <string name="feed_configure_onboarding_action">Sérsníða</string>
@@ -495,10 +495,10 @@
   <string name="description_edit_help_wikidata_guide">Leiðarvísir Wikidata fyrir hvernig eigi að skrifa lýsingar</string>
   <string name="wikidata_about_url">https://www.wikidata.org/wiki/Wikidata:Introduction</string>
   <string name="wikidata_description_guide_url">https://www.wikidata.org/wiki/Help:Description#Guidelines_for_descriptions_in_English</string>
-  <string name="description_edit_anon_limit">Takk fyrir viðvarandi áhuga þinn á að vinna með lýsingar. Til að gera fleiri breytingar, ættirðu að skrá þig inn á Wikipedia notandaaðganginn þinn.</string>
+  <string name="description_edit_anon_limit">Takk fyrir viðvarandi áhuga þinn á að vinna með lýsingar. Til að gera fleiri breytingar, ættirðu að skrá þig inn á DroidWiki notandaaðganginn þinn.</string>
   <string name="description_edit_license_notice">Með því að breyta lýsingu á þessum titli, samþykkir þú &lt;a href=\"%1$s\"&gt;notkunarskilmálana&lt;/a&gt; og að þú gefir óafturkræft út framlög þín með &lt;a href=\"%2$s\"&gt;Creative Commons CC0&lt;/a&gt; notkunarleyfi.</string>
   <string name="description_edit_success_saved">Lýsing birt!</string>
-  <string name="description_edit_success_encouragement">Þú varst að gera Wikipedia betri fyrir alla</string>
+  <string name="description_edit_success_encouragement">Þú varst að gera DroidWiki betri fyrir alla</string>
   <string name="description_edit_success_done">Lokið</string>
   <string name="description_edit_success_did_you_know">Vissir þú það?</string>
   <string name="description_edit_success_article_edit_hint">Þú getur líka breytt greinum innan þessa forrits. Prófaðu að laga stafsetningu og styttri setningar með því að smella á ^1 táknmyndina</string>
@@ -518,8 +518,8 @@
   <string name="description_edit_help_tips_example2">Hæsta fjall jarðar</string>
   <string name="description_edit_help_tips_example2_hint">lýsing á titli fyrir grein um Everestfjall</string>
   <string name="description_edit_help_more_info">Nánari upplýsingar</string>
-  <string name="description_edit_help_meta_info">Lýsingar eru geymdar og þeim viðhaldið á Wikidata, verkefnis á vegum Wikimedia Foundation sjálfseignarstofnunarinnar sem sér um frjálsan, ókeypis, margtyngdann, hópunninn gagnagrunn til stuðnings Wikipedia og öðrum slíkum verkefnum.</string>
-  <string name="description_edit_revert_subtitle">Takk fyrir framlag þitt til Wikipedia!</string>
+  <string name="description_edit_help_meta_info">Lýsingar eru geymdar og þeim viðhaldið á Wikidata, verkefnis á vegum Wikimedia Foundation sjálfseignarstofnunarinnar sem sér um frjálsan, ókeypis, margtyngdann, hópunninn gagnagrunn til stuðnings DroidWiki og öðrum slíkum verkefnum.</string>
+  <string name="description_edit_revert_subtitle">Takk fyrir framlag þitt til DroidWiki!</string>
   <string name="description_edit_revert_intro">Við vitum að þú reyndir þitt besta, en einn í yfirlestrarhópnum var í vafa. Hugsanlegar ástæður fyrir því að breytingunni þinni var hafnað, gætu meðal annars verið:</string>
   <string name="description_edit_revert_reason1">framlagið þitt fylgdi ekki einhverju atriðanna í &lt;a href=\"%1$s\"&gt;leiðbeiningunum&lt;/a&gt;.</string>
   <string name="description_edit_revert_reason2">framlagið þitt lítur út eins og tilraunastarfsemi eða jafnvel skemmdarverk.</string>
@@ -528,7 +528,7 @@
   <string name="offline_read_permission_rationale">Til að vafra án nettengingar er nauðsynlegt að hafa heimild til að skrifa í gagnageymslu tækisins.</string>
   <string name="offline_read_final_rationale">Til að nota safn án nettengingar er nauðsynlegt að hafa heimild til að skrifa í gagnageymslu tækisins.</string>
   <string name="offline_read_permission_error">Ekki er heimilað að lesa úr gagnageymslu tækisins.</string>
-  <string name="offline_card_sideloading_text">Þú ert núna að vafra um Wikipedia án nettengingar með greinapökkum úr ónettengda safninu þínu.</string>
+  <string name="offline_card_sideloading_text">Þú ert núna að vafra um DroidWiki án nettengingar með greinapökkum úr ónettengda safninu þínu.</string>
   <string name="offline_my_compilations">Sýsla með ónettengda safnið mitt</string>
   <string name="offline_compilations_title">Safn utan nettengingar</string>
   <string name="offline_compilations_search_by_name">Leita að greinapökkum eftir heiti</string>
@@ -566,24 +566,24 @@
   <string name="offline_library_search_results_state">Leitarniðurstöður úr ónettengda safninu þínu</string>
   <string name="offline_library_onboarding_button_done">Búið</string>
   <string name="offline_library_onboarding_build_library_title">Útbúa safn utan nettengingar</string>
-  <string name="offline_library_onboarding_build_library_subtitle">Sæktu Wikipedia-greinapakka núna svo þeir séu tiltækir án gagnanotkunar síðar.</string>
+  <string name="offline_library_onboarding_build_library_subtitle">Sæktu DroidWiki-greinapakka núna svo þeir séu tiltækir án gagnanotkunar síðar.</string>
   <string name="offline_library_onboarding_uninterrupted_reading_title">Ótruflaður lestur</string>
   <string name="offline_library_onboarding_uninterrupted_reading_subtitle">Haltu áfram að lesa og leita á ónettengda safninu þegar þú ert án nettengingar.</string>
   <string name="offline_library_onboarding_store_knowledge_title">Geyma meiri þekkingu</string>
-  <string name="offline_library_onboarding_store_knowledge_subtitle">Halaðu niður eins miklu af gögnum frá Wikipedia og tækið þitt þolir. Ónettengda safnið getur líka nýtt sér greinapakka á ytri gagnageymslum.</string>
+  <string name="offline_library_onboarding_store_knowledge_subtitle">Halaðu niður eins miklu af gögnum frá DroidWiki og tækið þitt þolir. Ónettengda safnið getur líka nýtt sér greinapakka á ytri gagnageymslum.</string>
   <string name="offline_library_main_page_hint_html">Þessi forsíða birtir yfirlit yfir efni þessa greinapakka.&lt;br /&gt;&lt;br /&gt;Þú getur einnig kannað efni hvaða greinapakka sem er í ónettengda safninu þínu með því að leita að tiltækum greinum þegar þú ert utan netsambands.</string>
   <string name="onboarding_skip">Sleppa</string>
   <string name="onboarding_continue">Áfram</string>
   <string name="onboarding_get_started">Komast í gang</string>
   <string name="onboarding_welcome_title">Frjálsa alfræðiorðasafnið</string>
-  <string name="onboarding_welcome_text">Wikipedia er skrifuð í sameiningu af sjálfboðaliðum og samanstendur af meira en 40 milljón greinum á nærri 300 mismunandi tungumálum. &lt;a href=\"#about\"&gt;Sjá meira&lt;/a&gt;</string>
+  <string name="onboarding_welcome_text">DroidWiki er skrifuð í sameiningu af sjálfboðaliðum og samanstendur af meira en 40 milljón greinum á nærri 300 mismunandi tungumálum. &lt;a href=\"#about\"&gt;Sjá meira&lt;/a&gt;</string>
   <string name="onboarding_explore_title">Nýjar leiðir til að kanna heiminn</string>
-  <string name="onboarding_explore_text">Hentu þér út í djúpu Wikipedia-laugina með \'Uppgötva\'-streymi sem er uppfært í sífellu. &lt;br/&gt;Þú getur &lt;b&gt;sérsniðið&lt;/b&gt; streymið eftir áhugamálum þínum – hvort sem það er til að læra um sögulega atburði í &lt;b&gt;Á þessum degi&lt;/b&gt;, eða með því að taka áhættuna í &lt;b&gt;Slembið&lt;/b&gt;.</string>
+  <string name="onboarding_explore_text">Hentu þér út í djúpu DroidWiki-laugina með \'Uppgötva\'-streymi sem er uppfært í sífellu. &lt;br/&gt;Þú getur &lt;b&gt;sérsniðið&lt;/b&gt; streymið eftir áhugamálum þínum – hvort sem það er til að læra um sögulega atburði í &lt;b&gt;Á þessum degi&lt;/b&gt;, eða með því að taka áhættuna í &lt;b&gt;Slembið&lt;/b&gt;.</string>
   <string name="onboarding_save_to_reading_lists_title">Vista í leslista</string>
   <string name="onboarding_save_to_reading_lists_text">Búðu til leslista með greinum til að lesa þær síðar, jafnvel án nettengingar.</string>
   <string name="onboarding_reading_list_sync_title">Leslistar með samstillingu</string>
-  <string name="onboarding_reading_list_sync_text">Búðu til leslista með greinum til að lesa þær síðar, jafnvel án nettengingar. &lt;a href=\"#login\"&gt;Skráðu þig inn eða nýskráðu þig&lt;/a&gt; á Wikipedia-notandaaðganginn þinn til að halda leslistunum þínum afrituðum.</string>
-  <string name="onboarding_reading_list_sync_text_v2">Þú getur búið til leslista úr greinum til að lesa þær síðar, jafnvel án nettengingar. &lt;br/&gt;Skráðu þig inn á Wikipedia-notandaaðganginn þinn til að samstilla leslistana þína. &lt;a href=\"#login\"&gt;Skráðu þig á Wikipedia&lt;/a&gt; \</string>
+  <string name="onboarding_reading_list_sync_text">Búðu til leslista með greinum til að lesa þær síðar, jafnvel án nettengingar. &lt;a href=\"#login\"&gt;Skráðu þig inn eða nýskráðu þig&lt;/a&gt; á DroidWiki-notandaaðganginn þinn til að halda leslistunum þínum afrituðum.</string>
+  <string name="onboarding_reading_list_sync_text_v2">Þú getur búið til leslista úr greinum til að lesa þær síðar, jafnvel án nettengingar. &lt;br/&gt;Skráðu þig inn á DroidWiki-notandaaðganginn þinn til að samstilla leslistana þína. &lt;a href=\"#login\"&gt;Skráðu þig á DroidWiki&lt;/a&gt; \</string>
   <string name="onboarding_analytics_title">Senda nafnlaus gögn</string>
   <string name="onboarding_analytics_offline_text">Hjálpaðu okkur að bæta forritið með því að leyfa okkur að sjá hvernig þú notar það. Gögnum er safnað án persónuauðkenna. &lt;a href=\"#privacy\"&gt;Vita meira&lt;/a&gt;</string>
   <string name="onboarding_analytics_switch_title">Senda upplýsingar um notkun</string>

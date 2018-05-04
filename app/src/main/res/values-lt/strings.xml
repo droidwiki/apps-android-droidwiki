@@ -86,7 +86,7 @@
   <string name="history_empty_title">Nėra neseniai peržiūrėtų straipsnių</string>
   <string name="history_empty_message">Sekite tai, ką skaitote.</string>
   <string name="delete_selected_items">Ištrinti pasirinktus elementus</string>
-  <string name="wp_stylized">&lt;big&gt;V&lt;/big&gt;IKIPEDIJ&lt;big&gt;A&lt;/big&gt;</string>
+  <string name="wp_stylized">DroidWiki</string>
   <string name="create_account_username_hint">Naudotojo vardas</string>
   <string name="login_dont_have_account">Neturite paskyros?</string>
   <string name="login_join_wikipedia">Prisijungti prie Vikipedijos</string>
@@ -196,7 +196,7 @@
   <string name="gallery_save_success">Failas išsaugotas sėkmingai.</string>
   <string name="gallery_error_video_failed">Negalima paleisti vaizdo įrašo.</string>
   <string name="err_cannot_save_file">Negalima įrašyti failų</string>
-  <string name="snippet_share_intro">\"%1$s\" @Wikipedia: %2$s</string>
+  <string name="snippet_share_intro">\"%1$s\" @DroidWiki: %2$s</string>
   <string name="expand_refs">Bakstelėkite norėdami išplėsti</string>
   <string name="share_snippet_button">Dalintis kaip vaizdu</string>
   <string name="share_normal_button">Dalintis kaip tekstu</string>
