@@ -43,6 +43,7 @@ import org.wikipedia.readinglist.sync.ReadingListSyncAdapter;
 import org.wikipedia.readinglist.sync.ReadingListSyncEvent;
 import org.wikipedia.settings.Prefs;
 import org.wikipedia.util.FeedbackUtil;
+import org.wikipedia.util.StringUtil;
 import org.wikipedia.util.log.L;
 import org.wikipedia.views.DrawableItemDecoration;
 import org.wikipedia.views.SearchEmptyView;
@@ -505,7 +506,30 @@ public class ReadingListsFragment extends Fragment implements SortReadingListsDi
     }
 
     private void maybeShowOnboarding() {
-        // no-op
+        onboardingContainer.removeAllViews();
+
+        if (AccountUtil.isLoggedIn() && !Prefs.isReadingListSyncEnabled()
+                && Prefs.isReadingListSyncReminderEnabled()
+                && !ReadingListSyncAdapter.isDisabledByRemoteConfig()) {
+            OnboardingView onboardingView = new OnboardingView(requireContext());
+            onboardingView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.base20));
+            onboardingView.setTitle(R.string.reading_lists_sync_reminder_title);
+            onboardingView.setText(StringUtil.fromHtml(getString(R.string.reading_lists_sync_reminder_text)));
+            onboardingView.setPositiveAction(R.string.reading_lists_sync_reminder_action);
+            onboardingContainer.addView(onboardingView);
+            onboardingView.setCallback(new SyncReminderOnboardingCallback());
+
+        } else if (!AccountUtil.isLoggedIn() && Prefs.isReadingListLoginReminderEnabled()
+                && !ReadingListSyncAdapter.isDisabledByRemoteConfig()) {
+            OnboardingView onboardingView = new OnboardingView(requireContext());
+            onboardingView.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.base20));
+            onboardingView.setTitle(R.string.reading_list_login_reminder_title);
+            onboardingView.setText(R.string.reading_lists_login_reminder_text);
+            onboardingView.setNegativeAction(R.string.reading_lists_onboarding_got_it);
+            onboardingView.setPositiveAction(R.string.menu_login);
+            onboardingContainer.addView(onboardingView);
+            onboardingView.setCallback(new LoginReminderOnboardingCallback());
+        }
     }
 
     private class SyncReminderOnboardingCallback implements OnboardingView.Callback {

@@ -100,7 +100,7 @@ public final class UriUtil {
 
     public static boolean isValidPageLink(@NonNull Uri uri) {
         return (!TextUtils.isEmpty(uri.getAuthority())
-                && uri.getAuthority().endsWith("wikipedia.org")
+                && uri.getAuthority().endsWith("droidwiki.org")
                 && !TextUtils.isEmpty(uri.getPath())
                 && uri.getPath().startsWith("/wiki"));
     }
@@ -111,7 +111,7 @@ public final class UriUtil {
     */
     public static boolean isValidOfflinePageLink(@NonNull Uri uri) {
         return (!TextUtils.isEmpty(uri.getAuthority())
-                && uri.getAuthority().endsWith("wikipedia.org")
+                && uri.getAuthority().endsWith("droidwiki.org")
                 && !TextUtils.isEmpty(uri.getPath())
                 && uri.getPath().endsWith(".html"));
     }

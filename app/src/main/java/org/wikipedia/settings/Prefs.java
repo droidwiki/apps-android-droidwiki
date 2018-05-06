@@ -336,7 +336,7 @@ public final class Prefs {
     @NonNull
     public static String getRestbaseUriFormat() {
         return defaultIfBlank(getString(R.string.preference_key_restbase_uri_format, null),
-                "%1$s://%2$s/api/rest_v1/");
+                "%1$s://%2$s/api/v1/");
     }
 
     @NonNull
@@ -486,7 +486,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListSyncEnabled() {
-        return false;
+        return getBoolean(R.string.preference_key_sync_reading_lists, false);
     }
 
     public static void setReadingListSyncEnabled(boolean enabled) {
@@ -494,7 +494,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListSyncReminderEnabled() {
-        return false;
+        return getBoolean(R.string.preference_key_reading_list_sync_reminder_enabled, true);
     }
 
     public static void setReadingListSyncReminderEnabled(boolean enabled) {
@@ -502,7 +502,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListLoginReminderEnabled() {
-        return false;
+        return getBoolean(R.string.preference_key_reading_list_login_reminder_enabled, true);
     }
 
     public static void setReadingListLoginReminderEnabled(boolean enabled) {
@@ -510,7 +510,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsRemoteDeletePending() {
-        return false;
+        return getBoolean(R.string.preference_key_reading_lists_remote_delete_pending, false);
     }
 
     public static void setReadingListsRemoteDeletePending(boolean pending) {
@@ -518,7 +518,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsRemoteSetupPending() {
-        return false;
+        return getBoolean(R.string.preference_key_reading_lists_remote_setup_pending, false);
     }
 
     public static void setReadingListsRemoteSetupPending(boolean pending) {
@@ -725,7 +725,7 @@ public final class Prefs {
     }
 
     public static boolean shouldShowReadingListSyncEnablePrompt() {
-        return false;
+        return getBoolean(R.string.preference_key_show_reading_lists_sync_prompt, true);
     }
 
     public static void shouldShowReadingListSyncEnablePrompt(boolean enabled) {
@@ -733,7 +733,7 @@ public final class Prefs {
     }
 
     public static boolean shouldShowReadingListSyncMergePrompt() {
-        return false;
+        return getBoolean(R.string.preference_key_show_reading_lists_merge_prompt, true);
     }
 
     public static void shouldShowReadingListSyncMergePrompt(boolean enabled) {
@@ -741,7 +741,7 @@ public final class Prefs {
     }
 
     public static boolean isReadingListsFirstTimeSync() {
-        return false;
+        return getBoolean(R.string.preference_key_reading_lists_first_time_sync, true);
     }
 
     public static void setReadingListsFirstTimeSync(boolean value) {

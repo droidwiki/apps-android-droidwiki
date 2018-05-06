@@ -40,6 +40,9 @@ class SettingsPreferenceLoader extends BasePreferenceLoader {
             loadPreferences(R.xml.preferences_zero);
         }
 
+        findPreference(R.string.preference_key_sync_reading_lists)
+                .setOnPreferenceChangeListener(new SyncReadingListsListener());
+
         if (ReleaseUtil.isPreBetaRelease()) {
             loadPreferences(R.xml.preferences_experimental);
             Preference offlineLibPref = findPreference(R.string.preference_key_enable_offline_library);
