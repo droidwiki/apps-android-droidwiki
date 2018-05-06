@@ -11,6 +11,7 @@ import org.wikipedia.feed.becauseyouread.BecauseYouReadClient;
 import org.wikipedia.feed.continuereading.ContinueReadingClient;
 import org.wikipedia.feed.dataclient.FeedClient;
 import org.wikipedia.feed.mainpage.MainPageClient;
+import org.wikipedia.feed.random.RandomClient;
 import org.wikipedia.model.EnumCode;
 import org.wikipedia.model.EnumCodeMap;
 import org.wikipedia.settings.Prefs;
@@ -56,13 +57,13 @@ public enum FeedContentType implements EnumCode {
             return isEnabled() && age == 0 ? new MainPageClient() : null;
         }
     },
-//    RANDOM(5, R.string.view_random_card_title, R.string.feed_item_type_randomizer, false) {
-//        @Nullable
-//        @Override
-//        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
-//            return isEnabled() && age % 2 == 0 ? new RandomClient() : null;
-//        }
-//    },
+    RANDOM(5, R.string.view_random_card_title, R.string.feed_item_type_randomizer, false) {
+        @Nullable
+        @Override
+        public FeedClient newClient(AggregatedFeedContentClient aggregatedClient, int age, boolean isOnline) {
+            return isEnabled() && age % 2 == 0 ? new RandomClient() : null;
+        }
+    },
 //    FEATURED_ARTICLE(6, R.string.view_featured_article_card_title, R.string.feed_item_type_featured_article, true) {
 //        @Nullable
 //        @Override
